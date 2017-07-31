@@ -1,0 +1,12 @@
+.DS_Store
+npm-debug.log
+
+.ftppass
+
+# WordPress installation files
+wp-*.php
+wp-*/*
+index.php
+readme.html
+license.txt
+xmlrpc.php
