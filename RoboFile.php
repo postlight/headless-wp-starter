@@ -53,23 +53,14 @@ class RoboFile extends \Robo\Tasks {
 			'plugin activate',
 			'acf-to-wp-api',
 			'advanced-custom-fields-pro',
-			'co-authors-plus',
-			'msm-sitemap',
-			'query-monitor',
 			'wp-migrate-db-pro',
 			'wp-migrate-db-pro-cli',
 			'wp-migrate-db-pro-media-files',
-			'post-meta-inspector',
-			'acf-code-field',
 		) );
 
 		$this->wp( $plugins_command );
 
 		$this->wp( 'user create nedstark nedstark@headlesswpstarter.dev' );
-
-		$this->wp( 'acf sync' );
-
-		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
 
 		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (nedstark/winteriscoming)' );
 		$this->server();
@@ -77,18 +68,6 @@ class RoboFile extends \Robo\Tasks {
 
 	public function server() {
 		$this->wp( 'server' );
-	}
-
-	public function wordpressUpdatePlugins() {
-		$plugin_command = implode( ' ', array(
-			'plugin update',
-			'co-authors-plus',
-			'posts-to-posts',
-			'query-monitor',
-			'acf-to-wp-api',
-		) );
-
-		$this->wp( $plugin_command );
 	}
 
 	public function wp( $arg ) {
