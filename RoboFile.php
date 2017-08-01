@@ -32,9 +32,9 @@ class RoboFile extends \Robo\Tasks {
 			'core install',
 			'--url=localhost:8080',
 			'--title="Postlight Headless WP Starter"',
-			'--admin_user="admin"',
-			'--admin_password="nedstark"',
-			'--admin_email="admin@headlesswpstarter.dev"',
+			'--admin_user="nedstark"',
+			'--admin_password="winteriscoming"',
+			'--admin_email="nedstark@headlesswpstarter.dev"',
 			'--skip-email',
 		) );
 
@@ -71,7 +71,7 @@ class RoboFile extends \Robo\Tasks {
 
 		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
 
-		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (admin/nedstark)' );
+		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (nedstark/winteriscoming)' );
 		$this->server();
 	}
 
