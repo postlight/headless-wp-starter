@@ -1,9 +1,7 @@
 <?php
-
 define( 'PROJECT_DIR', dirname( __FILE__ ) );
 define( 'TMP_DIR', PROJECT_DIR . '/tmp' );
 define( 'WP_DIR', PROJECT_DIR . '/wordpress' );
-
 
 /**
  * This is project's console commands configuration for Robo task runner.
@@ -11,6 +9,7 @@ define( 'WP_DIR', PROJECT_DIR . '/wordpress' );
  * @see http://robo.li/
  */
 class RoboFile extends \Robo\Tasks {
+
 	public function wordpressSetup() {
 		$confirm = $this->io()->confirm( 'This will replace your current ' .
 		'WordPress install. Are you sure you want to do this?', false );
