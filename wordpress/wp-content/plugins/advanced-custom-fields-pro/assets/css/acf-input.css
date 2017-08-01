@@ -1,0 +1,2163 @@
+/*--------------------------------------------------------------------------------------------
+*
+*	vars
+*
+*--------------------------------------------------------------------------------------------*/
+/* colors */
+/* acf-field */
+/* responsive */
+/*--------------------------------------------------------------------------------------------
+*
+*	acf-field
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-field,
+.acf-field .acf-label,
+.acf-field .acf-input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.acf-field {
+  margin: 0 0 20px;
+  /* label */
+  /* input */
+  /* error */
+}
+.acf-field p.description {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.acf-field .acf-label {
+  vertical-align: top;
+  margin: 0 0 10px;
+}
+.acf-field .acf-label label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 3px;
+  padding: 0;
+}
+.acf-field .acf-input {
+  vertical-align: top;
+}
+.acf-field .acf-input > p.description {
+  margin-top: 5px;
+}
+.acf-field .acf-error-message {
+  background: #F55E4F;
+  color: #fff;
+  margin: 0 0 10px;
+  display: inline-block;
+  border-radius: 3px;
+  border-left: none;
+}
+.acf-field .acf-error-message:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: transparent 5px solid;
+  border-top-color: #F55E4F;
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+}
+/* acf-table */
+.acf-table tr.acf-field > td.acf-label,
+.acf-table tr.acf-field > td.acf-input {
+  padding: 15px 12px;
+}
+.acf-table tr.acf-field > td.acf-label {
+  background: #F9F9F9;
+  border-top-color: #F0F0F0;
+  width: 24%;
+}
+.acf-table tr.acf-field > td.acf-input {
+  border-left-color: #E1E1E1;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	acf-fields
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-fields {
+  position: relative;
+}
+.acf-fields:after {
+  content: "";
+  display: block;
+  line-height: 0;
+  clear: both;
+}
+.acf-fields > .acf-field {
+  margin: 0;
+  padding: 15px 12px;
+  border-top: #EEEEEE solid 1px;
+  position: relative;
+  clear: left;
+  /* used to clear floating widths */
+}
+.acf-fields > .acf-field:first-child {
+  border-top-width: 0;
+}
+td.acf-fields {
+  padding: 0 !important;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	acf-fields (left)
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-fields.-left > .acf-field {
+  margin: 0;
+  padding: 0;
+  /* mobile */
+}
+.acf-fields.-left > .acf-field:after {
+  content: "";
+  display: block;
+  line-height: 0;
+  clear: both;
+}
+.acf-fields.-left > .acf-field:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  background: #F9F9F9;
+  border-color: #E1E1E1;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 24%;
+  /* rtl */
+}
+html[dir="rtl"] .acf-fields.-left > .acf-field:before {
+  border-right-width: 0;
+  border-left-width: 1px;
+  left: auto;
+  right: 0;
+}
+.acf-fields.-left > .acf-field > .acf-label,
+.acf-fields.-left > .acf-field > .acf-input {
+  margin: 0;
+  padding: 15px 12px;
+  float: left;
+  position: relative;
+  /* rtl */
+}
+html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-label,
+html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
+  float: right;
+}
+.acf-fields.-left > .acf-field > .acf-label {
+  width: 24%;
+}
+.acf-fields.-left > .acf-field > .acf-input {
+  width: 76%;
+}
+.acf-fields.-left > .acf-field[data-width] {
+  width: 100% !important;
+}
+@media screen and (max-width: 782px) {
+  .acf-fields.-left > .acf-field {
+    padding: 15px 12px;
+  }
+  .acf-fields.-left > .acf-field:before {
+    display: none;
+  }
+  .acf-fields.-left > .acf-field > .acf-label,
+  .acf-fields.-left > .acf-field > .acf-input {
+    padding: 0;
+    float: none;
+    width: auto;
+  }
+  .acf-fields.-left > .acf-field > .acf-label {
+    margin: 0 0 10px;
+  }
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	acf-postbox
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-postbox {
+  position: relative;
+  /* position high */
+  /* inside */
+  /* hndle */
+}
+#acf_after_title-sortables .acf-postbox {
+  margin: 20px 0 0;
+}
+.acf-postbox > .inside {
+  margin: 0 !important;
+  /* override WP style - do not delete - you have tried this before */
+  padding: 0 !important;
+  /* override WP style - do not delete - you have tried this before */
+}
+.acf-postbox > .hndle {
+  /* edit field group */
+}
+.acf-postbox > .hndle .acf-hndle-cog {
+  color: #AAAAAA;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 2px;
+  float: right;
+  position: relative;
+  display: none;
+}
+.acf-postbox > .hndle .acf-hndle-cog:hover {
+  color: #777777;
+}
+.acf-postbox > .hndle:hover .acf-hndle-cog,
+.acf-postbox > .hndle.hover .acf-hndle-cog {
+  display: block;
+}
+.acf-postbox .acf-replace-with-fields {
+  padding: 15px;
+  text-align: center;
+}
+/* seamless */
+.acf-postbox.seamless {
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  /* hide hndle */
+  /* inside */
+}
+.acf-postbox.seamless > .hndle,
+.acf-postbox.seamless > .handlediv {
+  display: none;
+}
+.acf-postbox.seamless > .inside {
+  display: block !important;
+  /* stop metabox from hiding when closed */
+  margin: -10px !important;
+}
+.acf-postbox.seamless > .acf-fields > .acf-field {
+  border: 0 none !important;
+  padding: 10px;
+}
+/* seamless (left) */
+.acf-postbox.seamless > .acf-fields.-left {
+  /* hide sidebar bg */
+  /* tweak padding */
+  /* mobile */
+}
+.acf-postbox.seamless > .acf-fields.-left > .acf-field:before {
+  display: none;
+}
+.acf-postbox.seamless > .acf-fields.-left > .acf-field > .acf-label {
+  padding: 0 12px 0 0;
+}
+.acf-postbox.seamless > .acf-fields.-left > .acf-field > .acf-input {
+  padding: 0 0 0 12px;
+}
+@media screen and (max-width: 782px) {
+  .acf-postbox.seamless > .acf-fields.-left {
+    /* remove padding */
+  }
+  .acf-postbox.seamless > .acf-fields.-left > .acf-field > .acf-label,
+  .acf-postbox.seamless > .acf-fields.-left > .acf-field > .acf-input {
+    padding: 0;
+  }
+}
+/* override WP CSS */
+.metabox-prefs label.acf-hidden {
+  display: none;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Basic ACF field wrap
+*
+*--------------------------------------------------------------------------------------------*/
+/* add term */
+#addtag div.acf-field.error {
+  border: 0 none;
+  padding: 8px 0;
+}
+/* width */
+.acf-field[data-width] {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.acf-field[data-width] + .acf-field {
+  clear: left;
+}
+.acf-field[data-width] + .acf-field[data-width] {
+  clear: none;
+  border-left: 1px solid #eeeeee;
+}
+td.acf-field[data-width] {
+  float: none;
+}
+/* field width helpers */
+.acf-r0 {
+  border-top-width: 0 !important;
+}
+.acf-c0 {
+  clear: left !important;
+  border-left-width: 0 !important;
+}
+/* rtl */
+html[dir="rtl"] .acf-field[data-width] {
+  float: right;
+}
+html[dir="rtl"] .acf-field[data-width] + .acf-field {
+  clear: right;
+}
+html[dir="rtl"] .acf-field[data-width] + .acf-field[data-width] {
+  clear: none;
+  border-right: 1px solid #eeeeee;
+}
+html[dir="rtl"] .acf-c0 {
+  clear: right !important;
+  border-left-width: 1px !important;
+  border-right-width: 0 !important;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Basic Field Styles
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-field input[type="text"],
+.acf-field input[type="password"],
+.acf-field input[type="number"],
+.acf-field input[type="search"],
+.acf-field input[type="email"],
+.acf-field input[type="url"],
+.acf-field textarea,
+.acf-field select {
+  width: 100%;
+  padding: 3px 5px;
+  resize: none;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.acf-field textarea {
+  resize: vertical;
+}
+/* disabled */
+.acf-field input:disabled,
+.acf-field select:disabled,
+.acf-field textarea:disabled {
+  background: #f8f8f8;
+}
+.acf-field input[readonly],
+.acf-field textarea[readonly] {
+  background: #f8f8f8;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Text
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-input-prepend,
+.acf-input-append {
+  font-size: 13px;
+  line-height: 20px;
+  height: 20px;
+  padding: 3px 7px;
+  background: #F4F4F4;
+  border: #DFDFDF solid 1px;
+}
+.acf-input-prepend {
+  float: left;
+  border-right-width: 0;
+  border-radius: 3px 0 0 3px;
+}
+.acf-input-append {
+  float: right;
+  border-left-width: 0;
+  border-radius: 0 3px 3px 0;
+}
+.acf-input-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.acf-input-wrap input {
+  height: 28px;
+  margin: 0;
+}
+input.acf-is-prepended {
+  border-radius: 0 3px 3px 0 !important;
+}
+input.acf-is-appended {
+  border-radius: 3px 0 0 3px !important;
+}
+input.acf-is-prepended.acf-is-appended {
+  border-radius: 0 !important;
+}
+/* rtl */
+html[dir="rtl"] .acf-input-prepend {
+  border-left-width: 0;
+  border-right-width: 1px;
+  border-radius: 0 3px 3px 0;
+  float: right;
+}
+html[dir="rtl"] .acf-input-append {
+  border-left-width: 1px;
+  border-right-width: 0;
+  border-radius: 3px 0 0 3px;
+  float: left;
+}
+html[dir="rtl"] input.acf-is-prepended {
+  border-radius: 3px 0 0 3px !important;
+}
+html[dir="rtl"] input.acf-is-appended {
+  border-radius: 0 3px 3px 0 !important;
+}
+html[dir="rtl"] input.acf-is-prepended.acf-is-appended {
+  border-radius: 0 !important;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Url
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-url i {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  opacity: 0.5;
+  color: #A9A9A9;
+}
+.acf-url.valid i {
+  opacity: 1;
+}
+.acf-url input[type="url"] {
+  padding-left: 25px;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Select
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-field select {
+  padding: 2px;
+}
+.acf-field select optgroup {
+  padding: 5px;
+  background: #fff;
+}
+.acf-field select option {
+  padding: 3px;
+}
+.acf-field select optgroup option {
+  padding-left: 5px;
+}
+.acf-field select optgroup:nth-child(2n) {
+  background: #F9F9F9;
+}
+.acf-field .select2-input {
+  max-width: 200px;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Select2 (v3)
+*
+*---------------------------------------------------------------------------------------------*/
+.select2-container.-acf {
+  /* open */
+  /* single open */
+}
+.select2-container.-acf .select2-choices {
+  background: #fff;
+  border-color: #ddd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+  min-height: 31px;
+}
+.select2-container.-acf .select2-choices .select2-search-choice {
+  margin: 5px 0 5px 5px;
+  padding: 3px 5px 3px 18px;
+  border-color: #bbb;
+  background: #f9f9f9;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+}
+.select2-container.-acf .select2-choices .select2-search-choice-focus {
+  border-color: #999;
+}
+.select2-container.-acf .select2-choices .select2-search-field input {
+  height: 31px;
+  line-height: 22px;
+  margin: 0;
+  padding: 5px 5px 5px 7px;
+}
+.select2-container.-acf .select2-choice {
+  border-color: #BBBBBB;
+}
+.select2-container.-acf .select2-choice .select2-arrow {
+  background: transparent;
+  border-left-color: #DFDFDF;
+  padding-left: 1px;
+}
+.select2-container.-acf .select2-choice .select2-result-description {
+  display: none;
+}
+.select2-container.-acf.select2-container-active .select2-choices,
+.select2-container.-acf.select2-dropdown-open .select2-choices {
+  border-color: #5B9DD9;
+  border-radius: 3px 3px 0 0;
+}
+.select2-container.-acf.select2-dropdown-open .select2-choice {
+  background: #fff;
+  border-color: #5B9DD9;
+}
+/* rtl */
+html[dir="rtl"] .select2-container.-acf .select2-search-choice-close {
+  left: 24px;
+}
+html[dir="rtl"] .select2-container.-acf .select2-choice > .select2-chosen {
+  margin-left: 42px;
+}
+html[dir="rtl"] .select2-container.-acf .select2-choice .select2-arrow {
+  padding-left: 0;
+  padding-right: 1px;
+}
+/* description */
+.select2-drop {
+  /* search*/
+  /* result */
+}
+.select2-drop .select2-search {
+  padding: 4px 4px 0;
+}
+.select2-drop .select2-result {
+  /* hover*/
+}
+.select2-drop .select2-result .select2-result-description {
+  color: #999;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.select2-drop .select2-result.select2-highlighted .select2-result-description {
+  color: #fff;
+  opacity: 0.75;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Select2 (v4)
+*
+*---------------------------------------------------------------------------------------------*/
+.select2-selection.-acf li {
+  margin-bottom: 0;
+}
+.select2-selection.-acf input {
+  box-shadow: none;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Radio
+*
+*---------------------------------------------------------------------------------------------*/
+ul.acf-radio-list,
+ul.acf-checkbox-list {
+  background: transparent !important;
+  position: relative;
+  padding: 1px;
+  margin: 0;
+  /* hl */
+  /* rtl */
+}
+ul.acf-radio-list li,
+ul.acf-checkbox-list li {
+  font-size: 13px;
+  line-height: 22px;
+  margin: 0;
+  position: relative;
+  word-wrap: break-word;
+  /* attachment sidebar fix*/
+}
+ul.acf-radio-list li label,
+ul.acf-checkbox-list li label {
+  display: inline;
+}
+ul.acf-radio-list li input[type="checkbox"],
+ul.acf-checkbox-list li input[type="checkbox"],
+ul.acf-radio-list li input[type="radio"],
+ul.acf-checkbox-list li input[type="radio"] {
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+}
+ul.acf-radio-list li input[type="text"],
+ul.acf-checkbox-list li input[type="text"] {
+  width: auto;
+  vertical-align: middle;
+  margin: 2px 0;
+}
+ul.acf-radio-list li span,
+ul.acf-checkbox-list li span {
+  float: none;
+}
+ul.acf-radio-list.acf-hl li,
+ul.acf-checkbox-list.acf-hl li {
+  margin-right: 20px;
+  clear: none;
+}
+html[dir="rtl"] ul.acf-radio-list input[type="checkbox"],
+html[dir="rtl"] ul.acf-checkbox-list input[type="checkbox"],
+html[dir="rtl"] ul.acf-radio-list input[type="radio"],
+html[dir="rtl"] ul.acf-checkbox-list input[type="radio"] {
+  margin-left: 4px;
+  margin-right: 0;
+  padding: 0;
+  margin: 0;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Checkbox
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-checkbox-list .button {
+  margin: 10px 0 0;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  True / False
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-switch {
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background: #f1f1f1;
+  height: 30px;
+  vertical-align: middle;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+  -webkit-transition: background 0.25s ease;
+  -moz-transition: background 0.25s ease;
+  -o-transition: background 0.25s ease;
+  transition: background 0.25s ease;
+  /* hover */
+  /* active */
+  /* focus */
+  /* message */
+}
+.acf-switch span {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  font-size: 13px;
+  line-height: 22px;
+  padding: 4px 10px;
+  min-width: 15px;
+}
+.acf-switch span i {
+  vertical-align: middle;
+}
+.acf-switch .acf-switch-on {
+  color: #fff;
+  text-shadow: #1f7db1 0 1px 0;
+}
+.acf-switch .acf-switch-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+  right: 50%;
+  z-index: 1;
+  background: #fff;
+  border-radius: 3px;
+  border: #ccc solid 1px;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.acf-switch:hover {
+  background: #eeeeee;
+}
+.acf-switch.-on {
+  background: #2a9bd9;
+}
+.acf-switch.-on .acf-switch-slider {
+  left: 50%;
+  right: 3px;
+  border-color: #1f7db1;
+}
+.acf-switch.-focus .acf-switch-slider {
+  border-color: #5b9dd9;
+  box-shadow: 0 0 2px rgba(30, 140, 190, 0.5);
+}
+.acf-switch.-focus.-on .acf-switch-slider {
+  border-color: #185e85;
+  box-shadow: 0 0 2px #1f7db1;
+}
+.acf-switch + span {
+  margin-left: 6px;
+}
+/* checkbox */
+.acf-switch-input {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+}
+/*
+.acf-field[data-name="alt"] .acf-switch {
+	background: #fff;
+	border: #dddddd solid 1px;
+	height: 30px;
+	
+	span {
+		padding: 3px 10px;
+	}
+	
+	.acf-switch-slider { 
+		background: #f9f9f9;
+		border: #bbbbbb solid 1px;
+		box-shadow: none;
+		margin: 3px;
+	}
+	
+	
+	&.-on {
+		border-color: #2c91fc;
+		background: @acf_blue_input2;
+		
+		.acf-switch-slider {
+			background: #fff;
+			border-color: darken(@acf_blue_input2, 20%);
+			margin-left: -4px;
+		}
+	}
+
+	
+}
+*/
+/*--------------------------------------------------------------------------
+*
+*	Google Map
+*	
+*-------------------------------------------------------------------------*/
+.acf-google-map {
+  position: relative;
+  border: #DFDFDF solid 1px;
+  background: #fff;
+}
+.acf-google-map .title {
+  position: relative;
+  border-bottom: #DFDFDF solid 1px;
+}
+.acf-google-map .title .search {
+  margin: 0;
+  font-size: 14px;
+  line-height: 30px;
+  height: 40px;
+  padding: 5px 10px;
+  border: 0 none;
+  box-shadow: none;
+  border-radius: 0;
+  font-family: inherit;
+  cursor: text;
+}
+.acf-google-map .title .actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.acf-google-map .title a {
+  float: left;
+  margin: 6px 7px 0 0;
+  display: none;
+}
+.acf-google-map .title i {
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  display: none;
+}
+.acf-google-map .canvas {
+  height: 400px;
+}
+/* default is focused */
+.acf-google-map .title .acf-icon.-location {
+  display: block;
+}
+.acf-google-map .title .acf-icon.-cancel {
+  display: none;
+}
+.acf-google-map .title .acf-icon.-search {
+  display: none;
+}
+/* -search */
+.acf-google-map.-search .title .acf-icon.-location {
+  display: none;
+}
+.acf-google-map.-search .title .acf-icon.-cancel {
+  display: block;
+}
+.acf-google-map.-search .title .acf-icon.-search {
+  display: block;
+}
+/* -value */
+.acf-google-map.-value .title .search {
+  font-weight: bold;
+}
+.acf-google-map.-value .title .acf-icon.-location {
+  display: none;
+}
+.acf-google-map.-value .title .acf-icon.-cancel {
+  display: block;
+}
+.acf-google-map.-value .title .acf-icon.-search {
+  display: none;
+}
+/* -loading */
+.acf-google-map.-loading .title a {
+  display: none !important;
+}
+.acf-google-map.-loading .title i {
+  display: block;
+}
+/* autocomplete */
+.pac-container {
+  border-width: 1px 0;
+  box-shadow: none;
+}
+.pac-container:after {
+  display: none;
+}
+.pac-container .pac-item:first-child {
+  border-top: 0 none;
+}
+.pac-container .pac-item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+/* rtl */
+html[dir="rtl"] .acf-google-map .title .acf-icon {
+  right: auto;
+  left: 7px;
+}
+html[dir="rtl"] .pac-container .pac-item {
+  text-align: right;
+}
+/*--------------------------------------------------------------------------
+*
+*	Relationship
+*	
+*-------------------------------------------------------------------------*/
+.acf-relationship {
+  background: #fff;
+  /* filters (top) */
+  /* list */
+  /* selection (bottom) */
+}
+.acf-relationship .filters {
+  border: #DFDFDF solid 1px;
+  background: #fff;
+}
+.acf-relationship .filters .inner {
+  padding: 7px 7px 7px 0;
+  margin: 0;
+}
+.acf-relationship .filters li:first-child .inner {
+  padding-left: 7px;
+}
+.acf-relationship .filters input {
+  border-color: transparent;
+  box-shadow: none;
+}
+.acf-relationship .filters .filter {
+  height: 28px;
+  line-height: 28px;
+  padding: 2px;
+  width: 100%;
+  margin: 0;
+  float: none;
+  /* potential fix for media popup? */
+}
+.acf-relationship .filters .filter:focus,
+.acf-relationship .filters .filter:active {
+  outline: none;
+  box-shadow: none;
+}
+.acf-relationship .list {
+  margin: 0;
+  padding: 5px;
+  height: 160px;
+  overflow: auto;
+}
+.acf-relationship .list .acf-rel-label,
+.acf-relationship .list .acf-rel-item,
+.acf-relationship .list p {
+  padding: 5px 7px;
+  margin: 0;
+  display: block;
+  position: relative;
+  min-height: 18px;
+}
+.acf-relationship .list .acf-rel-label {
+  font-weight: bold;
+}
+.acf-relationship .list .acf-rel-item {
+  cursor: pointer;
+  /* hover */
+  /* disabled */
+}
+.acf-relationship .list .acf-rel-item b {
+  text-decoration: underline;
+  font-weight: normal;
+}
+.acf-relationship .list .acf-rel-item .thumbnail {
+  background: #e0e0e0;
+  width: 22px;
+  height: 22px;
+  float: left;
+  margin: -2px 5px 0 0;
+}
+.acf-relationship .list .acf-rel-item .thumbnail img {
+  max-width: 22px;
+  max-height: 22px;
+  margin: 0 auto;
+  display: block;
+}
+.acf-relationship .list .acf-rel-item .thumbnail.-icon {
+  background: #fff;
+}
+.acf-relationship .list .acf-rel-item .thumbnail.-icon img {
+  max-height: 20px;
+  margin-top: 1px;
+}
+.acf-relationship .list .acf-rel-item:hover {
+  background: #3875D7;
+  color: #fff;
+}
+.acf-relationship .list .acf-rel-item:hover .thumbnail {
+  background: #a2bfec;
+}
+.acf-relationship .list .acf-rel-item:hover .thumbnail.-icon {
+  background: #fff;
+}
+.acf-relationship .list .acf-rel-item.disabled {
+  opacity: 0.5;
+}
+.acf-relationship .list .acf-rel-item.disabled:hover {
+  background: transparent;
+  color: #333;
+  cursor: default;
+}
+.acf-relationship .list .acf-rel-item.disabled:hover .thumbnail {
+  background: #e0e0e0;
+}
+.acf-relationship .list .acf-rel-item.disabled:hover .thumbnail.-icon {
+  background: #fff;
+}
+.acf-relationship .list ul {
+  padding-bottom: 5px;
+}
+.acf-relationship .list ul .acf-rel-label,
+.acf-relationship .list ul .acf-rel-item,
+.acf-relationship .list ul p {
+  padding-left: 20px;
+}
+.acf-relationship .selection {
+  border: #DFDFDF solid 1px;
+  position: relative;
+  margin-top: -1px;
+  /* choices */
+  /* values */
+}
+.acf-relationship .selection .values,
+.acf-relationship .selection .choices {
+  width: 50%;
+  background: #fff;
+  float: left;
+}
+.acf-relationship .selection .choices {
+  background: #F9F9F9;
+}
+.acf-relationship .selection .choices .list {
+  border-right: #DFDFDF solid 1px;
+}
+.acf-relationship .selection .values .acf-icon {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  display: none;
+  /* rtl */
+}
+html[dir="rtl"] .acf-relationship .selection .values .acf-icon {
+  right: auto;
+  left: 7px;
+}
+.acf-relationship .selection .values .acf-rel-item:hover .acf-icon {
+  display: block;
+}
+.acf-relationship .selection .values .acf-rel-item {
+  cursor: move;
+}
+.acf-relationship .selection .values .acf-rel-item b {
+  text-decoration: none;
+}
+/*--------------------------------------------------------------------------
+*
+*	WYSIWYG
+*	
+*-------------------------------------------------------------------------*/
+.acf-editor-wrap {
+  /* delay */
+}
+.acf-editor-wrap.delay .acf-editor-toolbar {
+  content: "";
+  display: block;
+  background: #f5f5f5;
+  border-bottom: #dddddd solid 1px;
+  color: #555d66;
+  padding: 10px;
+}
+.acf-editor-wrap.delay textarea {
+  padding: 10px;
+}
+.acf-editor-wrap iframe {
+  min-height: 200px;
+}
+.acf-editor-wrap .wp-editor-container {
+  border: 1px solid #E5E5E5;
+  box-shadow: none;
+}
+#mce_fullscreen_container {
+  z-index: 150005 !important;
+}
+/* WP < 4.1 */
+.acf-editor-wrap .wp-switch-editor {
+  float: left;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.acf-editor-wrap.tmce-active .wp-editor-area {
+  color: #333 !important;
+}
+/* fix z-index behind media modal */
+div.mce-toolbar-grp.mce-inline-toolbar-grp {
+  z-index: 170000;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*	Tab
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-field-tab {
+  display: none !important;
+}
+.acf-field-tab + .acf-field {
+  border-top-width: 0px;
+}
+.acf-tab-wrap {
+  clear: both;
+  margin: 0 0 20px;
+}
+.acf-tab-wrap:first-child {
+  margin: 0;
+}
+.acf-tab-group {
+  border-bottom: #ccc solid 1px;
+  padding: 0 5px 0 10px;
+  position: relative;
+  margin-bottom: -1px;
+  z-index: 1;
+}
+/* rtl */
+html[dir="rtl"] .acf-tab-group {
+  padding: 0 10px 0 5px;
+}
+.acf-tab-group li {
+  margin: 0 5px 0 0;
+}
+/* rtl */
+html[dir="rtl"] .acf-tab-group li {
+  margin: 0 0 0 5px;
+}
+.acf-tab-group li a {
+  padding: 6px 10px;
+  display: block;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  border: #ccc solid 1px;
+  border-bottom: 0 none;
+  text-decoration: none;
+  background: #F1F1F1;
+  border-radius: 3px 3px 0 0;
+  transition: none;
+}
+.acf-tab-group li a:hover {
+  background: #FFFFFF;
+}
+.acf-tab-group li a:focus {
+  outline: none;
+  box-shadow: none;
+}
+.acf-tab-group li.active a {
+  background: #F1F1F1;
+  color: #000;
+  border-color: #CCCCCC;
+  border-bottom-color: #F7F7F7;
+  padding-bottom: 7px;
+  margin-bottom: -1px;
+  z-index: 1;
+  position: relative;
+}
+.hidden-by-tab {
+  display: none !important;
+}
+.compat-item .acf-tab-wrap td {
+  display: block;
+}
+/* acf-fields */
+.acf-fields > .acf-tab-wrap {
+  background: #F9F9F9;
+  margin: 0;
+}
+.acf-fields > .acf-tab-wrap .acf-tab-group {
+  padding-top: 10px;
+  border-top: #DFDFDF solid 1px;
+  border-bottom: #DFDFDF solid 1px;
+}
+.acf-fields > .acf-tab-wrap:first-child .acf-tab-group {
+  border-top-width: 0;
+}
+.acf-fields > .acf-tab-wrap .acf-tab-group li.active a {
+  background: #FFFFFF;
+}
+/* left aligned labels */
+.acf-fields.-left > .acf-tab-wrap .acf-tab-group {
+  padding-left: 24%;
+}
+/* rtl */
+html[dir="rtl"] .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
+  padding-left: 5px;
+  padding-right: 24%;
+}
+/* mobile */
+@media screen and (max-width: 782px) {
+  .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
+    padding-left: 10px;
+  }
+  /* rtl */
+  html[dir="rtl"] .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+}
+/* sidebar */
+.acf-fields.-sidebar {
+  padding-left: 150px !important;
+}
+/* rtl */
+html[dir="rtl"] .acf-fields.-sidebar {
+  padding-right: 150px !important;
+  padding-left: 0 !important;
+}
+.acf-fields.-sidebar:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 149px;
+  height: 100%;
+  border-right: #DFDFDF solid 1px;
+  background: #F9F9F9;
+}
+/* rtl */
+html[dir="rtl"] .acf-fields.-sidebar:before {
+  border-left: #CCCCCC solid 1px;
+  border-right-width: 0;
+  left: auto;
+  right: 0;
+}
+/* left */
+.acf-field + .acf-tab-wrap.-left:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background: #DFDFDF;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+.acf-tab-wrap.-left .acf-tab-group {
+  position: absolute;
+  left: 0;
+  width: 150px;
+  border: 0 none;
+  padding: 0 !important;
+  /* important overrides 'left aligned labels' */
+  margin: 1px 0 0;
+}
+/* rtl */
+html[dir="rtl"] .acf-tab-wrap.-left .acf-tab-group {
+  left: auto;
+  right: 0;
+}
+.acf-tab-wrap.-left .acf-tab-group li {
+  float: none;
+  margin: -1px 0 0;
+}
+.acf-tab-wrap.-left .acf-tab-group li a {
+  border: 1px solid #DFDFDF;
+  font-size: 13px;
+  line-height: 18px;
+  color: #0074a2;
+  padding: 10px;
+  font-weight: normal;
+  border-width: 1px 0;
+  margin-right: 1px;
+  border-radius: 0;
+  background: transparent;
+}
+.acf-tab-wrap.-left .acf-tab-group li.active a {
+  color: #000;
+  margin-right: 0;
+  background: #fff;
+}
+.acf-tab-wrap.-left:first-child .acf-tab-group li:first-child a {
+  border-top-width: 0;
+}
+/* sidebar + left (.acf-fields.-left.-sidebar) */
+.acf-fields.-left.-sidebar:before {
+  background: #F1F1F1;
+}
+.acf-fields.-left.-sidebar > .acf-tab-wrap.-left li.active a {
+  background: #F9F9F9;
+}
+/* seamless */
+.acf-postbox.seamless > .acf-fields.-sidebar {
+  padding: 0 0 0 162px !important;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields.-sidebar {
+  padding: 0 162px 0 0 !important;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap {
+  background: transparent;
+  margin: 20px 0 0 -12px;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields > .acf-tab-wrap {
+  margin: 20px -12px 0 0;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap:first-child {
+  margin-top: 0;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap .acf-tab-group {
+  border-top: 0 none;
+  padding-left: 12px;
+  border-color: #ccc;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields > .acf-tab-wrap .acf-tab-group {
+  padding-left: 5px;
+  padding-right: 12px;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap .acf-tab-group li a {
+  background: #E4E4E4;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap .acf-tab-group li.active a {
+  background: #F1F1F1;
+  border-color: #ccc;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left {
+  height: 1px;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left:before {
+  background: #ccc;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li a {
+  border-left-width: 1px;
+  background: #F1F1F1;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li a {
+  border-left-width: 0;
+  border-right-width: 1px;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li.active a {
+  border-color: #ccc;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li:first-child a {
+  border-radius: 3px 0 0 0;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li:first-child a {
+  border-radius: 0 3px 0 0;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li:last-child a {
+  border-radius: 0 0 0 3px;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li:last-child a {
+  border-radius: 0 0 3px 0;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li:first-child:last-child a {
+  border-radius: 3px 0 0 3px;
+}
+/* rtl */
+html[dir="rtl"] .acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li:first-child:last-child a {
+  border-radius: 0 3px 3px 0;
+}
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left:first-child .acf-tab-group li:first-child a {
+  border-top-width: 1px;
+}
+.acf-postbox.seamless > .acf-fields.-sidebar:before {
+  background: transparent;
+  border-color: #ccc;
+}
+/* within gallery sidebar */
+.acf-gallery-side .acf-tab-wrap {
+  border-top: 0 none !important;
+}
+.acf-gallery-side .acf-tab-wrap .acf-tab-group {
+  margin: 10px 0 !important;
+  padding: 0 !important;
+}
+.acf-gallery-side .acf-tab-group li.active a {
+  background: #F9F9F9 !important;
+}
+/* withing widget */
+.widget .acf-tab-group {
+  border-bottom-color: #e8e8e8;
+}
+.widget .acf-tab-group li a {
+  background: #F1F1F1;
+}
+.widget .acf-tab-group li.active a {
+  background: #fff;
+}
+/* media popup (edit image) */
+.media-modal.acf-expanded .compat-attachment-fields > tbody > tr.acf-tab-wrap .acf-tab-group {
+  padding-left: 23%;
+  border-bottom-color: #DDDDDD;
+}
+/* table */
+.form-table > tbody > tr.acf-tab-wrap td {
+  padding: 0;
+}
+.form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
+  padding: 0 5px 0 210px;
+}
+/* rtl */
+html[dir="rtl"] .form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
+  padding: 0 210px 0 5px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	oembed
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-oembed {
+  position: relative;
+  border: #DFDFDF solid 1px;
+  background: #fff;
+}
+.acf-oembed .title {
+  position: relative;
+  border-bottom: #DFDFDF solid 1px;
+  padding: 5px 10px;
+}
+.acf-oembed .title h4,
+.acf-oembed .title input[type="text"] {
+  margin: 0;
+  font-size: 14px;
+  line-height: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0 none;
+  box-shadow: none;
+  border-radius: 0;
+  font-family: inherit;
+  cursor: text;
+}
+.acf-oembed .title .search {
+  height: auto;
+  border: 0 none;
+}
+.acf-oembed .title .acf-icon {
+  right: 7px;
+  top: 6px;
+  position: absolute;
+}
+.acf-oembed .canvas {
+  position: relative;
+  min-height: 250px;
+  background: #F9F9F9;
+}
+.acf-oembed.has-value .canvas {
+  min-height: 0;
+}
+.acf-oembed .canvas-media {
+  position: relative;
+  z-index: 1;
+}
+.acf-oembed .canvas iframe {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.acf-oembed .canvas .acf-icon.-picture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -21px 0 0 -21px;
+  z-index: 0;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  color: #999;
+}
+.acf-oembed .canvas-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: none;
+  z-index: 2;
+}
+.acf-oembed .canvas-loading .acf-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+}
+.acf-oembed .canvas-error {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  right: 0%;
+  margin: -9px 0 0 0;
+  text-align: center;
+  display: none;
+}
+.acf-oembed .canvas-error p {
+  padding: 8px;
+  margin: 0;
+  display: inline;
+}
+/* states */
+.acf-oembed .title-value {
+  display: none;
+}
+.acf-oembed .title-search {
+  display: block;
+}
+.acf-oembed.has-value .title-value {
+  display: block;
+}
+.acf-oembed.has-value .title-search {
+  display: none;
+}
+.acf-oembed.has-value .canvas .acf-icon {
+  display: none;
+}
+.acf-oembed.is-editing .title-value {
+  display: none;
+}
+.acf-oembed.is-editing .title-search {
+  display: block;
+}
+.acf-oembed.is-loading .canvas-loading {
+  display: block;
+}
+.acf-oembed.is-loading .title .acf-icon {
+  display: none;
+}
+.acf-oembed.has-error .canvas-error {
+  display: block;
+}
+.acf-oembed.has-error .canvas .acf-icon {
+  display: none;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Image
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-image-uploader {
+  position: relative;
+}
+.acf-image-uploader .view {
+  float: left;
+  position: relative;
+  max-width: 100%;
+}
+.acf-image-uploader img {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-width: 30px;
+  min-height: 30px;
+  background: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+.acf-image-uploader input.button {
+  width: auto;
+}
+/* svg */
+.acf-image-uploader img[src$=".svg"] {
+  min-height: 100px;
+  min-width: 100px;
+}
+/* rtl */
+html[dir="rtl"] .acf-image-uploader .view {
+  float: right;
+}
+/*
+*  Hover
+*/
+.acf-image-uploader .acf-soh-target {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.acf-image-uploader .acf-soh-target li {
+  margin: 0 0 0 4px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	File
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-file-uploader {
+  position: relative;
+}
+.acf-file-uploader .file-wrap {
+  border: #DFDFDF solid 1px;
+  min-height: 84px;
+  position: relative;
+  background: #fff;
+}
+.acf-file-uploader .file-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  background: #F1F1F1;
+  border-right: #E5E5E5 solid 1px;
+}
+.acf-file-uploader .file-icon img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  max-width: 48px;
+}
+.acf-file-uploader .file-info {
+  padding: 10px;
+  margin-left: 69px;
+}
+.acf-file-uploader .file-info p {
+  margin: 0 0 2px;
+  font-size: 13px;
+  line-height: 1.4em;
+  word-break: break-all;
+}
+.acf-file-uploader .file-info a {
+  text-decoration: none;
+}
+.acf-file-uploader .file-info ul {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  /* rtl */
+}
+.acf-file-uploader .file-info ul li {
+  margin: 0 0 0 4px;
+}
+html[dir="rtl"] .acf-file-uploader .file-info ul {
+  right: auto;
+  left: 5px;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*	Date Picker
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-ui-datepicker .ui-datepicker {
+  z-index: 999999999 !important;
+}
+.acf-ui-datepicker .ui-datepicker .ui-widget-header a {
+  cursor: pointer;
+  transition: none;
+}
+/* fix highlight state overriding hover / active */
+.acf-ui-datepicker .ui-state-highlight.ui-state-hover {
+  border: 1px solid #98b7e8 !important;
+  background: #98b7e8 !important;
+  font-weight: normal !important;
+  color: #ffffff !important;
+}
+.acf-ui-datepicker .ui-state-highlight.ui-state-active {
+  border: 1px solid #3875d7 !important;
+  background: #3875d7 !important;
+  font-weight: normal !important;
+  color: #ffffff !important;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*	Clone field
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-clone-fields {
+  border: #dfdfdf solid 1px;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*	Taxonomy
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-taxonomy-field {
+  position: relative;
+}
+.acf-taxonomy-field .categorychecklist-holder {
+  border: #DFDFDF solid 1px;
+  border-radius: 3px;
+  max-height: 200px;
+  overflow: auto;
+}
+.acf-taxonomy-field .acf-checkbox-list {
+  margin: 0;
+  padding: 10px;
+}
+.acf-taxonomy-field ul.children {
+  padding-left: 18px;
+}
+.acf-taxonomy-field .acf-icon {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 1;
+}
+html[dir="rtl"] .acf-taxonomy-field .acf-icon {
+  right: auto;
+  left: 7px;
+}
+.acf-taxonomy-field[data-type="select"] .acf-icon {
+  top: -9px;
+  right: -9px;
+}
+html[dir="rtl"] .acf-taxonomy-field[data-type="select"] .acf-icon {
+  right: auto;
+  left: -9px;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Media Model
+*
+*---------------------------------------------------------------------------------------------*/
+/* WP sets tables to act as divs. ACF uses tables, so these muct be reset */
+.media-modal .compat-attachment-fields td.acf-input table {
+  display: table;
+}
+.media-modal .compat-attachment-fields td.acf-input table tbody {
+  display: table-row-group;
+}
+.media-modal .compat-attachment-fields td.acf-input table tr {
+  display: table-row;
+}
+.media-modal .compat-attachment-fields td.acf-input table td,
+.media-modal .compat-attachment-fields td.acf-input table th {
+  display: table-cell;
+}
+/* field widths floats */
+.media-modal .compat-attachment-fields > tbody > .acf-field {
+  margin: 0;
+}
+.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+  min-width: 30%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: block;
+  float: left;
+}
+.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label > label {
+  padding-top: 6px;
+  margin: 0;
+  color: #666666;
+  font-weight: 400;
+  line-height: 16px;
+}
+.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+  width: 65%;
+  margin: 0;
+  padding: 0;
+  float: right;
+  display: block;
+}
+.media-modal .compat-attachment-fields > tbody > .acf-field p.description {
+  margin: 0;
+}
+/* restricted selection (copy of WP .upload-errors)*/
+.acf-selection-error {
+  background: #ffebe8;
+  border: 1px solid #c00;
+  border-radius: 3px;
+  padding: 8px;
+  margin: 20px 0 0;
+}
+.acf-selection-error .selection-error-label {
+  background: #CC0000;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 8px;
+  padding: 2px 4px;
+}
+.acf-selection-error .selection-error-message {
+  color: #b44;
+  display: block;
+  padding-top: 8px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+/* disabled attachment */
+.media-modal .attachment.acf-disabled .thumbnail {
+  opacity: 0.25 !important;
+}
+.media-modal .attachment.acf-disabled .attachment-preview:before {
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  position: relative;
+}
+/* misc */
+.media-modal {
+  /* compat-item */
+  /* fix % margin which causes .acf-uploadedTo to drop down below select */
+  /* allow line breaks in upload error */
+  /* fix required span */
+  /* sidebar */
+  /* mobile md */
+}
+.media-modal .compat-field-acf-form-data,
+.media-modal .compat-field-acf-blank {
+  display: none !important;
+}
+.media-modal select.attachment-filters {
+  margin-right: 6px !important;
+  vertical-align: middle;
+}
+.media-modal .acf-uploadedTo {
+  line-height: 28px;
+  height: 28px;
+  display: inline-block;
+  position: relative;
+  margin: 11px 6px 0 0;
+  vertical-align: middle;
+}
+.media-modal .upload-error-message {
+  white-space: pre-wrap;
+}
+.media-modal .acf-required {
+  padding: 0 !important;
+  margin: 0 !important;
+  float: none !important;
+  color: #f00 !important;
+}
+.media-modal .media-sidebar .compat-item {
+  padding-bottom: 20px;
+}
+@media (max-width: 900px) {
+  .media-modal {
+    /* label */
+    /* field */
+  }
+  .media-modal .setting span,
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+    width: 98%;
+    float: none;
+    text-align: left;
+    min-height: 0;
+    padding: 0;
+  }
+  .media-modal .setting input,
+  .media-modal .setting textarea,
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+    float: none;
+    height: auto;
+    max-width: none;
+    width: 98%;
+  }
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  Media Model (expand details)
+*
+*---------------------------------------------------------------------------------------------*/
+.media-modal .acf-expand-details {
+  float: right;
+  padding: 1px 10px;
+  margin-right: 6px;
+  height: 18px;
+  line-height: 18px;
+  color: #AAAAAA;
+  font-size: 12px;
+}
+.media-modal .acf-expand-details:focus,
+.media-modal .acf-expand-details:active {
+  outline: 0 none;
+  box-shadow: none;
+  color: #AAAAAA;
+}
+.media-modal .acf-expand-details:hover {
+  color: #666666 !important;
+}
+.media-modal .acf-expand-details span {
+  display: block;
+  float: left;
+}
+.media-modal .acf-expand-details .acf-icon {
+  margin: 0 4px 0 0;
+}
+.media-modal .acf-expand-details:hover .acf-icon {
+  border-color: #AAAAAA;
+}
+.media-modal .acf-expand-details .is-open {
+  display: none;
+}
+.media-modal .acf-expand-details .is-closed {
+  display: block;
+}
+/* expanded */
+.media-modal.acf-expanded {
+  /* toggle */
+  /* resize */
+  /* label & fields */
+  /* mobile md */
+}
+.media-modal.acf-expanded .acf-expand-details .is-open {
+  display: block;
+}
+.media-modal.acf-expanded .acf-expand-details .is-closed {
+  display: none;
+}
+.media-modal.acf-expanded .attachments-browser .media-toolbar,
+.media-modal.acf-expanded .attachments-browser .attachments {
+  right: 740px;
+}
+.media-modal.acf-expanded .media-sidebar {
+  width: 708px;
+}
+.media-modal.acf-expanded .media-sidebar {
+  /* label */
+  /* field */
+  /* larger thumbnail */
+}
+.media-modal.acf-expanded .media-sidebar .attachment-info .thumbnail,
+.media-modal.acf-expanded .media-sidebar .setting span,
+.media-modal.acf-expanded .media-sidebar .compat-attachment-fields > tbody > .acf-field > .acf-label {
+  min-width: 20%;
+}
+.media-modal.acf-expanded .media-sidebar .attachment-info .details,
+.media-modal.acf-expanded .media-sidebar .setting input,
+.media-modal.acf-expanded .media-sidebar .setting textarea,
+.media-modal.acf-expanded .media-sidebar .compat-attachment-fields > tbody > .acf-field > .acf-input {
+  min-width: 77%;
+}
+.media-modal.acf-expanded .media-sidebar .setting span {
+  margin-right: 2%;
+}
+.media-modal.acf-expanded .media-sidebar .attachment-info .thumbnail {
+  max-height: none;
+}
+.media-modal.acf-expanded .media-sidebar .attachment-info .thumbnail img {
+  max-width: 100%;
+  max-height: 200px;
+}
+.media-modal.acf-expanded .media-sidebar .attachment-info .details {
+  float: right;
+}
+@media (max-width: 900px) {
+  .media-modal.acf-expanded {
+    /* resize */
+  }
+  .media-modal.acf-expanded .attachments-browser .media-toolbar {
+    display: none;
+  }
+  .media-modal.acf-expanded .attachments {
+    display: none;
+  }
+  .media-modal.acf-expanded .media-sidebar {
+    width: auto;
+    max-width: none !important;
+  }
+  .media-modal.acf-expanded .media-sidebar .attachment-info .thumbnail {
+    min-width: 30%;
+    margin: 0;
+  }
+  .media-modal.acf-expanded .media-sidebar .attachment-info .details {
+    min-width: 67%;
+  }
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Media Model
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-media-modal {
+  /* hide embed settings */
+}
+.acf-media-modal .media-embed .setting.align,
+.acf-media-modal .media-embed .setting.link-to {
+  display: none;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Media Model (Select Mode)
+*
+*---------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Media Model (Edit Mode)
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-media-modal.-edit {
+  /* resize modal */
+  left: 15%;
+  right: 15%;
+  top: 100px;
+  bottom: 100px;
+  /* hide elements */
+  /* full width */
+  /* tidy up incorrect distance */
+  /* WP4 */
+  /* title box shadow (to match media grid) */
+  /* sidebar */
+  /* mobile md */
+  /* mobile sm */
+}
+.acf-media-modal.-edit .media-frame-menu,
+.acf-media-modal.-edit .media-frame-router,
+.acf-media-modal.-edit .media-frame-content .attachments,
+.acf-media-modal.-edit .media-frame-content .media-toolbar {
+  display: none;
+}
+.acf-media-modal.-edit .media-frame-title,
+.acf-media-modal.-edit .media-frame-content,
+.acf-media-modal.-edit .media-frame-toolbar,
+.acf-media-modal.-edit .media-sidebar {
+  width: auto;
+  left: 0;
+  right: 0;
+}
+.acf-media-modal.-edit .media-frame-content {
+  top: 56px;
+}
+body.major-4 .acf-media-modal.-edit .media-frame-content {
+  top: 50px;
+}
+.acf-media-modal.-edit .media-frame-title {
+  border-bottom: 1px solid #DFDFDF;
+  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
+}
+.acf-media-modal.-edit .media-sidebar {
+  padding: 0 16px;
+  /* WP details */
+  /* ACF fields */
+  /* WP required message */
+}
+.acf-media-modal.-edit .media-sidebar .attachment-details {
+  overflow: visible;
+  /* hide 'Attachment Details' heading */
+  /* remove overflow */
+  /* move thumbnail */
+}
+.acf-media-modal.-edit .media-sidebar .attachment-details > h3,
+.acf-media-modal.-edit .media-sidebar .attachment-details > h2 {
+  display: none;
+}
+.acf-media-modal.-edit .media-sidebar .attachment-details .attachment-info {
+  background: #fff;
+  border-bottom: #dddddd solid 1px;
+  padding: 16px;
+  margin: 0 -16px 16px;
+}
+.acf-media-modal.-edit .media-sidebar .attachment-details .thumbnail {
+  margin: 0 16px 0 0;
+}
+.acf-media-modal.-edit .media-sidebar .attachment-details .setting {
+  display: block;
+  overflow: hidden;
+  float: none;
+  width: auto;
+  margin: 0 0 5px;
+}
+.acf-media-modal.-edit .media-sidebar .attachment-details .setting span {
+  margin: 0;
+}
+.acf-media-modal.-edit .media-sidebar .compat-attachment-fields > tbody > .acf-field {
+  margin: 0 0 5px;
+}
+.acf-media-modal.-edit .media-sidebar .compat-attachment-fields > tbody > .acf-field p.description {
+  margin-top: 3px;
+}
+.acf-media-modal.-edit .media-sidebar .media-types-required-info {
+  display: none;
+}
+@media (max-width: 900px) {
+  .acf-media-modal.-edit {
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+  }
+}
+@media (max-width: 640px) {
+  .acf-media-modal.-edit {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .acf-media-modal.-edit .media-sidebar {
+    bottom: 0 !important;
+  }
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	User
+*
+*--------------------------------------------------------------------------------------------*/
+.form-table > tbody {
+  /* field */
+  /* tab wrap */
+  /* misc */
+}
+.form-table > tbody > .acf-field {
+  /* label */
+  /* input */
+}
+.form-table > tbody > .acf-field > .acf-label {
+  padding: 20px 10px 20px 0;
+  width: 210px;
+  /* rtl */
+}
+html[dir="rtl"] .form-table > tbody > .acf-field > .acf-label {
+  padding: 20px 0 20px 10px;
+}
+.form-table > tbody > .acf-field > .acf-label label {
+  font-size: 14px;
+  color: #23282d;
+}
+.form-table > tbody > .acf-field > .acf-input {
+  padding: 15px 5% 15px 10px;
+  /* rtl */
+}
+html[dir="rtl"] .form-table > tbody > .acf-field > .acf-input {
+  padding: 15px 10px 15px 5%;
+}
+.form-table > tbody > .acf-tab-wrap td {
+  padding: 15px 5% 15px 0;
+  /* rtl */
+}
+html[dir="rtl"] .form-table > tbody > .acf-tab-wrap td {
+  padding: 15px 0 15px 5%;
+}
+.form-table > tbody .form-table th.acf-th {
+  width: auto;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Term
+*
+*--------------------------------------------------------------------------------------------*/
+#addtag > .acf-field {
+  padding-right: 5%;
+}
+#addtag > .acf-field .acf-label {
+  margin: 0;
+}
+#addtag > .acf-field .acf-label label {
+  font-size: 12px;
+  font-weight: normal;
+}
+p.submit .spinner,
+p.submit .acf-spinner {
+  vertical-align: top;
+  float: none;
+  margin: 4px 4px 0;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Comment
+*
+*--------------------------------------------------------------------------------------------*/
+.editcomment td:first-child {
+  white-space: nowrap;
+  width: 131px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Widget
+*
+*--------------------------------------------------------------------------------------------*/
+#widgets-right .widget .acf-field .description {
+  padding-left: 0;
+  padding-right: 0;
+}
+.widget .acf-field {
+  margin: 1em 0;
+}
+.widget .acf-field .acf-label {
+  margin-bottom: 5px;
+}
+.widget .acf-field .acf-label label {
+  font-weight: normal;
+  margin: 0;
+}
+.widget .widget-inside > form > .acf-error-message {
+  margin-top: 15px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Customizer
+*
+*--------------------------------------------------------------------------------------------*/
+.customize-control .acf-field {
+  margin: 1em 0;
+}
+/*--------------------------------------------------------------------------
+*
+*	Conditional Logic
+*	
+*-------------------------------------------------------------------------*/
+/* Hide */
+.hidden-by-conditional-logic {
+  display: none !important;
+}
+/* Hide (appear empty) */
+.hidden-by-conditional-logic.appear-empty {
+  display: table-cell !important;
+}
+.hidden-by-conditional-logic.appear-empty .acf-input {
+  display: none !important;
+}
+/*--------------------------------------------------------------------------
+*
+*	3rd Party
+*	
+*-------------------------------------------------------------------------*/
+/* Tabify shows hidden postboxes */
+.acf-postbox.acf-hidden {
+  display: none !important;
+}

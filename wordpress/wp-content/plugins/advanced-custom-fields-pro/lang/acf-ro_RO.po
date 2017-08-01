@@ -1,0 +1,2692 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
+"Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
+"POT-Creation-Date: 2015-08-11 23:42+0200\n"
+"PO-Revision-Date: 2016-11-03 17:12+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language-Team: Elliot Condon <e@elliotcondon.com>\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:63
+msgid "Advanced Custom Fields"
+msgstr "Câmpuri Personalizate Avansate"
+
+#: acf.php:205 admin/admin.php:61
+msgid "Field Groups"
+msgstr "Grupuri de câmpuri"
+
+#: acf.php:206
+msgid "Field Group"
+msgstr "Grup de câmp"
+
+#: acf.php:207 acf.php:239 admin/admin.php:62
+#: pro/fields/flexible-content.php:517
+msgid "Add New"
+msgstr "Adaungă"
+
+#: acf.php:208
+msgid "Add New Field Group"
+msgstr "Adaugă un nou grup de câmpuri"
+
+#: acf.php:209
+msgid "Edit Field Group"
+msgstr "Editează grupul"
+
+#: acf.php:210
+msgid "New Field Group"
+msgstr "Grup de câmp nou"
+
+#: acf.php:211
+msgid "View Field Group"
+msgstr "Vizulaizează grupul de câmp"
+
+#: acf.php:212
+msgid "Search Field Groups"
+msgstr "Caută în grupurile de câmp"
+
+#: acf.php:213
+msgid "No Field Groups found"
+msgstr "Nu s-a găsit nici un câmp de grupuri"
+
+#: acf.php:214
+msgid "No Field Groups found in Trash"
+msgstr "Nu s-a găsit nici un câmp de grupuri în coșul de gunoi"
+
+#: acf.php:237 admin/field-group.php:182 admin/field-group.php:213
+#: admin/field-groups.php:519
+msgid "Fields"
+msgstr "Câmpuri"
+
+#: acf.php:238
+msgid "Field"
+msgstr "Câmp"
+
+#: acf.php:240
+msgid "Add New Field"
+msgstr "Adaugă un nou câmp"
+
+#: acf.php:241
+msgid "Edit Field"
+msgstr "Editează câmpul"
+
+#: acf.php:242 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "Câmp nou"
+
+#: acf.php:243
+msgid "View Field"
+msgstr "Vizualizează câmpul"
+
+#: acf.php:244
+msgid "Search Fields"
+msgstr "Caută câmpuri"
+
+#: acf.php:245
+msgid "No Fields found"
+msgstr "Nu s-au găsit câmpuri"
+
+#: acf.php:246
+msgid "No Fields found in Trash"
+msgstr "Nu s-a găsit nici un câmp în coșul de gunoi"
+
+#: acf.php:268 admin/field-group.php:283 admin/field-groups.php:583
+#: admin/views/field-group-options.php:18
+msgid "Disabled"
+msgstr ""
+
+#: acf.php:273
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: admin/admin.php:57 admin/views/field-group-options.php:120
+msgid "Custom Fields"
+msgstr "Câmpuri Personalizate"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "Grup actualizat."
+
+#: admin/field-group.php:70
+msgid "Field group deleted."
+msgstr "Grup șters."
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "Grup publicat."
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "Grup salvat."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "Grup trimis."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "Grup programat pentru."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "Ciorna grup actualizat."
+
+#: admin/field-group.php:176
+msgid "Move to trash. Are you sure?"
+msgstr "Mută în coșul de gunoi. Ești sigur?"
+
+#: admin/field-group.php:177
+msgid "checked"
+msgstr "marcat"
+
+#: admin/field-group.php:178
+msgid "No toggle fields available"
+msgstr "Nu sunt câmpuri de comutare disponibile"
+
+#: admin/field-group.php:179
+msgid "Field group title is required"
+msgstr "Titlul grupului este obligatoriu"
+
+#: admin/field-group.php:180 api/api-field-group.php:607
+msgid "copy"
+msgstr "copie"
+
+#: admin/field-group.php:181
+#: admin/views/field-group-field-conditional-logic.php:67
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:23
+#: admin/views/field-group-locations.php:131 api/api-helpers.php:3262
+msgid "or"
+msgstr "sau"
+
+#: admin/field-group.php:183
+msgid "Parent fields"
+msgstr "Câpuri parinte"
+
+#: admin/field-group.php:184
+msgid "Sibling fields"
+msgstr "Câmpuri copil"
+
+#: admin/field-group.php:185
+msgid "Move Custom Field"
+msgstr "Mută câmpul personalizat"
+
+#: admin/field-group.php:186
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "Acest câmp nu poate fi mutat decât după salvarea modificărilor"
+
+#: admin/field-group.php:187
+msgid "Null"
+msgstr "Gol"
+
+#: admin/field-group.php:188 core/input.php:128
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr "Modificările făcute vor fi pierdute dacă nu salvați"
+
+#: admin/field-group.php:189
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr "Textul \"field_\" nu poate fi folosit la începutul denumirii unui câmp"
+
+#: admin/field-group.php:214
+msgid "Location"
+msgstr "Locația"
+
+#: admin/field-group.php:215
+msgid "Settings"
+msgstr ""
+
+#: admin/field-group.php:253
+msgid "Field Keys"
+msgstr ""
+
+#: admin/field-group.php:283 admin/views/field-group-options.php:17
+msgid "Active"
+msgstr ""
+
+#: admin/field-group.php:744
+msgid "Front Page"
+msgstr "Pagina principală"
+
+#: admin/field-group.php:745
+msgid "Posts Page"
+msgstr "Pagina Articolelor"
+
+#: admin/field-group.php:746
+msgid "Top Level Page (no parent)"
+msgstr "Pagina primului nivel (fără părinte)"
+
+#: admin/field-group.php:747
+msgid "Parent Page (has children)"
+msgstr "Pagina părinte (are succesori)"
+
+#: admin/field-group.php:748
+msgid "Child Page (has parent)"
+msgstr "Pagina Succesor (are părinte)"
+
+#: admin/field-group.php:764
+msgid "Default Template"
+msgstr "Format Implicit"
+
+#: admin/field-group.php:786
+msgid "Logged in"
+msgstr "Autentifiat"
+
+#: admin/field-group.php:787
+msgid "Viewing front end"
+msgstr "Vezi front-end"
+
+#: admin/field-group.php:788
+msgid "Viewing back end"
+msgstr "Vezi back-end"
+
+#: admin/field-group.php:807
+msgid "Super Admin"
+msgstr "Super Admin"
+
+#: admin/field-group.php:818 admin/field-group.php:826
+#: admin/field-group.php:840 admin/field-group.php:847
+#: admin/field-group.php:862 admin/field-group.php:872 fields/file.php:235
+#: fields/image.php:226 pro/fields/gallery.php:653
+msgid "All"
+msgstr "Toate"
+
+#: admin/field-group.php:827
+msgid "Add / Edit"
+msgstr "Adaugă / Editează"
+
+#: admin/field-group.php:828
+msgid "Register"
+msgstr "Înregistrează"
+
+#: admin/field-group.php:1059
+msgid "Move Complete."
+msgstr "Mutare Completă."
+
+#: admin/field-group.php:1060
+#, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr "Acest %s câmp acum poate fi găsit în %s grupul de câmpuri"
+
+#: admin/field-group.php:1062
+msgid "Close Window"
+msgstr "Închide Fereastra"
+
+#: admin/field-group.php:1097
+msgid "Please select the destination for this field"
+msgstr "Selectează destinația pentru acest câmp"
+
+#: admin/field-group.php:1104
+msgid "Move Field"
+msgstr "Mută Câmpul"
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: admin/field-groups.php:142
+#, php-format
+msgid "Field group duplicated. %s"
+msgstr "Grupul de câmpuri a fost duplicat. %s"
+
+#: admin/field-groups.php:146
+#, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] "%s grupul de câmpuri a fost duplicat."
+msgstr[1] "%s grupurile de câmpuri au fost duplicate."
+msgstr[2] "%s grupurile de câmpuri au fost duplicate."
+
+#: admin/field-groups.php:228
+#, php-format
+msgid "Field group synchronised. %s"
+msgstr "Grupul de câmpuri a fost sincronizat. %s"
+
+#: admin/field-groups.php:232
+#, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] "%s grupul de câmpuri a fost sincronizat."
+msgstr[1] "%s grupurile de câmpuri au fost sincronizate."
+msgstr[2] "%s grupurile de câmpuri au fost sincronizate."
+
+#: admin/field-groups.php:403 admin/field-groups.php:573
+msgid "Sync available"
+msgstr "Sincronizare disponibilă"
+
+#: admin/field-groups.php:516
+msgid "Title"
+msgstr "Titlu"
+
+#: admin/field-groups.php:517 admin/views/field-group-options.php:98
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+msgid "Description"
+msgstr ""
+
+#: admin/field-groups.php:518 admin/views/field-group-options.php:10
+msgid "Status"
+msgstr ""
+
+#: admin/field-groups.php:616 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "Catalog schimbări"
+
+#: admin/field-groups.php:617
+msgid "See what's new in"
+msgstr "Vezi ce este nou în"
+
+#: admin/field-groups.php:617
+msgid "version"
+msgstr "versiunea"
+
+#: admin/field-groups.php:619
+msgid "Resources"
+msgstr "Resurse"
+
+#: admin/field-groups.php:621
+msgid "Getting Started"
+msgstr "Pentru început"
+
+#: admin/field-groups.php:622 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr "Actualizări"
+
+#: admin/field-groups.php:623
+msgid "Field Types"
+msgstr "Tiurile Câmpului"
+
+#: admin/field-groups.php:624
+msgid "Functions"
+msgstr "Funcții"
+
+#: admin/field-groups.php:625
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: admin/field-groups.php:626 fields/relationship.php:718
+msgid "Filters"
+msgstr "Filtre"
+
+#: admin/field-groups.php:627
+msgid "'How to' guides"
+msgstr "Ghiduri 'Cum să...'"
+
+#: admin/field-groups.php:628
+msgid "Tutorials"
+msgstr "Tutoriale"
+
+#: admin/field-groups.php:633
+msgid "Created by"
+msgstr "Creat de"
+
+#: admin/field-groups.php:673
+msgid "Duplicate this item"
+msgstr "Copiază acest item"
+
+#: admin/field-groups.php:673 admin/field-groups.php:685
+#: admin/views/field-group-field.php:58 pro/fields/flexible-content.php:516
+msgid "Duplicate"
+msgstr "Copiază"
+
+#: admin/field-groups.php:724
+#, php-format
+msgid "Select %s"
+msgstr "Selectează %s"
+
+#: admin/field-groups.php:730
+msgid "Synchronise field group"
+msgstr "Sincronizare grup de câmpuri"
+
+#: admin/field-groups.php:730 admin/field-groups.php:750
+msgid "Sync"
+msgstr "Sincronizare"
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr "Suplimente"
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr "<b>Eroare</b>. Lista de suplimente nu poate fi încărcată"
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr "Informații"
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr "Ce este nou"
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:9
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr ""
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:365
+msgid "No field groups selected"
+msgstr "Nu a fost selectat nici un grup de câmpuri"
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr "Nu a fost selectat nici un fișier"
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr "Eroare la încărcarea fișierului. Încearcă din nou"
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr "Tipul fișierului este incorect"
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr "Fișierul import este gol"
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr "<b>Suces</b>. Unealta import a adaugat %s grupuri de câmpuri: %s"
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+"<b>Atenție</b>. Unealta import a detectat %s grupuri de câmpuri care exista "
+"deja și a ignorat: %s"
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr ""
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr ""
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "Îmbunătățire"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr ""
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr "Condiție Logică"
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:137 fields/checkbox.php:246
+#: fields/message.php:117 fields/page_link.php:568 fields/page_link.php:582
+#: fields/post_object.php:434 fields/post_object.php:448 fields/select.php:411
+#: fields/select.php:425 fields/select.php:439 fields/select.php:453
+#: fields/tab.php:172 fields/taxonomy.php:770 fields/taxonomy.php:784
+#: fields/taxonomy.php:798 fields/taxonomy.php:812 fields/user.php:457
+#: fields/user.php:471 fields/wysiwyg.php:384
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "Da"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:138 fields/checkbox.php:247
+#: fields/message.php:118 fields/page_link.php:569 fields/page_link.php:583
+#: fields/post_object.php:435 fields/post_object.php:449 fields/select.php:412
+#: fields/select.php:426 fields/select.php:440 fields/select.php:454
+#: fields/tab.php:173 fields/taxonomy.php:685 fields/taxonomy.php:771
+#: fields/taxonomy.php:785 fields/taxonomy.php:799 fields/taxonomy.php:813
+#: fields/user.php:458 fields/user.php:472 fields/wysiwyg.php:385
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "Nu"
+
+#: admin/views/field-group-field-conditional-logic.php:65
+msgid "Show this field if"
+msgstr "Arată acest câmp dacă"
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:88
+msgid "is equal to"
+msgstr "este egal cu"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:89
+msgid "is not equal to"
+msgstr "nu este egal cu"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:118
+msgid "and"
+msgstr "și"
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:133
+msgid "Add rule group"
+msgstr "Adaugă grup de reguli"
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:57
+msgid "Edit field"
+msgstr "Editează câmp"
+
+#: admin/views/field-group-field.php:57 pro/fields/gallery.php:355
+msgid "Edit"
+msgstr "Editeză"
+
+#: admin/views/field-group-field.php:58
+msgid "Duplicate field"
+msgstr "Copiază câmp"
+
+#: admin/views/field-group-field.php:59
+msgid "Move field to another group"
+msgstr "Mută acest câmp în alt grup"
+
+#: admin/views/field-group-field.php:59
+msgid "Move"
+msgstr "Mută"
+
+#: admin/views/field-group-field.php:60
+msgid "Delete field"
+msgstr "Șterge câmp"
+
+#: admin/views/field-group-field.php:60 pro/fields/flexible-content.php:515
+msgid "Delete"
+msgstr "Șterge"
+
+#: admin/views/field-group-field.php:68 fields/oembed.php:212
+#: fields/taxonomy.php:886
+msgid "Error"
+msgstr "Eroare"
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr "Eroare."
+
+#: admin/views/field-group-field.php:68
+msgid "Field type does not exist"
+msgstr "Tipul câmpului nu există"
+
+#: admin/views/field-group-field.php:81
+msgid "Field Label"
+msgstr "Etichetă Câmp"
+
+#: admin/views/field-group-field.php:82
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Acesta este numele care va apărea în pagina de editare"
+
+#: admin/views/field-group-field.php:93
+msgid "Field Name"
+msgstr "Nume Câmp"
+
+#: admin/views/field-group-field.php:94
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr ""
+"Un singur cuvânt, fără spații. Caracterele _ (underscore) și - (minus) sunt "
+"permise"
+
+#: admin/views/field-group-field.php:105
+msgid "Field Type"
+msgstr "Tipul Câmpului"
+
+#: admin/views/field-group-field.php:118 fields/tab.php:143
+msgid "Instructions"
+msgstr "Instrucțiuni"
+
+#: admin/views/field-group-field.php:119
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Instrucțiuni pentru autor. Sunt afișate când se adaugă valori"
+
+#: admin/views/field-group-field.php:130
+msgid "Required?"
+msgstr "Obligatoriu?"
+
+#: admin/views/field-group-field.php:158
+msgid "Wrapper Attributes"
+msgstr "Atributele Wrapper-ului"
+
+#: admin/views/field-group-field.php:164
+msgid "width"
+msgstr "lățime"
+
+#: admin/views/field-group-field.php:178
+msgid "class"
+msgstr "clasă"
+
+#: admin/views/field-group-field.php:191
+msgid "id"
+msgstr "id"
+
+#: admin/views/field-group-field.php:203
+msgid "Close Field"
+msgstr "Închide Câmpul"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr "Ordine"
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:541
+msgid "Label"
+msgstr "Etichetă"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:554
+msgid "Name"
+msgstr "Nume"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr "Tip"
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"Nici un câmp. Click pe butonul <strong>+ Adaugă Câmp</strong> pentru a crea "
+"primul câmp."
+
+#: admin/views/field-group-fields.php:51
+msgid "Drag and drop to reorder"
+msgstr "Trage și eliberează pentru a ordona"
+
+#: admin/views/field-group-fields.php:54
+msgid "+ Add Field"
+msgstr "+ Adaugă Câmp"
+
+#: admin/views/field-group-locations.php:5
+msgid "Rules"
+msgstr "Reguli"
+
+#: admin/views/field-group-locations.php:6
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"Crează un set de reguli pentru a determina unde vor fi afișate aceste "
+"câmpuri avansate personalizate"
+
+#: admin/views/field-group-locations.php:21
+msgid "Show this field group if"
+msgstr "Arată acest grup de câmpuri dacă"
+
+#: admin/views/field-group-locations.php:41
+#: admin/views/field-group-locations.php:47
+msgid "Post"
+msgstr "Articol"
+
+#: admin/views/field-group-locations.php:42 fields/relationship.php:724
+msgid "Post Type"
+msgstr "Tipul Articolului"
+
+#: admin/views/field-group-locations.php:43
+msgid "Post Status"
+msgstr "Starea Articolui"
+
+#: admin/views/field-group-locations.php:44
+msgid "Post Format"
+msgstr "Formatul Articolului"
+
+#: admin/views/field-group-locations.php:45
+msgid "Post Category"
+msgstr "Categoria Articolului"
+
+#: admin/views/field-group-locations.php:46
+msgid "Post Taxonomy"
+msgstr "Taxonomia Articolului"
+
+#: admin/views/field-group-locations.php:49
+#: admin/views/field-group-locations.php:53
+msgid "Page"
+msgstr "Pagina"
+
+#: admin/views/field-group-locations.php:50
+msgid "Page Template"
+msgstr "Macheta Pagini"
+
+#: admin/views/field-group-locations.php:51
+msgid "Page Type"
+msgstr "Tipul Pagini"
+
+#: admin/views/field-group-locations.php:52
+msgid "Page Parent"
+msgstr "Pagina Părinte"
+
+#: admin/views/field-group-locations.php:55 fields/user.php:36
+msgid "User"
+msgstr "Utilizatorul"
+
+#: admin/views/field-group-locations.php:56
+msgid "Current User"
+msgstr "Utilizatorul Curent"
+
+#: admin/views/field-group-locations.php:57
+msgid "Current User Role"
+msgstr "Rolul Utilizatorului Curent"
+
+#: admin/views/field-group-locations.php:58
+msgid "User Form"
+msgstr "Formularul Utilizatorului"
+
+#: admin/views/field-group-locations.php:59
+msgid "User Role"
+msgstr "Rolul Utilizatorului"
+
+#: admin/views/field-group-locations.php:61 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr "Formulare"
+
+#: admin/views/field-group-locations.php:62
+msgid "Attachment"
+msgstr "Atașament"
+
+#: admin/views/field-group-locations.php:63
+msgid "Taxonomy Term"
+msgstr "Termenul Taxonomiei"
+
+#: admin/views/field-group-locations.php:64
+msgid "Comment"
+msgstr "Comentariu"
+
+#: admin/views/field-group-locations.php:65
+msgid "Widget"
+msgstr "Piesă"
+
+#: admin/views/field-group-options.php:25
+msgid "Style"
+msgstr "Stil"
+
+#: admin/views/field-group-options.php:32
+msgid "Standard (WP metabox)"
+msgstr "Standard (asemănător WP, folosește metabox-uri)"
+
+#: admin/views/field-group-options.php:33
+msgid "Seamless (no metabox)"
+msgstr "Seamless (fără metabox-uri)"
+
+#: admin/views/field-group-options.php:40
+msgid "Position"
+msgstr "Poziție"
+
+#: admin/views/field-group-options.php:47
+msgid "High (after title)"
+msgstr "Mare (după titlul aricolului / paginii)"
+
+#: admin/views/field-group-options.php:48
+msgid "Normal (after content)"
+msgstr "Normal (dupa conținutul articolului / paginii)"
+
+#: admin/views/field-group-options.php:49
+msgid "Side"
+msgstr "Lateral"
+
+#: admin/views/field-group-options.php:57
+msgid "Label placement"
+msgstr "Poziționarea etichetei"
+
+#: admin/views/field-group-options.php:64 fields/tab.php:159
+msgid "Top aligned"
+msgstr "Aliniere Sus"
+
+#: admin/views/field-group-options.php:65 fields/tab.php:160
+msgid "Left Aligned"
+msgstr "Aliniere Stanga"
+
+#: admin/views/field-group-options.php:72
+msgid "Instruction placement"
+msgstr "Plasamentul instrucțiunilor"
+
+#: admin/views/field-group-options.php:79
+msgid "Below labels"
+msgstr "Sub etichete"
+
+#: admin/views/field-group-options.php:80
+msgid "Below fields"
+msgstr "Sub câmpuri"
+
+#: admin/views/field-group-options.php:87
+msgid "Order No."
+msgstr "Nr. crt."
+
+#: admin/views/field-group-options.php:88
+msgid "Field groups with a lower order will appear first"
+msgstr ""
+
+#: admin/views/field-group-options.php:99
+msgid "Shown in field group list"
+msgstr ""
+
+#: admin/views/field-group-options.php:109
+msgid "Hide on screen"
+msgstr "Ascunde pe ecran"
+
+#: admin/views/field-group-options.php:110
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr ""
+"<b>Selectează</b> ce opțiuni să fie <b>ascune</b> din ecranul de editare al "
+"articolului sau al paginii."
+
+#: admin/views/field-group-options.php:110
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+"Daca în ecranul de editare al articolului / paginii apar mai multiple "
+"grupuri de câmpuri, atunci opțiunile primul grup de câmpuri vor fi folosite "
+"(cel cu numărul de ordine cel mai mic)"
+
+#: admin/views/field-group-options.php:117
+msgid "Permalink"
+msgstr "Legătură permanentă"
+
+#: admin/views/field-group-options.php:118
+msgid "Content Editor"
+msgstr "Editorul de conținut"
+
+#: admin/views/field-group-options.php:119
+msgid "Excerpt"
+msgstr "Descriere scurtă"
+
+#: admin/views/field-group-options.php:121
+msgid "Discussion"
+msgstr "Discuții"
+
+#: admin/views/field-group-options.php:122
+msgid "Comments"
+msgstr "Comentarii"
+
+#: admin/views/field-group-options.php:123
+msgid "Revisions"
+msgstr "Revizii"
+
+#: admin/views/field-group-options.php:124
+msgid "Slug"
+msgstr "Slug"
+
+#: admin/views/field-group-options.php:125
+msgid "Author"
+msgstr "Autor"
+
+#: admin/views/field-group-options.php:126
+msgid "Format"
+msgstr "Format"
+
+#: admin/views/field-group-options.php:127
+msgid "Page Attributes"
+msgstr "Atributele Paginii"
+
+#: admin/views/field-group-options.php:128 fields/relationship.php:737
+msgid "Featured Image"
+msgstr "Imagine Reprezentativă"
+
+#: admin/views/field-group-options.php:129
+msgid "Categories"
+msgstr "Categorii"
+
+#: admin/views/field-group-options.php:130
+msgid "Tags"
+msgstr "Etichete"
+
+#: admin/views/field-group-options.php:131
+msgid "Send Trackbacks"
+msgstr "Trackback-uri"
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr "Descarcă & Instalează"
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr "Instalat"
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr "Bine ai venit la Câmpuri Personalizate Avansate"
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr ""
+"Iți mulțumim pentru actualizare! ACF %s  a devenit mai mare și mai bun. "
+"Sperăm să-ți placă."
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr "O folosire mai ușoara a câmpurilor personalizate."
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr "Folosire Facilă"
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+"Includerea popularei librării Select2 a îmbunătățit folosirea dar și viteaza "
+"pentru un număr ridicat de tipuri de câmpuri care includ, obiectele articol, "
+"legătura paginii, taxonomia și selecția. "
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr "Design îmbunătățit"
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+"Multe câmpuri au dobândit un nou design vizual pentru a face ACF un produs "
+"mai ușor de folosit! Schimbările pot fi văzute în special, la câmpurile "
+"Galerie, Relații și oEmbed(nou)!"
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr "Tipuri de Date imbunătățite"
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+"Refacerea arhitecturii tipurilor de date a permis ca sub câmpurile să fie "
+"independente de câmpurile părinte. Acest lucru vă permite să trageți și să "
+"eliberați câmpurile în și în afara câmpurilor părinte!"
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr "La revedere Add-onuri. Salut PRO"
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr "Introducere în ACF PRO"
+
+#: admin/views/settings-info.php:51
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr "Am schimbat modul în care funcționalitatea premium este transmisă!"
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+"Toate cele 4 add-onuri premium au fost combinate într-o nouă <a href=\"%s"
+"\">Versiune PRO a ACF</a>. Putând alege licența personală sau licența de "
+"developer, funcționalitatea premium este acum mai accesibilă ca niciodată!"
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr "Caracteristici puternice"
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+"ACF PRO conține caracteristici puternice cum ar fi date repetabile, machete "
+"de conținut flexibil, un frumos câmp pentru galerie și puterea de a crea "
+"pagini administrative de opțiuni!"
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr "Citește mai mult despre <a href=\"%s\">Caracteristicile ACF PRO</a>."
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr "Actualizare ușoară"
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+"Pentru a facilita actualizarea într-un mod ușor, <a href=\"%s\">intră în "
+"contul tău</a> și obține o copie gratis a ACF PRO!"
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+"De asemenea am pus la dispoziția ta <a href=\"%s\">un ghid de actualizare</"
+"a> pentru a răspunde tuturor întrebărilor, dar dacă totuși ai o întrebare, "
+"te rog sa contactezi echipa noastră de suport, folosind <a href=\"%s\">help "
+"desk</a>"
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr "Sub capată"
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr "Setări deștepte ale câmpurilor"
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr ""
+"ACF salvează acum setările câmpurilor ca fiind obiecte de tip articol "
+"individuale"
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr "Mai mult AJAX"
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr ""
+"Mai multe câmpuri folosesc puterea de căutare AJAX pentru a micșora timpul "
+"de încărcare al paginii"
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr "JSON local"
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr "Noua funcționalitate de auto import în JSON îmbunătățește viteza"
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr "Un control mai bun al versiunii"
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+"Noua funcționalitate de auto export în JSON permite ca setările câmpurilor "
+"să fie ”version controlled”"
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr "Am schimbat XML în favoarea JSON"
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr "Importul / Exportul folosește acum JSON în defavoarea XML"
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr "Noi formulare"
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr ""
+"Câmpurile pot fi acum mapate la comentarii, widget-uri sau orice alt "
+"formular creat de user!"
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr "Un nou câmp pentru încorporarea conținutului a fost adaugat"
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr "Galerie Nouă"
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr "Câmpul Galierie a suferit un facelift bine meritat"
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr "Configurări noi"
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr ""
+"Setările grupului de câmpuri a fost adăugat pentru poziționarea etichitelor "
+"și a instrucțiunilor"
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr "Formulare Front End mai bune"
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr ""
+"acf_form() poate crea acum un nou articol odată ce cererea a fost trimisă"
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr "O validare mai bună"
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr ""
+"Validarea formularelor se face acum via PHP + AJAX în defavoarea numai JS"
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr "Câmp de realționare"
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr ""
+"Setările noului câmp de relaționare pentru Filtre (Caută, Tipul Articolului, "
+"Taxonomie)"
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr "Câmpuri care pot fi mutate"
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr ""
+"Noua funcționalitate a grupului de câmpuri îți permite acum să muți "
+"câmpurile între grupuri"
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "Legătura Paginii"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr "Noua arhivă de grup în selecția page_link "
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr "Opțiuni mai bune pentru Pagini"
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr ""
+"Noile funcții pentru opțiunile pagini îți permite acum create de pagini "
+"meniu și submeniuri"
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr "Credem că vei îndrăgi shimbările în %s."
+
+#: admin/views/settings-tools-export.php:13
+msgid "Export Field Groups to PHP"
+msgstr "Exportă Grupurile de Câmpuri în PHP"
+
+#: admin/views/settings-tools-export.php:17
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"Următorul bloc de cod poate fi folosit pentru a înregistra o copie locală a "
+"grupului(lor) de câmpuri selectat(e). Un grup de câmpuri local poate "
+"facilita multe beneficii cum ar fi un timp de încărcare mai mic, control al "
+"versiunii și câmpuri / setări dinamice. Pentru a beneficia de toate acestea "
+"nu trebuie decât să copiați și să inserați următorul bloc de cod în fișierul "
+"functions.php al temei sau să-l includeți într-un fișier extern."
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr "Selectați Grupurile de Câmpuri"
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr "Exportați Grupurile de Câmputri"
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"Selectați grupurile de câmpuri pe care doriți să le exportați și apoi "
+"selectați metoda de export. Folosiți butonul de descărcare pentru a exporta "
+"într-un fișier .json pe care apoi îl puteți folosi pentru a importa într-o "
+"altă instalare a ACF. Folosiți butonul Generare pentru a exporta totul în "
+"cod PHP, pe care îl puteți pune apoi in tema voastră."
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr "Descarcă fișierul de export"
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr "Generează codul de export"
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "Importă Grupurile de câmpuri"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"Alege fișierul JSON ACF pe care dorești să-l imporți. Când vei apăsa butonul "
+"import de mai jos, ACF v-a importa toate grupurile de câmpuri."
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "Selectează fișierul"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr "Importă"
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr ""
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr ""
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr ""
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr ""
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr ""
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+"Este puternic recomandat să faceți o copie de siguranța a bazei de date "
+"înainte de a începe procesul de actualizare. Ești sigur că vrei să începi "
+"actualizarea acum?"
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr ""
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr ""
+
+#: admin/views/update-notice.php:23
+msgid "Database Upgrade Required"
+msgstr "Actualizare bazei de date este necesară"
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr "Îți mulțumim pentru actualizarea făcută la %s v%s!"
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+"Înainte de a începe să folosești uimitoarele funcții noi, te rungăm să "
+"actualizezi baza de date la o versiune mai recentă."
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr "Citirea sarcinilor necesare pentru actualizare..."
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr "Actualizarea datelor la versiunea %s"
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr "Află ce este nou"
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr ""
+
+#: api/api-helpers.php:821
+msgid "Thumbnail"
+msgstr "Miniatură"
+
+#: api/api-helpers.php:822
+msgid "Medium"
+msgstr "Mediu"
+
+#: api/api-helpers.php:823
+msgid "Large"
+msgstr "Mare"
+
+#: api/api-helpers.php:871
+msgid "Full Size"
+msgstr "Marime completă"
+
+#: api/api-helpers.php:1581
+msgid "(no title)"
+msgstr "(fără titlu)"
+
+#: api/api-helpers.php:3183
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr "Lățimea imaginii trebuie să fie cel puțin %dpx."
+
+#: api/api-helpers.php:3188
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr "Lățimea imaginii nu trebuie să depășească %dpx."
+
+#: api/api-helpers.php:3204
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr "Înălțimea imaginii trebuie să fie cel puțin %dpx."
+
+#: api/api-helpers.php:3209
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr "Înălțimea imaginii nu trebuie să depășească %dpx."
+
+#: api/api-helpers.php:3227
+#, php-format
+msgid "File size must be at least %s."
+msgstr "Mărimea fișierului trebuie să fie cel puțin %s."
+
+#: api/api-helpers.php:3232
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr "Mărimea fișierului nu trebuie să depășească %s."
+
+#: api/api-helpers.php:3266
+#, php-format
+msgid "File type must be %s."
+msgstr "Tipul fișierului trebuie să fie %s."
+
+#: api/api-template.php:1289 pro/fields/gallery.php:564
+msgid "Update"
+msgstr "Actualizează"
+
+#: api/api-template.php:1290
+msgid "Post updated"
+msgstr "Articol Actualizat"
+
+#: core/field.php:131
+msgid "Basic"
+msgstr "De bază"
+
+#: core/field.php:132
+msgid "Content"
+msgstr "Conținut"
+
+#: core/field.php:133
+msgid "Choice"
+msgstr "Alegere"
+
+#: core/field.php:134
+msgid "Relational"
+msgstr "Relațional"
+
+#: core/field.php:135
+msgid "jQuery"
+msgstr "jQuery"
+
+#: core/field.php:136 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:512 pro/fields/repeater.php:392
+msgid "Layout"
+msgstr "Schemă"
+
+#: core/input.php:129
+msgid "Expand Details"
+msgstr "Extinde Detaliile"
+
+#: core/input.php:130
+msgid "Collapse Details"
+msgstr "Închide Detaliile"
+
+#: core/input.php:131
+msgid "Validation successful"
+msgstr "Validare a fost făcută cu succes"
+
+#: core/input.php:132
+msgid "Validation failed"
+msgstr "Validarea a eșuat"
+
+#: core/input.php:133
+msgid "1 field requires attention"
+msgstr ""
+
+#: core/input.php:134
+#, php-format
+msgid "%d fields require attention"
+msgstr ""
+
+#: core/input.php:135
+msgid "Restricted"
+msgstr ""
+
+#: core/input.php:533
+#, php-format
+msgid "%s value is required"
+msgstr "%s valoarea este obligatorie"
+
+#: fields/checkbox.php:36 fields/taxonomy.php:752
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr "Comută tot"
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:388
+msgid "Choices"
+msgstr "Alegere"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "Enter each choice on a new line."
+msgstr "Pune fiecare alegere pe o linie nouă."
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "For more control, you may specify both a value and label like this:"
+msgstr ""
+"Pentru un mai bun control, poți specifica o valoare și o etichetă ca de "
+"exemplu:"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "red : Red"
+msgstr "roșu : Roșu"
+
+#: fields/checkbox.php:217 fields/color_picker.php:158 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:397
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:345
+msgid "Default Value"
+msgstr "Valoare implicită"
+
+#: fields/checkbox.php:218 fields/select.php:398
+msgid "Enter each default value on a new line"
+msgstr "Introdu fiecare valoare implicită pe o linie nouă"
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "Vertical"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "Orizontal"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr ""
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr ""
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "Alege Culoarea"
+
+#: fields/color_picker.php:94
+msgid "Clear"
+msgstr "Curăță"
+
+#: fields/color_picker.php:95
+msgid "Default"
+msgstr "Implicit"
+
+#: fields/color_picker.php:96
+msgid "Select Color"
+msgstr "Alege Culoarea"
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "Alege data calendaristică"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr "Terminare"
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr "Azi"
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr "Arată o altă lună"
+
+#: fields/date_picker.php:149
+msgid "Display Format"
+msgstr "Formatul de Afișare"
+
+#: fields/date_picker.php:150
+msgid "The format displayed when editing a post"
+msgstr "Formatul afișat în momentul editării unui articol"
+
+#: fields/date_picker.php:164
+msgid "Return format"
+msgstr "Fromatul rezultat"
+
+#: fields/date_picker.php:165
+msgid "The format returned via template functions"
+msgstr "Formatul rezultat via funcțiilor șablon"
+
+#: fields/date_picker.php:180
+msgid "Week Starts On"
+msgstr "Săptămâna începe în ziua de"
+
+#: fields/email.php:36
+msgid "Email"
+msgstr "Adresă de email"
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:346
+msgid "Appears when creating a new post"
+msgstr "Apare cănd creați un articol nou"
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr "Textul afișat ca placeholder"
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr "Apare în intrare"
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr "Prefixează"
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr "Apare înainte de intrare"
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr "Adaugă"
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr "Apare după intrare"
+
+#: fields/file.php:36
+msgid "File"
+msgstr "Fișier"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "Editează fișierul"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "Actualizează fișierul"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr "încărcate la acest articol"
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr "Numele fișierului"
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr "Mărimea fișierului"
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr "Nu a fost selectat nici un fișier"
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "Adaugă fișier"
+
+#: fields/file.php:214 fields/image.php:195 fields/taxonomy.php:821
+msgid "Return Value"
+msgstr "Valoarea returnată"
+
+#: fields/file.php:215 fields/image.php:196
+msgid "Specify the returned value on front end"
+msgstr "Specificați valoarea returnată în front end"
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr "Mulțime de fișier"
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "Cale Fișier"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr "ID Fișier"
+
+#: fields/file.php:229 fields/image.php:220 pro/fields/gallery.php:647
+msgid "Library"
+msgstr "Librărie"
+
+#: fields/file.php:230 fields/image.php:221 pro/fields/gallery.php:648
+msgid "Limit the media library choice"
+msgstr "Limitați alegerea librăriei media"
+
+#: fields/file.php:236 fields/image.php:227 pro/fields/gallery.php:654
+msgid "Uploaded to post"
+msgstr "Încărcate pentru acest articol"
+
+#: fields/file.php:243 fields/image.php:234 pro/fields/gallery.php:661
+msgid "Minimum"
+msgstr "Minim"
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr "Restricționați ce tipuri de fișiere pot fi încărcate"
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:257
+#: fields/image.php:290 pro/fields/gallery.php:684 pro/fields/gallery.php:717
+msgid "File size"
+msgstr "Mărime fișier"
+
+#: fields/file.php:254 fields/image.php:267 pro/fields/gallery.php:694
+msgid "Maximum"
+msgstr "Maxim"
+
+#: fields/file.php:265 fields/image.php:300 pro/fields/gallery.php:727
+msgid "Allowed file types"
+msgstr "Tipuri de fișiere permise"
+
+#: fields/file.php:266 fields/image.php:301 pro/fields/gallery.php:728
+msgid "Comma separated list. Leave blank for all types"
+msgstr "Listă separată prin virgulă. Lăsați liber pentru toate tipurile"
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr "Hartă Google"
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr "Localizare"
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr "Ne pare rău, acest broswer nu suportă geo locația"
+
+#: fields/google-map.php:135
+msgid "Clear location"
+msgstr "Sterge Locația"
+
+#: fields/google-map.php:140
+msgid "Find current location"
+msgstr "Găsește locația curentă"
+
+#: fields/google-map.php:141
+msgid "Search for address..."
+msgstr "Caută adresa..."
+
+#: fields/google-map.php:173 fields/google-map.php:184
+msgid "Center"
+msgstr "Centru"
+
+#: fields/google-map.php:174 fields/google-map.php:185
+msgid "Center the initial map"
+msgstr "Centrează harta inițială"
+
+#: fields/google-map.php:198
+msgid "Zoom"
+msgstr "Zoom"
+
+#: fields/google-map.php:199
+msgid "Set the initial zoom level"
+msgstr "Setează nivelul de zoom inițial"
+
+#: fields/google-map.php:208 fields/image.php:246 fields/image.php:279
+#: fields/oembed.php:262 pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Height"
+msgstr "Înălțime"
+
+#: fields/google-map.php:209
+msgid "Customise the map height"
+msgstr "Personalizați înălțimea hărții"
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Imagine"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "Alege imaginea"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "Editează imaginea"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "Actualizează imaginea"
+
+#: fields/image.php:54
+msgid "Uploaded to this post"
+msgstr "Încărcate pentru acest articol"
+
+#: fields/image.php:55
+msgid "All images"
+msgstr "Toate imaginiile"
+
+#: fields/image.php:147
+msgid "No image selected"
+msgstr "Nu ai selectat nici o imagine"
+
+#: fields/image.php:147
+msgid "Add Image"
+msgstr "Adaugă o imagine"
+
+#: fields/image.php:201
+msgid "Image Array"
+msgstr "Mulțime de imagini"
+
+#: fields/image.php:202
+msgid "Image URL"
+msgstr "URL-ul imaginii"
+
+#: fields/image.php:203
+msgid "Image ID"
+msgstr "ID-ul imaginii"
+
+#: fields/image.php:210 pro/fields/gallery.php:637
+msgid "Preview Size"
+msgstr "Dimensiunea previzualizării"
+
+#: fields/image.php:211 pro/fields/gallery.php:638
+msgid "Shown when entering data"
+msgstr "Afișat la introducerea datelor"
+
+#: fields/image.php:235 fields/image.php:268 pro/fields/gallery.php:662
+#: pro/fields/gallery.php:695
+msgid "Restrict which images can be uploaded"
+msgstr "Restricționează care imagini pot fi încărcate"
+
+#: fields/image.php:238 fields/image.php:271 fields/oembed.php:251
+#: pro/fields/gallery.php:665 pro/fields/gallery.php:698
+msgid "Width"
+msgstr "Lățime"
+
+#: fields/message.php:36 fields/message.php:103 fields/true_false.php:106
+msgid "Message"
+msgstr "Mesaj"
+
+#: fields/message.php:104
+msgid "Please note that all text will first be passed through the wp function "
+msgstr ""
+"Vă rugăm să rețineți că toate textele vor fi mai întâi trecute prin funcția "
+"wp"
+
+#: fields/message.php:112
+msgid "Escape HTML"
+msgstr "Scăpare HTML"
+
+#: fields/message.php:113
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr ""
+"Permite markup-ului HTML să fie afișat că text vizibil în loc să fie "
+"interpretat"
+
+#: fields/number.php:36
+msgid "Number"
+msgstr "Număr"
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr "Valoare minimă"
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr "Valoare maximă"
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr "Mărime pas"
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr "Valoarea trebuie să fie un număr"
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr "Valoarea trebuie să fie egală sau mai mare decât %d"
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr "Valoarea trebuie să fie egală sau mai mică decât %d"
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr "oEmbed"
+
+#: fields/oembed.php:199
+msgid "Enter URL"
+msgstr "Introduceți URL"
+
+#: fields/oembed.php:212
+msgid "No embed found for the given URL."
+msgstr "Nu a fost găsit nici un oembed pentru URL introdus."
+
+#: fields/oembed.php:248 fields/oembed.php:259
+msgid "Embed Size"
+msgstr "Marimea Embed"
+
+#: fields/page_link.php:206
+msgid "Archives"
+msgstr "Arhive"
+
+#: fields/page_link.php:535 fields/post_object.php:401
+#: fields/relationship.php:690
+msgid "Filter by Post Type"
+msgstr "Filtur dupa Tipul Articolului"
+
+#: fields/page_link.php:543 fields/post_object.php:409
+#: fields/relationship.php:698
+msgid "All post types"
+msgstr "Toate Tipurile Articolului"
+
+#: fields/page_link.php:549 fields/post_object.php:415
+#: fields/relationship.php:704
+msgid "Filter by Taxonomy"
+msgstr "Filtru după Taxonomie"
+
+#: fields/page_link.php:557 fields/post_object.php:423
+#: fields/relationship.php:712
+msgid "All taxonomies"
+msgstr "Toate Taxonomiile"
+
+#: fields/page_link.php:563 fields/post_object.php:429 fields/select.php:406
+#: fields/taxonomy.php:765 fields/user.php:452
+msgid "Allow Null?"
+msgstr "Permite valori nule?"
+
+#: fields/page_link.php:577 fields/post_object.php:443 fields/select.php:420
+#: fields/user.php:466
+msgid "Select multiple values?"
+msgstr "Permite selecția de valori multiple?"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr "Parolă"
+
+#: fields/post_object.php:36 fields/post_object.php:462
+#: fields/relationship.php:769
+msgid "Post Object"
+msgstr "Obiect Articol"
+
+#: fields/post_object.php:457 fields/relationship.php:764
+msgid "Return Format"
+msgstr "Formatul Returnat"
+
+#: fields/post_object.php:463 fields/relationship.php:770
+msgid "Post ID"
+msgstr "ID-ul Articolului"
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "Buton Radio"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "Altceva"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr "Adaugă 'Altceva' pentru a permite o valoare personalizată"
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr "Salvează Altceva"
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr "Salvează valoarea 'Altceva' la opțiunile câmpului"
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "Relație"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr ""
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "Valorile maxime atinse  ( {max} valori )"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr "Se încarcă"
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr "Nici un rezultat"
+
+#: fields/relationship.php:571
+msgid "Search..."
+msgstr "Caută..."
+
+#: fields/relationship.php:580
+msgid "Select post type"
+msgstr "Alegeți tipul articolului"
+
+#: fields/relationship.php:593
+msgid "Select taxonomy"
+msgstr "Alegeți taxonomia"
+
+#: fields/relationship.php:723
+msgid "Search"
+msgstr "Caută"
+
+#: fields/relationship.php:725 fields/taxonomy.php:36 fields/taxonomy.php:735
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#: fields/relationship.php:732
+msgid "Elements"
+msgstr "Elemente"
+
+#: fields/relationship.php:733
+msgid "Selected elements will be displayed in each result"
+msgstr "Elementele selectate vor apărea în fiecare rezultat"
+
+#: fields/relationship.php:744
+msgid "Minimum posts"
+msgstr ""
+
+#: fields/relationship.php:753
+msgid "Maximum posts"
+msgstr "Numărul maxim de articole"
+
+#: fields/select.php:36 fields/select.php:174 fields/taxonomy.php:757
+msgid "Select"
+msgstr "Selectează"
+
+#: fields/select.php:434
+msgid "Stylised UI"
+msgstr "UI stilizat"
+
+#: fields/select.php:448
+msgid "Use AJAX to lazy load choices?"
+msgstr "Folosiți AJAX pentru a încărca alegerile în modul ”Lazy Load”?"
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr "Tab"
+
+#: fields/tab.php:128
+msgid "Warning"
+msgstr "Atenție"
+
+#: fields/tab.php:133
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+"Câmpul Tab nu va fi afișat corect când vei adauga un Câmp de tipul Tabel de "
+"stiluri repetitiv sau un Câmp de tipul Schemă de Conținut Flexibil"
+
+#: fields/tab.php:146
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+"Folosește  \"Tab Fields\" pentru o mai ușoară organizare și grupare a "
+"câmpurilor."
+
+#: fields/tab.php:148
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+"Toate câmpurile care urmează după acest  \"tab field\" (sau până când un "
+"alt  \"tab field\" este definit) vor fi grupate împreună folosind eticheta "
+"acestui câmp ca fiind Titlul Tabului."
+
+#: fields/tab.php:155
+msgid "Placement"
+msgstr "Plasament"
+
+#: fields/tab.php:167
+msgid "End-point"
+msgstr ""
+
+#: fields/tab.php:168
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr ""
+
+#: fields/taxonomy.php:565
+#, php-format
+msgid "Add new %s "
+msgstr ""
+
+#: fields/taxonomy.php:704
+msgid "None"
+msgstr "Nici unul"
+
+#: fields/taxonomy.php:736
+msgid "Select the taxonomy to be displayed"
+msgstr ""
+
+#: fields/taxonomy.php:745
+msgid "Appearance"
+msgstr ""
+
+#: fields/taxonomy.php:746
+msgid "Select the appearance of this field"
+msgstr ""
+
+#: fields/taxonomy.php:751
+msgid "Multiple Values"
+msgstr "Valori multiple"
+
+#: fields/taxonomy.php:753
+msgid "Multi Select"
+msgstr "Selectie multiplă"
+
+#: fields/taxonomy.php:755
+msgid "Single Value"
+msgstr "O singură valoare"
+
+#: fields/taxonomy.php:756
+msgid "Radio Buttons"
+msgstr "Butoane radio"
+
+#: fields/taxonomy.php:779
+msgid "Create Terms"
+msgstr ""
+
+#: fields/taxonomy.php:780
+msgid "Allow new terms to be created whilst editing"
+msgstr ""
+
+#: fields/taxonomy.php:793
+msgid "Save Terms"
+msgstr ""
+
+#: fields/taxonomy.php:794
+msgid "Connect selected terms to the post"
+msgstr ""
+
+#: fields/taxonomy.php:807
+msgid "Load Terms"
+msgstr ""
+
+#: fields/taxonomy.php:808
+msgid "Load value from posts terms"
+msgstr ""
+
+#: fields/taxonomy.php:826
+msgid "Term Object"
+msgstr "Obiectul Termen"
+
+#: fields/taxonomy.php:827
+msgid "Term ID"
+msgstr "ID-ul Termenului"
+
+#: fields/taxonomy.php:886
+#, php-format
+msgid "User unable to add new %s"
+msgstr ""
+
+#: fields/taxonomy.php:899
+#, php-format
+msgid "%s already exists"
+msgstr ""
+
+#: fields/taxonomy.php:940
+#, php-format
+msgid "%s added"
+msgstr ""
+
+#: fields/taxonomy.php:985
+msgid "Add"
+msgstr ""
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "Text"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr "Limită de caractere"
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr "Lasă gol pentru a nu a avea o limită"
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "Zonă de Text"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr "Linii"
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr "Setează înălțimea zonei de text"
+
+#: fields/textarea.php:182
+msgid "New Lines"
+msgstr "Linii Noi"
+
+#: fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr "Controlează cum sunt redate noile linii"
+
+#: fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr "Adaugă automat paragrafe"
+
+#: fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr "Adaugă automat &lt;br&gt;"
+
+#: fields/textarea.php:189
+msgid "No Formatting"
+msgstr "Nici o Formater"
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "Adevărat / False"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "ex. Arată extra conținut"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr "Url"
+
+#: fields/url.php:160
+msgid "Value must be a valid URL"
+msgstr "Valoarea trebuie să fie un URL valid"
+
+#: fields/user.php:437
+msgid "Filter by role"
+msgstr "Filtrează după rol"
+
+#: fields/user.php:445
+msgid "All user roles"
+msgstr "Toate rolurile de utilizator"
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "Editor Wysiwyg "
+
+#: fields/wysiwyg.php:297
+msgid "Visual"
+msgstr "Visual"
+
+#: fields/wysiwyg.php:298
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "Text [ Numele tabului editorului de Text ()]"
+
+#: fields/wysiwyg.php:354
+msgid "Tabs"
+msgstr "Taburi"
+
+#: fields/wysiwyg.php:359
+msgid "Visual & Text"
+msgstr "Vizual & Text"
+
+#: fields/wysiwyg.php:360
+msgid "Visual Only"
+msgstr "Doar Vizual"
+
+#: fields/wysiwyg.php:361
+msgid "Text Only"
+msgstr "Doar Text"
+
+#: fields/wysiwyg.php:368
+msgid "Toolbar"
+msgstr "Bară de instrumente"
+
+#: fields/wysiwyg.php:378
+msgid "Show Media Upload Buttons?"
+msgstr "Arată Butoanele de Încărcare a fișierelor Media"
+
+#: forms/post.php:297 pro/admin/options-page.php:373
+msgid "Edit field group"
+msgstr "Editează Grupul de Câmpuri"
+
+#: pro/acf-pro.php:24
+msgid "Advanced Custom Fields PRO"
+msgstr "Câmpuri Avansate Personalizate PRO"
+
+#: pro/acf-pro.php:175
+msgid "Flexible Content requires at least 1 layout"
+msgstr "Conținutul Flexibil necesită cel puțin 1 schemă"
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "Pagina de Opțiuni"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr "Nu există nicio pagină de opțiuni"
+
+#: pro/admin/options-page.php:298
+msgid "Options Updated"
+msgstr "Opțiunile au fost actualizate"
+
+#: pro/admin/options-page.php:304
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr "Nu a fost găsit nici un grup de câmpuri personalizate. <a href=\"%s\">Creează un Grup de Câmpuri Personalizat</a>"
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b>Eroare</b>. Conexiunea cu servărul a fost pierdută"
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr "<b>Eroare de conexiune</b>. Îmi pare rău, încearcă mai târziu"
+
+#: pro/admin/views/options-page.php:48
+msgid "Publish"
+msgstr "Publică"
+
+#: pro/admin/views/options-page.php:54
+msgid "Save Options"
+msgstr "Salvează Opțiuni"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr "Dezactivează Licența"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr "Activează Licența"
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr "Licență"
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+"Pentru a permite actualizări, te rog să introduci codul de activare în "
+"câmpul de mai jos. Dacă nu deții un cod de activare, te rog vizitează"
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr "detalii & prețuri"
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr "Cod de activare"
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr "Actualizează infromațiile"
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr "Versiunea curentă"
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr "Ultima versiune"
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr "Sunt disponibile actualizări"
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr "Actualizează Modulul"
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr ""
+"Te rog sa introduci codul de activare în câmpul de mai sus pentru a permite "
+"actualizări"
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr "Verifică din nou"
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr "Anunț Actualizări"
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "Opțiuni"
+
+#: pro/core/updates.php:186
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+"Pentru a activa  actualizările, te rog să introduci codul de activare pe "
+"pagina <a href=\"%s\">Actualizări</a>. Dacă nu ai un cod de activare, te rog "
+"sa vizitezi pagina <a href=\"%s\">detalii & prețuri</a>"
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "Conținut Flexibil"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "Adaugă o linie nouă"
+
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr "schemă"
+
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr "scheme"
+
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr "înlătură {layout}?"
+
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr "Acest câmp necesită cel puțin {min} {identifier}"
+
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr "Acest câmp are o limită de {max} {identifier}"
+
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr "Acest câmp necesită cel puțin {min} {label} {identifier}"
+
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr "Numărul maxim de {label} a fost atins ({max} {identifier})"
+
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{available} {label} {identifier} disponibile (max {max})"
+
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{required} {label} {identifier} obligatoriu (min {min})"
+
+#: pro/fields/flexible-content.php:211
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "Apasă butonul  \"%s\" de mai jos pentru a începe să îți creezi schema"
+
+#: pro/fields/flexible-content.php:369
+msgid "Add layout"
+msgstr "Adaugă Schema"
+
+#: pro/fields/flexible-content.php:372
+msgid "Remove layout"
+msgstr "Înlătură Schema"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder Layout"
+msgstr "Reordonează Schema"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder"
+msgstr "Reordonează"
+
+#: pro/fields/flexible-content.php:515
+msgid "Delete Layout"
+msgstr "Șterge Schema"
+
+#: pro/fields/flexible-content.php:516
+msgid "Duplicate Layout"
+msgstr "Copiază Schema"
+
+#: pro/fields/flexible-content.php:517
+msgid "Add New Layout"
+msgstr "Adaugă o Nouă Schemă"
+
+#: pro/fields/flexible-content.php:561
+msgid "Display"
+msgstr "Arată"
+
+#: pro/fields/flexible-content.php:572 pro/fields/repeater.php:399
+msgid "Table"
+msgstr "Tabel"
+
+#: pro/fields/flexible-content.php:573 pro/fields/repeater.php:400
+msgid "Block"
+msgstr "Bloc"
+
+#: pro/fields/flexible-content.php:574 pro/fields/repeater.php:401
+msgid "Row"
+msgstr "Linie"
+
+#: pro/fields/flexible-content.php:589
+msgid "Min"
+msgstr "Min"
+
+#: pro/fields/flexible-content.php:602
+msgid "Max"
+msgstr "Max"
+
+#: pro/fields/flexible-content.php:630 pro/fields/repeater.php:408
+msgid "Button Label"
+msgstr "Buton Etichetă"
+
+#: pro/fields/flexible-content.php:639
+msgid "Minimum Layouts"
+msgstr "Scheme Minime"
+
+#: pro/fields/flexible-content.php:648
+msgid "Maximum Layouts"
+msgstr "Scheme Maxime"
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "Galerie"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "Adaugă imagini în Galerie"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr "Selecția maximă atinsă"
+
+#: pro/fields/gallery.php:335
+msgid "Length"
+msgstr "Lungime"
+
+#: pro/fields/gallery.php:355
+msgid "Remove"
+msgstr "Înlătură"
+
+#: pro/fields/gallery.php:535
+msgid "Add to gallery"
+msgstr "Adaugă în galerie"
+
+#: pro/fields/gallery.php:539
+msgid "Bulk actions"
+msgstr "Acțiuni în masă"
+
+#: pro/fields/gallery.php:540
+msgid "Sort by date uploaded"
+msgstr "Sortează după data încărcării"
+
+#: pro/fields/gallery.php:541
+msgid "Sort by date modified"
+msgstr "Sortează după data modficării"
+
+#: pro/fields/gallery.php:542
+msgid "Sort by title"
+msgstr "Sortează după titlu"
+
+#: pro/fields/gallery.php:543
+msgid "Reverse current order"
+msgstr "Inversează ordinea curentă"
+
+#: pro/fields/gallery.php:561
+msgid "Close"
+msgstr "Închide"
+
+#: pro/fields/gallery.php:619
+msgid "Minimum Selection"
+msgstr "Selecție minimă"
+
+#: pro/fields/gallery.php:628
+msgid "Maximum Selection"
+msgstr "Selecție maximă"
+
+#: pro/fields/gallery.php:809
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] "%s necesită cel puțin %s selectie"
+msgstr[1] "%s necesită cel puțin %s selecții"
+msgstr[2] "%s necesită cel puțin %s selecții"
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "Repeater"
+
+#: pro/fields/repeater.php:46
+msgid "Minimum rows reached ({min} rows)"
+msgstr "Numărul minim de linii a fost atins ({min} rows)"
+
+#: pro/fields/repeater.php:47
+msgid "Maximum rows reached ({max} rows)"
+msgstr "Numărul maxim de linii a fost atins ({max} rows)"
+
+#: pro/fields/repeater.php:259
+msgid "Drag to reorder"
+msgstr "Trage pentru a reordona"
+
+#: pro/fields/repeater.php:301
+msgid "Add row"
+msgstr "Adaugă linie"
+
+#: pro/fields/repeater.php:302
+msgid "Remove row"
+msgstr "Înlătură linie"
+
+#: pro/fields/repeater.php:350
+msgid "Sub Fields"
+msgstr "Sub câmpuri"
+
+#: pro/fields/repeater.php:372
+msgid "Minimum Rows"
+msgstr "Numărul minim de Linii"
+
+#: pro/fields/repeater.php:382
+msgid "Maximum Rows"
+msgstr "Numărul maxim de Linii"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr ""
+
+#~ msgid "Hide / Show All"
+#~ msgstr "Selectează / Deselectează tot"
+
+#~ msgid "Show Field Keys"
+#~ msgstr "Arată Cheile Câmpului"
+
+#~ msgid "Pending Review"
+#~ msgstr "Așteaptă Revizuirea"
+
+#~ msgid "Draft"
+#~ msgstr "Ciornă"
+
+#~ msgid "Future"
+#~ msgstr "Viitor"
+
+#~ msgid "Private"
+#~ msgstr "Privat"
+
+#~ msgid "Revision"
+#~ msgstr "Revizie"
+
+#~ msgid "Trash"
+#~ msgstr "Coșul de gunoi"
+
+#~ msgid "Import / Export"
+#~ msgstr "Importă / Exportă"
+
+#~ msgid "Field groups are created in order from lowest to highest"
+#~ msgstr "Grupurile de câmpuri sunt create în ordine crescătoare"
+
+#~ msgid "ACF PRO Required"
+#~ msgstr "Este necesară versiunea ACF RPO"
+
+#~ msgid ""
+#~ "We have detected an issue which requires your attention: This website "
+#~ "makes use of premium add-ons (%s) which are no longer compatible with ACF."
+#~ msgstr ""
+#~ "Am detectat o problemă care necesită atenția ta: Acest website folosește "
+#~ "add-onuri premium (%s) care nu mai sunt compatibile cu ACF."
+
+#~ msgid ""
+#~ "Don't panic, you can simply roll back the plugin and continue using ACF "
+#~ "as you know it!"
+#~ msgstr ""
+#~ "Nu te panica, poți reveni oricând la o versiune anterioară și poți folosi "
+#~ "în continuare ACF așa cum știi!"
+
+#~ msgid "Roll back to ACF v%s"
+#~ msgstr "Revenire la versiunea %s a ACF"
+
+#~ msgid "Learn why ACF PRO is required for my site"
+#~ msgstr "Află de ce ACF PRO este cerut pentru site-ul tău"
+
+#~ msgid "Update Database"
+#~ msgstr "Actualizarea Bazei de Date"
+
+#~ msgid "Data Upgrade"
+#~ msgstr "Actualizare Date"
+
+#~ msgid "Data upgraded successfully."
+#~ msgstr "Actualizarea datelor a fost făcută cu succes."
+
+#~ msgid "Data is at the latest version."
+#~ msgstr "Datele sunt actualizate."
+
+#~ msgid "1 required field below is empty"
+#~ msgid_plural "%s required fields below are empty"
+#~ msgstr[0] "1 câmp obligatoriu este gol"
+#~ msgstr[1] "%s câmpuri obligatorii sunt goale"
+#~ msgstr[2] ""
+
+#~ msgid "Load & Save Terms to Post"
+#~ msgstr "Încarcă și Salvează Termenii la Articol"
+
+#~ msgid ""
+#~ "Load value based on the post's terms and update the post's terms on save"
+#~ msgstr ""
+#~ "Încarcă valoarea pe baza termenilor articolului și actualizează termenii "
+#~ "în momentul salvării"

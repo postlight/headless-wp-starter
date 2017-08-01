@@ -1,0 +1,2596 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields Pro\n"
+"POT-Creation-Date: 2016-05-19 15:59+0200\n"
+"PO-Revision-Date: 2016-11-03 17:07+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language-Team: Adil el hallaoui <servicewb11@gmail.com>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:60
+msgid "Advanced Custom Fields"
+msgstr "الحقول المخصصة المتقدم"
+
+#: acf.php:263 admin/admin.php:61
+msgid "Field Groups"
+msgstr "مجموعات الحقل"
+
+#: acf.php:264
+msgid "Field Group"
+msgstr "مجموعة الحقل"
+
+#: acf.php:265 acf.php:297 admin/admin.php:62
+#: pro/fields/flexible-content.php:496
+msgid "Add New"
+msgstr "إضافة جديد"
+
+#: acf.php:266
+msgid "Add New Field Group"
+msgstr "اضافة مجموعة جديدة"
+
+#: acf.php:267
+msgid "Edit Field Group"
+msgstr "تحرير المجموعة"
+
+#: acf.php:268
+msgid "New Field Group"
+msgstr "اضافة مجموعة جديدة"
+
+#: acf.php:269
+msgid "View Field Group"
+msgstr "عرض مجموعة"
+
+#: acf.php:270
+msgid "Search Field Groups"
+msgstr "بحث مجموعات الحقل"
+
+#: acf.php:271
+msgid "No Field Groups found"
+msgstr "لم يتم العثور على مجموعات الحقل"
+
+#: acf.php:272
+msgid "No Field Groups found in Trash"
+msgstr "لا توجد مجموعات الحقل في سلة المهملات"
+
+#: acf.php:295 admin/field-group.php:176 admin/field-group.php:223
+#: admin/field-groups.php:528
+msgid "Fields"
+msgstr "حقول"
+
+#: acf.php:296
+msgid "Field"
+msgstr "حقل"
+
+#: acf.php:298
+msgid "Add New Field"
+msgstr "إضافة حقل جديد"
+
+#: acf.php:299
+msgid "Edit Field"
+msgstr "يمكنك تحرير الحقل الاستعراض باستخدام أقل من الخيارات."
+
+#: acf.php:300 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "إضافة حقل جديد"
+
+#: acf.php:301
+msgid "View Field"
+msgstr "عرض الحقل"
+
+#: acf.php:302
+msgid "Search Fields"
+msgstr "بحث الحقول"
+
+#: acf.php:303
+msgid "No Fields found"
+msgstr "لم يتم العثور على أية حقول"
+
+#: acf.php:304
+msgid "No Fields found in Trash"
+msgstr "لم يتم العثور على أية حقول في سلة المهملات"
+
+#: acf.php:343 admin/field-group.php:316 admin/field-groups.php:586
+#: admin/views/field-group-options.php:13
+msgid "Disabled"
+msgstr "تعطيل"
+
+#: acf.php:348
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] "تعطيل <span class=\"count\">(%s)</span>"
+msgstr[1] "تعطيل <span class=\"count\">(%s)</span>"
+msgstr[2] "تعطيل <span class=\"count\">(%s)</span>"
+msgstr[3] "تعطيل <span class=\"count\">(%s)</span>"
+msgstr[4] "تعطيل <span class=\"count\">(%s)</span>"
+msgstr[5] "تعطيل <span class=\"count\">(%s)</span>"
+
+#: admin/admin.php:57 admin/views/field-group-options.php:115
+msgid "Custom Fields"
+msgstr "الحقول المخصصة"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "مجموعة الحقل محدثة"
+
+#: admin/field-group.php:70
+msgid "Field group deleted."
+msgstr "مجموعة الحقل محدوفة"
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "مجموعة الحقل منشورة"
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "مجموعة الحقل محفوظة."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "مجموعة الحقل مقدمة."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "مجموعة الحقل برمجة ل."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "مجموعة حقل المسودة محدثة."
+
+#: admin/field-group.php:177
+msgid "Location"
+msgstr "الموقع"
+
+#: admin/field-group.php:178
+msgid "Settings"
+msgstr "الاعدادات"
+
+#: admin/field-group.php:217
+msgid "Move to trash. Are you sure?"
+msgstr "ارسال إلى سلة المهملات. هل أنت متأكد؟"
+
+#: admin/field-group.php:218
+msgid "checked"
+msgstr "مفحوص"
+
+#: admin/field-group.php:219
+msgid "No toggle fields available"
+msgstr "لا تبديل الحقول المتوفرة"
+
+#: admin/field-group.php:220
+msgid "Field group title is required"
+msgstr "عنوان حقل المجموعة  مطلوب"
+
+#: admin/field-group.php:221 api/api-field-group.php:620
+msgid "copy"
+msgstr "انسخ"
+
+#: admin/field-group.php:222
+#: admin/views/field-group-field-conditional-logic.php:62
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:59
+#: admin/views/field-group-locations.php:135 api/api-helpers.php:3648
+msgid "or"
+msgstr "او"
+
+#: admin/field-group.php:224
+msgid "Parent fields"
+msgstr "الحقول الأصل"
+
+#: admin/field-group.php:225
+msgid "Sibling fields"
+msgstr "الحقول الفرعية"
+
+#: admin/field-group.php:226
+msgid "Move Custom Field"
+msgstr "نقل الحقل مخصص"
+
+#: admin/field-group.php:227
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "لا يمكن نقل هذا الحقل حتى يتم حفظ تغيراته"
+
+#: admin/field-group.php:228
+msgid "Null"
+msgstr "لا شيء"
+
+#: admin/field-group.php:229 core/input.php:254
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr "سيتم فقدان التغييرات التي أجريتها إذا غادرت هذه الصفحة"
+
+#: admin/field-group.php:230
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr "لا يجوز استخدام السلسلة “field_” في بداية اسم الحقل"
+
+#: admin/field-group.php:286
+msgid "Field Keys"
+msgstr "مفاتيح الحقل"
+
+#: admin/field-group.php:316 admin/views/field-group-options.php:12
+msgid "Active"
+msgstr "نشط"
+
+#: admin/field-group.php:789
+msgid "Front Page"
+msgstr "الصفحة الرئسية"
+
+#: admin/field-group.php:790
+msgid "Posts Page"
+msgstr "صفحة التدوينات"
+
+#: admin/field-group.php:791
+msgid "Top Level Page (no parent)"
+msgstr "أعلى مستوى الصفحة (أعلى مستوى)"
+
+#: admin/field-group.php:792
+msgid "Parent Page (has children)"
+msgstr "الصفحة الرئيسية (لديها فروع)"
+
+#: admin/field-group.php:793
+msgid "Child Page (has parent)"
+msgstr "صفحة فرعية (لديها أصل)"
+
+#: admin/field-group.php:809
+msgid "Default Template"
+msgstr "قالب افتراضي"
+
+#: admin/field-group.php:832
+msgid "Logged in"
+msgstr "مسجل الدخول"
+
+#: admin/field-group.php:833
+msgid "Viewing front end"
+msgstr "عرض الواجهة الأمامية"
+
+#: admin/field-group.php:834
+msgid "Viewing back end"
+msgstr "عرض النهاية الخلفية"
+
+#: admin/field-group.php:853
+msgid "Super Admin"
+msgstr "المدير الأول"
+
+#: admin/field-group.php:864 admin/field-group.php:872
+#: admin/field-group.php:886 admin/field-group.php:893
+#: admin/field-group.php:910 admin/field-group.php:927 fields/file.php:235
+#: fields/image.php:231 pro/fields/gallery.php:661
+msgid "All"
+msgstr "الكل"
+
+#: admin/field-group.php:873
+msgid "Add / Edit"
+msgstr "إضافة / تعديل"
+
+#: admin/field-group.php:874
+msgid "Register"
+msgstr "التسجيل"
+
+#: admin/field-group.php:1114
+msgid "Move Complete."
+msgstr "نقل كامل."
+
+#: admin/field-group.php:1115
+#, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr "المجال %s يمكن الآن إيجاده في  %s حقل المجموعة"
+
+#: admin/field-group.php:1117
+msgid "Close Window"
+msgstr "إغلاق النافذة"
+
+#: admin/field-group.php:1152
+msgid "Please select the destination for this field"
+msgstr "الرجاء تحديد الوجهة لهذا الحقل"
+
+#: admin/field-group.php:1159
+msgid "Move Field"
+msgstr "نقل الحقل"
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] "النشطة <span class=\"count\">(%s)</span>"
+msgstr[1] "النشطة <span class=\"count\">(%s)</span>"
+msgstr[2] "النشطة <span class=\"count\">(%s)</span>"
+msgstr[3] "النشطة <span class=\"count\">(%s)</span>"
+msgstr[4] "النشطة <span class=\"count\">(%s)</span>"
+msgstr[5] "النشطة <span class=\"count\">(%s)</span>"
+
+#: admin/field-groups.php:142
+#, php-format
+msgid "Field group duplicated. %s"
+msgstr "مجموعة الحقل متكررة. %s"
+
+#: admin/field-groups.php:146
+#, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] "مجموعة الحقل متكررة. %s"
+msgstr[1] "مجموعة الحقل متكررة. %s"
+msgstr[2] "مجموعة الحقل متكررة. %s"
+msgstr[3] "مجموعة الحقل متكررة. %s"
+msgstr[4] "مجموعة الحقل متكررة. %s"
+msgstr[5] "مجموعة الحقل متكررة. %s"
+
+#: admin/field-groups.php:228
+#, php-format
+msgid "Field group synchronised. %s"
+msgstr "مجموعة الحقل متزامنة. %s"
+
+#: admin/field-groups.php:232
+#, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] "مجموعة الحقل متزامنة. %s"
+msgstr[1] "مجموعة الحقل متزامنة. %s"
+msgstr[2] "مجموعة الحقل متزامنة. %s"
+msgstr[3] "مجموعة الحقل متزامنة. %s"
+msgstr[4] "مجموعة الحقل متزامنة. %s"
+msgstr[5] "مجموعة الحقل متزامنة. %s"
+
+#: admin/field-groups.php:412 admin/field-groups.php:576
+msgid "Sync available"
+msgstr "المزامنة متوفرة"
+
+#: admin/field-groups.php:525 pro/fields/gallery.php:374
+msgid "Title"
+msgstr "العنوان"
+
+#: admin/field-groups.php:526 admin/views/field-group-options.php:93
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+#: pro/fields/gallery.php:401
+msgid "Description"
+msgstr "الوصف"
+
+#: admin/field-groups.php:527 admin/views/field-group-options.php:5
+msgid "Status"
+msgstr "الحالة"
+
+#: admin/field-groups.php:624 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "سجل التغيير"
+
+#: admin/field-groups.php:625
+msgid "See what's new in"
+msgstr "أنظر ما هو الجديد في"
+
+#: admin/field-groups.php:625
+msgid "version"
+msgstr "النسخة"
+
+#: admin/field-groups.php:627
+msgid "Resources"
+msgstr "الموارد"
+
+#: admin/field-groups.php:629
+msgid "Getting Started"
+msgstr "بدء العمل"
+
+#: admin/field-groups.php:630 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr "تحديثات"
+
+#: admin/field-groups.php:631
+msgid "Field Types"
+msgstr "أنواع بيانات الحقول"
+
+#: admin/field-groups.php:632
+msgid "Functions"
+msgstr "الدالات"
+
+#: admin/field-groups.php:633
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: admin/field-groups.php:634 fields/relationship.php:717
+msgid "Filters"
+msgstr "فرز"
+
+#: admin/field-groups.php:635
+msgid "'How to' guides"
+msgstr "'كيف' أدلة"
+
+#: admin/field-groups.php:636
+msgid "Tutorials"
+msgstr "الدروس التعليمية"
+
+#: admin/field-groups.php:641
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#: admin/field-groups.php:684
+msgid "Duplicate this item"
+msgstr "تكرار عنصر"
+
+#: admin/field-groups.php:684 admin/field-groups.php:700
+#: admin/views/field-group-field.php:58 pro/fields/flexible-content.php:495
+msgid "Duplicate"
+msgstr "تكرار"
+
+#: admin/field-groups.php:746
+#, php-format
+msgid "Select %s"
+msgstr "اختيار %s"
+
+#: admin/field-groups.php:754
+msgid "Synchronise field group"
+msgstr "مزامنة مجموعة المجال"
+
+#: admin/field-groups.php:754 admin/field-groups.php:771
+msgid "Sync"
+msgstr "مزامنة"
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr "الإضافات"
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr "<b>خطأ.</b> لا يمكن تحميل قائمة الوظائف الإضافية"
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr "معلومات"
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr "ما الجديد"
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:23
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr "أدوات"
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:369
+msgid "No field groups selected"
+msgstr "لا يوجد مجموعات الحقل مختارة"
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr "لم يتم إختيار ملف"
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr "خطأ في تحميل الملف . حاول مرة اخرى"
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr "نوع الملف غير صحيح"
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr "استيراد ملف فارغ"
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr "<b>تم بنجاح</b> أداة استيراد أضافت  %s جماعات الحقل %s"
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+"<b>تحذير.</b> الكشف عن أداة استيراد مجموعة الحقول  %s موجودة بالفعل، وتم "
+"تجاهل  %s"
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr "ترقية ACF"
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr "استعراض المواقع والترقية"
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "ترقية"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr "ترقية قاعدة البيانات"
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr "المنطق الشرطي"
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:140 fields/checkbox.php:246
+#: fields/message.php:144 fields/page_link.php:539 fields/page_link.php:553
+#: fields/post_object.php:403 fields/post_object.php:417 fields/select.php:377
+#: fields/select.php:391 fields/select.php:405 fields/select.php:419
+#: fields/tab.php:130 fields/taxonomy.php:784 fields/taxonomy.php:798
+#: fields/taxonomy.php:812 fields/taxonomy.php:826 fields/user.php:416
+#: fields/user.php:430 fields/wysiwyg.php:415
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "نعم"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:141 fields/checkbox.php:247
+#: fields/message.php:145 fields/page_link.php:540 fields/page_link.php:554
+#: fields/post_object.php:404 fields/post_object.php:418 fields/select.php:378
+#: fields/select.php:392 fields/select.php:406 fields/select.php:420
+#: fields/tab.php:131 fields/taxonomy.php:699 fields/taxonomy.php:785
+#: fields/taxonomy.php:799 fields/taxonomy.php:813 fields/taxonomy.php:827
+#: fields/user.php:417 fields/user.php:431 fields/wysiwyg.php:416
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "لا"
+
+#: admin/views/field-group-field-conditional-logic.php:62
+msgid "Show this field if"
+msgstr "إظهار هذا الحقل إذا"
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:34
+msgid "is equal to"
+msgstr "تساوي"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:35
+msgid "is not equal to"
+msgstr "لا تساوي"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:122
+msgid "and"
+msgstr "و"
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:137
+msgid "Add rule group"
+msgstr "إضافة مجموعة"
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:57
+msgid "Edit field"
+msgstr "تعديل الحقل"
+
+#: admin/views/field-group-field.php:57 pro/fields/gallery.php:363
+msgid "Edit"
+msgstr "تحرير"
+
+#: admin/views/field-group-field.php:58
+msgid "Duplicate field"
+msgstr "حقل مكرر"
+
+#: admin/views/field-group-field.php:59
+msgid "Move field to another group"
+msgstr "تحريك الحقل إلى مجموعة أخرى"
+
+#: admin/views/field-group-field.php:59
+msgid "Move"
+msgstr "نقل"
+
+#: admin/views/field-group-field.php:60
+msgid "Delete field"
+msgstr "احذف الحقل"
+
+#: admin/views/field-group-field.php:60 pro/fields/flexible-content.php:494
+msgid "Delete"
+msgstr "حذف"
+
+#: admin/views/field-group-field.php:68 fields/oembed.php:225
+#: fields/taxonomy.php:900
+msgid "Error"
+msgstr "خطأ"
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr "خطأ."
+
+#: admin/views/field-group-field.php:68
+msgid "Field type does not exist"
+msgstr "نوع حقل غير موجود"
+
+#: admin/views/field-group-field.php:81
+msgid "Field Label"
+msgstr "تسمية الحقل"
+
+#: admin/views/field-group-field.php:82
+msgid "This is the name which will appear on the EDIT page"
+msgstr "هذا هو الاسم الذي سيظهر على صفحة تحرير"
+
+#: admin/views/field-group-field.php:94
+msgid "Field Name"
+msgstr "اسم الحقل"
+
+#: admin/views/field-group-field.php:95
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr "كلمة واحدة، لا ممنوع. ويؤكد وشرطات المسموح به"
+
+#: admin/views/field-group-field.php:107
+msgid "Field Type"
+msgstr "نوع الحقل"
+
+#: admin/views/field-group-field.php:121 fields/tab.php:103
+msgid "Instructions"
+msgstr "خطوات التحضير"
+
+#: admin/views/field-group-field.php:122
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "تعليمات للمؤلفين. سيظهر عند إرسال البيانات"
+
+#: admin/views/field-group-field.php:133
+msgid "Required?"
+msgstr "مطلوب؟"
+
+#: admin/views/field-group-field.php:162
+msgid "Wrapper Attributes"
+msgstr "سمات المجمع"
+
+#: admin/views/field-group-field.php:168
+msgid "width"
+msgstr "العرض"
+
+#: admin/views/field-group-field.php:182
+msgid "class"
+msgstr "درجة"
+
+#: admin/views/field-group-field.php:195
+msgid "id"
+msgstr "المعرف"
+
+#: admin/views/field-group-field.php:207
+msgid "Close Field"
+msgstr "أغلق الحقل"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr "ترتيب"
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:521
+msgid "Label"
+msgstr "تسمية"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:534
+msgid "Name"
+msgstr "الاسم"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr "النوع:"
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"أية حقول. انقر فوق الزر <strong>+ إضافة حقل</strong> لإنشاء الحقل الأول "
+"الخاص بك."
+
+#: admin/views/field-group-fields.php:51
+msgid "+ Add Field"
+msgstr "اضافة حقل"
+
+#: admin/views/field-group-locations.php:5
+#: admin/views/field-group-locations.php:11
+msgid "Post"
+msgstr "المشاركات"
+
+#: admin/views/field-group-locations.php:6 fields/relationship.php:723
+msgid "Post Type"
+msgstr "نوع المشاركة"
+
+#: admin/views/field-group-locations.php:7
+msgid "Post Status"
+msgstr "حالة التدوينة"
+
+#: admin/views/field-group-locations.php:8
+msgid "Post Format"
+msgstr "تنسيق التدوينة"
+
+#: admin/views/field-group-locations.php:9
+msgid "Post Category"
+msgstr "القائمة الجانبية لصفحة التصنيفات"
+
+#: admin/views/field-group-locations.php:10
+msgid "Post Taxonomy"
+msgstr "تصنيف الوظيفة"
+
+#: admin/views/field-group-locations.php:13
+#: admin/views/field-group-locations.php:17
+msgid "Page"
+msgstr "الصفحة"
+
+#: admin/views/field-group-locations.php:14
+msgid "Page Template"
+msgstr "قالب الصفحة:"
+
+#: admin/views/field-group-locations.php:15
+msgid "Page Type"
+msgstr "نوع الصفحة"
+
+#: admin/views/field-group-locations.php:16
+msgid "Page Parent"
+msgstr "الصفحة الأصل"
+
+#: admin/views/field-group-locations.php:19 fields/user.php:36
+msgid "User"
+msgstr "المستخدم"
+
+#: admin/views/field-group-locations.php:20
+msgid "Current User"
+msgstr "المستخدم الحالي"
+
+#: admin/views/field-group-locations.php:21
+msgid "Current User Role"
+msgstr "المستخدم الحالي"
+
+#: admin/views/field-group-locations.php:22
+msgid "User Form"
+msgstr "النموذج المستخدم"
+
+#: admin/views/field-group-locations.php:23
+msgid "User Role"
+msgstr "رتبة المستخدم"
+
+#: admin/views/field-group-locations.php:25 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr "النماذج"
+
+#: admin/views/field-group-locations.php:26
+msgid "Attachment"
+msgstr "المرفقات"
+
+#: admin/views/field-group-locations.php:27
+msgid "Taxonomy Term"
+msgstr "تعيين اتفاقية رخصة التصنيف"
+
+#: admin/views/field-group-locations.php:28
+msgid "Comment"
+msgstr "تعليقات"
+
+#: admin/views/field-group-locations.php:29
+msgid "Widget"
+msgstr "القطعة"
+
+#: admin/views/field-group-locations.php:41
+msgid "Rules"
+msgstr "قواعد"
+
+#: admin/views/field-group-locations.php:42
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"إنشاء مجموعة من القواعد لتحديد شاشات تحرير التي سوف تستخدم هذه الحقول "
+"المخصصة متقدمة"
+
+#: admin/views/field-group-locations.php:59
+msgid "Show this field group if"
+msgstr "تظهر هذه الحقول في المجموعة إذا"
+
+#: admin/views/field-group-options.php:20
+msgid "Style"
+msgstr "نمط"
+
+#: admin/views/field-group-options.php:27
+msgid "Standard (WP metabox)"
+msgstr "قياسي (metabox الفسفور الأبيض)"
+
+#: admin/views/field-group-options.php:28
+msgid "Seamless (no metabox)"
+msgstr "سلس (لا metabox)"
+
+#: admin/views/field-group-options.php:35
+msgid "Position"
+msgstr "موضع"
+
+#: admin/views/field-group-options.php:42
+msgid "High (after title)"
+msgstr "عالية (بعد العنوان)"
+
+#: admin/views/field-group-options.php:43
+msgid "Normal (after content)"
+msgstr "عادي (بعد المحتوى)"
+
+#: admin/views/field-group-options.php:44
+msgid "Side"
+msgstr "الجانب"
+
+#: admin/views/field-group-options.php:52
+msgid "Label placement"
+msgstr "تعيين مكان التسمية"
+
+#: admin/views/field-group-options.php:59 fields/tab.php:117
+msgid "Top aligned"
+msgstr "محاذاة إلى الأعلى"
+
+#: admin/views/field-group-options.php:60 fields/tab.php:118
+msgid "Left Aligned"
+msgstr "محاذاة لليسار"
+
+#: admin/views/field-group-options.php:67
+msgid "Instruction placement"
+msgstr "تعليمات الإيداع"
+
+#: admin/views/field-group-options.php:74
+msgid "Below labels"
+msgstr "أسفل تسميات"
+
+#: admin/views/field-group-options.php:75
+msgid "Below fields"
+msgstr "فيما يلي الحقول"
+
+#: admin/views/field-group-options.php:82
+msgid "Order No."
+msgstr "رقم الترتيب"
+
+#: admin/views/field-group-options.php:83
+msgid "Field groups with a lower order will appear first"
+msgstr "سوف تظهر المجموعات الميدانية مع ترتيب أدنى الأولى"
+
+#: admin/views/field-group-options.php:94
+msgid "Shown in field group list"
+msgstr "سيظهر في قائمة مجموعة الحقول"
+
+#: admin/views/field-group-options.php:104
+msgid "Hide on screen"
+msgstr "إخفاء على الشاشة"
+
+#: admin/views/field-group-options.php:105
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr "<b>تحديد</b> العناصر <b>إخفاء</b> لهم من شاشة تحرير."
+
+#: admin/views/field-group-options.php:105
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+"إذا كانت مجموعات الحقول متعددة تظهر على شاشة تحرير، سوف يكون خيارات أول حقل "
+"مجموعة المستخدمة (واحد مع عدد ترتيب أدنى)"
+
+#: admin/views/field-group-options.php:112
+msgid "Permalink"
+msgstr "الرابط الدائم"
+
+#: admin/views/field-group-options.php:113
+msgid "Content Editor"
+msgstr "محرر النصوص"
+
+#: admin/views/field-group-options.php:114
+msgid "Excerpt"
+msgstr "مختصر الموضوع"
+
+#: admin/views/field-group-options.php:116
+msgid "Discussion"
+msgstr "نقاش"
+
+#: admin/views/field-group-options.php:117
+msgid "Comments"
+msgstr "تعليقات"
+
+#: admin/views/field-group-options.php:118
+msgid "Revisions"
+msgstr "المراجعة: %s"
+
+#: admin/views/field-group-options.php:119
+msgid "Slug"
+msgstr "الكلمة"
+
+#: admin/views/field-group-options.php:120
+msgid "Author"
+msgstr "الناشر"
+
+#: admin/views/field-group-options.php:121
+msgid "Format"
+msgstr "شكل"
+
+#: admin/views/field-group-options.php:122
+msgid "Page Attributes"
+msgstr "سمات الصفحة"
+
+#: admin/views/field-group-options.php:123 fields/relationship.php:736
+msgid "Featured Image"
+msgstr "صورة مميزة"
+
+#: admin/views/field-group-options.php:124
+msgid "Categories"
+msgstr "الاقسام"
+
+#: admin/views/field-group-options.php:125
+msgid "Tags"
+msgstr "وسوم"
+
+#: admin/views/field-group-options.php:126
+msgid "Send Trackbacks"
+msgstr "إرسال Trackbacks"
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr "تحميل &amp; وتثبيت"
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr "مثبت"
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr "مرحبا بكم في الحقول المخصصة المتقدم"
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr "شكرا لك لتحديث! ACF %s أكبر وأفضل من أي وقت مضى. ونأمل لك مثل ذلك."
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr "تجربة أكثر سلاسة في حقل المخصص"
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr "تحسين قابلية الاستخدام"
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+"بما في ذلك المكتبة Select2 شعبية تحسنت سهولة الاستخدام والسرعة عبر عدد من "
+"أنواع الحقول بما في ذلك كائن وظيفة، ارتباط صفحة، وتصنيف وتحديد."
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr "تحسين تصميم"
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+"شهدت العديد من الحقول بتحديث visual جعل ACF تبدو أفضل من أي وقت مضى! وتعتبر "
+"تغييرات ملحوظة في معرض، والعلاقة وحقول oEmbed (جديد)!"
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr "تحسين البيانات"
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+"إعادة تصميم هيكل البيانات سمحت الحقول الفرعية للعيش بشكل مستقل عن والديهم. "
+"هذا يسمح لك لسحب وإسقاط المجالات داخل وخارج حقول الأم!"
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr "وداعا الوظائف الإضافية. مرحبا برو"
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr "إدخال ACF برو"
+
+#: admin/views/settings-info.php:51
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr "نحن تغيير الطريقة التي يتم تسليم قسط وظيفة بطريقة مثيرة!"
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+"وقد تم دمج كل قسط 4 إضافات في جديد <a href=“%s”>الإصدار Pro لمكافحة التزييف</"
+"a>. مع التراخيص الشخصية والمطور المتوفرة، وظيفة قسط أكثر يسرا وسهولة من أي "
+"وقت مضى!"
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr "ميزات قوية"
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+"ACF برو يحتوي على ميزات قوية مثل البيانات قابل للتكرار وتخطيطات المحتوى "
+"مرنة، وحقل معرض جميلة والقدرة على إنشاء صفحات خيارات مشرف إضافي!"
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr "اقرأ المزيد حول <a href=“%s”>ميزات “مكافحة التزييف للمحترفين”</a>."
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr "ترقية سهلة"
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+"للمساعدة في جعل الترقية سهلة، <a href=“%s”>تسجيل الدخول إلى حسابك في المتجر</"
+"a> والمطالبة بنسخة مجانية من المحترفين ACF!"
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+"نحن كتب أيضا <a href=“%s”>تحديث دليل</a> الرد على أية أسئلة، ولكن إذا كان "
+"لديك واحدة، الرجاء الاتصال بفريق الدعم الخاص بنا عن طريق <a href=“%s”>مكتب "
+"المساعدة</a>"
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr "تحت الغطاء"
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr "إعدادات الحقل أكثر ذكاء"
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr "ACF الآن يحفظ إعدادات الحقل به الفرد وظيفة الكائنات"
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr "أياكس أكثر"
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr "استخدام أكثر من حقول البحث أجاكس بالطاقة لتسريع تحميل الصفحة"
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr "JSON المحلية"
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr "تصدير السيارات الجديدة إلى ميزة JSON يحسن سرعة"
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr "أفضل إصدار عنصر التحكم"
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+"تصدير السيارات الجديدة إلى ميزة JSON تسمح إعدادات الحقل أن يكون المتحكم"
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr "تبادلت XML ل JSON"
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr "الاستيراد والتصدير الآن استخدامات JSON صالح XML"
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr "أشكال جديدة"
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr "يمكن الآن تعيين الحقول إلى تعليقات والحاجيات وجميع نماذج المستخدم!"
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr "تم إضافة حقل جديد لتضمين المحتوى"
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr "معرض صور جديد"
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr "شهد ميدان معرض عملية شد وجه الكثير من اللازم"
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr "إعدادات جديدة"
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr "تم إضافة إعدادات مجموعة الحقل موضع التسمية ووضع التعليمات"
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr "أشكال الأمامية أفضل"
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr "acf_form() يمكن الآن إنشاء وظيفة جديدة في تقديم"
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr "التحقق من صحة أفضل"
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr "يتم الآن التحقق من صحة النموذج عن طريق بي إتش بي + AJAX صالح شبيبة فقط"
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr "حقل العلاقة"
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr ""
+"إعداد الحقل العلاقة الجديدة عن 'فلاتر' (البحث، \"نوع الوظيفة\"، التصنيف)"
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr "نقل الحقول"
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr "وظائف جديدة في مجموعة حقل يسمح لك بنقل حقل بين المجموعات & الآباء"
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "رابط الصفحة"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr "مجموعة المحفوظات الجديدة في تحديد الحقل page_link"
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr "أفضل خيارات صفحات"
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr "مهام جديدة لصفحة خيارات تسمح بإنشاء كل من الأم والطفل صفحات القائمة"
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr "ونحن نعتقد أن عليك الحب والتغييرات في %s."
+
+#: admin/views/settings-tools-export.php:27
+msgid "Export Field Groups to PHP"
+msgstr "تصدير حقل المجموعات"
+
+#: admin/views/settings-tools-export.php:31
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"يمكن استخدام التعليمات البرمجية التالية لتسجيل نسخة محلية من الأفرقة "
+"الميدانية المحددة. مجموعة مجال محلية يمكن أن توفر العديد من المزايا مثل "
+"أوقات تحميل أسرع، والتحكم في الإصدار & الحقول/إعدادات الحيوي. ببساطة نسخ "
+"ولصق التعليمة البرمجية التالية إلى ملف functions.php الموضوع الخاص بك أو "
+"إدراجه ضمن ملف خارجي."
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr "حدد مجموعات الحقول"
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr "تصدير حقل المجموعات"
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"حدد مجموعات الحقول التي ترغب في تصدير ومن ثم حدد طريقة التصدير الخاصة بك. "
+"استخدام زر التحميل للتصدير إلى ملف.json الذي يمكنك ثم استيراد إلى تثبيت ACF "
+"آخر. استخدم الزر إنشاء للتصدير لرمز بي إتش بي التي يمكنك وضع في الموضوع "
+"الخاص بك."
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr "تنزيل ملف التصدير"
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr "إنشاء تعليمات برمجية للتصدير"
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "استيراد حقل المجموعات"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"حدد ملف متقدمة JSON حقول مخصصة ترغب في استيراد. عند النقر فوق الزر “استيراد” "
+"أدناه، سيتم استيراد ACF الأفرقة الميدانية."
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "إختر ملف"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr "استيراد"
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr "ترقية قاعدة البيانات المتقدمة الحقول المخصصة"
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+"تتطلب المواقع التالية إلى ترقية DB. تحقق من تلك التي تحتاج إلى تحديث ومن ثم "
+"انقر فوق \"ترقية قاعدة البيانات\"."
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr "الموقع"
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr "يتطلب الموقع ترقية قاعدة البيانات من %s إلى %s"
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr "الموقع حتى الآن"
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr "ترقية قاعدة البيانات كاملة. <a href=\"%s\">العودة إلى لوحة معلومات الشبكة</a>"
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+"يوصى بشدة أن تقوم احتياطية من قاعدة البيانات قبل المتابعة. هل أنت متأكد أنك "
+"ترغب في تشغيل المحدث الآن؟"
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr "تم إكمال الترقية"
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr "تحديث البيانات"
+
+#: admin/views/update-notice.php:23
+msgid "Database Upgrade Required"
+msgstr "ترقية قاعدة البيانات المطلوبة"
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr "شكرا لك على التحديث إلى v %s %s!"
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+"قبل البدء باستخدام ميزات جديدة رهيبة، الرجاء تحديث قاعدة البيانات الخاصة بك "
+"إلى الإصدار الأحدث."
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr "قراءة مهام الترقية..."
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr "ترقية البيانات إلى الإصدار %s"
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr "أنظر ما هو الجديد في"
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr "لا توجد تحديثات متوفرة."
+
+#: api/api-helpers.php:937
+msgid "Thumbnail"
+msgstr "الصورة المصغرة"
+
+#: api/api-helpers.php:938
+msgid "Medium"
+msgstr "متوسط"
+
+#: api/api-helpers.php:939
+msgid "Large"
+msgstr "كبير"
+
+#: api/api-helpers.php:987
+msgid "Full Size"
+msgstr "العرض الكامل"
+
+#: api/api-helpers.php:1177 api/api-helpers.php:1739
+msgid "(no title)"
+msgstr "(بدون عنوان)"
+
+#: api/api-helpers.php:3569
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr "يجب أن يكون عرض الصورة على الأقل % dpx."
+
+#: api/api-helpers.php:3574
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr "يجب إلا يتجاوز عرض الصورة % dpx."
+
+#: api/api-helpers.php:3590
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr "يجب أن يكون ارتفاع الصورة على الأقل % dpx."
+
+#: api/api-helpers.php:3595
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr "يجب إلا يتجاوز ارتفاع الصورة % dpx."
+
+#: api/api-helpers.php:3613
+#, php-format
+msgid "File size must be at least %s."
+msgstr "يجب إلا يقل حجم الملف %s."
+
+#: api/api-helpers.php:3618
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr "حجم الملف يجب يجب أن لا يتجاوز %s."
+
+#: api/api-helpers.php:3652
+#, php-format
+msgid "File type must be %s."
+msgstr "يجب أن يكون نوع الملف %s."
+
+#: api/api-template.php:1004
+msgid "Spam Detected"
+msgstr "تم الكشف عن البريد المزعج"
+
+#: api/api-template.php:1147 pro/fields/gallery.php:572
+msgid "Update"
+msgstr "تحديث"
+
+#: api/api-template.php:1148
+msgid "Post updated"
+msgstr "تم تحديث المنشور ."
+
+#: core/field.php:132
+msgid "Basic"
+msgstr "أساسية"
+
+#: core/field.php:133
+msgid "Content"
+msgstr "المحتوى"
+
+#: core/field.php:134
+msgid "Choice"
+msgstr "خيار"
+
+#: core/field.php:135
+msgid "Relational"
+msgstr "علائقي"
+
+#: core/field.php:136
+msgid "jQuery"
+msgstr "جي كويري"
+
+#: core/field.php:137 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:491 pro/fields/flexible-content.php:540
+#: pro/fields/repeater.php:459
+msgid "Layout"
+msgstr "المخطط"
+
+#: core/input.php:255
+msgid "Expand Details"
+msgstr "توسيع التفاصيل"
+
+#: core/input.php:256
+msgid "Collapse Details"
+msgstr "تفاصيل انهيار"
+
+#: core/input.php:257
+msgid "Validation successful"
+msgstr "التحقق من نجاح"
+
+#: core/input.php:258
+msgid "Validation failed"
+msgstr "فشل في عملية التحقق"
+
+#: core/input.php:259
+msgid "1 field requires attention"
+msgstr "الحقل 1 يتطلب الاهتمام"
+
+#: core/input.php:260
+#, php-format
+msgid "%d fields require attention"
+msgstr "% d مجالات تحتاج إلى اهتمام"
+
+#: core/input.php:261
+msgid "Restricted"
+msgstr "محظور"
+
+#: core/validation.php:207
+#, php-format
+msgid "%s value is required"
+msgstr "%s القيمة مطلوبة"
+
+#: fields/checkbox.php:36 fields/taxonomy.php:766
+msgid "Checkbox"
+msgstr "خانة المربع"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr "تبديل جميع"
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:354
+msgid "Choices"
+msgstr "خيارات"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:355
+msgid "Enter each choice on a new line."
+msgstr "أدخل كل خيار في سطر جديد."
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:355
+msgid "For more control, you may specify both a value and label like this:"
+msgstr "لمزيد من التحكم، يمكنك تحديد كل من قيمة وتسمية مثل هذا:"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:355
+msgid "red : Red"
+msgstr ">>أحمر >>أحمر"
+
+#: fields/checkbox.php:217 fields/color_picker.php:147 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:363
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:376
+msgid "Default Value"
+msgstr "قيمة إفتراضية"
+
+#: fields/checkbox.php:218 fields/select.php:364
+msgid "Enter each default value on a new line"
+msgstr "قم بإدخال كل قيمة افتراضية في سطر جديد"
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "عمودي"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "أفقي"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr "تبديل"
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr "إلحاق مسبق خانة اختيار إضافية لتبديل جميع الخيارات"
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "محدد اللون"
+
+#: fields/color_picker.php:83
+msgid "Clear"
+msgstr "مسح"
+
+#: fields/color_picker.php:84
+msgid "Default"
+msgstr "الافتراضي"
+
+#: fields/color_picker.php:85
+msgid "Select Color"
+msgstr "اختيار اللون"
+
+#: fields/color_picker.php:86
+msgid "Current Color"
+msgstr "لون الايقونة الحالي"
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "عنصر إختيار التاريخ:"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr "تم"
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr "اليوم"
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr "عرض شهر مختلف"
+
+#: fields/date_picker.php:174
+msgid "Display format"
+msgstr "تنسيق العرض"
+
+#: fields/date_picker.php:175
+msgid "The format displayed when editing a post"
+msgstr "تنسيق عرض عند تحرير وظيفة"
+
+#: fields/date_picker.php:189
+msgid "Return format"
+msgstr "إعادة تنسيق"
+
+#: fields/date_picker.php:190
+msgid "The format returned via template functions"
+msgstr "تنسيق عاد عبر دالات القالب"
+
+#: fields/date_picker.php:205
+msgid "Week Starts On"
+msgstr "يبدأ الأسبوع في"
+
+#: fields/email.php:36
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:377
+msgid "Appears when creating a new post"
+msgstr "يظهر عند إنشاء وظيفة جديدة"
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr "نص الـ placeholder"
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr "سيظهر داخل مربع الإدخال."
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr "Prepend"
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr "يظهر قبل الإدخال"
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr "إلحاق"
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr "يظهر بعد إدخال"
+
+#: fields/file.php:36
+msgid "File"
+msgstr "ملف"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "تعديل الملف"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "تحديث ملف"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr "اضافة للصفحة"
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr "إسم الملف"
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr "حجم الملف"
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr "لا يوجد ملف محدد."
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "إضافة ملف"
+
+#: fields/file.php:214 fields/image.php:200 fields/taxonomy.php:835
+msgid "Return Value"
+msgstr "القيمة المرجعة"
+
+#: fields/file.php:215 fields/image.php:201
+msgid "Specify the returned value on front end"
+msgstr "حدد القيمة التي تم إرجاعها في النهاية الأمامية"
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr "الصفيف ملف"
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "رابط الملف URL"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr "معرف الملف"
+
+#: fields/file.php:229 fields/image.php:225 pro/fields/gallery.php:655
+msgid "Library"
+msgstr "المكتبة"
+
+#: fields/file.php:230 fields/image.php:226 pro/fields/gallery.php:656
+msgid "Limit the media library choice"
+msgstr "الحد من اختيار مكتبة الوسائط"
+
+#: fields/file.php:236 fields/image.php:232 pro/fields/gallery.php:662
+msgid "Uploaded to post"
+msgstr "تم تحميلها للصفحة"
+
+#: fields/file.php:243 fields/image.php:239 pro/fields/gallery.php:669
+msgid "Minimum"
+msgstr "الأدنى"
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr "تقييد الملفات التي يمكن تحميلها"
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:262
+#: fields/image.php:295 pro/fields/gallery.php:692 pro/fields/gallery.php:725
+msgid "File size"
+msgstr "حجم الملف"
+
+#: fields/file.php:254 fields/image.php:272 pro/fields/gallery.php:702
+msgid "Maximum"
+msgstr "الحد الأقصى"
+
+#: fields/file.php:265 fields/image.php:305 pro/fields/gallery.php:735
+msgid "Allowed file types"
+msgstr "أنواع الملفات المسموح بها"
+
+#: fields/file.php:266 fields/image.php:306 pro/fields/gallery.php:736
+msgid "Comma separated list. Leave blank for all types"
+msgstr "قائمة مفصولة بفواصل. اترك المساحة فارغة لجميع أنواع"
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr "خرائط جوجل"
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr "تحديد موقع"
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr "عذراً، لا يعتمد هذا المستعرض تحديد الموقع الجغرافي"
+
+#: fields/google-map.php:133 fields/relationship.php:722
+msgid "Search"
+msgstr "بحث"
+
+#: fields/google-map.php:134
+msgid "Clear location"
+msgstr "الموقع واضحة"
+
+#: fields/google-map.php:135
+msgid "Find current location"
+msgstr "الموقع الحالي"
+
+#: fields/google-map.php:138
+msgid "Search for address..."
+msgstr "البحث عن عنوان..."
+
+#: fields/google-map.php:168 fields/google-map.php:179
+msgid "Center"
+msgstr "منتصف"
+
+#: fields/google-map.php:169 fields/google-map.php:180
+msgid "Center the initial map"
+msgstr "مركز الخريطة الأولى"
+
+#: fields/google-map.php:193
+msgid "Zoom"
+msgstr "تكبير"
+
+#: fields/google-map.php:194
+msgid "Set the initial zoom level"
+msgstr "ضبط مستوى التكبير الأولية"
+
+#: fields/google-map.php:203 fields/image.php:251 fields/image.php:284
+#: fields/oembed.php:275 pro/fields/gallery.php:681 pro/fields/gallery.php:714
+msgid "Height"
+msgstr "الإرتفاع"
+
+#: fields/google-map.php:204
+msgid "Customise the map height"
+msgstr "تخصيص ارتفاع خريطة"
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Image"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "إختر صورة"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "تحرير الصورة"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "تحديث الصورة"
+
+#: fields/image.php:54
+msgid "Uploaded to this post"
+msgstr "اضافة للصفحة"
+
+#: fields/image.php:55
+msgid "All images"
+msgstr "جميع الصور الجديدة"
+
+#: fields/image.php:152
+msgid "No image selected"
+msgstr "لا توجد صورة مختارة"
+
+#: fields/image.php:152
+msgid "Add Image"
+msgstr "اضافة صورة"
+
+#: fields/image.php:206
+msgid "Image Array"
+msgstr "مجموعة الصور"
+
+#: fields/image.php:207
+msgid "Image URL"
+msgstr "رابط الصورة"
+
+#: fields/image.php:208
+msgid "Image ID"
+msgstr "معرف الصورة"
+
+#: fields/image.php:215 pro/fields/gallery.php:645
+msgid "Preview Size"
+msgstr "مشاهدة الحجم"
+
+#: fields/image.php:216 pro/fields/gallery.php:646
+msgid "Shown when entering data"
+msgstr "العرض عند ادخال البيانات"
+
+#: fields/image.php:240 fields/image.php:273 pro/fields/gallery.php:670
+#: pro/fields/gallery.php:703
+msgid "Restrict which images can be uploaded"
+msgstr "تقييد الصور التي يمكن تحميلها"
+
+#: fields/image.php:243 fields/image.php:276 fields/oembed.php:264
+#: pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Width"
+msgstr "عرض"
+
+#: fields/message.php:36 fields/message.php:116 fields/true_false.php:106
+msgid "Message"
+msgstr "الرسالة"
+
+#: fields/message.php:125 fields/textarea.php:182
+msgid "New Lines"
+msgstr "خطوط جديدة"
+
+#: fields/message.php:126 fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr "عناصر تحكم جديدة كيف يتم عرض الخطوط"
+
+#: fields/message.php:130 fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr "إضافة الفقرات تلقائيا"
+
+#: fields/message.php:131 fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr "تلقائياً بإضافة < br >"
+
+#: fields/message.php:132 fields/textarea.php:189
+msgid "No Formatting"
+msgstr "لا يوجد تنسيق"
+
+#: fields/message.php:139
+msgid "Escape HTML"
+msgstr "الهروب كود HTML"
+
+#: fields/message.php:140
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr "السماح بعلامات HTML لعرض كنص مرئية بدلاً من التقديم"
+
+#: fields/number.php:36
+msgid "Number"
+msgstr "رقم"
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr "الحد الأدنى من القيمة"
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr "قيمة الحد الأقصى"
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr "حجم الخطوة"
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr "يجب أن تكون القيمة رقماً"
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr "يجب أن تكون قيمة مساوية أو أكبر من % d"
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr "يجب أن تكون قيمة مساوية أو أقل من % d"
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr "المضمن"
+
+#: fields/oembed.php:212
+msgid "Enter URL"
+msgstr "قم بإدخال عنوان URL"
+
+#: fields/oembed.php:225
+msgid "No embed found for the given URL."
+msgstr "تضمين لا العثور على عنوان URL معين."
+
+#: fields/oembed.php:261 fields/oembed.php:272
+msgid "Embed Size"
+msgstr "تضمين الحجم"
+
+#: fields/page_link.php:197
+msgid "Archives"
+msgstr "الأرشيفات"
+
+#: fields/page_link.php:506 fields/post_object.php:370
+#: fields/relationship.php:689
+msgid "Filter by Post Type"
+msgstr "فرز حسب النوع"
+
+#: fields/page_link.php:514 fields/post_object.php:378
+#: fields/relationship.php:697
+msgid "All post types"
+msgstr "أنواع المقالات"
+
+#: fields/page_link.php:520 fields/post_object.php:384
+#: fields/relationship.php:703
+msgid "Filter by Taxonomy"
+msgstr "تصفية حسب التصنيف"
+
+#: fields/page_link.php:528 fields/post_object.php:392
+#: fields/relationship.php:711
+msgid "All taxonomies"
+msgstr "كافة التصنيفات"
+
+#: fields/page_link.php:534 fields/post_object.php:398 fields/select.php:372
+#: fields/taxonomy.php:779 fields/user.php:411
+msgid "Allow Null?"
+msgstr "إلغاء السماح؟"
+
+#: fields/page_link.php:548 fields/post_object.php:412 fields/select.php:386
+#: fields/user.php:425
+msgid "Select multiple values?"
+msgstr "قم بتحديد قيم متعددة؟"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr "كلمة السر"
+
+#: fields/post_object.php:36 fields/post_object.php:431
+#: fields/relationship.php:768
+msgid "Post Object"
+msgstr "كائن آخر"
+
+#: fields/post_object.php:426 fields/relationship.php:763
+msgid "Return Format"
+msgstr "إعادة تنسيق"
+
+#: fields/post_object.php:432 fields/relationship.php:769
+msgid "Post ID"
+msgstr "ID مرسل"
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "لون الإختيار"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "أخرى"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr "إضافة خيار 'آخر' للسماح بقيم مخصصة"
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr "إنقاذ أخرى"
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr "حفظ قيم 'أخرى' للخيارات للحقل"
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "العلاقة"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr "قيم الحد الأدنى الذي تم التوصل إليه (القيم {دقيقة})"
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "وصلت إلى الحد الأقصى للقيم (قيم {ماكس})"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr "تحميل"
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr "لم يتم العثور على مطابقات"
+
+#: fields/relationship.php:570
+msgid "Search..."
+msgstr "بحث بواسطة"
+
+#: fields/relationship.php:579
+msgid "Select post type"
+msgstr "الرجاء اختيار نوع الموضوع."
+
+#: fields/relationship.php:592
+msgid "Select taxonomy"
+msgstr "حدد التصنيف"
+
+#: fields/relationship.php:724 fields/taxonomy.php:36 fields/taxonomy.php:749
+msgid "Taxonomy"
+msgstr "التصنيف"
+
+#: fields/relationship.php:731
+msgid "Elements"
+msgstr "العناصر"
+
+#: fields/relationship.php:732
+msgid "Selected elements will be displayed in each result"
+msgstr "سيتم عرض العناصر المحددة في كل نتيجة"
+
+#: fields/relationship.php:743
+msgid "Minimum posts"
+msgstr "الوظائف الدنيا"
+
+#: fields/relationship.php:752
+msgid "Maximum posts"
+msgstr "وظائف كحد أقصى"
+
+#: fields/relationship.php:856 pro/fields/gallery.php:817
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] "%s يتطلب على الأقل تحديد %s "
+msgstr[1] "%s يتطلب على الأقل تحديد %s "
+msgstr[2] "%s يتطلب على الأقل تحديد %s "
+msgstr[3] "%s يتطلب على الأقل تحديد %s "
+msgstr[4] "%s يتطلب على الأقل تحديد %s "
+msgstr[5] "%s يتطلب على الأقل تحديد %s "
+
+#: fields/select.php:36 fields/select.php:167 fields/taxonomy.php:771
+msgid "Select"
+msgstr "اختار"
+
+#: fields/select.php:400
+msgid "Stylised UI"
+msgstr "واجهة مستخدم مبسطة"
+
+#: fields/select.php:414
+msgid "Use AJAX to lazy load choices?"
+msgstr "استخدام AJAX لخيارات تحميل كسول؟"
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr "تبويب"
+
+#: fields/tab.php:97
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+"سيتم عرض الحقل علامة التبويب بشكل غير صحيح عند إضافة حقل مكرر نمط جدول أو "
+"تخطيط الحقل المحتوى مرنة"
+
+#: fields/tab.php:98
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+"استخدام \"علامة التبويب الحقول\" إلى تنظيم أفضل شاشة تحرير الخاص بك عن طريق "
+"تجميع الحقول معا."
+
+#: fields/tab.php:99
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+"كافة الحقول بعد هذا \"حقل علامة التبويب\" (أو حتى يتم تعريف \"حقل علامة "
+"التبويب\" آخر) سوف يتم تجميعها معا باستخدام تسمية هذا الحقل كعنوان التبويب."
+
+#: fields/tab.php:113
+msgid "Placement"
+msgstr "تحديد مستوى"
+
+#: fields/tab.php:125
+msgid "End-point"
+msgstr "نقطة النهاية"
+
+#: fields/tab.php:126
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr "استخدم هذا الحقل كنقطة نهاية وبداية مجموعة جديدة من علامات التبويب"
+
+#: fields/taxonomy.php:718
+msgid "None"
+msgstr "لا شيء"
+
+#: fields/taxonomy.php:750
+msgid "Select the taxonomy to be displayed"
+msgstr "حدد التصنيف ليتم عرضها"
+
+#: fields/taxonomy.php:759
+msgid "Appearance"
+msgstr "المظهر"
+
+#: fields/taxonomy.php:760
+msgid "Select the appearance of this field"
+msgstr "حدد المظهر لهذا الحقل"
+
+#: fields/taxonomy.php:765
+msgid "Multiple Values"
+msgstr "قيم متعددة"
+
+#: fields/taxonomy.php:767
+msgid "Multi Select"
+msgstr "متعددة الاختيار"
+
+#: fields/taxonomy.php:769
+msgid "Single Value"
+msgstr "قيمة مفردة"
+
+#: fields/taxonomy.php:770
+msgid "Radio Buttons"
+msgstr "زر التعيين"
+
+#: fields/taxonomy.php:793
+msgid "Create Terms"
+msgstr "إنشاء شروط"
+
+#: fields/taxonomy.php:794
+msgid "Allow new terms to be created whilst editing"
+msgstr "تسمح الشروط الجديدة المراد إنشاؤها أثناء التحرير"
+
+#: fields/taxonomy.php:807
+msgid "Save Terms"
+msgstr "حفظ المصطلحات"
+
+#: fields/taxonomy.php:808
+msgid "Connect selected terms to the post"
+msgstr "الاتصال الشروط المحددة للوظيفة"
+
+#: fields/taxonomy.php:821
+msgid "Load Terms"
+msgstr "شروط التحميل"
+
+#: fields/taxonomy.php:822
+msgid "Load value from posts terms"
+msgstr "تحميل قيمة من شروط الوظائف"
+
+#: fields/taxonomy.php:840
+msgid "Term Object"
+msgstr "الكائن عبارة"
+
+#: fields/taxonomy.php:841
+msgid "Term ID"
+msgstr "هوية الأمر"
+
+#: fields/taxonomy.php:900
+#, php-format
+msgid "User unable to add new %s"
+msgstr "المستخدم غير قادر على إضافة %s جديد"
+
+#: fields/taxonomy.php:913
+#, php-format
+msgid "%s already exists"
+msgstr "%s هذا الاسم موجود مسبقاً"
+
+#: fields/taxonomy.php:954
+#, php-format
+msgid "%s added"
+msgstr "إضافة %s"
+
+#: fields/taxonomy.php:999
+msgid "Add"
+msgstr "إضافة"
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "نص"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr "حد الحرف"
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr "اتركه فارغا لبدون حد."
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "مساحة النص"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr "صفوف"
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr "تعيين ارتفاع textarea"
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "صح / خطأ"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "على سبيل المثال. إظهار محتوى إضافي"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr "الرابط"
+
+#: fields/url.php:168
+msgid "Value must be a valid URL"
+msgstr "يجب أن يكون عنوان رابط صالح"
+
+#: fields/user.php:396
+msgid "Filter by role"
+msgstr "فرز حسب:"
+
+#: fields/user.php:404
+msgid "All user roles"
+msgstr "ئابونىت"
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "محرر Wysiwyg"
+
+#: fields/wysiwyg.php:328
+msgid "Visual"
+msgstr "مرئي"
+
+#: fields/wysiwyg.php:329
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "نص"
+
+#: fields/wysiwyg.php:385
+msgid "Tabs"
+msgstr "نابات"
+
+#: fields/wysiwyg.php:390
+msgid "Visual & Text"
+msgstr "نص و مرئي"
+
+#: fields/wysiwyg.php:391
+msgid "Visual Only"
+msgstr "البصرية فقط"
+
+#: fields/wysiwyg.php:392
+msgid "Text Only"
+msgstr "ال~نص فقط"
+
+#: fields/wysiwyg.php:399
+msgid "Toolbar"
+msgstr "Toolbar"
+
+#: fields/wysiwyg.php:409
+msgid "Show Media Upload Buttons?"
+msgstr "وتظهر وسائل الإعلام تحميل الأزرار؟"
+
+#: forms/post.php:294 pro/admin/options-page.php:352
+msgid "Edit field group"
+msgstr "تحرير مجموعة أسئلة وأجوبة"
+
+#: pro/acf-pro.php:24
+msgid "Advanced Custom Fields PRO"
+msgstr "متقدم حقول مخصصة للمحترفين"
+
+#: pro/acf-pro.php:191
+msgid "Flexible Content requires at least 1 layout"
+msgstr "يتطلب المحتوى مرنة تخطيط على الأقل 1"
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "خيارات الصفحة"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr "لا توجد صفحات الخيارات موجودة"
+
+#: pro/admin/options-page.php:276
+msgid "Options Updated"
+msgstr "تم تحديث الإعدادات"
+
+#: pro/admin/options-page.php:282
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr "يتم العثور على أية \"مجموعات حقل مخصص\" لهذه الصفحة خيارات. <a href=\"%s\">قم بإنشاء مجموعة حقل مخصص</a>"
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b>خطأ</b>. تعذر الاتصال بخادم التحديث"
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr "<b>خطأ في الاتصال</b>. آسف، الرجاء المحاولة مرة أخرى"
+
+#: pro/admin/views/options-page.php:44
+msgid "Publish"
+msgstr "نشر"
+
+#: pro/admin/views/options-page.php:50
+msgid "Save Options"
+msgstr "حفظ الإعدادات"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr "تعطيل  رخصة"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr "تفعيل الترخيص"
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr "ترخيص"
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+"لإلغاء تأمين التحديثات، الرجاء إدخال مفتاح الترخيص الخاص بك أدناه. إذا لم "
+"يكن لديك مفتاح ترخيص، الرجاء مراجعة"
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr "تفاصيل & التسعير"
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr "مفتاح الترخيص"
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr "معلومات التحديث"
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr "النسخة الحالية"
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr "آخر نسخة"
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr "لا يوجد تحديث متاح"
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr "تحديث الاضافة"
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr "الرجاء إدخال مفتاح الترخيص الخاص بك أعلاه لإطلاق العنان للتحديثات"
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr "الاختيار مرة أخرى"
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr "إشعار الترقية"
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "خيارات"
+
+#: pro/core/updates.php:198
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+"لتمكين التحديثات، الرجاء إدخال مفتاح الترخيص الخاص بك على صفحة <a href=\"%s"
+"\">التحديثات</a> . إذا لم يكن لديك مفتاح ترخيص، يرجى الاطلاع على <a href=\"%s"
+"\">تفاصيل & التسعير</a>"
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "المحتوى مرنة"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "إضافة صف"
+
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr "التخطيط"
+
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr "- النسق"
+
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr "إزالة {تصميم}؟"
+
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr "يتطلب هذا الحقل على الأقل {دقيقة} {المعرف}"
+
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr "يحتوي هذا الحقل حد {ماكس} {المعرف}"
+
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr "يتطلب هذا الحقل على الأقل {دقيقة} {التسمية} {المعرف}"
+
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr "تم الوصول إلى حد أقصى {التسمية} ({ماكس} {المعرف})"
+
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{متوفرة} {التسمية} {المعرف} المتاحة (ماكس {ماكس})"
+
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{مطلوب} {التسمية} {المعرف} المطلوبة (دقيقة {دقيقة})"
+
+#: pro/fields/flexible-content.php:216
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "انقر فوق الزر \"%s\" أدناه لبدء إنشاء التخطيط الخاص بك"
+
+#: pro/fields/flexible-content.php:346
+msgid "Add layout"
+msgstr "إضافة تنسيق جديد"
+
+#: pro/fields/flexible-content.php:349
+msgid "Remove layout"
+msgstr "إزالة من التكوين"
+
+#: pro/fields/flexible-content.php:352 pro/fields/repeater.php:304
+msgid "Click to toggle"
+msgstr "انقر للتبديل"
+
+#: pro/fields/flexible-content.php:493
+msgid "Reorder Layout"
+msgstr "إعادة ترتيب التخطيط"
+
+#: pro/fields/flexible-content.php:493
+msgid "Reorder"
+msgstr "إعادة ترتيب"
+
+#: pro/fields/flexible-content.php:494
+msgid "Delete Layout"
+msgstr "حذف تخطيط"
+
+#: pro/fields/flexible-content.php:495
+msgid "Duplicate Layout"
+msgstr "تخطيط مكررة"
+
+#: pro/fields/flexible-content.php:496
+msgid "Add New Layout"
+msgstr "إضافة تنسيق جديد"
+
+#: pro/fields/flexible-content.php:550 pro/fields/repeater.php:466
+msgid "Table"
+msgstr "جدول"
+
+#: pro/fields/flexible-content.php:551 pro/fields/repeater.php:467
+msgid "Block"
+msgstr "حظر هذا الشخص"
+
+#: pro/fields/flexible-content.php:552 pro/fields/repeater.php:468
+msgid "Row"
+msgstr "سطر"
+
+#: pro/fields/flexible-content.php:567
+msgid "Min"
+msgstr "الحد الأدنى"
+
+#: pro/fields/flexible-content.php:580
+msgid "Max"
+msgstr "الحد أقصى"
+
+#: pro/fields/flexible-content.php:608 pro/fields/repeater.php:475
+msgid "Button Label"
+msgstr "زر"
+
+#: pro/fields/flexible-content.php:617
+msgid "Minimum Layouts"
+msgstr "تخطيطات الحد الأدنى"
+
+#: pro/fields/flexible-content.php:626
+msgid "Maximum Layouts"
+msgstr "تخطيطات الحد الأقصى"
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "الالبوم"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "اضافة صورة للمكتبة"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr "تحديد الحد الأقصى الذي تم التوصل إليه"
+
+#: pro/fields/gallery.php:343
+msgid "Length"
+msgstr "الطول"
+
+#: pro/fields/gallery.php:363
+msgid "Remove"
+msgstr "ازالة"
+
+#: pro/fields/gallery.php:383
+msgid "Caption"
+msgstr "تسمية توضيحية"
+
+#: pro/fields/gallery.php:392
+msgid "Alt Text"
+msgstr "نص بديل"
+
+#: pro/fields/gallery.php:543
+msgid "Add to gallery"
+msgstr "اضافة الى معرض"
+
+#: pro/fields/gallery.php:547
+msgid "Bulk actions"
+msgstr "- اجراءات جماعية -"
+
+#: pro/fields/gallery.php:548
+msgid "Sort by date uploaded"
+msgstr "فرز حسب تاريخ إيداع"
+
+#: pro/fields/gallery.php:549
+msgid "Sort by date modified"
+msgstr "فرز حسب تاريخ التعديل"
+
+#: pro/fields/gallery.php:550
+msgid "Sort by title"
+msgstr "فرز حسب العنوان"
+
+#: pro/fields/gallery.php:551
+msgid "Reverse current order"
+msgstr "عكس النظام الحالي"
+
+#: pro/fields/gallery.php:569
+msgid "Close"
+msgstr "إغلاق"
+
+#: pro/fields/gallery.php:627
+msgid "Minimum Selection"
+msgstr "تحديد الحد الأدنى"
+
+#: pro/fields/gallery.php:636
+msgid "Maximum Selection"
+msgstr "اختيار الحد الأقصى"
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "مكرر"
+
+#: pro/fields/repeater.php:47
+msgid "Minimum rows reached ({min} rows)"
+msgstr "الصفوف الحد الأدنى الذي تم التوصل إليه (الصفوف {دقيقة})"
+
+#: pro/fields/repeater.php:48
+msgid "Maximum rows reached ({max} rows)"
+msgstr "الصفوف أقصى بلغ ({} كحد أقصى الصفوف)"
+
+#: pro/fields/repeater.php:302
+msgid "Drag to reorder"
+msgstr "اسحب لإعادة ترتيب"
+
+#: pro/fields/repeater.php:349
+msgid "Add row"
+msgstr "إضافة صف"
+
+#: pro/fields/repeater.php:350
+msgid "Remove row"
+msgstr "إزالة الصف"
+
+#: pro/fields/repeater.php:398
+msgid "Sub Fields"
+msgstr "الحقول الفرعية"
+
+#: pro/fields/repeater.php:428
+msgid "Collapsed"
+msgstr "تقليص"
+
+#: pro/fields/repeater.php:429
+msgid "Select a sub field to show when row is collapsed"
+msgstr "حدد حقل فرعي لإظهار عند طي الصف"
+
+#: pro/fields/repeater.php:439
+msgid "Minimum Rows"
+msgstr "الصفوف الدنيا"
+
+#: pro/fields/repeater.php:449
+msgid "Maximum Rows"
+msgstr "الصفوف القصوى"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr "حقول مخصصة متقدمة برو"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr "http://www.advancedcustomfields.com/"
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr "تخصيص وورد مع حقول قوية ومهنية وبديهية"
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr "إليوت كوندون"
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr "http://www.elliotcondon.com/"

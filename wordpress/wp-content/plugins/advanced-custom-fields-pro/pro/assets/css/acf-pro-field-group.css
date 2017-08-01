@@ -1,0 +1,67 @@
+/*---------------------------------------------------------------------------------------------
+*
+*	Flexible Content
+*	
+*---------------------------------------------------------------------------------------------*/
+.acf-fc-meta {
+  margin: 0 0 10px;
+  padding: 0;
+}
+.acf-fc-meta li {
+  margin: 0 0 10px;
+  padding: 0;
+}
+.acf-fc-meta .acf-fc-meta-key {
+  display: none;
+}
+.acf-fc-meta .acf-fc-meta-display,
+.acf-fc-meta .acf-fc-meta-min {
+  float: left;
+  width: 33%;
+  padding-right: 10px;
+}
+.acf-input-wrap.select {
+  border-radius: 0 3px 3px 0 !important;
+  border: #DFDFDF solid 1px;
+}
+.acf-input-wrap.select select {
+  margin: 0;
+  border: 0 none;
+  padding: 3px;
+  height: 26px;
+}
+.acf-fc-meta-label .acf-input-prepend,
+.acf-fc-meta-name .acf-input-prepend,
+.acf-fc-meta-display .acf-input-prepend {
+  min-width: 45px;
+}
+.acf-fl-actions {
+  visibility: hidden;
+}
+.acf-field:hover .acf-fl-actions {
+  visibility: visible;
+}
+.acf-fl-actions a {
+  display: block;
+  line-height: 20px;
+  padding: 1px 0;
+  font-size: 13px;
+}
+.acf-fl-actions a.ui-sortable-handle {
+  cursor: move;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*	Clone
+*	
+*---------------------------------------------------------------------------------------------*/
+.acf-field-object-clone {
+  /* group */
+  /* seamless */
+}
+.acf-field-object-clone[data-display="seamless"] .acf-field-setting-instructions,
+.acf-field-object-clone[data-display="seamless"] .acf-field-setting-layout,
+.acf-field-object-clone[data-display="seamless"] .acf-field-setting-wrapper,
+.acf-field-object-clone[data-display="seamless"] .acf-field-setting-conditional_logic {
+  display: none;
+}

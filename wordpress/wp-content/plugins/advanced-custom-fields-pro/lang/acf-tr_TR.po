@@ -1,0 +1,2741 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
+"Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
+"POT-Creation-Date: 2015-08-11 23:47+0200\n"
+"PO-Revision-Date: 2016-11-03 17:12+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language-Team: Ramazan POLAT <trstar@gmail.com>\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:63
+msgid "Advanced Custom Fields"
+msgstr "Gelişmiş Özel Alanlar"
+
+#: acf.php:205 admin/admin.php:61
+msgid "Field Groups"
+msgstr "Alan Grupları"
+
+#: acf.php:206
+msgid "Field Group"
+msgstr "Alan Grubu"
+
+#: acf.php:207 acf.php:239 admin/admin.php:62
+#: pro/fields/flexible-content.php:517
+msgid "Add New"
+msgstr "Yeni Ekle"
+
+#: acf.php:208
+msgid "Add New Field Group"
+msgstr "Yeni Alan Grubu Ekle"
+
+#: acf.php:209
+msgid "Edit Field Group"
+msgstr "Alan Grubu Düzenle"
+
+#: acf.php:210
+msgid "New Field Group"
+msgstr "Yeni Alan Grubu"
+
+#: acf.php:211
+msgid "View Field Group"
+msgstr "Alan Grubu Göster"
+
+#: acf.php:212
+msgid "Search Field Groups"
+msgstr "Alan Grupları Ara"
+
+#: acf.php:213
+msgid "No Field Groups found"
+msgstr "Alan Grupları bulunamadı"
+
+#: acf.php:214
+msgid "No Field Groups found in Trash"
+msgstr "Çöpte Alan Grupları bulunamadı"
+
+#: acf.php:237 admin/field-group.php:182 admin/field-group.php:213
+#: admin/field-groups.php:519
+msgid "Fields"
+msgstr "Alanlar"
+
+#: acf.php:238
+msgid "Field"
+msgstr "Alan"
+
+#: acf.php:240
+msgid "Add New Field"
+msgstr "Yeni Alan Ekle"
+
+#: acf.php:241
+msgid "Edit Field"
+msgstr "Alan Düzenle"
+
+#: acf.php:242 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "Yeni Alan"
+
+#: acf.php:243
+msgid "View Field"
+msgstr "Alan Göster"
+
+#: acf.php:244
+msgid "Search Fields"
+msgstr "Alanları Ara"
+
+#: acf.php:245
+msgid "No Fields found"
+msgstr "Alanlar bulunamadı"
+
+#: acf.php:246
+msgid "No Fields found in Trash"
+msgstr "Çöpte Alanlar bulunamadı"
+
+#: acf.php:268 admin/field-group.php:283 admin/field-groups.php:583
+#: admin/views/field-group-options.php:18
+msgid "Disabled"
+msgstr ""
+
+#: acf.php:273
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+
+#: admin/admin.php:57 admin/views/field-group-options.php:120
+msgid "Custom Fields"
+msgstr "Özel Alanlar"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "Alan grubu güncellendi."
+
+#: admin/field-group.php:70
+#, fuzzy
+msgid "Field group deleted."
+msgstr "Alan grubu güncellendi."
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "Alan grubu yayınlandı."
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "Alan grubu kaydedildi."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "Alan grubu gönderildi."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "Alan grubu bunun için zamanlandı."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "Alan grubu taslak güncellendi."
+
+#: admin/field-group.php:176
+msgid "Move to trash. Are you sure?"
+msgstr "Çöpe taşımak istediğinizden emin misiniz?"
+
+#: admin/field-group.php:177
+msgid "checked"
+msgstr "işaretlendi"
+
+#: admin/field-group.php:178
+msgid "No toggle fields available"
+msgstr "Aç-Kapa alanlar kullanılabilir"
+
+#: admin/field-group.php:179
+msgid "Field group title is required"
+msgstr "Alan grubu için başlık gerekli"
+
+#: admin/field-group.php:180 api/api-field-group.php:607
+msgid "copy"
+msgstr "kopyala"
+
+#: admin/field-group.php:181
+#: admin/views/field-group-field-conditional-logic.php:67
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:23
+#: admin/views/field-group-locations.php:131 api/api-helpers.php:3262
+msgid "or"
+msgstr "veya"
+
+#: admin/field-group.php:183
+msgid "Parent fields"
+msgstr "Veli alanlar"
+
+#: admin/field-group.php:184
+msgid "Sibling fields"
+msgstr "Kardeş alanlar"
+
+#: admin/field-group.php:185
+msgid "Move Custom Field"
+msgstr "Özel Alanı Taşı"
+
+#: admin/field-group.php:186
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "Bu alanda değişiklikler kaydedilinceye kadar yeri değiştirilemez"
+
+#: admin/field-group.php:187
+msgid "Null"
+msgstr "Boş"
+
+#: admin/field-group.php:188 core/input.php:128
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr "Bu sayfanın dışında çıkıldığında yapılan değişiklikler kaybedilecek"
+
+#: admin/field-group.php:189
+#, fuzzy
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr "%s Alanına artık %s alan gruplarından erişilebilir"
+
+#: admin/field-group.php:214
+msgid "Location"
+msgstr "Yer"
+
+#: admin/field-group.php:215
+msgid "Settings"
+msgstr ""
+
+#: admin/field-group.php:253
+msgid "Field Keys"
+msgstr ""
+
+#: admin/field-group.php:283 admin/views/field-group-options.php:17
+msgid "Active"
+msgstr ""
+
+#: admin/field-group.php:744
+msgid "Front Page"
+msgstr "Ön Sayfa"
+
+#: admin/field-group.php:745
+msgid "Posts Page"
+msgstr "Yazılar Sayfası"
+
+#: admin/field-group.php:746
+#, fuzzy
+msgid "Top Level Page (no parent)"
+msgstr "Üst Düzey Sayfa (altında 0)"
+
+#: admin/field-group.php:747
+msgid "Parent Page (has children)"
+msgstr "Alt Sayfa (alt sayfası var)"
+
+#: admin/field-group.php:748
+msgid "Child Page (has parent)"
+msgstr "Alt Sayfa (ebeveyni var)"
+
+#: admin/field-group.php:764
+msgid "Default Template"
+msgstr "Varsayılan Tema"
+
+#: admin/field-group.php:786
+#, fuzzy
+msgid "Logged in"
+msgstr "Kullanıcı Tipi Giriş Yapıldı"
+
+#: admin/field-group.php:787
+msgid "Viewing front end"
+msgstr ""
+
+#: admin/field-group.php:788
+msgid "Viewing back end"
+msgstr ""
+
+#: admin/field-group.php:807
+msgid "Super Admin"
+msgstr "Süper Admin"
+
+#: admin/field-group.php:818 admin/field-group.php:826
+#: admin/field-group.php:840 admin/field-group.php:847
+#: admin/field-group.php:862 admin/field-group.php:872 fields/file.php:235
+#: fields/image.php:226 pro/fields/gallery.php:653
+msgid "All"
+msgstr "Hepsi"
+
+#: admin/field-group.php:827
+msgid "Add / Edit"
+msgstr "Ekle / Düzenle"
+
+#: admin/field-group.php:828
+msgid "Register"
+msgstr "Kayıt"
+
+#: admin/field-group.php:1059
+msgid "Move Complete."
+msgstr "Taşıma Tamamlandı."
+
+#: admin/field-group.php:1060
+#, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr "%s Alanına artık %s alan gruplarından erişilebilir"
+
+#: admin/field-group.php:1062
+msgid "Close Window"
+msgstr "Pencereyi Kapat"
+
+#: admin/field-group.php:1097
+msgid "Please select the destination for this field"
+msgstr "Lütfen bu alan için hedef seçin"
+
+#: admin/field-group.php:1104
+msgid "Move Field"
+msgstr "Alanı Taşı"
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+
+#: admin/field-groups.php:142
+#, fuzzy, php-format
+msgid "Field group duplicated. %s"
+msgstr "Alan grubu güncellendi."
+
+#: admin/field-groups.php:146
+#, fuzzy, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] "Alan grubu güncellendi."
+
+#: admin/field-groups.php:228
+#, fuzzy, php-format
+msgid "Field group synchronised. %s"
+msgstr "Alan grubu kaydedildi."
+
+#: admin/field-groups.php:232
+#, fuzzy, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] "Seçili Alan grupları yok"
+
+#: admin/field-groups.php:403 admin/field-groups.php:573
+#, fuzzy
+msgid "Sync available"
+msgstr "Güncelleme Mevcut"
+
+#: admin/field-groups.php:516
+msgid "Title"
+msgstr "Başlık"
+
+#: admin/field-groups.php:517 admin/views/field-group-options.php:98
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+msgid "Description"
+msgstr ""
+
+#: admin/field-groups.php:518 admin/views/field-group-options.php:10
+msgid "Status"
+msgstr ""
+
+#: admin/field-groups.php:616 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "Değişen Kaydı"
+
+#: admin/field-groups.php:617
+msgid "See what's new in"
+msgstr "Neler yeni gözat"
+
+#: admin/field-groups.php:617
+msgid "version"
+msgstr "versiyon"
+
+#: admin/field-groups.php:619
+msgid "Resources"
+msgstr "Kaynaklar"
+
+#: admin/field-groups.php:621
+msgid "Getting Started"
+msgstr "Başlarken"
+
+#: admin/field-groups.php:622 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr "Güncellemeler"
+
+#: admin/field-groups.php:623
+msgid "Field Types"
+msgstr "Alan Tipleri"
+
+#: admin/field-groups.php:624
+msgid "Functions"
+msgstr "Fonksiyonlar"
+
+#: admin/field-groups.php:625
+msgid "Actions"
+msgstr "Eylemler"
+
+#: admin/field-groups.php:626 fields/relationship.php:718
+msgid "Filters"
+msgstr "Filtreler"
+
+#: admin/field-groups.php:627
+msgid "'How to' guides"
+msgstr "Nasıl Yapılır"
+
+#: admin/field-groups.php:628
+msgid "Tutorials"
+msgstr "Örnekler"
+
+#: admin/field-groups.php:633
+msgid "Created by"
+msgstr "Oluşturan"
+
+#: admin/field-groups.php:673
+#, fuzzy
+msgid "Duplicate this item"
+msgstr "Alanı Çoğalt"
+
+#: admin/field-groups.php:673 admin/field-groups.php:685
+#: admin/views/field-group-field.php:58 pro/fields/flexible-content.php:516
+msgid "Duplicate"
+msgstr "Çoğalt"
+
+#: admin/field-groups.php:724
+#, fuzzy, php-format
+msgid "Select %s"
+msgstr "Seç"
+
+#: admin/field-groups.php:730
+#, fuzzy
+msgid "Synchronise field group"
+msgstr "Bu alan grubu halinde göster"
+
+#: admin/field-groups.php:730 admin/field-groups.php:750
+msgid "Sync"
+msgstr ""
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr "Eklentiler"
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr "<b>Hata</b> Eklentiler listesi getirilemedi."
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr "Bilgi"
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr "Ne Yeni"
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:9
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr ""
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:365
+msgid "No field groups selected"
+msgstr "Seçili Alan grupları yok"
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr "Dosya seçilmedi"
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr "Lütfen tekrar deneyiniz, dosya yüklenemedi."
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr "Dosya tipi hatalı"
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr "İçe aktarılan dosya boş"
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr "<b>Başarılı</b>. İçe aktarma aracı %s alan gruplarını aktardı: %s"
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+"<b>Uyarı </b>. İçe aktarma aracı zaten var olan %s alan gruplarını tespit "
+"etti. Bu kayıtlar gözardı edildi: %s"
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr ""
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr ""
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "Yükselt"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr ""
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr "Koşullu Mantık"
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:137 fields/checkbox.php:246
+#: fields/message.php:117 fields/page_link.php:568 fields/page_link.php:582
+#: fields/post_object.php:434 fields/post_object.php:448 fields/select.php:411
+#: fields/select.php:425 fields/select.php:439 fields/select.php:453
+#: fields/tab.php:172 fields/taxonomy.php:770 fields/taxonomy.php:784
+#: fields/taxonomy.php:798 fields/taxonomy.php:812 fields/user.php:457
+#: fields/user.php:471 fields/wysiwyg.php:384
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "Evet"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:138 fields/checkbox.php:247
+#: fields/message.php:118 fields/page_link.php:569 fields/page_link.php:583
+#: fields/post_object.php:435 fields/post_object.php:449 fields/select.php:412
+#: fields/select.php:426 fields/select.php:440 fields/select.php:454
+#: fields/tab.php:173 fields/taxonomy.php:685 fields/taxonomy.php:771
+#: fields/taxonomy.php:785 fields/taxonomy.php:799 fields/taxonomy.php:813
+#: fields/user.php:458 fields/user.php:472 fields/wysiwyg.php:385
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "Hayır"
+
+#: admin/views/field-group-field-conditional-logic.php:65
+msgid "Show this field if"
+msgstr "Alanı bu şart gerçekleşirse göster"
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:88
+msgid "is equal to"
+msgstr "eşitse"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:89
+msgid "is not equal to"
+msgstr "eşit değilse"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:118
+msgid "and"
+msgstr "ve"
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:133
+msgid "Add rule group"
+msgstr "Grup Kuralı ekle"
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:57
+msgid "Edit field"
+msgstr "Alanı Düzenle"
+
+#: admin/views/field-group-field.php:57 pro/fields/gallery.php:355
+msgid "Edit"
+msgstr "Düzenle"
+
+#: admin/views/field-group-field.php:58
+msgid "Duplicate field"
+msgstr "Alanı Çoğalt"
+
+#: admin/views/field-group-field.php:59
+msgid "Move field to another group"
+msgstr "Alanı başka gruba taşı"
+
+#: admin/views/field-group-field.php:59
+msgid "Move"
+msgstr "Taşı"
+
+#: admin/views/field-group-field.php:60
+msgid "Delete field"
+msgstr "Alanı sil"
+
+#: admin/views/field-group-field.php:60 pro/fields/flexible-content.php:515
+msgid "Delete"
+msgstr "Sil"
+
+#: admin/views/field-group-field.php:68 fields/oembed.php:212
+#: fields/taxonomy.php:886
+msgid "Error"
+msgstr "Hata"
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr "Hata."
+
+#: admin/views/field-group-field.php:68
+msgid "Field type does not exist"
+msgstr "Dosya türü mevcut değil"
+
+#: admin/views/field-group-field.php:81
+msgid "Field Label"
+msgstr "Alan Etiketi"
+
+#: admin/views/field-group-field.php:82
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Bu isim Düzenleme sayfasında görüntülenecek"
+
+#: admin/views/field-group-field.php:93
+msgid "Field Name"
+msgstr "Alan Adı"
+
+#: admin/views/field-group-field.php:94
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr "Boşluksuz tek kelime. Alt çizgi ve tire yazılabilir."
+
+#: admin/views/field-group-field.php:105
+msgid "Field Type"
+msgstr "Alan Türü"
+
+#: admin/views/field-group-field.php:118 fields/tab.php:143
+msgid "Instructions"
+msgstr "Talimatlar"
+
+#: admin/views/field-group-field.php:119
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Yazarlara gösterilecek talimatlar. Veri gönderirken gösterilir"
+
+#: admin/views/field-group-field.php:130
+msgid "Required?"
+msgstr "Gerekli mi?"
+
+#: admin/views/field-group-field.php:158
+#, fuzzy
+msgid "Wrapper Attributes"
+msgstr "Sayfa Öznitelikleri"
+
+#: admin/views/field-group-field.php:164
+msgid "width"
+msgstr ""
+
+#: admin/views/field-group-field.php:178
+msgid "class"
+msgstr ""
+
+#: admin/views/field-group-field.php:191
+#, fuzzy
+msgid "id"
+msgstr "Yan"
+
+#: admin/views/field-group-field.php:203
+msgid "Close Field"
+msgstr "Alanı Kapat"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr "Sıralama"
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:541
+msgid "Label"
+msgstr "Etiket"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:554
+msgid "Name"
+msgstr "Adı"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr "Tür"
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"Hiç alan yok. İlk alanı oluşturmak için <strong> + Alan Ekle </strong> "
+"düğmesini tıklayın."
+
+#: admin/views/field-group-fields.php:51
+msgid "Drag and drop to reorder"
+msgstr "Yeniden sıralama için sürükle ve bırak"
+
+#: admin/views/field-group-fields.php:54
+msgid "+ Add Field"
+msgstr "+ Alan Ekle"
+
+#: admin/views/field-group-locations.php:5
+msgid "Rules"
+msgstr "Kurallar"
+
+#: admin/views/field-group-locations.php:6
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"Bu gelişmiş özel alanları hangi düzenleme ekranlarında kullanılacağını "
+"belirlemek için kural oluşturun"
+
+#: admin/views/field-group-locations.php:21
+msgid "Show this field group if"
+msgstr "Bu alan grubu halinde göster"
+
+#: admin/views/field-group-locations.php:41
+#: admin/views/field-group-locations.php:47
+msgid "Post"
+msgstr "Yazı"
+
+#: admin/views/field-group-locations.php:42 fields/relationship.php:724
+msgid "Post Type"
+msgstr "Sayfa Tipi"
+
+#: admin/views/field-group-locations.php:43
+msgid "Post Status"
+msgstr "Yazı Durumu"
+
+#: admin/views/field-group-locations.php:44
+msgid "Post Format"
+msgstr "Yazı Formatı"
+
+#: admin/views/field-group-locations.php:45
+msgid "Post Category"
+msgstr "Yazı Kategorisi"
+
+#: admin/views/field-group-locations.php:46
+msgid "Post Taxonomy"
+msgstr "Yazı Taksonomi"
+
+#: admin/views/field-group-locations.php:49
+#: admin/views/field-group-locations.php:53
+msgid "Page"
+msgstr "Sayfa"
+
+#: admin/views/field-group-locations.php:50
+msgid "Page Template"
+msgstr "Sayfa Teması"
+
+#: admin/views/field-group-locations.php:51
+msgid "Page Type"
+msgstr "Sayfa Tipi"
+
+#: admin/views/field-group-locations.php:52
+msgid "Page Parent"
+msgstr "Sayfa Ebeveyn"
+
+#: admin/views/field-group-locations.php:55 fields/user.php:36
+msgid "User"
+msgstr "Kullanıcı"
+
+#: admin/views/field-group-locations.php:56
+#, fuzzy
+msgid "Current User"
+msgstr "Şimdiki Versiyon"
+
+#: admin/views/field-group-locations.php:57
+#, fuzzy
+msgid "Current User Role"
+msgstr "Kullanıcı Kuralı"
+
+#: admin/views/field-group-locations.php:58
+msgid "User Form"
+msgstr "Kullanıcı Formu"
+
+#: admin/views/field-group-locations.php:59
+msgid "User Role"
+msgstr "Kullanıcı Kuralı"
+
+#: admin/views/field-group-locations.php:61 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr "Formlar"
+
+#: admin/views/field-group-locations.php:62
+msgid "Attachment"
+msgstr "Ek"
+
+#: admin/views/field-group-locations.php:63
+msgid "Taxonomy Term"
+msgstr "Taksonomi Terimi"
+
+#: admin/views/field-group-locations.php:64
+msgid "Comment"
+msgstr "Yorum"
+
+#: admin/views/field-group-locations.php:65
+msgid "Widget"
+msgstr "Widget"
+
+#: admin/views/field-group-options.php:25
+msgid "Style"
+msgstr "Stil"
+
+#: admin/views/field-group-options.php:32
+msgid "Standard (WP metabox)"
+msgstr "Standart (WP metabox)"
+
+#: admin/views/field-group-options.php:33
+msgid "Seamless (no metabox)"
+msgstr "Dikişsiz (metabox yok)"
+
+#: admin/views/field-group-options.php:40
+msgid "Position"
+msgstr "Pozisyon"
+
+#: admin/views/field-group-options.php:47
+msgid "High (after title)"
+msgstr "Yüksek (başlıktan sonra)"
+
+#: admin/views/field-group-options.php:48
+msgid "Normal (after content)"
+msgstr "Normal (içerikten sonra)"
+
+#: admin/views/field-group-options.php:49
+msgid "Side"
+msgstr "Yan"
+
+#: admin/views/field-group-options.php:57
+msgid "Label placement"
+msgstr "Etiket yerleştirme"
+
+#: admin/views/field-group-options.php:64 fields/tab.php:159
+msgid "Top aligned"
+msgstr "Üste yasla"
+
+#: admin/views/field-group-options.php:65 fields/tab.php:160
+msgid "Left Aligned"
+msgstr "Sola yasla"
+
+#: admin/views/field-group-options.php:72
+msgid "Instruction placement"
+msgstr "Talimat yerleştirme"
+
+#: admin/views/field-group-options.php:79
+msgid "Below labels"
+msgstr "Etiketlerin altında"
+
+#: admin/views/field-group-options.php:80
+msgid "Below fields"
+msgstr "Alanlarının altında"
+
+#: admin/views/field-group-options.php:87
+msgid "Order No."
+msgstr "Sıra No."
+
+#: admin/views/field-group-options.php:88
+msgid "Field groups with a lower order will appear first"
+msgstr ""
+
+#: admin/views/field-group-options.php:99
+msgid "Shown in field group list"
+msgstr ""
+
+#: admin/views/field-group-options.php:109
+msgid "Hide on screen"
+msgstr "Ekrandan gizle"
+
+#: admin/views/field-group-options.php:110
+#, fuzzy
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr ""
+"<b>Seç</b> elemanları düzenleme ekranından gizlemek için  <b>Gizle</b> "
+
+#: admin/views/field-group-options.php:110
+#, fuzzy
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+"Birden fazla alan grupları bir düzenleme ekranında görünürse, ilk alan "
+"grubun seçenekleri kullanılacaktır. (küçük id numarası ile bir)"
+
+#: admin/views/field-group-options.php:117
+msgid "Permalink"
+msgstr "Permalink"
+
+#: admin/views/field-group-options.php:118
+msgid "Content Editor"
+msgstr "İçerik Düzenleyici"
+
+#: admin/views/field-group-options.php:119
+msgid "Excerpt"
+msgstr "Alıntı"
+
+#: admin/views/field-group-options.php:121
+msgid "Discussion"
+msgstr "Tartışma"
+
+#: admin/views/field-group-options.php:122
+msgid "Comments"
+msgstr "Yorumlar"
+
+#: admin/views/field-group-options.php:123
+msgid "Revisions"
+msgstr "Revizyonlar"
+
+#: admin/views/field-group-options.php:124
+msgid "Slug"
+msgstr "Kısaad"
+
+#: admin/views/field-group-options.php:125
+msgid "Author"
+msgstr "Yazar"
+
+#: admin/views/field-group-options.php:126
+msgid "Format"
+msgstr "Format"
+
+#: admin/views/field-group-options.php:127
+msgid "Page Attributes"
+msgstr "Sayfa Öznitelikleri"
+
+#: admin/views/field-group-options.php:128 fields/relationship.php:737
+msgid "Featured Image"
+msgstr "Öneçıkarılmış Resim"
+
+#: admin/views/field-group-options.php:129
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: admin/views/field-group-options.php:130
+msgid "Tags"
+msgstr "Etiketler"
+
+#: admin/views/field-group-options.php:131
+msgid "Send Trackbacks"
+msgstr "Parçaları Gönder"
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr "İndir & Yükle"
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr "Yüklendi"
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr "Gelişmiş Özel Alanlara Hoş geldiniz"
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr ""
+"Güncelleme için teşekkür ederiz! ACF %s zamankinden daha büyük ve daha iyi. "
+"Böyle umuyoruz."
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr "Daha düzgün özel alan deneyimi"
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr "Geliştirilmiş Kullanılabilirlik"
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+"Popüler Select2 kütüphane dahil yazılan nesne, sayfa linki, taksonomi alan "
+"türlerinden hem kullanışlılık ve hem de hız performansı geliştirdi."
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr "Geliştirilmiş Tasarım"
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+"Birçok alanları ACF her zamankinden daha iyi görünmesi için görsel bir "
+"yenileme gerçekleştirildi! Dikkat çeken değişiklikler galeri, ilişki ve "
+"(yeni) alanlarında görülür!"
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr "Geliştirilmiş Veri"
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+"Veri mimarisi yeniden düzenleme ile alt alanlar ebeveynlerinden bağımsız "
+"olarak çalışmasına izin verdi. "
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr "Elveda Eklentiler. Merhaba PRO"
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr "ACF PRO Tanıtımı"
+
+#: admin/views/settings-info.php:51
+#, fuzzy
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr ""
+"İşlevselliği üst düzeye çıkarken, bir şekilde teslim edilir şeklini "
+"değiştirerek teslim ediyoruz!"
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+"Yeni <a href=\"%s\"> ACF</a> Pro sürümünü içine 4 prim eklentiler kombine "
+"edilmiştir. Mevcut kişisel ve geliştirici lisans hem de birlikte, prim "
+"işlevsellik daha uygun fiyatlı ve her zamankinden daha erişilebilir!"
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr "Güçlü Özellikler"
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+"ACF PRO gibi tekrarlanabilir veriler, esnek içerik düzenleri, güzel bir "
+"galeri alanına ve ekstra yönetici seçenekleri sayfaları oluşturmak için "
+"yeteneği gibi güçlü özellikler içerir!"
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr ""
+"<a href=\"%s\">ACF PRO </a> özellikleri  hakkında daha fazlasını okuyun."
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr "Kolay Yükseltme"
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+" <a href=\"%s\">Mağaza hesap</a>, yükseltme kolay halde giriş yapın ve  "
+"yardım isteyin ACF PRO ücretsiz bir kopyasını talep edin!"
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+"Biz de bir <a href=\"%s\">herhangi bir soruya cevap kılavuzu </a> yükseltme, "
+"ama bir tane yaparsanız, yoluyla destek ekibimize başvurun  <a href = \"%s"
+"\"> yardım masası </a>"
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr "Hood Altında"
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr "Akıllı alan ayarları"
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr "ACF şimdi bireysel nesneleri olarak alan ayarları kaydeder"
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr "Daha Fazla AJAX"
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr ""
+"Daha alanlar sayfa yükleme hızlandırmak için AJAX destekli arama kullanın"
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr "Yerel JSON"
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr "JSON özelliği yeni otomatik aktarım hızını artırır"
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr "Daha iyi sürüm kontrolü"
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+"JSON özelliği yeni otomatik ihracat alan ayarları versiyonu kontrollü "
+"olmasını sağlar"
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr "JSON için XML"
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr "İçe / Dışa Aktarım şimdi XML lehine JSON kullanır"
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr "Yeni Formlar"
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr ""
+"Alanlar şimdi yorumlar, widget'lar ve tüm kullanıcı formları eşlenebilir!"
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr "Gömme içerik için yeni bir alan eklendi"
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr "Yeni Galeri"
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr "Galeri alanı çok gerekli"
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr "Yeni Ayarlar"
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr ""
+"Alan grubu ayarları etiket yerleştirme ve öğretim yerleştirme için "
+"eklenmiştir"
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr "Daha Son Kullanıcı Formları"
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr "acf_form() yeni bir yazı oluşturabilir"
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr "Daha iyi Doğrulama"
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr "Form doğrulama artık sadece JS lehine PHP + AJAX ile yapılır"
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr "İlişkili Alan"
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr "'Filtreler' ayarı Yeni Bir İlişki alan (Arama, Yazı tipi, Taksonomi)"
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr "Hareketli Alanlar"
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr ""
+"Yeni alan grup işlevsellik gruplar ve veliler arasında bir alana taşımak "
+"için izin verir"
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "Sayfa Bağlantısı"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr " Yeni arşiv grubu page_link alanı tercihinde"
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr "Daha iyi Ayarlar Sayfası"
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr ""
+"Seçenekleri sayfası için yeni fonksiyonlar hem ebeveyn ve çocuk menüsü "
+"sayfaları oluşturulmasını sağlar"
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr "Biz %s değişiklikleri seveceğinizi düşünüyoruz."
+
+#: admin/views/settings-tools-export.php:13
+msgid "Export Field Groups to PHP"
+msgstr "PHP olarak Alan Gruplarını dışa aktar"
+
+#: admin/views/settings-tools-export.php:17
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"Seçilen alan grup (lar) yerel bir sürümünü kaydetmek için "
+"kullanılabilirsiniz. Bir yerel alan grup, daha hızlı yükleme süreleri, sürüm "
+"kontrolü ve dinamik alanlar / ayarları gibi birçok fayda sağlar. Temanızın "
+"functions.php dosyasına sadece kodu kopyalayıp yapıştırın, buna harici dosya "
+"da dahil bu kodu orada da kullanabilirsiniz."
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr "Alan Gruplarını Seç"
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr "Alan Gruplarını Dışa Aktarın"
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"Dışa aktarma ve sonra dışa aktarma yöntemini seçtikten sonra alan gruplarını "
+"seçin. Sonra başka bir ACF yükleme içe bir .json dosyaya vermek için indirme "
+"düğmesini kullanın. Tema yerleştirebilirsiniz PHP kodu aktarma düğmesini "
+"kullanın."
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr "Aktarma Dosyasını indir"
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr "Aktarım kodu oluştur"
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "Alan Grupları İçe Aktar"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"İçe aktaracağınız Gelişmiş Özel Alanlar JSON dosyasını seçin. Aşağıdaki içe "
+"aktar butonuna tıkladığınızda, ACF alan gruplarını içe aktaracak."
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "Dosya Seç"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr "İçe Aktar"
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr ""
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr ""
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr ""
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr ""
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr ""
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+"Önemle devam etmeden önce size veritabanını yedekleminizi öneririz. Şimdi "
+"güncelleyiciyi çalıştırmak istediğiniz emin misiniz?"
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr ""
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr ""
+
+#: admin/views/update-notice.php:23
+msgid "Database Upgrade Required"
+msgstr "Veritabanı Yükseltmesi Gerekiyor"
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr "Güncelleme için teşekkür ederiz. %s v%s!"
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+"Eğer yeni müthiş özelliklerini kullanmaya başlamadan önce, yeni sürüme "
+"veritabanını güncellemek lütfen."
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr "Yükseltme görevlerini okuyor ..."
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr "Sürüme yükseltme veri %s"
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr "Neler yeni görün"
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr ""
+
+#: api/api-helpers.php:821
+msgid "Thumbnail"
+msgstr "Küçük resim"
+
+#: api/api-helpers.php:822
+msgid "Medium"
+msgstr "Orta"
+
+#: api/api-helpers.php:823
+msgid "Large"
+msgstr "Büyük"
+
+#: api/api-helpers.php:871
+msgid "Full Size"
+msgstr "Tam Boyut"
+
+#: api/api-helpers.php:1581
+msgid "(no title)"
+msgstr "(başlıksız)"
+
+#: api/api-helpers.php:3183
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3188
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3204
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3209
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3227
+#, php-format
+msgid "File size must be at least %s."
+msgstr ""
+
+#: api/api-helpers.php:3232
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr ""
+
+#: api/api-helpers.php:3266
+#, fuzzy, php-format
+msgid "File type must be %s."
+msgstr "Dosya türü mevcut değil"
+
+#: api/api-template.php:1289 pro/fields/gallery.php:564
+msgid "Update"
+msgstr "Güncelle"
+
+#: api/api-template.php:1290
+msgid "Post updated"
+msgstr "Yazı güncellendi"
+
+#: core/field.php:131
+msgid "Basic"
+msgstr "Basit"
+
+#: core/field.php:132
+msgid "Content"
+msgstr "İçerik"
+
+#: core/field.php:133
+msgid "Choice"
+msgstr "Seçim"
+
+#: core/field.php:134
+msgid "Relational"
+msgstr "İlişkisel"
+
+#: core/field.php:135
+msgid "jQuery"
+msgstr "jQuery"
+
+#: core/field.php:136 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:512 pro/fields/repeater.php:392
+msgid "Layout"
+msgstr "Düzen"
+
+#: core/input.php:129
+msgid "Expand Details"
+msgstr "Ayrıntıları Genişlet"
+
+#: core/input.php:130
+msgid "Collapse Details"
+msgstr "Detayları Daralt"
+
+#: core/input.php:131
+msgid "Validation successful"
+msgstr "Doğrulama başarılı"
+
+#: core/input.php:132
+msgid "Validation failed"
+msgstr "Doğrulama başarısız"
+
+#: core/input.php:133
+msgid "1 field requires attention"
+msgstr ""
+
+#: core/input.php:134
+#, php-format
+msgid "%d fields require attention"
+msgstr ""
+
+#: core/input.php:135
+msgid "Restricted"
+msgstr ""
+
+#: core/input.php:533
+#, php-format
+msgid "%s value is required"
+msgstr "%s değeri gerekli"
+
+#: fields/checkbox.php:36 fields/taxonomy.php:752
+msgid "Checkbox"
+msgstr "Onay Kutusu"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr "Hepsini Aç-Kapat"
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:388
+msgid "Choices"
+msgstr "Seçimler"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "Enter each choice on a new line."
+msgstr "Her satıra bir seçim yazın."
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "For more control, you may specify both a value and label like this:"
+msgstr "Daha fazla kontrol için, hem bir değer belirtebilir ve bu gibi etiket:"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "red : Red"
+msgstr "red : Kırmızı"
+
+#: fields/checkbox.php:217 fields/color_picker.php:158 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:397
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:345
+msgid "Default Value"
+msgstr "Varsayılan Değer"
+
+#: fields/checkbox.php:218 fields/select.php:398
+msgid "Enter each default value on a new line"
+msgstr "Her satıra bir değer girin"
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "Dikey"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "Yatay"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr ""
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr ""
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "Renk Paleti"
+
+#: fields/color_picker.php:94
+msgid "Clear"
+msgstr "Temizle"
+
+#: fields/color_picker.php:95
+msgid "Default"
+msgstr "Varsayılan"
+
+#: fields/color_picker.php:96
+msgid "Select Color"
+msgstr "Renk Seç"
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "Tarih Seçici"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr "Tamam"
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr "Bugün"
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr "Başka bir ay göster"
+
+#: fields/date_picker.php:149
+msgid "Display Format"
+msgstr "Gösterim formatı"
+
+#: fields/date_picker.php:150
+msgid "The format displayed when editing a post"
+msgstr "Bir yazı düzenlenirken görüntülenecek format"
+
+#: fields/date_picker.php:164
+msgid "Return format"
+msgstr "Dönüş formatı"
+
+#: fields/date_picker.php:165
+msgid "The format returned via template functions"
+msgstr "Şablon fonksiyonları ile dönüş biçimi"
+
+#: fields/date_picker.php:180
+msgid "Week Starts On"
+msgstr "Hafta Başlangıcı"
+
+#: fields/email.php:36
+msgid "Email"
+msgstr "E-Posta"
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:346
+msgid "Appears when creating a new post"
+msgstr "Yeni bir yazı oluştururken görünür"
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr "Yer Tutucu Metni"
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr "Giriş içinde görünür"
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr "Hazırlık sonu"
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr "Girişten önce görünür"
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr "Eklemek"
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr "Girişten sonra görünür"
+
+#: fields/file.php:36
+msgid "File"
+msgstr "Dosya"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "Dosya Düzenle"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "Dosya Güncelle"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr "Bu yazıya yükledi"
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr "Dosya Adı"
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr "Dosya Boyutu"
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr "Dosya seçilmedi"
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "Dosya Ekle"
+
+#: fields/file.php:214 fields/image.php:195 fields/taxonomy.php:821
+msgid "Return Value"
+msgstr "Dönen Değer"
+
+#: fields/file.php:215 fields/image.php:196
+msgid "Specify the returned value on front end"
+msgstr "Bu alanı kullanacak kişiye dönecek değer"
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr "Dosya Dizisi"
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "Dosya URL"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr "Dosya ID"
+
+#: fields/file.php:229 fields/image.php:220 pro/fields/gallery.php:647
+msgid "Library"
+msgstr "Kitaplık"
+
+#: fields/file.php:230 fields/image.php:221 pro/fields/gallery.php:648
+msgid "Limit the media library choice"
+msgstr "Ortam kitaplığı seçimini sınırlayın"
+
+#: fields/file.php:236 fields/image.php:227 pro/fields/gallery.php:654
+msgid "Uploaded to post"
+msgstr "Yazıya yüklendi"
+
+#: fields/file.php:243 fields/image.php:234 pro/fields/gallery.php:661
+#, fuzzy
+msgid "Minimum"
+msgstr "Asgari Satır"
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr ""
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:257
+#: fields/image.php:290 pro/fields/gallery.php:684 pro/fields/gallery.php:717
+#, fuzzy
+msgid "File size"
+msgstr "Dosya Boyutu"
+
+#: fields/file.php:254 fields/image.php:267 pro/fields/gallery.php:694
+#, fuzzy
+msgid "Maximum"
+msgstr "Azami Satır"
+
+#: fields/file.php:265 fields/image.php:300 pro/fields/gallery.php:727
+#, fuzzy
+msgid "Allowed file types"
+msgstr "Dosya tipi hatalı"
+
+#: fields/file.php:266 fields/image.php:301 pro/fields/gallery.php:728
+msgid "Comma separated list. Leave blank for all types"
+msgstr ""
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr "Google Harita"
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr "Yer bulma"
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr "Üzgünüz, bu tarayıcı geolocation desteklemiyor"
+
+#: fields/google-map.php:135
+msgid "Clear location"
+msgstr "Konumu Temizle"
+
+#: fields/google-map.php:140
+msgid "Find current location"
+msgstr "Bulunduğunuz konumu bulun"
+
+#: fields/google-map.php:141
+msgid "Search for address..."
+msgstr "Adres aramak ..."
+
+#: fields/google-map.php:173 fields/google-map.php:184
+msgid "Center"
+msgstr "Merkez"
+
+#: fields/google-map.php:174 fields/google-map.php:185
+msgid "Center the initial map"
+msgstr "Haritanın merkezi"
+
+#: fields/google-map.php:198
+msgid "Zoom"
+msgstr "Yaklaş"
+
+#: fields/google-map.php:199
+msgid "Set the initial zoom level"
+msgstr "Yaklaşma seviyesini belirle"
+
+#: fields/google-map.php:208 fields/image.php:246 fields/image.php:279
+#: fields/oembed.php:262 pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Height"
+msgstr "Yükseklik"
+
+#: fields/google-map.php:209
+msgid "Customise the map height"
+msgstr "Harita yüksekliğini değiştirebilirsiniz"
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Resim"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "Resim Seç"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "Resim Düzenle"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "Resim Güncelle"
+
+#: fields/image.php:54
+#, fuzzy
+msgid "Uploaded to this post"
+msgstr "Bu yazıya yükledi"
+
+#: fields/image.php:55
+#, fuzzy
+msgid "All images"
+msgstr "Resim Ekle"
+
+#: fields/image.php:147
+msgid "No image selected"
+msgstr "Resim seçilmedi"
+
+#: fields/image.php:147
+msgid "Add Image"
+msgstr "Resim Ekle"
+
+#: fields/image.php:201
+msgid "Image Array"
+msgstr "Resim Dizisi"
+
+#: fields/image.php:202
+msgid "Image URL"
+msgstr "Resim URL"
+
+#: fields/image.php:203
+msgid "Image ID"
+msgstr "Resim ID"
+
+#: fields/image.php:210 pro/fields/gallery.php:637
+msgid "Preview Size"
+msgstr "Önizleme Boyutu"
+
+#: fields/image.php:211 pro/fields/gallery.php:638
+msgid "Shown when entering data"
+msgstr "Gösterildiği veri girme"
+
+#: fields/image.php:235 fields/image.php:268 pro/fields/gallery.php:662
+#: pro/fields/gallery.php:695
+msgid "Restrict which images can be uploaded"
+msgstr ""
+
+#: fields/image.php:238 fields/image.php:271 fields/oembed.php:251
+#: pro/fields/gallery.php:665 pro/fields/gallery.php:698
+msgid "Width"
+msgstr ""
+
+#: fields/message.php:36 fields/message.php:103 fields/true_false.php:106
+msgid "Message"
+msgstr "Mesaj"
+
+#: fields/message.php:104
+msgid "Please note that all text will first be passed through the wp function "
+msgstr "Tüm metin ilk wp fonksiyonu sayesinde geçilecek unutmayın"
+
+#: fields/message.php:112
+msgid "Escape HTML"
+msgstr ""
+
+#: fields/message.php:113
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr ""
+
+#: fields/number.php:36
+msgid "Number"
+msgstr "Sayı"
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr "Asgari Değer"
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr "Azami Değer"
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr "Adım Boyutu"
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr "Değer bir sayı olmalıdır"
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr "Değer %d eşit veya daha yüksek olmalıdır"
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr "Değer %d eşit veya daha düşük olmalıdır"
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr "oEmbed"
+
+#: fields/oembed.php:199
+msgid "Enter URL"
+msgstr "URL Yazınız"
+
+#: fields/oembed.php:212
+msgid "No embed found for the given URL."
+msgstr "Verilen URL bulunamadı."
+
+#: fields/oembed.php:248 fields/oembed.php:259
+msgid "Embed Size"
+msgstr "Boyutu"
+
+#: fields/page_link.php:206
+msgid "Archives"
+msgstr "Arşivler"
+
+#: fields/page_link.php:535 fields/post_object.php:401
+#: fields/relationship.php:690
+msgid "Filter by Post Type"
+msgstr "Yazı Türlerine Göre Filtre"
+
+#: fields/page_link.php:543 fields/post_object.php:409
+#: fields/relationship.php:698
+msgid "All post types"
+msgstr "Bütün yazı türleri"
+
+#: fields/page_link.php:549 fields/post_object.php:415
+#: fields/relationship.php:704
+msgid "Filter by Taxonomy"
+msgstr "Taksonomiye göre filtre"
+
+#: fields/page_link.php:557 fields/post_object.php:423
+#: fields/relationship.php:712
+#, fuzzy
+msgid "All taxonomies"
+msgstr "Hiçbir taksonomi filtresi yok"
+
+#: fields/page_link.php:563 fields/post_object.php:429 fields/select.php:406
+#: fields/taxonomy.php:765 fields/user.php:452
+msgid "Allow Null?"
+msgstr "Boş Geçilebilir mi?"
+
+#: fields/page_link.php:577 fields/post_object.php:443 fields/select.php:420
+#: fields/user.php:466
+msgid "Select multiple values?"
+msgstr "Birden fazla seçim var mı?"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr "Parola"
+
+#: fields/post_object.php:36 fields/post_object.php:462
+#: fields/relationship.php:769
+msgid "Post Object"
+msgstr "Yazı Nesnesi"
+
+#: fields/post_object.php:457 fields/relationship.php:764
+msgid "Return Format"
+msgstr "Dönüş Formatı"
+
+#: fields/post_object.php:463 fields/relationship.php:770
+msgid "Post ID"
+msgstr "Yazı ID"
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "Tek Seçimlik"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "Diğer"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr "Özel değerler için izin vermek için 'diğer' seçeneği ekle"
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr "Diğer Kaydet"
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr "Alanın seçimler için Kaydet 'diğer' değerleri"
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "İlişkili"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr ""
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "Maksimum değerler ({max} değerleri) ulaştı"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr "Yükleniyor"
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr "Eşleşme yok"
+
+#: fields/relationship.php:571
+msgid "Search..."
+msgstr "Aranıyor..."
+
+#: fields/relationship.php:580
+msgid "Select post type"
+msgstr "Yazı tipi seç"
+
+#: fields/relationship.php:593
+msgid "Select taxonomy"
+msgstr "Taksonomi seç"
+
+#: fields/relationship.php:723
+msgid "Search"
+msgstr "Ara"
+
+#: fields/relationship.php:725 fields/taxonomy.php:36 fields/taxonomy.php:735
+msgid "Taxonomy"
+msgstr "Taksonomi"
+
+#: fields/relationship.php:732
+msgid "Elements"
+msgstr "Elemanlar"
+
+#: fields/relationship.php:733
+msgid "Selected elements will be displayed in each result"
+msgstr "Seçilen elemanlar için sonuç görüntülenir"
+
+#: fields/relationship.php:744
+msgid "Minimum posts"
+msgstr ""
+
+#: fields/relationship.php:753
+msgid "Maximum posts"
+msgstr "Maksimum yazı"
+
+#: fields/select.php:36 fields/select.php:174 fields/taxonomy.php:757
+msgid "Select"
+msgstr "Seç"
+
+#: fields/select.php:434
+msgid "Stylised UI"
+msgstr "Stilize edilmiş UI"
+
+#: fields/select.php:448
+msgid "Use AJAX to lazy load choices?"
+msgstr "Seçim yüklemesi için AJAX kullanılsın mı?"
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr "Sekme"
+
+#: fields/tab.php:128
+msgid "Warning"
+msgstr "Uyarı"
+
+#: fields/tab.php:133
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+"Bir tablo stili tekrarlayıcı alan veya esnek içerik alanı düzeni "
+"eklendiğinde sekmesi alanı yanlış görüntüler"
+
+#: fields/tab.php:146
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+"Gruplar halinde daha iyi alanları ekran düzenlemek için \"Sekme Alanlar \" "
+"kullanın."
+
+#: fields/tab.php:148
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+"(Başka bir  \"sekmesi alan \" tanımlanmıştır kadar ya) bu  \"sekmesi alan\" "
+"Aşağıdaki tüm alanları sekme başlığı olarak bu alanın etiketi kullanılarak "
+"bir araya getirilir."
+
+#: fields/tab.php:155
+#, fuzzy
+msgid "Placement"
+msgstr "Elemanlar"
+
+#: fields/tab.php:167
+msgid "End-point"
+msgstr ""
+
+#: fields/tab.php:168
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr ""
+
+#: fields/taxonomy.php:565
+#, php-format
+msgid "Add new %s "
+msgstr ""
+
+#: fields/taxonomy.php:704
+msgid "None"
+msgstr "Yok"
+
+#: fields/taxonomy.php:736
+msgid "Select the taxonomy to be displayed"
+msgstr ""
+
+#: fields/taxonomy.php:745
+msgid "Appearance"
+msgstr ""
+
+#: fields/taxonomy.php:746
+msgid "Select the appearance of this field"
+msgstr ""
+
+#: fields/taxonomy.php:751
+msgid "Multiple Values"
+msgstr "Çoklu Değer"
+
+#: fields/taxonomy.php:753
+msgid "Multi Select"
+msgstr "Çoklu Seçim"
+
+#: fields/taxonomy.php:755
+msgid "Single Value"
+msgstr "Tek Değer"
+
+#: fields/taxonomy.php:756
+msgid "Radio Buttons"
+msgstr "Tekli Seçim"
+
+#: fields/taxonomy.php:779
+msgid "Create Terms"
+msgstr ""
+
+#: fields/taxonomy.php:780
+msgid "Allow new terms to be created whilst editing"
+msgstr ""
+
+#: fields/taxonomy.php:793
+msgid "Save Terms"
+msgstr ""
+
+#: fields/taxonomy.php:794
+msgid "Connect selected terms to the post"
+msgstr ""
+
+#: fields/taxonomy.php:807
+msgid "Load Terms"
+msgstr ""
+
+#: fields/taxonomy.php:808
+msgid "Load value from posts terms"
+msgstr ""
+
+#: fields/taxonomy.php:826
+msgid "Term Object"
+msgstr "Terim Nesnesi"
+
+#: fields/taxonomy.php:827
+msgid "Term ID"
+msgstr "Terim ID"
+
+#: fields/taxonomy.php:886
+#, php-format
+msgid "User unable to add new %s"
+msgstr ""
+
+#: fields/taxonomy.php:899
+#, php-format
+msgid "%s already exists"
+msgstr ""
+
+#: fields/taxonomy.php:940
+#, php-format
+msgid "%s added"
+msgstr ""
+
+#: fields/taxonomy.php:985
+msgid "Add"
+msgstr ""
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "Metin"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr "Karakter Limiti"
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr "Limitsiz için boş geçiniz"
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "Metin Alanı"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr "Satırlar"
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr "Metin alanı yüksekliğini ayarla"
+
+#: fields/textarea.php:182
+msgid "New Lines"
+msgstr "Yeni Satırlar"
+
+#: fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr "Yeni satırlar nasıl oluşturulacağını denetler"
+
+#: fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr "Otomatik paragraf ekle"
+
+#: fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr "Otomatik olarak &lt;br&gt; ekle"
+
+#: fields/textarea.php:189
+msgid "No Formatting"
+msgstr "Biçimlendirme yok"
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "Doğru / Yanlış"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "örn. Ekstra içerik göster"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr "Url"
+
+#: fields/url.php:160
+msgid "Value must be a valid URL"
+msgstr "Değer olarak doğru URL gerekli"
+
+#: fields/user.php:437
+msgid "Filter by role"
+msgstr "Kurala göre filtrele"
+
+#: fields/user.php:445
+msgid "All user roles"
+msgstr "Bütün kullanıcı kuralları"
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "Wysiwyg Düzenleyici"
+
+#: fields/wysiwyg.php:297
+msgid "Visual"
+msgstr "Görsel"
+
+#: fields/wysiwyg.php:298
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "Metin"
+
+#: fields/wysiwyg.php:354
+msgid "Tabs"
+msgstr "Sekmeler"
+
+#: fields/wysiwyg.php:359
+msgid "Visual & Text"
+msgstr "Görsel & Metin"
+
+#: fields/wysiwyg.php:360
+msgid "Visual Only"
+msgstr "Sadece Görsel"
+
+#: fields/wysiwyg.php:361
+msgid "Text Only"
+msgstr "Sadece Metin"
+
+#: fields/wysiwyg.php:368
+msgid "Toolbar"
+msgstr "Araç Çubuğu"
+
+#: fields/wysiwyg.php:378
+msgid "Show Media Upload Buttons?"
+msgstr "Medya Yükle butonunu göster?"
+
+#: forms/post.php:297 pro/admin/options-page.php:373
+#, fuzzy
+msgid "Edit field group"
+msgstr "Alan Grubu Düzenle"
+
+#: pro/acf-pro.php:24
+msgid "Advanced Custom Fields PRO"
+msgstr "Gelişmiş Özel Alanlar PRO"
+
+#: pro/acf-pro.php:175
+msgid "Flexible Content requires at least 1 layout"
+msgstr "Esnek İçerik, en az 1 düzen gerektirir"
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "Ayarlar Sayfası"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr "Ayarlar sayfası yok"
+
+#: pro/admin/options-page.php:298
+msgid "Options Updated"
+msgstr "Ayarlar Güncellendi"
+
+#: pro/admin/options-page.php:304
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr "Özel Alan Grupları seçenekleri sayfası bulunamadı. <a href=\"%s\">Bir Özel Alan Grup Oluştur</a>"
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b> Hata </ b>. Sunucuyu güncelleştirmek için bağlantı kurulamadı"
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr "<b> Bağlantı Hatası </ b>. Üzgünüm, lütfen tekrar deneyin"
+
+#: pro/admin/views/options-page.php:48
+msgid "Publish"
+msgstr "Yayınla"
+
+#: pro/admin/views/options-page.php:54
+msgid "Save Options"
+msgstr "Ayarları Kaydet"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr "Lisansı Devre Dışı Bırak"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr "Lisansı Aktif et"
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr "Lisans"
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+"Güncelleştirmeleri kilidini açmak için, aşağıdaki lisans anahtarını girin. "
+"Eğer bir lisans anahtarı yoksa, lütfen"
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr "detaylar & fiyatlandırma"
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr "Lisans Anahtarı"
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr "Güncelleme Bilgisi"
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr "Şimdiki Versiyon"
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr "En son Versiyon"
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr "Güncelleme Mevcut"
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr "Eklentiyi Güncelle"
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr ""
+"Güncelleştirmeleri kilidini açmak için yukarıdaki lisans anahtarını giriniz"
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr "Kontrol Et"
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr "Yükseltme Bildirimi"
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "Ayarlar"
+
+#: pro/core/updates.php:186
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+"Güncellemelerini etkinleştirmek için, <a href=\"%s\"> Güncellemeler </a> "
+"sayfada lisans anahtarını girin. Eğer bir lisans anahtarı yoksa, <a href=\"%s"
+"\"> ayrıntıları ve fiyatlandırma </a>ya bakın"
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "Esnek İçerik"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "Satır Ekle"
+
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr "düzen"
+
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr "düzenler"
+
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr "kaldır {layout}?"
+
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr "Bu alan gerektirir, en azından {min} {identifier}"
+
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr "Bu alanda {max} sınırı {identifier} vardır"
+
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr "Bu alan gerektirir, en azından {min} {label} {identifier}"
+
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr "Maksimum {label} sınırına ulaşıldığında ({max} {identifier})"
+
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{available} {label} {identifier} kullanılabilir (maks {max})"
+
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{requied} {label} {identifier} (min {min})"
+
+#: pro/fields/flexible-content.php:211
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "Düzen oluşturmaya başlamak için aşağıdaki \"%s \" butonuna tıklayın"
+
+#: pro/fields/flexible-content.php:369
+msgid "Add layout"
+msgstr "Düzen Ekle"
+
+#: pro/fields/flexible-content.php:372
+msgid "Remove layout"
+msgstr "Düzen Çıkar"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder Layout"
+msgstr "Düzen Sırala"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder"
+msgstr "Sırala"
+
+#: pro/fields/flexible-content.php:515
+msgid "Delete Layout"
+msgstr "Düzen Sil"
+
+#: pro/fields/flexible-content.php:516
+msgid "Duplicate Layout"
+msgstr "Düzen Çoğalt"
+
+#: pro/fields/flexible-content.php:517
+msgid "Add New Layout"
+msgstr "Yeni Düzen Ekle"
+
+#: pro/fields/flexible-content.php:561
+msgid "Display"
+msgstr "Göster"
+
+#: pro/fields/flexible-content.php:572 pro/fields/repeater.php:399
+msgid "Table"
+msgstr "Tablo"
+
+#: pro/fields/flexible-content.php:573 pro/fields/repeater.php:400
+msgid "Block"
+msgstr "Blok"
+
+#: pro/fields/flexible-content.php:574 pro/fields/repeater.php:401
+#, fuzzy
+msgid "Row"
+msgstr "Satırlar"
+
+#: pro/fields/flexible-content.php:589
+msgid "Min"
+msgstr "Min"
+
+#: pro/fields/flexible-content.php:602
+msgid "Max"
+msgstr "Maks"
+
+#: pro/fields/flexible-content.php:630 pro/fields/repeater.php:408
+msgid "Button Label"
+msgstr "Düğme Etiketi"
+
+#: pro/fields/flexible-content.php:639
+msgid "Minimum Layouts"
+msgstr "Asgari Düzen"
+
+#: pro/fields/flexible-content.php:648
+msgid "Maximum Layouts"
+msgstr "Azami Düzen"
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "Galeri"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "Galeriye Resim Ekle"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr "Azami seçim aşıldı"
+
+#: pro/fields/gallery.php:335
+msgid "Length"
+msgstr ""
+
+#: pro/fields/gallery.php:355
+#, fuzzy
+msgid "Remove"
+msgstr "Satır Çıkar"
+
+#: pro/fields/gallery.php:535
+msgid "Add to gallery"
+msgstr "Galeriye ekle"
+
+#: pro/fields/gallery.php:539
+msgid "Bulk actions"
+msgstr "Toplu eylem"
+
+#: pro/fields/gallery.php:540
+msgid "Sort by date uploaded"
+msgstr "Yüklenme tarihine göre sırala"
+
+#: pro/fields/gallery.php:541
+msgid "Sort by date modified"
+msgstr "Değiştirme tarihine göre sırala"
+
+#: pro/fields/gallery.php:542
+msgid "Sort by title"
+msgstr "Başlığa göre sırala"
+
+#: pro/fields/gallery.php:543
+msgid "Reverse current order"
+msgstr "Sıralamayı ters çevir"
+
+#: pro/fields/gallery.php:561
+msgid "Close"
+msgstr "Kapat"
+
+#: pro/fields/gallery.php:619
+msgid "Minimum Selection"
+msgstr "Asgari Seçim"
+
+#: pro/fields/gallery.php:628
+msgid "Maximum Selection"
+msgstr "Azami Seçim"
+
+#: pro/fields/gallery.php:809
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] "%s en az %s seçim gerektirir"
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "Tekrarlayıcı"
+
+#: pro/fields/repeater.php:46
+msgid "Minimum rows reached ({min} rows)"
+msgstr "Asgari satırlar ({min} satırları) ulaştı"
+
+#: pro/fields/repeater.php:47
+msgid "Maximum rows reached ({max} rows)"
+msgstr "Azami satır ({max} satırları) ulaştı"
+
+#: pro/fields/repeater.php:259
+msgid "Drag to reorder"
+msgstr "Yeniden düzenlemek için sürükleyin"
+
+#: pro/fields/repeater.php:301
+msgid "Add row"
+msgstr "Satır Ekle"
+
+#: pro/fields/repeater.php:302
+msgid "Remove row"
+msgstr "Satır Çıkar"
+
+#: pro/fields/repeater.php:350
+msgid "Sub Fields"
+msgstr "Alt Alanlar"
+
+#: pro/fields/repeater.php:372
+msgid "Minimum Rows"
+msgstr "Asgari Satır"
+
+#: pro/fields/repeater.php:382
+msgid "Maximum Rows"
+msgstr "Azami Satır"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr ""
+
+#~ msgid "Hide / Show All"
+#~ msgstr "Gizle / Hepsini Göster"
+
+#~ msgid "Show Field Keys"
+#~ msgstr "Alan Anahtarlarını Göster"
+
+#~ msgid "Pending Review"
+#~ msgstr "İnceleme Bekliyor"
+
+#~ msgid "Draft"
+#~ msgstr "Taslak"
+
+#~ msgid "Future"
+#~ msgstr "Gelecek"
+
+#~ msgid "Private"
+#~ msgstr "Gizli"
+
+#~ msgid "Revision"
+#~ msgstr "Revizyon"
+
+#~ msgid "Trash"
+#~ msgstr "Çöp"
+
+#~ msgid "Import / Export"
+#~ msgstr "İçe / Dışa Aktar"
+
+#, fuzzy
+#~ msgid "Field groups are created in order from lowest to highest"
+#~ msgstr "Alan grupları oluşturulma sırası <br/> sırayla alttan yukarı"
+
+#~ msgid "ACF PRO Required"
+#~ msgstr "ACF PRO Gerekli"
+
+#~ msgid ""
+#~ "We have detected an issue which requires your attention: This website "
+#~ "makes use of premium add-ons (%s) which are no longer compatible with ACF."
+#~ msgstr ""
+#~ "Biz dikkat gerektiren bir sorunu tespit ettik: Bu ​​web sitesi artık ACF "
+#~ "ile uyumlu olan eklentileriyle (%s) kullanımını kolaylaştırır."
+
+#~ msgid ""
+#~ "Don't panic, you can simply roll back the plugin and continue using ACF "
+#~ "as you know it!"
+#~ msgstr ""
+#~ "Panik yapmayın, sadece eklenti geri almak ve bunu bildiğiniz gibi ACF "
+#~ "kullanmaya devam edebilirsiniz!"
+
+#~ msgid "Roll back to ACF v%s"
+#~ msgstr "ACF v %s ye geri al"
+
+#~ msgid "Learn why ACF PRO is required for my site"
+#~ msgstr "ACF PRO Sitem için neden gereklidir öğrenin"
+
+#~ msgid "Update Database"
+#~ msgstr "Veritabanını Güncelle"
+
+#~ msgid "Data Upgrade"
+#~ msgstr "Veri Yükseltme"
+
+#~ msgid "Data upgraded successfully."
+#~ msgstr "Veri başarıyla yükseltildi."
+
+#~ msgid "Data is at the latest version."
+#~ msgstr "Verinin en son sürümü."
+
+#~ msgid "1 required field below is empty"
+#~ msgid_plural "%s required fields below are empty"
+#~ msgstr[0] "%s Gerekli alan boş"
+
+#~ msgid "Load & Save Terms to Post"
+#~ msgstr "Yazı Yükleme ve Kaydet Şartları"
+
+#~ msgid ""
+#~ "Load value based on the post's terms and update the post's terms on save"
+#~ msgstr ""
+#~ "Yükleme değeri yazılar için terimlere dayalı ve kaydetme üzerindeki "
+#~ "yazılar için şartlarını güncelleyecek"
+
+#, fuzzy
+#~ msgid "image"
+#~ msgstr "Resim"
+
+#, fuzzy
+#~ msgid "expand_details"
+#~ msgstr "Ayrıntıları Genişlet"
+
+#, fuzzy
+#~ msgid "collapse_details"
+#~ msgstr "Detayları Daralt"
+
+#, fuzzy
+#~ msgid "relationship"
+#~ msgstr "İlişkili"
+
+#, fuzzy
+#~ msgid "title_is_required"
+#~ msgstr "Alan grubu için başlık gerekli"
+
+#, fuzzy
+#~ msgid "move_field"
+#~ msgstr "Alanı Taşı"
+
+#, fuzzy
+#~ msgid "flexible_content"
+#~ msgstr "Esnek İçerik"
+
+#, fuzzy
+#~ msgid "gallery"
+#~ msgstr "Galeri"
+
+#, fuzzy
+#~ msgid "repeater"
+#~ msgstr "Tekrarlayıcı"
+
+#, fuzzy
+#~ msgid "Controls how HTML tags are rendered"
+#~ msgstr "Yeni satırlar nasıl oluşturulacağını denetler"
+
+#~ msgid "Custom field updated."
+#~ msgstr "Özel alan güncellendi."
+
+#~ msgid "Custom field deleted."
+#~ msgstr "Özel alan silindi."
+
+#~ msgid "Field group duplicated! Edit the new \"%s\" field group."
+#~ msgstr "Alan grup çoğaltıldı! Yeni  \"%s \" alan grubu düzenleyin."
+
+#~ msgid "Import/Export"
+#~ msgstr "İçe/Dışa Aktar"
+
+#~ msgid "Column Width"
+#~ msgstr "Sütun Genişliği"
+
+#~ msgid "Attachment Details"
+#~ msgstr "Ek Detayları"

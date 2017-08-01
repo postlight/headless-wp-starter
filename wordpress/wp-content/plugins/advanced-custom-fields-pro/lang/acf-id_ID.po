@@ -1,0 +1,2582 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields\n"
+"Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
+"POT-Creation-Date: 2016-01-25 09:18-0800\n"
+"PO-Revision-Date: 2016-11-03 17:12+1000\n"
+"Language-Team: Elliot Condon <e@elliotcondon.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language: id_ID\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:63
+msgid "Advanced Custom Fields"
+msgstr "Advanced Custom Fields"
+
+#: acf.php:266 admin/admin.php:61
+msgid "Field Groups"
+msgstr "Grup Bidang"
+
+#: acf.php:267
+msgid "Field Group"
+msgstr "Grup Bidang"
+
+#: acf.php:268 acf.php:300 admin/admin.php:62
+#: pro/fields/flexible-content.php:505
+msgid "Add New"
+msgstr "Tambah Baru"
+
+#: acf.php:269
+msgid "Add New Field Group"
+msgstr "Tambah Grup Bidang Baru"
+
+#: acf.php:270
+msgid "Edit Field Group"
+msgstr "Edit Grup Bidang"
+
+#: acf.php:271
+msgid "New Field Group"
+msgstr "Grup Bidang Baru"
+
+#: acf.php:272
+msgid "View Field Group"
+msgstr "Lihat Grup Bidang"
+
+#: acf.php:273
+msgid "Search Field Groups"
+msgstr "Cari Grup Bidang"
+
+#: acf.php:274
+msgid "No Field Groups found"
+msgstr "Tidak Ada Grup Bidang Ditemukan"
+
+#: acf.php:275
+msgid "No Field Groups found in Trash"
+msgstr "Tidak Ditemukan Grup Bidang di Tong Sampah"
+
+#: acf.php:298 admin/field-group.php:182 admin/field-group.php:213
+#: admin/field-groups.php:528
+msgid "Fields"
+msgstr "Bidang"
+
+#: acf.php:299
+msgid "Field"
+msgstr "Bidang"
+
+#: acf.php:301
+msgid "Add New Field"
+msgstr "Tambah bidang baru"
+
+#: acf.php:302
+msgid "Edit Field"
+msgstr "Edit Bidang"
+
+#: acf.php:303 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "Bidang Baru"
+
+#: acf.php:304
+msgid "View Field"
+msgstr "Lihat Bidang"
+
+#: acf.php:305
+msgid "Search Fields"
+msgstr "Bidang Pencarian"
+
+#: acf.php:306
+msgid "No Fields found"
+msgstr "Tidak ada bidang yang ditemukan"
+
+#: acf.php:307
+msgid "No Fields found in Trash"
+msgstr "Tidak ada bidang yang ditemukan di tempat sampah"
+
+#: acf.php:346 admin/field-group.php:283 admin/field-groups.php:586
+#: admin/views/field-group-options.php:13
+msgid "Disabled"
+msgstr "Dimatikan"
+
+#: acf.php:351
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] "Dimatikan <span class=\"count\">(%s)</span>"
+
+#: admin/admin.php:57 admin/views/field-group-options.php:115
+msgid "Custom Fields"
+msgstr "Bidang Kustom"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "Grup bidang diperbarui."
+
+#: admin/field-group.php:70
+msgid "Field group deleted."
+msgstr "Grup bidang dihapus."
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "Grup bidang diterbitkan."
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "Grup bidang disimpan."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "Grup bidang dikirim."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "Grup bidang dijadwalkan untuk."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "Draft grup bidang diperbarui."
+
+#: admin/field-group.php:176
+msgid "Move to trash. Are you sure?"
+msgstr "Pindahkan ke tong sampah. Yakin?"
+
+#: admin/field-group.php:177
+msgid "checked"
+msgstr "diperiksa"
+
+#: admin/field-group.php:178
+msgid "No toggle fields available"
+msgstr "Tidak ada bidang toggle yang tersedia"
+
+#: admin/field-group.php:179
+msgid "Field group title is required"
+msgstr "Judul grup bidang diperlukan"
+
+#: admin/field-group.php:180 api/api-field-group.php:581
+msgid "copy"
+msgstr "salin"
+
+#: admin/field-group.php:181
+#: admin/views/field-group-field-conditional-logic.php:62
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:59
+#: admin/views/field-group-locations.php:135 api/api-helpers.php:3401
+msgid "or"
+msgstr "atau"
+
+#: admin/field-group.php:183
+msgid "Parent fields"
+msgstr "Bidang parent"
+
+#: admin/field-group.php:184
+msgid "Sibling fields"
+msgstr "Bidang sibling"
+
+#: admin/field-group.php:185
+msgid "Move Custom Field"
+msgstr "Pindahkan Bidang Kustom"
+
+#: admin/field-group.php:186
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "Bidang ini tidak dapat dipindahkan sampai perubahan sudah disimpan"
+
+#: admin/field-group.php:187
+msgid "Null"
+msgstr "Nol"
+
+#: admin/field-group.php:188 core/input.php:128
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr ""
+"Perubahan yang Anda buat akan hilang jika Anda menavigasi keluar dari laman "
+"ini"
+
+#: admin/field-group.php:189
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr "String \"field_\" tidak dapat digunakan pada awal nama field"
+
+#: admin/field-group.php:214
+msgid "Location"
+msgstr "Lokasi"
+
+#: admin/field-group.php:215
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: admin/field-group.php:253
+msgid "Field Keys"
+msgstr "Kunci Bidang"
+
+#: admin/field-group.php:283 admin/views/field-group-options.php:12
+msgid "Active"
+msgstr "Aktif"
+
+#: admin/field-group.php:752
+msgid "Front Page"
+msgstr "Laman Depan"
+
+#: admin/field-group.php:753
+msgid "Posts Page"
+msgstr "Laman Post"
+
+#: admin/field-group.php:754
+msgid "Top Level Page (no parent)"
+msgstr "Laman Tingkat Atas (tanpa parent)"
+
+#: admin/field-group.php:755
+msgid "Parent Page (has children)"
+msgstr "Laman Parent (memiliki anak)"
+
+#: admin/field-group.php:756
+msgid "Child Page (has parent)"
+msgstr "Laman Anak (memiliki parent)"
+
+#: admin/field-group.php:772
+msgid "Default Template"
+msgstr "Template Default"
+
+#: admin/field-group.php:794
+msgid "Logged in"
+msgstr "Log masuk"
+
+#: admin/field-group.php:795
+msgid "Viewing front end"
+msgstr "Melihat front end"
+
+#: admin/field-group.php:796
+msgid "Viewing back end"
+msgstr "Melihat back end"
+
+#: admin/field-group.php:815
+msgid "Super Admin"
+msgstr "Super Admin"
+
+#: admin/field-group.php:826 admin/field-group.php:834
+#: admin/field-group.php:848 admin/field-group.php:855
+#: admin/field-group.php:870 admin/field-group.php:880 fields/file.php:235
+#: fields/image.php:226 pro/fields/gallery.php:661
+msgid "All"
+msgstr "Semua"
+
+#: admin/field-group.php:835
+msgid "Add / Edit"
+msgstr "Tambah / Edit"
+
+#: admin/field-group.php:836
+msgid "Register"
+msgstr "Daftar"
+
+#: admin/field-group.php:1067
+msgid "Move Complete."
+msgstr "Pindah yang Lengkap."
+
+#: admin/field-group.php:1068
+#, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr "Bidang %s sekarang dapat ditemukan di bidang grup %s"
+
+#: admin/field-group.php:1070
+msgid "Close Window"
+msgstr "Tutup window"
+
+#: admin/field-group.php:1105
+msgid "Please select the destination for this field"
+msgstr "Silakan pilih tujuan untuk bidang ini"
+
+#: admin/field-group.php:1112
+msgid "Move Field"
+msgstr "Pindahkan Bidang"
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] "Aktif <span class=\"count\">(%s)</span>"
+
+#: admin/field-groups.php:142
+#, php-format
+msgid "Field group duplicated. %s"
+msgstr "Grup bidang diduplikat. %s"
+
+#: admin/field-groups.php:146
+#, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] "Grup bidang %s diduplikat"
+
+#: admin/field-groups.php:228
+#, php-format
+msgid "Field group synchronised. %s"
+msgstr "Grup bidang disinkronkan. %s"
+
+#: admin/field-groups.php:232
+#, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] "bidang grup %s disinkronkan."
+
+#: admin/field-groups.php:412 admin/field-groups.php:576
+msgid "Sync available"
+msgstr "Sinkronisasi tersedia"
+
+#: admin/field-groups.php:525
+msgid "Title"
+msgstr "Judul"
+
+#: admin/field-groups.php:526 admin/views/field-group-options.php:93
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+msgid "Description"
+msgstr "Deskripsi"
+
+#: admin/field-groups.php:527 admin/views/field-group-options.php:5
+msgid "Status"
+msgstr "Status"
+
+#: admin/field-groups.php:624 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "Changelog"
+
+#: admin/field-groups.php:625
+msgid "See what's new in"
+msgstr "Lihat apa yang baru di"
+
+#: admin/field-groups.php:625
+msgid "version"
+msgstr "versi"
+
+#: admin/field-groups.php:627
+msgid "Resources"
+msgstr "Sumber"
+
+#: admin/field-groups.php:629
+msgid "Getting Started"
+msgstr "Perkenalan"
+
+#: admin/field-groups.php:630 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr "Mutakhir"
+
+#: admin/field-groups.php:631
+msgid "Field Types"
+msgstr "Jenis Field"
+
+#: admin/field-groups.php:632
+msgid "Functions"
+msgstr "Fungsi"
+
+#: admin/field-groups.php:633
+msgid "Actions"
+msgstr "Tindakan"
+
+#: admin/field-groups.php:634 fields/relationship.php:717
+msgid "Filters"
+msgstr "Saringan"
+
+#: admin/field-groups.php:635
+msgid "'How to' guides"
+msgstr "Panduan \"Bagaimana Caranya\""
+
+#: admin/field-groups.php:636
+msgid "Tutorials"
+msgstr "Tutorial"
+
+#: admin/field-groups.php:641
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#: admin/field-groups.php:684
+msgid "Duplicate this item"
+msgstr "Duplikat item ini"
+
+#: admin/field-groups.php:684 admin/field-groups.php:700
+#: admin/views/field-group-field.php:59 pro/fields/flexible-content.php:504
+msgid "Duplicate"
+msgstr "Duplikat"
+
+#: admin/field-groups.php:746
+#, php-format
+msgid "Select %s"
+msgstr "Pilih %s"
+
+#: admin/field-groups.php:754
+msgid "Synchronise field group"
+msgstr "Menyinkronkan grup bidang"
+
+#: admin/field-groups.php:754 admin/field-groups.php:771
+msgid "Sync"
+msgstr "Sinkronkan"
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr "Add-on"
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr "<b>Kesalahan</b>. Tidak dapat memuat daftar add-on"
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr "Info"
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr "Apa yang Baru"
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:23
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr "Perkakas"
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:379
+msgid "No field groups selected"
+msgstr "Tidak ada grup bidang yang dipilih"
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr "Tak ada file yang dipilih"
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr "Kesalahan mengunggah file. Silakan coba lagi"
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr "Jenis file salah"
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr "File yang diimpor kosong"
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr "<b>Sukses</b>. Impor alat ditambahkan %s grup bidang: %s"
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+"<b>Peringatan</b>. Impor alat terdeteksi grup bidang %s sudah ada dan telah "
+"diabaikan: %s"
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr "Tingkatkan ACF"
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr "Meninjau situs & tingkatkan"
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "Tingkatkan"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr "Tingkatkan Database"
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr "Logika Kondisional"
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:141 fields/checkbox.php:246
+#: fields/message.php:144 fields/page_link.php:553 fields/page_link.php:567
+#: fields/post_object.php:419 fields/post_object.php:433 fields/select.php:385
+#: fields/select.php:399 fields/select.php:413 fields/select.php:427
+#: fields/tab.php:161 fields/taxonomy.php:796 fields/taxonomy.php:810
+#: fields/taxonomy.php:824 fields/taxonomy.php:838 fields/user.php:457
+#: fields/user.php:471 fields/wysiwyg.php:407
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "Ya"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:142 fields/checkbox.php:247
+#: fields/message.php:145 fields/page_link.php:554 fields/page_link.php:568
+#: fields/post_object.php:420 fields/post_object.php:434 fields/select.php:386
+#: fields/select.php:400 fields/select.php:414 fields/select.php:428
+#: fields/tab.php:162 fields/taxonomy.php:711 fields/taxonomy.php:797
+#: fields/taxonomy.php:811 fields/taxonomy.php:825 fields/taxonomy.php:839
+#: fields/user.php:458 fields/user.php:472 fields/wysiwyg.php:408
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "Tidak"
+
+#: admin/views/field-group-field-conditional-logic.php:62
+msgid "Show this field if"
+msgstr "Tampilkan bidang ini jika"
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:34
+msgid "is equal to"
+msgstr "sama dengan"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:35
+msgid "is not equal to"
+msgstr "tidak sama dengan"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:122
+msgid "and"
+msgstr "dan"
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:137
+msgid "Add rule group"
+msgstr "Tambahkan peraturan grup"
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:58
+msgid "Edit field"
+msgstr "Edit Bidang"
+
+#: admin/views/field-group-field.php:58 pro/fields/gallery.php:363
+msgid "Edit"
+msgstr "Edit"
+
+#: admin/views/field-group-field.php:59
+msgid "Duplicate field"
+msgstr "Duplikat Bidang"
+
+#: admin/views/field-group-field.php:60
+msgid "Move field to another group"
+msgstr "Pindahkan Bidang ke grup lain"
+
+#: admin/views/field-group-field.php:60
+msgid "Move"
+msgstr "Pindahkan"
+
+#: admin/views/field-group-field.php:61
+msgid "Delete field"
+msgstr "Hapus bidang"
+
+#: admin/views/field-group-field.php:61 pro/fields/flexible-content.php:503
+msgid "Delete"
+msgstr "Hapus"
+
+#: admin/views/field-group-field.php:69 fields/oembed.php:225
+#: fields/taxonomy.php:912
+msgid "Error"
+msgstr "Error"
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr "Error."
+
+#: admin/views/field-group-field.php:69
+msgid "Field type does not exist"
+msgstr "Jenis bidang tidak ada"
+
+#: admin/views/field-group-field.php:82
+msgid "Field Label"
+msgstr "Label Bidang"
+
+#: admin/views/field-group-field.php:83
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Ini nama yang akan muncul pada laman EDIT"
+
+#: admin/views/field-group-field.php:95
+msgid "Field Name"
+msgstr "Nama Bidang"
+
+#: admin/views/field-group-field.php:96
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr "Satu kata, tanpa spasi. Garis bawah dan strip dibolehkan"
+
+#: admin/views/field-group-field.php:108
+msgid "Field Type"
+msgstr "Jenis Bidang"
+
+#: admin/views/field-group-field.php:122 fields/tab.php:134
+msgid "Instructions"
+msgstr "Instruksi"
+
+#: admin/views/field-group-field.php:123
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Instruksi untuk author. Terlihat ketika mengirim data"
+
+#: admin/views/field-group-field.php:134
+msgid "Required?"
+msgstr "Diperlukan?"
+
+#: admin/views/field-group-field.php:163
+msgid "Wrapper Attributes"
+msgstr "Atribut Wrapper"
+
+#: admin/views/field-group-field.php:169
+msgid "width"
+msgstr "lebar"
+
+#: admin/views/field-group-field.php:183
+msgid "class"
+msgstr "class"
+
+#: admin/views/field-group-field.php:196
+msgid "id"
+msgstr "id"
+
+#: admin/views/field-group-field.php:208
+msgid "Close Field"
+msgstr "Tutup Bidang"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr "Suruh"
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:530
+msgid "Label"
+msgstr "Label"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:543
+msgid "Name"
+msgstr "Nama"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr "Tipe"
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"Tidak ada bidang. Klik tombol <strong>+ Tambah Bidang</strong> untuk membuat "
+"bidang pertama Anda."
+
+#: admin/views/field-group-fields.php:51
+msgid "Drag and drop to reorder"
+msgstr "Seret dan jatuhkan untuk mengatur ulang"
+
+#: admin/views/field-group-fields.php:54
+msgid "+ Add Field"
+msgstr "+ Tambah Bidang"
+
+#: admin/views/field-group-locations.php:5
+#: admin/views/field-group-locations.php:11
+msgid "Post"
+msgstr "post"
+
+#: admin/views/field-group-locations.php:6 fields/relationship.php:723
+msgid "Post Type"
+msgstr "Jenis Post"
+
+#: admin/views/field-group-locations.php:7
+msgid "Post Status"
+msgstr "Status Post"
+
+#: admin/views/field-group-locations.php:8
+msgid "Post Format"
+msgstr "Format Post"
+
+#: admin/views/field-group-locations.php:9
+msgid "Post Category"
+msgstr "Kategori Post"
+
+#: admin/views/field-group-locations.php:10
+msgid "Post Taxonomy"
+msgstr "Post Taksonomi"
+
+#: admin/views/field-group-locations.php:13
+#: admin/views/field-group-locations.php:17
+msgid "Page"
+msgstr "Laman"
+
+#: admin/views/field-group-locations.php:14
+msgid "Page Template"
+msgstr "Template Laman"
+
+#: admin/views/field-group-locations.php:15
+msgid "Page Type"
+msgstr "Jenis Laman"
+
+#: admin/views/field-group-locations.php:16
+msgid "Page Parent"
+msgstr "Laman Parent"
+
+#: admin/views/field-group-locations.php:19 fields/user.php:36
+msgid "User"
+msgstr "Pengguna"
+
+#: admin/views/field-group-locations.php:20
+msgid "Current User"
+msgstr "Pengguna saat ini"
+
+#: admin/views/field-group-locations.php:21
+msgid "Current User Role"
+msgstr "Peran pengguna saat ini"
+
+#: admin/views/field-group-locations.php:22
+msgid "User Form"
+msgstr "Form Pengguna"
+
+#: admin/views/field-group-locations.php:23
+msgid "User Role"
+msgstr "Peran pengguna"
+
+#: admin/views/field-group-locations.php:25 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr "Form"
+
+#: admin/views/field-group-locations.php:26
+msgid "Attachment"
+msgstr "Lampiran"
+
+#: admin/views/field-group-locations.php:27
+msgid "Taxonomy Term"
+msgstr "Taksonomi Persyaratan"
+
+#: admin/views/field-group-locations.php:28
+msgid "Comment"
+msgstr "Komentar"
+
+#: admin/views/field-group-locations.php:29
+msgid "Widget"
+msgstr "Widget"
+
+#: admin/views/field-group-locations.php:41
+msgid "Rules"
+msgstr "Peraturan"
+
+#: admin/views/field-group-locations.php:42
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"Buat pengaturan peraturan untuk menentukan layar edit yang akan menggunakan "
+"advanced custom fields ini"
+
+#: admin/views/field-group-locations.php:59
+msgid "Show this field group if"
+msgstr "Tampilkan grup bidang jika"
+
+#: admin/views/field-group-options.php:20
+msgid "Style"
+msgstr "Gaya"
+
+#: admin/views/field-group-options.php:27
+msgid "Standard (WP metabox)"
+msgstr "Standar (WP metabox)"
+
+#: admin/views/field-group-options.php:28
+msgid "Seamless (no metabox)"
+msgstr "Mulus (tanpa metabox)"
+
+#: admin/views/field-group-options.php:35
+msgid "Position"
+msgstr "Posisi"
+
+#: admin/views/field-group-options.php:42
+msgid "High (after title)"
+msgstr "Tinggi (setelah judul)"
+
+#: admin/views/field-group-options.php:43
+msgid "Normal (after content)"
+msgstr "Normal (setelah konten)"
+
+#: admin/views/field-group-options.php:44
+msgid "Side"
+msgstr "Samping"
+
+#: admin/views/field-group-options.php:52
+msgid "Label placement"
+msgstr "Penempatan Label"
+
+#: admin/views/field-group-options.php:59 fields/tab.php:148
+msgid "Top aligned"
+msgstr "Selaras atas"
+
+#: admin/views/field-group-options.php:60 fields/tab.php:149
+msgid "Left Aligned"
+msgstr "Selaras kiri"
+
+#: admin/views/field-group-options.php:67
+msgid "Instruction placement"
+msgstr "Penempatan instruksi"
+
+#: admin/views/field-group-options.php:74
+msgid "Below labels"
+msgstr "Di bawah label"
+
+#: admin/views/field-group-options.php:75
+msgid "Below fields"
+msgstr "Di bawah bidang"
+
+#: admin/views/field-group-options.php:82
+msgid "Order No."
+msgstr "No. Urutan"
+
+#: admin/views/field-group-options.php:83
+msgid "Field groups with a lower order will appear first"
+msgstr ""
+"Bidang kelompok dengan urutan yang lebih rendah akan muncul pertama kali"
+
+#: admin/views/field-group-options.php:94
+msgid "Shown in field group list"
+msgstr "Ditampilkan dalam daftar Grup bidang"
+
+#: admin/views/field-group-options.php:104
+msgid "Hide on screen"
+msgstr "Sembunyikan pada layar"
+
+#: admin/views/field-group-options.php:105
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr "<b>Pilih</b> item untuk <b>menyembunyikan</b> mereka dari layar edit."
+
+#: admin/views/field-group-options.php:105
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+"Jika beberapa kelompok bidang ditampilkan pada layar edit, pilihan bidang "
+"kelompok yang pertama akan digunakan (pertama nomor urutan terendah)"
+
+#: admin/views/field-group-options.php:112
+msgid "Permalink"
+msgstr "Permalink"
+
+#: admin/views/field-group-options.php:113
+msgid "Content Editor"
+msgstr "Konten Edior"
+
+#: admin/views/field-group-options.php:114
+msgid "Excerpt"
+msgstr "Kutipan"
+
+#: admin/views/field-group-options.php:116
+msgid "Discussion"
+msgstr "Diskusi"
+
+#: admin/views/field-group-options.php:117
+msgid "Comments"
+msgstr "Komentar"
+
+#: admin/views/field-group-options.php:118
+msgid "Revisions"
+msgstr "Revisi"
+
+#: admin/views/field-group-options.php:119
+msgid "Slug"
+msgstr "Slug"
+
+#: admin/views/field-group-options.php:120
+msgid "Author"
+msgstr "Author"
+
+#: admin/views/field-group-options.php:121
+msgid "Format"
+msgstr "Format"
+
+#: admin/views/field-group-options.php:122
+msgid "Page Attributes"
+msgstr "Atribut Laman"
+
+#: admin/views/field-group-options.php:123 fields/relationship.php:736
+msgid "Featured Image"
+msgstr "Gambar Fitur"
+
+#: admin/views/field-group-options.php:124
+msgid "Categories"
+msgstr "Kategori"
+
+#: admin/views/field-group-options.php:125
+msgid "Tags"
+msgstr "Tag"
+
+#: admin/views/field-group-options.php:126
+msgid "Send Trackbacks"
+msgstr "Kirim Pelacakan"
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr "Undah dan Instal"
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr "Sudah Terinstall"
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr "Selamat datang di Advanced Custom Fields"
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr ""
+"Terima kasih sudah memperbario! ACF %s lebih besar dan lebih baik daripada "
+"sebelumnya. Kami harap Anda menyukainya."
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr "Pengalaman bidang kustom yang halus"
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr "Peningkatan kegunaan"
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+"Termasuk Perpustakaan Select2 populer telah meningkatkan kegunaan dan "
+"kecepatan di sejumlah bidang jenis termasuk posting objek, link halaman, "
+"taksonomi, dan pilih."
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr "Peningkatan Desain"
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+"Berbagai bidang telah mengalami refresh visual untuk membuat ACF terlihat "
+"lebih baik daripada sebelumnya! Perubahan nyata terlihat pada galeri, "
+"hubungan dan oEmbed bidang (baru)!"
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr "Peningkatan Data"
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+"Mendesain ulang arsitektur data telah memungkinkan sub bidang untuk yang "
+"mandiri dari parentnya. Hal ini memungkinkan Anda untuk seret dan jatuhkan "
+"bidang masuk dan keluar dari bidang parent!"
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr "Selamat tinggal Add-on. Halo PRO"
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr "Memperkenalkan ACF PRO"
+
+#: admin/views/settings-info.php:51
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr "Kami mengubah cara fungsi premium yang disampaikan dalam cara menarik!"
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+"Semua 4 add-on premium sudah dikombinasikan kedalam  <a href=\"%s\">versi "
+"Pro ACF</a>. Dengan ketersediaan lisensi personal dan pengembang, fungsi "
+"premuim lebih terjangkan dan dapat diakses keseluruhan daripada sebelumnya!"
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr "Fitur kuat"
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+"ACF PRO memiliki fitur canggih seperti data yang berulang, layout konten "
+"yang fleksibel, bidang galeri yang cantik dan kemampuan membuat laman opsi "
+"ekstra admin!"
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr "Baca lebih tentang <a href=\"%s\">Fitur ACF PRO</a>."
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr "Upgrade Mudah"
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+"Untuk membuat peningkatan yang mudah, <a href=\"%s\">masuk ke akun toko</a> "
+"dan klaim salinan gratis ACF PRO!"
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+"Kami juga menulis  <a href=\"%s\">panduan upgrade</a> untuk menjawab "
+"pertanyaan apapun, jika Anda sudah punya, silahkan hubungi tim support kami "
+"via <a href=\"%s\">help desk</a>"
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr "Dibawah judul blog"
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr "Pengaturan bidang yang pintar"
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr "ACF sekarang menyimpan pengaturan bidang sebagai objek post individu"
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr "Lebih banyak AJAX"
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr ""
+"Banyak bidang yang menggunakan pencarian AJAX untuk mempercepat loading laman"
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr "JSON Lokal"
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr "Ekspor otomatis ke fitur JSON meningkatkan kecepatan"
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr "Kontolr versi terbaik"
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+"Ekspor otomatis ke fitur JSON memungkinkan pengaturan bidang menjadi versi "
+"yang terkontrol"
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr "Swap XML untuk JSON"
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr "Impor / ekspor sekarang menggunakan JSON yang mendukung XML"
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr "Form Baru"
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr ""
+"Bidang sekarang dapat dipetakan ke komentar, widget dan semua bentuk "
+"pengguna!"
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr "Bidang baru untuk melekatkan konten telah ditambahkan"
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr "Galeri baru"
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr "Bidang Galeri telah mengalami banyak dibutuhkan facelift"
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr "Pengaturan baru"
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr ""
+"Pengaturan grup bidang telah ditambahkan untuk penempatan label dan "
+"penempatan instruksi"
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr "Form Front End Terbaik"
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr "acf_form() dapat membuat post baru di oengajuan"
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr "Validasi lebih baik"
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr ""
+"Validasi form sekarang dilakukan melalui PHP + AJAX dalam hanya mendukung JS"
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr "Bidang hubungan"
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr ""
+"Pengaturan bidang hubungan untuk 'Saringan' (Pencarian, Tipe Post, Taksonomi)"
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr "Memindahkan Bidang"
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr ""
+"Fungsionalitas grup bidang memungkinkan Anda memindahkan bidang antara grup "
+"& parent"
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "Link Halaman"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr "Grup arsip di page_link bidang seleksi"
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr "Opsi Laman Lebih Baik"
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr ""
+"Fungsi baru untuk opsi laman memungkinkan pembuatan laman menu parent dan "
+"child"
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr "Kami kira Anda akan menyukai perbahan di %s."
+
+#: admin/views/settings-tools-export.php:27
+msgid "Export Field Groups to PHP"
+msgstr "Ekspor grup bidang ke PHP"
+
+#: admin/views/settings-tools-export.php:31
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"Kode berikutini dapat digunakan untuk mendaftar versi lokal dari bidang yang "
+"dipilih. Grup bidang lokal dapat memberikan banyak manfaat sepmacam waktu "
+"loading yang cepat, kontrol versi & pengaturan bidang dinamis. Salin dan "
+"tempel kode berikut ke tema Anda file function.php atau masukkan kedalam "
+"file eksternal."
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr "Pilih Grup Bidang"
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr "Ekspor Grup Bidang"
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"Pilih grup bidang yang Anda ingin ekspor dan pilih metode ekspor. Gunakan "
+"tombol unduh untuk ekspor ke file .json yang nantinya bisa Anda impor ke "
+"instalasi ACF yang lain. Gunakan tombol hasilkan untuk ekspor ke kode PHP "
+"yang bisa Anda simpan di tema Anda."
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr "Undih file eskpor"
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr "Hasilkan kode ekspor"
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "Impor grup bidang"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"Pilih file JSON Advanced Custom Fields yang ingin Anda impor. Ketika Anda "
+"mengklik tombol impor, ACF akan impor grup bidang."
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "Pilih File"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr "Impor"
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr "Peningkatan Database Advanced Custom Fields"
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+"Situs berikut memerlukan peningkatan DB. Pilih salah satu yang ingin Anda "
+"update dan klik \"Tingkatkan Database\"."
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr "Situs"
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr "Situs memerlukan database upgrade dari %s ke %s"
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr "Situs ini up-to-date"
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr "Upgrade database selesai. <a href=\"%s\">Kembali ke dasbor jaringan</a>"
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+"Ini sangan direkomendasikan Anda mencadangkan database Anda sebelum "
+"memproses. Apakah Anda yakin menjalankan peningkatan sekarang?"
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr "Peningkatan selesai"
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr "Meningkatkan data ke"
+
+#: admin/views/update-notice.php:23
+msgid "Database Upgrade Required"
+msgstr "Diperlukan Peningkatan Database"
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr "Terimakasih sudah meningkatkan ke %s v%s!"
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+"Sebelum Anda mula menggunakan fitur keren, silahkan tingkatkan database Anda "
+"ke versi terbaru."
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr "Membaca tugas upgrade..."
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr "Meningkatkan data ke versi %s"
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr "Lihat apa yang baru"
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr "pembaruan tidak tersedia ."
+
+#: api/api-helpers.php:909
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: api/api-helpers.php:910
+msgid "Medium"
+msgstr "Sedang"
+
+#: api/api-helpers.php:911
+msgid "Large"
+msgstr "Besar"
+
+#: api/api-helpers.php:959
+msgid "Full Size"
+msgstr "Ukuran Penuh"
+
+#: api/api-helpers.php:1149 api/api-helpers.php:1711
+msgid "(no title)"
+msgstr "(tanpa judul)"
+
+#: api/api-helpers.php:3322
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr "Lebar gambar harus setidaknya %dpx."
+
+#: api/api-helpers.php:3327
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr "Lebar gambar tidak boleh melebihi %dpx."
+
+#: api/api-helpers.php:3343
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr "Tinggi gambar harus setidaknya %dpx."
+
+#: api/api-helpers.php:3348
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr "Tinggi gambar tidak boleh melebihi %dpx."
+
+#: api/api-helpers.php:3366
+#, php-format
+msgid "File size must be at least %s."
+msgstr "Ukuran file harus setidaknya %s."
+
+#: api/api-helpers.php:3371
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr "Ukuran file harus tidak boleh melebihi %s."
+
+#: api/api-helpers.php:3405
+#, php-format
+msgid "File type must be %s."
+msgstr "Jenis file harus %s."
+
+#: api/api-template.php:1224 pro/fields/gallery.php:572
+msgid "Update"
+msgstr "Perbarui"
+
+#: api/api-template.php:1225
+msgid "Post updated"
+msgstr "Post Diperbarui"
+
+#: core/field.php:131
+msgid "Basic"
+msgstr "Dasar"
+
+#: core/field.php:132
+msgid "Content"
+msgstr "Konten"
+
+#: core/field.php:133
+msgid "Choice"
+msgstr "Pilihan"
+
+#: core/field.php:134
+msgid "Relational"
+msgstr "Relasional"
+
+#: core/field.php:135
+msgid "jQuery"
+msgstr "jQuery"
+
+#: core/field.php:136 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:500 pro/fields/flexible-content.php:549
+#: pro/fields/repeater.php:467
+msgid "Layout"
+msgstr "Layout"
+
+#: core/input.php:129
+msgid "Expand Details"
+msgstr "Perluas Rincian"
+
+#: core/input.php:130
+msgid "Collapse Details"
+msgstr "Persempit Rincian"
+
+#: core/input.php:131
+msgid "Validation successful"
+msgstr "Validasi Sukses"
+
+#: core/input.php:132
+msgid "Validation failed"
+msgstr "Validasi Gagal"
+
+#: core/input.php:133
+msgid "1 field requires attention"
+msgstr "1 Bidang memerlukan perhatian"
+
+#: core/input.php:134
+#, php-format
+msgid "%d fields require attention"
+msgstr "Bidang %d memerlukan perhatian"
+
+#: core/input.php:135
+msgid "Restricted"
+msgstr "Dibatasi"
+
+#: core/input.php:533
+#, php-format
+msgid "%s value is required"
+msgstr "Nilai %s diharuskan"
+
+#: fields/checkbox.php:36 fields/taxonomy.php:778
+msgid "Checkbox"
+msgstr "Kotak centang"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr "Toggle Semua"
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:362
+msgid "Choices"
+msgstr "Pilihan"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:363
+msgid "Enter each choice on a new line."
+msgstr "Masukkan setiap pilihan pada baris baru."
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:363
+msgid "For more control, you may specify both a value and label like this:"
+msgstr ""
+"Untuk kontrol lebih, Anda dapat menentukan keduanya antara nilai dan bidang "
+"seperti ini:"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:363
+msgid "red : Red"
+msgstr "merah : Merah"
+
+#: fields/checkbox.php:217 fields/color_picker.php:149 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:371
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:368
+msgid "Default Value"
+msgstr "Nilai Default"
+
+#: fields/checkbox.php:218 fields/select.php:372
+msgid "Enter each default value on a new line"
+msgstr "Masukkan setiap nilai default pada baris baru"
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr "Toggle"
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr "Tambahkan sebuah kotak centang untuk toggle semua pilihan"
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "Pengambil Warna"
+
+#: fields/color_picker.php:82
+msgid "Clear"
+msgstr "Bersihkan"
+
+#: fields/color_picker.php:83
+msgid "Default"
+msgstr "Default"
+
+#: fields/color_picker.php:84
+msgid "Select Color"
+msgstr "Pilih Warna"
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "Pengambil Tanggal"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr "Selesai"
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr "Hari ini"
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr "Tampilkan bulan berbeda"
+
+#: fields/date_picker.php:182
+msgid "Display Format"
+msgstr "Format tampilan"
+
+#: fields/date_picker.php:183
+msgid "The format displayed when editing a post"
+msgstr "Fromat tampilan ketika mengedit post"
+
+#: fields/date_picker.php:197
+msgid "Return format"
+msgstr "Kembalikan format"
+
+#: fields/date_picker.php:198
+msgid "The format returned via template functions"
+msgstr "Format dikembalikan via template function"
+
+#: fields/date_picker.php:213
+msgid "Week Starts On"
+msgstr "Minggu Dimulai Pada"
+
+#: fields/email.php:36
+msgid "Email"
+msgstr "Email"
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:369
+msgid "Appears when creating a new post"
+msgstr "Muncul ketika membuat sebuah post baru"
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr "Teks Placeholder"
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr "Muncul didalam input"
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr "Tambahkan"
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr "Muncul sebelum input"
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr "Menambahkan"
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr "Muncul setelah input"
+
+#: fields/file.php:36
+msgid "File"
+msgstr "File"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "Edit File"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "Perbarui File"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr "diunggah ke post ini"
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr "Nama file"
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr "Ukuran File"
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr "Tak ada file yang dipilih"
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "Tambahkan File"
+
+#: fields/file.php:214 fields/image.php:195 fields/taxonomy.php:847
+msgid "Return Value"
+msgstr "Nilai Kembali"
+
+#: fields/file.php:215 fields/image.php:196
+msgid "Specify the returned value on front end"
+msgstr "Tentukan nilai yang dikembalikan di front-end"
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr "File Array"
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "URL File"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr "ID File"
+
+#: fields/file.php:229 fields/image.php:220 pro/fields/gallery.php:655
+msgid "Library"
+msgstr "Perpustakaan"
+
+#: fields/file.php:230 fields/image.php:221 pro/fields/gallery.php:656
+msgid "Limit the media library choice"
+msgstr "Batasi pilihan pustaka media"
+
+#: fields/file.php:236 fields/image.php:227 pro/fields/gallery.php:662
+msgid "Uploaded to post"
+msgstr "Diunggah ke post"
+
+#: fields/file.php:243 fields/image.php:234 pro/fields/gallery.php:669
+msgid "Minimum"
+msgstr "Minimum"
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr "Batasi file mana yang dapat diunggah"
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:257
+#: fields/image.php:290 pro/fields/gallery.php:692 pro/fields/gallery.php:725
+msgid "File size"
+msgstr "Ukuran File"
+
+#: fields/file.php:254 fields/image.php:267 pro/fields/gallery.php:702
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: fields/file.php:265 fields/image.php:300 pro/fields/gallery.php:735
+msgid "Allowed file types"
+msgstr "Jenis file yang diperbolehkan"
+
+#: fields/file.php:266 fields/image.php:301 pro/fields/gallery.php:736
+msgid "Comma separated list. Leave blank for all types"
+msgstr "Daftar dipisahkan koma. Kosongkan untuk semua jenis"
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr "Peta Google"
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr "Melokasikan"
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr "Maaf, browser ini tidak support geolocation"
+
+#: fields/google-map.php:133 fields/relationship.php:722
+msgid "Search"
+msgstr "Cari"
+
+#: fields/google-map.php:134
+msgid "Clear location"
+msgstr "Bersihkan lokasi"
+
+#: fields/google-map.php:135
+msgid "Find current location"
+msgstr "Temukan lokasi saat ini"
+
+#: fields/google-map.php:138
+msgid "Search for address..."
+msgstr "Cari alamat..."
+
+#: fields/google-map.php:168 fields/google-map.php:179
+msgid "Center"
+msgstr "Tengah"
+
+#: fields/google-map.php:169 fields/google-map.php:180
+msgid "Center the initial map"
+msgstr "Pusat peta awal"
+
+#: fields/google-map.php:193
+msgid "Zoom"
+msgstr "Zoom"
+
+#: fields/google-map.php:194
+msgid "Set the initial zoom level"
+msgstr "Mengatur tingkat awal zoom"
+
+#: fields/google-map.php:203 fields/image.php:246 fields/image.php:279
+#: fields/oembed.php:275 pro/fields/gallery.php:681 pro/fields/gallery.php:714
+msgid "Height"
+msgstr "Tinggi"
+
+#: fields/google-map.php:204
+msgid "Customise the map height"
+msgstr "Sesuaikan ketinggian peta"
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Gambar"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "Pilih Gambar"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "Edit Gambar"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "Perbarui Gambar"
+
+#: fields/image.php:54
+msgid "Uploaded to this post"
+msgstr "Diunggah ke post ini"
+
+#: fields/image.php:55
+msgid "All images"
+msgstr "Semua gambar"
+
+#: fields/image.php:147
+msgid "No image selected"
+msgstr "Tak ada gambar yang dipilih"
+
+#: fields/image.php:147
+msgid "Add Image"
+msgstr "Tambahkan Gambar"
+
+#: fields/image.php:201
+msgid "Image Array"
+msgstr "Gambar Array"
+
+#: fields/image.php:202
+msgid "Image URL"
+msgstr "URL Gambar"
+
+#: fields/image.php:203
+msgid "Image ID"
+msgstr "ID Gambar"
+
+#: fields/image.php:210 pro/fields/gallery.php:645
+msgid "Preview Size"
+msgstr "Ukuran Tinjauan"
+
+#: fields/image.php:211 pro/fields/gallery.php:646
+msgid "Shown when entering data"
+msgstr "Tampilkan ketika memasukkan data"
+
+#: fields/image.php:235 fields/image.php:268 pro/fields/gallery.php:670
+#: pro/fields/gallery.php:703
+msgid "Restrict which images can be uploaded"
+msgstr "Batasi gambar mana yang dapat diunggah"
+
+#: fields/image.php:238 fields/image.php:271 fields/oembed.php:264
+#: pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Width"
+msgstr "Lebar"
+
+#: fields/message.php:36 fields/message.php:116 fields/true_false.php:106
+msgid "Message"
+msgstr "Pesan"
+
+#: fields/message.php:125 fields/textarea.php:182
+msgid "New Lines"
+msgstr "Garis baru"
+
+#: fields/message.php:126 fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr "Kontrol bagaimana baris baru diberikan"
+
+#: fields/message.php:130 fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr "Tambah paragraf secara otomatis"
+
+#: fields/message.php:131 fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr "Otomatis Tambah &lt;br&gt;"
+
+#: fields/message.php:132 fields/textarea.php:189
+msgid "No Formatting"
+msgstr "Jangan format"
+
+#: fields/message.php:139
+msgid "Escape HTML"
+msgstr "Keluar HTML"
+
+#: fields/message.php:140
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr ""
+"Memungkinkan HTML markup untuk menampilkan teks terlihat sebagai render"
+
+#: fields/number.php:36
+msgid "Number"
+msgstr "Jumlah"
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr "Nilai Minimum"
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr "Nilai Maksimum"
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr "Ukuran Langkah"
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr "Nilai harus berupa angka"
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr "Nilai harus sama dengan atau lebih tinggi dari %d"
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr "Nilai harus sama dengan atau lebih rendah dari %d"
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr "oEmbed"
+
+#: fields/oembed.php:212
+msgid "Enter URL"
+msgstr "Masukkan URL"
+
+#: fields/oembed.php:225
+msgid "No embed found for the given URL."
+msgstr "Tidak ada embed ditemukan dari URL yang diberikan."
+
+#: fields/oembed.php:261 fields/oembed.php:272
+msgid "Embed Size"
+msgstr "Ukuran Embed (Semat)"
+
+#: fields/page_link.php:197
+msgid "Archives"
+msgstr "Arsip"
+
+#: fields/page_link.php:520 fields/post_object.php:386
+#: fields/relationship.php:689
+msgid "Filter by Post Type"
+msgstr "Saring dengan jenis post"
+
+#: fields/page_link.php:528 fields/post_object.php:394
+#: fields/relationship.php:697
+msgid "All post types"
+msgstr "Semua Tipe Post"
+
+#: fields/page_link.php:534 fields/post_object.php:400
+#: fields/relationship.php:703
+msgid "Filter by Taxonomy"
+msgstr "Filter dengan Taksonomi"
+
+#: fields/page_link.php:542 fields/post_object.php:408
+#: fields/relationship.php:711
+msgid "All taxonomies"
+msgstr "Semua Taksonomi"
+
+#: fields/page_link.php:548 fields/post_object.php:414 fields/select.php:380
+#: fields/taxonomy.php:791 fields/user.php:452
+msgid "Allow Null?"
+msgstr "Izinkan Nol?"
+
+#: fields/page_link.php:562 fields/post_object.php:428 fields/select.php:394
+#: fields/user.php:466
+msgid "Select multiple values?"
+msgstr "Pilih beberapa nilai?"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr "Kata Sandi"
+
+#: fields/post_object.php:36 fields/post_object.php:447
+#: fields/relationship.php:768
+msgid "Post Object"
+msgstr "Objek Post"
+
+#: fields/post_object.php:442 fields/relationship.php:763
+msgid "Return Format"
+msgstr "Kembalikan format"
+
+#: fields/post_object.php:448 fields/relationship.php:769
+msgid "Post ID"
+msgstr "ID Post"
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "Tombol Radio"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "Lainnya"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr "Tambah pilihan 'lainnya' untuk mengizinkan nilai kustom"
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr "Simpan Lainnya"
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr "Simpan nilai 'lainnya' ke bidang pilihan"
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "Hubungan"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr "Nilai minimum mencapai (nilai {min})"
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "Nilai maksimum mencapai ( nilai {maks} )"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr "Loading..."
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr "Tidak ditemukan"
+
+#: fields/relationship.php:570
+msgid "Search..."
+msgstr "Cari ..."
+
+#: fields/relationship.php:579
+msgid "Select post type"
+msgstr "Pilih jenis posting"
+
+#: fields/relationship.php:592
+msgid "Select taxonomy"
+msgstr "Pilih taksonomi"
+
+#: fields/relationship.php:724 fields/taxonomy.php:36 fields/taxonomy.php:761
+msgid "Taxonomy"
+msgstr "Taksonomi"
+
+#: fields/relationship.php:731
+msgid "Elements"
+msgstr "Elemen"
+
+#: fields/relationship.php:732
+msgid "Selected elements will be displayed in each result"
+msgstr "Elemen terpilih akan ditampilkan disetiap hasil"
+
+#: fields/relationship.php:743
+msgid "Minimum posts"
+msgstr "Posting minimal"
+
+#: fields/relationship.php:752
+msgid "Maximum posts"
+msgstr "Posting maksimum"
+
+#: fields/relationship.php:856 pro/fields/gallery.php:817
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] "%s diperlukan setidaknya %s pilihan"
+
+#: fields/select.php:36 fields/select.php:167 fields/taxonomy.php:783
+msgid "Select"
+msgstr "Pilih"
+
+#: fields/select.php:408
+msgid "Stylised UI"
+msgstr "Stylised UI"
+
+#: fields/select.php:422
+msgid "Use AJAX to lazy load choices?"
+msgstr "Gunakan AJAX untuk pilihan lazy load?"
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr "Tab"
+
+#: fields/tab.php:128
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+"Bidang tab tidak akan tampil dengan baik ketika ditambahkan ke Gaya Tabel "
+"repeater atau layout bidang konten yang fleksibel"
+
+#: fields/tab.php:129
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+"Gunakan \"Bidang Tab\" untuk mengatur layar edit Anda dengan menggabungkan "
+"bidang bersamaan."
+
+#: fields/tab.php:130
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+"Semua bidang mengikuti \"bidang tab\" (atau sampai \"bidang tab\" lainnya "
+"ditemukan) akan dikelompokkan bersama-sama menggunakan label bidang ini "
+"sebagai judul tab."
+
+#: fields/tab.php:144
+msgid "Placement"
+msgstr "Penempatan"
+
+#: fields/tab.php:156
+msgid "End-point"
+msgstr "End-point"
+
+#: fields/tab.php:157
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr "Gunakan bidang ini sebagai end-point dan mulai grup baru dari tab"
+
+#: fields/taxonomy.php:730
+msgid "None"
+msgstr "Tidak ada"
+
+#: fields/taxonomy.php:762
+msgid "Select the taxonomy to be displayed"
+msgstr "Pilih taksonomi yang akan ditampilkan"
+
+#: fields/taxonomy.php:771
+msgid "Appearance"
+msgstr "Tampilan"
+
+#: fields/taxonomy.php:772
+msgid "Select the appearance of this field"
+msgstr "Pilih penampilan bidang ini"
+
+#: fields/taxonomy.php:777
+msgid "Multiple Values"
+msgstr "Beberapa Nilai"
+
+#: fields/taxonomy.php:779
+msgid "Multi Select"
+msgstr "Pilihan Multi"
+
+#: fields/taxonomy.php:781
+msgid "Single Value"
+msgstr "Nilai Tunggal"
+
+#: fields/taxonomy.php:782
+msgid "Radio Buttons"
+msgstr "Tombol Radio"
+
+#: fields/taxonomy.php:805
+msgid "Create Terms"
+msgstr "Buat Ketentuan"
+
+#: fields/taxonomy.php:806
+msgid "Allow new terms to be created whilst editing"
+msgstr "Izinkan ketentuan baru dibuat pengeditannya sementara"
+
+#: fields/taxonomy.php:819
+msgid "Save Terms"
+msgstr "Simpan Ketentuan"
+
+#: fields/taxonomy.php:820
+msgid "Connect selected terms to the post"
+msgstr "Hubungkan ketentuan yang dipilih ke post"
+
+#: fields/taxonomy.php:833
+msgid "Load Terms"
+msgstr "Load Ketentuan"
+
+#: fields/taxonomy.php:834
+msgid "Load value from posts terms"
+msgstr "Muat nilai dari ketentuan post"
+
+#: fields/taxonomy.php:852
+msgid "Term Object"
+msgstr "Objek ketentuan"
+
+#: fields/taxonomy.php:853
+msgid "Term ID"
+msgstr "ID Ketentuan"
+
+#: fields/taxonomy.php:912
+#, php-format
+msgid "User unable to add new %s"
+msgstr "Pengguna tidak dapat menambahkan %s"
+
+#: fields/taxonomy.php:925
+#, php-format
+msgid "%s already exists"
+msgstr "%s sudah ada"
+
+#: fields/taxonomy.php:966
+#, php-format
+msgid "%s added"
+msgstr "%s ditambahkan"
+
+#: fields/taxonomy.php:1011
+msgid "Add"
+msgstr "Tambah"
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "Teks"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr "Batas Karakter"
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr "Biarkan kosong untuk tidak terbatas"
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "Area Teks"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr "Baris"
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr "Atur tinggi area teks"
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "Benar / Salah"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "contoh. Tampilkan konten ekstra"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr "URL"
+
+#: fields/url.php:168
+msgid "Value must be a valid URL"
+msgstr "Nilai harus URL yang valid"
+
+#: fields/user.php:437
+msgid "Filter by role"
+msgstr "Saring berdasarkan peran"
+
+#: fields/user.php:445
+msgid "All user roles"
+msgstr "Semua peran pengguna"
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "WYSIWYG Editor"
+
+#: fields/wysiwyg.php:320
+msgid "Visual"
+msgstr "Visual"
+
+#: fields/wysiwyg.php:321
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "Teks"
+
+#: fields/wysiwyg.php:377
+msgid "Tabs"
+msgstr "Tab"
+
+#: fields/wysiwyg.php:382
+msgid "Visual & Text"
+msgstr "Visual & Teks"
+
+#: fields/wysiwyg.php:383
+msgid "Visual Only"
+msgstr "Visual Saja"
+
+#: fields/wysiwyg.php:384
+msgid "Text Only"
+msgstr "Teks saja"
+
+#: fields/wysiwyg.php:391
+msgid "Toolbar"
+msgstr "Toolbar"
+
+#: fields/wysiwyg.php:401
+msgid "Show Media Upload Buttons?"
+msgstr "Tampilkan Tombol Unggah Media?"
+
+#: forms/post.php:298 pro/admin/options-page.php:374
+msgid "Edit field group"
+msgstr "Edit Grup Bidang"
+
+#: pro/acf-pro.php:24
+msgid "Advanced Custom Fields PRO"
+msgstr "Advanced Custom Fields PRO"
+
+#: pro/acf-pro.php:191
+msgid "Flexible Content requires at least 1 layout"
+msgstr "Konten fleksibel memerlukan setidaknya 1 layout"
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "Opsi Laman"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr "Tidak ada pilihan halaman yang ada"
+
+#: pro/admin/options-page.php:298
+msgid "Options Updated"
+msgstr "Pilihan Diperbarui"
+
+#: pro/admin/options-page.php:304
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr "Tidak ada Grup Bidang Kustom ditemukan untuk halaman pilihan ini. <a href=\"%s\">Buat Grup Bidang Kustom</a>"
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b>Kesalahan.</b> Tidak dapat terhubung ke server yang memperbarui"
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr "<b>Error Koneksi.</b> Maaf, silakan coba lagi"
+
+#: pro/admin/views/options-page.php:48
+msgid "Publish"
+msgstr "Terbitkan"
+
+#: pro/admin/views/options-page.php:54
+msgid "Save Options"
+msgstr "Simpan Pengaturan"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr "Nonaktifkan Lisensi"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr "Aktifkan Lisensi"
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr "Lisensi"
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+"Untuk membuka update, masukkan kunci lisensi Anda di bawah ini. Jika Anda "
+"tidak memiliki kunci lisensi, silakan lihat"
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr "Rincian & harga"
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr "Kunci lisensi"
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr "Informasi Pembaruan"
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr "Versi sekarang"
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr "Versi terbaru"
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr "Pembaruan Tersedia"
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr "Perbarui Plugin"
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr "Masukkan kunci lisensi Anda di atas untuk membuka pembaruan"
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr "Periksa lagi"
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr "Pemberitahuan Upgrade"
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "Pengaturan"
+
+#: pro/core/updates.php:198
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+"Untuk mengaktifkan update, masukkan kunci lisensi Anda pada <a href=\"%s"
+"\">Laman</a> pembaruan. Jika Anda tidak memiliki kunci lisensi, silakan "
+"lihat <a href=\"%s\">rincian & harga</a>"
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "Konten Fleksibel"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "Tambah Baris"
+
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr "Layout"
+
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr "layout"
+
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr "singkirkan {layout}?"
+
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr "Bidang ini membutuhkan setidaknya {min} {identifier}"
+
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr "Bidang ini memiliki batas {max} {identifier}"
+
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr "Bidang ini membutuhkan setidaknya {min} {label} {identifier}"
+
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr "Maksimum {label} mencapai ({max} {identifier})"
+
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{tersedia} {label} {identifier} tersedia (max {max})"
+
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{diperlukan} {label} {identifier} diperlukan (min {min})"
+
+#: pro/fields/flexible-content.php:211
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "Klik tombol\"%s\" dibawah untuk mulai membuat layout Anda"
+
+#: pro/fields/flexible-content.php:356
+msgid "Add layout"
+msgstr "Tambah Layout"
+
+#: pro/fields/flexible-content.php:359
+msgid "Remove layout"
+msgstr "Hapus layout"
+
+#: pro/fields/flexible-content.php:362 pro/fields/repeater.php:312
+msgid "Click to toggle"
+msgstr "Klik untuk toggle"
+
+#: pro/fields/flexible-content.php:502
+msgid "Reorder Layout"
+msgstr "Susun ulang Layout"
+
+#: pro/fields/flexible-content.php:502
+msgid "Reorder"
+msgstr "Susun Ulang"
+
+#: pro/fields/flexible-content.php:503
+msgid "Delete Layout"
+msgstr "Hapus Layout"
+
+#: pro/fields/flexible-content.php:504
+msgid "Duplicate Layout"
+msgstr "Duplikat Layout"
+
+#: pro/fields/flexible-content.php:505
+msgid "Add New Layout"
+msgstr "Tambah Layout Baru"
+
+#: pro/fields/flexible-content.php:559 pro/fields/repeater.php:474
+msgid "Table"
+msgstr "Tabel"
+
+#: pro/fields/flexible-content.php:560 pro/fields/repeater.php:475
+msgid "Block"
+msgstr "Blok"
+
+#: pro/fields/flexible-content.php:561 pro/fields/repeater.php:476
+msgid "Row"
+msgstr "Baris"
+
+#: pro/fields/flexible-content.php:576
+msgid "Min"
+msgstr "Min"
+
+#: pro/fields/flexible-content.php:589
+msgid "Max"
+msgstr "Maks"
+
+#: pro/fields/flexible-content.php:617 pro/fields/repeater.php:483
+msgid "Button Label"
+msgstr "Label tombol"
+
+#: pro/fields/flexible-content.php:626
+msgid "Minimum Layouts"
+msgstr "Minimum Layouts"
+
+#: pro/fields/flexible-content.php:635
+msgid "Maximum Layouts"
+msgstr "Maksimum Layout"
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "Galeri"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "Tambahkan Gambar ke Galeri"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr "Batas pilihan maksimum"
+
+#: pro/fields/gallery.php:343
+msgid "Length"
+msgstr "Panjang"
+
+#: pro/fields/gallery.php:363
+msgid "Remove"
+msgstr "Singkirkan"
+
+#: pro/fields/gallery.php:543
+msgid "Add to gallery"
+msgstr "Tambahkan ke galeri"
+
+#: pro/fields/gallery.php:547
+msgid "Bulk actions"
+msgstr "Aksi besar"
+
+#: pro/fields/gallery.php:548
+msgid "Sort by date uploaded"
+msgstr "Urutkan berdasarkan tanggal unggah"
+
+#: pro/fields/gallery.php:549
+msgid "Sort by date modified"
+msgstr "Urutkan berdasarkan tanggal modifikasi"
+
+#: pro/fields/gallery.php:550
+msgid "Sort by title"
+msgstr "Urutkan menurut judul"
+
+#: pro/fields/gallery.php:551
+msgid "Reverse current order"
+msgstr "Agar arus balik"
+
+#: pro/fields/gallery.php:569
+msgid "Close"
+msgstr "Tutup"
+
+#: pro/fields/gallery.php:627
+msgid "Minimum Selection"
+msgstr "Seleksi Minimum"
+
+#: pro/fields/gallery.php:636
+msgid "Maximum Selection"
+msgstr "Seleksi maksimum"
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "Pengulang"
+
+#: pro/fields/repeater.php:47
+msgid "Minimum rows reached ({min} rows)"
+msgstr "Baris minimal mencapai ({min} baris)"
+
+#: pro/fields/repeater.php:48
+msgid "Maximum rows reached ({max} rows)"
+msgstr "Baris maksimum mencapai ({max} baris)"
+
+#: pro/fields/repeater.php:310
+msgid "Drag to reorder"
+msgstr "Seret untuk menyusun ulang"
+
+#: pro/fields/repeater.php:357
+msgid "Add row"
+msgstr "Tambah Baris"
+
+#: pro/fields/repeater.php:358
+msgid "Remove row"
+msgstr "Hapus baris"
+
+#: pro/fields/repeater.php:406
+msgid "Sub Fields"
+msgstr "Sub Bidang"
+
+#: pro/fields/repeater.php:436
+msgid "Collapsed"
+msgstr "Disempitkan"
+
+#: pro/fields/repeater.php:437
+msgid "Select a sub field to show when row is collapsed"
+msgstr "Pilih sub bidang untuk ditampilkan ketika baris disempitkan"
+
+#: pro/fields/repeater.php:447
+msgid "Minimum Rows"
+msgstr "Minimum Baris"
+
+#: pro/fields/repeater.php:457
+msgid "Maximum Rows"
+msgstr "Maksimum Baris"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr ""

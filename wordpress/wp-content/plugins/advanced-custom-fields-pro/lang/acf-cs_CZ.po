@@ -1,0 +1,3036 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
+"Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
+"POT-Creation-Date: 2015-08-11 23:09+0200\n"
+"PO-Revision-Date: 2016-11-03 17:08+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language-Team: webees.cz s.r.o. <jakubmachala@webees.cz>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"X-Textdomain-Support: yes\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:63
+msgid "Advanced Custom Fields"
+msgstr "Pokročilá vlastní pole"
+
+#: acf.php:205 admin/admin.php:61
+msgid "Field Groups"
+msgstr "Skupiny polí"
+
+#: acf.php:206
+msgid "Field Group"
+msgstr ""
+
+#: acf.php:207 acf.php:239 admin/admin.php:62
+#: pro/fields/flexible-content.php:517
+msgid "Add New"
+msgstr "Přidat nové"
+
+#: acf.php:208
+msgid "Add New Field Group"
+msgstr "Přidat novou skupinu polí"
+
+#: acf.php:209
+msgid "Edit Field Group"
+msgstr "Upravit skupinu polí"
+
+#: acf.php:210
+msgid "New Field Group"
+msgstr "Nová skupina polí"
+
+#: acf.php:211
+msgid "View Field Group"
+msgstr "Prohlížet skupinu polí"
+
+#: acf.php:212
+msgid "Search Field Groups"
+msgstr "Hledat skupiny polí"
+
+#: acf.php:213
+msgid "No Field Groups found"
+msgstr "Nebyly nalezeny žádné skupiny polí"
+
+#: acf.php:214
+msgid "No Field Groups found in Trash"
+msgstr "V koši nebyly nalezeny žádné skupiny polí"
+
+#: acf.php:237 admin/field-group.php:182 admin/field-group.php:213
+#: admin/field-groups.php:519
+msgid "Fields"
+msgstr "Pole"
+
+#: acf.php:238
+msgid "Field"
+msgstr ""
+
+#: acf.php:240
+msgid "Add New Field"
+msgstr ""
+
+#: acf.php:241
+msgid "Edit Field"
+msgstr ""
+
+#: acf.php:242 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "Nové pole"
+
+#: acf.php:243
+msgid "View Field"
+msgstr ""
+
+#: acf.php:244
+msgid "Search Fields"
+msgstr ""
+
+#: acf.php:245
+msgid "No Fields found"
+msgstr ""
+
+#: acf.php:246
+msgid "No Fields found in Trash"
+msgstr ""
+
+#: acf.php:268 admin/field-group.php:283 admin/field-groups.php:583
+#: admin/views/field-group-options.php:18
+msgid "Disabled"
+msgstr ""
+
+#: acf.php:273
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: admin/admin.php:57 admin/views/field-group-options.php:120
+msgid "Custom Fields"
+msgstr "Vlastní pole"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "Skupina polí aktualizována"
+
+#: admin/field-group.php:70
+msgid "Field group deleted."
+msgstr ""
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "Skupina polí publikována."
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "Skupina polí uložena."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "Skupina polí odeslána."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "Skupina polí naplánována."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "Koncept skupiny polí aktualizován."
+
+#: admin/field-group.php:176
+msgid "Move to trash. Are you sure?"
+msgstr "Přesunout do koše. Jste si jistí?"
+
+#: admin/field-group.php:177
+msgid "checked"
+msgstr ""
+
+#: admin/field-group.php:178
+msgid "No toggle fields available"
+msgstr ""
+
+#: admin/field-group.php:179
+msgid "Field group title is required"
+msgstr ""
+
+#: admin/field-group.php:180 api/api-field-group.php:607
+msgid "copy"
+msgstr ""
+
+#: admin/field-group.php:181
+#: admin/views/field-group-field-conditional-logic.php:67
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:23
+#: admin/views/field-group-locations.php:131 api/api-helpers.php:3262
+msgid "or"
+msgstr ""
+
+#: admin/field-group.php:183
+msgid "Parent fields"
+msgstr ""
+
+#: admin/field-group.php:184
+msgid "Sibling fields"
+msgstr ""
+
+#: admin/field-group.php:185
+msgid "Move Custom Field"
+msgstr ""
+
+#: admin/field-group.php:186
+msgid "This field cannot be moved until its changes have been saved"
+msgstr ""
+
+#: admin/field-group.php:187
+msgid "Null"
+msgstr ""
+
+#: admin/field-group.php:188 core/input.php:128
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr ""
+
+#: admin/field-group.php:189
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr ""
+
+#: admin/field-group.php:214
+msgid "Location"
+msgstr "Umístění"
+
+#: admin/field-group.php:215
+msgid "Settings"
+msgstr "Nastavení"
+
+#: admin/field-group.php:253
+msgid "Field Keys"
+msgstr ""
+
+#: admin/field-group.php:283 admin/views/field-group-options.php:17
+msgid "Active"
+msgstr "Aktivní"
+
+#: admin/field-group.php:744
+msgid "Front Page"
+msgstr ""
+
+#: admin/field-group.php:745
+msgid "Posts Page"
+msgstr ""
+
+#: admin/field-group.php:746
+msgid "Top Level Page (no parent)"
+msgstr ""
+
+#: admin/field-group.php:747
+msgid "Parent Page (has children)"
+msgstr ""
+
+#: admin/field-group.php:748
+msgid "Child Page (has parent)"
+msgstr ""
+
+#: admin/field-group.php:764
+msgid "Default Template"
+msgstr "Výchozí šablona"
+
+#: admin/field-group.php:786
+msgid "Logged in"
+msgstr ""
+
+#: admin/field-group.php:787
+msgid "Viewing front end"
+msgstr ""
+
+#: admin/field-group.php:788
+msgid "Viewing back end"
+msgstr ""
+
+#: admin/field-group.php:807
+msgid "Super Admin"
+msgstr ""
+
+#: admin/field-group.php:818 admin/field-group.php:826
+#: admin/field-group.php:840 admin/field-group.php:847
+#: admin/field-group.php:862 admin/field-group.php:872 fields/file.php:235
+#: fields/image.php:226 pro/fields/gallery.php:653
+msgid "All"
+msgstr "Vše"
+
+#: admin/field-group.php:827
+msgid "Add / Edit"
+msgstr ""
+
+#: admin/field-group.php:828
+msgid "Register"
+msgstr ""
+
+#: admin/field-group.php:1059
+msgid "Move Complete."
+msgstr ""
+
+#: admin/field-group.php:1060
+#, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr ""
+
+#: admin/field-group.php:1062
+msgid "Close Window"
+msgstr ""
+
+#: admin/field-group.php:1097
+msgid "Please select the destination for this field"
+msgstr ""
+
+#: admin/field-group.php:1104
+msgid "Move Field"
+msgstr ""
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: admin/field-groups.php:142
+#, php-format
+msgid "Field group duplicated. %s"
+msgstr ""
+
+#: admin/field-groups.php:146
+#, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: admin/field-groups.php:228
+#, php-format
+msgid "Field group synchronised. %s"
+msgstr ""
+
+#: admin/field-groups.php:232
+#, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: admin/field-groups.php:403 admin/field-groups.php:573
+msgid "Sync available"
+msgstr ""
+
+#: admin/field-groups.php:516
+msgid "Title"
+msgstr "Název"
+
+#: admin/field-groups.php:517 admin/views/field-group-options.php:98
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+msgid "Description"
+msgstr "Popis"
+
+#: admin/field-groups.php:518 admin/views/field-group-options.php:10
+msgid "Status"
+msgstr "Stav"
+
+#: admin/field-groups.php:616 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "Seznam změn"
+
+#: admin/field-groups.php:617
+msgid "See what's new in"
+msgstr "Co je nového v"
+
+#: admin/field-groups.php:617
+msgid "version"
+msgstr ""
+
+#: admin/field-groups.php:619
+msgid "Resources"
+msgstr "Zdroje"
+
+#: admin/field-groups.php:621
+msgid "Getting Started"
+msgstr ""
+
+#: admin/field-groups.php:622 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr ""
+
+#: admin/field-groups.php:623
+msgid "Field Types"
+msgstr ""
+
+#: admin/field-groups.php:624
+msgid "Functions"
+msgstr ""
+
+#: admin/field-groups.php:625
+msgid "Actions"
+msgstr ""
+
+#: admin/field-groups.php:626 fields/relationship.php:718
+msgid "Filters"
+msgstr ""
+
+#: admin/field-groups.php:627
+msgid "'How to' guides"
+msgstr ""
+
+#: admin/field-groups.php:628
+msgid "Tutorials"
+msgstr ""
+
+#: admin/field-groups.php:633
+msgid "Created by"
+msgstr "Vytvořil"
+
+#: admin/field-groups.php:673
+msgid "Duplicate this item"
+msgstr ""
+
+#: admin/field-groups.php:673 admin/field-groups.php:685
+#: admin/views/field-group-field.php:58 pro/fields/flexible-content.php:516
+msgid "Duplicate"
+msgstr "Duplikovat"
+
+#: admin/field-groups.php:724
+#, php-format
+msgid "Select %s"
+msgstr ""
+
+#: admin/field-groups.php:730
+msgid "Synchronise field group"
+msgstr ""
+
+#: admin/field-groups.php:730 admin/field-groups.php:750
+msgid "Sync"
+msgstr ""
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr ""
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr ""
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr ""
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr ""
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:9
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr ""
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:365
+msgid "No field groups selected"
+msgstr ""
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr ""
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr ""
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr ""
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr ""
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr ""
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr ""
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr ""
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "Aktualizovat"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr "Aktualizovat databázi"
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr ""
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:137 fields/checkbox.php:246
+#: fields/message.php:117 fields/page_link.php:568 fields/page_link.php:582
+#: fields/post_object.php:434 fields/post_object.php:448 fields/select.php:411
+#: fields/select.php:425 fields/select.php:439 fields/select.php:453
+#: fields/tab.php:172 fields/taxonomy.php:770 fields/taxonomy.php:784
+#: fields/taxonomy.php:798 fields/taxonomy.php:812 fields/user.php:457
+#: fields/user.php:471 fields/wysiwyg.php:384
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "Ano"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:138 fields/checkbox.php:247
+#: fields/message.php:118 fields/page_link.php:569 fields/page_link.php:583
+#: fields/post_object.php:435 fields/post_object.php:449 fields/select.php:412
+#: fields/select.php:426 fields/select.php:440 fields/select.php:454
+#: fields/tab.php:173 fields/taxonomy.php:685 fields/taxonomy.php:771
+#: fields/taxonomy.php:785 fields/taxonomy.php:799 fields/taxonomy.php:813
+#: fields/user.php:458 fields/user.php:472 fields/wysiwyg.php:385
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "Ne"
+
+#: admin/views/field-group-field-conditional-logic.php:65
+msgid "Show this field if"
+msgstr ""
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:88
+msgid "is equal to"
+msgstr "je rovno"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:89
+msgid "is not equal to"
+msgstr "není rovno"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:118
+msgid "and"
+msgstr ""
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:133
+msgid "Add rule group"
+msgstr ""
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:57
+msgid "Edit field"
+msgstr ""
+
+#: admin/views/field-group-field.php:57 pro/fields/gallery.php:355
+msgid "Edit"
+msgstr "Upravit"
+
+#: admin/views/field-group-field.php:58
+msgid "Duplicate field"
+msgstr ""
+
+#: admin/views/field-group-field.php:59
+msgid "Move field to another group"
+msgstr ""
+
+#: admin/views/field-group-field.php:59
+msgid "Move"
+msgstr ""
+
+#: admin/views/field-group-field.php:60
+msgid "Delete field"
+msgstr ""
+
+#: admin/views/field-group-field.php:60 pro/fields/flexible-content.php:515
+msgid "Delete"
+msgstr "Smazat"
+
+#: admin/views/field-group-field.php:68 fields/oembed.php:212
+#: fields/taxonomy.php:886
+msgid "Error"
+msgstr ""
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr ""
+
+#: admin/views/field-group-field.php:68
+msgid "Field type does not exist"
+msgstr ""
+
+#: admin/views/field-group-field.php:81
+msgid "Field Label"
+msgstr "Název pole"
+
+#: admin/views/field-group-field.php:82
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Toto je jméno, které se zobrazí na stránce úprav"
+
+#: admin/views/field-group-field.php:93
+msgid "Field Name"
+msgstr "Jméno pole"
+
+#: admin/views/field-group-field.php:94
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr "Jedno slovo, bez mezer. Podtržítka a pomlčky jsou povoleny."
+
+#: admin/views/field-group-field.php:105
+msgid "Field Type"
+msgstr "Typ pole"
+
+#: admin/views/field-group-field.php:118 fields/tab.php:143
+msgid "Instructions"
+msgstr "Instrukce"
+
+#: admin/views/field-group-field.php:119
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Instrukce pro autory. Jsou zobrazeny při zadávání dat."
+
+#: admin/views/field-group-field.php:130
+msgid "Required?"
+msgstr "Požadováno?"
+
+#: admin/views/field-group-field.php:158
+msgid "Wrapper Attributes"
+msgstr ""
+
+#: admin/views/field-group-field.php:164
+msgid "width"
+msgstr ""
+
+#: admin/views/field-group-field.php:178
+msgid "class"
+msgstr ""
+
+#: admin/views/field-group-field.php:191
+msgid "id"
+msgstr ""
+
+#: admin/views/field-group-field.php:203
+msgid "Close Field"
+msgstr "Zavřít pole"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr ""
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:541
+msgid "Label"
+msgstr "Název"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:554
+msgid "Name"
+msgstr "Jméno"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr ""
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"Žádná pole. Klikněte na tlačítko<strong>+ Přidat pole</strong> pro vytvoření "
+"prvního pole."
+
+#: admin/views/field-group-fields.php:51
+msgid "Drag and drop to reorder"
+msgstr "Chytněte a táhněte pro změnu pořadí"
+
+#: admin/views/field-group-fields.php:54
+msgid "+ Add Field"
+msgstr "+ Přidat pole"
+
+#: admin/views/field-group-locations.php:5
+msgid "Rules"
+msgstr "Pravidla"
+
+#: admin/views/field-group-locations.php:6
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"Vytváří sadu pravidel pro určení, na kterých stránkách úprav budou použita "
+"tato vlastní pole"
+
+#: admin/views/field-group-locations.php:21
+msgid "Show this field group if"
+msgstr ""
+
+#: admin/views/field-group-locations.php:41
+#: admin/views/field-group-locations.php:47
+msgid "Post"
+msgstr "Příspěvek"
+
+#: admin/views/field-group-locations.php:42 fields/relationship.php:724
+msgid "Post Type"
+msgstr "Typ příspěvku"
+
+#: admin/views/field-group-locations.php:43
+msgid "Post Status"
+msgstr ""
+
+#: admin/views/field-group-locations.php:44
+msgid "Post Format"
+msgstr "Formát příspěvku"
+
+#: admin/views/field-group-locations.php:45
+msgid "Post Category"
+msgstr "Rubrika příspěvku"
+
+#: admin/views/field-group-locations.php:46
+msgid "Post Taxonomy"
+msgstr "Taxonomie příspěvku"
+
+#: admin/views/field-group-locations.php:49
+#: admin/views/field-group-locations.php:53
+msgid "Page"
+msgstr "Stránka"
+
+#: admin/views/field-group-locations.php:50
+msgid "Page Template"
+msgstr "Šablona stránky"
+
+#: admin/views/field-group-locations.php:51
+msgid "Page Type"
+msgstr "Typ stránky"
+
+#: admin/views/field-group-locations.php:52
+msgid "Page Parent"
+msgstr "Rodičovská stránka"
+
+#: admin/views/field-group-locations.php:55 fields/user.php:36
+msgid "User"
+msgstr ""
+
+#: admin/views/field-group-locations.php:56
+msgid "Current User"
+msgstr ""
+
+#: admin/views/field-group-locations.php:57
+msgid "Current User Role"
+msgstr ""
+
+#: admin/views/field-group-locations.php:58
+msgid "User Form"
+msgstr ""
+
+#: admin/views/field-group-locations.php:59
+msgid "User Role"
+msgstr ""
+
+#: admin/views/field-group-locations.php:61 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr ""
+
+#: admin/views/field-group-locations.php:62
+msgid "Attachment"
+msgstr ""
+
+#: admin/views/field-group-locations.php:63
+msgid "Taxonomy Term"
+msgstr ""
+
+#: admin/views/field-group-locations.php:64
+msgid "Comment"
+msgstr ""
+
+#: admin/views/field-group-locations.php:65
+msgid "Widget"
+msgstr ""
+
+#: admin/views/field-group-options.php:25
+msgid "Style"
+msgstr "Styl"
+
+#: admin/views/field-group-options.php:32
+msgid "Standard (WP metabox)"
+msgstr ""
+
+#: admin/views/field-group-options.php:33
+msgid "Seamless (no metabox)"
+msgstr ""
+
+#: admin/views/field-group-options.php:40
+msgid "Position"
+msgstr "Pozice"
+
+#: admin/views/field-group-options.php:47
+msgid "High (after title)"
+msgstr ""
+
+#: admin/views/field-group-options.php:48
+msgid "Normal (after content)"
+msgstr ""
+
+#: admin/views/field-group-options.php:49
+msgid "Side"
+msgstr "Na straně"
+
+#: admin/views/field-group-options.php:57
+msgid "Label placement"
+msgstr ""
+
+#: admin/views/field-group-options.php:64 fields/tab.php:159
+msgid "Top aligned"
+msgstr ""
+
+#: admin/views/field-group-options.php:65 fields/tab.php:160
+msgid "Left Aligned"
+msgstr ""
+
+#: admin/views/field-group-options.php:72
+msgid "Instruction placement"
+msgstr ""
+
+#: admin/views/field-group-options.php:79
+msgid "Below labels"
+msgstr ""
+
+#: admin/views/field-group-options.php:80
+msgid "Below fields"
+msgstr ""
+
+#: admin/views/field-group-options.php:87
+msgid "Order No."
+msgstr "Pořadí"
+
+#: admin/views/field-group-options.php:88
+msgid "Field groups with a lower order will appear first"
+msgstr ""
+
+#: admin/views/field-group-options.php:99
+msgid "Shown in field group list"
+msgstr ""
+
+#: admin/views/field-group-options.php:109
+msgid "Hide on screen"
+msgstr "Skrýt na obrazovce"
+
+#: admin/views/field-group-options.php:110
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr ""
+
+#: admin/views/field-group-options.php:110
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+
+#: admin/views/field-group-options.php:117
+msgid "Permalink"
+msgstr ""
+
+#: admin/views/field-group-options.php:118
+msgid "Content Editor"
+msgstr "Editor obsahu"
+
+#: admin/views/field-group-options.php:119
+msgid "Excerpt"
+msgstr "Stručný výpis"
+
+#: admin/views/field-group-options.php:121
+msgid "Discussion"
+msgstr "Diskuze"
+
+#: admin/views/field-group-options.php:122
+msgid "Comments"
+msgstr "Komentáře"
+
+#: admin/views/field-group-options.php:123
+msgid "Revisions"
+msgstr ""
+
+#: admin/views/field-group-options.php:124
+msgid "Slug"
+msgstr "Adresa"
+
+#: admin/views/field-group-options.php:125
+msgid "Author"
+msgstr "Autor"
+
+#: admin/views/field-group-options.php:126
+msgid "Format"
+msgstr "Formát"
+
+#: admin/views/field-group-options.php:127
+msgid "Page Attributes"
+msgstr ""
+
+#: admin/views/field-group-options.php:128 fields/relationship.php:737
+msgid "Featured Image"
+msgstr "Uživatelský obrázek"
+
+#: admin/views/field-group-options.php:129
+msgid "Categories"
+msgstr ""
+
+#: admin/views/field-group-options.php:130
+msgid "Tags"
+msgstr ""
+
+#: admin/views/field-group-options.php:131
+msgid "Send Trackbacks"
+msgstr ""
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr ""
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr ""
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr ""
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr ""
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr ""
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr ""
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr ""
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr ""
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr ""
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr ""
+
+#: admin/views/settings-info.php:51
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr ""
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr ""
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr ""
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr ""
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr ""
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr ""
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr ""
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr ""
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr ""
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr ""
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr ""
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr ""
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr ""
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr ""
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr ""
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr ""
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr ""
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr ""
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr ""
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr ""
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr ""
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr ""
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr ""
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr ""
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr ""
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr ""
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr ""
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr ""
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr ""
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "Odkaz stránky"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr ""
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr ""
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr ""
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr ""
+
+#: admin/views/settings-tools-export.php:13
+msgid "Export Field Groups to PHP"
+msgstr "Exportujte skupiny polí do PHP"
+
+#: admin/views/settings-tools-export.php:17
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr ""
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr ""
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr ""
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr ""
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "Importovat skupiny polí"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "Vybrat soubor"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr ""
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr ""
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr ""
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr ""
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr ""
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr ""
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr ""
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr ""
+
+#: admin/views/update-notice.php:23
+msgid "Database Upgrade Required"
+msgstr ""
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr ""
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr ""
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr ""
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr ""
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr ""
+
+#: api/api-helpers.php:821
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: api/api-helpers.php:822
+msgid "Medium"
+msgstr "Střední"
+
+#: api/api-helpers.php:823
+msgid "Large"
+msgstr "Velký"
+
+#: api/api-helpers.php:871
+msgid "Full Size"
+msgstr ""
+
+#: api/api-helpers.php:1581
+msgid "(no title)"
+msgstr ""
+
+#: api/api-helpers.php:3183
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3188
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3204
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3209
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3227
+#, php-format
+msgid "File size must be at least %s."
+msgstr ""
+
+#: api/api-helpers.php:3232
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr ""
+
+#: api/api-helpers.php:3266
+#, php-format
+msgid "File type must be %s."
+msgstr ""
+
+#: api/api-template.php:1289 pro/fields/gallery.php:564
+msgid "Update"
+msgstr ""
+
+#: api/api-template.php:1290
+msgid "Post updated"
+msgstr ""
+
+#: core/field.php:131
+msgid "Basic"
+msgstr "Základní"
+
+#: core/field.php:132
+msgid "Content"
+msgstr ""
+
+#: core/field.php:133
+msgid "Choice"
+msgstr ""
+
+#: core/field.php:134
+msgid "Relational"
+msgstr ""
+
+#: core/field.php:135
+msgid "jQuery"
+msgstr ""
+
+#: core/field.php:136 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:512 pro/fields/repeater.php:392
+msgid "Layout"
+msgstr "Typ zobrazení"
+
+#: core/input.php:129
+msgid "Expand Details"
+msgstr ""
+
+#: core/input.php:130
+msgid "Collapse Details"
+msgstr ""
+
+#: core/input.php:131
+msgid "Validation successful"
+msgstr ""
+
+#: core/input.php:132
+msgid "Validation failed"
+msgstr ""
+
+#: core/input.php:133
+msgid "1 field requires attention"
+msgstr ""
+
+#: core/input.php:134
+#, php-format
+msgid "%d fields require attention"
+msgstr ""
+
+#: core/input.php:135
+msgid "Restricted"
+msgstr ""
+
+#: core/input.php:533
+#, php-format
+msgid "%s value is required"
+msgstr ""
+
+#: fields/checkbox.php:36 fields/taxonomy.php:752
+msgid "Checkbox"
+msgstr "Zaškrtávátko"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr ""
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:388
+msgid "Choices"
+msgstr "Možnosti"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "Enter each choice on a new line."
+msgstr ""
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "For more control, you may specify both a value and label like this:"
+msgstr ""
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "red : Red"
+msgstr "cervena : Červená"
+
+#: fields/checkbox.php:217 fields/color_picker.php:158 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:397
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:345
+msgid "Default Value"
+msgstr "Výchozí hodnota"
+
+#: fields/checkbox.php:218 fields/select.php:398
+msgid "Enter each default value on a new line"
+msgstr ""
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "Vertikální"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "Horizontální"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr ""
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr ""
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "Výběr barvy"
+
+#: fields/color_picker.php:94
+msgid "Clear"
+msgstr ""
+
+#: fields/color_picker.php:95
+msgid "Default"
+msgstr ""
+
+#: fields/color_picker.php:96
+msgid "Select Color"
+msgstr ""
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "Výběr data"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr ""
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr ""
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr ""
+
+#: fields/date_picker.php:149
+msgid "Display Format"
+msgstr ""
+
+#: fields/date_picker.php:150
+msgid "The format displayed when editing a post"
+msgstr ""
+
+#: fields/date_picker.php:164
+msgid "Return format"
+msgstr ""
+
+#: fields/date_picker.php:165
+msgid "The format returned via template functions"
+msgstr ""
+
+#: fields/date_picker.php:180
+msgid "Week Starts On"
+msgstr ""
+
+#: fields/email.php:36
+msgid "Email"
+msgstr ""
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:346
+msgid "Appears when creating a new post"
+msgstr ""
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr ""
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr ""
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr ""
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr ""
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr ""
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr ""
+
+#: fields/file.php:36
+msgid "File"
+msgstr "Soubor"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "Upravit soubor"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "Aktualizovat soubor"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr ""
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr ""
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr ""
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr ""
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "Přidat soubor"
+
+#: fields/file.php:214 fields/image.php:195 fields/taxonomy.php:821
+msgid "Return Value"
+msgstr "Vrátit hodnotu"
+
+#: fields/file.php:215 fields/image.php:196
+msgid "Specify the returned value on front end"
+msgstr ""
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr ""
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "Adresa souboru"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr ""
+
+#: fields/file.php:229 fields/image.php:220 pro/fields/gallery.php:647
+msgid "Library"
+msgstr ""
+
+#: fields/file.php:230 fields/image.php:221 pro/fields/gallery.php:648
+msgid "Limit the media library choice"
+msgstr ""
+
+#: fields/file.php:236 fields/image.php:227 pro/fields/gallery.php:654
+msgid "Uploaded to post"
+msgstr ""
+
+#: fields/file.php:243 fields/image.php:234 pro/fields/gallery.php:661
+msgid "Minimum"
+msgstr ""
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr ""
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:257
+#: fields/image.php:290 pro/fields/gallery.php:684 pro/fields/gallery.php:717
+msgid "File size"
+msgstr ""
+
+#: fields/file.php:254 fields/image.php:267 pro/fields/gallery.php:694
+msgid "Maximum"
+msgstr ""
+
+#: fields/file.php:265 fields/image.php:300 pro/fields/gallery.php:727
+msgid "Allowed file types"
+msgstr ""
+
+#: fields/file.php:266 fields/image.php:301 pro/fields/gallery.php:728
+msgid "Comma separated list. Leave blank for all types"
+msgstr ""
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr ""
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr ""
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr ""
+
+#: fields/google-map.php:135
+msgid "Clear location"
+msgstr ""
+
+#: fields/google-map.php:140
+msgid "Find current location"
+msgstr ""
+
+#: fields/google-map.php:141
+msgid "Search for address..."
+msgstr ""
+
+#: fields/google-map.php:173 fields/google-map.php:184
+msgid "Center"
+msgstr ""
+
+#: fields/google-map.php:174 fields/google-map.php:185
+msgid "Center the initial map"
+msgstr ""
+
+#: fields/google-map.php:198
+msgid "Zoom"
+msgstr ""
+
+#: fields/google-map.php:199
+msgid "Set the initial zoom level"
+msgstr ""
+
+#: fields/google-map.php:208 fields/image.php:246 fields/image.php:279
+#: fields/oembed.php:262 pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Height"
+msgstr ""
+
+#: fields/google-map.php:209
+msgid "Customise the map height"
+msgstr ""
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Obrázek"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "Vybrat obrázek"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "Upravit obrázek"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "Aktualizovat obrázek"
+
+#: fields/image.php:54
+msgid "Uploaded to this post"
+msgstr ""
+
+#: fields/image.php:55
+msgid "All images"
+msgstr ""
+
+#: fields/image.php:147
+msgid "No image selected"
+msgstr "Není vybrán žádný obrázek"
+
+#: fields/image.php:147
+msgid "Add Image"
+msgstr "Přidat obrázek"
+
+#: fields/image.php:201
+msgid "Image Array"
+msgstr ""
+
+#: fields/image.php:202
+msgid "Image URL"
+msgstr "Adresa obrázku"
+
+#: fields/image.php:203
+msgid "Image ID"
+msgstr "ID obrázku"
+
+#: fields/image.php:210 pro/fields/gallery.php:637
+msgid "Preview Size"
+msgstr "Velikost náhledu"
+
+#: fields/image.php:211 pro/fields/gallery.php:638
+msgid "Shown when entering data"
+msgstr ""
+
+#: fields/image.php:235 fields/image.php:268 pro/fields/gallery.php:662
+#: pro/fields/gallery.php:695
+msgid "Restrict which images can be uploaded"
+msgstr ""
+
+#: fields/image.php:238 fields/image.php:271 fields/oembed.php:251
+#: pro/fields/gallery.php:665 pro/fields/gallery.php:698
+msgid "Width"
+msgstr ""
+
+#: fields/message.php:36 fields/message.php:103 fields/true_false.php:106
+msgid "Message"
+msgstr "Zpráva"
+
+#: fields/message.php:104
+msgid "Please note that all text will first be passed through the wp function "
+msgstr ""
+
+#: fields/message.php:112
+msgid "Escape HTML"
+msgstr ""
+
+#: fields/message.php:113
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr ""
+
+#: fields/number.php:36
+msgid "Number"
+msgstr ""
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr ""
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr ""
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr ""
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr ""
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr ""
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr ""
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr ""
+
+#: fields/oembed.php:199
+msgid "Enter URL"
+msgstr ""
+
+#: fields/oembed.php:212
+msgid "No embed found for the given URL."
+msgstr ""
+
+#: fields/oembed.php:248 fields/oembed.php:259
+msgid "Embed Size"
+msgstr ""
+
+#: fields/page_link.php:206
+msgid "Archives"
+msgstr ""
+
+#: fields/page_link.php:535 fields/post_object.php:401
+#: fields/relationship.php:690
+msgid "Filter by Post Type"
+msgstr ""
+
+#: fields/page_link.php:543 fields/post_object.php:409
+#: fields/relationship.php:698
+msgid "All post types"
+msgstr ""
+
+#: fields/page_link.php:549 fields/post_object.php:415
+#: fields/relationship.php:704
+msgid "Filter by Taxonomy"
+msgstr ""
+
+#: fields/page_link.php:557 fields/post_object.php:423
+#: fields/relationship.php:712
+msgid "All taxonomies"
+msgstr ""
+
+#: fields/page_link.php:563 fields/post_object.php:429 fields/select.php:406
+#: fields/taxonomy.php:765 fields/user.php:452
+msgid "Allow Null?"
+msgstr "Povolit prázdné?"
+
+#: fields/page_link.php:577 fields/post_object.php:443 fields/select.php:420
+#: fields/user.php:466
+msgid "Select multiple values?"
+msgstr "Vybrat více hodnot?"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr ""
+
+#: fields/post_object.php:36 fields/post_object.php:462
+#: fields/relationship.php:769
+msgid "Post Object"
+msgstr "Objekt příspěvku"
+
+#: fields/post_object.php:457 fields/relationship.php:764
+msgid "Return Format"
+msgstr ""
+
+#: fields/post_object.php:463 fields/relationship.php:770
+msgid "Post ID"
+msgstr ""
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "Přepínač"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "Jiné"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr ""
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr ""
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr ""
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "Vztah"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr ""
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "Dosaženo maximálního množství hodnot ( {max} hodnot )"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr ""
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr ""
+
+#: fields/relationship.php:571
+msgid "Search..."
+msgstr ""
+
+#: fields/relationship.php:580
+msgid "Select post type"
+msgstr ""
+
+#: fields/relationship.php:593
+msgid "Select taxonomy"
+msgstr ""
+
+#: fields/relationship.php:723
+msgid "Search"
+msgstr "Hledat"
+
+#: fields/relationship.php:725 fields/taxonomy.php:36 fields/taxonomy.php:735
+msgid "Taxonomy"
+msgstr ""
+
+#: fields/relationship.php:732
+msgid "Elements"
+msgstr ""
+
+#: fields/relationship.php:733
+msgid "Selected elements will be displayed in each result"
+msgstr ""
+
+#: fields/relationship.php:744
+msgid "Minimum posts"
+msgstr ""
+
+#: fields/relationship.php:753
+msgid "Maximum posts"
+msgstr "Maximum příspěvků"
+
+#: fields/select.php:36 fields/select.php:174 fields/taxonomy.php:757
+msgid "Select"
+msgstr "Vybrat"
+
+#: fields/select.php:434
+msgid "Stylised UI"
+msgstr ""
+
+#: fields/select.php:448
+msgid "Use AJAX to lazy load choices?"
+msgstr ""
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr ""
+
+#: fields/tab.php:128
+msgid "Warning"
+msgstr ""
+
+#: fields/tab.php:133
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+
+#: fields/tab.php:146
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+
+#: fields/tab.php:148
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+
+#: fields/tab.php:155
+msgid "Placement"
+msgstr ""
+
+#: fields/tab.php:167
+msgid "End-point"
+msgstr ""
+
+#: fields/tab.php:168
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr ""
+
+#: fields/taxonomy.php:565
+#, php-format
+msgid "Add new %s "
+msgstr ""
+
+#: fields/taxonomy.php:704
+msgid "None"
+msgstr "Žádný"
+
+#: fields/taxonomy.php:736
+msgid "Select the taxonomy to be displayed"
+msgstr ""
+
+#: fields/taxonomy.php:745
+msgid "Appearance"
+msgstr ""
+
+#: fields/taxonomy.php:746
+msgid "Select the appearance of this field"
+msgstr ""
+
+#: fields/taxonomy.php:751
+msgid "Multiple Values"
+msgstr ""
+
+#: fields/taxonomy.php:753
+msgid "Multi Select"
+msgstr ""
+
+#: fields/taxonomy.php:755
+msgid "Single Value"
+msgstr ""
+
+#: fields/taxonomy.php:756
+msgid "Radio Buttons"
+msgstr ""
+
+#: fields/taxonomy.php:779
+msgid "Create Terms"
+msgstr ""
+
+#: fields/taxonomy.php:780
+msgid "Allow new terms to be created whilst editing"
+msgstr ""
+
+#: fields/taxonomy.php:793
+msgid "Save Terms"
+msgstr ""
+
+#: fields/taxonomy.php:794
+msgid "Connect selected terms to the post"
+msgstr ""
+
+#: fields/taxonomy.php:807
+msgid "Load Terms"
+msgstr ""
+
+#: fields/taxonomy.php:808
+msgid "Load value from posts terms"
+msgstr ""
+
+#: fields/taxonomy.php:826
+msgid "Term Object"
+msgstr ""
+
+#: fields/taxonomy.php:827
+msgid "Term ID"
+msgstr ""
+
+#: fields/taxonomy.php:886
+#, php-format
+msgid "User unable to add new %s"
+msgstr ""
+
+#: fields/taxonomy.php:899
+#, php-format
+msgid "%s already exists"
+msgstr ""
+
+#: fields/taxonomy.php:940
+#, php-format
+msgid "%s added"
+msgstr ""
+
+#: fields/taxonomy.php:985
+msgid "Add"
+msgstr ""
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "Text"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr ""
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr ""
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "Textová oblast"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr ""
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr ""
+
+#: fields/textarea.php:182
+msgid "New Lines"
+msgstr ""
+
+#: fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr ""
+
+#: fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr ""
+
+#: fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr ""
+
+#: fields/textarea.php:189
+msgid "No Formatting"
+msgstr ""
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "Pravda / Nepravda"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "např. Zobrazit dodatečný obsah"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr ""
+
+#: fields/url.php:160
+msgid "Value must be a valid URL"
+msgstr ""
+
+#: fields/user.php:437
+msgid "Filter by role"
+msgstr ""
+
+#: fields/user.php:445
+msgid "All user roles"
+msgstr ""
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "Wysiwyg Editor"
+
+#: fields/wysiwyg.php:297
+msgid "Visual"
+msgstr ""
+
+#: fields/wysiwyg.php:298
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr ""
+
+#: fields/wysiwyg.php:354
+msgid "Tabs"
+msgstr ""
+
+#: fields/wysiwyg.php:359
+msgid "Visual & Text"
+msgstr ""
+
+#: fields/wysiwyg.php:360
+msgid "Visual Only"
+msgstr ""
+
+#: fields/wysiwyg.php:361
+msgid "Text Only"
+msgstr ""
+
+#: fields/wysiwyg.php:368
+msgid "Toolbar"
+msgstr "Lišta nástrojů"
+
+#: fields/wysiwyg.php:378
+msgid "Show Media Upload Buttons?"
+msgstr "Zobrazit tlačítka nahrávání médií?"
+
+#: forms/post.php:297 pro/admin/options-page.php:373
+msgid "Edit field group"
+msgstr ""
+
+#: pro/acf-pro.php:24
+msgid "Advanced Custom Fields PRO"
+msgstr ""
+
+#: pro/acf-pro.php:175
+msgid "Flexible Content requires at least 1 layout"
+msgstr ""
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "Stránka konfigurace"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr ""
+
+#: pro/admin/options-page.php:298
+msgid "Options Updated"
+msgstr "Nastavení aktualizováno"
+
+#: pro/admin/options-page.php:304
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr ""
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr ""
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr ""
+
+#: pro/admin/views/options-page.php:48
+msgid "Publish"
+msgstr "Publikovat"
+
+#: pro/admin/views/options-page.php:54
+msgid "Save Options"
+msgstr "Uložit nastavení"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr ""
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr ""
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "Konfigurace"
+
+#: pro/core/updates.php:186
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "Flexibilní obsah"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "Přidat řádek"
+
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr ""
+
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr ""
+
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr ""
+
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr ""
+
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr ""
+
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr ""
+
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr ""
+
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr ""
+
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr ""
+
+#: pro/fields/flexible-content.php:211
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr ""
+
+#: pro/fields/flexible-content.php:369
+msgid "Add layout"
+msgstr ""
+
+#: pro/fields/flexible-content.php:372
+msgid "Remove layout"
+msgstr ""
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder Layout"
+msgstr "Změnit pořadí typů zobrazení"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder"
+msgstr "Změnit pořadí"
+
+#: pro/fields/flexible-content.php:515
+msgid "Delete Layout"
+msgstr "Smazat typ zobrazení"
+
+#: pro/fields/flexible-content.php:516
+msgid "Duplicate Layout"
+msgstr ""
+
+#: pro/fields/flexible-content.php:517
+msgid "Add New Layout"
+msgstr "Přidat nový typ zobrazení"
+
+#: pro/fields/flexible-content.php:561
+msgid "Display"
+msgstr "Zobrazovat"
+
+#: pro/fields/flexible-content.php:572 pro/fields/repeater.php:399
+msgid "Table"
+msgstr "Tabulka"
+
+#: pro/fields/flexible-content.php:573 pro/fields/repeater.php:400
+msgid "Block"
+msgstr ""
+
+#: pro/fields/flexible-content.php:574 pro/fields/repeater.php:401
+msgid "Row"
+msgstr "Řádek"
+
+#: pro/fields/flexible-content.php:589
+msgid "Min"
+msgstr ""
+
+#: pro/fields/flexible-content.php:602
+msgid "Max"
+msgstr ""
+
+#: pro/fields/flexible-content.php:630 pro/fields/repeater.php:408
+msgid "Button Label"
+msgstr "Nápis tlačítka"
+
+#: pro/fields/flexible-content.php:639
+msgid "Minimum Layouts"
+msgstr ""
+
+#: pro/fields/flexible-content.php:648
+msgid "Maximum Layouts"
+msgstr ""
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "Galerie"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "Přidat obrázek do galerie"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr ""
+
+#: pro/fields/gallery.php:335
+msgid "Length"
+msgstr ""
+
+#: pro/fields/gallery.php:355
+msgid "Remove"
+msgstr "Odstranit"
+
+#: pro/fields/gallery.php:535
+msgid "Add to gallery"
+msgstr ""
+
+#: pro/fields/gallery.php:539
+msgid "Bulk actions"
+msgstr ""
+
+#: pro/fields/gallery.php:540
+msgid "Sort by date uploaded"
+msgstr ""
+
+#: pro/fields/gallery.php:541
+msgid "Sort by date modified"
+msgstr ""
+
+#: pro/fields/gallery.php:542
+msgid "Sort by title"
+msgstr ""
+
+#: pro/fields/gallery.php:543
+msgid "Reverse current order"
+msgstr ""
+
+#: pro/fields/gallery.php:561
+msgid "Close"
+msgstr ""
+
+#: pro/fields/gallery.php:619
+msgid "Minimum Selection"
+msgstr ""
+
+#: pro/fields/gallery.php:628
+msgid "Maximum Selection"
+msgstr ""
+
+#: pro/fields/gallery.php:809
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "Opakovač"
+
+#: pro/fields/repeater.php:46
+msgid "Minimum rows reached ({min} rows)"
+msgstr ""
+
+#: pro/fields/repeater.php:47
+msgid "Maximum rows reached ({max} rows)"
+msgstr ""
+
+#: pro/fields/repeater.php:259
+msgid "Drag to reorder"
+msgstr ""
+
+#: pro/fields/repeater.php:301
+msgid "Add row"
+msgstr ""
+
+#: pro/fields/repeater.php:302
+msgid "Remove row"
+msgstr ""
+
+#: pro/fields/repeater.php:350
+msgid "Sub Fields"
+msgstr ""
+
+#: pro/fields/repeater.php:372
+msgid "Minimum Rows"
+msgstr "Minimum řádků"
+
+#: pro/fields/repeater.php:382
+msgid "Maximum Rows"
+msgstr "Maximum řádků"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr ""
+
+#~ msgid "Custom field updated."
+#~ msgstr "Vlastní pole aktualizováno."
+
+#~ msgid "Custom field deleted."
+#~ msgstr "Vlastní pole smazáno."
+
+#~ msgid "Field group restored to revision from %s"
+#~ msgstr "Skupina polí obnovena z revize %s"
+
+#~ msgid "Error: Field Type does not exist!"
+#~ msgstr "Chyba: Typ pole neexistuje!"
+
+#~ msgid "Full"
+#~ msgstr "Plný"
+
+#~ msgid "No ACF groups selected"
+#~ msgstr "Nejsou vybrány žádné ACF skupiny"
+
+#~ msgid "Add Fields to Edit Screens"
+#~ msgstr "Přidat pole na obrazovky úprav"
+
+#~ msgid "Customise the edit page"
+#~ msgstr "Přizpůsobit stránku úprav"
+
+#~ msgid "Parent Page"
+#~ msgstr "Rodičovská stránka"
+
+#~ msgid "Child Page"
+#~ msgstr "Podstránka"
+
+#~ msgid "Normal"
+#~ msgstr "Normální"
+
+#~ msgid "Standard Metabox"
+#~ msgstr "Standardní metabox"
+
+#~ msgid "No Metabox"
+#~ msgstr "Žádný metabox"
+
+#~ msgid ""
+#~ "Read documentation, learn the functions and find some tips &amp; tricks "
+#~ "for your next web project."
+#~ msgstr ""
+#~ "Přečtěte si dokumentaci, naučte se funkce a objevte zajímavé tipy &amp; "
+#~ "triky pro váš další webový projekt."
+
+#~ msgid "Visit the ACF website"
+#~ msgstr "Navštívit web ACF"
+
+#~ msgid "Vote"
+#~ msgstr "Hlasujte"
+
+#~ msgid "Follow"
+#~ msgstr "Následujte"
+
+#~ msgid "Validation Failed. One or more fields below are required."
+#~ msgstr "Ověřování selhalo. Jedno nebo více polí níže je povinné."
+
+#~ msgid "Add File to Field"
+#~ msgstr "+ Přidat soubor do pole"
+
+#~ msgid "Add Image to Field"
+#~ msgstr "Přidat obrázek do pole"
+
+#~ msgid "Attachment updated"
+#~ msgstr "Příloha aktualizována."
+
+#~ msgid "No Custom Field Group found for the options page"
+#~ msgstr "Žádná vlastní skupina polí nebyla pro stránku konfigurace nalezena"
+
+#~ msgid "Repeater field deactivated"
+#~ msgstr "Opakovací pole deaktivováno"
+
+#~ msgid "Options page deactivated"
+#~ msgstr "Stránka konfigurace  deaktivována"
+
+#~ msgid "Flexible Content field deactivated"
+#~ msgstr "Pole flexibilního pole deaktivováno"
+
+#~ msgid "Gallery field deactivated"
+#~ msgstr "Pole galerie deaktivováno"
+
+#~ msgid "Repeater field activated"
+#~ msgstr "Opakovací pole aktivováno"
+
+#~ msgid "Options page activated"
+#~ msgstr "Stránka konfigurace aktivována"
+
+#~ msgid "Flexible Content field activated"
+#~ msgstr "Pole flexibilního obsahu aktivováno"
+
+#~ msgid "Gallery field activated"
+#~ msgstr "Pole galerie aktivováno"
+
+#~ msgid "License key unrecognised"
+#~ msgstr "Licenční klíč nebyl rozpoznán"
+
+#~ msgid "Activate Add-ons."
+#~ msgstr "Aktivovat přídavky."
+
+#~ msgid ""
+#~ "Add-ons can be unlocked by purchasing a license key. Each key can be used "
+#~ "on multiple sites."
+#~ msgstr ""
+#~ "Přídavky mohou být odemčeny zakoupením licenčního klíče. Každý klíč může "
+#~ "být použit na více webech."
+
+#~ msgid "Find Add-ons"
+#~ msgstr "Hledat přídavky"
+
+#~ msgid "Activation Code"
+#~ msgstr "Aktivační kód"
+
+#~ msgid "Repeater Field"
+#~ msgstr "Opakovací pole"
+
+#~ msgid "Inactive"
+#~ msgstr "Neaktivní"
+
+#~ msgid "Deactivate"
+#~ msgstr "Deaktivovat"
+
+#~ msgid "Activate"
+#~ msgstr "Aktivovat"
+
+#~ msgid "Flexible Content Field"
+#~ msgstr "Pole flexibilního obsahu"
+
+#~ msgid "Gallery Field"
+#~ msgstr "Pole galerie"
+
+#~ msgid "Export Field Groups to XML"
+#~ msgstr "Exportovat skupiny polí do XML"
+
+#~ msgid ""
+#~ "ACF will create a .xml export file which is compatible with the native WP "
+#~ "import plugin."
+#~ msgstr ""
+#~ "ACF vytvoří soubor .xml exportu, který je kompatibilní s originálním "
+#~ "importním pluginem WP."
+
+#~ msgid ""
+#~ "Imported field groups <b>will</b> appear in the list of editable field "
+#~ "groups. This is useful for migrating fields groups between Wp websites."
+#~ msgstr ""
+#~ "Importované skupiny polí <b>budou</b> zobrazeny v seznamu upravitelných "
+#~ "skupin polí. Toto je užitečné pro přesouvání skupin polí mezi WP weby."
+
+#~ msgid "Select field group(s) from the list and click \"Export XML\""
+#~ msgstr "Vyberte skupinu(y) polí ze seznamu a klikněte na  \"Export XML\""
+
+#~ msgid "Save the .xml file when prompted"
+#~ msgstr "Uložte .xml soubor při požádání"
+
+#~ msgid "Navigate to Tools &raquo; Import and select WordPress"
+#~ msgstr "Otevřete Nástroje &raquo; Import a vyberte WordPress"
+
+#~ msgid "Install WP import plugin if prompted"
+#~ msgstr "Nainstalujte importní WP plugin, pokud jste o to požádáni"
+
+#~ msgid "Upload and import your exported .xml file"
+#~ msgstr "Nahrajte a importujte váš exportovaný .xml soubor"
+
+#~ msgid "Select your user and ignore Import Attachments"
+#~ msgstr "Vyberte vašeho uživatele a ignorujte možnost Importovat přílohy"
+
+#~ msgid "That's it! Happy WordPressing"
+#~ msgstr "To je vše! Veselé WordPressování!"
+
+#~ msgid "Export XML"
+#~ msgstr "Exportovat XML"
+
+#~ msgid "ACF will create the PHP code to include in your theme."
+#~ msgstr "ACF vytvoří PHP kód pro vložení do vaší šablony."
+
+#~ msgid "Register Field Groups"
+#~ msgstr "Registrovat skupiny polí"
+
+#~ msgid ""
+#~ "Registered field groups <b>will not</b> appear in the list of editable "
+#~ "field groups. This is useful for including fields in themes."
+#~ msgstr ""
+#~ "Registrované skupiny polí <b>nebudou</b> zobrazeny v seznamu "
+#~ "upravitelných skupin polí. Toto je užitečné při používání polí v "
+#~ "šablonách."
+
+#~ msgid ""
+#~ "Please note that if you export and register field groups within the same "
+#~ "WP, you will see duplicate fields on your edit screens. To fix this, "
+#~ "please move the original field group to the trash or remove the code from "
+#~ "your functions.php file."
+#~ msgstr ""
+#~ "Mějte prosím na paměti, že pokud exportujete a registrujete skupiny polí "
+#~ "v rámci stejného WordPressu, uvidíte na obrazovkách úprav duplikovaná "
+#~ "pole. Pro nápravu prosím přesuňte původní skupinu polí do koše nebo "
+#~ "odstraňte kód ze souboru functions.php."
+
+#~ msgid "Select field group(s) from the list and click \"Create PHP\""
+#~ msgstr "Vyberte skupinu(y) polí ze seznamu a klikněte na \"Vytvořit  PHP\""
+
+#~ msgid "Copy the PHP code generated"
+#~ msgstr "Zkopírujte vygenerovaný PHP kód"
+
+#~ msgid "Paste into your functions.php file"
+#~ msgstr "Vložte jej do vašeho souboru functions.php"
+
+#~ msgid ""
+#~ "To activate any Add-ons, edit and use the code in the first few lines."
+#~ msgstr ""
+#~ "K aktivací kteréhokoli přídavku upravte a použijte kód na prvních "
+#~ "několika řádcích."
+
+#~ msgid "Create PHP"
+#~ msgstr "Vytvořit PHP"
+
+#~ msgid "Back to settings"
+#~ msgstr "Zpět na nastavení"
+
+#~ msgid ""
+#~ "/**\n"
+#~ " * Activate Add-ons\n"
+#~ " * Here you can enter your activation codes to unlock Add-ons to use in "
+#~ "your theme. \n"
+#~ " * Since all activation codes are multi-site licenses, you are allowed to "
+#~ "include your key in premium themes. \n"
+#~ " * Use the commented out code to update the database with your activation "
+#~ "code. \n"
+#~ " * You may place this code inside an IF statement that only runs on theme "
+#~ "activation.\n"
+#~ " */"
+#~ msgstr ""
+#~ "/**\n"
+#~ " * Aktivovat přídavky\n"
+#~ " * Zde můžete vložit váš aktivační kód pro odemčení přídavků k použití ve "
+#~ "vaší šabloně. \n"
+#~ " * Jelikož jsou všechny aktivační kódy licencovány pro použití na více "
+#~ "webech, můžete je použít ve vaší premium šabloně. \n"
+#~ " * Použijte zakomentovaný kód pro aktualizaci databáze s vaším aktivačním "
+#~ "kódem. \n"
+#~ " * Tento kód můžete vložit dovnitř IF konstrukce, která proběhne pouze po "
+#~ "aktivaci šablony.\n"
+#~ " */"
+
+#~ msgid ""
+#~ "/**\n"
+#~ " * Register field groups\n"
+#~ " * The register_field_group function accepts 1 array which holds the "
+#~ "relevant data to register a field group\n"
+#~ " * You may edit the array as you see fit. However, this may result in "
+#~ "errors if the array is not compatible with ACF\n"
+#~ " * This code must run every time the functions.php file is read\n"
+#~ " */"
+#~ msgstr ""
+#~ "/**\n"
+#~ " * Registrace skupiny polí\n"
+#~ " * Funkce register_field_group akceptuje pole, které obsahuje relevatní "
+#~ "data k registraci skupiny polí\n"
+#~ " * Pole můžete upravit podle potřeb. Může to ovšem vyústit v pole "
+#~ "nekompatibilní s ACF\n"
+#~ " * Tento kód musí proběhnout při každém čtení souboru functions.php\n"
+#~ " */"
+
+#~ msgid "No field groups were selected"
+#~ msgstr "Nebyly vybrány žádné skupiny polí"
+
+#~ msgid "Advanced Custom Fields Settings"
+#~ msgstr "Nastavení Pokročilých vlastních polí"
+
+#~ msgid "requires a database upgrade"
+#~ msgstr "vyžaduje aktualizaci databáze"
+
+#~ msgid "why?"
+#~ msgstr "proč?"
+
+#~ msgid "Please"
+#~ msgstr "Prosím"
+
+#~ msgid "backup your database"
+#~ msgstr "zálohujte svou databázi"
+
+#~ msgid "then click"
+#~ msgstr "a pak klikněte"
+
+#~ msgid "Modifying field group options 'show on page'"
+#~ msgstr "Úprava možnosti skupiny polí 'zobrazit na stránce'"
+
+#~ msgid "Modifying field option 'taxonomy'"
+#~ msgstr "Úprava možností pole 'taxonomie'"
+
+#~ msgid "No choices to choose from"
+#~ msgstr "Žádné možnosti, z nichž by bylo možné vybírat"
+
+#~ msgid "Enter your choices one per line"
+#~ msgstr "Vložte vaše možnosti po jedné na řádek"
+
+#~ msgid "Red"
+#~ msgstr "Červená"
+
+#~ msgid "Blue"
+#~ msgstr "Modrá"
+
+#~ msgid "blue : Blue"
+#~ msgstr "modra: Modrá"
+
+#~ msgid "Date format"
+#~ msgstr "Formát data"
+
+#~ msgid "eg. dd/mm/yy. read more about"
+#~ msgstr "např. dd/mm/yy. přečtěte si více"
+
+#~ msgid "File Updated."
+#~ msgstr "Soubor aktualizován."
+
+#~ msgid "No File Selected"
+#~ msgstr "Nebyl vybrán žádný soubor"
+
+#~ msgid "Attachment ID"
+#~ msgstr "ID přílohy"
+
+#~ msgid "Media attachment updated."
+#~ msgstr "Příloha aktualizována."
+
+#~ msgid "No files selected"
+#~ msgstr "Nebyly vybrány žádné soubory."
+
+#~ msgid "Add Selected Files"
+#~ msgstr "Přidat vybrané soubory"
+
+#~ msgid "+ Add Row"
+#~ msgstr "+ Přidat řádek"
+
+#~ msgid "Field Order"
+#~ msgstr "Pořadí pole"
+
+#~ msgid ""
+#~ "No fields. Click the \"+ Add Sub Field button\" to create your first "
+#~ "field."
+#~ msgstr ""
+#~ "Žádná pole. Klikněte na tlačítko \"+ Přidat podpole\" pro vytvoření "
+#~ "prvního pole."
+
+#~ msgid "Edit this Field"
+#~ msgstr "Upravit toto pole"
+
+#~ msgid "Read documentation for this field"
+#~ msgstr "Přečtěte si dokumentaci pro toto pole"
+
+#~ msgid "Docs"
+#~ msgstr "Dokumenty"
+
+#~ msgid "Duplicate this Field"
+#~ msgstr "Duplikovat toto pole"
+
+#~ msgid "Delete this Field"
+#~ msgstr "Smazat toto pole"
+
+#~ msgid "Save Field"
+#~ msgstr "Uložit pole"
+
+#~ msgid "Close Sub Field"
+#~ msgstr "Zavřít podpole"
+
+#~ msgid "+ Add Sub Field"
+#~ msgstr "+ Přidat podpole"
+
+#~ msgid "Alternate Text"
+#~ msgstr "Alternativní text"
+
+#~ msgid "Caption"
+#~ msgstr "Popisek"
+
+#~ msgid "Thumbnail is advised"
+#~ msgstr "Je doporučen náhled"
+
+#~ msgid "Image Updated"
+#~ msgstr "Obrázek aktualizován"
+
+#~ msgid "Grid"
+#~ msgstr "Mřížka"
+
+#~ msgid "List"
+#~ msgstr "Seznam"
+
+#~ msgid "No images selected"
+#~ msgstr "Není vybrán žádný obrázek"
+
+#~ msgid "1 image selected"
+#~ msgstr "1 vybraný obrázek"
+
+#~ msgid "{count} images selected"
+#~ msgstr "{count} vybraných obrázků"
+
+#~ msgid "Image already exists in gallery"
+#~ msgstr "Obrázek v galerii už existuje"
+
+#~ msgid "Image Added"
+#~ msgstr "Obrázek přidán"
+
+#~ msgid "Image Updated."
+#~ msgstr "Obrázek aktualizován."
+
+#~ msgid "Image Object"
+#~ msgstr "Objekt obrázku"
+
+#~ msgid "Add selected Images"
+#~ msgstr "Přidat vybrané obrázky"
+
+#~ msgid "Filter from Taxonomy"
+#~ msgstr "Filtrovat z taxonomie"
+
+#~ msgid "Repeater Fields"
+#~ msgstr "Opakovací pole"
+
+#~ msgid "Table (default)"
+#~ msgstr "Tabulka (výchozí)"
+
+#~ msgid "Formatting"
+#~ msgstr "Formátování"
+
+#~ msgid "Define how to render html tags"
+#~ msgstr "Definujte způsob vypisování HTML tagů"
+
+#~ msgid "HTML"
+#~ msgstr "HTML"
+
+#~ msgid "Define how to render html tags / new lines"
+#~ msgstr "Definujte způsob výpisu HTML tagů / nových řádků"
+
+#~ msgid "auto &lt;br /&gt;"
+#~ msgstr "auto &lt;br /&gt;"
+
+#~ msgid "new_field"
+#~ msgstr "nove_pole"
+
+#~ msgid "Field Instructions"
+#~ msgstr "Instrukce pole"
+
+#~ msgid "Logged in User Type"
+#~ msgstr "Typ přihlášeného uživatele"
+
+#~ msgid "Page Specific"
+#~ msgstr "Specifická stránka"
+
+#~ msgid "Post Specific"
+#~ msgstr "Specfický příspěvek"
+
+#~ msgid "Taxonomy (Add / Edit)"
+#~ msgstr "Taxonomie (přidat / upravit)"
+
+#~ msgid "User (Add / Edit)"
+#~ msgstr "Uživatel (přidat / upravit)"
+
+#~ msgid "Media (Edit)"
+#~ msgstr "Media (upravit)"
+
+#~ msgid "match"
+#~ msgstr "souhlasí"
+
+#~ msgid "all"
+#~ msgstr "vše"
+
+#~ msgid "any"
+#~ msgstr "libovolné"
+
+#~ msgid "of the above"
+#~ msgstr "z uvedeného"
+
+#~ msgid "Unlock options add-on with an activation code"
+#~ msgstr "Odemkněte přídavek konfigurace s aktivačním kódem"
+
+#~ msgid "Field groups are created in order <br />from lowest to highest."
+#~ msgstr ""
+#~ "Skupiny polí jsou vytvořeny v pořadí <br /> od nejnižšího k nejvyššímu."
+
+#~ msgid "<b>Select</b> items to <b>hide</b> them from the edit screen"
+#~ msgstr "<b>Vybrat</b> položky pro <b>skrytí</b> z obrazovky úprav"
+
+#~ msgid ""
+#~ "If multiple field groups appear on an edit screen, the first field "
+#~ "group's options will be used. (the one with the lowest order number)"
+#~ msgstr ""
+#~ "Pokud se na obrazovce úprav objeví několik skupin polí, bude použito "
+#~ "nastavení první skupiny. (s nejžším pořadovým číslem)"
+
+#~ msgid "Everything Fields deactivated"
+#~ msgstr "Všechna pole deaktivována"
+
+#~ msgid "Everything Fields activated"
+#~ msgstr "Všechna pole aktivována"
+
+#~ msgid "Navigate to the"
+#~ msgstr "Běžte na"
+
+#~ msgid "Import Tool"
+#~ msgstr "Nástroj importu"
+
+#~ msgid "and select WordPress"
+#~ msgstr "a vyberte WordPress"
+
+#~ msgid ""
+#~ "Filter posts by selecting a post type<br />\n"
+#~ "\t\t\t\tTip: deselect all post types to show all post type's posts"
+#~ msgstr ""
+#~ "Filtrovat příspěvky výběrem typu příspěvku<br />\n"
+#~ "\t\t\t\tTip: zrušte výběr všech typů příspěvku pro zobrazení příspěvků "
+#~ "všech typů příspěvků"
+
+#~ msgid "Set to -1 for infinite"
+#~ msgstr "Nastavte na -1 pro nekonečno"
+
+#~ msgid "Row Limit"
+#~ msgstr "Limit řádků"

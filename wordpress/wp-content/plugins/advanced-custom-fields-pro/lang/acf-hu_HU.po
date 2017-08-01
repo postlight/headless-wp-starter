@@ -1,0 +1,2838 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
+"Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
+"POT-Creation-Date: 2015-08-11 23:26+0200\n"
+"PO-Revision-Date: 2016-11-03 17:11+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language-Team: Elliot Condon <e@elliotcondon.com>\n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:63
+msgid "Advanced Custom Fields"
+msgstr "Advanced Custom Fields"
+
+#: acf.php:205 admin/admin.php:61
+msgid "Field Groups"
+msgstr ""
+
+#: acf.php:206
+msgid "Field Group"
+msgstr "Mezőcsoport"
+
+#: acf.php:207 acf.php:239 admin/admin.php:62
+#: pro/fields/flexible-content.php:517
+msgid "Add New"
+msgstr "Új hozzáadása"
+
+#: acf.php:208
+msgid "Add New Field Group"
+msgstr "Új mezőcsoport hozzáadása"
+
+#: acf.php:209
+msgid "Edit Field Group"
+msgstr "Mezőcsoport szerkesztése"
+
+#: acf.php:210
+msgid "New Field Group"
+msgstr "Új mezőcsoport"
+
+#: acf.php:211
+msgid "View Field Group"
+msgstr "Mezőcsoport megtekintése"
+
+#: acf.php:212
+msgid "Search Field Groups"
+msgstr "Mezőcsoportok keresése"
+
+#: acf.php:213
+msgid "No Field Groups found"
+msgstr "Nincsenek mezőcsoportok"
+
+#: acf.php:214
+msgid "No Field Groups found in Trash"
+msgstr "Nem található mezőcsoport a lomtárban."
+
+#: acf.php:237 admin/field-group.php:182 admin/field-group.php:213
+#: admin/field-groups.php:519
+msgid "Fields"
+msgstr "Mezők"
+
+#: acf.php:238
+msgid "Field"
+msgstr "Mező"
+
+#: acf.php:240
+msgid "Add New Field"
+msgstr "Mező hozzáadása"
+
+#: acf.php:241
+msgid "Edit Field"
+msgstr "Mező szerkesztése"
+
+#: acf.php:242 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "Új mező"
+
+#: acf.php:243
+msgid "View Field"
+msgstr "Mező megtekintése"
+
+#: acf.php:244
+msgid "Search Fields"
+msgstr "Mezők keresése"
+
+#: acf.php:245
+msgid "No Fields found"
+msgstr "Mezők nem találhatók"
+
+#: acf.php:246
+msgid "No Fields found in Trash"
+msgstr "Nem található mezőcsoport a lomtárban."
+
+#: acf.php:268 admin/field-group.php:283 admin/field-groups.php:583
+#: admin/views/field-group-options.php:18
+msgid "Disabled"
+msgstr ""
+
+#: acf.php:273
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/admin.php:57 admin/views/field-group-options.php:120
+msgid "Custom Fields"
+msgstr "Egyéni mezők"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "Mezőcsoport frissítve."
+
+#: admin/field-group.php:70
+msgid "Field group deleted."
+msgstr ""
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "Mezőcsoport közzétéve."
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "Mezőcsoport elmentve."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "Mezőcsoport elküldve."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "Bejegyzéscsoport előjegyezve."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "Mezőcsoport vázlata frissítve."
+
+#: admin/field-group.php:176
+msgid "Move to trash. Are you sure?"
+msgstr "Áthelyezés a lomtárba. Biztosak vagyunk benne?"
+
+#: admin/field-group.php:177
+msgid "checked"
+msgstr "bejelölve"
+
+#: admin/field-group.php:178
+msgid "No toggle fields available"
+msgstr "Váltómezők nem elérhetők"
+
+#: admin/field-group.php:179
+msgid "Field group title is required"
+msgstr "A mezőcsoport címét kötelező megadni"
+
+#: admin/field-group.php:180 api/api-field-group.php:607
+msgid "copy"
+msgstr "másolat"
+
+#: admin/field-group.php:181
+#: admin/views/field-group-field-conditional-logic.php:67
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:23
+#: admin/views/field-group-locations.php:131 api/api-helpers.php:3262
+msgid "or"
+msgstr "vagy"
+
+#: admin/field-group.php:183
+msgid "Parent fields"
+msgstr "Fölérendelt mezők"
+
+#: admin/field-group.php:184
+msgid "Sibling fields"
+msgstr "Egyenrangú mezők"
+
+#: admin/field-group.php:185
+msgid "Move Custom Field"
+msgstr "Egyéni mező áthelyezése"
+
+#: admin/field-group.php:186
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "A mező nem helyezhető át, amíg a változtatások nincsenek elmentve"
+
+#: admin/field-group.php:187
+msgid "Null"
+msgstr "Null"
+
+#: admin/field-group.php:188 core/input.php:128
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr ""
+
+#: admin/field-group.php:189
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr ""
+
+#: admin/field-group.php:214
+msgid "Location"
+msgstr "Megjelenítés helye"
+
+#: admin/field-group.php:215
+msgid "Settings"
+msgstr ""
+
+#: admin/field-group.php:253
+msgid "Field Keys"
+msgstr ""
+
+#: admin/field-group.php:283 admin/views/field-group-options.php:17
+msgid "Active"
+msgstr ""
+
+#: admin/field-group.php:744
+msgid "Front Page"
+msgstr "Kezdőoldal"
+
+#: admin/field-group.php:745
+msgid "Posts Page"
+msgstr "Bejegyzések oldala"
+
+#: admin/field-group.php:746
+msgid "Top Level Page (no parent)"
+msgstr ""
+
+#: admin/field-group.php:747
+msgid "Parent Page (has children)"
+msgstr "Szülőoldal (vannak gyermekei)"
+
+#: admin/field-group.php:748
+msgid "Child Page (has parent)"
+msgstr "Gyermekoldal (van szülőoldala)"
+
+#: admin/field-group.php:764
+msgid "Default Template"
+msgstr "Alapértelmezett sablonminta"
+
+#: admin/field-group.php:786
+msgid "Logged in"
+msgstr ""
+
+#: admin/field-group.php:787
+msgid "Viewing front end"
+msgstr ""
+
+#: admin/field-group.php:788
+msgid "Viewing back end"
+msgstr ""
+
+#: admin/field-group.php:807
+msgid "Super Admin"
+msgstr "Szuper admin"
+
+#: admin/field-group.php:818 admin/field-group.php:826
+#: admin/field-group.php:840 admin/field-group.php:847
+#: admin/field-group.php:862 admin/field-group.php:872 fields/file.php:235
+#: fields/image.php:226 pro/fields/gallery.php:653
+msgid "All"
+msgstr "Összes"
+
+#: admin/field-group.php:827
+msgid "Add / Edit"
+msgstr "Hozzáadás / Szerkesztés"
+
+#: admin/field-group.php:828
+msgid "Register"
+msgstr "Regisztrálás"
+
+#: admin/field-group.php:1059
+msgid "Move Complete."
+msgstr "Áthelyezés befejeződött."
+
+#: admin/field-group.php:1060
+#, fuzzy, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr "A(z) %s mező mostantól a %s mezőcsoportban található."
+
+#: admin/field-group.php:1062
+msgid "Close Window"
+msgstr "Ablak bezárása"
+
+#: admin/field-group.php:1097
+#, fuzzy
+msgid "Please select the destination for this field"
+msgstr "Válasszuk ki a mező áthelyezésének célját"
+
+#: admin/field-group.php:1104
+msgid "Move Field"
+msgstr "Mező áthelyezése"
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/field-groups.php:142
+#, php-format
+msgid "Field group duplicated. %s"
+msgstr ""
+
+#: admin/field-groups.php:146
+#, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/field-groups.php:228
+#, php-format
+msgid "Field group synchronised. %s"
+msgstr ""
+
+#: admin/field-groups.php:232
+#, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/field-groups.php:403 admin/field-groups.php:573
+msgid "Sync available"
+msgstr ""
+
+#: admin/field-groups.php:516
+msgid "Title"
+msgstr "Cím"
+
+#: admin/field-groups.php:517 admin/views/field-group-options.php:98
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+msgid "Description"
+msgstr ""
+
+#: admin/field-groups.php:518 admin/views/field-group-options.php:10
+msgid "Status"
+msgstr ""
+
+#: admin/field-groups.php:616 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "Változások (changelog)"
+
+#: admin/field-groups.php:617
+msgid "See what's new in"
+msgstr "Újdonságok áttekintése:"
+
+#: admin/field-groups.php:617
+msgid "version"
+msgstr "verzió"
+
+#: admin/field-groups.php:619
+msgid "Resources"
+msgstr "Források"
+
+#: admin/field-groups.php:621
+msgid "Getting Started"
+msgstr "Kezdjük el"
+
+#: admin/field-groups.php:622 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr "Frissítések"
+
+#: admin/field-groups.php:623
+msgid "Field Types"
+msgstr "Mezőtípusok"
+
+#: admin/field-groups.php:624
+msgid "Functions"
+msgstr "Funkciók (functions)"
+
+#: admin/field-groups.php:625
+msgid "Actions"
+msgstr "Műveletek (actions)"
+
+#: admin/field-groups.php:626 fields/relationship.php:718
+msgid "Filters"
+msgstr "Szűrők"
+
+#: admin/field-groups.php:627
+msgid "'How to' guides"
+msgstr "'Hogyan?' útmutatók"
+
+#: admin/field-groups.php:628
+msgid "Tutorials"
+msgstr "Oktatóanyagok"
+
+#: admin/field-groups.php:633
+msgid "Created by"
+msgstr "Szerző"
+
+#: admin/field-groups.php:673
+msgid "Duplicate this item"
+msgstr ""
+
+#: admin/field-groups.php:673 admin/field-groups.php:685
+#: admin/views/field-group-field.php:58 pro/fields/flexible-content.php:516
+msgid "Duplicate"
+msgstr "Duplikálás"
+
+#: admin/field-groups.php:724
+#, php-format
+msgid "Select %s"
+msgstr ""
+
+#: admin/field-groups.php:730
+msgid "Synchronise field group"
+msgstr ""
+
+#: admin/field-groups.php:730 admin/field-groups.php:750
+msgid "Sync"
+msgstr ""
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr "Kiegészítő bővítmények"
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr "<b>Hiba</b>. A bővítmények listáját nem lehet betölteni."
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr "Információ"
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr "Újdonságok"
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:9
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr ""
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:365
+msgid "No field groups selected"
+msgstr "Nincsenek mezőcsoportok kiválasztva."
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr "Nincs fájl kiválasztva"
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr "Hiba a fájl feltöltése során. Próbáljuk meg újra."
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr "Érvénytelen fájltípus."
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr "Az importfájl üres."
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr "<b>Sikeres</b>. Az importáló eszköz %s mezőcsoportot adott hozzá: %s"
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+"<b>Figyelmeztetés</b>. Az importáló eszköz észlelte, hogy %s mezőcsoport már "
+"létezik, így ezeket figyelmen kívül hagyta: %s"
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr ""
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr ""
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "Frissítés"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr ""
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr "Logikai feltételek"
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:137 fields/checkbox.php:246
+#: fields/message.php:117 fields/page_link.php:568 fields/page_link.php:582
+#: fields/post_object.php:434 fields/post_object.php:448 fields/select.php:411
+#: fields/select.php:425 fields/select.php:439 fields/select.php:453
+#: fields/tab.php:172 fields/taxonomy.php:770 fields/taxonomy.php:784
+#: fields/taxonomy.php:798 fields/taxonomy.php:812 fields/user.php:457
+#: fields/user.php:471 fields/wysiwyg.php:384
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "Igen"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:138 fields/checkbox.php:247
+#: fields/message.php:118 fields/page_link.php:569 fields/page_link.php:583
+#: fields/post_object.php:435 fields/post_object.php:449 fields/select.php:412
+#: fields/select.php:426 fields/select.php:440 fields/select.php:454
+#: fields/tab.php:173 fields/taxonomy.php:685 fields/taxonomy.php:771
+#: fields/taxonomy.php:785 fields/taxonomy.php:799 fields/taxonomy.php:813
+#: fields/user.php:458 fields/user.php:472 fields/wysiwyg.php:385
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "Nem"
+
+#: admin/views/field-group-field-conditional-logic.php:65
+msgid "Show this field if"
+msgstr "Mező megjelenítése, ha"
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:88
+msgid "is equal to"
+msgstr "egyenlő"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:89
+msgid "is not equal to"
+msgstr "nem egyenlő"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:118
+msgid "and"
+msgstr "és"
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:133
+msgid "Add rule group"
+msgstr "Szabálycsoport hozzáadása"
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:57
+msgid "Edit field"
+msgstr "Mező szerkesztése"
+
+#: admin/views/field-group-field.php:57 pro/fields/gallery.php:355
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: admin/views/field-group-field.php:58
+msgid "Duplicate field"
+msgstr "Mező duplikálása"
+
+#: admin/views/field-group-field.php:59
+msgid "Move field to another group"
+msgstr "Mező áthelyezése másik csoportba"
+
+#: admin/views/field-group-field.php:59
+msgid "Move"
+msgstr "Áthelyezés"
+
+#: admin/views/field-group-field.php:60
+msgid "Delete field"
+msgstr "Mező törlése"
+
+#: admin/views/field-group-field.php:60 pro/fields/flexible-content.php:515
+msgid "Delete"
+msgstr "Törlés"
+
+#: admin/views/field-group-field.php:68 fields/oembed.php:212
+#: fields/taxonomy.php:886
+msgid "Error"
+msgstr "Hiba"
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr "Hiba."
+
+#: admin/views/field-group-field.php:68
+msgid "Field type does not exist"
+msgstr "Mezőtípus nem létezik"
+
+#: admin/views/field-group-field.php:81
+msgid "Field Label"
+msgstr "Mezőfelirat"
+
+#: admin/views/field-group-field.php:82
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Ez a felirat jelenik meg a szerkesztőoldalon"
+
+#: admin/views/field-group-field.php:93
+msgid "Field Name"
+msgstr "Mezőnév"
+
+#: admin/views/field-group-field.php:94
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr ""
+"Egyetlen szó, szóközök és ékezetek nélkül, alulvonás és kötőjel használata "
+"megengedett"
+
+#: admin/views/field-group-field.php:105
+msgid "Field Type"
+msgstr "Mezőtípus"
+
+#: admin/views/field-group-field.php:118 fields/tab.php:143
+msgid "Instructions"
+msgstr "Útmutató"
+
+#: admin/views/field-group-field.php:119
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Útmutató a szerzők számára, az adatok bevitelénél jelenik meg"
+
+#: admin/views/field-group-field.php:130
+msgid "Required?"
+msgstr "Kötelező"
+
+#: admin/views/field-group-field.php:158
+msgid "Wrapper Attributes"
+msgstr ""
+
+#: admin/views/field-group-field.php:164
+msgid "width"
+msgstr ""
+
+#: admin/views/field-group-field.php:178
+msgid "class"
+msgstr ""
+
+#: admin/views/field-group-field.php:191
+msgid "id"
+msgstr ""
+
+#: admin/views/field-group-field.php:203
+msgid "Close Field"
+msgstr "Mező bezárása"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr "Sorrend"
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:541
+msgid "Label"
+msgstr "Felirat"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:554
+msgid "Name"
+msgstr "Név"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr "Típus"
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"Nincsenek mezők. Kattintsunk a <strong>+Mező hozzáadása</strong> gombra az "
+"első mező létrehozásához."
+
+#: admin/views/field-group-fields.php:51
+msgid "Drag and drop to reorder"
+msgstr "Rendezéshez fogjuk meg és húzzuk a mezőt a megfelelő helyre"
+
+#: admin/views/field-group-fields.php:54
+msgid "+ Add Field"
+msgstr "+ Mező hozzáadása"
+
+#: admin/views/field-group-locations.php:5
+msgid "Rules"
+msgstr "Szabályok"
+
+#: admin/views/field-group-locations.php:6
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"Hozzunk létre szabályokat, hogy melyik szerkesztőképernyők használják a "
+"mezőcsoportot"
+
+#: admin/views/field-group-locations.php:21
+msgid "Show this field group if"
+msgstr "Mezőcsoport megjelenítése, ha"
+
+#: admin/views/field-group-locations.php:41
+#: admin/views/field-group-locations.php:47
+msgid "Post"
+msgstr "Bejegyzés"
+
+#: admin/views/field-group-locations.php:42 fields/relationship.php:724
+msgid "Post Type"
+msgstr "Bejegyzés típusa"
+
+#: admin/views/field-group-locations.php:43
+msgid "Post Status"
+msgstr "Bejegyzés-állapot"
+
+#: admin/views/field-group-locations.php:44
+msgid "Post Format"
+msgstr "Bejegyzés-formátum"
+
+#: admin/views/field-group-locations.php:45
+msgid "Post Category"
+msgstr "Bejegyzés-kategória"
+
+#: admin/views/field-group-locations.php:46
+msgid "Post Taxonomy"
+msgstr "Bejegyzés-osztályozás (taxonómia)"
+
+#: admin/views/field-group-locations.php:49
+#: admin/views/field-group-locations.php:53
+msgid "Page"
+msgstr "Oldal"
+
+#: admin/views/field-group-locations.php:50
+msgid "Page Template"
+msgstr "Oldal-sablonminta"
+
+#: admin/views/field-group-locations.php:51
+msgid "Page Type"
+msgstr "Oldaltípus"
+
+#: admin/views/field-group-locations.php:52
+msgid "Page Parent"
+msgstr "Oldal szülő"
+
+#: admin/views/field-group-locations.php:55 fields/user.php:36
+msgid "User"
+msgstr "Felhasználó (user)"
+
+#: admin/views/field-group-locations.php:56
+msgid "Current User"
+msgstr ""
+
+#: admin/views/field-group-locations.php:57
+msgid "Current User Role"
+msgstr ""
+
+#: admin/views/field-group-locations.php:58
+msgid "User Form"
+msgstr "Felhasználói adatlap"
+
+#: admin/views/field-group-locations.php:59
+msgid "User Role"
+msgstr "Felhasználói szerepkör"
+
+#: admin/views/field-group-locations.php:61 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr "Adatlapok"
+
+#: admin/views/field-group-locations.php:62
+msgid "Attachment"
+msgstr "Csatolmány"
+
+#: admin/views/field-group-locations.php:63
+msgid "Taxonomy Term"
+msgstr "Osztályozási kifejezés (term)"
+
+#: admin/views/field-group-locations.php:64
+msgid "Comment"
+msgstr "Hozzászólás"
+
+#: admin/views/field-group-locations.php:65
+msgid "Widget"
+msgstr "Widget"
+
+#: admin/views/field-group-options.php:25
+msgid "Style"
+msgstr "Stílus"
+
+#: admin/views/field-group-options.php:32
+msgid "Standard (WP metabox)"
+msgstr "Hagyományos (WP doboz)"
+
+#: admin/views/field-group-options.php:33
+msgid "Seamless (no metabox)"
+msgstr "Átmenet nélkül (nincs doboz)"
+
+#: admin/views/field-group-options.php:40
+msgid "Position"
+msgstr "Pozíció"
+
+#: admin/views/field-group-options.php:47
+msgid "High (after title)"
+msgstr "Magasan (cím után)"
+
+#: admin/views/field-group-options.php:48
+msgid "Normal (after content)"
+msgstr "Normál (tartalom után)"
+
+#: admin/views/field-group-options.php:49
+msgid "Side"
+msgstr "Oldalsáv"
+
+#: admin/views/field-group-options.php:57
+msgid "Label placement"
+msgstr "Mezőfelirat elhelyezése"
+
+#: admin/views/field-group-options.php:64 fields/tab.php:159
+msgid "Top aligned"
+msgstr "Fent"
+
+#: admin/views/field-group-options.php:65 fields/tab.php:160
+msgid "Left Aligned"
+msgstr "Balra"
+
+#: admin/views/field-group-options.php:72
+msgid "Instruction placement"
+msgstr "Útmutató elhelyezése"
+
+#: admin/views/field-group-options.php:79
+msgid "Below labels"
+msgstr "Mezőfeliratok alatt"
+
+#: admin/views/field-group-options.php:80
+msgid "Below fields"
+msgstr "Mezők alatt"
+
+#: admin/views/field-group-options.php:87
+msgid "Order No."
+msgstr "Sorrend"
+
+#: admin/views/field-group-options.php:88
+msgid "Field groups with a lower order will appear first"
+msgstr ""
+
+#: admin/views/field-group-options.php:99
+msgid "Shown in field group list"
+msgstr ""
+
+#: admin/views/field-group-options.php:109
+msgid "Hide on screen"
+msgstr "Ne legyen látható"
+
+#: admin/views/field-group-options.php:110
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr ""
+
+#: admin/views/field-group-options.php:110
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+
+#: admin/views/field-group-options.php:117
+msgid "Permalink"
+msgstr "Közvetlen hivatkozás"
+
+#: admin/views/field-group-options.php:118
+msgid "Content Editor"
+msgstr "Tartalomszerkesztő"
+
+#: admin/views/field-group-options.php:119
+msgid "Excerpt"
+msgstr "Kivonat"
+
+#: admin/views/field-group-options.php:121
+msgid "Discussion"
+msgstr "Interakció"
+
+#: admin/views/field-group-options.php:122
+msgid "Comments"
+msgstr "Hozzászólások"
+
+#: admin/views/field-group-options.php:123
+msgid "Revisions"
+msgstr "Változatok"
+
+#: admin/views/field-group-options.php:124
+msgid "Slug"
+msgstr "Keresőbarát név (slug)"
+
+#: admin/views/field-group-options.php:125
+msgid "Author"
+msgstr "Szerző"
+
+#: admin/views/field-group-options.php:126
+msgid "Format"
+msgstr "Formátum"
+
+#: admin/views/field-group-options.php:127
+msgid "Page Attributes"
+msgstr "Oldal tulajdonságai"
+
+#: admin/views/field-group-options.php:128 fields/relationship.php:737
+msgid "Featured Image"
+msgstr "Kiemelt kép"
+
+#: admin/views/field-group-options.php:129
+msgid "Categories"
+msgstr "Kategória"
+
+#: admin/views/field-group-options.php:130
+msgid "Tags"
+msgstr "Címke"
+
+#: admin/views/field-group-options.php:131
+msgid "Send Trackbacks"
+msgstr "Visszakövetés (trackback) küldése"
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr "Letöltés és telepítés"
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr "Telepítve"
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr "Üdvözlet! Itt az Advanced Custom Fields"
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr ""
+"Köszönjük a frissítést! Az ACF %s nagyobb és jobb, mint valaha. Reméljük, "
+"tetszeni fog!"
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr "Az egyéni mezők használatának élménye"
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr "Továbbfejlesztett használhatóság"
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+"A népszerű Select2 könyvtár bevonása számos mezőtípusnál (például bejegyzés "
+"objektumok, oldalhivatkozások, osztályozások és kiválasztás) javítja a "
+"használhatóságot és a sebességet."
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr "Továbbfejlesztett megjelenés"
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+"Számos mező vizuálisan megújult, hogy az ACF jobban nézzen ki, mint valaha. "
+"Észrevehető változások történtek a galéria, kapcsolat és oEmbed (új) mezők "
+"esetében."
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr "Továbbfejlesztett adatszerkezet"
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+"Az adatszerkezet újratervezésének köszönhetően az almezők függetlenek lettek "
+"a szülőmezőktől. Mindez lehetővé teszi, hogy a mezőket fogd-és-vidd módon "
+"más mezőkbe, vagy azokon kívülre helyezzük át."
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr "Viszlát kiegészítők, helló PRO"
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr "Az ACF PRO bemutatása"
+
+#: admin/views/settings-info.php:51
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr ""
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+"Az új <a href=\"%s\">ACF PRO változat</a> tartalmazza mind a négy korábbi "
+"prémium kiegészítőt. A személyes és fejlesztői licenceknek köszönhetően a "
+"prémium funkcionalitás így sokkal megfizethetőbb, mint korábban."
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr "Hatékony szolgáltatások"
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+"Az ACF PRO változat olyan fantasztikus szolgáltatásokat kínál, mint "
+"ismételhető adatok, rugalmas tartalomelrendezések, gyönyörű galériamező, és "
+"segítségével egyéni beállítás-oldalak is létrehozhatók!"
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr "További információk az <a href=\"%s\">ACF PRO változatról</a>."
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr "Egyszerű frissítés"
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+"A még könnyebb frissítés érdekében csak <a href=\"%s\">jelenkezzünk be a "
+"felhasználói fiókunkba</a> és igényeljünk egy ingyenes ACF PRO változatot!"
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+"A felmerülő kérdések megválaszolására egy <a href=\"%s\">frissítési "
+"útmutató</a> is rendelkezésre áll. Amennyiben az útmutató nem ad választ a "
+"kérdésre, vegyük fel a kapcsolatot a <a href=\"%s\">támogató csapattal</a>."
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr "A motorháztető alatt"
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr "Okosabb mezőbeállítások"
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr "Az ACF a mezőbeállításokat már külön bejegyzésobjektumokba menti"
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr "Több AJAX"
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr ""
+"Több mező használ AJAX-alapú keresést az oldal gyorsabb betöltésének "
+"érdekében."
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr "Helyi JSON"
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr "Az új JSON autoexport szolgáltatás javítja a sebességet."
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr "Jobb verziókezelés"
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+"Az új JSON autoexport szolgáltatás lehetővé teszi a mezőbeállítások "
+"verziókezelését."
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr "XML helyett JSON"
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr ""
+"Az importálás és exportálás JSON formátumban történik a korábbi XML megoldás "
+"helyett."
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr "Új űrlapok"
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr ""
+"A mezők már hozzászólásokhoz, widgetekhez és felhasználói adatlapokhoz is "
+"hozzárendelhetők."
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr "Új mezőtípus áll rendelkezésre beágyazott tartalmak számára."
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr "Új galéria"
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr "A galéria mezőtípus jelentős és esedékes felfrissítésen esett át."
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr "Új beállítások"
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr ""
+"A mezőcsoport beállításai kiegészültek a mezőfeliratok és útmutatók "
+"elhelyezési lehetőségeivel."
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr "Jobb felhasználó oldali űrlapok"
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr ""
+"Az acf_form() már képes új bejegyzést létrehozni egy felhasználó oldali "
+"(front end) űrlap elküldésekor."
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr "Jobb ellenőrzés és érvényesítés"
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr ""
+"Az űrlapok érvényesítése már nem kizárólag JS által, hanem PHP + AJAX "
+"megoldással történik."
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr "Kapcsolat mezőtípus"
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr ""
+"Új mezőbeállítás szűrők számára (keresés, bejegyzéstípus, osztályozás) a "
+"kapcsolat mezőtípusnál."
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr "Mezők áthelyezése"
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr ""
+"A mezőcsoportok új szolgáltatásaival az egyes mezők csoportok és szülőmezők "
+"között is mozgathatók."
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "Oldalhivatkozás"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr ""
+"Új 'Archívumok' csoport az oldalhivatkozás mezőtípus választási "
+"lehetőségeinél."
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr "Jobb beállítás oldalak"
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr ""
+"A beállítás oldalakhoz kapcsolódó új funkciók segítségével szülő- és "
+"gyermekoldalak is létrehozhatók."
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr "Úgy gondoljuk, tetszeni fognak a változások a(z) %s verzióban."
+
+#: admin/views/settings-tools-export.php:13
+msgid "Export Field Groups to PHP"
+msgstr "Mezőcsoport exportálása PHP kódba"
+
+#: admin/views/settings-tools-export.php:17
+#, fuzzy
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"A következő kód segítségével regisztrálható a kiválasztott mezőcsoportok "
+"helyi változata. A helyi mezőcsoportok számos előnnyel rendelkeznek: "
+"rövidebb betöltési idő, verziókezelés és dinamikus mezők/beállítások "
+"lehetősége. Alkalmazásához egyszerűen másoljuk be a kódot a sablonhoz "
+"tartozó functions.php fájlba."
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr "Mezőcsoportok kiválasztása"
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr "Mezőcsoportok exportálása"
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"Válasszuk ki az exportálni kívánt mezőcsoportokat, majd az exportálás "
+"módszerét. A letöltés gombbal egy JSON fájl készíthető, amelyet egy másik "
+"ACF telepítésbe importálhatunk. A kódgenerálás gombbal PHP kód hozható "
+"létre, amelyet beilleszthetünk a sablonunkba."
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr "Exportfájl letöltése"
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr "Kód generálása"
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "Mezőcsoportok importálása"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"Válasszuk ki az importálni kívánt Advanced Custom Fields JSON fájlt. A "
+"gombra kattintva az ACF bővítmény importálja a fájlban definiált "
+"mezőcsoportokat."
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "Fájl kiválasztása"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr "Importálás"
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr ""
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr ""
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr ""
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr ""
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr ""
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+"A folytatás előtt ajánlatos biztonsági mentést készíteni az adatbázisról. "
+"Biztosan futtatni akarjuk a frissítést?"
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr ""
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr ""
+
+#: admin/views/update-notice.php:23
+#, fuzzy
+msgid "Database Upgrade Required"
+msgstr "Adatbázis frissítése szükséges"
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr "Köszönjük a frissítést az %s %s verzióra!"
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+"Mielőtt használni kezdenénk az elképesztő új szolgáltatásokat, frissítsük az "
+"adatbázist a legújabb verzióra."
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr "Frissítési feladatok beolvasása..."
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr "Adatok frissítése %s verzióra"
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr "Újdonságok áttekintése"
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr ""
+
+#: api/api-helpers.php:821
+msgid "Thumbnail"
+msgstr "Bélyegkép"
+
+#: api/api-helpers.php:822
+msgid "Medium"
+msgstr "Közepes méret"
+
+#: api/api-helpers.php:823
+msgid "Large"
+msgstr "Nagy méret"
+
+#: api/api-helpers.php:871
+#, fuzzy
+msgid "Full Size"
+msgstr "Fájlméret"
+
+#: api/api-helpers.php:1581
+#, fuzzy
+msgid "(no title)"
+msgstr "Rendezés cím szerint"
+
+#: api/api-helpers.php:3183
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3188
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3204
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3209
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr ""
+
+#: api/api-helpers.php:3227
+#, php-format
+msgid "File size must be at least %s."
+msgstr ""
+
+#: api/api-helpers.php:3232
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr ""
+
+#: api/api-helpers.php:3266
+#, php-format
+msgid "File type must be %s."
+msgstr ""
+
+#: api/api-template.php:1289 pro/fields/gallery.php:564
+msgid "Update"
+msgstr "Frissítés"
+
+#: api/api-template.php:1290
+msgid "Post updated"
+msgstr "Bejegyzés frissítve"
+
+#: core/field.php:131
+msgid "Basic"
+msgstr "Alapvető"
+
+#: core/field.php:132
+msgid "Content"
+msgstr "Tartalom"
+
+#: core/field.php:133
+msgid "Choice"
+msgstr "Választás"
+
+#: core/field.php:134
+msgid "Relational"
+msgstr "Relációs"
+
+#: core/field.php:135
+msgid "jQuery"
+msgstr "jQuery"
+
+#: core/field.php:136 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:512 pro/fields/repeater.php:392
+msgid "Layout"
+msgstr "Tartalom elrendezés"
+
+#: core/input.php:129
+msgid "Expand Details"
+msgstr "Részletek kibontása"
+
+#: core/input.php:130
+msgid "Collapse Details"
+msgstr "Részletek bezárása"
+
+#: core/input.php:131
+msgid "Validation successful"
+msgstr "Érvényesítés sikeres"
+
+#: core/input.php:132
+msgid "Validation failed"
+msgstr "Érvényesítés sikertelen"
+
+#: core/input.php:133
+msgid "1 field requires attention"
+msgstr ""
+
+#: core/input.php:134
+#, php-format
+msgid "%d fields require attention"
+msgstr ""
+
+#: core/input.php:135
+msgid "Restricted"
+msgstr ""
+
+#: core/input.php:533
+#, php-format
+msgid "%s value is required"
+msgstr "%s kitöltése kötelező"
+
+#: fields/checkbox.php:36 fields/taxonomy.php:752
+msgid "Checkbox"
+msgstr "Jelölődoboz (checkbox)"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr ""
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:388
+msgid "Choices"
+msgstr "Választási lehetőségek"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "Enter each choice on a new line."
+msgstr "Minden választási lehetőséget új sorba kell írni"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "For more control, you may specify both a value and label like this:"
+msgstr ""
+"A testreszabhatóság érdekében az érték és a felirat is meghatározható a "
+"következő módon:"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:389
+msgid "red : Red"
+msgstr "voros : Vörös"
+
+#: fields/checkbox.php:217 fields/color_picker.php:158 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:397
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:345
+msgid "Default Value"
+msgstr "Alapértelmezett érték"
+
+#: fields/checkbox.php:218 fields/select.php:398
+msgid "Enter each default value on a new line"
+msgstr "Minden alapértelmezett értéket új sorba kell írni"
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "Függőleges"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "Vízszintes"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr ""
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr ""
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "Színválasztó"
+
+#: fields/color_picker.php:94
+msgid "Clear"
+msgstr "Törlés"
+
+#: fields/color_picker.php:95
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: fields/color_picker.php:96
+msgid "Select Color"
+msgstr "Szín kiválasztása"
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "Dátumválasztó"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr "Kész"
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr "Ma"
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr "Másik hónap megjelenítése"
+
+#: fields/date_picker.php:149
+msgid "Display Format"
+msgstr "Megjelenítési formátum"
+
+#: fields/date_picker.php:150
+msgid "The format displayed when editing a post"
+msgstr "Megjelenítési formátum a bejegyzés szerkesztése során"
+
+#: fields/date_picker.php:164
+msgid "Return format"
+msgstr "Visszaadott formátum"
+
+#: fields/date_picker.php:165
+msgid "The format returned via template functions"
+msgstr "A sablonfunkciók által visszaadott formátum"
+
+#: fields/date_picker.php:180
+msgid "Week Starts On"
+msgstr "Hét kezdőnapja"
+
+#: fields/email.php:36
+msgid "Email"
+msgstr "Email (email)"
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:346
+msgid "Appears when creating a new post"
+msgstr "Új bejegyzés létrehozásánál"
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr "Helyőrző szöveg"
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr "Beviteli mezőben jelenik meg"
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr "Előtag"
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr "Beviteli mező előtt jelenik meg"
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr "Utótag"
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr "Beviteli mező után jelenik meg"
+
+#: fields/file.php:36
+msgid "File"
+msgstr "Fájl"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "Fájl szerkesztése"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "Fájl frissítése"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr "feltöltve ehhez a bejegyzéshez"
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr "Fájlnév"
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr "Fájlméret"
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr "Nincs fájl kiválasztva"
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "Fájl hozzáadása"
+
+#: fields/file.php:214 fields/image.php:195 fields/taxonomy.php:821
+msgid "Return Value"
+msgstr "Visszaadott érték"
+
+#: fields/file.php:215 fields/image.php:196
+msgid "Specify the returned value on front end"
+msgstr ""
+"Határozzuk meg a mező felhasználói oldalon (front end) megjelenő értékét"
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr "Fájl adattömb (array)"
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "Fájl URL"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr "Fájl azonosító"
+
+#: fields/file.php:229 fields/image.php:220 pro/fields/gallery.php:647
+msgid "Library"
+msgstr "Médiatár"
+
+#: fields/file.php:230 fields/image.php:221 pro/fields/gallery.php:648
+msgid "Limit the media library choice"
+msgstr "Kiválasztható médiatár elemek korlátozása"
+
+#: fields/file.php:236 fields/image.php:227 pro/fields/gallery.php:654
+msgid "Uploaded to post"
+msgstr "Feltöltve a bejegyzéshez"
+
+#: fields/file.php:243 fields/image.php:234 pro/fields/gallery.php:661
+msgid "Minimum"
+msgstr ""
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr ""
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:257
+#: fields/image.php:290 pro/fields/gallery.php:684 pro/fields/gallery.php:717
+msgid "File size"
+msgstr ""
+
+#: fields/file.php:254 fields/image.php:267 pro/fields/gallery.php:694
+msgid "Maximum"
+msgstr ""
+
+#: fields/file.php:265 fields/image.php:300 pro/fields/gallery.php:727
+msgid "Allowed file types"
+msgstr ""
+
+#: fields/file.php:266 fields/image.php:301 pro/fields/gallery.php:728
+msgid "Comma separated list. Leave blank for all types"
+msgstr ""
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr "Google Térkép"
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr "Helymeghatározás"
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr "Ez a böngésző nem támogatja a helymeghatározást"
+
+#: fields/google-map.php:135
+msgid "Clear location"
+msgstr "Hely törlése"
+
+#: fields/google-map.php:140
+msgid "Find current location"
+msgstr "Jelenlegi hely meghatározása"
+
+#: fields/google-map.php:141
+msgid "Search for address..."
+msgstr "Cím keresése..."
+
+#: fields/google-map.php:173 fields/google-map.php:184
+msgid "Center"
+msgstr "Középpont"
+
+#: fields/google-map.php:174 fields/google-map.php:185
+msgid "Center the initial map"
+msgstr "Térkép kezdő középpontja"
+
+#: fields/google-map.php:198
+msgid "Zoom"
+msgstr "Nagyítás"
+
+#: fields/google-map.php:199
+msgid "Set the initial zoom level"
+msgstr "Kezdeti nagyítási szint"
+
+#: fields/google-map.php:208 fields/image.php:246 fields/image.php:279
+#: fields/oembed.php:262 pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Height"
+msgstr "Magasság"
+
+#: fields/google-map.php:209
+msgid "Customise the map height"
+msgstr "Térkép magassága"
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Kép"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "Kép kiválasztása"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "Kép szerkesztése"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "Kép frissítése"
+
+#: fields/image.php:54
+msgid "Uploaded to this post"
+msgstr ""
+
+#: fields/image.php:55
+msgid "All images"
+msgstr ""
+
+#: fields/image.php:147
+msgid "No image selected"
+msgstr "Kép nincs kiválasztva"
+
+#: fields/image.php:147
+msgid "Add Image"
+msgstr "Kép hozzáadása"
+
+#: fields/image.php:201
+msgid "Image Array"
+msgstr "Kép adattömb (array)"
+
+#: fields/image.php:202
+msgid "Image URL"
+msgstr "Kép URL"
+
+#: fields/image.php:203
+msgid "Image ID"
+msgstr "Kép azonosító"
+
+#: fields/image.php:210 pro/fields/gallery.php:637
+msgid "Preview Size"
+msgstr "Előnézeti méret"
+
+#: fields/image.php:211 pro/fields/gallery.php:638
+msgid "Shown when entering data"
+msgstr "Adatok bevitelénél jelenik meg"
+
+#: fields/image.php:235 fields/image.php:268 pro/fields/gallery.php:662
+#: pro/fields/gallery.php:695
+msgid "Restrict which images can be uploaded"
+msgstr ""
+
+#: fields/image.php:238 fields/image.php:271 fields/oembed.php:251
+#: pro/fields/gallery.php:665 pro/fields/gallery.php:698
+msgid "Width"
+msgstr ""
+
+#: fields/message.php:36 fields/message.php:103 fields/true_false.php:106
+msgid "Message"
+msgstr "Üzenet"
+
+#: fields/message.php:104
+msgid "Please note that all text will first be passed through the wp function "
+msgstr "Minden szöveg elsőként áthalad a következő beépített WP funkción: "
+
+#: fields/message.php:112
+msgid "Escape HTML"
+msgstr ""
+
+#: fields/message.php:113
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr ""
+
+#: fields/number.php:36
+msgid "Number"
+msgstr "Szám (number)"
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr "Minimum érték"
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr "Maximum érték"
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr "Lépésköz"
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr "Az érték nem szám"
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr "Az értéknek nagyobbnak vagy egyenlőnek kell lennie, mint %d"
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr "Az értéknek kisebbnek vagy egyenlőnek kell lennie, mint %d"
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr "Beágyazott objektum (oEmbed)"
+
+#: fields/oembed.php:199
+msgid "Enter URL"
+msgstr "URL megadása"
+
+#: fields/oembed.php:212
+msgid "No embed found for the given URL."
+msgstr "Nem található beágyazható elem a megadott URL-en."
+
+#: fields/oembed.php:248 fields/oembed.php:259
+msgid "Embed Size"
+msgstr "Beágyazási méret"
+
+#: fields/page_link.php:206
+msgid "Archives"
+msgstr "Archívumok"
+
+#: fields/page_link.php:535 fields/post_object.php:401
+#: fields/relationship.php:690
+msgid "Filter by Post Type"
+msgstr "Szűrés bejegyzéstípusra"
+
+#: fields/page_link.php:543 fields/post_object.php:409
+#: fields/relationship.php:698
+msgid "All post types"
+msgstr "Minden bejegyzéstípus"
+
+#: fields/page_link.php:549 fields/post_object.php:415
+#: fields/relationship.php:704
+msgid "Filter by Taxonomy"
+msgstr "Szűrés osztályozásra"
+
+#: fields/page_link.php:557 fields/post_object.php:423
+#: fields/relationship.php:712
+msgid "All taxonomies"
+msgstr ""
+
+#: fields/page_link.php:563 fields/post_object.php:429 fields/select.php:406
+#: fields/taxonomy.php:765 fields/user.php:452
+msgid "Allow Null?"
+msgstr "Üres mező engedélyezése"
+
+#: fields/page_link.php:577 fields/post_object.php:443 fields/select.php:420
+#: fields/user.php:466
+msgid "Select multiple values?"
+msgstr "Többszörös választás"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr "Jelszó (password)"
+
+#: fields/post_object.php:36 fields/post_object.php:462
+#: fields/relationship.php:769
+msgid "Post Object"
+msgstr "Bejegyzés objektum (post object)"
+
+#: fields/post_object.php:457 fields/relationship.php:764
+msgid "Return Format"
+msgstr "Visszaadott formátum"
+
+#: fields/post_object.php:463 fields/relationship.php:770
+msgid "Post ID"
+msgstr "Bejegyzés azonosító"
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "Választógomb (radio button)"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "Egyéb"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr "'Egyéb' választási lehetőség hozzáadása egyéni érték megadásához"
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr "Sorrend mentése"
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr "Egyéni értékek mentése a mező választási lehetőségeihez"
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "Kapcsolat (relationship)"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr ""
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "Elértük a mező maximális értékét (legfeljebb {max})"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr "Betöltés"
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr "Nincs egyezés"
+
+#: fields/relationship.php:571
+msgid "Search..."
+msgstr "Keresés..."
+
+#: fields/relationship.php:580
+msgid "Select post type"
+msgstr "Bejegyzéstípus kiválasztása"
+
+#: fields/relationship.php:593
+msgid "Select taxonomy"
+msgstr "Osztályozás kiválasztása"
+
+#: fields/relationship.php:723
+msgid "Search"
+msgstr "Keresés"
+
+#: fields/relationship.php:725 fields/taxonomy.php:36 fields/taxonomy.php:735
+msgid "Taxonomy"
+msgstr "Osztályozás (taxonomy)"
+
+#: fields/relationship.php:732
+msgid "Elements"
+msgstr "Elemek"
+
+#: fields/relationship.php:733
+msgid "Selected elements will be displayed in each result"
+msgstr "A kiválasztott elemek jelennek meg az eredményekben"
+
+#: fields/relationship.php:744
+msgid "Minimum posts"
+msgstr ""
+
+#: fields/relationship.php:753
+msgid "Maximum posts"
+msgstr "Bejegyzések maximális száma"
+
+#: fields/select.php:36 fields/select.php:174 fields/taxonomy.php:757
+msgid "Select"
+msgstr "Választólista (select)"
+
+#: fields/select.php:434
+msgid "Stylised UI"
+msgstr "Stílusformázott kezelőfelület"
+
+#: fields/select.php:448
+msgid "Use AJAX to lazy load choices?"
+msgstr "AJAX használata a lehetőségek halasztott betöltéséhez"
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr "Lap (tab)"
+
+#: fields/tab.php:128
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+#: fields/tab.php:133
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+"Táblázat stílusú ismétlő csoportmezőhöz vagy rugalmas tartalomhoz rendelve a "
+"lapok helytelenül jelennek meg."
+
+#: fields/tab.php:146
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+"Használjunk lapokat a szerkesztőképernyők tartalmának rendezéséhez és a "
+"mezők csoportosításához."
+
+#: fields/tab.php:148
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+"A lap típusú mezőt követő összes mező egy csoportba kerül (egy újabb lap "
+"beillesztéséig), a lap címsora pedig a mező felirata lesz."
+
+#: fields/tab.php:155
+msgid "Placement"
+msgstr ""
+
+#: fields/tab.php:167
+msgid "End-point"
+msgstr ""
+
+#: fields/tab.php:168
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr ""
+
+#: fields/taxonomy.php:565
+#, php-format
+msgid "Add new %s "
+msgstr ""
+
+#: fields/taxonomy.php:704
+msgid "None"
+msgstr "Nincs"
+
+#: fields/taxonomy.php:736
+msgid "Select the taxonomy to be displayed"
+msgstr ""
+
+#: fields/taxonomy.php:745
+msgid "Appearance"
+msgstr ""
+
+#: fields/taxonomy.php:746
+msgid "Select the appearance of this field"
+msgstr ""
+
+#: fields/taxonomy.php:751
+msgid "Multiple Values"
+msgstr "Több érték"
+
+#: fields/taxonomy.php:753
+msgid "Multi Select"
+msgstr "Többszörös választó (multi select)"
+
+#: fields/taxonomy.php:755
+msgid "Single Value"
+msgstr "Egyetlen érték"
+
+#: fields/taxonomy.php:756
+msgid "Radio Buttons"
+msgstr "Választógombok (radio buttons)"
+
+#: fields/taxonomy.php:779
+msgid "Create Terms"
+msgstr ""
+
+#: fields/taxonomy.php:780
+msgid "Allow new terms to be created whilst editing"
+msgstr ""
+
+#: fields/taxonomy.php:793
+msgid "Save Terms"
+msgstr ""
+
+#: fields/taxonomy.php:794
+msgid "Connect selected terms to the post"
+msgstr ""
+
+#: fields/taxonomy.php:807
+msgid "Load Terms"
+msgstr ""
+
+#: fields/taxonomy.php:808
+msgid "Load value from posts terms"
+msgstr ""
+
+#: fields/taxonomy.php:826
+msgid "Term Object"
+msgstr "Kifejezés objektum"
+
+#: fields/taxonomy.php:827
+msgid "Term ID"
+msgstr "Kifejezés azonosító"
+
+#: fields/taxonomy.php:886
+#, php-format
+msgid "User unable to add new %s"
+msgstr ""
+
+#: fields/taxonomy.php:899
+#, php-format
+msgid "%s already exists"
+msgstr ""
+
+#: fields/taxonomy.php:940
+#, php-format
+msgid "%s added"
+msgstr ""
+
+#: fields/taxonomy.php:985
+msgid "Add"
+msgstr ""
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "Szöveg (text)"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr "Karakterkorlát"
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr "Mellőzéséhez hagyjuk üresen "
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "Szövegterület (text area)"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr "Sorok"
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr "Szövegterület magassága (sorok)"
+
+#: fields/textarea.php:182
+msgid "New Lines"
+msgstr "Új sorok"
+
+#: fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr "Az új sorok megjelenítésének szabályozása"
+
+#: fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr "Bekezdések automatikus hozzáadása"
+
+#: fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr "&lt;br&gt; címke automatikus hozzáadása"
+
+#: fields/textarea.php:189
+#, fuzzy
+msgid "No Formatting"
+msgstr "Formázás nélkül"
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "Igaz / Hamis (true/false)"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "pl. Extra tartalom megjelenítése"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr ""
+
+#: fields/url.php:160
+#, fuzzy
+msgid "Value must be a valid URL"
+msgstr "Az érték nem szám"
+
+#: fields/user.php:437
+msgid "Filter by role"
+msgstr "Szűrés szerepkörre"
+
+#: fields/user.php:445
+msgid "All user roles"
+msgstr "Minden felhasználói szerepkör"
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "Wysiwyg szerkesztő"
+
+#: fields/wysiwyg.php:297
+msgid "Visual"
+msgstr ""
+
+#: fields/wysiwyg.php:298
+#, fuzzy
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "Szöveg (text)"
+
+#: fields/wysiwyg.php:354
+msgid "Tabs"
+msgstr ""
+
+#: fields/wysiwyg.php:359
+msgid "Visual & Text"
+msgstr ""
+
+#: fields/wysiwyg.php:360
+msgid "Visual Only"
+msgstr ""
+
+#: fields/wysiwyg.php:361
+#, fuzzy
+msgid "Text Only"
+msgstr "Szöveg (text)"
+
+#: fields/wysiwyg.php:368
+msgid "Toolbar"
+msgstr "Eszközsáv"
+
+#: fields/wysiwyg.php:378
+msgid "Show Media Upload Buttons?"
+msgstr "'Média hozzáadása' gomb megjelenítése"
+
+#: forms/post.php:297 pro/admin/options-page.php:373
+msgid "Edit field group"
+msgstr ""
+
+#: pro/acf-pro.php:24
+#, fuzzy
+msgid "Advanced Custom Fields PRO"
+msgstr "Advanced Custom Fields PRO"
+
+#: pro/acf-pro.php:175
+msgid "Flexible Content requires at least 1 layout"
+msgstr "Rugalmas tartalomnál legalább egy elrendezést definiálni kell."
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "Beállítások oldal"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr "Nincsenek beállítás oldalak"
+
+#: pro/admin/options-page.php:298
+msgid "Options Updated"
+msgstr "Beállítások elmentve"
+
+#: pro/admin/options-page.php:304
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr "Nincsenek mezőcsoportok ehhez a beállítás oldalhoz. <a href=\"%s\">Mezőcsoport hozzáadása</a>"
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b>Hiba</b>. Nem hozható létre kapcsolat a frissítési szerverrel."
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr "<b>Kapcsolódási hiba</b>. Elnézést, próbáljuk meg újra."
+
+#: pro/admin/views/options-page.php:48
+msgid "Publish"
+msgstr "Közzététel"
+
+#: pro/admin/views/options-page.php:54
+msgid "Save Options"
+msgstr "Beállítások mentése"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr "Licenc deaktiválása"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr "Licenc aktiválása"
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr "Licenc"
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+"A frissítések engedélyezéséhez adjuk meg a licenckulcsot az alábbi beviteli "
+"mezőben. Ha még nem rendelkezünk licenckulccsal, tájékozódáshoz:"
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr "részletek és árak"
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr "Licenckulcs"
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr "Frissítési információ"
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr "Jelenlegi verzió"
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr "Legújabb verzió"
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr "Frissítés elérhető"
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr "Bővítmény frissítése"
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr "Adjuk meg a licenckulcsot a frissítések engedélyezéséhez"
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr "Ismételt ellenőrzés"
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr "Frissítési figyelmeztetés"
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "Beállítások"
+
+#: pro/core/updates.php:186
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+"A frissítések engedélyezéséhez adjuk meg a licenckulcsot a <a href=\"%s"
+"\">Frissítések</a> oldalon. Ha még nem rendelkezünk licenckulcsal, tekintsük "
+"át a licencek <a href=\"%s\">részleteit és árait</a>."
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "Rugalmas tartalom (flexible content)"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "Sor hozzáadása"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr "elrendezés"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr "elrendezés"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr "biztosan eltávolítsuk?"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr "Ennél a mezőnél legalább {min} {identifier} hozzáadása kötelező."
+
+# Revision suggested
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr "Ennél a mezőnél legfeljebb {max} {identifier} adható hozzá."
+
+# Revision suggested
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr ""
+"Ennél a mezőnél legalább {min} {label} {identifier} hozzáadása szükséges"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr "{label} elrendezésből több nem adható hozzá (maximum {max})"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{available} {label} {identifier} adható még hozzá (maximum {max})"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{required} {label} {identifier} hozzáadása szükséges (minimum {min})"
+
+# Revision suggested
+#: pro/fields/flexible-content.php:211
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "Kattintsunk lent a \"%s\" gombra egyéni tartalom létrehozásához."
+
+#: pro/fields/flexible-content.php:369
+msgid "Add layout"
+msgstr "Elrendezés hozzáadása"
+
+#: pro/fields/flexible-content.php:372
+msgid "Remove layout"
+msgstr "Elrendezés eltávolítása"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder Layout"
+msgstr "Elrendezés sorrendjének módosítása"
+
+#: pro/fields/flexible-content.php:514
+msgid "Reorder"
+msgstr "Átrendezés"
+
+#: pro/fields/flexible-content.php:515
+msgid "Delete Layout"
+msgstr "Elrendezés törlése"
+
+#: pro/fields/flexible-content.php:516
+msgid "Duplicate Layout"
+msgstr "Elrendezés duplikálása"
+
+#: pro/fields/flexible-content.php:517
+msgid "Add New Layout"
+msgstr "Új elrendezés hozzáadása"
+
+#: pro/fields/flexible-content.php:561
+msgid "Display"
+msgstr "Megjelenítés"
+
+#: pro/fields/flexible-content.php:572 pro/fields/repeater.php:399
+msgid "Table"
+msgstr "Táblázat"
+
+#: pro/fields/flexible-content.php:573 pro/fields/repeater.php:400
+msgid "Block"
+msgstr "Blokk"
+
+#: pro/fields/flexible-content.php:574 pro/fields/repeater.php:401
+#, fuzzy
+msgid "Row"
+msgstr "Sorok"
+
+#: pro/fields/flexible-content.php:589
+msgid "Min"
+msgstr "Minimum"
+
+#: pro/fields/flexible-content.php:602
+msgid "Max"
+msgstr "Maximum"
+
+#: pro/fields/flexible-content.php:630 pro/fields/repeater.php:408
+msgid "Button Label"
+msgstr "Gomb felirata"
+
+#: pro/fields/flexible-content.php:639
+msgid "Minimum Layouts"
+msgstr "Tartalmak minimális száma"
+
+#: pro/fields/flexible-content.php:648
+msgid "Maximum Layouts"
+msgstr "Tartalmak maximális száma"
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "Galéria"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "Kép hozzáadása a galériához"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr "Elértük a kiválasztható elemek maximális számát"
+
+#: pro/fields/gallery.php:335
+msgid "Length"
+msgstr ""
+
+#: pro/fields/gallery.php:355
+msgid "Remove"
+msgstr ""
+
+#: pro/fields/gallery.php:535
+msgid "Add to gallery"
+msgstr "Hozzáadás galériához"
+
+#: pro/fields/gallery.php:539
+msgid "Bulk actions"
+msgstr "Csoportművelet"
+
+#: pro/fields/gallery.php:540
+msgid "Sort by date uploaded"
+msgstr "Rendezés feltöltési dátum szerint"
+
+#: pro/fields/gallery.php:541
+msgid "Sort by date modified"
+msgstr "Rendezés módosítási dátum szerint"
+
+#: pro/fields/gallery.php:542
+msgid "Sort by title"
+msgstr "Rendezés cím szerint"
+
+#: pro/fields/gallery.php:543
+msgid "Reverse current order"
+msgstr "Fordított sorrend"
+
+#: pro/fields/gallery.php:561
+msgid "Close"
+msgstr "Bezárás"
+
+#: pro/fields/gallery.php:619
+msgid "Minimum Selection"
+msgstr "Minimális választás"
+
+#: pro/fields/gallery.php:628
+msgid "Maximum Selection"
+msgstr "Maximális választás"
+
+#: pro/fields/gallery.php:809
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] "%s mező esetében legalább %s értéket ki kell választani"
+msgstr[1] "%s mező esetében legalább %s értéket ki kell választani"
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "Ismétlő csoportmező (repeater)"
+
+#: pro/fields/repeater.php:46
+msgid "Minimum rows reached ({min} rows)"
+msgstr ""
+"Nem érjük el a sorok minimális számát (legalább {min} sort hozzá kell adni)"
+
+#: pro/fields/repeater.php:47
+msgid "Maximum rows reached ({max} rows)"
+msgstr "Elértük a sorok maximális számát (legfeljebb {max} sor adható hozzá)"
+
+#: pro/fields/repeater.php:259
+msgid "Drag to reorder"
+msgstr "Átrendezéshez húzzuk a megfelelő helyre"
+
+#: pro/fields/repeater.php:301
+msgid "Add row"
+msgstr "Sor hozzáadása"
+
+#: pro/fields/repeater.php:302
+msgid "Remove row"
+msgstr "Sor eltávolítása"
+
+#: pro/fields/repeater.php:350
+msgid "Sub Fields"
+msgstr "Almezők"
+
+#: pro/fields/repeater.php:372
+msgid "Minimum Rows"
+msgstr "Sorok minimális száma"
+
+#: pro/fields/repeater.php:382
+msgid "Maximum Rows"
+msgstr "Sorok maximális száma"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Field&nbsp;Groups"
+#~ msgstr "Mezőcsoportok"
+
+#~ msgid "Custom field updated."
+#~ msgstr "Egyéni mező frissítve."
+
+#~ msgid "Custom field deleted."
+#~ msgstr "Egyéni mező törölve."
+
+#~ msgid "Hide / Show All"
+#~ msgstr "Minden elrejtése / megjelenítése"
+
+#~ msgid "Show Field Keys"
+#~ msgstr "Mezőkulcsok megjelenítése"
+
+#~ msgid "Pending Review"
+#~ msgstr "Függőben lévő"
+
+#~ msgid "Draft"
+#~ msgstr "Vázlat"
+
+#~ msgid "Future"
+#~ msgstr "Ütemezve"
+
+#~ msgid "Private"
+#~ msgstr "Magánjellegű"
+
+#~ msgid "Revision"
+#~ msgstr "Változat"
+
+#~ msgid "Trash"
+#~ msgstr "Lomtár"
+
+#~ msgid "Top Level Page (parent of 0)"
+#~ msgstr "Felső szintű oldal (0 szülője)"
+
+#~ msgid "Field group duplicated! Edit the new \"%s\" field group."
+#~ msgstr "Mezőcsoport duplikálva. Az új \"%s\" mezőcsoport szerkesztése."
+
+#~ msgid "Import / Export"
+#~ msgstr "Importálás / Exportálás"
+
+#~ msgid "Import/Export"
+#~ msgstr "Import/export"
+
+#~ msgid "Logged in User Type"
+#~ msgstr "Bejelentkezett felhasználó szerepköre"
+
+#~ msgid "Field groups are created in order <br />from lowest to highest"
+#~ msgstr ""
+#~ "Az egyes mezőcsoportok az alacsonyabbtól a magasabb érték felé haladva "
+#~ "jönnek létre"
+
+#~ msgid "<b>Select</b> items to <b>hide</b> them from the edit screen"
+#~ msgstr ""
+#~ "<b>Válasszuk ki</b> a szerkesztőképernyőn <b>elrejteni</b> kívánt elemeket"
+
+#~ msgid ""
+#~ "If multiple field groups appear on an edit screen, the first field "
+#~ "group's options will be used. (the one with the lowest order number)"
+#~ msgstr ""
+#~ "Ha a szerkesztőképernyőn több mezőcsoport is megjelenik, úgy a legelső "
+#~ "csoport (legalacsonyabb sorszám) beállításai érvényesülnek."
+
+#~ msgid ""
+#~ "We're changing the way premium functionality is delivered in an exiting "
+#~ "way!"
+#~ msgstr "A prémium szolgáltatások immár egy izgalmas, új módon érhetők el!  "
+
+#~ msgid "ACF PRO Required"
+#~ msgstr "ACF PRO változat szükséges"
+
+#~ msgid ""
+#~ "We have detected an issue which requires your attention: This website "
+#~ "makes use of premium add-ons (%s) which are no longer compatible with ACF."
+#~ msgstr ""
+#~ "Egy figyelmet igénylő problémát észleltünk: A honlap olyan prémium "
+#~ "kiegészítőket használ (%s), amelyek már nem kompatibilisek az új ACF "
+#~ "verzióval."
+
+#~ msgid ""
+#~ "Don't panic, you can simply roll back the plugin and continue using ACF "
+#~ "as you know it!"
+#~ msgstr ""
+#~ "Aggodalomra nincs ok, könnyedén visszatérhetünk a bővítmény korábbi, már "
+#~ "ismert verziójához!"
+
+#~ msgid "Roll back to ACF v%s"
+#~ msgstr "Visszatérés az ACF %s verzióhoz"
+
+#~ msgid "Learn why ACF PRO is required for my site"
+#~ msgstr "Ismerjük meg, miért van szükség az ACF PRO változatra a honlapon"
+
+#~ msgid "Update Database"
+#~ msgstr "Adatbázis frissítése"
+
+#~ msgid "Data Upgrade"
+#~ msgstr "Adatfrissítés"
+
+#~ msgid "Data upgraded successfully."
+#~ msgstr "Adatok sikeresen frissítve."
+
+#~ msgid "Data is at the latest version."
+#~ msgstr "Az adatok megfelelnek a legújabb verziónak."
+
+#~ msgid "1 required field below is empty"
+#~ msgid_plural "%s required fields below are empty"
+#~ msgstr[0] "1 kötelező mező nincs kitöltve"
+#~ msgstr[1] "%s kötelező mező nincs kitöltve"
+
+#~ msgid "No taxonomy filter"
+#~ msgstr "Nincs szűrés osztályozásra"
+
+#~ msgid "Load & Save Terms to Post"
+#~ msgstr "Kifejezések a bejegyzéshez kapcsolva (betöltés és mentés)"
+
+#~ msgid ""
+#~ "Load value based on the post's terms and update the post's terms on save"
+#~ msgstr ""
+#~ "Az érték betöltése a bejegyzéshez rendelt kifejezések alapján és a "
+#~ "kifejezések frissítése mentéskor"
+
+#~ msgid "Column Width"
+#~ msgstr "Oszlopszélesség"
+
+#~ msgid "Attachment Details"
+#~ msgstr "Csatolmány részletei"
+
+#, fuzzy
+#~ msgid "title_is_required"
+#~ msgstr "A mezőcsoport címét kötelező megadni"
+
+#, fuzzy
+#~ msgid "move_field"
+#~ msgstr "Mező áthelyezése"
+
+#, fuzzy
+#~ msgid "image"
+#~ msgstr "Kép"
+
+#, fuzzy
+#~ msgid "expand_details"
+#~ msgstr "Részletek kibontása"
+
+#, fuzzy
+#~ msgid "collapse_details"
+#~ msgstr "Részletek bezárása"
+
+#, fuzzy
+#~ msgid "relationship"
+#~ msgstr "Kapcsolat (relationship)"
+
+#, fuzzy
+#~ msgid "flexible_content"
+#~ msgstr "Rugalmas tartalom (flexible content)"
+
+#, fuzzy
+#~ msgid "repeater"
+#~ msgstr "Ismétlő csoportmező (repeater)"
+
+#, fuzzy
+#~ msgid "gallery"
+#~ msgstr "Galéria"
+
+#~ msgid "Validation Failed. One or more fields below are required."
+#~ msgstr "Érvényesítés sikertelen. Az alábbi mező(k) kitöltése kötelező."
+
+#~ msgid "Apply"
+#~ msgstr "Alkalmaz"
+
+#, fuzzy
+#~ msgid "Run the updater"
+#~ msgstr "Ismétlő csoportmező (repeater)"
+
+#, fuzzy
+#~ msgid "Full"
+#~ msgstr "Teljes méret"
+
+#, fuzzy
+#~ msgid "Size"
+#~ msgstr "Teljes méret"
+
+#, fuzzy
+#~ msgid "Formatting"
+#~ msgstr "Formázás nélkül"
+
+#, fuzzy
+#~ msgid "Effects value on front end"
+#~ msgstr ""
+#~ "Határozzuk meg a mező felhasználói oldalon (front end) megjelenő értékét"
+
+#, fuzzy
+#~ msgid "No images selected"
+#~ msgstr "Kép nincs kiválasztva"
+
+#, fuzzy
+#~ msgid "1 image selected"
+#~ msgstr "Kép nincs kiválasztva"
+
+#, fuzzy
+#~ msgid "%d images selected"
+#~ msgstr "Kép nincs kiválasztva"
+
+#~ msgid ""
+#~ "Fully customise WordPress edit screens with powerful fields. Boasting a "
+#~ "professional interface and a powerful API, it’s a must have for any web "
+#~ "developer working with WordPress. Field types include: Wysiwyg, text, "
+#~ "textarea, image, file, select, checkbox, page link, post object, date "
+#~ "picker, color picker, repeater, flexible content, gallery and more!"
+#~ msgstr ""
+#~ "A WordPress teljes körű testreszabása egyéni mezők segítségével. A "
+#~ "professzionális kezelőfelületet és hatékony API-t kínáló bővítmény minden "
+#~ "WordPress-fejlesztő számára nélkülözhetetlen eszköz. Elérhető "
+#~ "mezőtípusok: Wysiwyg, szöveg, szövegterület, kép, fájl, választó, "
+#~ "jelölődoboz, oldalhivatkozás, bejegyzés objektum, dátumválasztó, "
+#~ "színválasztó, ismétlő csoportmező, rugalmas tartalom, galéria és még több "
+#~ "más."

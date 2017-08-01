@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the wp-migrate-db-pro-media-files package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-migrate-db-pro-media-files\n"
+"Report-Msgid-Bugs-To: nom@deliciousbrains.com\n"
+"POT-Creation-Date: 2016-12-15 11:23-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: class/cli/wpmdbpro-media-files-cli.php:32
+msgid ""
+"WP Migrate DB Pro Media Files does not seem to be installed/active on the "
+"remote website."
+msgstr ""
+
+#: class/cli/wpmdbpro-media-files-cli.php:35
+msgid "Initiating media migration..."
+msgstr ""
+
+#: class/wpmdbpro-media-files-base.php:566
+#, php-format
+msgid "Could not delete \"%s\""
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:97
+msgid "Incorrect migration type supplied"
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:227
+#, php-format
+msgid "Could not download file: %1$s - %2$s"
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:238
+#: class/wpmdbpro-media-files-remote.php:240
+#, php-format
+msgid "Error attempting to create required directory: %s"
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:243
+#, php-format
+msgid ""
+"Error attempting to move downloaded file. Temp path: %1$s - New Path: %2$s"
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:261
+msgid "Failed attempting to process pull request"
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:457
+msgid "There were errors when removing local media files"
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:585
+msgid "Invalid URL Provided."
+msgstr ""
+
+#: class/wpmdbpro-media-files-local.php:590
+msgid "Could not create Temporary file."
+msgstr ""
+
+#: class/wpmdbpro-media-files-remote.php:219
+msgid "$_FILES is empty, the upload appears to have failed"
+msgstr ""
+
+#: class/wpmdbpro-media-files-remote.php:249
+#, php-format
+msgid ""
+"A problem occurred when attempting to move the temp file \"%1$s\" to \"%2$s\""
+msgstr ""
+
+#: class/wpmdbpro-media-files-remote.php:264
+msgid "Failed attempting to respond to push request"
+msgstr ""
+
+#: class/wpmdbpro-media-files-remote.php:424
+msgid "There were errors when removing local media files from the remote site"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:67
+msgid "Removing all local files before download of remote media"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:68
+msgid "Removing all remote files before upload of local media"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:69
+msgid "Removing local files that are not found on the remote site"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:70
+msgid "Removing remote files that are not found on the local site"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:71
+msgid "Determining media to migrate"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:72
+#, php-format
+msgid "Determining media to migrate - %1$d of %2$d attachments (%3$d%%)"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:73
+msgid "Error while attempting to determine which attachments to migrate."
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:74
+msgid "Migration failed"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:75
+msgid "A problem occurred when migrating the media files."
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:76
+msgid "Media Attachments"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:77
+msgid "Files"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:78
+msgid "Downloading files"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:79
+msgid "Uploading files"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:80
+#, php-format
+msgid "Downloading %d of %d files"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:81
+#, php-format
+msgid "Uploading %d of %d files"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:82
+msgid "Files Uploaded"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:83
+msgid "Files Downloaded"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:84
+msgid "The following file is too large to migrate:"
+msgstr ""
+
+#: class/wpmdbpro-media-files.php:85
+msgid "Please select at least one subsite to transfer media files for."
+msgstr ""
+
+#: template/migrate.php:6
+msgid "Media Files"
+msgstr ""
+
+#: template/migrate.php:24
+msgid "Compare then upload"
+msgstr ""
+
+#: template/migrate.php:27
+msgid ""
+"Compare remote and local media files determining what files are missing or "
+"have been updated and need to be uploaded. Great for syncing two Media "
+"Libraries that only differ a little. For more details, see the <a href="
+"\"https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon\" "
+"target=\"_blank\">Media Files doc</a>."
+msgstr ""
+
+#: template/migrate.php:31
+msgid "Compare then download"
+msgstr ""
+
+#: template/migrate.php:34
+msgid ""
+"Compare remote and local media files determining what files are missing or "
+"have been updated and need to be downloaded. Great for syncing two Media "
+"Libraries that only differ a little. For more details, see the <a href="
+"\"https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon\" "
+"target=\"_blank\">Media Files doc</a>."
+msgstr ""
+
+#: template/migrate.php:43
+msgid "Compare, upload then remove"
+msgstr ""
+
+#: template/migrate.php:46
+msgid ""
+"Same as the above option, but also removes any remote files that are not "
+"found in your local Media Library. Any files in the uploads folder that are "
+"not part of the Media Library will remain untouched."
+msgstr ""
+
+#: template/migrate.php:49
+msgid ""
+"WARNING: Any files in the remote Media Library that are not in the local "
+"Media Library will be removed."
+msgstr ""
+
+#: template/migrate.php:53
+msgid "Compare, download then remove"
+msgstr ""
+
+#: template/migrate.php:56
+msgid ""
+"Same as the above option, but also removes any local files that are not "
+"found in your remote Media Library. Any files in the uploads folder that are "
+"not part of the Media Library will remain untouched."
+msgstr ""
+
+#: template/migrate.php:59
+msgid ""
+"WARNING: Any files in the local Media Library that are not in the remote "
+"Media Library will be removed."
+msgstr ""
+
+#: template/migrate.php:68
+msgid "Remove all then upload all"
+msgstr ""
+
+#: template/migrate.php:71
+msgid ""
+"Removes all files in the remote uploads folder and uploads all files in the "
+"local uploads folder that are in the Media Library."
+msgstr ""
+
+#: template/migrate.php:75
+msgid "Remove all then download all"
+msgstr ""
+
+#: template/migrate.php:78
+msgid ""
+"Removes all files in the local uploads folder and downloads all files in the "
+"remote uploads folder that are in the Media Library."
+msgstr ""
+
+#: template/migrate.php:89
+msgid "Addon Missing"
+msgstr ""
+
+#: template/migrate.php:89
+msgid ""
+"The Media Files addon is inactive on the <strong>remote site</strong>. "
+"Please install and activate it to enable media file migration."
+msgstr ""
+
+#: template/migrate.php:93
+msgid "Version Mismatch"
+msgstr ""
+
+#: template/migrate.php:93
+#, php-format
+msgid ""
+"We have detected you have version <span class=\"media-file-remote-version"
+"\"></span> of WP Migrate DB Pro Media Files at <span class=\"media-files-"
+"remote-location\"></span> but are using %1$s here. Please go to the <a href="
+"\"%2$s\">Plugins page</a> on both installs and check for updates."
+msgstr ""
+
+#: template/select-subsites.php:5
+msgid "Only transfer files for selected subsites"
+msgstr ""
+
+#: template/select-subsites.php:41
+msgid "Select All"
+msgstr ""
+
+#: template/select-subsites.php:43
+msgid "Deselect All"
+msgstr ""
+
+#: template/select-subsites.php:45
+msgid "Invert Selection"
+msgstr ""
+
+#: template/select-subsites.php:49
+msgid "Migrating Media Library data and files differ"
+msgstr ""
+
+#: template/select-subsites.php:49
+msgid ""
+"There is a mismatch between Media Library table data being updated and the "
+"files selected for transfer. You may end up with broken links to media."
+msgstr ""

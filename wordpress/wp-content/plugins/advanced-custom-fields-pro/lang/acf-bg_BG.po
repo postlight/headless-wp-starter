@@ -1,0 +1,2590 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields\n"
+"Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
+"POT-Creation-Date: 2016-02-05 11:05+1000\n"
+"PO-Revision-Date: 2016-11-03 17:07+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"Language-Team: Elliot Condon <e@elliotcondon.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: bg_BG\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf.php:63
+msgid "Advanced Custom Fields"
+msgstr "Модерни потребителски полета"
+
+#: acf.php:266 admin/admin.php:61
+msgid "Field Groups"
+msgstr "Групи полета"
+
+#: acf.php:267
+msgid "Field Group"
+msgstr "Групa полета"
+
+#: acf.php:268 acf.php:300 admin/admin.php:62
+#: pro/fields/flexible-content.php:506
+msgid "Add New"
+msgstr "Създаване"
+
+#: acf.php:269
+msgid "Add New Field Group"
+msgstr "Създаване на нова група полета"
+
+#: acf.php:270
+msgid "Edit Field Group"
+msgstr "Редактиране на група полета"
+
+#: acf.php:271
+msgid "New Field Group"
+msgstr "Нова група полета"
+
+#: acf.php:272
+msgid "View Field Group"
+msgstr "Преглед на група полета"
+
+#: acf.php:273
+msgid "Search Field Groups"
+msgstr "Търсене на групи полета"
+
+#: acf.php:274
+msgid "No Field Groups found"
+msgstr "Няма открити групи полета"
+
+#: acf.php:275
+msgid "No Field Groups found in Trash"
+msgstr "Няма открити групи полета в кошчето"
+
+#: acf.php:298 admin/field-group.php:176 admin/field-group.php:223
+#: admin/field-groups.php:528
+msgid "Fields"
+msgstr "Полета"
+
+#: acf.php:299
+msgid "Field"
+msgstr "Поле"
+
+#: acf.php:301
+msgid "Add New Field"
+msgstr "Добавяне на ново поле"
+
+#: acf.php:302
+msgid "Edit Field"
+msgstr "Редактиране на поле"
+
+#: acf.php:303 admin/views/field-group-fields.php:18
+#: admin/views/settings-info.php:111
+msgid "New Field"
+msgstr "Ново поле"
+
+#: acf.php:304
+msgid "View Field"
+msgstr "Преглед на поле"
+
+#: acf.php:305
+msgid "Search Fields"
+msgstr "Търсене на полета"
+
+#: acf.php:306
+msgid "No Fields found"
+msgstr "Няма открити полета"
+
+#: acf.php:307
+msgid "No Fields found in Trash"
+msgstr "Няма открити полета в кошчето"
+
+#: acf.php:346 admin/field-group.php:316 admin/field-groups.php:586
+#: admin/views/field-group-options.php:13
+msgid "Disabled"
+msgstr "Изключено"
+
+#: acf.php:351
+#, php-format
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] "Изключено <span class=\"count\">(%s)</span>"
+msgstr[1] "Изключени <span class=\"count\">(%s)</span>"
+
+#: admin/admin.php:57 admin/views/field-group-options.php:115
+msgid "Custom Fields"
+msgstr "Потребителски полета"
+
+#: admin/field-group.php:68 admin/field-group.php:69 admin/field-group.php:71
+msgid "Field group updated."
+msgstr "Групата полета бе обновена."
+
+#: admin/field-group.php:70
+msgid "Field group deleted."
+msgstr "Групата полета бе изтрита."
+
+#: admin/field-group.php:73
+msgid "Field group published."
+msgstr "Групата полета бе публикувана."
+
+#: admin/field-group.php:74
+msgid "Field group saved."
+msgstr "Групата полета бе запазена."
+
+#: admin/field-group.php:75
+msgid "Field group submitted."
+msgstr "Групата полета бе изпратена."
+
+#: admin/field-group.php:76
+msgid "Field group scheduled for."
+msgstr "Групата полета бе планирана."
+
+#: admin/field-group.php:77
+msgid "Field group draft updated."
+msgstr "Черновата на групата полета бе обновена."
+
+#: admin/field-group.php:177
+msgid "Location"
+msgstr "Местоположение"
+
+#: admin/field-group.php:178
+msgid "Settings"
+msgstr "Настройки"
+
+#: admin/field-group.php:217
+msgid "Move to trash. Are you sure?"
+msgstr "Преместване в кошчето. Сигурни ли сте?"
+
+#: admin/field-group.php:218
+msgid "checked"
+msgstr "избрано"
+
+#: admin/field-group.php:219
+msgid "No toggle fields available"
+msgstr "Няма налични полета за превключване"
+
+#: admin/field-group.php:220
+msgid "Field group title is required"
+msgstr "Заглавието на групата полета е задължително"
+
+#: admin/field-group.php:221 api/api-field-group.php:581
+msgid "copy"
+msgstr "копиране"
+
+#: admin/field-group.php:222
+#: admin/views/field-group-field-conditional-logic.php:62
+#: admin/views/field-group-field-conditional-logic.php:162
+#: admin/views/field-group-locations.php:59
+#: admin/views/field-group-locations.php:135 api/api-helpers.php:3401
+msgid "or"
+msgstr "или"
+
+#: admin/field-group.php:224
+msgid "Parent fields"
+msgstr "Родителски полета"
+
+#: admin/field-group.php:225
+msgid "Sibling fields"
+msgstr "Съседни полета"
+
+#: admin/field-group.php:226
+msgid "Move Custom Field"
+msgstr "Преместване на поле"
+
+#: admin/field-group.php:227
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "Това поле не може да бъде преместено докато не го запазите."
+
+#: admin/field-group.php:228
+msgid "Null"
+msgstr "Нищо"
+
+#: admin/field-group.php:229 core/input.php:217
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr ""
+"Промените, които сте направили, ще бъдат загубени ако излезете от тази "
+"страница"
+
+#: admin/field-group.php:230
+msgid "The string \"field_\" may not be used at the start of a field name"
+msgstr "Низът \"field_\" не може да бъде използван в началото на името на поле"
+
+#: admin/field-group.php:286
+msgid "Field Keys"
+msgstr "Ключове на полетата"
+
+#: admin/field-group.php:316 admin/views/field-group-options.php:12
+msgid "Active"
+msgstr "Активно"
+
+#: admin/field-group.php:785
+msgid "Front Page"
+msgstr "Първа страница"
+
+#: admin/field-group.php:786
+msgid "Posts Page"
+msgstr "Страница с публикации"
+
+#: admin/field-group.php:787
+msgid "Top Level Page (no parent)"
+msgstr "Горно ниво страница (родител)"
+
+#: admin/field-group.php:788
+msgid "Parent Page (has children)"
+msgstr "Родителска страница (има деца)"
+
+#: admin/field-group.php:789
+msgid "Child Page (has parent)"
+msgstr "Дете страница (има родител)"
+
+#: admin/field-group.php:805
+msgid "Default Template"
+msgstr "Шаблон по подразбиране"
+
+#: admin/field-group.php:827
+msgid "Logged in"
+msgstr "Влезли сте"
+
+#: admin/field-group.php:828
+msgid "Viewing front end"
+msgstr "Преглеждане на сайта"
+
+#: admin/field-group.php:829
+msgid "Viewing back end"
+msgstr "Преглеждане на администрацията"
+
+#: admin/field-group.php:848
+msgid "Super Admin"
+msgstr "Супер администратор"
+
+#: admin/field-group.php:859 admin/field-group.php:867
+#: admin/field-group.php:881 admin/field-group.php:888
+#: admin/field-group.php:903 admin/field-group.php:913 fields/file.php:235
+#: fields/image.php:231 pro/fields/gallery.php:661
+msgid "All"
+msgstr "Всички"
+
+#: admin/field-group.php:868
+msgid "Add / Edit"
+msgstr "Добавяне / редактиране"
+
+#: admin/field-group.php:869
+msgid "Register"
+msgstr "Регистрация"
+
+#: admin/field-group.php:1100
+msgid "Move Complete."
+msgstr "Преместването бе завършено."
+
+#: admin/field-group.php:1101
+#, php-format
+msgid "The %s field can now be found in the %s field group"
+msgstr "Полето %s сега може да бъде открито в групата полета %s"
+
+#: admin/field-group.php:1103
+msgid "Close Window"
+msgstr "Затваряне на прозореца"
+
+#: admin/field-group.php:1138
+msgid "Please select the destination for this field"
+msgstr "Моля, изберете дестинация за това поле"
+
+#: admin/field-group.php:1145
+msgid "Move Field"
+msgstr "Преместване на поле"
+
+#: admin/field-groups.php:74
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] "Активно <span class=\"count\">(%s)</span>"
+msgstr[1] "Активни <span class=\"count\">(%s)</span>"
+
+#: admin/field-groups.php:142
+#, php-format
+msgid "Field group duplicated. %s"
+msgstr "Групата полета %s бе дублирана."
+
+#: admin/field-groups.php:146
+#, php-format
+msgid "%s field group duplicated."
+msgid_plural "%s field groups duplicated."
+msgstr[0] "%s група полета беше дублирана."
+msgstr[1] "%s групи полета бяха дублирани."
+
+#: admin/field-groups.php:228
+#, php-format
+msgid "Field group synchronised. %s"
+msgstr "Групата полета %s бе синхронизирана."
+
+#: admin/field-groups.php:232
+#, php-format
+msgid "%s field group synchronised."
+msgid_plural "%s field groups synchronised."
+msgstr[0] "%s група полета беше синхронизирана."
+msgstr[1] "%s групи полета бяха синхронизирани."
+
+#: admin/field-groups.php:412 admin/field-groups.php:576
+msgid "Sync available"
+msgstr "Налична е синхронизация"
+
+#: admin/field-groups.php:525
+msgid "Title"
+msgstr "Заглавие"
+
+#: admin/field-groups.php:526 admin/views/field-group-options.php:93
+#: admin/views/update-network.php:20 admin/views/update-network.php:28
+msgid "Description"
+msgstr "Описание"
+
+#: admin/field-groups.php:527 admin/views/field-group-options.php:5
+msgid "Status"
+msgstr "Статус"
+
+#: admin/field-groups.php:624 admin/settings-info.php:76
+#: pro/admin/views/settings-updates.php:111
+msgid "Changelog"
+msgstr "Дневник с промени"
+
+#: admin/field-groups.php:625
+msgid "See what's new in"
+msgstr "Вижте какво е новото в"
+
+#: admin/field-groups.php:625
+msgid "version"
+msgstr "версия"
+
+#: admin/field-groups.php:627
+msgid "Resources"
+msgstr "Ресурси"
+
+#: admin/field-groups.php:629
+msgid "Getting Started"
+msgstr "Как да започнете"
+
+#: admin/field-groups.php:630 pro/admin/settings-updates.php:73
+#: pro/admin/views/settings-updates.php:17
+msgid "Updates"
+msgstr "Актуализации"
+
+#: admin/field-groups.php:631
+msgid "Field Types"
+msgstr "Типове полета"
+
+#: admin/field-groups.php:632
+msgid "Functions"
+msgstr "Функции"
+
+#: admin/field-groups.php:633
+msgid "Actions"
+msgstr "Действия"
+
+#: admin/field-groups.php:634 fields/relationship.php:717
+msgid "Filters"
+msgstr "Филтри"
+
+#: admin/field-groups.php:635
+msgid "'How to' guides"
+msgstr "Ръководства"
+
+#: admin/field-groups.php:636
+msgid "Tutorials"
+msgstr "Уроци"
+
+#: admin/field-groups.php:641
+msgid "Created by"
+msgstr "Създадено от"
+
+#: admin/field-groups.php:684
+msgid "Duplicate this item"
+msgstr "Дублиране на този елемент"
+
+#: admin/field-groups.php:684 admin/field-groups.php:700
+#: admin/views/field-group-field.php:58 pro/fields/flexible-content.php:505
+msgid "Duplicate"
+msgstr "Дублиране"
+
+#: admin/field-groups.php:746
+#, php-format
+msgid "Select %s"
+msgstr "Избор на %s"
+
+#: admin/field-groups.php:754
+msgid "Synchronise field group"
+msgstr "Синхронизиране на групата полета"
+
+#: admin/field-groups.php:754 admin/field-groups.php:771
+msgid "Sync"
+msgstr "Синхронизация"
+
+#: admin/settings-addons.php:51 admin/views/settings-addons.php:9
+msgid "Add-ons"
+msgstr "Добавки"
+
+#: admin/settings-addons.php:87
+msgid "<b>Error</b>. Could not load add-ons list"
+msgstr "<b>Грешка</b>. Списъкът с добавки не може да бъде зареден"
+
+#: admin/settings-info.php:50
+msgid "Info"
+msgstr "Информация"
+
+#: admin/settings-info.php:75
+msgid "What's New"
+msgstr "Какво ново"
+
+#: admin/settings-tools.php:54 admin/views/settings-tools-export.php:23
+#: admin/views/settings-tools.php:31
+msgid "Tools"
+msgstr "Инструменти"
+
+#: admin/settings-tools.php:151 admin/settings-tools.php:369
+msgid "No field groups selected"
+msgstr "Няма избрани групи полета"
+
+#: admin/settings-tools.php:188
+msgid "No file selected"
+msgstr "Няма избран файл"
+
+#: admin/settings-tools.php:201
+msgid "Error uploading file. Please try again"
+msgstr "Грешка при качване на файл. Моля, опитайте отново"
+
+#: admin/settings-tools.php:210
+msgid "Incorrect file type"
+msgstr "Грешен тип файл"
+
+#: admin/settings-tools.php:227
+msgid "Import file empty"
+msgstr "Файлът за импортиране е празен"
+
+#: admin/settings-tools.php:323
+#, php-format
+msgid "<b>Success</b>. Import tool added %s field groups: %s"
+msgstr "<b>Успех</b>. Инструментът за импортиране добави %s групи полета: %s"
+
+#: admin/settings-tools.php:332
+#, php-format
+msgid ""
+"<b>Warning</b>. Import tool detected %s field groups already exist and have "
+"been ignored: %s"
+msgstr ""
+"<b>Внимание</b>. Инструментът за импортиране откри, че %s групи полета вече "
+"съществуват и бяха игнорирани: %s"
+
+#: admin/update.php:113
+msgid "Upgrade ACF"
+msgstr "Обновяване"
+
+#: admin/update.php:143
+msgid "Review sites & upgrade"
+msgstr "Преглед на сайтове и обновяване"
+
+#: admin/update.php:298
+msgid "Upgrade"
+msgstr "Обновяване"
+
+#: admin/update.php:328
+msgid "Upgrade Database"
+msgstr "Обновяване на базата данни"
+
+#: admin/views/field-group-field-conditional-logic.php:29
+msgid "Conditional Logic"
+msgstr "Условна логика"
+
+#: admin/views/field-group-field-conditional-logic.php:40
+#: admin/views/field-group-field.php:140 fields/checkbox.php:246
+#: fields/message.php:144 fields/page_link.php:553 fields/page_link.php:567
+#: fields/post_object.php:419 fields/post_object.php:433 fields/select.php:377
+#: fields/select.php:391 fields/select.php:405 fields/select.php:419
+#: fields/tab.php:161 fields/taxonomy.php:808 fields/taxonomy.php:822
+#: fields/taxonomy.php:836 fields/taxonomy.php:850 fields/user.php:461
+#: fields/user.php:475 fields/wysiwyg.php:415
+#: pro/admin/views/settings-updates.php:93
+msgid "Yes"
+msgstr "Да"
+
+#: admin/views/field-group-field-conditional-logic.php:41
+#: admin/views/field-group-field.php:141 fields/checkbox.php:247
+#: fields/message.php:145 fields/page_link.php:554 fields/page_link.php:568
+#: fields/post_object.php:420 fields/post_object.php:434 fields/select.php:378
+#: fields/select.php:392 fields/select.php:406 fields/select.php:420
+#: fields/tab.php:162 fields/taxonomy.php:723 fields/taxonomy.php:809
+#: fields/taxonomy.php:823 fields/taxonomy.php:837 fields/taxonomy.php:851
+#: fields/user.php:462 fields/user.php:476 fields/wysiwyg.php:416
+#: pro/admin/views/settings-updates.php:103
+msgid "No"
+msgstr "Не"
+
+#: admin/views/field-group-field-conditional-logic.php:62
+msgid "Show this field if"
+msgstr "Показване на това поле ако"
+
+#: admin/views/field-group-field-conditional-logic.php:111
+#: admin/views/field-group-locations.php:34
+msgid "is equal to"
+msgstr "е равно на"
+
+#: admin/views/field-group-field-conditional-logic.php:112
+#: admin/views/field-group-locations.php:35
+msgid "is not equal to"
+msgstr "не е равно на"
+
+#: admin/views/field-group-field-conditional-logic.php:149
+#: admin/views/field-group-locations.php:122
+msgid "and"
+msgstr "и"
+
+#: admin/views/field-group-field-conditional-logic.php:164
+#: admin/views/field-group-locations.php:137
+msgid "Add rule group"
+msgstr "Добавяне на група правила"
+
+#: admin/views/field-group-field.php:54 admin/views/field-group-field.php:57
+msgid "Edit field"
+msgstr "Редактиране на поле"
+
+#: admin/views/field-group-field.php:57 pro/fields/gallery.php:363
+msgid "Edit"
+msgstr "Редактиране"
+
+#: admin/views/field-group-field.php:58
+msgid "Duplicate field"
+msgstr "Дублиране на поле"
+
+#: admin/views/field-group-field.php:59
+msgid "Move field to another group"
+msgstr "Преместване на поле в друга група"
+
+#: admin/views/field-group-field.php:59
+msgid "Move"
+msgstr "Преместване"
+
+#: admin/views/field-group-field.php:60
+msgid "Delete field"
+msgstr "Изтриване на поле"
+
+#: admin/views/field-group-field.php:60 pro/fields/flexible-content.php:504
+msgid "Delete"
+msgstr "Изтриване"
+
+#: admin/views/field-group-field.php:68 fields/oembed.php:225
+#: fields/taxonomy.php:924
+msgid "Error"
+msgstr "Грешка"
+
+#: fields/oembed.php:220 fields/taxonomy.php:900
+msgid "Error."
+msgstr "Грешка."
+
+#: admin/views/field-group-field.php:68
+msgid "Field type does not exist"
+msgstr "Типът поле не съществува"
+
+#: admin/views/field-group-field.php:81
+msgid "Field Label"
+msgstr "Етикет на полето"
+
+#: admin/views/field-group-field.php:82
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Това е името, което ще се покаже на страницата за редакция"
+
+#: admin/views/field-group-field.php:94
+msgid "Field Name"
+msgstr "Име на полето"
+
+#: admin/views/field-group-field.php:95
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr "Една дума, без интервали. Долни черти и тирета са позволени"
+
+#: admin/views/field-group-field.php:107
+msgid "Field Type"
+msgstr "Тип на полето"
+
+#: admin/views/field-group-field.php:121 fields/tab.php:134
+msgid "Instructions"
+msgstr "Инструкции"
+
+#: admin/views/field-group-field.php:122
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Инструкции за автори. Показват се когато се изпращат данни"
+
+#: admin/views/field-group-field.php:133
+msgid "Required?"
+msgstr "Задължително?"
+
+#: admin/views/field-group-field.php:162
+msgid "Wrapper Attributes"
+msgstr "Атрибути"
+
+#: admin/views/field-group-field.php:168
+msgid "width"
+msgstr "широчина"
+
+#: admin/views/field-group-field.php:182
+msgid "class"
+msgstr "клас"
+
+#: admin/views/field-group-field.php:195
+msgid "id"
+msgstr "id"
+
+#: admin/views/field-group-field.php:207
+msgid "Close Field"
+msgstr "Затваряне на полето"
+
+#: admin/views/field-group-fields.php:29
+msgid "Order"
+msgstr "Ред"
+
+#: admin/views/field-group-fields.php:30 pro/fields/flexible-content.php:531
+msgid "Label"
+msgstr "Етикет"
+
+#: admin/views/field-group-fields.php:31 pro/fields/flexible-content.php:544
+msgid "Name"
+msgstr "Име"
+
+#: admin/views/field-group-fields.php:32
+msgid "Type"
+msgstr "Тип"
+
+#: admin/views/field-group-fields.php:44
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+"Няма полета. Натиснете бутона <strong>+ Добавяне на поле</strong> за да "
+"създадете първото си поле."
+
+#: admin/views/field-group-fields.php:51
+msgid "+ Add Field"
+msgstr "+ Добавяне на поле"
+
+#: admin/views/field-group-locations.php:5
+#: admin/views/field-group-locations.php:11
+msgid "Post"
+msgstr "Публикация"
+
+#: admin/views/field-group-locations.php:6 fields/relationship.php:723
+msgid "Post Type"
+msgstr "Вид на публикация"
+
+#: admin/views/field-group-locations.php:7
+msgid "Post Status"
+msgstr "Статус на публикация"
+
+#: admin/views/field-group-locations.php:8
+msgid "Post Format"
+msgstr "Формат на публикация"
+
+#: admin/views/field-group-locations.php:9
+msgid "Post Category"
+msgstr "Категория на публикация"
+
+#: admin/views/field-group-locations.php:10
+msgid "Post Taxonomy"
+msgstr "Таксономия на публикация"
+
+#: admin/views/field-group-locations.php:13
+#: admin/views/field-group-locations.php:17
+msgid "Page"
+msgstr "Страница"
+
+#: admin/views/field-group-locations.php:14
+msgid "Page Template"
+msgstr "Шаблон на страница"
+
+#: admin/views/field-group-locations.php:15
+msgid "Page Type"
+msgstr "Тип страница"
+
+#: admin/views/field-group-locations.php:16
+msgid "Page Parent"
+msgstr "Страница родител"
+
+#: admin/views/field-group-locations.php:19 fields/user.php:36
+msgid "User"
+msgstr "Потребител"
+
+#: admin/views/field-group-locations.php:20
+msgid "Current User"
+msgstr "Текущ потребител"
+
+#: admin/views/field-group-locations.php:21
+msgid "Current User Role"
+msgstr "Роля на текущия потребител"
+
+#: admin/views/field-group-locations.php:22
+msgid "User Form"
+msgstr "Потребителски формуляр"
+
+#: admin/views/field-group-locations.php:23
+msgid "User Role"
+msgstr "Потребителска роля"
+
+#: admin/views/field-group-locations.php:25 pro/admin/options-page.php:48
+msgid "Forms"
+msgstr "Формуляри"
+
+#: admin/views/field-group-locations.php:26
+msgid "Attachment"
+msgstr "Файл"
+
+#: admin/views/field-group-locations.php:27
+msgid "Taxonomy Term"
+msgstr "Термин"
+
+#: admin/views/field-group-locations.php:28
+msgid "Comment"
+msgstr "Коментар"
+
+#: admin/views/field-group-locations.php:29
+msgid "Widget"
+msgstr "Джаджa"
+
+#: admin/views/field-group-locations.php:41
+msgid "Rules"
+msgstr "Правила"
+
+#: admin/views/field-group-locations.php:42
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+"Създаване на група правила, определящи кои екрани за редактиране ще "
+"използват тези модерни потребителски полета"
+
+#: admin/views/field-group-locations.php:59
+msgid "Show this field group if"
+msgstr "Показване на тази група полета ако"
+
+#: admin/views/field-group-options.php:20
+msgid "Style"
+msgstr "Стил"
+
+#: admin/views/field-group-options.php:27
+msgid "Standard (WP metabox)"
+msgstr "Стандартен (WordPress кутия)"
+
+#: admin/views/field-group-options.php:28
+msgid "Seamless (no metabox)"
+msgstr "Без WordPress кутия"
+
+#: admin/views/field-group-options.php:35
+msgid "Position"
+msgstr "Позиция"
+
+#: admin/views/field-group-options.php:42
+msgid "High (after title)"
+msgstr "Високо (след заглавието)"
+
+#: admin/views/field-group-options.php:43
+msgid "Normal (after content)"
+msgstr "Нормално (след съдържанието)"
+
+#: admin/views/field-group-options.php:44
+msgid "Side"
+msgstr "Отстрани"
+
+#: admin/views/field-group-options.php:52
+msgid "Label placement"
+msgstr "Позиция на етикета"
+
+#: admin/views/field-group-options.php:59 fields/tab.php:148
+msgid "Top aligned"
+msgstr "Отгоре"
+
+#: admin/views/field-group-options.php:60 fields/tab.php:149
+msgid "Left Aligned"
+msgstr "Отляво"
+
+#: admin/views/field-group-options.php:67
+msgid "Instruction placement"
+msgstr "Позиция на инструкциите"
+
+#: admin/views/field-group-options.php:74
+msgid "Below labels"
+msgstr "Под етикетите"
+
+#: admin/views/field-group-options.php:75
+msgid "Below fields"
+msgstr "Под полетата"
+
+#: admin/views/field-group-options.php:82
+msgid "Order No."
+msgstr "Пореден №"
+
+#: admin/views/field-group-options.php:83
+msgid "Field groups with a lower order will appear first"
+msgstr "Групите полета с по-малък пореден номер ще бъдат показани първи"
+
+#: admin/views/field-group-options.php:94
+msgid "Shown in field group list"
+msgstr "Показани в списъка с групи полета"
+
+#: admin/views/field-group-options.php:104
+msgid "Hide on screen"
+msgstr "Скриване от екрана"
+
+#: admin/views/field-group-options.php:105
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
+msgstr "<b>Изберете</b> елементи, които да <b>скриете</b> от екрана."
+
+#: admin/views/field-group-options.php:105
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used (the one with the lowest order number)"
+msgstr ""
+"Ако множество групи полета са показани на екрана, опциите на първата група "
+"полета ще бъдат използвани (тази с най-малкия пореден номер)"
+
+#: admin/views/field-group-options.php:112
+msgid "Permalink"
+msgstr "Постоянна връзка"
+
+#: admin/views/field-group-options.php:113
+msgid "Content Editor"
+msgstr "Редактор на съдържание"
+
+#: admin/views/field-group-options.php:114
+msgid "Excerpt"
+msgstr "Откъс"
+
+#: admin/views/field-group-options.php:116
+msgid "Discussion"
+msgstr "Дискусия"
+
+#: admin/views/field-group-options.php:117
+msgid "Comments"
+msgstr "Коментари"
+
+#: admin/views/field-group-options.php:118
+msgid "Revisions"
+msgstr "Ревизии"
+
+#: admin/views/field-group-options.php:119
+msgid "Slug"
+msgstr "Кратко име"
+
+#: admin/views/field-group-options.php:120
+msgid "Author"
+msgstr "Автор"
+
+#: admin/views/field-group-options.php:121
+msgid "Format"
+msgstr "Формат"
+
+#: admin/views/field-group-options.php:122
+msgid "Page Attributes"
+msgstr "Атрибути на страницата"
+
+#: admin/views/field-group-options.php:123 fields/relationship.php:736
+msgid "Featured Image"
+msgstr "Главна снимка"
+
+#: admin/views/field-group-options.php:124
+msgid "Categories"
+msgstr "Категории"
+
+#: admin/views/field-group-options.php:125
+msgid "Tags"
+msgstr "Етикети"
+
+#: admin/views/field-group-options.php:126
+msgid "Send Trackbacks"
+msgstr "Изпращане на проследяващи връзки"
+
+#: admin/views/settings-addons.php:23
+msgid "Download & Install"
+msgstr "Сваляне и инсталиране"
+
+#: admin/views/settings-addons.php:42
+msgid "Installed"
+msgstr "Инсталирано"
+
+#: admin/views/settings-info.php:9
+msgid "Welcome to Advanced Custom Fields"
+msgstr "Добре дошли в Модерни потребителски полета"
+
+#: admin/views/settings-info.php:10
+#, php-format
+msgid ""
+"Thank you for updating! ACF %s is bigger and better than ever before. We "
+"hope you like it."
+msgstr ""
+"Благодарим, че обновихте! Модерни потребителски полета %s сега е по-голям и "
+"по-добър от всякога. Надяваме се че ще Ви хареса."
+
+#: admin/views/settings-info.php:23
+msgid "A smoother custom field experience"
+msgstr "По-удобна работа с потребителски полета"
+
+#: admin/views/settings-info.php:28
+msgid "Improved Usability"
+msgstr "Подобрена ползваемост"
+
+#: admin/views/settings-info.php:29
+msgid ""
+"Including the popular Select2 library has improved both usability and speed "
+"across a number of field types including post object, page link, taxonomy "
+"and select."
+msgstr ""
+"Включването на популярната библиотека Select2 подобри използването и "
+"скоростта на множество полета, включително обект-публикация, връзка към "
+"страница, таксономия и поле за избор."
+
+#: admin/views/settings-info.php:33
+msgid "Improved Design"
+msgstr "Подобрен дизайн"
+
+#: admin/views/settings-info.php:34
+msgid ""
+"Many fields have undergone a visual refresh to make ACF look better than "
+"ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
+"(new) fields!"
+msgstr ""
+"Много от полетата претърпяха визуални подобрения и сега изглеждат по-добре "
+"от всякога! Забележими промени могат да се видят по галерията, полето за "
+"връзка и oEmbed полето!"
+
+#: admin/views/settings-info.php:38
+msgid "Improved Data"
+msgstr "Подобрени данни"
+
+#: admin/views/settings-info.php:39
+msgid ""
+"Redesigning the data architecture has allowed sub fields to live "
+"independently from their parents. This allows you to drag and drop fields in "
+"and out of parent fields!"
+msgstr ""
+"Подобряването на архитектурата на данните позволи вложените полета да "
+"съществуват независимо от своите родители. Това позволява да ги местите "
+"извън родителите си!"
+
+#: admin/views/settings-info.php:45
+msgid "Goodbye Add-ons. Hello PRO"
+msgstr "Сбогом на добавките. Здравей, PRO"
+
+#: admin/views/settings-info.php:50
+msgid "Introducing ACF PRO"
+msgstr "Представяме Ви Модерни потребителски полета PRO"
+
+#: admin/views/settings-info.php:51
+msgid ""
+"We're changing the way premium functionality is delivered in an exciting way!"
+msgstr ""
+"Променяме начина по който Ви предоставяме платената функционалност по "
+"вълнуващ начин!"
+
+#: admin/views/settings-info.php:52
+#, php-format
+msgid ""
+"All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
+"version of ACF</a>. With both personal and developer licenses available, "
+"premium functionality is more affordable and accessible than ever before!"
+msgstr ""
+"Всички 4 платени добавки бяха обединени в една нова <a href=\"%s\">PRO "
+"версия</a>. С наличните личен лиценз и този за разработчици, платената "
+"функционалност е по-достъпна от всякога!"
+
+#: admin/views/settings-info.php:56
+msgid "Powerful Features"
+msgstr "Мощни функции"
+
+#: admin/views/settings-info.php:57
+msgid ""
+"ACF PRO contains powerful features such as repeatable data, flexible content "
+"layouts, a beautiful gallery field and the ability to create extra admin "
+"options pages!"
+msgstr ""
+"PRO версията съдържа мощни функции като повторяеми полета, гъвкави "
+"оформления на съдържанието, красиво поле за галерия и възможността да "
+"създавате допълнителни страници с опции в администрацията."
+
+#: admin/views/settings-info.php:58
+#, php-format
+msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
+msgstr "Научете повече за <a href=\"%s\">PRO функциите</a>."
+
+#: admin/views/settings-info.php:62
+msgid "Easy Upgrading"
+msgstr "Лесно обновяване"
+
+#: admin/views/settings-info.php:63
+#, php-format
+msgid ""
+"To help make upgrading easy, <a href=\"%s\">login to your store account</a> "
+"and claim a free copy of ACF PRO!"
+msgstr ""
+"За да направите обновяването лесно, <a href=\"%s\">влезте в профила си</a> и "
+"вземете вашето безплатно PRO копие!"
+
+#: admin/views/settings-info.php:64
+#, php-format
+msgid ""
+"We also wrote an <a href=\"%s\">upgrade guide</a> to answer any questions, "
+"but if you do have one, please contact our support team via the <a href=\"%s"
+"\">help desk</a>"
+msgstr ""
+"Също така написахме <a href=\"%s\">съветник по обновяването</a> за да "
+"отговорим на всякакви въпроси, но ако имате някакви други въпроси, моля "
+"свържете се с нашия отдел <a href=\"%s\">Поддръжка</a>"
+
+#: admin/views/settings-info.php:72
+msgid "Under the Hood"
+msgstr "Под капака"
+
+#: admin/views/settings-info.php:77
+msgid "Smarter field settings"
+msgstr "По-умни настройки на полетата"
+
+#: admin/views/settings-info.php:78
+msgid "ACF now saves its field settings as individual post objects"
+msgstr "Вече записваме настройките на полетата като индивидуални публикации"
+
+#: admin/views/settings-info.php:82
+msgid "More AJAX"
+msgstr "Повече AJAX"
+
+#: admin/views/settings-info.php:83
+msgid "More fields use AJAX powered search to speed up page loading"
+msgstr ""
+"Още повече полета използват AJAX-базирано търсене, за да ускорят зареждането "
+"на страниците"
+
+#: admin/views/settings-info.php:87
+msgid "Local JSON"
+msgstr "Локален JSON"
+
+#: admin/views/settings-info.php:88
+msgid "New auto export to JSON feature improves speed"
+msgstr "Новия автоматичен експорт към JSON увеличава скоростта"
+
+#: admin/views/settings-info.php:94
+msgid "Better version control"
+msgstr "По-добър контрол на версиите"
+
+#: admin/views/settings-info.php:95
+msgid ""
+"New auto export to JSON feature allows field settings to be version "
+"controlled"
+msgstr ""
+"Новия автоматичен експорт към JSON позволява настройките на полетата да "
+"бъдат под контрол на версиите"
+
+#: admin/views/settings-info.php:99
+msgid "Swapped XML for JSON"
+msgstr "Заменихме XML с JSON"
+
+#: admin/views/settings-info.php:100
+msgid "Import / Export now uses JSON in favour of XML"
+msgstr "Импортирането и експортирането вече използват JSON вместо XML"
+
+#: admin/views/settings-info.php:104
+msgid "New Forms"
+msgstr "Нови формуляри"
+
+#: admin/views/settings-info.php:105
+msgid "Fields can now be mapped to comments, widgets and all user forms!"
+msgstr ""
+"Полетата вече могат да бъдат закачени към коментари, джаджи и "
+"потребителските формуляри!"
+
+#: admin/views/settings-info.php:112
+msgid "A new field for embedding content has been added"
+msgstr "Ново поле за вграждане на съдържание бе добавено"
+
+#: admin/views/settings-info.php:116
+msgid "New Gallery"
+msgstr "Нова галерия"
+
+#: admin/views/settings-info.php:117
+msgid "The gallery field has undergone a much needed facelift"
+msgstr "Полето за галерия претърпя сериозни визуални подобрения"
+
+#: admin/views/settings-info.php:121
+msgid "New Settings"
+msgstr "Нови настройки"
+
+#: admin/views/settings-info.php:122
+msgid ""
+"Field group settings have been added for label placement and instruction "
+"placement"
+msgstr ""
+"Бяха добавени настройки на групите полета за поставяне на етикет и инструкции"
+
+#: admin/views/settings-info.php:128
+msgid "Better Front End Forms"
+msgstr "По-добри форми в сайта"
+
+#: admin/views/settings-info.php:129
+msgid "acf_form() can now create a new post on submission"
+msgstr "acf_form() вече може да създава нови публикации при изпращане"
+
+#: admin/views/settings-info.php:133
+msgid "Better Validation"
+msgstr "По-добра валидация"
+
+#: admin/views/settings-info.php:134
+msgid "Form validation is now done via PHP + AJAX in favour of only JS"
+msgstr "Валидацията на формулярите вече се прави с PHP + AJAX вместо само с JS"
+
+#: admin/views/settings-info.php:138
+msgid "Relationship Field"
+msgstr "Поле за връзка"
+
+#: admin/views/settings-info.php:139
+msgid ""
+"New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
+msgstr ""
+"Нови настройки на полето за връзка за 'Филтри' (търсене, тип публикация, "
+"таксономия)"
+
+#: admin/views/settings-info.php:145
+msgid "Moving Fields"
+msgstr "Местене на полета"
+
+#: admin/views/settings-info.php:146
+msgid ""
+"New field group functionality allows you to move a field between groups & "
+"parents"
+msgstr ""
+"Новата функционалност на групите полета Ви позволява да местите полета "
+"измежду групите и родителите"
+
+#: admin/views/settings-info.php:150 fields/page_link.php:36
+msgid "Page Link"
+msgstr "Връзка към страница"
+
+#: admin/views/settings-info.php:151
+msgid "New archives group in page_link field selection"
+msgstr "Нова група архиви в page_link полето"
+
+#: admin/views/settings-info.php:155
+msgid "Better Options Pages"
+msgstr "По-добри страници с опции"
+
+#: admin/views/settings-info.php:156
+msgid ""
+"New functions for options page allow creation of both parent and child menu "
+"pages"
+msgstr ""
+"Новите функции за страници с опции позволяват създаването както на "
+"родителски страници, така и на страници-деца."
+
+#: admin/views/settings-info.php:165
+#, php-format
+msgid "We think you'll love the changes in %s."
+msgstr "Смятаме, че ще харесате промените в %s."
+
+#: admin/views/settings-tools-export.php:27
+msgid "Export Field Groups to PHP"
+msgstr "Експортиране на групите полета към PHP"
+
+#: admin/views/settings-tools-export.php:31
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"Следния код може да се използва, за да регистрирате локална версия на "
+"избраните групи полета. Локалната група полета може да помогне с по-бързо "
+"зареждане, контрол на версиите и динамични настройки. Просто копирайте и "
+"сложете кода във файла functions.php на темата си или го сложете във външен "
+"файл."
+
+#: admin/views/settings-tools.php:5
+msgid "Select Field Groups"
+msgstr "Избор на групи полета"
+
+#: admin/views/settings-tools.php:35
+msgid "Export Field Groups"
+msgstr "Експортиране на групи полета"
+
+#: admin/views/settings-tools.php:38
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"Изберете групите полета които искате да експортирате и после изберете "
+"желания метод. Използвайте бутона за сваляне за да създадете .json файл, "
+"които можете да импортирате в друга инсталация. Използвайте бутона за "
+"генериране за да експортирате към PHP код, които можете да поставите в "
+"темата си."
+
+#: admin/views/settings-tools.php:50
+msgid "Download export file"
+msgstr "Сваляне на експортирания файл"
+
+#: admin/views/settings-tools.php:51
+msgid "Generate export code"
+msgstr "Генериране на код"
+
+#: admin/views/settings-tools.php:64
+msgid "Import Field Groups"
+msgstr "Импортиране на групи полета"
+
+#: admin/views/settings-tools.php:67
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"Изберете JSON файла, който искате да импортирате. Когато натиснете бутона за "
+"импортиране, групите полета ще бъдат импортирани."
+
+#: admin/views/settings-tools.php:77 fields/file.php:46
+msgid "Select File"
+msgstr "Избор на файл"
+
+#: admin/views/settings-tools.php:86
+msgid "Import"
+msgstr "Импортиране"
+
+#: admin/views/update-network.php:8 admin/views/update.php:8
+msgid "Advanced Custom Fields Database Upgrade"
+msgstr "Модерни потребителски полета - Обновяване на базата данни"
+
+#: admin/views/update-network.php:10
+msgid ""
+"The following sites require a DB upgrade. Check the ones you want to update "
+"and then click “Upgrade Database”."
+msgstr ""
+"Следните сайтове имат нужда от обновяване на базата данни. Изберете тези, "
+"които искате да обновите и натиснете на \"Обновяване на базата данни\"."
+
+#: admin/views/update-network.php:19 admin/views/update-network.php:27
+msgid "Site"
+msgstr "Сайт"
+
+#: admin/views/update-network.php:47
+#, php-format
+msgid "Site requires database upgrade from %s to %s"
+msgstr "Сайтът изисква обновяване на базата данни от %s до %s"
+
+#: admin/views/update-network.php:49
+msgid "Site is up to date"
+msgstr "Сайтът няма нужда от обновяване"
+
+#: admin/views/update-network.php:62 admin/views/update.php:16
+msgid "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
+msgstr "Обновяването на базата данни бе завършено. <a href=\"%s\">Връщане към мрежовото табло</a>"
+
+#: admin/views/update-network.php:101 admin/views/update-notice.php:35
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
+msgstr ""
+"Силно Ви препоръчваме да архивирате вашата база данни преди да продължите. "
+"Сигурни ли сте, че искате да продължите с обновяването?"
+
+#: admin/views/update-network.php:157
+msgid "Upgrade complete"
+msgstr "Обновяването завърши"
+
+#: admin/views/update-network.php:161
+msgid "Upgrading data to"
+msgstr "Обновяване на данните към"
+
+#: admin/views/update-notice.php:23
+msgid "Database Upgrade Required"
+msgstr "Изисква се обновяване на базата данни"
+
+#: admin/views/update-notice.php:25
+#, php-format
+msgid "Thank you for updating to %s v%s!"
+msgstr "Благодарим ви за обновяването към %s v%s!"
+
+#: admin/views/update-notice.php:25
+msgid ""
+"Before you start using the new awesome features, please update your database "
+"to the newest version."
+msgstr ""
+"Преди да започнете да използвате новите страхотни функции, моля обновете "
+"базата данни до последната версия."
+
+#: admin/views/update.php:12
+msgid "Reading upgrade tasks..."
+msgstr "Прочитане на задачите за обновяване..."
+
+#: admin/views/update.php:14
+#, php-format
+msgid "Upgrading data to version %s"
+msgstr "Обновяване на данните до версия %s"
+
+#: admin/views/update.php:16
+msgid "See what's new"
+msgstr "Вижте какво е новото"
+
+#: admin/views/update.php:110
+msgid "No updates available."
+msgstr "Няма налични актуализации."
+
+#: api/api-helpers.php:909
+msgid "Thumbnail"
+msgstr "Картинка"
+
+#: api/api-helpers.php:910
+msgid "Medium"
+msgstr "Средна"
+
+#: api/api-helpers.php:911
+msgid "Large"
+msgstr "Голяма"
+
+#: api/api-helpers.php:959
+msgid "Full Size"
+msgstr "Пълен размер"
+
+#: api/api-helpers.php:1149 api/api-helpers.php:1711
+msgid "(no title)"
+msgstr "(без заглавие)"
+
+#: api/api-helpers.php:3322
+#, php-format
+msgid "Image width must be at least %dpx."
+msgstr "Ширината на изображението трябва да бъде поне %d пиксела."
+
+#: api/api-helpers.php:3327
+#, php-format
+msgid "Image width must not exceed %dpx."
+msgstr "Ширината на изображението не трябва да надвишава %d пиксела."
+
+#: api/api-helpers.php:3343
+#, php-format
+msgid "Image height must be at least %dpx."
+msgstr "Височината на изображението трябва да бъде поне %d пиксела."
+
+#: api/api-helpers.php:3348
+#, php-format
+msgid "Image height must not exceed %dpx."
+msgstr "Височината на изображението не трябва да надвишава %d пиксела."
+
+#: api/api-helpers.php:3366
+#, php-format
+msgid "File size must be at least %s."
+msgstr "Размерът на файла трябва да бъде поне %s."
+
+#: api/api-helpers.php:3371
+#, php-format
+msgid "File size must must not exceed %s."
+msgstr "Размерът на файла трябва да не надвишава %s."
+
+#: api/api-helpers.php:3405
+#, php-format
+msgid "File type must be %s."
+msgstr "Типът на файла трябва да бъде %s."
+
+#: api/api-template.php:1069
+msgid "Spam Detected"
+msgstr "Открит спам"
+
+#: api/api-template.php:1214 pro/fields/gallery.php:572
+msgid "Update"
+msgstr "Обновяване"
+
+#: api/api-template.php:1215
+msgid "Post updated"
+msgstr "Публикацията бе актуализирана"
+
+#: core/field.php:131
+msgid "Basic"
+msgstr "Основен"
+
+#: core/field.php:132
+msgid "Content"
+msgstr "Съдържание"
+
+#: core/field.php:133
+msgid "Choice"
+msgstr "Избор"
+
+#: core/field.php:134
+msgid "Relational"
+msgstr "Релационен"
+
+#: core/field.php:135
+msgid "jQuery"
+msgstr "jQuery"
+
+#: core/field.php:136 fields/checkbox.php:226 fields/radio.php:231
+#: pro/fields/flexible-content.php:501 pro/fields/flexible-content.php:550
+#: pro/fields/repeater.php:467
+msgid "Layout"
+msgstr "Шаблон"
+
+#: core/input.php:218
+msgid "Expand Details"
+msgstr "Разпъване на детайлите"
+
+#: core/input.php:219
+msgid "Collapse Details"
+msgstr "Свиване на детайлите"
+
+#: core/input.php:220
+msgid "Validation successful"
+msgstr "Успешна валидация"
+
+#: core/input.php:221
+msgid "Validation failed"
+msgstr "Провалена валидация"
+
+#: core/input.php:222
+msgid "1 field requires attention"
+msgstr "1 поле изисква внимание"
+
+#: core/input.php:223
+#, php-format
+msgid "%d fields require attention"
+msgstr "%d полета изискват внимание"
+
+#: core/input.php:224
+msgid "Restricted"
+msgstr "Ограничен"
+
+#: core/input.php:541
+#, php-format
+msgid "%s value is required"
+msgstr "%s стойност е задължителна"
+
+#: fields/checkbox.php:36 fields/taxonomy.php:790
+msgid "Checkbox"
+msgstr "Отметка"
+
+#: fields/checkbox.php:144
+msgid "Toggle All"
+msgstr "Превключване на всички"
+
+#: fields/checkbox.php:208 fields/radio.php:193 fields/select.php:354
+msgid "Choices"
+msgstr "Опции"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:355
+msgid "Enter each choice on a new line."
+msgstr "Въведете всяка опция на нов ред."
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:355
+msgid "For more control, you may specify both a value and label like this:"
+msgstr "За повече контрол, можете да уточните и стойност и етикет, например:"
+
+#: fields/checkbox.php:209 fields/radio.php:194 fields/select.php:355
+msgid "red : Red"
+msgstr "red : Red"
+
+#: fields/checkbox.php:217 fields/color_picker.php:155 fields/email.php:124
+#: fields/number.php:150 fields/radio.php:222 fields/select.php:363
+#: fields/text.php:148 fields/textarea.php:145 fields/true_false.php:115
+#: fields/url.php:117 fields/wysiwyg.php:376
+msgid "Default Value"
+msgstr "Стойност по подразбиране"
+
+#: fields/checkbox.php:218 fields/select.php:364
+msgid "Enter each default value on a new line"
+msgstr "Въведете всяка стойност по подразбиране на нов ред"
+
+#: fields/checkbox.php:232 fields/radio.php:237
+msgid "Vertical"
+msgstr "Вертикален"
+
+#: fields/checkbox.php:233 fields/radio.php:238
+msgid "Horizontal"
+msgstr "Хоризонтален"
+
+#: fields/checkbox.php:240
+msgid "Toggle"
+msgstr "Превключване"
+
+#: fields/checkbox.php:241
+msgid "Prepend an extra checkbox to toggle all choices"
+msgstr "Прибавете допълнителна отметка за да превключите всички опции"
+
+#: fields/color_picker.php:36
+msgid "Color Picker"
+msgstr "Избор на цвят"
+
+#: fields/color_picker.php:83
+msgid "Clear"
+msgstr "Изчистване"
+
+#: fields/color_picker.php:84
+msgid "Default"
+msgstr "По подразбиране"
+
+#: fields/color_picker.php:85
+msgid "Select Color"
+msgstr "Избор на цвят"
+
+#: fields/color_picker.php:86
+msgid "Current Color"
+msgstr "Текущ цвят"
+
+#: fields/date_picker.php:36
+msgid "Date Picker"
+msgstr "Избор на дата"
+
+#: fields/date_picker.php:72
+msgid "Done"
+msgstr "Готово"
+
+#: fields/date_picker.php:73
+msgid "Today"
+msgstr "Днес"
+
+#: fields/date_picker.php:76
+msgid "Show a different month"
+msgstr "Показване на различен месец"
+
+#: fields/date_picker.php:174
+msgid "Display Format"
+msgstr "Формат на показване"
+
+#: fields/date_picker.php:175
+msgid "The format displayed when editing a post"
+msgstr "Форматът, показан при редакция на публикация"
+
+#: fields/date_picker.php:189
+msgid "Return format"
+msgstr "Формат при връщане"
+
+#: fields/date_picker.php:190
+msgid "The format returned via template functions"
+msgstr "Форматът, който се връща от шаблонните функции"
+
+#: fields/date_picker.php:205
+msgid "Week Starts On"
+msgstr "Седмицата започва с"
+
+#: fields/email.php:36
+msgid "Email"
+msgstr "Email"
+
+#: fields/email.php:125 fields/number.php:151 fields/radio.php:223
+#: fields/text.php:149 fields/textarea.php:146 fields/url.php:118
+#: fields/wysiwyg.php:377
+msgid "Appears when creating a new post"
+msgstr "Появява се при създаване на нова публикация"
+
+#: fields/email.php:133 fields/number.php:159 fields/password.php:137
+#: fields/text.php:157 fields/textarea.php:154 fields/url.php:126
+msgid "Placeholder Text"
+msgstr "Текст при липса на стойност"
+
+#: fields/email.php:134 fields/number.php:160 fields/password.php:138
+#: fields/text.php:158 fields/textarea.php:155 fields/url.php:127
+msgid "Appears within the input"
+msgstr "Показва се в полето при липса на стойност"
+
+#: fields/email.php:142 fields/number.php:168 fields/password.php:146
+#: fields/text.php:166
+msgid "Prepend"
+msgstr "Поставяне в началото"
+
+#: fields/email.php:143 fields/number.php:169 fields/password.php:147
+#: fields/text.php:167
+msgid "Appears before the input"
+msgstr "Показва се преди полето"
+
+#: fields/email.php:151 fields/number.php:177 fields/password.php:155
+#: fields/text.php:175
+msgid "Append"
+msgstr "Поставяне в края"
+
+#: fields/email.php:152 fields/number.php:178 fields/password.php:156
+#: fields/text.php:176
+msgid "Appears after the input"
+msgstr "Показва се след полето"
+
+#: fields/file.php:36
+msgid "File"
+msgstr "Файл"
+
+#: fields/file.php:47
+msgid "Edit File"
+msgstr "Редактиране на файл"
+
+#: fields/file.php:48
+msgid "Update File"
+msgstr "Актуализация на файла"
+
+#: fields/file.php:49 pro/fields/gallery.php:55
+msgid "uploaded to this post"
+msgstr "прикачен към тази публикация"
+
+#: fields/file.php:142
+msgid "File Name"
+msgstr "Име на файла"
+
+#: fields/file.php:146
+msgid "File Size"
+msgstr "Размер на файла"
+
+#: fields/file.php:169
+msgid "No File selected"
+msgstr "Няма избран файл"
+
+#: fields/file.php:169
+msgid "Add File"
+msgstr "Добавяне на файл"
+
+#: fields/file.php:214 fields/image.php:200 fields/taxonomy.php:859
+msgid "Return Value"
+msgstr "Върната стойност"
+
+#: fields/file.php:215 fields/image.php:201
+msgid "Specify the returned value on front end"
+msgstr "Уточнява върнатата стойност в сайта"
+
+#: fields/file.php:220
+msgid "File Array"
+msgstr "Масив от файлове"
+
+#: fields/file.php:221
+msgid "File URL"
+msgstr "URL на файла"
+
+#: fields/file.php:222
+msgid "File ID"
+msgstr "ID на файла"
+
+#: fields/file.php:229 fields/image.php:225 pro/fields/gallery.php:655
+msgid "Library"
+msgstr "Библиотека"
+
+#: fields/file.php:230 fields/image.php:226 pro/fields/gallery.php:656
+msgid "Limit the media library choice"
+msgstr "Ограничаване на избора на файлове"
+
+#: fields/file.php:236 fields/image.php:232 pro/fields/gallery.php:662
+msgid "Uploaded to post"
+msgstr "Прикачени към публикация"
+
+#: fields/file.php:243 fields/image.php:239 pro/fields/gallery.php:669
+msgid "Minimum"
+msgstr "Минимум"
+
+#: fields/file.php:244 fields/file.php:255
+msgid "Restrict which files can be uploaded"
+msgstr "Ограничаване какви файлове могат да бъдат качени"
+
+#: fields/file.php:247 fields/file.php:258 fields/image.php:262
+#: fields/image.php:295 pro/fields/gallery.php:692 pro/fields/gallery.php:725
+msgid "File size"
+msgstr "Размер на файла"
+
+#: fields/file.php:254 fields/image.php:272 pro/fields/gallery.php:702
+msgid "Maximum"
+msgstr "Максимум"
+
+#: fields/file.php:265 fields/image.php:305 pro/fields/gallery.php:735
+msgid "Allowed file types"
+msgstr "Позволени файлови типове"
+
+#: fields/file.php:266 fields/image.php:306 pro/fields/gallery.php:736
+msgid "Comma separated list. Leave blank for all types"
+msgstr "Списък, разделен със запетаи. Оставете празно за всички типове"
+
+#: fields/google-map.php:36
+msgid "Google Map"
+msgstr "Google карта"
+
+#: fields/google-map.php:51
+msgid "Locating"
+msgstr "Намиране"
+
+#: fields/google-map.php:52
+msgid "Sorry, this browser does not support geolocation"
+msgstr "За съжаление този браузър не поддържа геолокация"
+
+#: fields/google-map.php:133 fields/relationship.php:722
+msgid "Search"
+msgstr "Търсене"
+
+#: fields/google-map.php:134
+msgid "Clear location"
+msgstr "Изчистване на местоположение"
+
+#: fields/google-map.php:135
+msgid "Find current location"
+msgstr "Намерете текущото местоположение"
+
+#: fields/google-map.php:138
+msgid "Search for address..."
+msgstr "Търсене на адрес..."
+
+#: fields/google-map.php:168 fields/google-map.php:179
+msgid "Center"
+msgstr "Центриране"
+
+#: fields/google-map.php:169 fields/google-map.php:180
+msgid "Center the initial map"
+msgstr "Центриране на първоначалната карта"
+
+#: fields/google-map.php:193
+msgid "Zoom"
+msgstr "Увеличаване"
+
+#: fields/google-map.php:194
+msgid "Set the initial zoom level"
+msgstr "Задаване на ниво на първоначалното увеличение"
+
+#: fields/google-map.php:203 fields/image.php:251 fields/image.php:284
+#: fields/oembed.php:275 pro/fields/gallery.php:681 pro/fields/gallery.php:714
+msgid "Height"
+msgstr "Височина"
+
+#: fields/google-map.php:204
+msgid "Customise the map height"
+msgstr "Персонализиране на височината на картата"
+
+#: fields/image.php:36
+msgid "Image"
+msgstr "Изображение"
+
+#: fields/image.php:51
+msgid "Select Image"
+msgstr "Избор на изображение"
+
+#: fields/image.php:52 pro/fields/gallery.php:53
+msgid "Edit Image"
+msgstr "Редактиране на изображение"
+
+#: fields/image.php:53 pro/fields/gallery.php:54
+msgid "Update Image"
+msgstr "Актуализация на изображението"
+
+#: fields/image.php:54
+msgid "Uploaded to this post"
+msgstr "Прикачени към тази публикация"
+
+#: fields/image.php:55
+msgid "All images"
+msgstr "Всички изображения"
+
+#: fields/image.php:152
+msgid "No image selected"
+msgstr "Няма избрано изображение"
+
+#: fields/image.php:152
+msgid "Add Image"
+msgstr "Добавяне на изображение"
+
+#: fields/image.php:206
+msgid "Image Array"
+msgstr "Масив от изображения"
+
+#: fields/image.php:207
+msgid "Image URL"
+msgstr "URL на изображението"
+
+#: fields/image.php:208
+msgid "Image ID"
+msgstr "ID на изображението"
+
+#: fields/image.php:215 pro/fields/gallery.php:645
+msgid "Preview Size"
+msgstr "Размер на визуализация"
+
+#: fields/image.php:216 pro/fields/gallery.php:646
+msgid "Shown when entering data"
+msgstr "Показва се при въвеждане на данни"
+
+#: fields/image.php:240 fields/image.php:273 pro/fields/gallery.php:670
+#: pro/fields/gallery.php:703
+msgid "Restrict which images can be uploaded"
+msgstr "Ограничаване какви изображения могат да бъдат качени"
+
+#: fields/image.php:243 fields/image.php:276 fields/oembed.php:264
+#: pro/fields/gallery.php:673 pro/fields/gallery.php:706
+msgid "Width"
+msgstr "Ширина"
+
+#: fields/message.php:36 fields/message.php:116 fields/true_false.php:106
+msgid "Message"
+msgstr "Съобщение"
+
+#: fields/message.php:125 fields/textarea.php:182
+msgid "New Lines"
+msgstr "Нови редове"
+
+#: fields/message.php:126 fields/textarea.php:183
+msgid "Controls how new lines are rendered"
+msgstr "Контролира как се извеждат новите редове"
+
+#: fields/message.php:130 fields/textarea.php:187
+msgid "Automatically add paragraphs"
+msgstr "Автоматично добавяне на параграфи"
+
+#: fields/message.php:131 fields/textarea.php:188
+msgid "Automatically add &lt;br&gt;"
+msgstr "Автоматично добавяне на &lt;br&gt;"
+
+#: fields/message.php:132 fields/textarea.php:189
+msgid "No Formatting"
+msgstr "Без форматиране"
+
+#: fields/message.php:139
+msgid "Escape HTML"
+msgstr "Изчистване на HTML"
+
+#: fields/message.php:140
+msgid "Allow HTML markup to display as visible text instead of rendering"
+msgstr "Позволяване на HTML-а да се показва като видим текст"
+
+#: fields/number.php:36
+msgid "Number"
+msgstr "Число"
+
+#: fields/number.php:186
+msgid "Minimum Value"
+msgstr "Минимална стойност"
+
+#: fields/number.php:195
+msgid "Maximum Value"
+msgstr "Максимална стойност"
+
+#: fields/number.php:204
+msgid "Step Size"
+msgstr "Размер на стъпката"
+
+#: fields/number.php:242
+msgid "Value must be a number"
+msgstr "Стойността трябва да е число"
+
+#: fields/number.php:260
+#, php-format
+msgid "Value must be equal to or higher than %d"
+msgstr "Стойността трябва да е равна на или по-голяма от %d"
+
+#: fields/number.php:268
+#, php-format
+msgid "Value must be equal to or lower than %d"
+msgstr "Стойността трябва да е равна на или по-малка от %d"
+
+#: fields/oembed.php:36
+msgid "oEmbed"
+msgstr "oEmbed"
+
+#: fields/oembed.php:212
+msgid "Enter URL"
+msgstr "Въведете URL адрес"
+
+#: fields/oembed.php:225
+msgid "No embed found for the given URL."
+msgstr "Няма открито вграждане за посочения URL адрес."
+
+#: fields/oembed.php:261 fields/oembed.php:272
+msgid "Embed Size"
+msgstr "Размери за вграждане"
+
+#: fields/page_link.php:197
+msgid "Archives"
+msgstr "Архиви"
+
+#: fields/page_link.php:520 fields/post_object.php:386
+#: fields/relationship.php:689
+msgid "Filter by Post Type"
+msgstr "Филтриране по тип публикация"
+
+#: fields/page_link.php:528 fields/post_object.php:394
+#: fields/relationship.php:697
+msgid "All post types"
+msgstr "Всички типове публикации"
+
+#: fields/page_link.php:534 fields/post_object.php:400
+#: fields/relationship.php:703
+msgid "Filter by Taxonomy"
+msgstr "Филтриране по таксономия"
+
+#: fields/page_link.php:542 fields/post_object.php:408
+#: fields/relationship.php:711
+msgid "All taxonomies"
+msgstr "Всички таксономии"
+
+#: fields/page_link.php:548 fields/post_object.php:414 fields/select.php:372
+#: fields/taxonomy.php:803 fields/user.php:456
+msgid "Allow Null?"
+msgstr "Позволяване на празна стойност?"
+
+#: fields/page_link.php:562 fields/post_object.php:428 fields/select.php:386
+#: fields/user.php:470
+msgid "Select multiple values?"
+msgstr "Избиране на няколко стойности?"
+
+#: fields/password.php:36
+msgid "Password"
+msgstr "Парола"
+
+#: fields/post_object.php:36 fields/post_object.php:447
+#: fields/relationship.php:768
+msgid "Post Object"
+msgstr "Обект-публикация"
+
+#: fields/post_object.php:442 fields/relationship.php:763
+msgid "Return Format"
+msgstr "Формат на върнатите данни"
+
+#: fields/post_object.php:448 fields/relationship.php:769
+msgid "Post ID"
+msgstr "ID на публикация"
+
+#: fields/radio.php:36
+msgid "Radio Button"
+msgstr "Радио бутон"
+
+#: fields/radio.php:202
+msgid "Other"
+msgstr "Друго"
+
+#: fields/radio.php:206
+msgid "Add 'other' choice to allow for custom values"
+msgstr "Добавяне на избор 'друго' като възможност за потребителските стойности"
+
+#: fields/radio.php:212
+msgid "Save Other"
+msgstr "Запазване"
+
+#: fields/radio.php:216
+msgid "Save 'other' values to the field's choices"
+msgstr "Запазване на стойностите 'друго' към опциите на полето"
+
+#: fields/relationship.php:36
+msgid "Relationship"
+msgstr "Връзка"
+
+#: fields/relationship.php:48
+msgid "Minimum values reached ( {min} values )"
+msgstr "Минималния брой стойности бе достигнат ( {min} стойности )"
+
+#: fields/relationship.php:49
+msgid "Maximum values reached ( {max} values )"
+msgstr "Максималния брой стойности бе достигнат ( {min} стойности )"
+
+#: fields/relationship.php:50
+msgid "Loading"
+msgstr "Зареждане"
+
+#: fields/relationship.php:51
+msgid "No matches found"
+msgstr "Няма намерени съвпадения"
+
+#: fields/relationship.php:570
+msgid "Search..."
+msgstr "Търсене…"
+
+#: fields/relationship.php:579
+msgid "Select post type"
+msgstr "Изберете тип на публикацията"
+
+#: fields/relationship.php:592
+msgid "Select taxonomy"
+msgstr "Изберете таксономия"
+
+#: fields/relationship.php:724 fields/taxonomy.php:36 fields/taxonomy.php:773
+msgid "Taxonomy"
+msgstr "Таксономия"
+
+#: fields/relationship.php:731
+msgid "Elements"
+msgstr "Елементи"
+
+#: fields/relationship.php:732
+msgid "Selected elements will be displayed in each result"
+msgstr "Избраните елементи ще бъдат показани във всеки резултат"
+
+#: fields/relationship.php:743
+msgid "Minimum posts"
+msgstr "Минимален брой публикации"
+
+#: fields/relationship.php:752
+msgid "Maximum posts"
+msgstr "Максимален брой публикации"
+
+#: fields/relationship.php:856 pro/fields/gallery.php:817
+#, php-format
+msgid "%s requires at least %s selection"
+msgid_plural "%s requires at least %s selections"
+msgstr[0] "%s изисква поне %s избор"
+msgstr[1] "%s изисква поне %s избора"
+
+#: fields/select.php:36 fields/select.php:167 fields/taxonomy.php:795
+msgid "Select"
+msgstr "Избор"
+
+#: fields/select.php:400
+msgid "Stylised UI"
+msgstr "Стилизиран интерфейс"
+
+#: fields/select.php:414
+msgid "Use AJAX to lazy load choices?"
+msgstr "Използване на AJAX за зареждане на опциите?"
+
+#: fields/tab.php:36
+msgid "Tab"
+msgstr "Раздел"
+
+#: fields/tab.php:128
+msgid ""
+"The tab field will display incorrectly when added to a Table style repeater "
+"field or flexible content field layout"
+msgstr ""
+"Полето за раздел ще се покаже грешно когато се добави към поле-повторител с "
+"табличен стил, или поле за гъвкаво съдържание"
+
+#: fields/tab.php:129
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+"together."
+msgstr ""
+"Използвайте \"Полета Раздел\" за да организирате по-добре екраните за "
+"редактиране чрез групиране на полетата."
+
+#: fields/tab.php:130
+msgid ""
+"All fields following this \"tab field\" (or until another \"tab field\" is "
+"defined) will be grouped together using this field's label as the tab "
+"heading."
+msgstr ""
+"Всички полета след това \"раздел поле\" (или до следващото такова) ще бъдат "
+"групирани заедно в този раздел."
+
+#: fields/tab.php:144
+msgid "Placement"
+msgstr "Положение"
+
+#: fields/tab.php:156
+msgid "End-point"
+msgstr "Крайна точка"
+
+#: fields/tab.php:157
+msgid "Use this field as an end-point and start a new group of tabs"
+msgstr ""
+"Използване на това поле като крайна точка и започване на нова група раздели"
+
+#: fields/taxonomy.php:742
+msgid "None"
+msgstr "Никакъв"
+
+#: fields/taxonomy.php:774
+msgid "Select the taxonomy to be displayed"
+msgstr "Избор на таксономия"
+
+#: fields/taxonomy.php:783
+msgid "Appearance"
+msgstr "Външен вид"
+
+#: fields/taxonomy.php:784
+msgid "Select the appearance of this field"
+msgstr "Избор на външния вид на това поле"
+
+#: fields/taxonomy.php:789
+msgid "Multiple Values"
+msgstr "Множество стойности"
+
+#: fields/taxonomy.php:791
+msgid "Multi Select"
+msgstr "Множество избрани стойности"
+
+#: fields/taxonomy.php:793
+msgid "Single Value"
+msgstr "Единична стойност"
+
+#: fields/taxonomy.php:794
+msgid "Radio Buttons"
+msgstr "Радио бутони"
+
+#: fields/taxonomy.php:817
+msgid "Create Terms"
+msgstr "Създаване на термини"
+
+#: fields/taxonomy.php:818
+msgid "Allow new terms to be created whilst editing"
+msgstr "Позволяване нови термини да се създават при редактиране"
+
+#: fields/taxonomy.php:831
+msgid "Save Terms"
+msgstr "Запазване на термини"
+
+#: fields/taxonomy.php:832
+msgid "Connect selected terms to the post"
+msgstr "Свързване на избраните термини към тази публикация"
+
+#: fields/taxonomy.php:845
+msgid "Load Terms"
+msgstr "Зареждане на термини"
+
+#: fields/taxonomy.php:846
+msgid "Load value from posts terms"
+msgstr "Зареждане на стойност от термините на публикациите"
+
+#: fields/taxonomy.php:864
+msgid "Term Object"
+msgstr "Обект-термин"
+
+#: fields/taxonomy.php:865
+msgid "Term ID"
+msgstr "ID на термин"
+
+#: fields/taxonomy.php:924
+#, php-format
+msgid "User unable to add new %s"
+msgstr "Потребителят не може да добави %s"
+
+#: fields/taxonomy.php:937
+#, php-format
+msgid "%s already exists"
+msgstr "%s вече съществува"
+
+#: fields/taxonomy.php:978
+#, php-format
+msgid "%s added"
+msgstr "успешно добавяне на %s"
+
+#: fields/taxonomy.php:1023
+msgid "Add"
+msgstr "Добавяне"
+
+#: fields/text.php:36
+msgid "Text"
+msgstr "Текст"
+
+#: fields/text.php:184 fields/textarea.php:163
+msgid "Character Limit"
+msgstr "Максимален брой символи"
+
+#: fields/text.php:185 fields/textarea.php:164
+msgid "Leave blank for no limit"
+msgstr "Оставете празно за да премахнете ограничението"
+
+#: fields/textarea.php:36
+msgid "Text Area"
+msgstr "Текстова област"
+
+#: fields/textarea.php:172
+msgid "Rows"
+msgstr "Редове"
+
+#: fields/textarea.php:173
+msgid "Sets the textarea height"
+msgstr "Задава височината на текстовото поле"
+
+#: fields/true_false.php:36
+msgid "True / False"
+msgstr "Вярно / невярно"
+
+#: fields/true_false.php:107
+msgid "eg. Show extra content"
+msgstr "напр. Покажи допълнително съдържание"
+
+#: fields/url.php:36
+msgid "Url"
+msgstr "Url"
+
+#: fields/url.php:168
+msgid "Value must be a valid URL"
+msgstr "Стойността трябва да е валиден URL"
+
+#: fields/user.php:441
+msgid "Filter by role"
+msgstr "Филтриране по роля"
+
+#: fields/user.php:449
+msgid "All user roles"
+msgstr "Всички потребителски роли"
+
+#: fields/wysiwyg.php:37
+msgid "Wysiwyg Editor"
+msgstr "Редактор на съдържание"
+
+#: fields/wysiwyg.php:328
+msgid "Visual"
+msgstr "Визуален"
+
+#: fields/wysiwyg.php:329
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "Текстов"
+
+#: fields/wysiwyg.php:385
+msgid "Tabs"
+msgstr "Раздели"
+
+#: fields/wysiwyg.php:390
+msgid "Visual & Text"
+msgstr "Визуален и текстов"
+
+#: fields/wysiwyg.php:391
+msgid "Visual Only"
+msgstr "Само визуален"
+
+#: fields/wysiwyg.php:392
+msgid "Text Only"
+msgstr "Само текстов"
+
+#: fields/wysiwyg.php:399
+msgid "Toolbar"
+msgstr "Лента с инструменти"
+
+#: fields/wysiwyg.php:409
+msgid "Show Media Upload Buttons?"
+msgstr "Показване на бутоните за качване на файлове?"
+
+#: forms/post.php:294 pro/admin/options-page.php:352
+msgid "Edit field group"
+msgstr "Редактиране на група полета"
+
+#: pro/acf-pro.php:24
+msgid "Advanced Custom Fields PRO"
+msgstr "Модерни потребителски полета PRO"
+
+#: pro/acf-pro.php:191
+msgid "Flexible Content requires at least 1 layout"
+msgstr "Полето за гъвкаво съдържание изисква поне 1 шаблон полета"
+
+#: pro/admin/options-page.php:48
+msgid "Options Page"
+msgstr "Страница с опции"
+
+#: pro/admin/options-page.php:83
+msgid "No options pages exist"
+msgstr "Няма създадени страници с опции"
+
+#: pro/admin/options-page.php:276
+msgid "Options Updated"
+msgstr "Опциите бяха актуализирани"
+
+#: pro/admin/options-page.php:282
+msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
+msgstr "Няма намерени групи полета за тази страница с опции. <a href=\"%s\">Създаване на група полета</a>"
+
+#: pro/admin/settings-updates.php:137
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b>Грешка</b>. Неуспешно свързване със сървъра"
+
+#: pro/admin/settings-updates.php:267 pro/admin/settings-updates.php:338
+msgid "<b>Connection Error</b>. Sorry, please try again"
+msgstr "<b>Грешка при свързване</b>. Моля, опитайте отново"
+
+#: pro/admin/views/options-page.php:48
+msgid "Publish"
+msgstr "Публикуване"
+
+#: pro/admin/views/options-page.php:54
+msgid "Save Options"
+msgstr "Запазване на опциите"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Deactivate License"
+msgstr "Деактивиране на лиценз"
+
+#: pro/admin/views/settings-updates.php:11
+msgid "Activate License"
+msgstr "Активиране на лиценз"
+
+#: pro/admin/views/settings-updates.php:21
+msgid "License"
+msgstr "Лиценз"
+
+#: pro/admin/views/settings-updates.php:24
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see"
+msgstr ""
+"За да отключите обновяванията, моля въведете вашия лицензен код в "
+"съответното поле. Ако нямате такъв, моля вижте"
+
+#: pro/admin/views/settings-updates.php:24
+msgid "details & pricing"
+msgstr "детайли и цени"
+
+#: pro/admin/views/settings-updates.php:33
+msgid "License Key"
+msgstr "Лицензионен ключ"
+
+#: pro/admin/views/settings-updates.php:65
+msgid "Update Information"
+msgstr "Информация за обновяването"
+
+#: pro/admin/views/settings-updates.php:72
+msgid "Current Version"
+msgstr "Текуща версия"
+
+#: pro/admin/views/settings-updates.php:80
+msgid "Latest Version"
+msgstr "Последна версия"
+
+#: pro/admin/views/settings-updates.php:88
+msgid "Update Available"
+msgstr "Налице е обновяване"
+
+#: pro/admin/views/settings-updates.php:96
+msgid "Update Plugin"
+msgstr "Обновяване"
+
+#: pro/admin/views/settings-updates.php:98
+msgid "Please enter your license key above to unlock updates"
+msgstr "Моля въведете вашия лицензионен ключ за да отключите обновяванията"
+
+#: pro/admin/views/settings-updates.php:104
+msgid "Check Again"
+msgstr "Проверка"
+
+#: pro/admin/views/settings-updates.php:121
+msgid "Upgrade Notice"
+msgstr "Забележки за обновяването"
+
+#: pro/api/api-options-page.php:22 pro/api/api-options-page.php:23
+msgid "Options"
+msgstr "Опции"
+
+#: pro/core/updates.php:198
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>"
+msgstr ""
+"За да включите обновяванията, моля въведете вашия лицензионен ключ на "
+"страницата <a href=\"%s\">Актуализации</a>. Ако нямате лицензионен ключ, "
+"моля посетете <a href=\"%s\">детайли и цени</a>"
+
+#: pro/fields/flexible-content.php:36
+msgid "Flexible Content"
+msgstr "Гъвкаво съдържание"
+
+#: pro/fields/flexible-content.php:42 pro/fields/repeater.php:43
+msgid "Add Row"
+msgstr "Добавяне на ред"
+
+#: pro/fields/flexible-content.php:45
+msgid "layout"
+msgstr "шаблон"
+
+#: pro/fields/flexible-content.php:46
+msgid "layouts"
+msgstr "шаблони"
+
+#: pro/fields/flexible-content.php:47
+msgid "remove {layout}?"
+msgstr "премахване?"
+
+#: pro/fields/flexible-content.php:48
+msgid "This field requires at least {min} {identifier}"
+msgstr "Това поле изисква поне {min} {identifier}"
+
+#: pro/fields/flexible-content.php:49
+msgid "This field has a limit of {max} {identifier}"
+msgstr "Това поле има лимит от {max} {identifier}"
+
+#: pro/fields/flexible-content.php:50
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr "Това поле изисква поне {min} {label} {identifier}"
+
+#: pro/fields/flexible-content.php:51
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr "Максималния лимит на {label} бе достигнат ({max} {identifier})"
+
+#: pro/fields/flexible-content.php:52
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{available} {label} {identifier} налични  (максимум  {max})"
+
+#: pro/fields/flexible-content.php:53
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{required} {label} {identifier} задължителни (минимум {min})"
+
+#: pro/fields/flexible-content.php:211
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "Натиснете бутона \"%s\" за да започнете да създавате вашия шаблон"
+
+#: pro/fields/flexible-content.php:357
+msgid "Add layout"
+msgstr "Създаване на шаблон"
+
+#: pro/fields/flexible-content.php:360
+msgid "Remove layout"
+msgstr "Премахване на шаблон"
+
+#: pro/fields/flexible-content.php:363 pro/fields/repeater.php:312
+msgid "Click to toggle"
+msgstr "Кликнете за да превключите"
+
+#: pro/fields/flexible-content.php:503
+msgid "Reorder Layout"
+msgstr "Пренареждане на шаблон"
+
+#: pro/fields/flexible-content.php:503
+msgid "Reorder"
+msgstr "Пренареждане"
+
+#: pro/fields/flexible-content.php:504
+msgid "Delete Layout"
+msgstr "Изтриване на шаблон"
+
+#: pro/fields/flexible-content.php:505
+msgid "Duplicate Layout"
+msgstr "Дублиране на шаблон"
+
+#: pro/fields/flexible-content.php:506
+msgid "Add New Layout"
+msgstr "Добавяне на нов шаблон"
+
+#: pro/fields/flexible-content.php:560 pro/fields/repeater.php:474
+msgid "Table"
+msgstr "Таблица"
+
+#: pro/fields/flexible-content.php:561 pro/fields/repeater.php:475
+msgid "Block"
+msgstr "Блок"
+
+#: pro/fields/flexible-content.php:562 pro/fields/repeater.php:476
+msgid "Row"
+msgstr "Ред"
+
+#: pro/fields/flexible-content.php:577
+msgid "Min"
+msgstr "Минимум"
+
+#: pro/fields/flexible-content.php:590
+msgid "Max"
+msgstr "Максимум"
+
+#: pro/fields/flexible-content.php:618 pro/fields/repeater.php:483
+msgid "Button Label"
+msgstr "Етикет на бутона"
+
+#: pro/fields/flexible-content.php:627
+msgid "Minimum Layouts"
+msgstr "Минимален брой шаблони"
+
+#: pro/fields/flexible-content.php:636
+msgid "Maximum Layouts"
+msgstr "Максимален брой шаблони"
+
+#: pro/fields/gallery.php:36
+msgid "Gallery"
+msgstr "Галерия"
+
+#: pro/fields/gallery.php:52
+msgid "Add Image to Gallery"
+msgstr "Добавяне на изображение към галерия"
+
+#: pro/fields/gallery.php:56
+msgid "Maximum selection reached"
+msgstr "Максималния брой избори бе достигнат"
+
+#: pro/fields/gallery.php:343
+msgid "Length"
+msgstr "Размер"
+
+#: pro/fields/gallery.php:363
+msgid "Remove"
+msgstr "Премахване"
+
+#: pro/fields/gallery.php:543
+msgid "Add to gallery"
+msgstr "Добавяне към галерия"
+
+#: pro/fields/gallery.php:547
+msgid "Bulk actions"
+msgstr "Групови действия"
+
+#: pro/fields/gallery.php:548
+msgid "Sort by date uploaded"
+msgstr "Сортиране по дата на качване"
+
+#: pro/fields/gallery.php:549
+msgid "Sort by date modified"
+msgstr "Сортиране по дата на последна промяна"
+
+#: pro/fields/gallery.php:550
+msgid "Sort by title"
+msgstr "Сортиране по заглавие"
+
+#: pro/fields/gallery.php:551
+msgid "Reverse current order"
+msgstr "Обръщане на текущия ред"
+
+#: pro/fields/gallery.php:569
+msgid "Close"
+msgstr "Затваряне"
+
+#: pro/fields/gallery.php:627
+msgid "Minimum Selection"
+msgstr "Минимална селекция"
+
+#: pro/fields/gallery.php:636
+msgid "Maximum Selection"
+msgstr "Максимална селекция"
+
+#: pro/fields/repeater.php:36
+msgid "Repeater"
+msgstr "Повторител"
+
+#: pro/fields/repeater.php:47
+msgid "Minimum rows reached ({min} rows)"
+msgstr "Минималния брой редове бе достигнат ({min} реда)"
+
+#: pro/fields/repeater.php:48
+msgid "Maximum rows reached ({max} rows)"
+msgstr "Максималния брой редове бе достигнат ({max} реда)"
+
+#: pro/fields/repeater.php:310
+msgid "Drag to reorder"
+msgstr "Плъзнете, за да пренаредите"
+
+#: pro/fields/repeater.php:357
+msgid "Add row"
+msgstr "Добавяне на ред"
+
+#: pro/fields/repeater.php:358
+msgid "Remove row"
+msgstr "Премахване на ред"
+
+#: pro/fields/repeater.php:406
+msgid "Sub Fields"
+msgstr "Вложени полета"
+
+#: pro/fields/repeater.php:436
+msgid "Collapsed"
+msgstr "Свит"
+
+#: pro/fields/repeater.php:437
+msgid "Select a sub field to show when row is collapsed"
+msgstr "Изберете вложено поле, което да се показва когато реда е свит"
+
+#: pro/fields/repeater.php:447
+msgid "Minimum Rows"
+msgstr "Минимален брой редове"
+
+#: pro/fields/repeater.php:457
+msgid "Maximum Rows"
+msgstr "Максимален брой редове"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Pro"
+msgstr "Модерни потребителски полета PRO"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.advancedcustomfields.com/"
+msgstr "http://www.advancedcustomfields.com/"
+
+#. Description of the plugin/theme
+msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgstr "Персонализирайте WordPress с мощни, професионални и интуитивни полета"
+
+#. Author of the plugin/theme
+msgid "elliot condon"
+msgstr "Елиът Кондън"
+
+#. Author URI of the plugin/theme
+msgid "http://www.elliotcondon.com/"
+msgstr "http://www.elliotcondon.com/"

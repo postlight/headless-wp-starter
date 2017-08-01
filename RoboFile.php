@@ -53,9 +53,6 @@ class RoboFile extends \Robo\Tasks {
 			'plugin activate',
 			'acf-to-wp-api',
 			'advanced-custom-fields-pro',
-			'wp-migrate-db-pro',
-			'wp-migrate-db-pro-cli',
-			'wp-migrate-db-pro-media-files',
 		) );
 
 		$this->wp( $plugins_command );
