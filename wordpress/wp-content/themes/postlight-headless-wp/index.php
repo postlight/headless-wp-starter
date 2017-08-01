@@ -1,2 +1,2 @@
 <?php
-header('Location: /wp-json/');
+header( 'Location: /wp-json/' );
