@@ -59,6 +59,9 @@ class RoboFile extends \Robo\Tasks {
 
 		$this->wp( 'user create nedstark nedstark@headlesswpstarter.dev' );
 
+		// Pretty URL structure required for wp-json path to work correctly
+		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
+
 		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (nedstark/winteriscoming)' );
 		$this->server();
 	}
