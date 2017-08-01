@@ -36,15 +36,15 @@ robo wordpress:setup
 wp server
 ```
 
-The site will be running at [http://localhost:3000](http://localhost:3000).
+The site will be running at [http://localhost:8080](http://localhost:8080).
 
 ### Develop WordPress
 
 At this point you can start setting up custom fields, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. When you do, be sure to [use WordPress coding standards](https://github.com/postlight/headless-wp-starter/blob/master/wordpress/wp-content/themes/postlight-headless-wp/README.md).
 
 
-* The backend is running at [http://localhost:3000](http://localhost:3000)
-* WordPress admin is at [http://localhost:3000/wp-admin/](http://localhost:3000/wp-admin/)  nedstark / winteriscoming
+* The backend is running at [http://localhost:8080](http://localhost:8080)
+* WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/)  nedstark / winteriscoming
 * Primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`
 
 
