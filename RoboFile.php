@@ -10,7 +10,14 @@ define( 'WP_DIR', PROJECT_DIR . '/wordpress' );
  */
 class RoboFile extends \Robo\Tasks {
 
-	public function wordpressSetup() {
+	public function wordpressSetup( $opts = [
+		'wp-user' => 'nedstark',
+		'wp-pw' => 'winteriscoming',
+		'wp-theme-dir' => 'postlight-headless-wp',
+		'wp-theme-name' => 'Postlight Headless WP Starter',
+		'wp-email' => 'nedstark@headlesswpstarter.dev',
+		'wp-plugins' => array(),
+	] ) {
 		$confirm = $this->io()->confirm( 'This will replace your current ' .
 		'WordPress install. Are you sure you want to do this?', false );
 
@@ -31,16 +38,16 @@ class RoboFile extends \Robo\Tasks {
 		$install_command = implode( ' ', array(
 			'core install',
 			'--url=localhost:8080',
-			'--title="Postlight Headless WP Starter"',
-			'--admin_user="nedstark"',
-			'--admin_password="winteriscoming"',
-			'--admin_email="nedstark@headlesswpstarter.dev"',
+			'--title="' . $opts['wp-theme-name'] . '"',
+			'--admin_user="' . $opts['wp-user'] . '"',
+			'--admin_password="' . $opts['wp-pw'] . '"',
+			'--admin_email="' . $opts['wp-email'] . '"',
 			'--skip-email',
 		) );
 
 		$this->wp( $install_command );
 
-		$this->wp( 'theme activate postlight-headless-wp' );
+		$this->wp( 'theme activate ' . $opts['wp-theme-dir'] );
 		$this->wp( 'theme delete twentyfourteen' );
 		$this->wp( 'theme delete twentyfifteen' );
 		$this->wp( 'theme delete twentysixteen' );
@@ -49,20 +56,22 @@ class RoboFile extends \Robo\Tasks {
 		$this->wp( 'plugin delete akismet' );
 		$this->wp( 'plugin delete hello' );
 
-		$plugins_command = implode( ' ', array(
-			'plugin activate',
-			'acf-to-wp-api',
-			'advanced-custom-fields-pro',
-		) );
+		if ( is_array( $opts['wp-plugins'] ) && sizeof( $opts['wp-plugins'] ) > 0 ) {
+			$installed_plugin_directories = $opts['wp-plugins'];
+		} else {
+			$installed_plugins = array_filter( glob( WP_DIR . '/wp-content/plugins/*' ), 'is_dir' );
+			$installed_plugin_directories = array_filter( str_replace( WP_DIR . '/wp-content/plugins/', '', $installed_plugins ) );
+		}
 
-		$this->wp( $plugins_command );
-
-		$this->wp( 'user create nedstark nedstark@headlesswpstarter.dev' );
+		if ( sizeof( $installed_plugin_directories ) > 0 ) {
+			$plugins_command = 'plugin activate ' . ( implode( ' ', $installed_plugin_directories ) );
+			$this->wp( $plugins_command );
+		}
 
 		// Pretty URL structure required for wp-json path to work correctly
 		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
 
-		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (nedstark/winteriscoming)' );
+		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (' . $opts['wp-user'] . '/' . $opts['wp-pw'] . ')' );
 		$this->server();
 	}
 
