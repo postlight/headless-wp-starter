@@ -1,0 +1,12 @@
+command:
+  wordpress:
+      setup:
+        options:
+          wp-user: nedstark
+          wp-pw: winteriscoming
+          wp-theme-dir: postlight-headless-wp
+          wp-theme-name: Postlight Headless WP Starter
+          wp-email: nedstark@headlesswpstarter.dev
+          # wp-plugins is optional.i
+          # If not set, Robo will activate all the plugins that are installed.
+          # wp-plugins:
