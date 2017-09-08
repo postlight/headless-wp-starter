@@ -7,6 +7,7 @@ command:
           wp-theme-dir: postlight-headless-wp
           wp-theme-name: Postlight Headless WP Starter
           wp-email: nedstark@headlesswpstarter.dev
+          wp-db-name: wp_headless
           # wp-plugins is optional.i
           # If not set, Robo will activate all the plugins that are installed.
           # wp-plugins:
