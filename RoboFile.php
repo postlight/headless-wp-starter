@@ -74,7 +74,6 @@ class RoboFile extends \Robo\Tasks {
 		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
 
 		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (' . $opts['wp-user'] . '/' . $opts['wp-pw'] . ')' );
-		$this->server();
 	}
 
 	public function server() {
