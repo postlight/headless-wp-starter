@@ -16,6 +16,7 @@ class RoboFile extends \Robo\Tasks {
 		'wp-theme-dir' => 'postlight-headless-wp',
 		'wp-theme-name' => 'Postlight Headless WP Starter',
 		'wp-email' => 'nedstark@headlesswpstarter.dev',
+		'wp-db-name' => 'wp_headless',
 		'wp-plugins' => array(),
 	] ) {
 		$confirm = $this->io()->confirm( 'This will replace your current ' .
@@ -25,13 +26,14 @@ class RoboFile extends \Robo\Tasks {
 			return;
 		}
 
-		$this->_exec( "mysql -uroot -e 'create user wp'" );
-		$this->_exec( "mysql -uroot -e 'create database wp'" );
-		$this->_exec( "mysql -uroot -e \"grant all privileges on wp . * to wp@localhost identified by 'wp'\"" );
+		$this->_exec( "mysql -uroot -e 'create user " . $opts['wp-db-name'] . "'" );
+		$this->_exec( "mysql -uroot -e 'create database " . $opts['wp-db-name'] . "'" );
+		$this->_exec( 'mysql -uroot -e "grant all privileges on ' . $opts['wp-db-name']
+		. ' . * to ' . $opts['wp-db-name'] . "@localhost identified by '" . $opts['wp-db-name'] . "'\"" );
 		$this->_exec( "mysql -uroot -e 'flush privileges'" );
 
 		$this->wp( 'core download --version=4.8 --force' );
-		$this->wp( 'core config --dbname=wp --dbuser=wp --dbpass=wp --dbhost=127.0.0.1' );
+		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=127.0.0.1' );
 		$this->wp( 'db drop --yes' );
 		$this->wp( 'db create --yes' );
 
