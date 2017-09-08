@@ -2558,7 +2558,7 @@ msgid "http://www.advancedcustomfields.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Customise WordPress with powerful, professional and intuitive fields"
+msgid "Customise WordPress with powerful, professional and intuitive fields."
 msgstr ""
 
 #. Author of the plugin/theme

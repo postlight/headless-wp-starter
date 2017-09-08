@@ -1106,8 +1106,9 @@
 			
 			// add to remove list
 			if( id ) {
-			
-				$('#input-delete-fields').val( $('#input-delete-fields').val() + '|' + id );	
+				
+				var $input = $('#_acf_delete_fields');
+				$input.val( $input.val() + '|' + id );	
 				
 			}
 			
@@ -1998,10 +1999,10 @@
 	acf.field_group.locations = acf.model.extend({
 		
 		events: {
-			'click .add-location-rule':		'add_rule',
-			'click .add-location-group':	'add_group',
-			'click .remove-location-rule':	'remove_rule',
-			'change .location-rule-param':	'change_rule'
+			'click .add-location-rule':			'add_rule',
+			'click .add-location-group':		'add_group',
+			'click .remove-location-rule':		'remove_rule',
+			'change .refresh-location-rule':	'change_rule'
 		},
 		
 		
@@ -2118,34 +2119,37 @@
 		change_rule: function( e ){
 				
 			// vars
-			var $select = e.$el,
-				$tr = $select.closest('tr'),
-				rule_id = $tr.attr('data-id'),
-				$group = $tr.closest('.rule-group'),
-				group_id = $group.attr('data-id');
+			var $rule = e.$el.closest('tr');
+			var $group = $rule.closest('.rule-group');
+			var prefix = $rule.find('td.param select').attr('name').replace('[param]', '');
 			
 			
-			// add loading gif
-			var $div = $('<div class="acf-loading"></div>');
+			// ajax data
+			var ajaxdata = {
+				action: 'acf/field_group/render_location_rule',
+				rule: 	acf.serialize( $rule, prefix ),
+			};
 			
-			$tr.find('td.value').html( $div );
+			
+			// append to data
+			ajaxdata.rule.id = $rule.attr('data-id');
+			ajaxdata.rule.group = $group.attr('data-id');
 			
 			
-			// load location html
+			// ajax
 			$.ajax({
 				url: acf.get('ajaxurl'),
-				data: acf.prepare_for_ajax({
-					'action':	'acf/field_group/render_location_value',
-					'rule_id':	rule_id,
-					'group_id':	group_id,
-					'param':	$select.val(),
-					'value':	''
-				}),
+				data: acf.prepare_for_ajax(ajaxdata),
 				type: 'post',
 				dataType: 'html',
-				success: function(html){
-	
-					$div.replaceWith(html);
+				success: function( html ){
+					
+					// bail early if no html
+					if( !html ) return;
+					
+					
+					// update
+					$rule.replaceWith( html );
 	
 				}
 			});
@@ -2564,6 +2568,51 @@
 	
 	
 	/*
+	*  Radio
+	*
+	*  This field type requires some extra logic for its settings
+	*
+	*  @type	function
+	*  @date	24/10/13
+	*  @since	5.0.0
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
+	var acf_settings_checkbox = acf.field_group.field_object.extend({
+		
+		type: 'checkbox',
+		
+		actions: {
+			'render_settings': 'render'
+		},
+		
+		events: {
+			'change .acf-field-setting-allow_custom input': 'render'
+		},
+		
+		render: function( $el ){
+			
+			// other_choice checked
+			if( this.setting('allow_custom input[type="checkbox"]').prop('checked') ) {
+			
+				this.setting('save_custom').show();
+			
+			// other_choice not checked
+			} else {
+			
+				this.setting('save_custom').hide();
+				this.setting('save_custom input[type="checkbox"]').prop('checked', false).trigger('change');
+				
+			}
+			
+		}		
+		
+	});
+	
+	
+	/*
 	*  True false
 	*
 	*  This field type requires some extra logic for its settings
@@ -2822,11 +2871,7 @@
 		render: function(){
 			
 			// vars
-			var options = acf.serialize_form( $('#adv-settings') );
-			
-			
-			// convert types
-			options.show_field_keys = parseInt(options.show_field_keys);
+			var options = acf.serialize( $('#adv-settings') );
 			
 			
 			// toggle class

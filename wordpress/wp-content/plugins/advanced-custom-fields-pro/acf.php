@@ -2,8 +2,8 @@
 /*
 Plugin Name: Advanced Custom Fields PRO
 Plugin URI: https://www.advancedcustomfields.com/
-Description: Customise WordPress with powerful, professional and intuitive fields
-Version: 5.5.11
+Description: Customise WordPress with powerful, professional and intuitive fields.
+Version: 5.6.1
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
@@ -16,6 +16,9 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if( ! class_exists('acf') ) :
 
 class acf {
+	
+	// vars
+	var $version = '5.6.1';
 	
 	
 	/*
@@ -58,94 +61,109 @@ class acf {
 			
 			// basic
 			'name'				=> __('Advanced Custom Fields', 'acf'),
-			'version'			=> '5.5.11',
+			'version'			=> $this->version,
 						
 			// urls
+			'file'				=> __FILE__,
 			'basename'			=> plugin_basename( __FILE__ ),
 			'path'				=> plugin_dir_path( __FILE__ ),
 			'dir'				=> plugin_dir_url( __FILE__ ),
 			
 			// options
-			'show_admin'		=> true,
-			'show_updates'		=> true,
-			'stripslashes'		=> false,
-			'local'				=> true,
-			'json'				=> true,
-			'save_json'			=> '',
-			'load_json'			=> array(),
-			'default_language'	=> '',
-			'current_language'	=> '',
-			'capability'		=> 'manage_options',
-			'uploader'			=> 'wp',
-			'autoload'			=> false,
-			'l10n'				=> true,
-			'l10n_textdomain'	=> '',
-			'google_api_key'	=> '',
-			'google_api_client'	=> '',
-			'enqueue_google_maps'	=> true,
+			'show_admin'				=> true,
+			'show_updates'				=> true,
+			'stripslashes'				=> false,
+			'local'						=> true,
+			'json'						=> true,
+			'save_json'					=> '',
+			'load_json'					=> array(),
+			'default_language'			=> '',
+			'current_language'			=> '',
+			'capability'				=> 'manage_options',
+			'uploader'					=> 'wp',
+			'autoload'					=> false,
+			'l10n'						=> true,
+			'l10n_textdomain'			=> '',
+			'google_api_key'			=> '',
+			'google_api_client'			=> '',
+			'enqueue_google_maps'		=> true,
 			'enqueue_select2'			=> true,
 			'enqueue_datepicker'		=> true,
 			'enqueue_datetimepicker'	=> true,
-			'select2_version'			=> 3,
-			'row_index_offset'			=> 1
+			'select2_version'			=> 4,
+			'row_index_offset'			=> 1,
+			'remove_wp_meta_box'		=> true
 		);
 		
 		
-		// include helpers
-		include_once('api/api-helpers.php');
+		// constants
+		$this->define( 'ACF', 			true );
+		$this->define( 'ACF_VERSION', 	$this->settings['version'] );
+		$this->define( 'ACF_PATH', 		$this->settings['path'] );
 		
 		
 		// api
-		acf_include('api/api-value.php');
-		acf_include('api/api-field.php');
-		acf_include('api/api-field-group.php');
-		acf_include('api/api-template.php');
+		include_once( ACF_PATH . 'includes/api/api-helpers.php');
+		acf_include('includes/api/api-input.php');
+		acf_include('includes/api/api-value.php');
+		acf_include('includes/api/api-field.php');
+		acf_include('includes/api/api-field-group.php');
+		acf_include('includes/api/api-template.php');
+		
+		
+		// fields
+		acf_include('includes/fields.php');
+		acf_include('includes/fields/class-acf-field.php');
+				
+		
+		// locations
+		acf_include('includes/locations.php');
+		acf_include('includes/locations/class-acf-location.php');
 		
 		
 		// core
-		acf_include('core/ajax.php');
-		acf_include('core/cache.php');
-		acf_include('core/compatibility.php');
-		acf_include('core/deprecated.php');
-		acf_include('core/field.php');
-		acf_include('core/fields.php');
-		acf_include('core/form.php');
-		acf_include('core/input.php');
-		acf_include('core/validation.php');
-		acf_include('core/json.php');
-		acf_include('core/local.php');
-		acf_include('core/location.php');
-		acf_include('core/loop.php');
-		acf_include('core/media.php');
-		acf_include('core/revisions.php');
-		acf_include('core/third_party.php');
-		acf_include('core/updates.php');
+		acf_include('includes/ajax.php');
+		acf_include('includes/cache.php');
+		acf_include('includes/compatibility.php');
+		acf_include('includes/deprecated.php');
+		acf_include('includes/input.php');
+		acf_include('includes/json.php');
+		acf_include('includes/local.php');
+		acf_include('includes/loop.php');
+		acf_include('includes/media.php');
+		acf_include('includes/revisions.php');
+		acf_include('includes/third_party.php');
+		acf_include('includes/updates.php');
+		acf_include('includes/validation.php');
 		
 		
 		// forms
-		acf_include('forms/attachment.php');
-		acf_include('forms/comment.php');
-		acf_include('forms/post.php');
-		acf_include('forms/taxonomy.php');
-		acf_include('forms/user.php');
-		acf_include('forms/widget.php');
+		acf_include('includes/forms/form-attachment.php');
+		acf_include('includes/forms/form-comment.php');
+		acf_include('includes/forms/form-customizer.php');
+		acf_include('includes/forms/form-front.php');
+		acf_include('includes/forms/form-nav-menu.php');
+		acf_include('includes/forms/form-post.php');
+		acf_include('includes/forms/form-taxonomy.php');
+		acf_include('includes/forms/form-user.php');
+		acf_include('includes/forms/form-widget.php');
 		
 		
 		// admin
 		if( is_admin() ) {
 			
-			acf_include('admin/admin.php');
-			acf_include('admin/field-group.php');
-			acf_include('admin/field-groups.php');
-			acf_include('admin/install.php');
-			acf_include('admin/settings-tools.php');
-			acf_include('admin/settings-info.php');
+			acf_include('includes/admin/admin.php');
+			acf_include('includes/admin/admin-field-group.php');
+			acf_include('includes/admin/admin-field-groups.php');
+			acf_include('includes/admin/install.php');
+			acf_include('includes/admin/settings-tools.php');
+			acf_include('includes/admin/settings-info.php');
 			
 			
 			// network
 			if( is_network_admin() ) {
 				
-				acf_include('admin/install-network.php');
+				acf_include('includes/admin/install-network.php');
 				
 			}
 		}
@@ -202,50 +220,72 @@ class acf {
 		acf_update_setting('dir', plugin_dir_url( __FILE__ ));
 		
 		
-		// set text domain
-		load_textdomain( 'acf', acf_get_path( 'lang/acf-' . acf_get_locale() . '.mo' ) );
+		// textdomain
+		$this->load_plugin_textdomain();
 		
 		
 		// include wpml support
 		if( defined('ICL_SITEPRESS_VERSION') ) {
-		
-			acf_include('core/wpml.php');
-			
+			acf_include('includes/wpml.php');
 		}
 		
 		
-		// field types
-		acf_include('fields/text.php');
-		acf_include('fields/textarea.php');
-		acf_include('fields/number.php');
-		acf_include('fields/email.php');
-		acf_include('fields/url.php');
-		acf_include('fields/password.php');
-		acf_include('fields/wysiwyg.php');
-		acf_include('fields/oembed.php');
-		//acf_include('fields/output.php');
-		acf_include('fields/image.php');
-		acf_include('fields/file.php');
-		acf_include('fields/select.php');
-		acf_include('fields/checkbox.php');
-		acf_include('fields/radio.php');
-		acf_include('fields/true_false.php');
-		acf_include('fields/post_object.php');
-		acf_include('fields/page_link.php');
-		acf_include('fields/relationship.php');
-		acf_include('fields/taxonomy.php');
-		acf_include('fields/user.php');
-		acf_include('fields/google-map.php');
-		acf_include('fields/date_picker.php');
-		acf_include('fields/date_time_picker.php');
-		acf_include('fields/time_picker.php');
-		acf_include('fields/color_picker.php');
-		acf_include('fields/message.php');
-		acf_include('fields/tab.php');
-		
-		
-		// 3rd party field types
+		// fields
+		acf_include('includes/fields/class-acf-field-text.php');
+		acf_include('includes/fields/class-acf-field-textarea.php');
+		acf_include('includes/fields/class-acf-field-number.php');
+		acf_include('includes/fields/class-acf-field-email.php');
+		acf_include('includes/fields/class-acf-field-url.php');
+		acf_include('includes/fields/class-acf-field-password.php');
+		acf_include('includes/fields/class-acf-field-wysiwyg.php');
+		acf_include('includes/fields/class-acf-field-oembed.php');
+		acf_include('includes/fields/class-acf-field-image.php');
+		acf_include('includes/fields/class-acf-field-link.php');
+		acf_include('includes/fields/class-acf-field-file.php');
+		acf_include('includes/fields/class-acf-field-select.php');
+		acf_include('includes/fields/class-acf-field-checkbox.php');
+		acf_include('includes/fields/class-acf-field-radio.php');
+		acf_include('includes/fields/class-acf-field-true_false.php');
+		acf_include('includes/fields/class-acf-field-post_object.php');
+		acf_include('includes/fields/class-acf-field-page_link.php');
+		acf_include('includes/fields/class-acf-field-relationship.php');
+		acf_include('includes/fields/class-acf-field-taxonomy.php');
+		acf_include('includes/fields/class-acf-field-user.php');
+		acf_include('includes/fields/class-acf-field-google-map.php');
+		acf_include('includes/fields/class-acf-field-date_picker.php');
+		acf_include('includes/fields/class-acf-field-date_time_picker.php');
+		acf_include('includes/fields/class-acf-field-time_picker.php');
+		acf_include('includes/fields/class-acf-field-color_picker.php');
+		acf_include('includes/fields/class-acf-field-message.php');
+		//acf_include('includes/fields/class-acf-field-separator.php');
+		acf_include('includes/fields/class-acf-field-tab.php');
+		acf_include('includes/fields/class-acf-field-group.php');
 		do_action('acf/include_field_types', $major);
+		
+		
+		// locations
+		acf_include('includes/locations/class-acf-location-post-type.php');
+		acf_include('includes/locations/class-acf-location-post-template.php');
+		acf_include('includes/locations/class-acf-location-post-status.php');
+		acf_include('includes/locations/class-acf-location-post-format.php');
+		acf_include('includes/locations/class-acf-location-post-category.php');
+		acf_include('includes/locations/class-acf-location-post-taxonomy.php');
+		acf_include('includes/locations/class-acf-location-post.php');
+		acf_include('includes/locations/class-acf-location-page-template.php');
+		acf_include('includes/locations/class-acf-location-page-type.php');
+		acf_include('includes/locations/class-acf-location-page-parent.php');
+		acf_include('includes/locations/class-acf-location-page.php');
+		acf_include('includes/locations/class-acf-location-current-user.php');
+		acf_include('includes/locations/class-acf-location-current-user-role.php');
+		acf_include('includes/locations/class-acf-location-user-form.php');
+		acf_include('includes/locations/class-acf-location-user-role.php');
+		acf_include('includes/locations/class-acf-location-taxonomy.php');
+		acf_include('includes/locations/class-acf-location-attachment.php');
+		acf_include('includes/locations/class-acf-location-comment.php');
+		acf_include('includes/locations/class-acf-location-widget.php');
+		acf_include('includes/locations/class-acf-location-nav-menu.php');
+		acf_include('includes/locations/class-acf-location-nav-menu-item.php');
+		do_action('acf/include_location_rules', $major);
 		
 		
 		// local fields
@@ -255,6 +295,41 @@ class acf {
 		// action for 3rd party
 		do_action('acf/init');
 			
+	}
+	
+	
+	/*
+	*  load_plugin_textdomain
+	*
+	*  This function will load the textdomain file
+	*
+	*  @type	function
+	*  @date	3/5/17
+	*  @since	5.5.13
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
+	function load_plugin_textdomain() {
+		
+		// vars
+		$domain = 'acf';
+		$locale = apply_filters( 'plugin_locale', acf_get_locale(), $domain );
+		$mofile = $domain . '-' . $locale . '.mo';
+		
+		
+		// load from the languages directory first
+		load_textdomain( $domain, WP_LANG_DIR . '/plugins/' . $mofile );
+		
+		
+		// redirect missing translations
+		$mofile = str_replace('fr_CA', 'fr_FR', $mofile);
+		
+		
+		// load from plugin lang folder
+		load_textdomain( $domain, acf_get_path( 'lang/' . $mofile ) );
+		
 	}
 	
 	
@@ -451,6 +526,27 @@ class acf {
 	    // return
 	    return $where;
 	    
+	}
+	
+	
+	/*
+	*  define
+	*
+	*  This function will safely define a constant
+	*
+	*  @type	function
+	*  @date	3/5/17
+	*  @since	5.5.13
+	*
+	*  @param	$name (string)
+	*  @param	$value (mixed)
+	*  @return	n/a
+	*/
+	
+	function define( $name, $value = true ) {
+		
+		if( !defined($name) ) define( $name, $value );
+		
 	}
 	
 	

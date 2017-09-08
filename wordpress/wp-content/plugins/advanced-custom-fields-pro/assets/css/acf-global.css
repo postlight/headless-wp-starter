@@ -1,11 +1,16 @@
 /*--------------------------------------------------------------------------------------------
 *
-*	vars
+*	Vars
 *
 *--------------------------------------------------------------------------------------------*/
 /* colors */
 /* acf-field */
 /* responsive */
+/*--------------------------------------------------------------------------------------------
+*
+*	Mixins
+*
+*--------------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------
 *
 *	General
@@ -170,22 +175,13 @@ img.acf-fw {
   background: #2F353E;
   border-radius: 5px;
   color: #fff;
-  padding: 5px 15px;
+  padding: 5px 10px;
   position: absolute;
   z-index: 999999;
   font-size: 12px;
-}
-.acf-tooltip.top {
-  margin-top: -8px;
-}
-.acf-tooltip.right {
-  margin-right: -8px;
-}
-.acf-tooltip.bottom {
-  margin-bottom: -8px;
-}
-.acf-tooltip.left {
-  margin-left: -8px;
+  z-index: 998;
+  /* tip */
+  /* positions */
 }
 .acf-tooltip:before {
   border: solid;
@@ -194,12 +190,18 @@ img.acf-fw {
   content: "";
   position: absolute;
 }
+.acf-tooltip.top {
+  margin-top: -8px;
+}
 .acf-tooltip.top:before {
   top: 100%;
   left: 50%;
   margin-left: -6px;
   border-top-color: #2F353E;
   border-bottom-width: 0;
+}
+.acf-tooltip.right {
+  margin-right: -8px;
 }
 .acf-tooltip.right:before {
   top: 50%;
@@ -208,6 +210,9 @@ img.acf-fw {
   border-right-color: #2F353E;
   border-left-width: 0;
 }
+.acf-tooltip.bottom {
+  margin-bottom: -8px;
+}
 .acf-tooltip.bottom:before {
   bottom: 100%;
   left: 50%;
@@ -215,12 +220,29 @@ img.acf-fw {
   border-bottom-color: #2F353E;
   border-top-width: 0;
 }
+.acf-tooltip.left {
+  margin-left: -8px;
+}
 .acf-tooltip.left:before {
   top: 50%;
   margin-top: -6px;
   left: 100%;
   border-left-color: #2F353E;
   border-right-width: 0;
+}
+/* confirm */
+.acf-tooltip.-confirm {
+  z-index: 999;
+}
+.acf-tooltip.-confirm a {
+  text-decoration: none;
+  color: #9ea3a8;
+}
+.acf-tooltip.-confirm a:hover {
+  text-decoration: underline;
+}
+.acf-tooltip.-confirm a.-red {
+  color: #F55E4F;
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -261,8 +283,8 @@ img.acf-fw {
 *--------------------------------------------------------------------------------------------*/
 @font-face {
   font-family: 'acf';
-  src: url('../font/acf.eot?50902143');
-  src: url('../font/acf.eot?50902143#iefix') format('embedded-opentype'), url('../font/acf.woff?50902143') format('woff'), url('../font/acf.ttf?50902143') format('truetype'), url('../font/acf.svg?50902143#acf') format('svg');
+  src: url('../font/acf.eot?57601716');
+  src: url('../font/acf.eot?57601716#iefix') format('embedded-opentype'), url('../font/acf.woff2?57601716') format('woff2'), url('../font/acf.woff?57601716') format('woff'), url('../font/acf.ttf?57601716') format('truetype'), url('../font/acf.svg?57601716#acf') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -366,6 +388,10 @@ img.acf-fw {
   content: '\e811';
 }
 /* '' */
+.acf-icon.-link-ext:before {
+  content: '\f08e';
+}
+/* '' */
 /* collapse */
 .acf-icon.-collapse:before {
   content: '\e810';
@@ -404,19 +430,31 @@ a.acf-icon {
   position: relative;
   overflow: hidden;
   transition: none;
+  /* clear */
+  /* light*/
+  /* states */
+  /* remove WP outline box-shadow */
+  /* red */
 }
-/* minor tweaks */
-.acf-icon.-pencil {
-  font-size: 15px;
+a.acf-icon.-clear {
+  color: #444;
+  background: transparent;
+  border: none;
 }
-.acf-icon.-location {
-  font-size: 18px;
+a.acf-icon.light {
+  border: none;
+  padding: 1px;
+  background: #F5F5F5;
+  color: #72777c;
 }
-/* states */
 a.acf-icon:hover {
   border-color: transparent;
-  background: #b4b9be;
+  background: #2a9bd9;
   color: #fff;
+}
+a.acf-icon:active {
+  color: #fff;
+  background-color: #238cc6;
 }
 a.acf-icon:active,
 a.acf-icon:focus {
@@ -427,21 +465,24 @@ a.acf-icon.-minus:hover,
 a.acf-icon.-cancel:hover {
   background-color: #F55E4F;
 }
+a.acf-icon.-minus:active,
+a.acf-icon.-cancel:active {
+  background-color: #f44837;
+}
+/* minor tweaks */
+.acf-icon.-pencil {
+  font-size: 15px;
+}
+.acf-icon.-location {
+  font-size: 18px;
+}
 /* sizes */
-.acf-icon.small {
+.acf-icon.small,
+.acf-icon.-small {
   width: 18px;
   height: 18px;
   line-height: 18px;
   font-size: 14px;
-}
-/* styles */
-.acf-icon.light {
-  border: 0 none;
-  padding: 1px;
-  background: #F5F5F5;
-}
-.acf-icon.light:hover {
-  background: #0073AA;
 }
 /* dark */
 .acf-icon.dark {
@@ -547,8 +588,8 @@ a.acf-icon.-cancel.grey:hover {
 }
 .acf-box h2 {
   color: #333333;
-  font-size: 25px;
-  line-height: 29px;
+  font-size: 26px;
+  line-height: 1.25em;
   margin: 0.25em 0 0.75em;
   padding: 0;
 }
@@ -558,25 +599,21 @@ a.acf-icon.-cancel.grey:hover {
 .acf-box p {
   margin-top: 0.5em;
 }
-.acf-box .footer {
-  background: #F5F5F5;
-  border-top: 1px solid #E1E1E1;
-  overflow: hidden;
-  padding: 15px;
-  position: relative;
-}
-.acf-box .footer.-blue {
-  border-top: 0 none;
-  background-color: #2a9bd9;
-  color: #FFFFFF;
-}
-.acf-box .footer.-blue p {
-  margin: 0;
-}
-.acf-box .footer.-blue a {
+.acf-box a {
   text-decoration: none;
-  text-shadow: none;
-  color: inherit;
+}
+.acf-box i.dashicons-external {
+  margin-top: -1px;
+}
+.acf-box .footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.acf-box .footer p {
+  margin: 0;
 }
 /* error */
 .acf-error-message {

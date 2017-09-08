@@ -913,6 +913,8 @@ class WPMDB extends WPMDB_Base {
 
 		$this->form_data = $this->parse_migration_form_data( $this->state_data['form_data'] );
 
+		$this->log_usage( $this->state_data['intent'] );
+
 		// A little bit of house keeping.
 		WPMDB_Migration_State::cleanup();
 
@@ -947,16 +949,6 @@ class WPMDB extends WPMDB_Base {
 					}
 
 					$upload_path = $this->get_upload_info( 'path' );
-					if ( false === $this->filesystem->is_writable( $upload_path ) ) {
-						$error = sprintf( __( '<p><strong>Export Failed</strong> — We can\'t save your export to the following folder:<br><strong>%s</strong></p><p>Please adjust the permissions on this folder. <a href="%s" target="_blank">See our documentation for more information »</a></p>', 'wp-migrate-db' ), $upload_path, 'https://deliciousbrains.com/wp-migrate-db-pro/doc/uploads-folder-permissions/' );
-						$return = array(
-							'wpmdb_error' => 1,
-							'body'        => $error,
-						);
-						$result = $this->end_ajax( json_encode( $return ) );
-
-						return $result;
-					}
 
 					$this->fp = $this->open( $upload_path . DIRECTORY_SEPARATOR . $return['dump_filename'] );
 					$this->db_backup_header();

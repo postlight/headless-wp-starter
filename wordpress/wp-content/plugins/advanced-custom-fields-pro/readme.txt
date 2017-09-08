@@ -6,7 +6,7 @@ Tested up to: 4.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Customise WordPress with powerful, professional and intuitive fields
+Customise WordPress with powerful, professional and intuitive fields.
 
 == Description ==
 
@@ -105,6 +105,42 @@ http://support.advancedcustomfields.com/
 
 
 == Changelog ==
+
+= 5.6.1 =
+* Fixed an assortment of bugs found in 5.6.0
+
+= 5.6.0 =
+* Link field: Added new field type
+* Group field: Added new field type
+* API: Improved `have_rows()` function to work with clone and group field values
+* Core: Added new location for Menus
+* Core: Added new location for Menu Items
+* Core: Added types to Attachment location rule
+* Core: Added "Confirm Remove" tooltips
+* Core: Updated Select2 JS library to v4
+* Core: Minor fixes and improvements
+
+= 5.5.14 =
+* Core: Minor bug fixes
+
+= 5.5.13 =
+* Clone field: Improved 'Fields' setting to show all fields within a matching field group search
+* Flexible Content field: Fixed bug causing 'layout_title' filter to fail when field is cloned
+* Flexible Content field: Added missing 'translate_field' function
+* WYSIWYG field: Fixed JS error when using CKEditor plugin
+* Date Picker field: Improved 'Display Format' and 'Return Format' settings UI
+* Time Picker field: Same as above
+* Datetime Picker field: Same as above
+* Core: Added new 'remove_wp_meta_box' setting
+* Core: Added constants ACF, ACF_PRO, ACF_VERSION and ACF_PATH
+* Core: Improved compatibility with Select2 v4 including sortable functionality
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+
+= 5.5.12 =
+* Tab field: Allowed HTML within field label to show in tab
+* Core: Improved plugin update class
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+* Language: Updated Brazilian Portuguese translation - thanks to Rafael Ribeiro
 
 = 5.5.11 =
 * Google Map field: Added new 'google_map_init' JS action

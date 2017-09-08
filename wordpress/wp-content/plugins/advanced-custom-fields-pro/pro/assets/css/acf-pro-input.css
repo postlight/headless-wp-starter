@@ -1,3 +1,16 @@
+/*--------------------------------------------------------------------------------------------
+*
+*	Vars
+*
+*--------------------------------------------------------------------------------------------*/
+/* colors */
+/* acf-field */
+/* responsive */
+/*--------------------------------------------------------------------------------------------
+*
+*	Mixins
+*
+*--------------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------------------------
 *
 *  Repeater
@@ -80,10 +93,12 @@ body.browser-msie .acf-repeater .acf-row-handle .acf-icon.-minus {
 .acf-repeater .acf-row.acf-clone {
   display: none !important;
 }
-.acf-repeater .acf-row:hover {
+.acf-repeater .acf-row:hover,
+.acf-repeater .acf-row.-hover {
   /* icons */
 }
-.acf-repeater .acf-row:hover > .acf-row-handle .acf-icon {
+.acf-repeater .acf-row:hover > .acf-row-handle .acf-icon,
+.acf-repeater .acf-row.-hover > .acf-row-handle .acf-icon {
   display: block;
 }
 .acf-repeater > table > tbody > tr.ui-sortable-helper {
@@ -142,15 +157,12 @@ body.browser-msie .acf-repeater .acf-row-handle .acf-icon.-minus {
 }
 .acf-flexible-content .layout {
   position: relative;
-  margin: 20px 0;
+  margin: 20px 0 0;
   background: #fff;
   border: 1px solid #e1e1e1;
 }
 .acf-flexible-content .layout:first-child {
   margin-top: 0;
-}
-.acf-flexible-content .layout:last-child {
-  margin-bottom: 0;
 }
 .acf-flexible-content .layout .acf-fc-layout-handle {
   display: block;
@@ -238,33 +250,51 @@ body.browser-msie .acf-repeater .acf-row-handle .acf-icon.-minus {
 }
 /* popup */
 .acf-fc-popup {
-  position: absolute;
+  background: #2F353E;
   border-radius: 5px;
-  background: #32373c;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  min-width: 135px;
+  color: #fff;
+  padding: 7px 0;
+  position: absolute;
+  font-size: 13px;
   z-index: 9999;
-  /* bit */
-  /* focus helper */
+  min-width: 135px;
+  /* tip */
+  /* positions */
+  /* list */
 }
 .acf-fc-popup:before {
+  border: solid;
+  border-color: transparent;
+  border-width: 6px;
   content: "";
-  display: block;
   position: absolute;
-  left: 50%;
-  top: 100%;
-  margin: 0 0 0 -7px;
-  width: 0;
-  height: 0;
-  border: transparent solid 7px;
-  border-top-color: #32373c;
-  z-index: 2;
 }
-.acf-fc-popup.bottom:before {
-  top: auto;
+.acf-fc-popup.-top {
+  margin-top: -8px;
+}
+.acf-fc-popup.-top:before {
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-top-color: #2F353E;
+  border-bottom-width: 0;
+}
+.acf-fc-popup.-bottom {
+  margin-bottom: -8px;
+}
+.acf-fc-popup.-bottom:before {
   bottom: 100%;
-  border-top-color: transparent;
-  border-bottom-color: #32373c;
+  left: 50%;
+  margin-left: -6px;
+  border-bottom-color: #2F353E;
+  border-top-width: 0;
+}
+.acf-fc-popup.-right:before {
+  left: 18px;
+}
+.acf-fc-popup.-left:before {
+  left: auto;
+  right: 18px;
 }
 .acf-fc-popup ul,
 .acf-fc-popup li {
@@ -272,9 +302,6 @@ body.browser-msie .acf-repeater .acf-row-handle .acf-icon.-minus {
   display: block;
   margin: 0;
   padding: 0;
-}
-.acf-fc-popup ul {
-  padding: 7px 0;
 }
 .acf-fc-popup li {
   position: relative;
@@ -310,15 +337,7 @@ body.browser-msie .acf-repeater .acf-row-handle .acf-icon.-minus {
   color: #888;
   background: transparent;
 }
-.acf-fc-popup .focus {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 100%;
-  top: 0;
-  opacity: 0;
-}
-.acf-fc-popup ul li a .acf-fc-popup ul li a .status .acf-fc-popup ul li a:hover .status {
+.acf-fc-popup ul li a:hover .status {
   border-color: #fff;
   color: #fff;
 }
@@ -375,6 +394,7 @@ html[dir="rtl"] .acf-flexible-content .layout .acf-fc-layout-controlls {
   float: left;
   cursor: pointer;
   position: relative;
+  /* hover */
   /* sortable */
   /* active */
   /* icon */
@@ -400,12 +420,18 @@ html[dir="rtl"] .acf-flexible-content .layout .acf-fc-layout-controlls {
   height: 100%;
   transform: translate(50%, 50%);
 }
+html[dir="rtl"] .acf-gallery .acf-gallery-attachment .thumbnail {
+  transform: translate(-50%, 50%);
+}
 .acf-gallery .acf-gallery-attachment .thumbnail img {
   display: block;
   height: auto;
   max-height: 100%;
   width: auto;
   transform: translate(-50%, -50%);
+}
+html[dir="rtl"] .acf-gallery .acf-gallery-attachment .thumbnail img {
+  transform: translate(50%, -50%);
 }
 .acf-gallery .acf-gallery-attachment .filename {
   position: absolute;
@@ -426,6 +452,10 @@ html[dir="rtl"] .acf-flexible-content .layout .acf-fc-layout-controlls {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
+}
+.acf-gallery .acf-gallery-attachment:hover .actions {
+  display: block;
 }
 .acf-gallery .acf-gallery-attachment.ui-sortable-helper .margin {
   border: none;
@@ -500,6 +530,15 @@ html[dir="rtl"] .acf-gallery .acf-gallery-attachment {
   background: #F1F1F1;
   border-bottom: #DFDFDF solid 1px;
 }
+.acf-gallery .acf-gallery-side-info:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+html[dir="rtl"] .acf-gallery .acf-gallery-side-info {
+  margin-left: 0;
+  margin-right: -10px;
+}
 .acf-gallery .acf-gallery-side-info img {
   float: left;
   width: auto;
@@ -556,15 +595,14 @@ html[dir="rtl"] .acf-gallery .acf-gallery-side-info img {
   padding: 0 4px 8px 0 !important;
   width: auto !important;
   vertical-align: top;
-  /* rtl */
+}
+html[dir="rtl"] .acf-gallery .acf-gallery-side-data .acf-label,
+html[dir="rtl"] .acf-gallery .acf-gallery-side-data th.label {
+  padding: 0 0 8px 4px !important;
 }
 .acf-gallery .acf-gallery-side-data .acf-label label,
 .acf-gallery .acf-gallery-side-data th.label label {
   font-weight: normal;
-}
-html[dir="rtl"] .acf-gallery .acf-gallery-side-data .acf-label,
-html[dir="rtl"] .acf-gallery .acf-gallery-side-data th.label {
-  text-align: left;
 }
 .acf-gallery .acf-gallery-side-data .acf-input,
 .acf-gallery .acf-gallery-side-data td.field {
@@ -617,9 +655,16 @@ html[dir="rtl"] .acf-gallery .acf-gallery-side-data th.label {
 }
 /* media modal selected */
 .acf-media-modal .attachment.acf-selected {
-  box-shadow: 0 0 0 3px #fff inset, 0 0 0 7px #1e8cbe inset !important;
-  opacity: 0.5;
+  box-shadow: 0 0 0 3px #fff inset, 0 0 0 7px #0073aa inset !important;
 }
 .acf-media-modal .attachment.acf-selected .check {
   display: none !important;
+}
+.acf-media-modal .attachment.acf-selected .thumbnail {
+  opacity: 0.25 !important;
+}
+.acf-media-modal .attachment.acf-selected .attachment-preview:before {
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  position: relative;
 }

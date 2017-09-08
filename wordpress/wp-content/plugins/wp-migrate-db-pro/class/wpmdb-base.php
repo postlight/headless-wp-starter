@@ -599,10 +599,15 @@ class WPMDB_Base {
 	}
 
 	function get_dbrains_api_url( $request, $args = array() ) {
-		$url             = $this->dbrains_api_url;
-		$args['request'] = $request;
-		$args['version'] = $GLOBALS['wpmdb_meta'][ $this->core_slug ]['version'];
-		$url             = add_query_arg( $args, $url );
+		$url               = $this->dbrains_api_url;
+		$args['request']   = $request;
+		$args['version']   = $GLOBALS['wpmdb_meta'][ $this->core_slug ]['version'];
+
+		if ( 'check_support_access' == $request || 'activate_licence' == $request ) {
+			$args['last_used'] = urlencode( $this->get_last_usage_time() );
+		}
+
+		$url = add_query_arg( $args, $url );
 		if ( false !== get_site_transient( 'wpmdb_temporarily_disable_ssl' ) && 0 === strpos( $this->dbrains_api_url, 'https://' ) ) {
 			$url = substr_replace( $url, 'http', 0, 5 );
 		}
@@ -698,6 +703,26 @@ class WPMDB_Base {
 		$upload_info['url'] .= '/' . $upload_dir_name;
 
 		return $upload_info[ $type ];
+	}
+
+	/**
+	 * Adds/updates the `wpmdb_usage` option with most recent 'qualified' plugin use,
+	 * stores time as well as the action (push/pull/export/find-replace)
+	 *
+	 * @param string $action
+	 */
+	function log_usage( $action = '' ) {
+		update_site_option( 'wpmdb_usage', array( 'action' => $action, 'time' => time() ) );
+	}
+
+	/**
+	 * Gets just the timestamp of the latest usage to send with the API requests
+	 *
+	 * @return int
+	 */
+	function get_last_usage_time() {
+		$option = get_site_option( 'wpmdb_usage' );
+		return ( $option && $option['time'] ) ? $option['time'] : 0;
 	}
 
 	/**
@@ -914,8 +939,8 @@ class WPMDB_Base {
 		}
 
 		$args = array(
-			'licence_key' => $licence_key,
-			'site_url'    => home_url( '', 'http' ),
+			'licence_key' => urlencode( $licence_key ),
+			'site_url'    => urlencode( untrailingslashit( network_home_url( '', 'http' ) ) ),
 		);
 
 		$response = $this->dbrains_api_request( 'check_support_access', $args );

@@ -672,6 +672,8 @@ class WPMDBPro extends WPMDB {
 			return $result;
 		}
 
+		$this->log_usage( $this->state_data['intent'] . '-remote' );
+
 		$this->state_data['site_details'] = WPMDB_Utils::unserialize( $filtered_post['site_details'], __METHOD__ );
 
 		$this->form_data = $this->parse_migration_form_data( $this->state_data['form_data'] );
@@ -1218,7 +1220,7 @@ class WPMDBPro extends WPMDB {
 
 		$args = array(
 			'licence_key' => urlencode( $this->state_data['licence_key'] ),
-			'site_url'    => urlencode( home_url( '', 'http' ) ),
+			'site_url'    => urlencode( untrailingslashit( network_home_url( '', 'http' ) ) ),
 		);
 
 		$response         = $this->dbrains_api_request( 'activate_licence', $args );
@@ -1498,7 +1500,7 @@ class WPMDBPro extends WPMDB {
 
 		$args = array(
 			'licence_key' => urlencode( $this->get_licence_key() ),
-			'site_url'    => urlencode( home_url( '', 'http' ) ),
+			'site_url'    => urlencode( untrailingslashit( network_home_url( '', 'http' ) ) ),
 		);
 
 		$response         = $this->dbrains_api_request( 'reactivate_licence', $args );
