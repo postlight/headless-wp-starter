@@ -70,6 +70,9 @@ class RoboFile extends \Robo\Tasks {
 			$this->wp( $plugins_command );
 		}
 
+		// Sync ACF
+		$this->wp( 'acf sync' );
+
 		// Pretty URL structure required for wp-json path to work correctly
 		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
 
