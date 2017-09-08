@@ -38,6 +38,10 @@ wp server
 
 The site will be running at [http://localhost:8080](http://localhost:8080).
 
+### Import Data (Optional)
+
+To import data and media from a live WordPress install locally, use Migrate DB Pro. In the `robo.yml` file, set the plugin license and source install. Then, run `robo wordpress:import` to pull in the data.
+
 ### Develop WordPress
 
 At this point you can start setting up custom fields, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. When you do, be sure to [use WordPress coding standards](https://github.com/postlight/headless-wp-starter/blob/master/wordpress/wp-content/themes/postlight-headless-wp/README.md).

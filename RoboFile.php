@@ -81,6 +81,33 @@ class RoboFile extends \Robo\Tasks {
 		$this->wp( 'server' );
 	}
 
+	public function wordpressImport( $opts = [
+		'migratedb-license' => null,
+		'migratedb-from' => null,
+	] ) {
+		if ( isset( $opts['migratedb-license'] ) ) {
+			$this->wp( 'migratedb setting update license ' . $opts['migratedb-license'] );
+		} else {
+			$this->say( 'WP Migrate DB Pro: no license available. Please set migratedb-license in the robo.yml file.' );
+			return;
+		}
+
+		if ( isset( $opts['migratedb-from'] ) ) {
+			$command = 'WPMDB_EXCLUDE_RESIZED_MEDIA=1 wp migratedb pull ';
+			$command .= $opts['migratedb-from'];
+			$command .= ' --backup=prefix ';
+			$command .= ' --media=compare ';
+			$this->io()->success( 'About to run data migration from ' . $opts['migratedb-from'] );
+			$this->taskExec( $command )->run();
+			// Set siteurl and home
+			$this->wp( 'option update siteurl http://localhost:8080' );
+			$this->wp( 'option update home http://localhost:8080' );
+		} else {
+			$this->say( 'WP Migrate DB Pro: No source installation specified. Please set migratedb-from in the robo.yml file.' );
+			return;
+		}
+	}
+
 	public function wp( $arg ) {
 		$this->taskExec( 'wp' )
 		 ->dir( WP_DIR )
