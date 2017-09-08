@@ -1,0 +1,9 @@
+windows:
+  - name: Headless WP
+    # Create a symlink in your home directory to the actual location of your code
+    # ln -s ~/path/to/code/for/headless-wp-starter .
+    root: ~/headless-wp-starter/
+    layout: even-horizontal
+    panes:
+      - wp server
+      - git status
