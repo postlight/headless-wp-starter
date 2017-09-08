@@ -3,7 +3,10 @@ windows:
     # Create a symlink in your home directory to the actual location of your code
     # ln -s ~/path/to/code/for/headless-wp-starter .
     root: ~/headless-wp-starter/
-    layout: even-horizontal
+    layout: main-vertical
     panes:
       - wp server
+      - commands:
+          - cd frontend && npm run dev
+        name: 'git'
       - git status

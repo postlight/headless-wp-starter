@@ -13,7 +13,6 @@ The following setup will get WordPress running locally on your machine, along wi
 
 _Note: This environment has only been tested under OS X._
 
-
 1. Using Homebrew, please install [WP-CLI](http://wp-cli.org/), [Robo](http://robo.li/) and MySQL:
 ```
 brew install homebrew/php/wp-cli
@@ -46,14 +45,18 @@ To import data and media from a live WordPress install locally, use Migrate DB P
 
 At this point you can start setting up custom fields, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. When you do, be sure to [use WordPress coding standards](https://github.com/postlight/headless-wp-starter/blob/master/wordpress/wp-content/themes/postlight-headless-wp/README.md).
 
-
 * The backend is running at [http://localhost:8080](http://localhost:8080)
 * WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/)  nedstark / winteriscoming
 * Primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`
 
-
 ## Frontend
 
-TK
+To spin up the frontend client app, run the following commands:
+
+```zsh
+> cd frontend && npm install && npm run dev
+```
+
+The React app will be running on [http://localhost:3000/](http://localhost:3000/).
 
 Happy coding!
