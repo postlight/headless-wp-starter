@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import React, { Component } from "react";
+import Link from "next/link";
 
 class Index extends Component {
     constructor() {
@@ -11,28 +12,29 @@ class Index extends Component {
     }
     componentDidMount() {
         let postsDataURL = "http://localhost:8080/wp-json/wp/v2/posts?_embed";
-        fetch(postsDataURL)
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    posts: res
-                });
+        fetch(postsDataURL).then(res => res.json()).then(res => {
+            this.setState({
+                posts: res
             });
+        });
         let pageDataURL = "http://localhost:8080/wp-json/wp/v2/pages?_embed";
-        fetch(pageDataURL)
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    pages: res
-                });
+        fetch(pageDataURL).then(res => res.json()).then(res => {
+            this.setState({
+                pages: res
             });
+        });
     }
     render() {
         let posts = this.state.posts.map((post, index) => {
             return (
                 <ul key={index}>
                     <li>
-                        <strong>Title:</strong> {post.title.rendered}
+                        <strong>Title:</strong>{" "}
+                        <Link href={post.link}>
+                            <a>
+                                {post.title.rendered}
+                            </a>
+                        </Link>
                     </li>
                 </ul>
             );
@@ -41,7 +43,12 @@ class Index extends Component {
             return (
                 <ul key={index}>
                     <li>
-                        <strong>Title:</strong> {page.title.rendered}
+                        <strong>Title:</strong>{" "}
+                        <Link href={page.link}>
+                            <a>
+                                {page.title.rendered}
+                            </a>
+                        </Link>
                     </li>
                 </ul>
             );
