@@ -1,0 +1,14 @@
+{
+    "name": "headless-wp-starter",
+    "version": "1.0.0",
+    "repository": "git@github.com:postlight/headless-wp-starter.git",
+    "author": "Postlight",
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "brew": "brew install homebrew/php/wp-cli && brew install homebrew/php/robo && brew install mysql",
+        "postinstall": "mysql.server start && robo wordpress:setup",
+        "prestart": "mysql.server start",
+        "start": "wp server"
+    }
+}
