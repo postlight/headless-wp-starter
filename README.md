@@ -5,6 +5,15 @@ Postlight's Headless WordPress + React Starter Kit is an automated toolset that 
 1. A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/).
 2. A server-side rendered React frontend using Next.js.
 
+**What's inside:**
+
+* Installer scripts which boostrap clean, default core WordPress installation plus all the plugins you need to set up custom post types and custom fields and expose them in the WP REST API (Advanced Custom Fields Pro, Custom Post Type UI, and ACF to WP API).
+* All the starter theme code, fixes, and settings you need for building and running headless WordPress, including pretty permalinks, CORS Allow headers, and useful logging functions for easy debugging.
+* A mechanism for easily importing data from an existing WordPress installation anywhere on the web using WP Migrate DB Pro and its accompanying plugins (license required).
+* A Docker container and scripts to manage it, for easily running the frontend React app locally or deploying it to any hosting provider with Docker support.
+
+Let's get started.
+
 ## WordPress Backend
 
 The following setup will get WordPress running locally on your machine, along with the WordPress plugins you'll need to create and serve custom data via the WP REST API.
