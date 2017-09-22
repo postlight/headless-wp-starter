@@ -12,3 +12,4 @@ wp-includes/*
 wp-content/db.php
 wp-content/index.php
 wp-content/debug.log
+wp-content/uploads/**
