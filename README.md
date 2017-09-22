@@ -41,4 +41,17 @@ To spin up the frontend client app, run the following commands:
 
 The Next.js app will be running on [http://localhost:3000/](http://localhost:3000/).
 
+### Docker
+
+This project uses a Docker container, which can be run locally or deployed to a hosting provider like AWS Elastic Beanstalk.
+
+Once you have [Docker](https://www.docker.com/) installed on your computer, you can run the container locally using this command:
+
+```zsh
+# Build and run the container
+> npm run deploy
+```
+
+---
+
 Happy coding!

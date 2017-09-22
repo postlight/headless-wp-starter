@@ -6,7 +6,14 @@
     "scripts": {
         "dev": "next",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "docker:build": "docker build -t frontend .",
+        "docker:clean": "docker rm -f frontend || true",
+        "docker:run": "docker run -p 3000:3000 -d --name frontend frontend && npm run docker:logs",
+        "docker:stop": "docker stop frontend",
+        "docker:start": "docker start frontend && npm run docker:logs",
+        "docker:logs": "docker logs -f frontend",
+        "deploy": "npm run docker:build && npm run docker:clean && npm run docker:run"
     },
     "keywords": [],
     "author": "",
