@@ -11,13 +11,13 @@ class Index extends Component {
         };
     }
     componentDidMount() {
-        let postsDataURL = "http://localhost:8080/wp-json/wp/v2/posts?_embed";
+        const postsDataURL = "http://localhost:8080/wp-json/wp/v2/posts?_embed";
         fetch(postsDataURL).then(res => res.json()).then(res => {
             this.setState({
                 posts: res
             });
         });
-        let pageDataURL = "http://localhost:8080/wp-json/wp/v2/pages?_embed";
+        const pageDataURL = "http://localhost:8080/wp-json/wp/v2/pages?_embed";
         fetch(pageDataURL).then(res => res.json()).then(res => {
             this.setState({
                 pages: res
@@ -25,7 +25,7 @@ class Index extends Component {
         });
     }
     render() {
-        let posts = this.state.posts.map((post, index) => {
+        const posts = this.state.posts.map((post, index) => {
             return (
                 <ul key={index}>
                     <li>
@@ -39,7 +39,7 @@ class Index extends Component {
                 </ul>
             );
         });
-        let pages = this.state.pages.map((page, index) => {
+        const pages = this.state.pages.map((page, index) => {
             return (
                 <ul key={index}>
                     <li>
