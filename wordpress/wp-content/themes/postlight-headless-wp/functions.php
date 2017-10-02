@@ -9,4 +9,7 @@ require_once( 'inc/log.php' );
 // CORS handling
 require_once( 'inc/cors.php' );
 
+// Admin modifications
+require_once( 'inc/admin.php' );
+
 // Add custom API endpoints here
