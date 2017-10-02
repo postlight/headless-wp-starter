@@ -3,14 +3,14 @@
 Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up two things:
 
 1. A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/).
-2. A server-side rendered React frontend using Next.js.
+2. A server-side rendered React frontend using [Next.js](https://github.com/zeit/next.js/).
 
 **What's inside:**
 
-* Installer script which bootstraps a clean, default core WordPress installation plus all the plugins you need to set up custom post types and custom fields and expose them in the WP REST API (Advanced Custom Fields Pro, Custom Post Type UI, and ACF to WP API).
-* All the starter theme code, fixes, and settings you need for building and running headless WordPress, including pretty permalinks, CORS Allow headers, and useful logging functions for easy debugging.
-* A mechanism for easily importing data from an existing WordPress installation anywhere on the web using WP Migrate DB Pro and its accompanying plugins (license required).
-* A Docker container and scripts to manage it, for easily running the frontend React app locally or deploying it to any hosting provider with Docker support.
+* Installer script which bootstraps a core WordPress installation plus all the plugins you need to set up custom post types and custom fields and expose them in the [WP REST API](https://developer.wordpress.org/rest-api/) ([Advanced Custom Fields Pro](https://www.advancedcustomfields.com/), [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/), and [ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/)).
+* All the starter theme code, fixes, and settings you need for building and running headless WordPress, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
+* A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
+* A [Docker](https://www.docker.com/) container and scripts to manage it, for easily running the frontend React app locally or deploying it to any hosting provider with Docker support.
 
 Let's get started.
 
@@ -37,8 +37,8 @@ To import data and media from a live WordPress install locally, use Migrate DB P
 At this point you can start setting up custom fields, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. When you do, be sure to [use WordPress coding standards](https://github.com/postlight/headless-wp-starter/blob/master/wordpress/wp-content/themes/postlight-headless-wp/README.md).
 
 * The backend is running at [http://localhost:8080](http://localhost:8080)
-* WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/)  nedstark / winteriscoming
-* Primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`
+* The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/)  default login credentials `nedstark` / `winteriscoming`
+* The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`
 
 ## React Frontend
 
@@ -52,12 +52,11 @@ The Next.js app will be running on [http://localhost:3000](http://localhost:3000
 
 ### Docker
 
-This project uses a Docker container, which can be run locally or deployed to a hosting provider with Docker support like AWS Elastic Beanstalk.
+Most WordPress managed hosting services don't also host Node applications, so usually you will need another service to run the client app. That's why we've packaged the frontend app in a Docker container, which can be run locally or deployed to a hosting provider with Docker support like AWS Elastic Beanstalk.
 
 Once you have [Docker](https://www.docker.com/) installed on your computer, you can run the container locally using this command:
 
 ```zsh
-# Build and run the container
 > yarn run deploy
 ```
 
