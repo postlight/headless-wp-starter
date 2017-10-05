@@ -7,8 +7,9 @@ Postlight's Headless WordPress + React Starter Kit is an automated toolset that 
 
 **What's inside:**
 
-* Installer script which bootstraps a core WordPress installation plus all the plugins you need to set up custom post types and custom fields and expose them in the [WP REST API](https://developer.wordpress.org/rest-api/) ([Advanced Custom Fields Pro](https://www.advancedcustomfields.com/), [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/), and [ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/)).
-* All the starter theme code, fixes, and settings you need for building and running headless WordPress, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
+* Installer script which bootstraps a core WordPress installation plus the plugins you need to set up custom post types and custom fields ([Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
+* Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
+* All the starter theme code and settings you need for building and running headless WordPress, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
 * A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
 * A [Docker](https://www.docker.com/) container and scripts to manage it, for easily running the frontend React app locally or deploying it to any hosting provider with Docker support.
 
@@ -26,19 +27,18 @@ To install and start WordPress, run the following command:
 > yarn install && yarn start
 ```
 
-When that completes successfully, the WordPress REST API will be available at [http://localhost:8080](http://localhost:8080).
+When that completes successfully:
+
+* The WordPress REST API is available at [http://localhost:8080](http://localhost:8080)
+* The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) default login credentials `nedstark` / `winteriscoming`
 
 ### Import Data (Optional)
 
-To import data and media from a live WordPress install locally, use Migrate DB Pro. In the `robo.yml` file, set the plugin license and source install. Then, run `robo wordpress:import` to pull in the data.
+To import data and media from a live WordPress installation, you can use the Migrate DB Pro plugin, which is already installed. To do so, in the `robo.yml` file, set the plugin license and source install. Run `robo wordpress:setup`, then run `robo wordpress:import` to pull in the data.
 
 ### Extend the WordPress API
 
-At this point you can start setting up custom fields, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. When you do, be sure to [use WordPress coding standards](https://github.com/postlight/headless-wp-starter/blob/master/wordpress/wp-content/themes/postlight-headless-wp/README.md).
-
-* The backend is running at [http://localhost:8080](http://localhost:8080)
-* The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/)  default login credentials `nedstark` / `winteriscoming`
-* The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`
+At this point you can start setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. As you modify the theme code, be sure to [use WordPress coding standards](https://github.com/postlight/headless-wp-starter/blob/master/wordpress/wp-content/themes/postlight-headless-wp/README.md).
 
 ## React Frontend
 
