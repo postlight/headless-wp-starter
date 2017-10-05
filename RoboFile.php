@@ -76,6 +76,11 @@ class RoboFile extends \Robo\Tasks {
 		// Pretty URL structure required for wp-json path to work correctly
 		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
 
+		// Set up example menu
+		$this->wp( 'menu create "My Menu"' );
+		$this->wp( 'menu item add-custom my-menu "Game of Thrones" http://www.hbo.com/game-of-thrones' );
+		$this->wp( 'menu location assign my-menu main' );
+
 		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (' . $opts['wp-user'] . '/' . $opts['wp-pw'] . ')' );
 	}
 
