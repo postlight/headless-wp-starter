@@ -32,8 +32,8 @@ class RoboFile extends \Robo\Tasks {
 		. ' . * to ' . $opts['wp-db-name'] . "@localhost identified by '" . $opts['wp-db-name'] . "'\"" );
 		$this->_exec( "mysql -uroot -e 'flush privileges'" );
 
-		$this->wp( 'core download --version=4.8.2 --force' );
-		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=127.0.0.1' );
+		$this->wp( 'core download --version=4.8.2 --locale=en_GB --force' );
+		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=0.0.0.0' );
 		$this->wp( 'db drop --yes' );
 		$this->wp( 'db create --yes' );
 
