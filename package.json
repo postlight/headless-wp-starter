@@ -8,7 +8,7 @@
   "scripts": {
     "ubuntu": "./scripts/ubuntu.sh",
     "windows": "./scripts/ubuntu.sh",
-    "mac": "./scripts/macosx.sh",
+    "macosx": "./scripts/macosx.sh",
     "postinstall": "robo wordpress:setup",
     "start": "wp server"
   }
