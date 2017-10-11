@@ -11,3 +11,6 @@ brew install mysql
 
 # Start mysql-server
 mysql.server start
+
+# Set the password to root to be compatible with the world
+mysqladmin -u root password root

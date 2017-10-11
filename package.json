@@ -6,9 +6,9 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "ubuntu": "./scripts/ubuntu.sh",
-    "windows": "./scripts/ubuntu.sh",
-    "macosx": "./scripts/macosx.sh",
+    "ubuntu": "chmod +x ./scripts/ubuntu.sh && ./scripts/ubuntu.sh",
+    "windows": "chmod +x ./scripts/ubuntu.sh && ./scripts/ubuntu.sh",
+    "macosx": "chmod +x ./scripts/macosx.sh && ./scripts/macosx.sh",
     "postinstall": "robo wordpress:setup",
     "start": "wp server"
   }
