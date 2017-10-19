@@ -15,4 +15,7 @@ require_once( 'inc/admin.php' );
 // Add Menus
 require_once( 'inc/menus.php' );
 
+// Add Headless Settings area
+require_once( 'inc/acf-options.php' );
+
 // Add custom API endpoints here
