@@ -17,45 +17,21 @@ Let's get started.
 
 ## WordPress Backend
 
-The following setup will get WordPress running locally on your machine, along with the WordPress plugins you'll need to create and serve custom data via the WP REST API.
+Before you install WordPress, make sure you have all the required software installed for your operating system.
 
-### OS X
+### Prerequisites
 
-To install under OS X it is required to have [Homebrew](https://brew.sh/) and [Yarn](https://yarnpkg.com/en/) installed first.
+* **OS X:** You'll need [Homebrew](https://brew.sh/) and [Yarn](https://yarnpkg.com/en/) installed.
+* **Windows:** To install under Windows you need to be running the _64-bit version of Windows 10 Anniversary Update or later (build 1607+)_. The [Linux Subsystem for Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide) should be installed and enabled before proceeding. Then, you'll need the prerequisites for Ubuntu Linux, detailed below, set up.
+* **Ubuntu Linux:** You'll need the latest version of NodeJS, Yarn and debconf-utils installed first. Follow this [simple guide](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) to get the latest version of NodeJS installed. Install the rest of the packages using the `apt-get` package manager. _Note: During the WordPress installation, you may be asked to enter the root password at the prompt due to the use of the `sudo` command_
 
-To install and start WordPress, run the following command:
+### Install
+
+The following command will get WordPress running locally on your machine, along with the WordPress plugins you'll need to create and serve custom data via the WP REST API.
 
 ```zsh
-> yarn macosx && yarn install && yarn start
+> yarn install && yarn start
 ```
-
-### Windows
-
-To install under Windows you need to be running the _64-bit version of Windows 10 Anniversary Update or later (build 1607+)_. The [Linux Subsystem for Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide) should be installed and enabled before proceeding with the installation.
-
-It is required to have the latest version of NodeJS, Yarn and debconf-utils installed first. Follow this [simple guide](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) to get the latest version of NodeJS installed. The rest of the packages can be installed using the `apt-get` package manager.
-
-To install and start WordPress, run the following command:
-
-_Note: you may be asked to enter the root password at the prompt due to the use of the `sudo` command_
-
-```bash
-$> yarn windows && yarn install && yarn start
-```
-
-### Ubuntu Linux
-
-To install under Ubuntu Linux it is required to have the latest version of NodeJS, Yarn and debconf-utils installed first. Follow this [simple guide](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) to get the latest version of NodeJS installed. The rest of the packages can be installed using the `apt-get` package manager.
-
-To install and start WordPress, run the following command:
-
-_Note: you may be asked to enter the root password at the prompt due to the use of the `sudo` command_
-
-```bash
-$> yarn ubuntu && yarn install && yarn start
-```
-
-### Post Install
 
 When the installation process completes successfully:
 
