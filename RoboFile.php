@@ -26,14 +26,14 @@ class RoboFile extends \Robo\Tasks {
 			return;
 		}
 
-		$this->_exec( "mysql -uroot -e 'create user " . $opts['wp-db-name'] . "'" );
-		$this->_exec( "mysql -uroot -e 'create database " . $opts['wp-db-name'] . "'" );
-		$this->_exec( 'mysql -uroot -e "grant all privileges on ' . $opts['wp-db-name']
+		$this->_exec( "mysql -uroot -proot -h 0.0.0.0 -e 'create user if not exists " . $opts['wp-db-name'] . "'" );
+		$this->_exec( "mysql -uroot -proot -h 0.0.0.0 -e 'create database if not exists " . $opts['wp-db-name'] . "'" );
+		$this->_exec( 'mysql -uroot -proot -h 0.0.0.0 -e "grant all privileges on ' . $opts['wp-db-name']
 		. ' . * to ' . $opts['wp-db-name'] . "@localhost identified by '" . $opts['wp-db-name'] . "'\"" );
-		$this->_exec( "mysql -uroot -e 'flush privileges'" );
+		$this->_exec( "mysql -uroot -proot -h 0.0.0.0 -e 'flush privileges'" );
 
-		$this->wp( 'core download --version=4.8.2 --force' );
-		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=127.0.0.1' );
+		$this->wp( 'core download --version=4.8.2 --locale=en_US --force' );
+		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=0.0.0.0' );
 		$this->wp( 'db drop --yes' );
 		$this->wp( 'db create --yes' );
 
