@@ -27,7 +27,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Start mysql-server
     mysql.server start
     # Set the password to root to be compatible with the world
-    mysqladmin -u root password root
+    mysqladmin -u root password root --password=root
 else
     echo "Sorry, this installation script only works on Mac OS X and Ubuntu Linux. Looks like your operating system is $OSTYPE."
 fi
