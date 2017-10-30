@@ -26,8 +26,17 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install mysql
     # Start mysql-server
     mysql.server start
-    # Set the password to root to be compatible with the world
-    mysqladmin -u root password root --password=root
+    # If there's no password set for MySQL (first-time install), add one and cleanup
+    if mysql -uroot; then
+        mysql -uroot <<_EOF_
+          UPDATE mysql.user SET authentication_string=PASSWORD('root') WHERE User='root';
+          DELETE FROM mysql.user WHERE User='';
+          DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+          DROP DATABASE IF EXISTS test;
+          DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+          FLUSH PRIVILEGES;
+_EOF_
+    fi
 else
     echo "Sorry, this installation script only works on Mac OS X and Ubuntu Linux. Looks like your operating system is $OSTYPE."
 fi
