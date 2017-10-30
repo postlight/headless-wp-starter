@@ -5,7 +5,7 @@
  * Thanks to https://codeinphp.github.io/post/outputting-php-to-browser-console/
  *
  * To use this, in your PHP template inside PHP tags, add a line like this:
- *  logConsole('$mobile_image_size_inline_style var', $mobile_image_size_inline_style, true);
+ *  log_console('$mobile_image_size_inline_style var', $mobile_image_size_inline_style, true);
  *
  * @param $name: message to be shown for optional data/vars
  * @param $data: variable (scalar/mixed) arrays/objects, etc to be logged
@@ -57,12 +57,21 @@ JSCODE;
 
 /**
  * Log a value in wp-content/debug.log.
- * @param  str $message
- * @param str $file Filename, defaults to ''
- * @param str $line Line number, defaults to ''
+ * To turn on, add the following to wp-config.php:
+ *
+ * define( 'WP_DEBUG', true );
+ * define( 'WP_DEBUG_LOG', true );  // Turn logging to wp-content/debug.log ON
+ * define( 'WP_DEBUG_DISPLAY', false ); // Keep JSON response valid
+ * @ini_set( 'display_errors', 0 ); // Keep JSON responses valid
+ *
+ * NOT INTENDED FOR PRODUCTION USE.
+ *
+ * @param str $message
+ * @param str $file Filename, defaults to __FILE__
+ * @param str $line Line number, defaults to __LINE__
  * @return null
  */
-function log_it( $message, $file = '', $line = '' ) {
+function log_it( $message, $file = __FILE__, $line = __LINE__ ) {
 	if ( WP_DEBUG === true ) {
 		if ( is_array( $message ) || is_object( $message ) ) {
 			error_log( $file . 'L' . $line . ' ' . ( print_r( $message, true ) ) );
