@@ -1,6 +1,4 @@
-![](frontend/static/images/wordpress-plus-react-header.png)
-
-# WordPress + React Starter Kit
+![WordPress + React Starter Kit](frontend/static/images/wordpress-plus-react-header.png)
 
 Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up two things:
 
