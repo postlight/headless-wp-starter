@@ -78,7 +78,7 @@ class RoboFile extends \Robo\Tasks {
 
 		// Set up example menu
 		$this->wp( 'menu create "My Menu"' );
-		$this->wp( 'menu item add-custom my-menu "Game of Thrones" http://www.hbo.com/game-of-thrones' );
+		$this->wp( 'menu item add-custom my-menu "About the Starter Kit" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c' );
 		$this->wp( 'menu location assign my-menu main' );
 
 		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (' . $opts['wp-user'] . '/' . $opts['wp-pw'] . ')' );
