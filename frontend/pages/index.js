@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import Link from "next/link";
 
@@ -12,17 +12,21 @@ class Index extends Component {
     }
     componentDidMount() {
         const postsDataURL = "http://localhost:8080/wp-json/wp/v2/posts?_embed";
-        fetch(postsDataURL).then(res => res.json()).then(res => {
-            this.setState({
-                posts: res
+        fetch(postsDataURL)
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    posts: res
+                });
             });
-        });
         const pageDataURL = "http://localhost:8080/wp-json/wp/v2/pages?_embed";
-        fetch(pageDataURL).then(res => res.json()).then(res => {
-            this.setState({
-                pages: res
+        fetch(pageDataURL)
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    pages: res
+                });
             });
-        });
     }
     render() {
         const posts = this.state.posts.map((post, index) => {
@@ -31,9 +35,7 @@ class Index extends Component {
                     <li>
                         <strong>Title:</strong>{" "}
                         <Link href={post.link}>
-                            <a>
-                                {post.title.rendered}
-                            </a>
+                            <a>{post.title.rendered}</a>
                         </Link>
                     </li>
                 </ul>
@@ -45,22 +47,19 @@ class Index extends Component {
                     <li>
                         <strong>Title:</strong>{" "}
                         <Link href={page.link}>
-                            <a>
-                                {page.title.rendered}
-                            </a>
+                            <a>{page.title.rendered}</a>
                         </Link>
                     </li>
                 </ul>
             );
         });
         return (
-            <div>
-                <Header />
+            <Layout>
                 <h2>Posts</h2>
                 {posts}
                 <h2>Pages</h2>
                 {pages}
-            </div>
+            </Layout>
         );
     }
 }
