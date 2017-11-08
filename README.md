@@ -5,6 +5,8 @@ Postlight's Headless WordPress + React Starter Kit is an automated toolset that 
 1. A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/).
 2. A server-side rendered React frontend using [Next.js](https://github.com/zeit/next.js/).
 
+You can read all about it in [this handy introduction](https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c).
+
 **What's inside:**
 
 * Installer script which bootstraps a core WordPress installation plus the plugins you need to set up custom post types and custom fields ([Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
