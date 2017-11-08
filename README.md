@@ -1,4 +1,4 @@
-# WordPress + React Starter Kit
+![WordPress + React Starter Kit](frontend/static/images/wordpress-plus-react-header.png)
 
 Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up two things:
 
@@ -9,10 +9,12 @@ You can read all about it in [this handy introduction](https://trackchanges.post
 
 **What's inside:**
 
-* Installer script which bootstraps a core WordPress installation plus the plugins you need to set up custom post types and custom fields ([Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
+* An automated installer script which bootstraps a core WordPress installation.
+* The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
 * Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
-* All the starter theme code and settings you need for building and running headless WordPress, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
+* All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
 * A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
+* A starter frontend React app powered by [Next.js](https://learnnextjs.com/).
 * A [Docker](https://www.docker.com/) container and scripts to manage it, for easily running the frontend React app locally or deploying it to any hosting provider with Docker support.
 
 Let's get started.
