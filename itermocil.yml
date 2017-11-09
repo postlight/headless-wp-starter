@@ -7,6 +7,6 @@ windows:
     panes:
       - wp server
       - commands:
-          - cd frontend && npm run dev
+          - cd frontend && yarn run dev
         name: 'git'
       - git status
