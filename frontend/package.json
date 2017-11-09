@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "next",
+        "dev": "node server.js",
         "build": "next build",
         "start": "next start",
         "docker:build": "docker build -t frontend .",
@@ -19,6 +19,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "express": "^4.16.2",
+        "isomorphic-unfetch": "^2.0.0",
         "next": "^3.2.2",
         "react": "^15.6.1",
         "react-dom": "^15.6.1"
