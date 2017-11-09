@@ -41,17 +41,12 @@ class Header extends Component {
                     <Link href="/">
                         <a style={linkStyle}>Home</a>
                     </Link>
-                    <Link href="/another-page">
-                        <a style={linkStyle}>Another Page</a>
-                    </Link>
-                    <span style={linkStyle}>WordPress menu:</span>
                     {menuItems}
                 </div>
                 <img
-                    src="static/images/wordpress-plus-react-header.png"
+                    src="/static/images/wordpress-plus-react-header.png"
                     width="1024"
                 />
-                <h1>Hello Headless WordPress</h1>
             </div>
         );
     }

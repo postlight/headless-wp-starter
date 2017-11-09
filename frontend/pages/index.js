@@ -34,7 +34,7 @@ class Index extends Component {
                 <ul key={index}>
                     <li>
                         <strong>Title:</strong>{" "}
-                        <Link href={post.link}>
+                        <Link href={`/post/${post.slug}`}>
                             <a>{post.title.rendered}</a>
                         </Link>
                     </li>
@@ -46,7 +46,7 @@ class Index extends Component {
                 <ul key={index}>
                     <li>
                         <strong>Title:</strong>{" "}
-                        <Link href={page.link}>
+                        <Link href={`/page/${page.slug}`}>
                             <a>{page.title.rendered}</a>
                         </Link>
                     </li>
@@ -55,6 +55,7 @@ class Index extends Component {
         });
         return (
             <Layout>
+                <h1>Hello Headless WordPress</h1>
                 <h2>Posts</h2>
                 {posts}
                 <h2>Pages</h2>
