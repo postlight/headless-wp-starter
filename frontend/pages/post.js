@@ -3,10 +3,10 @@ import fetch from "isomorphic-unfetch";
 
 const Post = props => (
     <Layout>
-        <h1>{props.posts[0].title.rendered}</h1>
+        <h1>{props.post.title.rendered}</h1>
         <div
             dangerouslySetInnerHTML={{
-                __html: props.posts[0].content.rendered
+                __html: props.post.content.rendered
             }}
         />
     </Layout>
@@ -15,10 +15,10 @@ const Post = props => (
 Post.getInitialProps = async function(context) {
     const { slug, apiRoute } = context.query;
     const res = await fetch(
-        `http://localhost:8080/wp-json/wp/v2/${apiRoute}?slug=${slug}`
+        `http://localhost:8080/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
-    const posts = await res.json();
-    return { posts };
+    const post = await res.json();
+    return { post };
 };
 
 export default Post;
