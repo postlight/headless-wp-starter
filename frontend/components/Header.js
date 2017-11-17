@@ -28,7 +28,8 @@ class Header extends Component {
         const menuItems = this.state.menu.map((item, index) => {
             return (
                 <Link
-                    href={item.url.replace("http://localhost:8080", "")}
+                    as={`/page${item.url.replace("http://localhost:8080", "")}`}
+                    href={`/post?slug=${item.url.replace("http://localhost:8080", "")}&apiRoute=page`}
                     key={item.ID}
                 >
                     <a style={linkStyle}>{item.title}</a>
