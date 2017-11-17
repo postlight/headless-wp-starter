@@ -34,7 +34,7 @@ class Index extends Component {
                 <ul key={index}>
                     <li>
                         <strong>Title:</strong>{" "}
-                        <Link href={`/post/${post.slug}`}>
+                        <Link as={`/post/${post.slug}`} href={`/post?slug=${post.slug}&apiRoute=post`}>
                             <a>{post.title.rendered}</a>
                         </Link>
                     </li>
@@ -46,7 +46,7 @@ class Index extends Component {
                 <ul key={index}>
                     <li>
                         <strong>Title:</strong>{" "}
-                        <Link href={`/page/${page.slug}`}>
+                        <Link as={`/page/${page.slug}`} href={`/post?slug=${page.slug}&apiRoute=page`}>
                             <a>{page.title.rendered}</a>
                         </Link>
                     </li>
