@@ -17,6 +17,7 @@ class RoboFile extends \Robo\Tasks {
 		'wp-theme-name' => 'Postlight Headless WP Starter',
 		'wp-email' => 'nedstark@headlesswpstarter.dev',
 		'wp-db-name' => 'wp_headless',
+		'wp-description' => 'Just another (headless) WordPress site',
 		'wp-plugins' => array(),
 	] ) {
 		$confirm = $this->io()->confirm( 'This will replace your current ' .
@@ -75,6 +76,9 @@ class RoboFile extends \Robo\Tasks {
 
 		// Pretty URL structure required for wp-json path to work correctly
 		$this->wp( 'rewrite structure "/%year%/%monthnum%/%day%/%postname%/"' );
+
+		// Set the site description
+		$this->wp( 'option update blogdescription "' . $opts['wp-description'] . '"' );
 
 		// Set up example menu
 		$this->wp( 'menu create "My Menu"' );

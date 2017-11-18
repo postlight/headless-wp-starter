@@ -8,6 +8,7 @@ command:
           wp-theme-name: Postlight Headless WP Starter
           wp-email: nedstark@headlesswpstarter.dev
           wp-db-name: wp_headless
+          wp-description: Just another (headless) WordPress site by your friends at Postlight
           # wp-plugins is optional
           # If not set, Robo will activate all the plugins that are installed.
           # wp-plugins:
