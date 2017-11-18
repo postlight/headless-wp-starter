@@ -85,10 +85,14 @@ class RoboFile extends \Robo\Tasks {
 			'<a href="http://localhost:8080/wp-json/postlight/v1/post?slug=hello-world&edit=true" target="_new">Edit</a>'.
 			' or delete it, then start writing!\'' );
 
+		// Update the default 'Uncategorized' category name to make it more menu-friendly
+		$this->wp( 'term update category 1 --name="Sample Category"' );
+
 		// Set up example menu
 		$this->wp( 'menu create "My Menu"' );
 		$this->wp( 'menu item add-post my-menu 1' );
 		$this->wp( 'menu item add-post my-menu 2' );
+		$this->wp( 'menu item add-term my-menu category 1' );
 		$this->wp( 'menu item add-custom my-menu "About the Starter Kit" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c' );
 		$this->wp( 'menu location assign my-menu main' );
 
