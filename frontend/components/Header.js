@@ -29,12 +29,24 @@ class Header extends Component {
                 });
             });
     }
-
+    getSlug(url) {
+        const parts = url.split("/");
+        return parts.length > 2 ? parts[parts.length - 2] : "";
+    }
     render() {
         const menuItems = this.state.menu.map((item, index) => {
+            if (item.object === "custom") {
+                return (
+                    <Link href={item.url} key={item.ID}>
+                        <a style={linkStyle}>{item.title}</a>
+                    </Link>
+                );
+            }
+            const slug = this.getSlug(item.url);
             return (
                 <Link
-                    href={item.url.replace("http://localhost:8080", "")}
+                    as={`/${item.object}/${slug}`}
+                    href={`/post?slug=${slug}&apiRoute=${item.object}`}
                     key={item.ID}
                 >
                     <a style={linkStyle}>{item.title}</a>
