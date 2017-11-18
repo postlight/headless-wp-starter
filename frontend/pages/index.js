@@ -33,8 +33,10 @@ class Index extends Component {
             return (
                 <ul key={index}>
                     <li>
-                        <strong>Title:</strong>{" "}
-                        <Link as={`/post/${post.slug}`} href={`/post?slug=${post.slug}&apiRoute=post`}>
+                        <Link
+                            as={`/post/${post.slug}`}
+                            href={`/post?slug=${post.slug}&apiRoute=post`}
+                        >
                             <a>{post.title.rendered}</a>
                         </Link>
                     </li>
@@ -45,8 +47,10 @@ class Index extends Component {
             return (
                 <ul key={index}>
                     <li>
-                        <strong>Title:</strong>{" "}
-                        <Link as={`/page/${page.slug}`} href={`/post?slug=${page.slug}&apiRoute=page`}>
+                        <Link
+                            as={`/page/${page.slug}`}
+                            href={`/post?slug=${page.slug}&apiRoute=page`}
+                        >
                             <a>{page.title.rendered}</a>
                         </Link>
                     </li>
