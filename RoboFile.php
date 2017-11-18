@@ -80,8 +80,15 @@ class RoboFile extends \Robo\Tasks {
 		// Set the site description
 		$this->wp( 'option update blogdescription "' . $opts['wp-description'] . '"' );
 
+		$this->wp( 'post update 1 --post_title="Hello headless WordPress world" '.
+			'--post_content=\'Welcome to WordPress. This is your first post. '.
+			'<a href="http://localhost:8080/wp-json/postlight/v1/post?slug=hello-world&edit=true" target="_new">Edit</a>'.
+			' or delete it, then start writing!\'' );
+
 		// Set up example menu
 		$this->wp( 'menu create "My Menu"' );
+		$this->wp( 'menu item add-post my-menu 1' );
+		$this->wp( 'menu item add-post my-menu 2' );
 		$this->wp( 'menu item add-custom my-menu "About the Starter Kit" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c' );
 		$this->wp( 'menu location assign my-menu main' );
 
