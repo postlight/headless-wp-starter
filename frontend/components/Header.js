@@ -32,13 +32,28 @@ class Header extends Component {
 
     render() {
         const menuItems = this.state.menu.map((item, index) => {
+            let prefix = item.object
+            let link = `/${prefix}?slug=${item.url.replace("http://localhost:8080", "")}&apiRoute=${prefix}`
+            if (item.object === 'custom') {
+                prefix = ''
+                link = item.url.replace("http://localhost:8080", "")
+                return (
+                    <Link
+                        href={link}
+                        key={item.ID}
+                    >
+                        <a style={linkStyle}>{item.title}</a>
+                    </Link>
+                );
+            }
             return (
-                <Link
-                    href={item.url.replace("http://localhost:8080", "")}
-                    key={item.ID}
-                >
-                    <a style={linkStyle}>{item.title}</a>
-                </Link>
+              <Link
+                as={`/${prefix}${item.url.replace("http://localhost:8080", "")}`}
+                href={link}
+                key={item.ID}
+              >
+                <a style={linkStyle}>{item.title}</a>
+              </Link>
             );
         });
         return (
