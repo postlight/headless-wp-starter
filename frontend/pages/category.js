@@ -3,12 +3,13 @@ import React, { Component } from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
+import {Config} from "../config.js"
 
 class Category extends Component {
     static async getInitialProps(context) {
         const { slug } = context.query;
         const res = await fetch(
-            `http://localhost:8080/wp-json/wp/v2/categories?slug=${slug}`
+            Config.apiUrl + `/wp-json/wp/v2/categories?slug=${slug}`
         );
         const categories = await res.json();
         return { categories };
@@ -21,7 +22,7 @@ class Category extends Component {
     }
     componentDidMount() {
         if (this.props.categories.length > 0) {
-            const postsDataURL = `http://localhost:8080/wp-json/wp/v2/posts?_embed&categories=${this
+            const postsDataURL = Config.apiUrl + `/wp-json/wp/v2/posts?_embed&categories=${this
                 .props.categories[0].id}`;
             fetch(postsDataURL)
                 .then(res => res.json())

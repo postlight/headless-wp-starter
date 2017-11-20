@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import {Config} from "../config.js"
 
 const linkStyle = {
     marginRight: 15
@@ -20,7 +21,7 @@ class Header extends Component {
     }
     componentDidMount() {
         const menuItemsURL =
-            "http://localhost:8080/wp-json/menus/v1/menus/header-menu";
+            Config.apiUrl + "/wp-json/menus/v1/menus/header-menu";
         fetch(menuItemsURL)
             .then(res => res.json())
             .then(res => {

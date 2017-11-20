@@ -3,12 +3,13 @@ import React, { Component } from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
+import {Config} from "../config.js"
 
 class Post extends Component {
     static async getInitialProps(context) {
         const { slug, apiRoute } = context.query;
         const res = await fetch(
-            `http://localhost:8080/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
+            Config.apiUrl + `/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
         );
         const post = await res.json();
         return { post };
