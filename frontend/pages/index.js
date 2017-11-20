@@ -1,6 +1,7 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import Link from "next/link";
+import {Config} from "../config.js"
 
 class Index extends Component {
     constructor() {
@@ -12,21 +13,21 @@ class Index extends Component {
         };
     }
     componentDidMount() {
-        fetch("http://localhost:8080/wp-json/postlight/v1/page?slug=welcome")
+        fetch(Config.apiUrl + "/wp-json/postlight/v1/page?slug=welcome")
             .then(res => res.json())
             .then(res => {
                 this.setState({
                     page: res
                 });
             });
-        fetch("http://localhost:8080/wp-json/wp/v2/posts?_embed")
+        fetch(Config.apiUrl + "/wp-json/wp/v2/posts?_embed")
             .then(res => res.json())
             .then(res => {
                 this.setState({
                     posts: res
                 });
             });
-        fetch("http://localhost:8080/wp-json/wp/v2/pages?_embed")
+        fetch(Config.apiUrl + "/wp-json/wp/v2/pages?_embed")
             .then(res => res.json())
             .then(res => {
                 this.setState({
