@@ -8,15 +8,18 @@ const Footer = () => (
     <div>
         <hr style={hrStyle} />
         <p>
-            ❤️ <Link href="https://postlight.com">Made by Postlight</Link>. 🍴{" "}
+            ❤️{" "}
+            <Link href="https://postlight.com">
+                <a>Made by Postlight</a>
+            </Link>. 🍴{" "}
             <Link href="https://github.com/postlight/headless-wp-starter">
-                Fork on GitHub
+                <a>Fork on GitHub</a>
             </Link>.
         </p>
         <p>
             👋 Need help with your publishing platform?{" "}
             <Link href="mailto:hello@postlight.com?subject=Partner+with+Postlight+on+a+headless+CMS+project">
-                Say hi.
+                <a>Say hi.</a>
             </Link>
         </p>
     </div>
