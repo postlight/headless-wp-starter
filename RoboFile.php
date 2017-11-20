@@ -80,21 +80,25 @@ class RoboFile extends \Robo\Tasks {
 		// Set the site description
 		$this->wp( 'option update blogdescription "' . $opts['wp-description'] . '"' );
 
-		$this->wp( 'post update 1 --post_title="Hello headless WordPress world" '.
-			'--post_content=\'Welcome to WordPress. This is your first post. '.
-			'<a href="http://localhost:8080/wp-json/postlight/v1/post?slug=hello-world&edit=true" target="_new">Edit</a>'.
-			' or delete it, then start writing!\'' );
+		// Update the Hello World post
+		$this->wp( 'post update 1 wp-content/themes/postlight-headless-wp/post-content/sample-post.txt '.
+			'--post_title="Sample Post" --post_name=sample-post' );
+
+		// Create homepage content
+		$this->wp( 'post create wp-content/themes/postlight-headless-wp/post-content/welcome.txt '.
+			'--post_type=page --post_status=publish --post_name=welcome '.
+			'--post_title="Congratulations!"' );
 
 		// Update the default 'Uncategorized' category name to make it more menu-friendly
 		$this->wp( 'term update category 1 --name="Sample Category"' );
 
 		// Set up example menu
-		$this->wp( 'menu create "My Menu"' );
-		$this->wp( 'menu item add-post my-menu 1' );
-		$this->wp( 'menu item add-post my-menu 2' );
-		$this->wp( 'menu item add-term my-menu category 1' );
-		$this->wp( 'menu item add-custom my-menu "About the Starter Kit" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c' );
-		$this->wp( 'menu location assign my-menu main' );
+		$this->wp( 'menu create "Header Menu"' );
+		$this->wp( 'menu item add-post header-menu 1' );
+		$this->wp( 'menu item add-post header-menu 2' );
+		$this->wp( 'menu item add-term header-menu category 1' );
+		$this->wp( 'menu item add-custom header-menu "Read about the Starter Kit on Medium" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c' );
+		$this->wp( 'menu location assign header-menu header-menu' );
 
 		$this->io()->success( 'Great. You can now log into WordPress at: http://localhost:8080/wp-admin (' . $opts['wp-user'] . '/' . $opts['wp-pw'] . ')' );
 	}

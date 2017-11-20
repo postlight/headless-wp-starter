@@ -1,0 +1,1 @@
+Welcome to WordPress. This is your first post. <a href="http://localhost:8080/wp-json/postlight/v1/post?slug=sample-post&edit=true" target="_new">Edit</a> or delete it, then start writing!

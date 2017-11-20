@@ -20,7 +20,7 @@ class Header extends Component {
     }
     componentDidMount() {
         const menuItemsURL =
-            "http://localhost:8080/wp-json/menus/v1/menus/main";
+            "http://localhost:8080/wp-json/menus/v1/menus/header-menu";
         fetch(menuItemsURL)
             .then(res => res.json())
             .then(res => {

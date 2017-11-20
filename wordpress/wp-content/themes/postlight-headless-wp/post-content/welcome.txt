@@ -1,0 +1,5 @@
+You've successfully set up <a href="https://github.com/postlight/headless-wp-starter" target="_new">Postlight's WordPress + React Starter Kit</a> on your computer.
+
+You are now running a <a href="http://localhost:8080/wp-admin/">WordPress backend</a> and you're looking at the React frontend, built with <a href="http://learnnextjs.com" target="_new">Next.js</a>.
+
+All the content you see here is created in WordPress -- posts, pages, categories, and menus. <a href="http://localhost:8080/wp-json/postlight/v1/page?slug=welcome&edit=true" target="_new">Edit this page</a> to update it.

@@ -7,20 +7,26 @@ class Index extends Component {
         super();
         this.state = {
             posts: [],
-            pages: []
+            pages: [],
+            page: null
         };
     }
     componentDidMount() {
-        const postsDataURL = "http://localhost:8080/wp-json/wp/v2/posts?_embed";
-        fetch(postsDataURL)
+        fetch("http://localhost:8080/wp-json/postlight/v1/page?slug=welcome")
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    page: res
+                });
+            });
+        fetch("http://localhost:8080/wp-json/wp/v2/posts?_embed")
             .then(res => res.json())
             .then(res => {
                 this.setState({
                     posts: res
                 });
             });
-        const pageDataURL = "http://localhost:8080/wp-json/wp/v2/pages?_embed";
-        fetch(pageDataURL)
+        fetch("http://localhost:8080/wp-json/wp/v2/pages?_embed")
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -59,7 +65,14 @@ class Index extends Component {
         });
         return (
             <Layout>
-                <h1>Hello Headless WordPress</h1>
+                <h1>{this.state.page ? this.state.page.title.rendered : ""}</h1>
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: this.state.page
+                            ? this.state.page.content.rendered
+                            : ""
+                    }}
+                />
                 <h2>Posts</h2>
                 {posts}
                 <h2>Pages</h2>
