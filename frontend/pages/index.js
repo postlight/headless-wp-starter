@@ -1,42 +1,28 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
+import fetch from "isomorphic-unfetch";
 import Link from "next/link";
-import {Config} from "../config.js"
+import { Config } from "../config.js";
 
 class Index extends Component {
-    constructor() {
-        super();
-        this.state = {
-            posts: [],
-            pages: [],
-            page: null
-        };
+    static async getInitialProps(context) {
+        const pageRes = await fetch(
+            `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
+        );
+        const page = await pageRes.json();
+        const postsRes = await fetch(
+            `${Config.apiUrl}/wp-json/wp/v2/posts?_embed`
+        );
+        const posts = await postsRes.json();
+        const pagesRes = await fetch(
+            `${Config.apiUrl}/wp-json/wp/v2/pages?_embed`
+        );
+        const pages = await pagesRes.json();
+        return { page, posts, pages };
     }
-    componentDidMount() {
-        fetch(Config.apiUrl + "/wp-json/postlight/v1/page?slug=welcome")
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    page: res
-                });
-            });
-        fetch(Config.apiUrl + "/wp-json/wp/v2/posts?_embed")
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    posts: res
-                });
-            });
-        fetch(Config.apiUrl + "/wp-json/wp/v2/pages?_embed")
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    pages: res
-                });
-            });
-    }
+
     render() {
-        const posts = this.state.posts.map((post, index) => {
+        const posts = this.props.posts.map((post, index) => {
             return (
                 <ul key={index}>
                     <li>
@@ -50,7 +36,7 @@ class Index extends Component {
                 </ul>
             );
         });
-        const pages = this.state.pages.map((page, index) => {
+        const pages = this.props.pages.map((page, index) => {
             return (
                 <ul key={index}>
                     <li>
@@ -66,12 +52,10 @@ class Index extends Component {
         });
         return (
             <Layout>
-                <h1>{this.state.page ? this.state.page.title.rendered : ""}</h1>
+                <h1>{this.props.page.title.rendered}</h1>
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: this.state.page
-                            ? this.state.page.content.rendered
-                            : ""
+                        __html: this.props.page.content.rendered
                     }}
                 />
                 <h2>Posts</h2>
