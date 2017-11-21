@@ -3,8 +3,8 @@ Contributors: webdevstudios, pluginize, tw2113, vegasgeek, modemlooper, williams
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3084056
 Tags: custom post types, CPT, CMS, post, types, post type, taxonomy, tax, custom, content types, post types
 Requires at least: 4.6
-Tested up to: 4.8.0
-Stable tag: 1.5.5
+Tested up to: 4.9.0
+Stable tag: 1.5.6
 License: GPLv2
 
 Admin UI for creating custom post types and custom taxonomies for WordPress
@@ -30,7 +30,9 @@ Official development of Custom Post Type UI is on GitHub, with official stable r
 
 == Changelog ==
 
-See changelog.txt for older changes.
+= 1.5.6 - 2017-11-09 =
+* Added: Added "custom_css", "customize_changeset", "author", and "post_type" as reserved post_types.
+* Fixed: The "Invalid JSON" error message was receiving the wrong color indicator for for the admin notice.
 
 = 1.5.5 - 2017-07-27 =
 * Fixed: Prevent possible conflicts with .required css selector by prefixing ours.
@@ -107,6 +109,10 @@ See changelog.txt for older changes.
 * Updated: Further UI refinements to better match WordPress admin. Adapted styles found from metaboxes, including collapse/expand toggles.
 
 == Upgrade Notice ==
+
+= 1.5.6 - 2017-11-09 =
+* Added: Added "custom_css", "customize_changeset", "author", and "post_type" as reserved post_types.
+* Fixed: The "Invalid JSON" error message was receiving the wrong color indicator for for the admin notice.
 
 = 1.5.5 - 2017-07-27 =
 * Fixed: Prevent possible conflicts with .required css selector by prefixing ours.
