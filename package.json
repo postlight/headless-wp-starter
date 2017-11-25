@@ -8,6 +8,6 @@
   "scripts": {
     "preinstall": "chmod +x install.sh && ./install.sh",
     "postinstall": "robo wordpress:setup",
-    "start": "wp server"
+    "start": "wp server --host=0.0.0.0"
   }
 }
