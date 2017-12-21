@@ -2,9 +2,14 @@ import React, { Component } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { Config } from "../config.js";
+import stylesheet from '../src/styles/style.scss'
 
 const linkStyle = {
     marginRight: 15
+};
+
+let Classes = {
+
 };
 
 const headerImageStyle = {
@@ -77,6 +82,7 @@ class Header extends Component {
                         color: #000;
                     }
                 `}</style>
+                <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
                 <div>
                     <Link href="/">
                         <a style={linkStyle}>Home</a>
