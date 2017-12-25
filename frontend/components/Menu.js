@@ -9,9 +9,6 @@ const linkStyle = {
 class Menu extends Component {
   constructor() {
       super();
-      this.state = {
-          menu: []
-      };
   }
 
   getSlug(url) {
