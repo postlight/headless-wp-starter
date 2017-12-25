@@ -4,11 +4,6 @@ import Head from "next/head";
 import Menu from "./Menu.js";
 import { Config } from "../config.js";
 
-const headerImageStyle = {
-    marginTop: 50,
-    marginBottom: 50
-};
-
 class Header extends Component {
     constructor() {
         super();
@@ -37,12 +32,6 @@ class Header extends Component {
                         color: #000;
                     }
                 `}</style>
-                <Menu />
-                <img
-                    src="/static/images/wordpress-plus-react-header.png"
-                    width="815"
-                    style={headerImageStyle}
-                />
             </div>
         );
     }

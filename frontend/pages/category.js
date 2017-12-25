@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
+import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 
 class Category extends Component {
@@ -56,6 +57,7 @@ class Category extends Component {
         });
         return (
             <Layout>
+                <Menu location="header-menu" />
                 <h1>{this.props.categories[0].name} Posts</h1>
                 {posts}
             </Layout>

@@ -2,6 +2,7 @@ import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
+import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 
 class Post extends Component {
@@ -19,6 +20,7 @@ class Post extends Component {
 
         return (
             <Layout>
+                <Menu location="header-menu" />
                 <h1>{this.props.post.title.rendered}</h1>
                 <div
                     dangerouslySetInnerHTML={{
