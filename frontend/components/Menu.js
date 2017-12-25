@@ -19,22 +19,8 @@ class Menu extends Component {
       return parts.length > 2 ? parts[parts.length - 2] : "";
   }
 
-  componentDidMount() {
-      const menuItemsURL = `${
-          Config.apiUrl
-      }/wp-json/menus/v1/menus/header-menu`;
-      fetch(menuItemsURL)
-          .then(res => res.json())
-          .then(res => {
-              this.setState({
-                  menu: res.items
-              });
-          });
-  }
-
-
   render() {
-      const menuItems = this.state.menu.map((item, index) => {
+      const menuItems = this.props.menu.items.map((item, index) => {
         if (item.object === "custom") {
             return (
                 <Link href={item.url} key={item.ID}>

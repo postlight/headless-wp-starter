@@ -2,6 +2,7 @@ import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
+import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 
@@ -58,7 +59,7 @@ class Index extends Component {
         });
         return (
             <Layout>
-                <Menu location="header-menu" />
+                <Menu menu={this.props.headerMenu} />
                 <img
                     src="/static/images/wordpress-plus-react-header.png"
                     width="815"
@@ -79,4 +80,4 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default PageWrapper(Index);
