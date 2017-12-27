@@ -1,5 +1,5 @@
 windows:
-  - name: Headless WP
+  - name: WordPress + React
     # Create a symlink in your home directory to the actual location of your code
     # ln -s ~/path/to/code/for/headless-wp-starter .
     root: ~/headless-wp-starter/
@@ -7,6 +7,6 @@ windows:
     panes:
       - wp server
       - commands:
-          - cd frontend && yarn run dev
+          - cd frontend && yarn install && yarn run dev
         name: 'git'
       - git status
