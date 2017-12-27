@@ -60,9 +60,7 @@ class acf_field_google_map extends acf_field {
 		
 		// validate value
 		if( empty($field['value']) ) {
-			
 			$field['value'] = array();
-			
 		}
 		
 		
@@ -78,9 +76,7 @@ class acf_field_google_map extends acf_field {
 		foreach( $this->default_values as $k => $v ) {
 		
 			if( empty($field[ $k ]) ) {
-			
 				$field[ $k ] = $v;
-				
 			}
 				
 		}
@@ -98,34 +94,32 @@ class acf_field_google_map extends acf_field {
 		
 		// has value
 		if( $field['value']['address'] ) {
-		
 			$atts['class'] .= ' -value';
-			
 		}
 		
 ?>
 <div <?php acf_esc_attr_e($atts); ?>>
 	
 	<div class="acf-hidden">
-		<?php foreach( $field['value'] as $k => $v ): ?>
-			<input type="hidden" class="input-<?php echo $k; ?>" name="<?php echo esc_attr($field['name']); ?>[<?php echo $k; ?>]" value="<?php echo esc_attr( $v ); ?>" />
-		<?php endforeach; ?>
+		<?php foreach( $field['value'] as $k => $v ): 
+			acf_hidden_input(array( 'name' => $field['name'].'['.$k.']', 'value' => $v, 'class' => 'input-'.$k ));
+		endforeach; ?>
 	</div>
 	
-	<div class="title acf-soh">
+	<div class="title">
 		
-		<div class="actions acf-soh-target">
-			<a href="#" data-name="search" class="acf-icon -search grey" title="<?php _e("Search", 'acf'); ?>"></a>
-			<a href="#" data-name="clear" class="acf-icon -cancel grey" title="<?php _e("Clear location", 'acf'); ?>"></a>
-			<a href="#" data-name="locate" class="acf-icon -location grey" title="<?php _e("Find current location", 'acf'); ?>"></a>
+		<div class="acf-actions -hover">
+			<a href="#" data-name="search" class="acf-icon -search grey" title="<?php _e("Search", 'acf'); ?>"></a><?php 
+			?><a href="#" data-name="clear" class="acf-icon -cancel grey" title="<?php _e("Clear location", 'acf'); ?>"></a><?php 
+			?><a href="#" data-name="locate" class="acf-icon -location grey" title="<?php _e("Find current location", 'acf'); ?>"></a>
 		</div>
 		
-		<input class="search" type="text" placeholder="<?php _e("Search for address...",'acf'); ?>" value="<?php echo $field['value']['address']; ?>" />
+		<input class="search" type="text" placeholder="<?php _e("Search for address...",'acf'); ?>" value="<?php echo esc_attr($field['value']['address']); ?>" />
 		<i class="acf-loading"></i>
 				
 	</div>
 	
-	<div class="canvas" style="height: <?php echo $field['height']; ?>px"></div>
+	<div class="canvas" style="<?php echo esc_attr('height: '.$field['height'].'px'); ?>"></div>
 	
 </div>
 <?php

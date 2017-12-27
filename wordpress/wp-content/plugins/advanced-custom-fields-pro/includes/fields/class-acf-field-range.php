@@ -1,8 +1,8 @@
 <?php
 
-if( ! class_exists('acf_field_email') ) :
+if( ! class_exists('acf_field_range') ) :
 
-class acf_field_email extends acf_field {
+class acf_field_range extends acf_field_number {
 	
 	
 	/*
@@ -21,11 +21,13 @@ class acf_field_email extends acf_field {
 	function initialize() {
 		
 		// vars
-		$this->name = 'email';
-		$this->label = __("Email",'acf');
+		$this->name = 'range';
+		$this->label = __("Range",'acf');
 		$this->defaults = array(
 			'default_value'	=> '',
-			'placeholder'	=> '',
+			'min'			=> '',
+			'max'			=> '',
+			'step'			=> '',
 			'prepend'		=> '',
 			'append'		=> ''
 		);
@@ -49,26 +51,23 @@ class acf_field_email extends acf_field {
 		
 		// vars
 		$atts = array();
-		$keys = array( 'type', 'id', 'class', 'name', 'value', 'placeholder', 'pattern' );
+		$keys = array( 'type', 'id', 'class', 'name', 'value', 'min', 'max', 'step' );
 		$keys2 = array( 'readonly', 'disabled', 'required' );
 		$html = '';
 		
 		
-		// prepend
-		if( $field['prepend'] !== '' ) {
-		
-			$field['class'] .= ' acf-is-prepended';
-			$html .= '<div class="acf-input-prepend">' . acf_esc_html($field['prepend']) . '</div>';
-			
-		}
+		// step
+		if( !$field['step'] ) $field['step'] = 1;
 		
 		
-		// append
-		if( $field['append'] !== '' ) {
+		// min / max
+		if( !$field['min'] ) $field['min'] = 0;
+		if( !$field['max'] ) $field['max'] = 100;
 		
-			$field['class'] .= ' acf-is-appended';
-			$html .= '<div class="acf-input-append">' . acf_esc_html($field['append']) . '</div>';
-			
+		
+		// value
+		if( !is_numeric($field['value']) ) {
+			$field['value'] = 0;
 		}
 		
 		
@@ -88,8 +87,39 @@ class acf_field_email extends acf_field {
 		$atts = acf_clean_atts( $atts );
 		
 		
-		// render
-		$html .= '<div class="acf-input-wrap">' . acf_get_text_input( $atts ) . '</div>';
+		// open
+		$html .= '<div class="acf-range-wrap">';
+			
+			
+			// prepend
+			if( $field['prepend'] !== '' ) {
+				$html .= '<div class="acf-prepend">' . acf_esc_html($field['prepend']) . '</div>';
+			}
+			
+			
+			// range
+			$html .= acf_get_text_input( $atts );
+			
+			
+			// input
+			$len = strlen( (string) $field['max'] );
+			$html .= acf_get_text_input(array(
+				'type'	=> 'number', 
+				'id'	=> $atts['id'] . '-alt', 
+				'value'	=> $atts['value'],
+				'step'	=> $atts['step'],
+				'style'	=> 'width: ' . (1.8 + $len*0.7) . 'em;'
+			));
+			
+			
+			// append
+			if( $field['append'] !== '' ) {
+				$html .= '<div class="acf-append">' . acf_esc_html($field['append']) . '</div>';
+			}
+		
+		
+		// close
+		$html .= '</div>';
 		
 		
 		// return
@@ -117,17 +147,38 @@ class acf_field_email extends acf_field {
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Default Value','acf'),
 			'instructions'	=> __('Appears when creating a new post','acf'),
-			'type'			=> 'text',
+			'type'			=> 'number',
 			'name'			=> 'default_value',
 		));
 		
 		
-		// placeholder
+		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placeholder Text','acf'),
-			'instructions'	=> __('Appears within the input','acf'),
-			'type'			=> 'text',
-			'name'			=> 'placeholder',
+			'label'			=> __('Minimum Value','acf'),
+			'instructions'	=> '',
+			'type'			=> 'number',
+			'name'			=> 'min',
+			'placeholder'	=> '0'
+		));
+		
+		
+		// max
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Maximum Value','acf'),
+			'instructions'	=> '',
+			'type'			=> 'number',
+			'name'			=> 'max',
+			'placeholder'	=> '100'
+		));
+		
+		
+		// step
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Step Size','acf'),
+			'instructions'	=> '',
+			'type'			=> 'number',
+			'name'			=> 'step',
+			'placeholder'	=> '1'
 		));
 		
 		
@@ -147,14 +198,15 @@ class acf_field_email extends acf_field {
 			'type'			=> 'text',
 			'name'			=> 'append',
 		));
-
-	}	
+		
+	}
+	
 	
 }
 
 
 // initialize
-acf_register_field_type( 'acf_field_email' );
+acf_register_field_type( 'acf_field_range' );
 
 endif; // class_exists check
 

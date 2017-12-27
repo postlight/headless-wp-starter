@@ -131,6 +131,11 @@
   visibility: visible !important;
   background: #F9F9F9;
   border-top-color: transparent;
+  min-height: 54px;
+}
+.acf-field-object.ui-sortable-placeholder:after,
+.acf-field-object.ui-sortable-placeholder:before {
+  visibility: hidden;
 }
 .acf-field-object > .meta {
   display: none;
@@ -284,41 +289,42 @@ table.conditional-logic-rules tbody td {
 *	Field: Tab
 *	
 *---------------------------------------------------------------------------------------------*/
-.acf-field-object-tab tr[data-name="name"],
-.acf-field-object-tab tr[data-name="instructions"],
-.acf-field-object-tab tr[data-name="required"],
-.acf-field-object-tab tr[data-name="warning"],
-.acf-field-object-tab tr[data-name="wrapper"] {
-  display: none !important;
+.acf-field-object-tab .acf-field-setting-name,
+.acf-field-object-tab .acf-field-setting-instructions,
+.acf-field-object-tab .acf-field-setting-required,
+.acf-field-object-tab .acf-field-setting-warning,
+.acf-field-object-tab .acf-field-setting-wrapper,
+.acf-field-object-accordion .acf-field-setting-name,
+.acf-field-object-accordion .acf-field-setting-instructions,
+.acf-field-object-accordion .acf-field-setting-required,
+.acf-field-object-accordion .acf-field-setting-warning,
+.acf-field-object-accordion .acf-field-setting-wrapper {
+  display: none;
 }
-.acf-field-object-tab .li-field-name {
+.acf-field-object-tab .li-field-name,
+.acf-field-object-accordion .li-field-name {
   visibility: hidden;
 }
-.acf-field-object-tab .acf-error-message {
-  display: none;
-}
-.acf-field-list[data-layout="table"] .acf-field-object-tab .acf-error-message {
-  display: block;
-}
-.acf-field-object + .acf-field-object-tab {
-  margin-top: 6px;
-}
-.acf-field-object + .acf-field-object-tab:before {
+.acf-field-object + .acf-field-object-tab:before,
+.acf-field-object + .acf-field-object-accordion:before {
   display: block;
   content: "";
-  height: 1px;
-  background: #F0F0F0;
-  margin-top: -7px;
+  height: 5px;
   width: 100%;
-  position: absolute;
+  background: #f9f9f9;
+  border-bottom: #f0f0f0 solid 1px;
 }
-.acf-field-object + .acf-field-object-tab.ui-sortable-placeholder {
-  margin-top: 0;
-  padding-top: 6px;
+.acf-field-object-tab p:first-child,
+.acf-field-object-accordion p:first-child {
+  margin: 0.5em 0;
 }
-.acf-field-object-tab.ui-sortable-helper:before,
-.ui-sortable-placeholder + .acf-field-object-tab:before {
-  display: none;
+/*---------------------------------------------------------------------------------------------
+*
+*	Field: Accordion
+*	
+*---------------------------------------------------------------------------------------------*/
+.acf-field-object-accordion .acf-field-setting-instructions {
+  display: table-row;
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -372,6 +378,20 @@ table.conditional-logic-rules tbody td {
 }
 .acf-field-object-date-time-picker .acf-radio-list input[type="text"] {
   width: 200px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Slug
+*
+*--------------------------------------------------------------------------------------------*/
+#slugdiv .inside {
+  padding: 12px;
+  margin: 0;
+}
+#slugdiv input[type="text"] {
+  width: 100%;
+  height: 28px;
+  font-size: 14px;
 }
 /*--------------------------------------------------------------------------------------------
 *

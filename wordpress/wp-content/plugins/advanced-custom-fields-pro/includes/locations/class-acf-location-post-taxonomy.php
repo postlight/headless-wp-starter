@@ -73,12 +73,12 @@ class acf_location_post_taxonomy extends acf_location {
 		
 		
 		// not ajax, load real post's terms
-		if( !$screen['ajax'] ) {
+		if( $terms === null ) {
 			
 			$terms = wp_get_post_terms( $post_id, $term->taxonomy, array('fields' => 'ids') );
 			
 		}
-			
+		
 		
 		// If no terms, this is a new post and should be treated as if it has the "Uncategorized" (1) category ticked
 		if( empty($terms) ) {

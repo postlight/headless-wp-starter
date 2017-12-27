@@ -26,8 +26,8 @@
 			
 			// vars
 			this.$el = this.$field.find('.acf-repeater:first');
-			this.$input = this.$field.find('input:first');
-			this.$table = this.$field.find('table:first');
+			this.$input = this.$el.children('input');
+			this.$table = this.$el.children('table');
 			this.$tbody = this.$table.children('tbody');
 			this.$clone = this.$tbody.children('tr.acf-clone');
 			
@@ -74,6 +74,10 @@
 		
 		render: function(){
 			
+			// vars
+			var $button = this.$el.find('> .acf-actions .button');
+			
+			
 			// update order numbers
 			this.$tbody.children().each(function(i){
 				
@@ -97,11 +101,11 @@
 			// row limit reached
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
-				this.$el.find('> .acf-actions .button').addClass('disabled');
+				$button.addClass('disabled');
 				
 			} else {
 				
-				this.$el.find('> .acf-actions .button').removeClass('disabled');
+				$button.removeClass('disabled');
 				
 			}
 			
@@ -262,17 +266,10 @@
 				forceHelperSize: true,
 				forcePlaceholderSize: true,
 				scroll: true,
-				start: function(event, ui) {
-					
-					acf.do_action('sortstart', ui.item, ui.placeholder);
-					
-	   			},
 	   			stop: function(event, ui) {
 					
 					// render
 					self.render();
-					
-					acf.do_action('sortstop', ui.item, ui.placeholder);
 					
 	   			},
 	   			update: function(event, ui) {
@@ -446,6 +443,7 @@
 			
 			// vars
 			var self = this;
+			var $button = this.$el.find('> .acf-actions .button');
 			
 			
 			// update order numbers
@@ -471,11 +469,11 @@
 			// row limit reached
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
-				this.$el.find('> .acf-actions .button').addClass('disabled');
+				$button.addClass('disabled');
 				
 			} else {
 				
-				this.$el.find('> .acf-actions .button').removeClass('disabled');
+				$button.removeClass('disabled');
 				
 			}
 			
@@ -781,17 +779,10 @@
 				forceHelperSize: true,
 				forcePlaceholderSize: true,
 				scroll: true,
-				start: function(event, ui) {
-					
-					acf.do_action('sortstart', ui.item, ui.placeholder);
-					
-	   			},
 	   			stop: function(event, ui) {
 					
 					// render
 					self.render();
-					
-					acf.do_action('sortstop', ui.item, ui.placeholder);
 					
 	   			},
 	   			update: function(event, ui) {
@@ -1206,25 +1197,17 @@
 			// sortable
 			this.$attachments.unbind('sortable').sortable({
 				
-				items					: '.acf-gallery-attachment',
-				forceHelperSize			: true,
-				forcePlaceholderSize	: true,
-				scroll					: true,
-				
+				items: '.acf-gallery-attachment',
+				forceHelperSize: true,
+				forcePlaceholderSize: true,
+				scroll: true,
 				start: function (event, ui) {
 					
 					ui.placeholder.html( ui.item.html() );
 					ui.placeholder.removeAttr('style');
-								
-					acf.do_action('sortstart', ui.item, ui.placeholder);
-					
-	   			},
-	   			
-	   			stop: function (event, ui) {
-				
-					acf.do_action('sortstop', ui.item, ui.placeholder);
 					
 	   			}
+	   			
 			});
 			
 			

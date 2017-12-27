@@ -884,7 +884,7 @@ class acf_field_gallery extends acf_field {
 
 
 // initialize
-acf_register_field_type( new acf_field_gallery() );
+acf_register_field_type( 'acf_field_gallery' );
 
 endif; // class_exists check
 

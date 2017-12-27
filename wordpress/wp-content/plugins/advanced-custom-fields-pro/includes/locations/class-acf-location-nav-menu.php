@@ -67,7 +67,7 @@ class acf_location_nav_menu extends acf_location {
 			
 			
 			// if location matches, update value
-			if( $menu_locations[$location] === $nav_menu ) {
+			if( $menu_locations[$location] == $nav_menu ) {
 				
 				$nav_menu = $rule['value'];
 				

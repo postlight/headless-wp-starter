@@ -43,9 +43,9 @@ class acf_location {
 		
 		
 		// filters
-		$this->add_filter('acf/location/rule_match', true, array($this, 'rule_match'), 10, 3);
-		$this->add_filter('acf/location/rule_operators', true, array($this, 'rule_operators'), 10, 2);
-		$this->add_filter('acf/location/rule_values', true, array($this, 'rule_values'), 10, 2);
+		$this->add_filter('acf/location/rule_match', true, array($this, 'rule_match'), 5, 3);
+		$this->add_filter('acf/location/rule_operators', true, array($this, 'rule_operators'), 5, 2);
+		$this->add_filter('acf/location/rule_values', true, array($this, 'rule_values'), 5, 2);
 		
 	}
 	

@@ -51,7 +51,7 @@ class acf_field_textarea extends acf_field {
 		// vars
 		$atts = array();
 		$keys = array( 'id', 'class', 'name', 'value', 'placeholder', 'rows', 'maxlength' );
-		$keys2 = array( 'readonly', 'disabled' );
+		$keys2 = array( 'readonly', 'disabled', 'required' );
 		
 		
 		// rows
@@ -60,20 +60,24 @@ class acf_field_textarea extends acf_field {
 		}
 		
 		
-		// atts
+		// atts (value="123")
 		foreach( $keys as $k ) {
 			if( isset($field[ $k ]) ) $atts[ $k ] = $field[ $k ];
 		}
 		
 		
-		// atts2
+		// atts2 (disabled="disabled")
 		foreach( $keys2 as $k ) {
 			if( !empty($field[ $k ]) ) $atts[ $k ] = $k;
 		}
 		
 		
+		// remove empty atts
+		$atts = acf_clean_atts( $atts );
+		
+		
 		// return
-		echo acf_get_textarea_input( $atts );
+		acf_textarea_input( $atts );
 		
 	}
 	

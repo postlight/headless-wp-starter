@@ -256,7 +256,7 @@ body.browser-msie .acf-repeater .acf-row-handle .acf-icon.-minus {
   padding: 7px 0;
   position: absolute;
   font-size: 13px;
-  z-index: 9999;
+  z-index: 900000;
   min-width: 135px;
   /* tip */
   /* positions */

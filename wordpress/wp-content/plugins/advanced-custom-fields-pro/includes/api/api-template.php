@@ -313,12 +313,8 @@ function get_field_objects( $post_id = false, $format_value = true, $load_value 
 	// populate vars
 	foreach( $meta as $k => $v ) {
 		
-		// Hopefuly improve efficiency: bail early if $k does start with an '_'
-		if( $k[0] === '_' ) continue;
-		
-		
 		// does a field key exist for this value?
-		if( !array_key_exists("_{$k}", $meta) ) continue;
+		if( !isset($meta["_{$k}"]) ) continue;
 		
 		
 		// get field

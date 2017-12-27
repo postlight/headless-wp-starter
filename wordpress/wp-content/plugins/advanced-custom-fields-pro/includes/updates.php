@@ -7,7 +7,7 @@ if( ! class_exists('acf_updates') ) :
 class acf_updates {
 	
 	// vars
-	var $version = '2.0',
+	var $version = '2.2',
 		$plugins = array(),
 		$updates = false,
 		$dev = 0;
@@ -105,7 +105,7 @@ class acf_updates {
 	*  @return	(mixed)
 	*/
 	
-	function request( $query = 'index.php', $body = array() ) {
+	function request( $query = 'index.php', $body = null ) {
 		
 		// vars
 		$url = 'https://connect.advancedcustomfields.com/' . $query;
@@ -116,7 +116,7 @@ class acf_updates {
 		
 		
 		// log
-		//acf_log('acf connect: '. $url);
+		//acf_log('acf connect: '. $url, $body);
 		
 		
 		// post
@@ -193,6 +193,12 @@ class acf_updates {
 		$response = $this->request('v2/plugins/get-info?p='.$id);
 		
 		
+		// ensure response is expected JSON array (not string)
+		if( is_string($response) ) {
+			$response = new WP_Error( 'server_error', esc_html($response) );
+		}
+		
+		
 		// update transient
 		set_transient($transient_name, $response, HOUR_IN_SECONDS );
 		
@@ -255,17 +261,19 @@ class acf_updates {
 		if( !$this->updates ) {
 			
 			// vars
-			$plugins = $this->plugins;
-			$wp = array(
-				'wp_name'		=> get_bloginfo('name'),
-				'wp_url'		=> home_url(),
-				'wp_version'	=> get_bloginfo('version'),
-				'wp_language'	=> get_bloginfo('language'),
-				'wp_timezone'	=> get_option('timezone_string'),
-			);
 			$post = array(
-				'plugins'		=> wp_json_encode($plugins),
-				'wp'			=> wp_json_encode($wp),
+				'plugins'		=> wp_json_encode($this->plugins),
+				'wp'			=> wp_json_encode(array(
+					'wp_name'		=> get_bloginfo('name'),
+					'wp_url'		=> home_url(),
+					'wp_version'	=> get_bloginfo('version'),
+					'wp_language'	=> get_bloginfo('language'),
+					'wp_timezone'	=> get_option('timezone_string'),
+				)),
+				'acf'			=> wp_json_encode(array(
+					'acf_version'	=> get_option('acf_version'),
+					'acf_pro'		=> (defined('ACF_PRO') && ACF_PRO),
+				)),
 			);
 					
 			

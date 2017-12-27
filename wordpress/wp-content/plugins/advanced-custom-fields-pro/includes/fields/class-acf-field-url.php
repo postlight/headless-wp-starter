@@ -48,20 +48,24 @@ class acf_field_url extends acf_field {
 		// vars
 		$atts = array();
 		$keys = array( 'type', 'id', 'class', 'name', 'value', 'placeholder', 'pattern' );
-		$keys2 = array( 'readonly', 'disabled' );
+		$keys2 = array( 'readonly', 'disabled', 'required' );
 		$html = '';
 		
 		
-		// atts
+		// atts (value="123")
 		foreach( $keys as $k ) {
 			if( isset($field[ $k ]) ) $atts[ $k ] = $field[ $k ];
 		}
 		
 		
-		// atts2
+		// atts2 (disabled="disabled")
 		foreach( $keys2 as $k ) {
 			if( !empty($field[ $k ]) ) $atts[ $k ] = $k;
 		}
+		
+		
+		// remove empty atts
+		$atts = acf_clean_atts( $atts );
 		
 		
 		// render

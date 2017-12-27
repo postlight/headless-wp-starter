@@ -133,9 +133,10 @@ class acf_form_customizer {
 	
 	
 	/*
-	*  get_customizer_widgets
+	*  settings
 	*
-	*  This function will return an array of widget settings
+	*  This function will return an array of cutomizer settings that include ACF data
+	*  similar to `$customizer->settings();`
 	*
 	*  @type	function
 	*  @date	22/03/2016
@@ -145,10 +146,10 @@ class acf_form_customizer {
 	*  @return	$value (mixed)
 	*/
 	
-	function get_customizer_widgets( $customizer ) {
+	function settings( $customizer ) {
 		
 		// vars
-		$widgets = array();
+		$data = array();
 		$settings = $customizer->settings();
 		
 		
@@ -157,36 +158,44 @@ class acf_form_customizer {
 		
 		
 		// loop over settings
-		foreach( array_keys($settings) as $i ) {
+		foreach( $settings as $setting ) {
 			
 			// vars
-			$setting = $settings[ $i ];
+			$id = $setting->id;
 			
 			
-			// bail ealry if not widget
-			if( substr($setting->id, 0, 7) !== 'widget_' ) continue;
+			// verify settings type
+			if( substr($id, 0, 6) == 'widget' || substr($id, 0, 7) == 'nav_menu' ) {
+				// allow
+			} else {
+				continue;
+			}
 			
 			
 			// get value
 			$value = $setting->post_value();	
 			
 			
+			// bail early if no acf
+			if( !is_array($value) || !isset($value['acf']) ) continue;
+			
+			
 			// set data	
-			$setting->acf = acf_maybe_get($value, 'acf');
+			$setting->acf = $value['acf'];
 			
 			
 			// append
-			$widgets[] = $setting;
+			$data[] = $setting;
 						
 		}
 		
 		
-		// bail ealry if no preview values
-		if( empty($widgets) ) return false;
+		// bail ealry if no settings
+		if( empty($data) ) return false;
 		
 		
 		// return
-		return $widgets;
+		return $data;
 		
 	}
 	
@@ -207,7 +216,7 @@ class acf_form_customizer {
 	function customize_preview_init( $customizer ) {
 		
 		// get customizer settings (widgets)
-		$settings = $customizer->settings();
+		$settings = $this->settings( $customizer );
 		
 		
 		// bail ealry if no settings
@@ -217,17 +226,13 @@ class acf_form_customizer {
 		// append values
 		foreach( $settings as $setting ) {
 			
-			// get $_POST value
-			$value = $setting->post_value();
-			
-			
-			// bail early if no acf
-			if( !isset($value['acf']) ) continue;
+			// get acf data
+			$data = $setting->acf;
 			
 			
 			// append acf_value to preview_values
-			$this->preview_values[ $value['acf']['post_id'] ] = $value['acf']['values'];
-			$this->preview_fields[ $value['acf']['post_id'] ] = $value['acf']['fields'];
+			$this->preview_values[ $data['post_id'] ] = $data['values'];
+			$this->preview_fields[ $data['post_id'] ] = $data['fields'];
 			
 		}
 		
@@ -298,7 +303,7 @@ class acf_form_customizer {
 	function customize_save( $customizer ) {
 		
 		// get customizer settings (widgets)
-		$settings = $customizer->settings();
+		$settings = $this->settings( $customizer );
 		
 		
 		// bail ealry if no settings
@@ -308,16 +313,12 @@ class acf_form_customizer {
 		// append values
 		foreach( $settings as $setting ) {
 			
-			// get $_POST value
-			$value = $setting->post_value();
-			
-			
-			// bail early if no acf
-			if( !isset($value['acf']) ) continue;
+			// get acf data
+			$data = $setting->acf;
 			
 			
 			// save acf data
-			acf_save_post( $value['acf']['post_id'], $value['acf']['values'] );
+			acf_save_post( $data['post_id'], $data['values'] );
 			
 			
 			// remove [acf] data from saved widget array
