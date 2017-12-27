@@ -10,39 +10,26 @@ import { Config } from "../config.js";
 class Category extends Component {
     static async getInitialProps(context) {
         const { slug } = context.query;
-        const res = await fetch(
+        const categoriesRes = await fetch(
             `${Config.apiUrl}/wp-json/wp/v2/categories?slug=${slug}`
         );
-        const categories = await res.json();
-        return { categories };
-    }
-    constructor() {
-        super();
-        this.state = {
-            posts: []
-        };
-    }
-    componentDidMount() {
-        if (this.props.categories.length > 0) {
-            const postsDataURL = `${
-                Config.apiUrl
-            }/wp-json/wp/v2/posts?_embed&categories=${
-                this.props.categories[0].id
-            }`;
-            fetch(postsDataURL)
-                .then(res => res.json())
-                .then(res => {
-                    this.setState({
-                        posts: res
-                    });
-                });
+        const categories = await categoriesRes.json();
+        if (categories.length > 0) {
+            const postsRes = await fetch(
+                `${Config.apiUrl}/wp-json/wp/v2/posts?_embed&categories=${
+                    categories[0].id
+                }`
+            );
+            const posts = await postsRes.json();
+            return { categories, posts };
         }
+        return { categories };
     }
     render() {
         if (this.props.categories.length == 0)
             return <Error statusCode={404} />;
 
-        const posts = this.state.posts.map((post, index) => {
+        const posts = this.props.posts.map((post, index) => {
             return (
                 <ul key={index}>
                     <li>
