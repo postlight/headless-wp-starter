@@ -2,7 +2,14 @@ import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
+import PageWrapper from "../components/PageWrapper.js";
+import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
+
+const headerImageStyle = {
+    marginTop: 50,
+    marginBottom: 50
+};
 
 class Index extends Component {
     static async getInitialProps(context) {
@@ -52,6 +59,12 @@ class Index extends Component {
         });
         return (
             <Layout>
+                <Menu menu={this.props.headerMenu} />
+                <img
+                    src="/static/images/wordpress-plus-react-header.png"
+                    width="815"
+                    style={headerImageStyle}
+                />
                 <h1>{this.props.page.title.rendered}</h1>
                 <div
                     dangerouslySetInnerHTML={{
@@ -67,4 +80,4 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default PageWrapper(Index);
