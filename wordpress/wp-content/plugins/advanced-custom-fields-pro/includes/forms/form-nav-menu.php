@@ -149,7 +149,7 @@ class acf_form_nav_menu {
 		
 		
 		// set var
-		$acf_menu = $menu_id;
+		$acf_menu = (int) $menu_id;
 		
 		
 		// include walker
@@ -228,7 +228,7 @@ class acf_form_nav_menu {
 		
 		
 ?>
-<script type="text/html" id="tmpl-acf-menu-settings">
+<div id="tmpl-acf-menu-settings" style="display: none;">
 	<?php
 	
 	// data (always needed to save nav menu items)
@@ -263,7 +263,7 @@ class acf_form_nav_menu {
 	}
 	
 	?>
-</script>
+</div>
 <script type="text/javascript">
 (function($) {
 	

@@ -39,6 +39,10 @@ class acf_wpml_compatibility {
 		add_action('acf/input/form_data',				array($this, 'acf_input_form_data'), 10, 1);
 		
 		
+		// always prevent 'acf-field' from being translated
+		add_filter('get_translatable_documents',		array($this, 'get_translatable_documents'));
+		
+		
 		// bail early if not transaltable
 		if( !$this->is_translatable() ) return;
 		
@@ -73,26 +77,31 @@ class acf_wpml_compatibility {
 	function is_translatable() {
 		
 		// global
-		global $sitepress, $sitepress_settings;
+		global $sitepress;
 		
 		
 		// vars
-		$post_types = acf_maybe_get($sitepress_settings, 'custom_posts_sync_option', array());
+		$post_types = $sitepress->get_setting('custom_posts_sync_option');
+		
+		
+		// bail early if no post types
+		if( !acf_is_array($post_types) ) return false;
+		
+		
+		// always prevent 'acf-field' from being translated
+		$post_types['acf-field'] = 0;
+		$sitepress->set_setting('custom_posts_sync_option', $post_types);
 		
 		
 		// return true if acf-field-group is translatable
 		if( !empty($post_types['acf-field-group']) ) {
-			
 			return true;
-			
 		}
 		
 		
 		// return true if acf is translatable, and acf-field-group does not yet exist
 		if( !empty($post_types['acf']) && !isset($post_types['acf-field-group']) ) {
-			
 			return true;
-			
 		}
 		
 		
@@ -118,12 +127,15 @@ class acf_wpml_compatibility {
 	function update_500() {
 		
 		// global
-		global $sitepress, $sitepress_settings;
+		global $sitepress;
 		
 		
 		// vars
-		$icl_settings = array();
-		$post_types = $sitepress_settings['custom_posts_sync_option'];
+		$post_types = $sitepress->get_setting('custom_posts_sync_option');
+		
+		
+		// bail early if no post types
+		if( !acf_is_array($post_types) ) return false;
 		
 		
 		// post type has changed from 'acf' to 'acf-field-group'
@@ -134,12 +146,8 @@ class acf_wpml_compatibility {
 		}
 		
 		
-		// add to icl settings
-		$icl_settings['custom_posts_sync_option'] = $post_types;
-		
-		
-		// save
-		$sitepress->save_settings( $icl_settings );
+		// update
+		$sitepress->set_setting('custom_posts_sync_option', $post_types);
 		
 	}
 	
@@ -160,7 +168,7 @@ class acf_wpml_compatibility {
 	function update_500_field_group($field_group, $ofg) {
 		
 		// global
-		global $wpdb, $sitepress;
+		global $wpdb;
 		
 		
 		// get translation rows (old acf4 and new acf5)
@@ -470,6 +478,31 @@ class acf_wpml_compatibility {
 		
 		// add hidden input
 		acf_hidden_input(array('id' => '_acf_lang', 'name' => '_acf_lang', 'value' => $this->lang));
+		
+	}
+	
+	
+	/*
+	*  get_translatable_documents
+	*
+	*  This filter will remove 'acf-field' from the available post types for translation
+	*
+	*  @type	function
+	*  @date	17/8/17
+	*  @since	5.6.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function get_translatable_documents( $icl_post_types ) {
+		
+		// unset
+		unset( $icl_post_types['acf-field'] );
+		
+		
+		// return
+		return $icl_post_types;
 		
 	}
 	

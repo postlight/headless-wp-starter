@@ -230,15 +230,20 @@ function acf_update_option( $option = '', $value = '', $autoload = null ) {
 
 function acf_get_value( $post_id = 0, $field ) {
 	
+	// allow filter to short-circuit load_value logic
+	//$value = apply_filters( "acf/pre_load_value", null, $post_id, $field );
+    //if( $value !== null ) {
+	//    return $value;
+    //}
+        
+        
 	// vars
 	$cache_key = "get_value/post_id={$post_id}/name={$field['name']}";
 	
 	
 	// return early if cache is found
 	if( acf_isset_cache($cache_key) ) {
-		
 		return acf_get_cache($cache_key);
-		
 	}
 	
 	
@@ -252,9 +257,7 @@ function acf_get_value( $post_id = 0, $field ) {
 	
 	// no value? try default_value
 	if( $value === null && isset($field['default_value']) ) {
-		
 		$value = $field['default_value'];
-		
 	}
 	
 	

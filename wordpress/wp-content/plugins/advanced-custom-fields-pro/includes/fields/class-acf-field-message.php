@@ -76,7 +76,7 @@ class acf_field_message extends acf_field {
 		
 		
 		// return
-		echo $m;
+		echo acf_esc_html( $m );
 		
 	}
 	

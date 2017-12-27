@@ -54,10 +54,6 @@ class acf_field_wysiwyg extends acf_field {
 	
 	function add_filters() {
 		
-		// globals
-   		global $wp_version;
-   		
-   		
 		// wp-includes/class-wp-embed.php
 		if(	!empty($GLOBALS['wp_embed']) ) {
 		
@@ -72,14 +68,10 @@ class acf_field_wysiwyg extends acf_field {
 		add_filter( 'acf_the_content', 'wptexturize' );
 		add_filter( 'acf_the_content', 'convert_smilies', 20 );
 		
-		
 		// Removed in 4.4
-		if( version_compare($wp_version, '4.4', '<' ) ) {
-			
+		if( acf_version_compare('wp', '<', '4.4') ) {
 			add_filter( 'acf_the_content', 'convert_chars' );
-			
 		}
-		
 		
 		add_filter( 'acf_the_content', 'wpautop' );
 		add_filter( 'acf_the_content', 'shortcode_unautop' );
@@ -91,11 +83,8 @@ class acf_field_wysiwyg extends acf_field {
 		
 		// Added in 4.4
 		if( function_exists('wp_make_content_images_responsive') ) {
-			
 			add_filter( 'acf_the_content', 'wp_make_content_images_responsive' );
-			
 		}
-		
 		
 		add_filter( 'acf_the_content', 'do_shortcode', 11);
 		
@@ -116,10 +105,6 @@ class acf_field_wysiwyg extends acf_field {
 	*/
 	
    	function get_toolbars() {
-   		
-   		// global
-   		global $wp_version;
-   		
    		
    		// vars
    		$editor_id = 'acf_content';
@@ -236,7 +221,7 @@ class acf_field_wysiwyg extends acf_field {
 
 ?>
 <script type="text/javascript">
-	if( acf ) acf.fields.wysiwyg.toolbars = <?php echo json_encode($json); ?>;
+	if( acf ) acf.tinymce.toolbars = <?php echo wp_json_encode($json); ?>;
 </script>
 <?php
 	
@@ -257,10 +242,6 @@ class acf_field_wysiwyg extends acf_field {
 	
 	function render_field( $field ) {
 		
-		// global
-   		global $wp_version;
-   		
-   		
 		// enqueue
 		acf_enqueue_uploader();
 		
@@ -320,7 +301,7 @@ class acf_field_wysiwyg extends acf_field {
 		
 		
 		// WP 4.3
-		if( version_compare($wp_version, '4.3', '>=' ) ) {
+		if( acf_version_compare('wp', '>=', '4.3') ) {
 			
 			add_filter( 'acf_the_editor_content', 'format_for_editor', 10, 2 );
 			
@@ -352,13 +333,21 @@ class acf_field_wysiwyg extends acf_field {
 		
 		// delay
 		if( $field['delay'] ) {
-			
 			$wrap['class'] .= ' delay';
-			
 		}
 		
+		
+		// vars
+		$textarea = acf_get_textarea_input(array(
+			'id'	=> $id,
+			'class'	=> 'wp-editor-area',
+			'name'	=> $field['name'],
+			'style'	=> $height ? "height:{$height}px;" : '',
+			'value'	=> '%s'
+		));
+		
 		?>
-		<div <?php echo acf_esc_attr($wrap); ?>>
+		<div <?php acf_esc_attr_e($wrap); ?>>
 			<div id="wp-<?php echo $id; ?>-editor-tools" class="wp-editor-tools hide-if-no-js">
 				<?php if( $field['media_upload'] ): ?>
 				<div id="wp-<?php echo $id; ?>-media-buttons" class="wp-media-buttons">
@@ -376,7 +365,7 @@ class acf_field_wysiwyg extends acf_field {
 				<?php if( $field['delay'] ): ?>
 					<div class="acf-editor-toolbar"><?php _e('Click to initialize TinyMCE', 'acf'); ?></div>
 				<?php endif; ?>
-				<textarea id="<?php echo $id; ?>" class="wp-editor-area" name="<?php echo $field['name']; ?>" <?php if($height): ?>style="height:<?php echo $height; ?>px;"<?php endif; ?>><?php echo $field['value']; ?></textarea>
+				<?php printf( $textarea, $field['value'] ); ?>
 			</div>
 		</div>
 		<?php

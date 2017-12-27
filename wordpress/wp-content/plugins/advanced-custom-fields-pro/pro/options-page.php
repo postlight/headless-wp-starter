@@ -93,7 +93,7 @@ class acf_options_page {
 		
 		foreach( $migrate as $old => $new ) {
 			if( !empty($page[$old]) ) {
-				$page[ $new ] = acf_extract_var( $page, $old );
+				$page[ $new ] = $page[ $old ];
 			}
 		}
 		
@@ -299,6 +299,10 @@ function acf_options_page() {
 	return $acf_options_page;
 	
 }
+
+
+// remove Options Page add-on conflict
+unset($GLOBALS['acf_options_page']);
 
 
 // initialize

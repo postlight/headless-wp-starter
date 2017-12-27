@@ -23,7 +23,7 @@ function acf_is_field_group_key( $key = '' ) {
 	if( is_numeric($key) ) return false;
 	
 	
-	// look for 'field_' prefix
+	// look for 'group_' prefix
 	if( substr($key, 0, 6) === 'group_' ) return true;
 	
 	
@@ -52,8 +52,16 @@ function acf_is_field_group_key( $key = '' ) {
 
 function acf_get_valid_field_group( $field_group = false ) {
 	
+	// $field_group must be an array
+	if( !is_array($field_group) ) $field_group = array();
+	
+	
+	// bail ealry if already valid
+	if( !empty($field_group['_valid']) ) return $field_group;
+	
+	
 	// parse in defaults
-	$field_group = wp_parse_args( $field_group, array(
+	$field_group = wp_parse_args($field_group, array(
 		'ID'					=> 0,
 		'key'					=> '',
 		'title'					=> '',
@@ -65,9 +73,14 @@ function acf_get_valid_field_group( $field_group = false ) {
 		'label_placement'		=> 'top',
 		'instruction_placement'	=> 'label',
 		'hide_on_screen'		=> array(),
-		'active'				=> 1, // Added in 5.2.9
-		'description'			=> '' // Added in 5.2.9
+		'active'				=> 1, 		// Added in 5.2.9
+		'description'			=> '', 		// Added in 5.2.9
+		'_valid'				=> 0,		// Added in 5.6.2
 	));
+	
+	
+	// field is now valid
+	$field_group['_valid'] = 1;
 	
 	
 	// filter
@@ -622,7 +635,8 @@ function acf_update_field_group( $field_group = array() ) {
 		'title',
 		'menu_order',
 		'fields',
-		'active'
+		'active',
+		'_valid'
 	));
 	
 	
@@ -648,6 +662,11 @@ function acf_update_field_group( $field_group = array() ) {
 	add_filter( 'wp_unique_post_slug', 'acf_update_field_group_wp_unique_post_slug', 100, 6 ); 
 	
     
+    // slash data
+	// - WP expects all data to be slashed and will unslash it (fixes '\' character issues)
+	$save = wp_slash( $save );
+	
+	
     // update the field group and update the ID
     if( $field_group['ID'] ) {
 	    
@@ -1233,7 +1252,8 @@ function acf_prepare_field_group_for_export( $field_group ) {
 	// extract some args
 	$extract = acf_extract_vars($field_group, array(
 		'ID',
-		'local'	// local may have added 'php' or 'json'
+		'local',	// local may have added 'php' or 'json'
+		'_valid',
 	));
 	
 	

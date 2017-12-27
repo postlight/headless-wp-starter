@@ -95,7 +95,7 @@ class acf_location_post_template extends acf_location {
 		// get templates (WP 4.7)
 		if( acf_version_compare('wp', '>=', '4.7') ) {
 			
-			$templates = wp_get_theme()->get_post_templates();
+			$templates = acf_get_post_templates();
 			
 		}
 		
@@ -155,7 +155,7 @@ class acf_location_post_template extends acf_location {
 		// get templates (WP 4.7)
 		if( acf_version_compare('wp', '>=', '4.7') ) {
 			
-			$templates = wp_get_theme()->get_post_templates();
+			$templates = acf_get_post_templates();
 			$choices = array_merge($choices, $templates);
 			
 		}

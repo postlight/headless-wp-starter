@@ -47,7 +47,7 @@ class acf_field_color_picker extends acf_field {
 	function input_admin_enqueue_scripts() {
 		
 		// globals
-		global $wp_scripts, $wp_styles;
+		global $wp_scripts;
 		
 		
 		// register if not already (on front end)
@@ -103,7 +103,7 @@ class acf_field_color_picker extends acf_field {
 		
 		// html
 		?>
-		<div class="acf-color_picker">
+		<div class="acf-color-picker">
 			<?php acf_hidden_input( $hidden_input ); ?>
 			<?php acf_text_input( $text_input ); ?>
 		</div>

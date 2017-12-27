@@ -208,21 +208,20 @@ class acf_field_oembed extends acf_field {
 		
 ?>
 <div <?php acf_esc_attr_e($atts) ?>>
-	<div class="acf-hidden">
-		<input type="hidden" data-name="value-input" name="<?php echo esc_attr($field['name']); ?>" value="<?php echo esc_attr($field['value']); ?>" />
-	</div>
-	<div class="title acf-soh">
+	<?php acf_hidden_input(array( 'name' => $field['name'], 'value' => $field['value'], 'data-name' => 'value-input' )); ?>
+	<div class="title">
 		
 		<div class="title-value">
-			<h4 data-name="value-title"><?php echo $field['value']; ?></h4>
+			<h4 data-name="value-title"><?php echo esc_html( $field['value'] ); ?></h4>
 		</div>
 		
 		<div class="title-search">
-			
 			<input data-name="search-input" type="text" placeholder="<?php _e("Enter URL", 'acf'); ?>" autocomplete="off" />
 		</div>
 		
-		<a data-name="clear-button" href="#" class="acf-icon -cancel grey acf-soh-target"></a>
+		<div class="acf-actions -hover">
+			<a data-name="clear-button" href="#" class="acf-icon -cancel grey"></a>
+		</div>
 		
 	</div>
 	<div class="canvas">

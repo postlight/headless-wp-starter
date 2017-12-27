@@ -158,15 +158,17 @@ class acf_form_taxonomy {
 				'nonce'		=> 'taxonomy',
 			));
 			
+			// wrap
+			echo '<div class="acf-addterm-fields acf-fields -clear">';
 			
 			// loop
 			foreach( $field_groups as $field_group ) {
-				
 				$fields = acf_get_fields( $field_group );
-
 				acf_render_fields( $post_id, $fields, 'div', 'field' );
-				
 			}
+			
+			// wrap
+			echo '</div>';
 			
 		}
 		
@@ -212,21 +214,19 @@ class acf_form_taxonomy {
 			
 			foreach( $field_groups as $field_group ) {
 				
-				$fields = acf_get_fields( $field_group );
+				// title
+				if( $field_group['style'] == 'default' ) {
+					echo '<h2>' . $field_group['title'] . '</h2>';
+				}
 				
-				?>
-				<?php if( $field_group['style'] == 'default' ): ?>
-					<h2><?php echo $field_group['title']; ?></h2>
-				<?php endif; ?>
-				<table class="form-table">
-					<tbody>
-						<?php acf_render_fields( $post_id, $fields, 'tr', 'field' ); ?>
-					</tbody>
-				</table>
-				<?php 
+				// fields
+				echo '<table class="form-table">';
+					$fields = acf_get_fields( $field_group );
+					acf_render_fields( $post_id, $fields, 'tr', 'field' );
+				echo '</table>';
 				
 			}
-		
+			
 		}
 		
 	}

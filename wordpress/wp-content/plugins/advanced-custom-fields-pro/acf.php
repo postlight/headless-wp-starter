@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields PRO
 Plugin URI: https://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields.
-Version: 5.6.1
+Version: 5.6.7
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
@@ -17,8 +17,12 @@ if( ! class_exists('acf') ) :
 
 class acf {
 	
-	// vars
-	var $version = '5.6.1';
+	/** @var string The plugin version number */
+	var $version = '5.6.7';
+	
+	
+	/** @var array The plugin settings array */
+	var $settings = array();
 	
 	
 	/*
@@ -156,7 +160,7 @@ class acf {
 			acf_include('includes/admin/admin-field-group.php');
 			acf_include('includes/admin/admin-field-groups.php');
 			acf_include('includes/admin/install.php');
-			acf_include('includes/admin/settings-tools.php');
+			acf_include('includes/admin/admin-tools.php');
 			acf_include('includes/admin/settings-info.php');
 			
 			
@@ -234,30 +238,37 @@ class acf {
 		acf_include('includes/fields/class-acf-field-text.php');
 		acf_include('includes/fields/class-acf-field-textarea.php');
 		acf_include('includes/fields/class-acf-field-number.php');
+		acf_include('includes/fields/class-acf-field-range.php');
 		acf_include('includes/fields/class-acf-field-email.php');
 		acf_include('includes/fields/class-acf-field-url.php');
 		acf_include('includes/fields/class-acf-field-password.php');
+		
+		acf_include('includes/fields/class-acf-field-image.php');
+		acf_include('includes/fields/class-acf-field-file.php');
 		acf_include('includes/fields/class-acf-field-wysiwyg.php');
 		acf_include('includes/fields/class-acf-field-oembed.php');
-		acf_include('includes/fields/class-acf-field-image.php');
-		acf_include('includes/fields/class-acf-field-link.php');
-		acf_include('includes/fields/class-acf-field-file.php');
+		
 		acf_include('includes/fields/class-acf-field-select.php');
 		acf_include('includes/fields/class-acf-field-checkbox.php');
 		acf_include('includes/fields/class-acf-field-radio.php');
+		acf_include('includes/fields/class-acf-field-button-group.php');
 		acf_include('includes/fields/class-acf-field-true_false.php');
+		
+		acf_include('includes/fields/class-acf-field-link.php');
 		acf_include('includes/fields/class-acf-field-post_object.php');
 		acf_include('includes/fields/class-acf-field-page_link.php');
 		acf_include('includes/fields/class-acf-field-relationship.php');
 		acf_include('includes/fields/class-acf-field-taxonomy.php');
 		acf_include('includes/fields/class-acf-field-user.php');
+		
 		acf_include('includes/fields/class-acf-field-google-map.php');
 		acf_include('includes/fields/class-acf-field-date_picker.php');
 		acf_include('includes/fields/class-acf-field-date_time_picker.php');
 		acf_include('includes/fields/class-acf-field-time_picker.php');
 		acf_include('includes/fields/class-acf-field-color_picker.php');
+		
 		acf_include('includes/fields/class-acf-field-message.php');
-		//acf_include('includes/fields/class-acf-field-separator.php');
+		acf_include('includes/fields/class-acf-field-accordion.php');
 		acf_include('includes/fields/class-acf-field-tab.php');
 		acf_include('includes/fields/class-acf-field-group.php');
 		do_action('acf/include_field_types', $major);

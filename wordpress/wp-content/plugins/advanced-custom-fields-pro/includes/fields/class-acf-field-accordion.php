@@ -1,18 +1,17 @@
 <?php
 
-if( ! class_exists('acf_field_tab') ) :
+if( ! class_exists('acf_field__accordion') ) :
 
-class acf_field_tab extends acf_field {
+class acf_field__accordion extends acf_field {
 	
 	
-	/*
-	*  __construct
+	/**
+	*  initialize
 	*
 	*  This function will setup the field type data
 	*
-	*  @type	function
-	*  @date	5/03/2014
-	*  @since	5.0.0
+	*  @date	30/10/17
+	*  @since	5.6.3
 	*
 	*  @param	n/a
 	*  @return	n/a
@@ -21,44 +20,43 @@ class acf_field_tab extends acf_field {
 	function initialize() {
 		
 		// vars
-		$this->name = 'tab';
-		$this->label = __("Tab",'acf');
+		$this->name = 'accordion';
+		$this->label = __("Accordion",'acf');
 		$this->category = 'layout';
 		$this->defaults = array(
-			'placement'	=> 'top',
-			'endpoint'	=> 0 // added in 5.2.8
+			'open'			=> 0,
+			'multi_expand'	=> 0,
+			'endpoint'		=> 0
 		);
 		
 	}
 	
 	
-	/*
-	*  render_field()
+	/**
+	*  render_field
 	*
 	*  Create the HTML interface for your field
 	*
-	*  @param	$field - an array holding all the field's data
+	*  @date	30/10/17
+	*  @since	5.6.3
 	*
-	*  @type	action
-	*  @since	3.6
-	*  @date	23/01/13
+	*  @param	array $field
+	*  @return	n/a
 	*/
 	
 	function render_field( $field ) {
 		
 		// vars
 		$atts = array(
-			'href'				=> '',
-			'class'				=> 'acf-tab-button',
-			'data-placement'	=> $field['placement'],
-			'data-endpoint'		=> $field['endpoint'],
-			'data-key'			=> $field['key']
+			'class'				=> 'acf-fields',
+			'data-open'			=> $field['open'],
+			'data-multi_expand'	=> $field['multi_expand'],
+			'data-endpoint'		=> $field['endpoint']
 		);
 		
 		?>
-		<a <?php acf_esc_attr_e( $atts ); ?>><?php echo acf_esc_html($field['label']); ?></a>
+		<div <?php acf_esc_attr_e($atts); ?>></div>
 		<?php
-		
 		
 	}
 	
@@ -82,8 +80,8 @@ class acf_field_tab extends acf_field {
 /*
 		// message
 		$message = '';
-		$message .= '<p>' . __( 'Use "Tab Fields" to better organize your edit screen by grouping fields together.', 'acf') . '</p>';
-		$message .= '<p>' . __( 'All fields following this "tab field" (or until another "tab field" is defined) will be grouped together using this field\'s label as the tab heading.','acf') . '</p>';
+		$message .= '<p>' . __( 'Accordions help you organize fields into panels that open and close.', 'acf') . '</p>';
+		$message .= '<p>' . __( 'All fields following this accordion (or until another accordion is defined) will be grouped together.','acf') . '</p>';
 		
 		
 		// default_value
@@ -96,28 +94,35 @@ class acf_field_tab extends acf_field {
 		));
 */
 		
-		
-		// preview_size
+		// active
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placement','acf'),
-			'type'			=> 'select',
-			'name'			=> 'placement',
-			'choices' 		=> array(
-				'top'			=>	__("Top aligned", 'acf'),
-				'left'			=>	__("Left Aligned", 'acf'),
-			)
+			'label'			=> __('Open','acf'),
+			'instructions'	=> __('Display this accordion as open on page load.','acf'),
+			'name'			=> 'open',
+			'type'			=> 'true_false',
+			'ui'			=> 1,
+		));
+		
+		
+		// multi_expand
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Multi-expand','acf'),
+			'instructions'	=> __('Allow this accordion to open without closing others.','acf'),
+			'name'			=> 'multi_expand',
+			'type'			=> 'true_false',
+			'ui'			=> 1,
 		));
 		
 		
 		// endpoint
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Endpoint','acf'),
-			'instructions'	=> __('Define an endpoint for the previous tabs to stop. This will start a new group of tabs.', 'acf'),
+			'instructions'	=> __('Define an endpoint for the previous accordion to stop. This accordion will not be visible.','acf'),
 			'name'			=> 'endpoint',
 			'type'			=> 'true_false',
 			'ui'			=> 1,
 		));
-				
+					
 	}
 	
 	
@@ -155,7 +160,7 @@ class acf_field_tab extends acf_field {
 
 
 // initialize
-acf_register_field_type( 'acf_field_tab' );
+acf_register_field_type( 'acf_field__accordion' );
 
 endif; // class_exists check
 

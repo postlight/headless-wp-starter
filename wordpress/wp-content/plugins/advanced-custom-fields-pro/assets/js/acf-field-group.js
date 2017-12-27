@@ -78,6 +78,9 @@
 			e.$el.sortable({
 				handle: '.acf-sortable-handle',
 				connectWith: '.acf-field-list',
+				start: function(e, ui){
+			        ui.placeholder.height( ui.item.height() );
+			    },
 				update: function(event, ui){
 					
 					// vars
@@ -551,7 +554,7 @@
 			
 			
 			// update label
-			$handle.find('.li-field-label strong a').text( label );
+			$handle.find('.li-field-label strong a').html( label );
 			
 			
 			// update required
@@ -1652,17 +1655,17 @@
 			
 			
 			// vars
-			var key			= $field.attr('data-key'),
-				$ancestors	= $field.parents('.acf-field-list'),
-				$tr			= $field.find('.acf-field[data-name="conditional_logic"]:last');
+			var key = $field.attr('data-key');
+			var $lists = $field.parents('.acf-field-list');
+			var $tr = $field.find('.acf-field-setting-conditional_logic:last');
 				
 			
 			// choices
 			var choices	= [];
 			
 			
-			// loop over ancestors
-			$.each( $ancestors, function( i ){
+			// loop over ancestor lists
+			$.each( $lists, function( i ){
 				
 				// vars
 				var group = (i == 0) ? acf._e('sibling_fields') : acf._e('parent_fields');
@@ -1679,7 +1682,7 @@
 					
 					
 					// validate
-					if( $.inArray(this_type, ['select', 'checkbox', 'true_false', 'radio']) === -1 ) {
+					if( $.inArray(this_type, ['select', 'checkbox', 'true_false', 'radio', 'button_group']) === -1 ) {
 						
 						return;
 						
@@ -1766,7 +1769,7 @@
 				});
 			
 			// select				
-			} else if( field_type == "select" || field_type == "checkbox" || field_type == "radio" ) {
+			} else if( field_type == "select" || field_type == "checkbox" || field_type == "radio" || field_type == "button_group" ) {
 				
 				// vars
 				var lines = $field.find('.acf-field[data-name="choices"] textarea').val().split("\n");	
@@ -2028,6 +2031,10 @@
 			// duplicate
 			$tr2 = acf.duplicate( $tr );
 			
+			
+			// action
+			//acf.do_action('add_location_rule', $tr2);
+			
 		},
 		
 		
@@ -2048,23 +2055,24 @@
 			
 			// vars
 			var $tr = e.$el.closest('tr');
-
-			
-			// save field
-			$tr.find('select:first').trigger('change');
 			
 			
+			// action
+			//acf.do_action('remove_location_rule', $tr);
+			
+			
+			// remove
 			if( $tr.siblings('tr').length == 0 ) {
 				
 				// remove group
 				$tr.closest('.rule-group').remove();
 				
-			}
-			
-			
-			// remove tr
-			$tr.remove();
+			} else {
 				
+				// remove tr
+				$tr.remove();
+			
+			}
 			
 		},
 		
@@ -2099,6 +2107,14 @@
 			
 			// remove all tr's except the first one
 			$group2.find('tr:not(:first)').remove();
+			
+			
+			// vars
+			//var $tr = $group2.find('tr');
+			
+			
+			// action
+			//acf.do_action('add_location_rule', $tr);
 			
 		},
 		
@@ -2150,6 +2166,10 @@
 					
 					// update
 					$rule.replaceWith( html );
+					
+					
+					// action
+					//acf.do_action('change_location_rule', $rule);
 	
 				}
 			});
@@ -2179,22 +2199,58 @@
 		$field:		null,
 		$settings:	null,
 		
+		tag: function( tag ) {
+			
+			// vars
+			var type = this.type;
+			
+			
+			// explode, add 'field' and implode
+			// - open 			=> open_field
+			// - change_type	=> change_field_type
+			var tags = tag.split('_');
+			tags.splice(1, 0, 'field');
+			tag = tags.join('_');
+			
+			
+			// add type
+			if( type ) {
+				tag += '/type=' + type;
+			}
+			
+			
+			// return
+			return tag;
+						
+		},
+		
+		selector: function(){
+			
+			// vars
+			var selector = '.acf-field-object';
+			var type = this.type;
+			
+
+			// add type
+			if( type ) {
+				selector += '-' + type;
+				selector = acf.str_replace('_', '-', selector);
+			}
+			
+			
+			// return
+			return selector;
+			
+		},
+		
 		_add_action: function( name, callback ) {
 			
 			// vars
 			var model = this;
 			
 			
-			// name
-			// - open 			=> open_field/type=x
-			// - change_type	=> change_field_type/type=x
-			var names = name.split('_');
-			names.splice(1, 0, 'field');
-			name = names.join('_') + '/type=' + model.type;
-			
-			
 			// add action
-			acf.add_action(name, function( $field ){
+			acf.add_action( this.tag(name), function( $field ){
 				
 				// focus
 				model.set('$field', $field);
@@ -2213,16 +2269,8 @@
 			var model = this;
 			
 			
-			// name
-			// - open 			=> open_field/type=x
-			// - change_type	=> change_field_type/type=x
-			var names = name.split('_');
-			names.splice(1, 0, 'field');
-			name = names.join('_') + '/type=' + model.type;
-			
-			
 			// add action
-			acf.add_filter(name, function( $field ){
+			acf.add_filter( this.tag(name), function( $field ){
 				
 				// focus
 				model.set('$field', $field);
@@ -2238,10 +2286,10 @@
 		_add_event: function( name, callback ) {
 			
 			// vars
-			var model = this,
-				event = name.substr(0,name.indexOf(' ')),
-				selector = name.substr(name.indexOf(' ')+1),
-				context = acf.field_group.get_selector(model.type);
+			var model = this;
+			var event = name.substr(0,name.indexOf(' '));
+			var selector = name.substr(name.indexOf(' ')+1);
+			var context = this.selector();
 			
 			
 			// add event

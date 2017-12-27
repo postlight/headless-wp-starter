@@ -1,9 +1,5 @@
 <?php 
 
-// extract
-extract($args);
-
-
 // vars
 $active = $license ? true : false;
 $nonce = $active ? 'deactivate_pro_licence' : 'activate_pro_licence';
@@ -72,7 +68,7 @@ $readonly = $active ? 1 : 0;
                     		<label><?php _e('Current Version', 'acf'); ?></label>
                     	</th>
 						<td>
-							<?php echo $current_version; ?>
+							<?php echo esc_html( $current_version ); ?>
 						</td>
 					</tr>
 					<tr>
@@ -80,7 +76,7 @@ $readonly = $active ? 1 : 0;
                     		<label><?php _e('Latest Version', 'acf'); ?></label>
                     	</th>
 						<td>
-							<?php echo $remote_version; ?>
+							<?php echo esc_html( $remote_version ); ?>
 						</td>
 					</tr>
 					<tr>
@@ -111,7 +107,7 @@ $readonly = $active ? 1 : 0;
                     		<label><?php _e('Changelog', 'acf'); ?></label>
                     	</th>
 						<td>
-							<?php echo $changelog; ?>
+							<?php echo acf_esc_html( $changelog ); ?>
 						</td>
 					</tr>
 					<?php endif; ?>
@@ -121,7 +117,7 @@ $readonly = $active ? 1 : 0;
                     		<label><?php _e('Upgrade Notice', 'acf'); ?></label>
                     	</th>
 						<td>
-							<?php echo $upgrade_notice; ?>
+							<?php echo acf_esc_html( $upgrade_notice ); ?>
 						</td>
 					</tr>
 					<?php endif; ?>

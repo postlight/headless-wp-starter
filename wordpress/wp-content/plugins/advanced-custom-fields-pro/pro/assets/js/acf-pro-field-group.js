@@ -136,20 +136,12 @@
 				
 				// add sortable
 				this.$settings.sortable({
-					items					: '> .acf-field-setting-fc_layout',
-					handle					: '[data-name="acf-fc-reorder"]',
-					forceHelperSize			: true,
-					forcePlaceholderSize	: true,
-					scroll					: true,
-					start : function (event, ui) {
-						
-						acf.do_action('sortstart', ui.item, ui.placeholder);
-						
-		   			},
-		   			
-		   			stop : function (event, ui) {
-					
-						acf.do_action('sortstop', ui.item, ui.placeholder);
+					items: '> .acf-field-setting-fc_layout',
+					handle: '[data-name="acf-fc-reorder"]',
+					forceHelperSize: true,
+					forcePlaceholderSize: true,
+					scroll: true,
+		   			stop: function (event, ui) {
 						
 						// save flexible content (layout order has changed)
 						acf.field_group.save_field( $field );

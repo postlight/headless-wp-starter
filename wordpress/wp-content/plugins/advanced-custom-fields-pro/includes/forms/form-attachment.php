@@ -192,44 +192,6 @@ acf.unload.active = 0;
 			));
 			
 			
-			if( $this->validate_page() ) {
-				
-				echo '<style type="text/css">
-					
-					.compat-attachment-fields,
-					.compat-attachment-fields > tbody,
-					.compat-attachment-fields > tbody > tr,
-					.compat-attachment-fields > tbody > tr > th,
-					.compat-attachment-fields > tbody > tr > td {
-						display: block;
-					}
-					
-					.compat-attachment-fields > tbody > tr.acf-field {
-						margin: 0 0 15px;
-					}
-					
-					.compat-attachment-fields > tbody > tr.acf-field > td.acf-label {
-						margin: 0;
-					}
-					
-					.compat-attachment-fields > tbody > tr.acf-field > td.acf-label label {
-						margin: 0;
-						padding: 0;
-					}
-					
-					.compat-attachment-fields > tbody > tr.acf-field > td.acf-label p {
-						margin: 0 0 3px !important;
-					}
-					
-					.compat-attachment-fields > tbody > tr.acf-field > td.acf-input {
-						margin: 0;
-					}
-					
-				</style>';
-				
-			}
-			
-			
 			// open
 			echo '</td></tr>';
 			
