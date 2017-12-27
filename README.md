@@ -62,9 +62,15 @@ The Next.js app will be running on [http://localhost:3000](http://localhost:3000
 
 ### Docker
 
-Most WordPress managed hosting services don't also host Node applications, so usually you will need another service to run the client app. That's why we've packaged the frontend app in a Docker container, which can be run locally or deployed to a hosting provider with Docker support like AWS Elastic Beanstalk.
+Most WordPress hosts don't also host Node applications, so when it's time to go live, you will need to find a hosting service for the frontend.
 
-Once you have [Docker](https://www.docker.com/) installed on your computer, you can run the container locally using this command:
+That's why we've packaged the frontend app in a Docker container, which can be deployed to a hosting provider with Docker support like Amazon Web Services or Google Cloud Platform. For a fast, easier alternative, check out [Now](https://zeit.co/now).
+
+To run the Docker container locally:
+
+1. Install [Docker](https://www.docker.com/) on your computer.
+2. In `frontend/config.js`, replace `localhost:8080` with your publicly-accessible WordPress installation's domain name or IP address.
+3. Start the container by running this command:
 
 ```zsh
 > yarn run deploy
