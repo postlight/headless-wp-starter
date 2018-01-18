@@ -78,4 +78,15 @@ To run the Docker container locally:
 
 ---
 
+### Common Errors
+
+## `ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)`
+
+If you receive this error, it likely means another version of MySQL, not the version that was installed by this script, is being referenced by the MySQL command. 
+
+1. Open up your `.bash_profile`, and see if there is a reference to MySQL in your PATH or if MySQL is being exported as a function. Remove it. 
+
+2. Repeat the installation process. If you still have errors, then look for -- and remove other versions of MySQL by following the "Remove MySQL" instructions at this link: [https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks](https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks)
+
+
 Made with ❤️ by [Postlight](https://postlight.com). Happy coding!
