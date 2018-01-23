@@ -76,7 +76,7 @@ To run the Docker container locally:
 > yarn run deploy
 ```
 
-### Troubleshooting Common Errors
+## Troubleshooting Common Errors
 
 **`ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)`**
 
