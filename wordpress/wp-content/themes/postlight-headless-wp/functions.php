@@ -1,5 +1,8 @@
 <?php
 
+// Frontend origin
+require_once( 'inc/frontend-origin.php' );
+
 // ACF commands
 require_once( 'inc/class-acf-commands.php' );
 

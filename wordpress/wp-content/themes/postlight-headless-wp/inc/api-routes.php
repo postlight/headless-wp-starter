@@ -29,6 +29,23 @@ add_action( 'rest_api_init', function () {
 			'slug' => array_merge( $page_slug_arg, array( 'required' => true ) ),
 		)
 	) );
+
+	register_rest_route('postlight/v1', '/post/preview', array(
+		'methods'  => 'GET',
+		'callback' => 'rest_get_post_preview',
+		'args' => array(
+			'id' => array(
+				'validate_callback' => function($param, $request, $key) {
+					return ( is_numeric( $param ) );
+				},
+				'required' => true,
+				'description' => 'Valid WordPress post ID',
+			),
+		),
+		'permission_callback' => function() {
+			return current_user_can( 'edit_posts' );
+		}
+	) );
 });
 
 /**
@@ -127,3 +144,33 @@ function get_content_by_slug( $slug, $type = 'post' ) {
 	}
 	return false;
 }
+
+/**
+ * Respond to a REST API request to get a post's latest revision.
+ * * Requires a valid _wpnonce on the query string
+ * * User must have 'edit_posts' rights
+ * * Will return draft revisions of even published posts
+ *
+ * @param  WP_REST_Request $request
+ * @return WP_REST_Response
+ */
+function rest_get_post_preview(WP_REST_Request $request) {
+	$post_id = $request->get_param('id');
+	// Revisions are drafts so here we remove the default 'publish' status
+	remove_action('pre_get_posts', 'set_default_status_to_publish');
+	if ( $revisions = wp_get_post_revisions( $post_id, array( 'check_enabled' => false ) )) {
+		$last_revision = reset($revisions);
+		$rev_post = wp_get_post_revision($last_revision->ID);
+		$controller = new WP_REST_Posts_Controller('post');
+		$data = $controller->prepare_item_for_response( $rev_post, $request );
+	} elseif ( $post = get_post( $post_id ) ) { // There are no revisions, just return the saved parent post
+		$controller = new WP_REST_Posts_Controller('post');
+		$data = $controller->prepare_item_for_response( $post, $request );
+	} else {
+		return new WP_Error( 'rest_get_post_preview', 'Post ' . $post_id . ' does not exist',
+			array( 'status' => 404 ) );
+	}
+	$response = $controller->prepare_response_for_collection( $data );
+	return new WP_REST_Response($response);
+}
+
