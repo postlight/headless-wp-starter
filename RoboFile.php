@@ -36,7 +36,7 @@ class RoboFile extends \Robo\Tasks {
 		$this->wp( 'core download --version=4.9.2 --locale=en_US --force' );
 		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=0.0.0.0' );
 		$this->wp( 'db drop --yes' );
-		$this->wp( 'db create --yes' );
+		$this->wp( 'db create' );
 
 		$install_command = implode( ' ', array(
 			'core install',
