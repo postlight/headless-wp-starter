@@ -19,7 +19,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo service mysql start
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Download and install wp-cli
-    brew install homebrew/php/wp-cli
+    brew install wp-cli
     # Download and install robo
     brew install homebrew/php/robo
     # Install mysql-server
