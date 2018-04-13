@@ -19,6 +19,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Download and install wp-cli
     brew install wp-cli
+    # Download and install wget
+    brew install wget
     # Download and install robo
     wget http://robo.li/robo.phar
     sudo chmod +x robo.phar && mv robo.phar /usr/local/bin/robo
