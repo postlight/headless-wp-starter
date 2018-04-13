@@ -57,10 +57,11 @@ function cptui_support() {
 
 		<p>
 		<?php printf(
-			esc_html__( 'Please note that %s this plugin will not handle display %s of registered post types or taxonomies in your current theme. It simply registers them for you. To display your data, check out %s. If all else fails, visit us on the %s', 'custom-post-type-ui' ),
+			esc_html__( 'Please note that %s this plugin will not handle display %s of registered post types or taxonomies in your current theme. It simply registers them for you. To display your data, check out %s. %s to see some examples that are available with Custom Post Type UI Extended. If all else fails, visit us on the %s', 'custom-post-type-ui' ),
 			'<strong>',
 			'</strong>',
-			'<a href="https://pluginize.com/plugins/custom-post-type-ui-extended/?utm_source=faq&utm_medium=text&utm_campaign=cptui">' . esc_html__( 'CPTUI Extended' ) . '</a>',
+			'<a href="https://pluginize.com/plugins/custom-post-type-ui-extended/?utm_source=faq&utm_medium=text&utm_campaign=cptui">' . esc_html__( 'CPTUI Extended', 'custom-post-type-ui' ) . '</a>',
+			'<a href="https://pluginize.com/cpt-ui-extended-features/?utm_source=faq-layouts&utm_medium=text&utm_campaign=cptui">' . esc_html__( 'View our Layouts page', 'custom-post-type-ui' ) . '</a>',
 			'<a href="https://www.wordpress.org/support/plugin/custom-post-type-ui/">' . esc_html__( 'Support Forums', 'custom-post-type-ui' ) . '</a>'
 		); ?></p>
 

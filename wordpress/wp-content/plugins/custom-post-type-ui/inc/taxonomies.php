@@ -1312,6 +1312,7 @@ function cptui_reserved_taxonomies() {
 		'withcomments',
 		'withoutcomments',
 		'year',
+		'output',
 	);
 
 	/**
