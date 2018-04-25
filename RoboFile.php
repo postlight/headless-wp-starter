@@ -27,16 +27,23 @@ class RoboFile extends \Robo\Tasks {
 			return;
 		}
 
+		$uname = php_uname();
+		$isDarwin = ( strpos( $uname, 'Darwin' ) === 0 );
 		$configureDBanswer = $this->ask("Do you have an existing database you'd like to use and configure yourself? (y/n): ");
 		$dbip = '';
 		$dbpass = '';
 		if ( $configureDBanswer === 'y' ) {
 			$dbip = $this->ask("Database IP address (press Enter for default value [0.0.0.0]): ");
 			$dbpass = $this->ask("Database root password (press Enter for default value [root]): ");
+			if ( $isDarwin ) {
+				$this->_exec( "mysql.server start" );
+			}
+			else {
+				$this->_exec( "sudo service mysql start" );
+			}
 		}
 		else {
-			$uname = php_uname();
-			if ( strpos( $uname, 'Darwin' ) === 0 ) {
+			if ( $isDarwin ) {
 				$this->_exec( "brew install mysql" );
 				$this->_exec( "mysql.server start" );
 				$this->_exec( "./mysql_config.sh" );
