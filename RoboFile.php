@@ -27,12 +27,32 @@ class RoboFile extends \Robo\Tasks {
 			return;
 		}
 
-		$dbpass = $this->ask("Database root password (press Enter for default value [root]): ");
+		$configureDBanswer = $this->ask("Do you have an existing database you'd like to use and configure yourself? (y/n): ");
+		$dbip = '';
+		$dbpass = '';
+		if ( $configureDBanswer === 'y' ) {
+			$dbip = $this->ask("Database IP address (press Enter for default value [0.0.0.0]): ");
+			$dbpass = $this->ask("Database root password (press Enter for default value [root]): ");
+		}
+		else {
+			$uname = php_uname();
+			if ( strpos( $uname, 'Darwin' ) === 0 ) {
+				$this->_exec( "brew install mysql" );
+				$this->_exec( "mysql.server start" );
+				$this->_exec( "./mysql_config.sh" );
+			}
+			else {
+				$this->_exec( "sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'" );
+				$this->_exec( "sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'" );
+				$this->_exec( "sudo apt-get -y install mysql-server" );
+				$this->_exec( "sudo service mysql start" );
+			}
+		}
+
 		if ( !$dbpass || strlen( $dbpass ) == 0 ) {
 			$dbpass = "root";
 		}
 
-		$dbip = $this->ask("Database IP address (press Enter for default value [0.0.0.0]): ");
 		if ( !$dbip || strlen( $dbip ) == 0 ) {
 			$dbip = "0.0.0.0";
 		}
@@ -46,7 +66,6 @@ class RoboFile extends \Robo\Tasks {
 
 		$this->wp( 'core download --version=4.9.4 --locale=en_US --force' );
 		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=' . $dbip );
-
 		$this->wp( 'db drop --yes' );
 		$this->wp( 'db create' );
 
