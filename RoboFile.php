@@ -49,9 +49,10 @@ class RoboFile extends \Robo\Tasks {
 				$this->_exec( "./mysql_config.sh" );
 			}
 			else {
-				$this->_exec( "sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'" );
-				$this->_exec( "sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'" );
+				$this->_exec( "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections" );
+				$this->_exec( "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections" );
 				$this->_exec( "sudo apt-get -y install mysql-server" );
+				$this->_exec( "sudo usermod -d /var/lib/mysql/ mysql" );
 				$this->_exec( "sudo service mysql start" );
 			}
 		}
