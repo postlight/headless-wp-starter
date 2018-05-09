@@ -27,14 +27,53 @@ class RoboFile extends \Robo\Tasks {
 			return;
 		}
 
-		$this->_exec( "mysql -uroot -proot -h 0.0.0.0 -e 'create user if not exists " . $opts['wp-db-name'] . "'" );
-		$this->_exec( "mysql -uroot -proot -h 0.0.0.0 -e 'create database if not exists " . $opts['wp-db-name'] . "'" );
-		$this->_exec( 'mysql -uroot -proot -h 0.0.0.0 -e "grant all privileges on ' . $opts['wp-db-name']
-		. ' . * to ' . $opts['wp-db-name'] . "@localhost identified by '" . $opts['wp-db-name'] . "'\"" );
-		$this->_exec( "mysql -uroot -proot -h 0.0.0.0 -e 'flush privileges'" );
+		$uname = php_uname();
+		$isDarwin = ( strpos( $uname, 'Darwin' ) === 0 );
+		$configureDBanswer = $this->ask("Do you have an existing database you'd like to use and configure yourself? (y/n): ");
+		$dbip = '';
+		$dbpass = '';
+		if ( $configureDBanswer === 'y' ) {
+			$dbip = $this->ask("Database IP address (press Enter for default value [0.0.0.0]): ");
+			$dbpass = $this->ask("Database root password (press Enter for default value [root]): ");
+			if ( $isDarwin ) {
+				$this->_exec( "mysql.server start" );
+			}
+			else {
+				$this->_exec( "sudo service mysql start" );
+			}
+		}
+		else {
+			if ( $isDarwin ) {
+				$this->_exec( "brew install mysql" );
+				$this->_exec( "mysql.server start" );
+				$this->_exec( "./mysql_config.sh" );
+			}
+			else {
+				$this->_exec( "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections" );
+				$this->_exec( "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections" );
+				$this->_exec( "sudo apt-get -y install mysql-server" );
+				$this->_exec( "sudo usermod -d /var/lib/mysql/ mysql" );
+				$this->_exec( "sudo service mysql start" );
+			}
+		}
+
+		if ( !$dbpass || strlen( $dbpass ) == 0 ) {
+			$dbpass = "root";
+		}
+
+		if ( !$dbip || strlen( $dbip ) == 0 ) {
+			$dbip = "0.0.0.0";
+		}
+
+		$this->_exec( "mysql -uroot -p" . $dbpass . " -h " . $dbip . " -e 'create user if not exists " . $opts['wp-db-name'] . "'" );
+		$this->_exec( "mysql -uroot -p" . $dbpass . " -h " . $dbip . " -e 'create database if not exists " . $opts['wp-db-name'] . "'" );
+		$this->_exec( "mysql -uroot -p" . $dbpass . " -h " . $dbip . " -e \"grant all privileges on " . $opts['wp-db-name']
+		. ".* to " . $opts['wp-db-name'] . "@localhost identified by '" . $opts['wp-db-name'] . "'\"" );
+
+		$this->_exec( "mysql -uroot -p" . $dbpass . " -h " . $dbip . " -e 'flush privileges'" );
 
 		$this->wp( 'core download --version=4.9.5 --locale=en_US --force' );
-		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=0.0.0.0' );
+		$this->wp( 'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass=' . $opts['wp-db-name'] . ' --dbhost=' . $dbip );
 		$this->wp( 'db drop --yes' );
 		$this->wp( 'db create' );
 
