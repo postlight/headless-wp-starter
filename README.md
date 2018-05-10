@@ -88,6 +88,8 @@ If you receive this error, it likely means another version of MySQL, not the ver
 
 2.  Repeat the installation process. If you still have errors, then look for - and remove - other versions of MySQL by following [these "Remove MySQL" instructions](https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks).
 
+3. If you have deployed your WordPress install and are having CORS issues be sure to update `/wordpress/wp-content/themes/postlight-headless-wp/inc/frontend-origin.php` with your frontend origin URL.
+
 See anything else you'd like to add here? Please send a pull request!
 
 ---
