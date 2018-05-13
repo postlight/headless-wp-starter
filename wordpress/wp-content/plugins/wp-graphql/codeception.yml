@@ -1,0 +1,28 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+coverage:
+    enabled: true
+    whitelist:
+      include:
+        - wp-graphql.php
+        - access-functions.php
+        - src/*.php
+
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+    commands:
+        - Codeception\Command\GenerateWPUnit
+        - Codeception\Command\GenerateWPRestApi
+        - Codeception\Command\GenerateWPRestController
+        - Codeception\Command\GenerateWPRestPostTypeController
+        - Codeception\Command\GenerateWPAjax
+        - Codeception\Command\GenerateWPCanonical
+        - Codeception\Command\GenerateWPXMLRPC
+        - Codeception\Command\DbSnapshot
+        - tad\Codeception\Command\SearchReplace

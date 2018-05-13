@@ -1,0 +1,44 @@
+{
+  "name": "wp-graphql/wp-graphql",
+  "description": "GraphQL API for WordPress",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0+",
+  "version": "0.0.28",
+  "authors": [
+    {
+      "name": "Jason Bahl",
+      "email": "jasonbahl@mac.com"
+    },
+    {
+      "name": "Edwin Cromley"
+    },
+    {
+      "name": "Ryan Kanner"
+    },
+    {
+      "name": "Hughie Devore"
+    },
+    {
+      "name": "Chris Zarate"
+    }
+  ],
+  "require": {
+    "webonyx/graphql-php": "^0.11.2",
+    "ivome/graphql-relay-php": "^0.3.1"
+  },
+  "require-dev": {
+    "apigen/apigen": "^4.1",
+    "lucatume/wp-browser": "~1.21.20"
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-4": {
+      "WPGraphQL\\": "src/"
+    },
+    "classmap": [
+      "src/"
+    ]
+  }
+}
