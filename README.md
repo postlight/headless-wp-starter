@@ -41,6 +41,7 @@ The following command will get WordPress running locally on your machine, along 
 When the installation process completes successfully:
 
 *   The WordPress REST API is available at [http://localhost:8080](http://localhost:8080)
+*   The WordPress GraphQL API is available at [http://localhost:8080/graphql](http://localhost:8080/graphql)
 *   The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) default login credentials `nedstark` / `winteriscoming`
 
 ### Import Data (Optional)
