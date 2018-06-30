@@ -79,7 +79,7 @@ class RoboFile extends \Robo\Tasks {
 
         $this->_exec(
             'mysql -uroot -p' . $db_pass . ' -h ' . $db_ip . " -e 'create user if not exists "
-            . $opts['wp-db-name'] . "@localhost identified by \"" . $opts['wp-db-name'] . "\"'"
+            . $opts['wp-db-name'] . "@localhost identified with mysql_native_password by \"" . $opts['wp-db-name'] . "\"'"
         );
         $this->_exec(
             'mysql -uroot -p' . $db_pass . ' -h ' . $db_ip
