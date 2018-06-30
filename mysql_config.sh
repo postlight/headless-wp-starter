@@ -2,7 +2,7 @@
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # If there's no password set for MySQL (first-time install), add one and cleanup
-    if mysql -uroot -e ""; then
+    if mysql -uroot -e "" > /dev/null 2>&1; then
         mysql -uroot <<_EOF_
           ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
           DELETE FROM mysql.user WHERE User='';
