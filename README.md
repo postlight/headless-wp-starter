@@ -61,7 +61,7 @@ The primary theme code is located in `wordpress/wp-content/themes/postlight-head
 To spin up the frontend client app, run the following commands:
 
 ```zsh
-> cd frontend && yarn install && yarn run dev
+> cd frontend && yarn install && yarn start
 ```
 
 The Next.js app will be running on [http://localhost:3000](http://localhost:3000).
