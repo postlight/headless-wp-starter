@@ -4,9 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "node server.js",
         "build": "next build",
-        "start": "next start",
+        "start": "node server.js",
         "docker:build": "docker build -t frontend .",
         "docker:clean": "docker rm -f frontend || true",
         "docker:run": "docker run -p 3000:3000 --name frontend frontend",
