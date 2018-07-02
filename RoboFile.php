@@ -27,13 +27,14 @@ class RoboFile extends \Robo\Tasks {
             'wp-db-name' => 'wp_headless',
             'wp-description' => 'Just another (headless) WordPress site',
             'wp-plugins' => [],
+            'docker' => false,
         ]
     ) {
         $confirm = $this->io()->confirm( 'This will replace your current ' .
         'WordPress install. Are you sure you want to do this?', false );
 
         if ( ! $confirm ) {
-            return;
+            return 1;
         }
 
         $uname = php_uname();
@@ -57,15 +58,17 @@ class RoboFile extends \Robo\Tasks {
                 $this->_exec( 'mysql.server start' );
                 $this->_exec( './mysql_config.sh' );
             } else {
-                $this->_exec(
-                    "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections"
-                );
-                $this->_exec(
-                    "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections"
-                );
-                $this->_exec( 'sudo apt-get -y install mysql-server' );
-                $this->_exec( 'sudo usermod -d /var/lib/mysql/ mysql' );
-                $this->_exec( 'sudo service mysql start' );
+                if ( !$opts['docker'] ) {
+                    $this->_exec(
+                        "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections"
+                    );
+                    $this->_exec(
+                        "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections"
+                    );
+                    $this->_exec( 'sudo apt-get -y install mysql-server' );
+                    $this->_exec( 'sudo usermod -d /var/lib/mysql/ mysql' );
+                    $this->_exec( 'sudo service mysql start' );
+                }
             }
         }
 
@@ -74,7 +77,11 @@ class RoboFile extends \Robo\Tasks {
         }
 
         if ( !$db_ip || strlen( $db_ip ) === 0 ) {
-            $db_ip = '0.0.0.0';
+            if ( !$opts['docker'] ) {
+                $db_ip = '0.0.0.0';
+            } else {
+                $db_ip = 'localhost';
+            }
         }
 
         $this->_exec(
@@ -190,7 +197,7 @@ class RoboFile extends \Robo\Tasks {
      * @return void
      */
     public function server() {
-        $this->wp( 'server' );
+        $this->wp( 'server --host=0.0.0.0' );
     }
 
     /**
@@ -235,7 +242,7 @@ class RoboFile extends \Robo\Tasks {
      * @return void
      */
     public function wp( $arg ) {
-        $this->taskExec( 'wp' )
+        $this->taskExec( 'wp --allow-root' )
          ->dir( WP_DIR )
          ->rawArg( $arg )
          ->run();

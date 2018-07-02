@@ -9,6 +9,8 @@
     "preinstall": "chmod +x install.sh && chmod +x mysql_config.sh && ./install.sh",
     "postinstall": "robo wordpress:setup",
     "start": "wp server",
-    "lint": "phpcs -v wordpress/wp-content/themes/postlight-headless-wp/. RoboFile.php"
+    "lint": "phpcs -v wordpress/wp-content/themes/postlight-headless-wp/. RoboFile.php",
+    "docker:build": "docker build . -t wp_headless",
+    "docker:start": "docker run -v $(pwd)/data:/var/lib/mysql -v $(pwd):/usr/src/app -p 8080:8080 -it wp_headless"
   }
 }
