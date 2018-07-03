@@ -27,4 +27,4 @@ RUN apt-get update
 RUN apt-get -qy install mysql-server
 
 EXPOSE 8080
-CMD [ './start_docker.sh' ]
+CMD [ "./start_docker.sh" ]
