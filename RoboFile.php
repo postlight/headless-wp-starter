@@ -15,7 +15,7 @@ class RoboFile extends \Robo\Tasks {
      * Set up WordPress.
      *
      * @param  array $opts Options
-     * @return void
+     * @return mixed
      */
     public function wordpressSetup(
         $opts = [
@@ -60,10 +60,12 @@ class RoboFile extends \Robo\Tasks {
             } else {
                 if ( !$opts['docker'] ) {
                     $this->_exec(
-                        "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections"
+                        "echo 'mysql-server mysql-server/root_password_again password root' | ".
+                        'sudo debconf-set-selections'
                     );
                     $this->_exec(
-                        "echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections"
+                        "echo 'mysql-server mysql-server/root_password_again password root' | ".
+                        'sudo debconf-set-selections'
                     );
                     $this->_exec( 'sudo apt-get -y install mysql-server' );
                     $this->_exec( 'sudo usermod -d /var/lib/mysql/ mysql' );
