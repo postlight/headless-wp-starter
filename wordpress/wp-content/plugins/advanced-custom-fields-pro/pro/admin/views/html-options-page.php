@@ -7,9 +7,9 @@
 		<?php 
 		
 		// render post data
-		acf_form_data(array( 
-			'post_id'	=> $post_id, 
-			'nonce'		=> 'options',
+		acf_form_data(array(
+			'screen'	=> 'options',
+			'post_id'	=> $post_id,
 		));
 		
 		wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );

@@ -23,7 +23,7 @@ class ACF_Taxonomy_Field_Walker extends Walker {
 		
 		
 		// append
-		$output .= '<li data-id="' . $term->term_id . '"><label><input type="' . $this->field['field_type'] . '" name="' . $this->field['name'] . '" value="' . $term->term_id . '" ' . ($selected ? 'checked="checked"' : '') . ' /> <span>' . $term->name . '</span></label>';
+		$output .= '<li data-id="' . $term->term_id . '"><label' . ($selected ? ' class="selected"' : '') . '><input type="' . $this->field['field_type'] . '" name="' . $this->field['name'] . '" value="' . $term->term_id . '" ' . ($selected ? 'checked="checked"' : '') . ' /> <span>' . $term->name . '</span></label>';
 				
 	}
 	

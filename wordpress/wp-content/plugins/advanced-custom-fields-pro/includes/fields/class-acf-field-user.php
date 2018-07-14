@@ -28,6 +28,7 @@ class acf_field_user extends acf_field {
 			'role' 			=> '',
 			'multiple' 		=> 0,
 			'allow_null' 	=> 0,
+			'return_format'	=> 'array',
 		);
 		
 		
@@ -422,6 +423,20 @@ class acf_field_user extends acf_field {
 			'ui'			=> 1,
 		));
 		
+		// return_format
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Return Format','acf'),
+			'instructions'	=> '',
+			'type'			=> 'radio',
+			'name'			=> 'return_format',
+			'choices'		=> array(
+				'array'			=> __("User Array",'acf'),
+				'object'		=> __("User Object",'acf'),
+				'id'			=> __("User ID",'acf'),
+			),
+			'layout'	=>	'horizontal',
+		));
+		
 		
 	}
 	
@@ -514,63 +529,59 @@ class acf_field_user extends acf_field {
 		
 		// bail early if no value
 		if( empty($value) ) {
-		
-			return $value;
-			
+			return false;
 		}
 		
-		
-		// force value to array
+		// ensure array
 		$value = acf_get_array( $value );
 		
-		
-		// convert values to int
-		$value = array_map('intval', $value);
-		
-		
-		// load users	
+		// update value
 		foreach( array_keys($value) as $i ) {
-			
-			// vars
-			$user_id = $value[ $i ];
-			$user_data = get_userdata( $user_id );
-			
-			
-			//cope with deleted users by @adampope
-			if( !is_object($user_data) ) {
-			
-				unset( $value[ $i ] );
-				continue;
-				
-			}
-	
-			
-			// append to array
-			$value[ $i ] = array();
-			$value[ $i ]['ID'] = $user_id;
-			$value[ $i ]['user_firstname'] = $user_data->user_firstname;
-			$value[ $i ]['user_lastname'] = $user_data->user_lastname;
-			$value[ $i ]['nickname'] = $user_data->nickname;
-			$value[ $i ]['user_nicename'] = $user_data->user_nicename;
-			$value[ $i ]['display_name'] = $user_data->display_name;
-			$value[ $i ]['user_email'] = $user_data->user_email;
-			$value[ $i ]['user_url'] = $user_data->user_url;
-			$value[ $i ]['user_registered'] = $user_data->user_registered;
-			$value[ $i ]['user_description'] = $user_data->user_description;
-			$value[ $i ]['user_avatar'] = get_avatar( $user_id );
-			
+			$value[ $i ] = $this->format_value_single( $value[ $i ], $post_id, $field );
 		}
 		
-		
-		// convert back from array if neccessary
+		// convert to single
 		if( !$field['multiple'] ) {
-		
 			$value = array_shift($value);
-			
 		}
-		
 		
 		// return value
+		return $value;
+		
+	}
+	
+	function format_value_single( $value, $post_id, $field ) {
+		
+		// vars
+		$user_id = (int) $value;
+		
+		// object
+		if( $field['return_format'] == 'object' ) {
+			$value = get_userdata( $user_id );
+		
+		// array	
+		} elseif( $field['return_format'] == 'array' ) {
+			$wp_user = get_userdata( $user_id );
+			$value = array(
+				'ID'				=> $user_id,
+				'user_firstname'	=> $wp_user->user_firstname,
+				'user_lastname'		=> $wp_user->user_lastname,
+				'nickname'			=> $wp_user->nickname,
+				'user_nicename'		=> $wp_user->user_nicename,
+				'display_name'		=> $wp_user->display_name,
+				'user_email'		=> $wp_user->user_email,
+				'user_url'			=> $wp_user->user_url,
+				'user_registered'	=> $wp_user->user_registered,
+				'user_description'	=> $wp_user->user_description,
+				'user_avatar'		=> get_avatar( $user_id ),
+			);
+			
+		// id		
+		} else {
+			$value = $user_id;
+		}
+		
+		// return
 		return $value;
 		
 	}

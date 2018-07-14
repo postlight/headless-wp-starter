@@ -15,15 +15,12 @@ if( empty($field['conditional_logic']) ) {
 			
 			// rule 0
 			array()
-		
 		)
-		
 	);
-	
 }
 
 ?>
-<tr class="acf-field acf-field-true-false acf-field-setting-conditional_logic" data_type="true_false" data-name="conditional_logic">
+<tr class="acf-field acf-field-true-false acf-field-setting-conditional_logic" data-type="true_false" data-name="conditional_logic">
 	<td class="acf-label">
 		<label><?php _e("Conditional Logic",'acf'); ?></label>
 	</td>
@@ -36,7 +33,7 @@ if( empty($field['conditional_logic']) ) {
 			'prefix'		=> $field['prefix'],
 			'value'			=> $disabled ? 0 : 1,
 			'ui'			=> 1,
-			'class'			=> 'conditional-toggle',
+			'class'			=> 'conditions-toggle',
 		));
 		
 		?>
@@ -65,7 +62,7 @@ if( empty($field['conditional_logic']) ) {
 							// valid rule
 							$rule = wp_parse_args( $rule, array(
 								'field'		=>	'',
-								'operator'	=>	'==',
+								'operator'	=>	'',
 								'value'		=>	'',
 							));
 							
@@ -75,23 +72,29 @@ if( empty($field['conditional_logic']) ) {
 							$rule_id = "rule_{$rule_id}";
 							$prefix = "{$field['prefix']}[conditional_logic][{$group_id}][{$rule_id}]";
 							
+							// data attributes
+							$attributes = array(
+								'data-id'		=> $rule_id,
+								'data-field'	=> $rule['field'],
+								'data-operator'	=> $rule['operator'],
+								'data-value'	=> $rule['value']
+							);
+							
 							?>
-							<tr class="rule" data-id="<?php echo $rule_id; ?>">
+							<tr class="rule" <?php acf_esc_attr_e($attributes); ?>>
 								<td class="param">
 									<?php 
-									
-									$choices = array();
-									$choices[ $rule['field'] ] = $rule['field'];
-									
-									// create field
+										
 									acf_render_field(array(
 										'type'		=> 'select',
 										'prefix'	=> $prefix,
 										'name'		=> 'field',
-										'value'		=> $rule['field'],
-										'choices'	=> $choices,
-										'class'		=> 'conditional-rule-param',
+										'class'		=> 'condition-rule-field',
 										'disabled'	=> $disabled,
+										'value'		=> $rule['field'],
+										'choices'	=> array(
+											$rule['field'] => $rule['field']
+										)
 									));										
 		
 									?>
@@ -99,40 +102,34 @@ if( empty($field['conditional_logic']) ) {
 								<td class="operator">
 									<?php 	
 									
-									$choices = array(
-										'=='	=>	__("is equal to",'acf'),
-										'!='	=>	__("is not equal to",'acf'),
-									);
-									
-									
-									// create field
 									acf_render_field(array(
 										'type'		=> 'select',
 										'prefix'	=> $prefix,
 										'name'		=> 'operator',
-										'value'		=> $rule['operator'],
-										'choices' 	=> $choices,
-										'class'		=> 'conditional-rule-operator',
+										'class'		=> 'condition-rule-operator',
 										'disabled'	=> $disabled,
+										'value'		=> $rule['operator'],
+										'choices'	=> array(
+											$rule['operator'] => $rule['operator']
+										)
 									)); 	
 									
 									?>
 								</td>
 								<td class="value">
 									<?php 
-									
-									$choices = array();
-									$choices[ $rule['value'] ] = $rule['value'];
-									
+										
 									// create field
 									acf_render_field(array(
 										'type'		=> 'select',
 										'prefix'	=> $prefix,
 										'name'		=> 'value',
-										'value'		=> $rule['value'],
-										'choices'	=> $choices,
-										'class'		=> 'conditional-rule-value',
+										'class'		=> 'condition-rule-value',
 										'disabled'	=> $disabled,
+										'value'		=> $rule['value'],
+										'choices'	=> array(
+											$rule['value'] => $rule['value']
+										)
 									));
 									
 									?>

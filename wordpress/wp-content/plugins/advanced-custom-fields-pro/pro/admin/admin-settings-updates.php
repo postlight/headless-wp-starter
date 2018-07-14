@@ -227,7 +227,6 @@ class acf_admin_settings_updates {
         
         // add changelog if the remote version is '>' than the current version
         $version = acf_get_setting('version');
-	 
 		
 	    // check if remote version is higher than current version
 		if( version_compare($info['version'], $version, '>') ) {
@@ -242,13 +241,42 @@ class acf_admin_settings_updates {
         	// - avoids new version not available in plugin update list
         	// - only request if license is active
         	if( $license ) {
-	        	
-	        	acf_updates()->refresh_plugins_transient();	
-	        	
+	        	$this->refresh_plugins_transient();
         	}
-
         }
+	}
+	
+	
+	/**
+	*  refresh_plugins_transient
+	*
+	*  Checks the site transient 'update_plugins' and compares the cached new_version against the plugin-info version.
+	*  If the cached version is older, a new version is available, and the transient is refreshed.
+	*
+	*  @date	12/7/18
+	*  @since	5.6.9
+	*
+	*  @param	void
+	*  @return	void
+	*/
+	
+	function refresh_plugins_transient() {
 		
+		// vars
+		$remote_version = $this->view['remote_version'];
+		$basename = acf_get_setting('basename');
+		$transient = get_site_transient('update_plugins');
+		$transient_version = 0;
+		
+		// get transient version
+		if( isset($transient->response[ $basename ]->new_version) ) {
+			$transient_version = $transient->response[ $basename ]->new_version;
+		}
+		
+		// return true if a newer $remote_version exists
+		if( acf_version_compare($remote_version, '>', $transient_version) ) {
+			acf_updates()->refresh_plugins_transient();
+		}
 	}
 	
 	

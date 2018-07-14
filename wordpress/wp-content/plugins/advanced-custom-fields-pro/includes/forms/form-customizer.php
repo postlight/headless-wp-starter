@@ -29,7 +29,7 @@ class acf_form_customizer {
 		
 		
 		// actions
-		add_action('admin_enqueue_scripts',		array($this, 'admin_enqueue_scripts'));
+		add_action('customize_controls_init',	array($this, 'customize_controls_init'));
 		add_action('customize_preview_init',	array($this, 'customize_preview_init'), 1, 1);
 		add_action('customize_save', 			array($this, 'customize_save'), 1, 1);
 		
@@ -54,14 +54,12 @@ class acf_form_customizer {
 	*  @return	N/A
 	*/
 	
-	function admin_enqueue_scripts() {
-		
-		// validate screen
-		if( !acf_is_screen('customize') ) return;
-		
+	function customize_controls_init() {
 		
 		// load acf scripts
-		acf_enqueue_scripts();
+		acf_enqueue_scripts(array(
+			'context'	=> 'customize_controls'
+		));
 		
 		
 		// actions
@@ -241,47 +239,56 @@ class acf_form_customizer {
 		if( empty($this->preview_values) ) return;
 		
 		
-		// add filter
-		add_filter('acf/get_field_reference', 	array($this, 'get_field_reference'), 10, 3);
+		// add filters
+		add_filter('acf/pre_load_value', array($this, 'pre_load_value'), 10, 3);
+		add_filter('acf/pre_load_reference', array($this, 'pre_load_reference'), 10, 3);
 		
 	}
 	
-	
-	/*
-	*  get_field_reference
+	/**
+	*  pre_load_value
 	*
-	*  This function will return a field_key for a given field name + post_id
-	*  Normally, ACF would lookup the DB fro this connection, but a new preview widget has not yet saved anything to the DB
+	*  Used to inject preview value
 	*
-	*  @type	function
-	*  @date	12/05/2016
-	*  @since	5.3.8
+	*  @date	2/2/18
+	*  @since	5.6.5
 	*
-	*  @param	$field_key (string)
-	*  @param	$field_name (string)
-	*  @param	$post_id (mixed)
-	*  @return	$field_key
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
 	*/
 	
-	function get_field_reference( $field_key, $field_name, $post_id ) {
+	function pre_load_value( $value, $post_id, $field ) {
 		
-		// look for reference
-		if( isset($this->preview_fields[ $post_id ][ $field_name ]) ) {
-			
-			// update key
-			$field_key = $this->preview_fields[ $post_id ][ $field_name ];
-			$field_value = $this->preview_values[ $post_id ][ $field_key ];
-			
-			
-			// cache value
-			acf_set_cache("get_value/post_id={$post_id}/name={$field_name}", $field_value);
-			
+		// check 
+		if( isset($this->preview_values[ $post_id ][ $field['key'] ]) ) {
+			return $this->preview_values[ $post_id ][ $field['key'] ];
 		}
 		
+		// return
+		return $value;
+	}
+	
+	/**
+	*  pre_load_reference
+	*
+	*  Used to inject preview value
+	*
+	*  @date	2/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	function pre_load_reference( $field_key, $field_name, $post_id ) {
+		
+		// check 
+		if( isset($this->preview_fields[ $post_id ][ $field_name ]) ) {
+			return $this->preview_fields[ $post_id ][ $field_name ];
+		}
 		
 		// return
-		return $field_key;
-		
+		return $value;
 	}
 		
 	

@@ -214,6 +214,45 @@ function acf_update_option( $option = '', $value = '', $autoload = null ) {
 }
 
 
+/**
+*  acf_get_reference
+*
+*  Finds the field key for a given field name and post_id.
+*
+*  @date	26/1/18
+*  @since	5.6.5
+*
+*  @param	string	$field_name	The name of the field. eg 'sub_heading'
+*  @param	mixed	$post_id	The post_id of which the value is saved against
+*  @return	string	$reference	The field key
+*/
+
+function acf_get_reference( $field_name, $post_id ) {
+	
+	// allow filter to short-circuit load_value logic
+	$reference = apply_filters( "acf/pre_load_reference", null, $field_name, $post_id );
+    if( $reference !== null ) {
+	    return $reference;
+    }
+    
+	// get hidden meta for this field name
+	$reference = acf_get_metadata( $post_id, $field_name, true );
+	
+	// filter
+	$reference = apply_filters('acf/load_reference', $reference, $field_name, $post_id);
+	$reference = apply_filters('acf/get_field_reference', $reference, $field_name, $post_id);
+	
+	// return
+	return $reference;
+	
+}
+
+// deprecated in 5.6.8
+function acf_get_field_reference( $field_name, $post_id ) {
+	return acf_get_reference( $field_name, $post_id );
+}
+
+
 /*
 *  acf_get_value
 *
@@ -231,10 +270,10 @@ function acf_update_option( $option = '', $value = '', $autoload = null ) {
 function acf_get_value( $post_id = 0, $field ) {
 	
 	// allow filter to short-circuit load_value logic
-	//$value = apply_filters( "acf/pre_load_value", null, $post_id, $field );
-    //if( $value !== null ) {
-	//    return $value;
-    //}
+	$value = apply_filters( "acf/pre_load_value", null, $post_id, $field );
+    if( $value !== null ) {
+	    return $value;
+    }
         
         
 	// vars
@@ -342,9 +381,14 @@ function acf_update_value( $value = null, $post_id = 0, $field ) {
 	
 	// strip slashes
 	if( acf_get_setting('stripslashes') ) {
-		
 		$value = stripslashes_deep($value);
-		
+	}
+	
+	
+	// allow filter to short-circuit update_value logic
+	$check = apply_filters( "acf/pre_update_value", null, $value, $post_id, $field );
+	if( $check !== null ) {
+		 return $check;
 	}
 	
 	

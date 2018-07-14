@@ -29,28 +29,6 @@ class acf_field_date_and_time_picker extends acf_field {
 			'return_format'		=> 'd/m/Y g:i a',
 			'first_day'			=> 1
 		);
-		$this->l10n = array(
-			'timeOnlyTitle'		=> _x('Choose Time',	'Date Time Picker JS timeOnlyTitle',	'acf'),
-	        'timeText'       	=> _x('Time',			'Date Time Picker JS timeText', 		'acf'),
-	        'hourText'        	=> _x('Hour',			'Date Time Picker JS hourText', 		'acf'),
-	        'minuteText'  		=> _x('Minute',			'Date Time Picker JS minuteText', 		'acf'),
-	        'secondText'		=> _x('Second',			'Date Time Picker JS secondText', 		'acf'),
-	        'millisecText'		=> _x('Millisecond',	'Date Time Picker JS millisecText', 	'acf'),
-	        'microsecText'		=> _x('Microsecond',	'Date Time Picker JS microsecText', 	'acf'),
-	        'timezoneText'		=> _x('Time Zone',		'Date Time Picker JS timezoneText', 	'acf'),
-	        'currentText'		=> _x('Now',			'Date Time Picker JS currentText', 		'acf'),
-	        'closeText'			=> _x('Done',			'Date Time Picker JS closeText', 		'acf'),
-	        'selectText'		=> _x('Select',			'Date Time Picker JS selectText', 		'acf'),
-	        'amNames'			=> array(
-		        					_x('AM',			'Date Time Picker JS amText', 			'acf'),
-									_x('A',				'Date Time Picker JS amTextShort', 		'acf'),
-								),
-	        'pmNames'			=> array(
-		        					_x('PM',			'Date Time Picker JS pmText', 			'acf'),
-									_x('P',				'Date Time Picker JS pmTextShort', 		'acf'),
-								)
-		);
-		
 	}
 	
 	
@@ -78,12 +56,36 @@ class acf_field_date_and_time_picker extends acf_field {
 		
 		
 		// script
-		wp_enqueue_script('acf-timepicker', acf_get_dir('assets/inc/timepicker/jquery-ui-timepicker-addon.min.js'), array('jquery-ui-datepicker'), $version);
+		wp_enqueue_script('acf-timepicker', acf_get_url('assets/inc/timepicker/jquery-ui-timepicker-addon.min.js'), array('jquery-ui-datepicker'), $version);
 		
 		
 		// style
-		wp_enqueue_style('acf-timepicker', acf_get_dir('assets/inc/timepicker/jquery-ui-timepicker-addon.min.css'), '', $version);
+		wp_enqueue_style('acf-timepicker', acf_get_url('assets/inc/timepicker/jquery-ui-timepicker-addon.min.css'), '', $version);
 		
+		// localize
+		acf_localize_data(array(
+		   	'dateTimePickerL10n'	=> array(
+				'timeOnlyTitle'		=> _x('Choose Time',	'Date Time Picker JS timeOnlyTitle',	'acf'),
+		        'timeText'       	=> _x('Time',			'Date Time Picker JS timeText', 		'acf'),
+		        'hourText'        	=> _x('Hour',			'Date Time Picker JS hourText', 		'acf'),
+		        'minuteText'  		=> _x('Minute',			'Date Time Picker JS minuteText', 		'acf'),
+		        'secondText'		=> _x('Second',			'Date Time Picker JS secondText', 		'acf'),
+		        'millisecText'		=> _x('Millisecond',	'Date Time Picker JS millisecText', 	'acf'),
+		        'microsecText'		=> _x('Microsecond',	'Date Time Picker JS microsecText', 	'acf'),
+		        'timezoneText'		=> _x('Time Zone',		'Date Time Picker JS timezoneText', 	'acf'),
+		        'currentText'		=> _x('Now',			'Date Time Picker JS currentText', 		'acf'),
+		        'closeText'			=> _x('Done',			'Date Time Picker JS closeText', 		'acf'),
+		        'selectText'		=> _x('Select',			'Date Time Picker JS selectText', 		'acf'),
+		        'amNames'			=> array(
+			        					_x('AM',			'Date Time Picker JS amText', 			'acf'),
+										_x('A',				'Date Time Picker JS amTextShort', 		'acf'),
+									),
+		        'pmNames'			=> array(
+			        					_x('PM',			'Date Time Picker JS pmText', 			'acf'),
+										_x('P',				'Date Time Picker JS pmTextShort', 		'acf'),
+									)
+			)
+	   	));
 	}
 	
 	

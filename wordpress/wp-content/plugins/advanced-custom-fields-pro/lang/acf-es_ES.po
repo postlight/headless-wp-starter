@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-06-27 15:35+1000\n"
-"PO-Revision-Date: 2017-06-27 15:35+1000\n"
+"PO-Revision-Date: 2018-02-06 10:05+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Héctor Garrofé <info@hectorgarrofe.com>\n"
 "Language: es_ES\n"
@@ -113,7 +113,7 @@ msgid "Inactive"
 msgstr "Inactivo"
 
 #: acf.php:440
-#, fuzzy, php-format
+#, php-format
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Activo <span class=\"count\">(%s)</span>"
@@ -314,7 +314,7 @@ msgstr "Changelog"
 #: includes/admin/admin-field-groups.php:614
 #, php-format
 msgid "See what's new in <a href=\"%s\">version %s</a>."
-msgstr ""
+msgstr "Ver las novedades de la <a href=\"% s \">versión %s</a>."
 
 #: includes/admin/admin-field-groups.php:617
 msgid "Resources"
@@ -322,27 +322,24 @@ msgstr "Recursos"
 
 #: includes/admin/admin-field-groups.php:619
 msgid "Website"
-msgstr ""
+msgstr "Sitio web"
 
 #: includes/admin/admin-field-groups.php:620
-#, fuzzy
 msgid "Documentation"
-msgstr "Ubicación"
+msgstr "Documentación"
 
 #: includes/admin/admin-field-groups.php:621
-#, fuzzy
 msgid "Support"
-msgstr "Importar"
+msgstr "Soporte"
 
 #: includes/admin/admin-field-groups.php:623
-#, fuzzy
 msgid "Pro"
-msgstr "Adiós Agregados.  Hola PRO"
+msgstr "Pro"
 
 #: includes/admin/admin-field-groups.php:628
-#, fuzzy, php-format
+#, php-format
 msgid "Thank you for creating with <a href=\"%s\">ACF</a>."
-msgstr "Gracias por actualizar a %s v%s!"
+msgstr "Gracias por crear con <a href=\" %s \">ACF</a>."
 
 #: includes/admin/admin-field-groups.php:668
 msgid "Duplicate this item"
@@ -377,10 +374,9 @@ msgstr "Sincronizar"
 
 #: includes/admin/admin-field-groups.php:780
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #: includes/admin/admin-field-groups.php:798
-#, fuzzy
 msgid "Bulk Actions"
 msgstr "Acciones en lote"
 
@@ -400,7 +396,7 @@ msgstr "Revisar sitios y actualizar"
 
 #: includes/admin/install.php:187
 msgid "Error validating request"
-msgstr ""
+msgstr "¡Error al validar la solicitud!"
 
 #: includes/admin/install.php:210 includes/admin/views/install.php:105
 msgid "No updates available."
@@ -451,11 +447,11 @@ msgid "Import file empty"
 msgstr "Archivo de imporación vacío"
 
 #: includes/admin/settings-tools.php:331
-#, fuzzy, php-format
+#, php-format
 msgid "Imported 1 field group"
 msgid_plural "Imported %s field groups"
-msgstr[0] "Importar Field Group"
-msgstr[1] "Importar Field Group"
+msgstr[0] "Importar un grupo de campos"
+msgstr[1] "Importar %s grupos de campos"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:28
 msgid "Conditional Logic"
@@ -599,7 +595,7 @@ msgstr "Nombre"
 
 #: includes/admin/views/field-group-fields.php:7
 msgid "Key"
-msgstr ""
+msgstr "Clave"
 
 #: includes/admin/views/field-group-fields.php:8
 msgid "Type"
@@ -668,7 +664,7 @@ msgstr "Alineada arriba"
 
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:117
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Alineada a la izquierda"
 
 #: includes/admin/views/field-group-options.php:70
@@ -776,9 +772,8 @@ msgid "Show this field group if"
 msgstr "Mostrar este grupo de campos si"
 
 #: includes/admin/views/install-network.php:4
-#, fuzzy
 msgid "Upgrade Sites"
-msgstr "Notificación de Actualización"
+msgstr "Mejorar los sitios"
 
 #: includes/admin/views/install-network.php:9
 #: includes/admin/views/install.php:3
@@ -786,13 +781,13 @@ msgid "Advanced Custom Fields Database Upgrade"
 msgstr "Actualización de Base de Datos de Advanced Custom Fields"
 
 #: includes/admin/views/install-network.php:11
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "The following sites require a DB upgrade. Check the ones you want to update "
 "and then click %s."
 msgstr ""
-"Los siguientes sitios requieren una actualización de base de datos. Tilda "
-"los que quieres actualizar y haz click en \"Actualizar Base de Datos\"."
+"Los siguientes sitios requieren una actualización de la base de datos. Marca "
+"los que desea actualizar y haga clic en %s."
 
 #: includes/admin/views/install-network.php:20
 #: includes/admin/views/install-network.php:28
@@ -878,17 +873,19 @@ msgid ""
 "Please also ensure any premium add-ons (%s) have first been updated to the "
 "latest version."
 msgstr ""
+"También asegúrate de que todas las extensiones premium (%s) se hayan "
+"actualizado a la última versión."
 
 #: includes/admin/views/install.php:7
 msgid "Reading upgrade tasks..."
 msgstr "Leyendo tareas de actualización..."
 
 #: includes/admin/views/install.php:11
-#, fuzzy, php-format
+#, php-format
 msgid "Database Upgrade complete. <a href=\"%s\">See what's new</a>"
 msgstr ""
-"Actualización de base de datos completa. <a href=\"%s\">Regresar al "
-"Escritorio de Red</a>"
+"Actualización de la base de datos completada. <a href=\"%s \">Vea las "
+"novedades</a>"
 
 #: includes/admin/views/settings-addons.php:17
 msgid "Download & Install"
@@ -1271,9 +1268,8 @@ msgstr "(sin título)"
 #: includes/fields/class-acf-field-page_link.php:284
 #: includes/fields/class-acf-field-post_object.php:283
 #: includes/fields/class-acf-field-taxonomy.php:992
-#, fuzzy
 msgid "Parent"
-msgstr "Página de Nivel Superior"
+msgstr "Superior"
 
 #: includes/api/api-helpers.php:3891
 #, php-format
@@ -1346,7 +1342,7 @@ msgstr "Tipo de campo inexistente"
 
 #: includes/fields.php:305
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: includes/fields/class-acf-field-checkbox.php:36
 #: includes/fields/class-acf-field-taxonomy.php:786
@@ -1358,9 +1354,8 @@ msgid "Toggle All"
 msgstr "Invertir Todos"
 
 #: includes/fields/class-acf-field-checkbox.php:207
-#, fuzzy
 msgid "Add new choice"
-msgstr "Agregar Nuevo Campo"
+msgstr "Agregar nueva opción"
 
 #: includes/fields/class-acf-field-checkbox.php:246
 #: includes/fields/class-acf-field-radio.php:250
@@ -1388,23 +1383,20 @@ msgid "red : Red"
 msgstr "rojo : Rojo"
 
 #: includes/fields/class-acf-field-checkbox.php:255
-#, fuzzy
 msgid "Allow Custom"
-msgstr "Permitir Vacío?"
+msgstr "Permitir personalización"
 
 #: includes/fields/class-acf-field-checkbox.php:260
 msgid "Allow 'custom' values to be added"
-msgstr ""
+msgstr "Permite añadir valores personalizados"
 
 #: includes/fields/class-acf-field-checkbox.php:266
-#, fuzzy
 msgid "Save Custom"
-msgstr "Mover Campo Personalizado"
+msgstr "Guardar personalización"
 
 #: includes/fields/class-acf-field-checkbox.php:271
-#, fuzzy
 msgid "Save 'custom' values to the field's choices"
-msgstr "Guardar 'otros' valores a las opciones del campo"
+msgstr "Guardar los valores \"personalizados\" a las opciones del campo"
 
 #: includes/fields/class-acf-field-checkbox.php:277
 #: includes/fields/class-acf-field-color_picker.php:146
@@ -1463,15 +1455,14 @@ msgstr "Especifica el valor retornado en el front end"
 #: includes/fields/class-acf-field-checkbox.php:316
 #: includes/fields/class-acf-field-radio.php:320
 #: includes/fields/class-acf-field-select.php:529
-#, fuzzy
 msgid "Value"
-msgstr "El valor %s es requerido"
+msgstr "Valor"
 
 #: includes/fields/class-acf-field-checkbox.php:318
 #: includes/fields/class-acf-field-radio.php:322
 #: includes/fields/class-acf-field-select.php:531
 msgid "Both (Array)"
-msgstr ""
+msgstr "Ambos (Array)"
 
 #: includes/fields/class-acf-field-color_picker.php:36
 msgid "Color Picker"
@@ -1490,22 +1481,19 @@ msgid "Select Color"
 msgstr "Selecciona Color"
 
 #: includes/fields/class-acf-field-color_picker.php:86
-#, fuzzy
 msgid "Current Color"
-msgstr "Usuario Actual"
+msgstr "Color actual"
 
 #: includes/fields/class-acf-field-date_picker.php:36
 msgid "Date Picker"
 msgstr "Selector de Fecha"
 
 #: includes/fields/class-acf-field-date_picker.php:44
-#, fuzzy
 msgctxt "Date Picker JS closeText"
 msgid "Done"
 msgstr "Hecho"
 
 #: includes/fields/class-acf-field-date_picker.php:45
-#, fuzzy
 msgctxt "Date Picker JS currentText"
 msgid "Today"
 msgstr "Hoy"
@@ -1513,17 +1501,17 @@ msgstr "Hoy"
 #: includes/fields/class-acf-field-date_picker.php:46
 msgctxt "Date Picker JS nextText"
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: includes/fields/class-acf-field-date_picker.php:47
 msgctxt "Date Picker JS prevText"
 msgid "Prev"
-msgstr ""
+msgstr "Anterior"
 
 #: includes/fields/class-acf-field-date_picker.php:48
 msgctxt "Date Picker JS weekHeader"
 msgid "Wk"
-msgstr ""
+msgstr "Se"
 
 #: includes/fields/class-acf-field-date_picker.php:223
 #: includes/fields/class-acf-field-date_time_picker.php:197
@@ -1543,19 +1531,16 @@ msgstr "El formato mostrado cuando se edita un post"
 #: includes/fields/class-acf-field-date_time_picker.php:224
 #: includes/fields/class-acf-field-time_picker.php:135
 #: includes/fields/class-acf-field-time_picker.php:150
-#, fuzzy
 msgid "Custom:"
-msgstr "Advanced Custom Fields"
+msgstr "Personalizado:"
 
 #: includes/fields/class-acf-field-date_picker.php:242
-#, fuzzy
 msgid "Save Format"
-msgstr "Formato de Fecha"
+msgstr "Guardar formato"
 
 #: includes/fields/class-acf-field-date_picker.php:243
-#, fuzzy
 msgid "The format used when saving a value"
-msgstr "El formato mostrado cuando se edita un post"
+msgstr "El formato utilizado cuando se guarda un valor"
 
 #: includes/fields/class-acf-field-date_picker.php:253
 #: includes/fields/class-acf-field-date_time_picker.php:214
@@ -1578,88 +1563,83 @@ msgid "Week Starts On"
 msgstr "La semana comenza en "
 
 #: includes/fields/class-acf-field-date_time_picker.php:36
-#, fuzzy
 msgid "Date Time Picker"
-msgstr "Selector de Fecha"
+msgstr "Selector de fecha y hora"
 
 #: includes/fields/class-acf-field-date_time_picker.php:44
-#, fuzzy
 msgctxt "Date Time Picker JS timeOnlyTitle"
 msgid "Choose Time"
-msgstr "Cerrar Campo"
+msgstr "Elegir tiempo"
 
 #: includes/fields/class-acf-field-date_time_picker.php:45
 msgctxt "Date Time Picker JS timeText"
 msgid "Time"
-msgstr ""
+msgstr "Tiempo"
 
 #: includes/fields/class-acf-field-date_time_picker.php:46
 msgctxt "Date Time Picker JS hourText"
 msgid "Hour"
-msgstr ""
+msgstr "Hora"
 
 #: includes/fields/class-acf-field-date_time_picker.php:47
 msgctxt "Date Time Picker JS minuteText"
 msgid "Minute"
-msgstr ""
+msgstr "minuto"
 
 #: includes/fields/class-acf-field-date_time_picker.php:48
 msgctxt "Date Time Picker JS secondText"
 msgid "Second"
-msgstr ""
+msgstr "Segundo"
 
 #: includes/fields/class-acf-field-date_time_picker.php:49
 msgctxt "Date Time Picker JS millisecText"
 msgid "Millisecond"
-msgstr ""
+msgstr "Milisegundo"
 
 #: includes/fields/class-acf-field-date_time_picker.php:50
 msgctxt "Date Time Picker JS microsecText"
 msgid "Microsecond"
-msgstr ""
+msgstr "Microsegundo"
 
 #: includes/fields/class-acf-field-date_time_picker.php:51
 msgctxt "Date Time Picker JS timezoneText"
 msgid "Time Zone"
-msgstr ""
+msgstr "Zona horaria"
 
 #: includes/fields/class-acf-field-date_time_picker.php:52
-#, fuzzy
 msgctxt "Date Time Picker JS currentText"
 msgid "Now"
-msgstr "El campo %s puede ser ahora encontrado en el grupo de campos %s"
+msgstr "Ahora"
 
 #: includes/fields/class-acf-field-date_time_picker.php:53
-#, fuzzy
 msgctxt "Date Time Picker JS closeText"
 msgid "Done"
 msgstr "Hecho"
 
 #: includes/fields/class-acf-field-date_time_picker.php:54
-#, fuzzy
 msgctxt "Date Time Picker JS selectText"
 msgid "Select"
-msgstr "Selección"
+msgstr "Elige"
 
 #: includes/fields/class-acf-field-date_time_picker.php:56
 msgctxt "Date Time Picker JS amText"
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 #: includes/fields/class-acf-field-date_time_picker.php:57
 msgctxt "Date Time Picker JS amTextShort"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: includes/fields/class-acf-field-date_time_picker.php:60
 msgctxt "Date Time Picker JS pmText"
 msgid "PM"
-msgstr ""
+msgstr "PM"
 
 #: includes/fields/class-acf-field-date_time_picker.php:61
 msgctxt "Date Time Picker JS pmTextShort"
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: includes/fields/class-acf-field-email.php:36
 msgid "Email"
@@ -1740,9 +1720,8 @@ msgid "Uploaded to this post"
 msgstr "Subidos a este post"
 
 #: includes/fields/class-acf-field-file.php:145
-#, fuzzy
 msgid "File name"
-msgstr "Nombre de Archivo"
+msgstr "Nombre del archivo"
 
 #: includes/fields/class-acf-field-file.php:149
 #: includes/fields/class-acf-field-file.php:252
@@ -1886,9 +1865,8 @@ msgid "Customise the map height"
 msgstr "Personalizar altura de mapa"
 
 #: includes/fields/class-acf-field-group.php:36
-#, fuzzy
 msgid "Group"
-msgstr "Añadir nuevo Field Group"
+msgstr "Grupo"
 
 #: includes/fields/class-acf-field-group.php:469
 #: pro/fields/class-acf-field-repeater.php:453
@@ -1899,6 +1877,7 @@ msgstr "Sub Campos"
 #: pro/fields/class-acf-field-clone.php:890
 msgid "Specify the style used to render the selected fields"
 msgstr ""
+"Especifique el estilo utilizado para representar los campos seleccionados"
 
 #: includes/fields/class-acf-field-group.php:491
 #: pro/fields/class-acf-field-clone.php:895
@@ -1994,28 +1973,24 @@ msgid "Width"
 msgstr "Ancho"
 
 #: includes/fields/class-acf-field-link.php:36
-#, fuzzy
 msgid "Link"
-msgstr "Link de página"
+msgstr "Enlace"
 
 #: includes/fields/class-acf-field-link.php:146
-#, fuzzy
 msgid "Select Link"
-msgstr "Seleccionar archivo"
+msgstr "Elige el enlace"
 
 #: includes/fields/class-acf-field-link.php:151
 msgid "Opens in a new window/tab"
-msgstr ""
+msgstr "Abrir en una nueva ventana/pestaña"
 
 #: includes/fields/class-acf-field-link.php:186
-#, fuzzy
 msgid "Link Array"
-msgstr "Array de Archivo"
+msgstr "Matriz de enlace"
 
 #: includes/fields/class-acf-field-link.php:187
-#, fuzzy
 msgid "Link URL"
-msgstr "URL de Archivo"
+msgstr "URL del enlace"
 
 #: includes/fields/class-acf-field-message.php:36
 #: includes/fields/class-acf-field-message.php:115
@@ -2149,7 +2124,7 @@ msgstr "Permitir Vacío?"
 
 #: includes/fields/class-acf-field-page_link.php:538
 msgid "Allow Archives URLs"
-msgstr ""
+msgstr "Permitir las URLs de los archivos"
 
 #: includes/fields/class-acf-field-page_link.php:548
 #: includes/fields/class-acf-field-post_object.php:437
@@ -2266,83 +2241,80 @@ msgstr[1] "%s requiere al menos %s selecciones"
 
 #: includes/fields/class-acf-field-select.php:36
 #: includes/fields/class-acf-field-taxonomy.php:791
-#, fuzzy
 msgctxt "noun"
 msgid "Select"
-msgstr "Selección"
+msgstr "Elige"
 
 #: includes/fields/class-acf-field-select.php:49
 msgctxt "Select2 JS matches_1"
 msgid "One result is available, press enter to select it."
-msgstr ""
+msgstr "Hay un resultado disponible, pulse Enter para seleccionarlo."
 
 #: includes/fields/class-acf-field-select.php:50
 #, php-format
 msgctxt "Select2 JS matches_n"
 msgid "%d results are available, use up and down arrow keys to navigate."
 msgstr ""
+"%d resultados disponibles, utilice las flechas arriba y abajo para navegar "
+"por los resultados."
 
 #: includes/fields/class-acf-field-select.php:51
-#, fuzzy
 msgctxt "Select2 JS matches_0"
 msgid "No matches found"
-msgstr "No se encontraron resultados"
+msgstr "No se encontraron coincidencias"
 
 #: includes/fields/class-acf-field-select.php:52
 msgctxt "Select2 JS input_too_short_1"
 msgid "Please enter 1 or more characters"
-msgstr ""
+msgstr "Por favor, introduce 1 o más caracteres"
 
 #: includes/fields/class-acf-field-select.php:53
 #, php-format
 msgctxt "Select2 JS input_too_short_n"
 msgid "Please enter %d or more characters"
-msgstr ""
+msgstr "Por favor escribe %d o más caracteres"
 
 #: includes/fields/class-acf-field-select.php:54
 msgctxt "Select2 JS input_too_long_1"
 msgid "Please delete 1 character"
-msgstr ""
+msgstr "Por favor, borra 1 carácter"
 
 #: includes/fields/class-acf-field-select.php:55
 #, php-format
 msgctxt "Select2 JS input_too_long_n"
 msgid "Please delete %d characters"
-msgstr ""
+msgstr "Por favor, elimina %d caracteres"
 
 #: includes/fields/class-acf-field-select.php:56
 msgctxt "Select2 JS selection_too_long_1"
 msgid "You can only select 1 item"
-msgstr ""
+msgstr "Sólo puede seleccionar 1 elemento"
 
 #: includes/fields/class-acf-field-select.php:57
 #, php-format
 msgctxt "Select2 JS selection_too_long_n"
 msgid "You can only select %d items"
-msgstr ""
+msgstr "Sólo puede seleccionar %d elementos"
 
 #: includes/fields/class-acf-field-select.php:58
 msgctxt "Select2 JS load_more"
 msgid "Loading more results&hellip;"
-msgstr ""
+msgstr "Cargando más resultados&hellip;"
 
 #: includes/fields/class-acf-field-select.php:59
-#, fuzzy
 msgctxt "Select2 JS searching"
 msgid "Searching&hellip;"
-msgstr "Buscar Campos"
+msgstr "Buscando&hellip;"
 
 #: includes/fields/class-acf-field-select.php:60
-#, fuzzy
 msgctxt "Select2 JS load_fail"
 msgid "Loading failed"
-msgstr "Validación fallida"
+msgstr "Error al cargar"
 
 #: includes/fields/class-acf-field-select.php:270 includes/media.php:54
-#, fuzzy
 msgctxt "verb"
 msgid "Select"
-msgstr "Selección"
+msgstr "Elige"
 
 #: includes/fields/class-acf-field-select.php:504
 #: includes/fields/class-acf-field-true_false.php:159
@@ -2354,13 +2326,12 @@ msgid "Use AJAX to lazy load choices?"
 msgstr "Usar AJAX para hacer lazy load de las opciones?"
 
 #: includes/fields/class-acf-field-select.php:525
-#, fuzzy
 msgid "Specify the value returned"
-msgstr "Especifica el valor retornado en el front end"
+msgstr "Especifique el valor devuelto"
 
 #: includes/fields/class-acf-field-separator.php:36
 msgid "Separator"
-msgstr ""
+msgstr "Separador"
 
 #: includes/fields/class-acf-field-tab.php:36
 msgid "Tab"
@@ -2523,9 +2494,8 @@ msgid "Sets the textarea height"
 msgstr "Setea el alto del área de texto"
 
 #: includes/fields/class-acf-field-time_picker.php:36
-#, fuzzy
 msgid "Time Picker"
-msgstr "Selector de Fecha"
+msgstr "Selector de hora"
 
 #: includes/fields/class-acf-field-true_false.php:36
 msgid "True / False"
@@ -2539,25 +2509,23 @@ msgstr "Sí"
 
 #: includes/fields/class-acf-field-true_false.php:142
 msgid "Displays text alongside the checkbox"
-msgstr ""
+msgstr "Muestra el texto junto a la casilla de verificación"
 
 #: includes/fields/class-acf-field-true_false.php:170
-#, fuzzy
 msgid "On Text"
-msgstr "Texto"
+msgstr "Sobre texto"
 
 #: includes/fields/class-acf-field-true_false.php:171
 msgid "Text shown when active"
-msgstr ""
+msgstr "Texto mostrado cuando está activo"
 
 #: includes/fields/class-acf-field-true_false.php:180
-#, fuzzy
 msgid "Off Text"
-msgstr "Texto"
+msgstr "Sin texto"
 
 #: includes/fields/class-acf-field-true_false.php:181
 msgid "Text shown when inactive"
-msgstr ""
+msgstr "Texto mostrado cuando está inactivo"
 
 #: includes/fields/class-acf-field-url.php:36
 msgid "Url"
@@ -2594,7 +2562,7 @@ msgstr "Texto"
 
 #: includes/fields/class-acf-field-wysiwyg.php:392
 msgid "Click to initialize TinyMCE"
-msgstr ""
+msgstr "Haz clic para iniciar TinyMCE"
 
 #: includes/fields/class-acf-field-wysiwyg.php:445
 msgid "Tabs"
@@ -2622,11 +2590,11 @@ msgstr "¿Mostrar el botón Media Upload?"
 
 #: includes/fields/class-acf-field-wysiwyg.php:479
 msgid "Delay initialization?"
-msgstr ""
+msgstr "¿Inicialización retrasada?"
 
 #: includes/fields/class-acf-field-wysiwyg.php:480
 msgid "TinyMCE will not be initalized until field is clicked"
-msgstr ""
+msgstr "TinyMCE no se iniciará hasta que se haga clic en el campo"
 
 #: includes/forms/form-comment.php:166 includes/forms/form-post.php:303
 #: pro/admin/admin-options-page.php:304
@@ -2634,9 +2602,8 @@ msgid "Edit field group"
 msgstr "Editar grupo de campos"
 
 #: includes/forms/form-front.php:55
-#, fuzzy
 msgid "Validate Email"
-msgstr "Validación fallida"
+msgstr "Validar correo electrónico"
 
 #: includes/forms/form-front.php:103
 #: pro/fields/class-acf-field-gallery.php:588 pro/options-page.php:81
@@ -2649,7 +2616,7 @@ msgstr "Post actualizado"
 
 #: includes/forms/form-front.php:229
 msgid "Spam Detected"
-msgstr ""
+msgstr "Spam detectado"
 
 #: includes/input.php:258
 msgid "Expand Details"
@@ -2683,7 +2650,7 @@ msgstr "Restringido"
 
 #: includes/input.php:268
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: includes/locations.php:93 includes/locations/class-acf-location-post.php:27
 msgid "Post"
@@ -2704,7 +2671,7 @@ msgstr "Adjunto"
 #: includes/locations/class-acf-location-attachment.php:113
 #, php-format
 msgid "All %s formats"
-msgstr ""
+msgstr "%s formatos"
 
 #: includes/locations/class-acf-location-comment.php:27
 msgid "Comment"
@@ -2736,20 +2703,19 @@ msgstr "Viendo back end"
 
 #: includes/locations/class-acf-location-nav-menu-item.php:27
 msgid "Menu Item"
-msgstr ""
+msgstr "Elemento del menú"
 
 #: includes/locations/class-acf-location-nav-menu.php:27
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: includes/locations/class-acf-location-nav-menu.php:113
-#, fuzzy
 msgid "Menu Locations"
-msgstr "Ubicación"
+msgstr "Localizaciones de menú"
 
 #: includes/locations/class-acf-location-nav-menu.php:123
 msgid "Menus"
-msgstr ""
+msgstr "Menús"
 
 #: includes/locations/class-acf-location-page-parent.php:27
 msgid "Page Parent"
@@ -2805,9 +2771,8 @@ msgid "Post Taxonomy"
 msgstr "Taxonomía de Post"
 
 #: includes/locations/class-acf-location-post-template.php:29
-#, fuzzy
 msgid "Post Template"
-msgstr "Plantilla de Página"
+msgstr "Plantilla de entrada:"
 
 #: includes/locations/class-acf-location-taxonomy.php:27
 msgid "Taxonomy Term"
@@ -2834,13 +2799,11 @@ msgid "Widget"
 msgstr "Widget"
 
 #: includes/media.php:55
-#, fuzzy
 msgctxt "verb"
 msgid "Edit"
 msgstr "Editar"
 
 #: includes/media.php:56
-#, fuzzy
 msgctxt "verb"
 msgid "Update"
 msgstr "Actualizar"
@@ -2887,20 +2850,19 @@ msgid "Activate License"
 msgstr "Activar Licencia"
 
 #: pro/admin/views/html-settings-updates.php:21
-#, fuzzy
 msgid "License Information"
-msgstr "Información de Actualización"
+msgstr "Información de la licencia"
 
 #: pro/admin/views/html-settings-updates.php:24
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "To unlock updates, please enter your license key below. If you don't have a "
 "licence key, please see <a href=\"%s\" target=\"_blank\">details & pricing</"
 "a>."
 msgstr ""
-"Para habilitar actualizaciones, por favor ingresa tu clave de licencia en la "
-"página de <a href=\"%s\">Actualizaciones</a>. Si no tiene una clave de "
-"licencia, por favor mira <a href=\"%s\">detalles y precios</a>"
+"Para desbloquear las actualizaciones, por favor a continuación introduce tu "
+"clave de licencia. Si no tienes una clave de licencia, consulta <a href=\"%s"
+"\" target=\"_blank\">detalles y precios</a>."
 
 #: pro/admin/views/html-settings-updates.php:33
 msgid "License Key"
@@ -2941,11 +2903,11 @@ msgstr "Notificación de Actualización"
 #: pro/fields/class-acf-field-clone.php:36
 msgctxt "noun"
 msgid "Clone"
-msgstr ""
+msgstr "Clonar"
 
 #: pro/fields/class-acf-field-clone.php:858
 msgid "Select one or more fields you wish to clone"
-msgstr ""
+msgstr "Elige uno o más campos que quieras clonar"
 
 #: pro/fields/class-acf-field-clone.php:875
 msgid "Display"
@@ -2953,50 +2915,47 @@ msgstr "Mostrar"
 
 #: pro/fields/class-acf-field-clone.php:876
 msgid "Specify the style used to render the clone field"
-msgstr ""
+msgstr "Especifique el estilo utilizado para procesar el campo de clonación"
 
 #: pro/fields/class-acf-field-clone.php:881
 msgid "Group (displays selected fields in a group within this field)"
 msgstr ""
+"Grupo (muestra los campos seleccionados en un grupo dentro de este campo)"
 
 #: pro/fields/class-acf-field-clone.php:882
 msgid "Seamless (replaces this field with selected fields)"
-msgstr ""
+msgstr "Transparente (reemplaza este campo con los campos seleccionados)"
 
 #: pro/fields/class-acf-field-clone.php:903
-#, fuzzy, php-format
+#, php-format
 msgid "Labels will be displayed as %s"
-msgstr "Los elementos seleccionados serán mostrados en cada resultado"
+msgstr "Las etiquetas se mostrarán como %s"
 
 #: pro/fields/class-acf-field-clone.php:906
-#, fuzzy
 msgid "Prefix Field Labels"
-msgstr "Etiqueta del campo"
+msgstr "Etiquetas del prefijo de campo"
 
 #: pro/fields/class-acf-field-clone.php:917
 #, php-format
 msgid "Values will be saved as %s"
-msgstr ""
+msgstr "Los valores se guardarán como %s"
 
 #: pro/fields/class-acf-field-clone.php:920
-#, fuzzy
 msgid "Prefix Field Names"
-msgstr "Nombre del campo"
+msgstr "Nombres de prefijos de campos"
 
 #: pro/fields/class-acf-field-clone.php:1038
-#, fuzzy
 msgid "Unknown field"
-msgstr "Debajo de los campos"
+msgstr "Campo desconocido"
 
 #: pro/fields/class-acf-field-clone.php:1077
-#, fuzzy
 msgid "Unknown field group"
-msgstr "Sincronizar grupo de campos"
+msgstr "Grupo de campos desconocido"
 
 #: pro/fields/class-acf-field-clone.php:1081
 #, php-format
 msgid "All fields from %s field group"
-msgstr ""
+msgstr "Todos los campos del grupo de campo %s"
 
 #: pro/fields/class-acf-field-flexible-content.php:42
 #: pro/fields/class-acf-field-repeater.php:230
@@ -3060,7 +3019,7 @@ msgstr "Remover esquema"
 #: pro/fields/class-acf-field-flexible-content.php:425
 #: pro/fields/class-acf-field-repeater.php:360
 msgid "Click to toggle"
-msgstr ""
+msgstr "Clic para mostrar"
 
 #: pro/fields/class-acf-field-flexible-content.php:571
 msgid "Reorder Layout"
@@ -3116,14 +3075,12 @@ msgid "Length"
 msgstr "Longitud"
 
 #: pro/fields/class-acf-field-gallery.php:379
-#, fuzzy
 msgid "Caption"
-msgstr "Opciones"
+msgstr "Leyenda"
 
 #: pro/fields/class-acf-field-gallery.php:388
-#, fuzzy
 msgid "Alt Text"
-msgstr "Texto"
+msgstr "Texto Alt"
 
 #: pro/fields/class-acf-field-gallery.php:559
 msgid "Add to gallery"
@@ -3163,20 +3120,19 @@ msgstr "Selección Máxima"
 
 #: pro/fields/class-acf-field-gallery.php:657
 msgid "Insert"
-msgstr ""
+msgstr "Insertar"
 
 #: pro/fields/class-acf-field-gallery.php:658
 msgid "Specify where new attachments are added"
-msgstr ""
+msgstr "Especificar dónde se agregan nuevos adjuntos"
 
 #: pro/fields/class-acf-field-gallery.php:662
-#, fuzzy
 msgid "Append to the end"
-msgstr "Aparece luego del campo"
+msgstr "Añadir al final"
 
 #: pro/fields/class-acf-field-gallery.php:663
 msgid "Prepend to the beginning"
-msgstr ""
+msgstr "Adelantar hasta el principio"
 
 #: pro/fields/class-acf-field-repeater.php:47
 msgid "Minimum rows reached ({min} rows)"
@@ -3195,13 +3151,12 @@ msgid "Remove row"
 msgstr "Remover fila"
 
 #: pro/fields/class-acf-field-repeater.php:483
-#, fuzzy
 msgid "Collapsed"
-msgstr "Colapsar Detalles"
+msgstr "Colapsado"
 
 #: pro/fields/class-acf-field-repeater.php:484
 msgid "Select a sub field to show when row is collapsed"
-msgstr ""
+msgstr "Elige un subcampo para indicar cuándo se colapsa la fila"
 
 #: pro/fields/class-acf-field-repeater.php:494
 msgid "Minimum Rows"
@@ -3224,25 +3179,23 @@ msgid "Options Updated"
 msgstr "Opciones Actualizadas"
 
 #: pro/updates.php:97
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "To enable updates, please enter your license key on the <a href=\"%s"
 "\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
 "\">details & pricing</a>."
 msgstr ""
-"Para habilitar actualizaciones, por favor ingresa tu clave de licencia en la "
-"página de <a href=\"%s\">Actualizaciones</a>. Si no tiene una clave de "
-"licencia, por favor mira <a href=\"%s\">detalles y precios</a>"
+"Para habilitar actualizaciones, por favor, introduzca su llave de licencia "
+"en la <a href=\"%s\">página de actualizaciones</a>. Si no tiene una llave de "
+"licencia, por favor, consulta <a href=\"%s\">detalles y precios</a>."
 
 #. Plugin URI of the plugin/theme
-#, fuzzy
 msgid "https://www.advancedcustomfields.com/"
-msgstr "http://www.advancedcustomfields.com/"
+msgstr "https://www.advancedcustomfields.com/"
 
 #. Author of the plugin/theme
-#, fuzzy
 msgid "Elliot Condon"
-msgstr "elliot condon"
+msgstr "Elliot Condon"
 
 #. Author URI of the plugin/theme
 msgid "http://www.elliotcondon.com/"

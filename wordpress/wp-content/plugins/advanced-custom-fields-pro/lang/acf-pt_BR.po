@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO 5.4\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-11-22 09:03-0200\n"
-"PO-Revision-Date: 2017-11-22 09:18-0200\n"
+"PO-Revision-Date: 2018-02-06 10:06+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Augusto Simão <augusto@ams.art.br>\n"
 "Language: pt_BR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -745,7 +745,7 @@ msgstr "Alinhado ao Topo"
 
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:107
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Alinhado à Esquerda"
 
 #: includes/admin/views/field-group-options.php:70
@@ -1333,7 +1333,8 @@ msgstr "Relacional"
 msgid "jQuery"
 msgstr "jQuery"
 
-#: includes/fields.php:149 includes/fields/class-acf-field-button-group.php:177
+#: includes/fields.php:149
+#: includes/fields/class-acf-field-button-group.php:177
 #: includes/fields/class-acf-field-checkbox.php:384
 #: includes/fields/class-acf-field-group.php:474
 #: includes/fields/class-acf-field-radio.php:285
@@ -2663,8 +2664,8 @@ msgstr "Editar Grupo de Campos"
 msgid "Validate Email"
 msgstr "Validar Email"
 
-#: includes/forms/form-front.php:103 pro/fields/class-acf-field-gallery.php:573
-#: pro/options-page.php:81
+#: includes/forms/form-front.php:103
+#: pro/fields/class-acf-field-gallery.php:573 pro/options-page.php:81
 msgid "Update"
 msgstr "Atualizar"
 

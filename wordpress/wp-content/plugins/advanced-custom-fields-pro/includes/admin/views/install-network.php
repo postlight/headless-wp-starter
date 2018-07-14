@@ -178,22 +178,20 @@ $button = __('Upgrade Sites');
 						$input.prop('checked', false);
 						$input.remove();
 						
-						
 						// vars
-						var message = acf.get_ajax_message(json);
+						var response = '';
 						
-						
-						// bail early if no message text
-						if( !message.text ) {
-							
-							return;
-							
+						// success
+						if( acf.isAjaxSuccess(json) ) {
+							response = acf.getAjaxMessage(json);
+						} else {
+							response = acf.getAjaxError(json);
 						}
 						
-						
 						// update text
-						text = '<pre>' + message.text +  '</pre>';
-												
+						if( response ) {
+							text = '<pre>' + response +  '</pre>';
+						}						
 					},
 					complete: function(){
 						

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2015-08-11 23:50+0200\n"
-"PO-Revision-Date: 2017-10-13 15:27+1000\n"
+"PO-Revision-Date: 2018-03-14 09:58+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Amos Lee <470266798@qq.com>\n"
 "Language: zh_CN\n"
@@ -794,7 +794,7 @@ msgid "Top aligned"
 msgstr "顶部对齐"
 
 #: admin/views/field-group-options.php:65 fields/tab.php:160
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "左对齐"
 
 #: admin/views/field-group-options.php:72
@@ -2486,7 +2486,7 @@ msgstr "已到最小行数 ({min} 行)"
 
 #: pro/fields/repeater.php:47
 msgid "Maximum rows reached ({max} rows)"
-msgstr "已到最大行数 ({min} 行)"
+msgstr "已到最大行数 ({max} 行)"
 
 #: pro/fields/repeater.php:259
 msgid "Drag to reorder"

@@ -267,7 +267,12 @@ class acf_field_radio extends acf_field {
 			'name'			=> 'save_other_choice',
 			'type'			=> 'true_false',
 			'ui'			=> 1,
-			'message'		=> __("Save 'other' values to the field's choices", 'acf')
+			'message'		=> __("Save 'other' values to the field's choices", 'acf'),
+			'conditions'	=> array(
+				'field'		=> 'other_choice',
+				'operator'	=> '==',
+				'value'		=> 1
+			)
 		));
 		
 		

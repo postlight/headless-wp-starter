@@ -49,13 +49,14 @@ class acf_location_page_type extends acf_location {
 		// vars
 		$post_id = acf_maybe_get( $screen, 'post_id' );
 		
-		
 		// bail early if no post id
 		if( !$post_id ) return false;
 		
-		
 		// get post
 		$post = get_post( $post_id );
+		
+		// bail early if no post
+		if( !$post ) return false;
 		
 		
 		// compare   

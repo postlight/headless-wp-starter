@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-06-27 15:32+1000\n"
-"PO-Revision-Date: 2017-06-27 15:32+1000\n"
+"PO-Revision-Date: 2018-02-06 10:06+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Digital Factory <info@digitalfactory.pl>\n"
 "Language: pl_PL\n"
@@ -674,7 +674,7 @@ msgstr "Wyrównanie do góry"
 
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:117
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Wyrównanie do lewej"
 
 #: includes/admin/views/field-group-options.php:70

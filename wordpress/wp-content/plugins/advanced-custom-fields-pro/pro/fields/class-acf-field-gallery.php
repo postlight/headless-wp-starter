@@ -37,13 +37,6 @@ class acf_field_gallery extends acf_field {
 			'mime_types'	=> '',
 			'insert'		=> 'append'
 		);
-		$this->l10n = array(
-			'select'		=> __("Add Image to Gallery",'acf'),
-			'edit'			=> __("Edit Image",'acf'),
-			'update'		=> __("Update Image",'acf'),
-			'uploadedTo'	=> __("Uploaded to this post",'acf'),
-			'max'			=> __("Maximum selection reached",'acf')
-		);
 		
 		
 		// actions
@@ -56,6 +49,28 @@ class acf_field_gallery extends acf_field {
 		add_action('wp_ajax_acf/fields/gallery/get_sort_order',				array($this, 'ajax_get_sort_order'));
 		add_action('wp_ajax_nopriv_acf/fields/gallery/get_sort_order',		array($this, 'ajax_get_sort_order'));
 		
+	}
+	
+	/*
+	*  input_admin_enqueue_scripts
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	16/12/2015
+	*  @since	5.3.2
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function input_admin_enqueue_scripts() {
+		
+		// localize
+		acf_localize_text(array(
+		   	'Add Image to Gallery'		=> __('Add Image to Gallery', 'acf'),
+			'Maximum selection reached'	=> __('Maximum selection reached', 'acf'),
+	   	));
 	}
 	
 	

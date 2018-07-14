@@ -36,14 +36,6 @@ class acf_field_image extends acf_field {
 			'max_size'		=> 0,
 			'mime_types'	=> ''
 		);
-		$this->l10n = array(
-			'select'		=> __("Select Image",'acf'),
-			'edit'			=> __("Edit Image",'acf'),
-			'update'		=> __("Update Image",'acf'),
-			'uploadedTo'	=> __("Uploaded to this post",'acf'),
-			'all'			=> __("All images",'acf'),
-		);
-		
 		
 		// filters
 		add_filter('get_media_item_args',				array($this, 'get_media_item_args'));
@@ -51,6 +43,31 @@ class acf_field_image extends acf_field {
     
     }
     
+    
+    /*
+	*  input_admin_enqueue_scripts
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	16/12/2015
+	*  @since	5.3.2
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function input_admin_enqueue_scripts() {
+		
+		// localize
+		acf_localize_text(array(
+		   	'Select Image'	=> __('Select Image', 'acf'),
+			'Edit Image'	=> __('Edit Image', 'acf'),
+			'Update Image'	=> __('Update Image', 'acf'),
+			'All images'	=> __('All images', 'acf'),
+	   	));
+	}
+	
 	
 	/*
 	*  render_field()

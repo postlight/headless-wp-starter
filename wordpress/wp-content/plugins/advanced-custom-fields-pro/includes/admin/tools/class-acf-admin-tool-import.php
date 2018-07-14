@@ -270,7 +270,7 @@ class ACF_Admin_Tool_Import extends ACF_Admin_Tool {
 }
 
 // initialize
-acf_register_admin_tool( 'acf_admin_tool_import' );
+acf_register_admin_tool( 'ACF_Admin_Tool_Import' );
 
 endif; // class_exists check
 

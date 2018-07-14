@@ -279,23 +279,18 @@ class acf_compatibility {
 		if( !empty($field['date_format']) ) {
 			
 			// extract vars
-			$date_format = acf_extract_var( $field, 'date_format' );
-			$display_format = acf_extract_var( $field, 'display_format' );
-			
+			$date_format = $field['date_format'];
+			$display_format = $field['display_format'];
 			
 			// convert from js to php
-			//$date_format = acf_convert_date_to_php( $date_format );
 			$display_format = acf_convert_date_to_php( $display_format );
-			
-			
-			// bail early if already matches 'Ymd'
-			if( $date_format === 'yymmdd' ) return $field;
-			
 			
 			// append settings
 			$field['display_format'] = $display_format;
 			$field['save_format'] = $date_format;
 			
+			// clean up
+			unset($field['date_format']);
 		}
 		
 		

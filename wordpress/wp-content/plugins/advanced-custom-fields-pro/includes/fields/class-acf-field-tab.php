@@ -104,7 +104,7 @@ class acf_field_tab extends acf_field {
 			'name'			=> 'placement',
 			'choices' 		=> array(
 				'top'			=>	__("Top aligned", 'acf'),
-				'left'			=>	__("Left Aligned", 'acf'),
+				'left'			=>	__("Left aligned", 'acf'),
 			)
 		));
 		

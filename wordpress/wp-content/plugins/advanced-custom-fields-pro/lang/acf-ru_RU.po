@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-10-24 23:11+0300\n"
-"PO-Revision-Date: 2017-10-24 23:17+0300\n"
-"Last-Translator: Toniyevych Andriy <toniyevych@gmail.com>\n"
+"PO-Revision-Date: 2018-02-06 10:06+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -669,7 +669,7 @@ msgstr "Вверху"
 
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:103
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Слева"
 
 #: includes/admin/views/field-group-options.php:70
@@ -1322,7 +1322,8 @@ msgstr "Отношение"
 msgid "jQuery"
 msgstr "jQuery"
 
-#: includes/fields.php:149 includes/fields/class-acf-field-button-group.php:177
+#: includes/fields.php:149
+#: includes/fields/class-acf-field-button-group.php:177
 #: includes/fields/class-acf-field-checkbox.php:384
 #: includes/fields/class-acf-field-group.php:474
 #: includes/fields/class-acf-field-radio.php:285
@@ -2635,8 +2636,8 @@ msgstr "Редактировать группу полей"
 msgid "Validate Email"
 msgstr "Проверка Email"
 
-#: includes/forms/form-front.php:103 pro/fields/class-acf-field-gallery.php:573
-#: pro/options-page.php:81
+#: includes/forms/form-front.php:103
+#: pro/fields/class-acf-field-gallery.php:573 pro/options-page.php:81
 msgid "Update"
 msgstr "Обновить"
 

@@ -54,12 +54,10 @@ class acf_location_nav_menu_item extends acf_location {
 		if( !$nav_menu_item ) return false;
 		
 		
-		// global
-		global $acf_menu;
-		
-		
 		// append nav_menu data
-		$screen['nav_menu'] = $acf_menu;
+		if( !isset($screen['nav_menu']) ) {
+			$screen['nav_menu'] = acf_get_data('nav_menu_id');
+		}
 		
 		
         // return

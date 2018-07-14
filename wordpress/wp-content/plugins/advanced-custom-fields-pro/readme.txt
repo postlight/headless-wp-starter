@@ -2,7 +2,7 @@
 Contributors: elliotcondon
 Tags: acf, advanced, custom, field, fields, form, repeater, content
 Requires at least: 3.6.0
-Tested up to: 4.9.0
+Tested up to: 4.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,41 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.0 =
+* Core: Major JavaScript updates
+* Core: Improved conditional logic with new types and more supported fields
+* Core: Improved localization and internationalization
+* Repeater field: Improved logic that remembers collapsed row states
+* Repeater field: Added support to collapse multiple rows (hold shift)
+* API: Improved lookup to find fields without a reference value
+* Language: Added Croatian translation - Thanks to Vlado Bosnjak
+* Language: Updated Italian translation - thanks to Davide Pantè
+* Language: Updated Romanian translation - thanks to Ionut Staicu
+* Language: Updated German translation - thanks to Ralf Koller
+* Language: Updated Arabic translation - thanks to Karim Ramadan
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+
+= 5.6.10 =
+* Core: Minor fixes and improvements
+
+= 5.6.9 =
+* User field: Added new 'Return Format' setting (Array, Object, ID)
+* Core: Added basic compatibility with Gutenberg - values now save
+* Core: Fixed bug affecting the loading of fields on new Menu Items
+* Core: Removed private ('show_ui' => false) post types from the 'Post Type' location rule choices
+* Core: Minor fixes and improvements
+* Language: Updated French translation - thanks to Maxime Bernard-Jacquet
+
+= 5.6.8 =
+* API: Fixed bug causing have_rows() to fail with PHP 7.2
+* Core: Fixed bug causing "Add new term" form to hide after submit
+* Core: Minor fixes and improvements
+* Language: Updated German translation - thanks to Ralf Koller
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+* Language: Updated Arabic translation - thanks to Karim Ramadan
+* Language: Updated Spanish translation - thanks to Luis Rull Muñoz
+* Language: Updated Persian translation - thanks to Majix
+
 = 5.6.7 =
 * Fixed an assortment of bugs found in 5.6.6
 
@@ -83,6 +118,7 @@ From your WordPress dashboard
 * Language: Updated Portuguese translation - thanks to Pedro Mendonça
 * Language: Updated Persian translation - thanks to Kamel Kimiaei
 * Language: Updated Swiss German translation - thanks to Raphael Hüni
+* Language: Updated Arabic translation - thanks to Karim Ramadan
 
 = 5.6.5 =
 * API: Added new 'kses' setting to the `acf_form()` function

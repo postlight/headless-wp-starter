@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2017-08-01 13:31+1000\n"
-"PO-Revision-Date: 2017-08-25 20:10+0300\n"
+"POT-Creation-Date: 2018-04-16 17:11+1000\n"
+"PO-Revision-Date: 2018-04-29 13:58+0300\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Elliot Condon <e@elliotcondon.com>\n"
 "Language: ro_RO\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -23,103 +23,102 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: acf.php:63
+#: acf.php:81
 msgid "Advanced Custom Fields"
 msgstr "Câmpuri Personalizate Avansate"
 
-#: acf.php:354 includes/admin/admin.php:117
+#: acf.php:388 includes/admin/admin.php:117
 msgid "Field Groups"
 msgstr "Grupuri de câmpuri"
 
-#: acf.php:355
+#: acf.php:389
 msgid "Field Group"
 msgstr "Grup de câmp"
 
-#: acf.php:356 acf.php:388 includes/admin/admin.php:118
-#: pro/fields/class-acf-field-flexible-content.php:559
+#: acf.php:390 acf.php:422 includes/admin/admin.php:118
+#: pro/fields/class-acf-field-flexible-content.php:551
 msgid "Add New"
 msgstr "Adaungă"
 
-#: acf.php:357
+#: acf.php:391
 msgid "Add New Field Group"
 msgstr "Adaugă un nou grup de câmpuri"
 
-#: acf.php:358
+#: acf.php:392
 msgid "Edit Field Group"
 msgstr "Editează grupul"
 
-#: acf.php:359
+#: acf.php:393
 msgid "New Field Group"
 msgstr "Grup de câmp nou"
 
-#: acf.php:360
+#: acf.php:394
 msgid "View Field Group"
 msgstr "Vizulaizează grupul de câmp"
 
-#: acf.php:361
+#: acf.php:395
 msgid "Search Field Groups"
 msgstr "Caută în grupurile de câmp"
 
-#: acf.php:362
+#: acf.php:396
 msgid "No Field Groups found"
 msgstr "Nu s-a găsit nici un câmp de grupuri"
 
-#: acf.php:363
+#: acf.php:397
 msgid "No Field Groups found in Trash"
 msgstr "Nu s-a găsit nici un câmp de grupuri în coșul de gunoi"
 
-#: acf.php:386 includes/admin/admin-field-group.php:182
-#: includes/admin/admin-field-group.php:275
+#: acf.php:420 includes/admin/admin-field-group.php:196
 #: includes/admin/admin-field-groups.php:510
-#: pro/fields/class-acf-field-clone.php:823
+#: pro/fields/class-acf-field-clone.php:811
 msgid "Fields"
 msgstr "Câmpuri"
 
-#: acf.php:387
+#: acf.php:421
 msgid "Field"
 msgstr "Câmp"
 
-#: acf.php:389
+#: acf.php:423
 msgid "Add New Field"
 msgstr "Adaugă un nou câmp"
 
-#: acf.php:390
+#: acf.php:424
 msgid "Edit Field"
 msgstr "Editează câmpul"
 
-#: acf.php:391 includes/admin/views/field-group-fields.php:41
+#: acf.php:425 includes/admin/views/field-group-fields.php:41
 #: includes/admin/views/settings-info.php:105
 msgid "New Field"
 msgstr "Câmp nou"
 
-#: acf.php:392
+#: acf.php:426
 msgid "View Field"
 msgstr "Vizualizează câmpul"
 
-#: acf.php:393
+#: acf.php:427
 msgid "Search Fields"
 msgstr "Caută câmpuri"
 
-#: acf.php:394
+#: acf.php:428
 msgid "No Fields found"
 msgstr "Nu s-au găsit câmpuri"
 
-#: acf.php:395
+#: acf.php:429
 msgid "No Fields found in Trash"
 msgstr "Nu s-a găsit nici un câmp în coșul de gunoi"
 
-#: acf.php:434 includes/admin/admin-field-group.php:390
+#: acf.php:468 includes/admin/admin-field-group.php:377
 #: includes/admin/admin-field-groups.php:567
 msgid "Inactive"
-msgstr ""
+msgstr "Inactiv"
 
-#: acf.php:439
+#: acf.php:473
 #, php-format
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Inactiv <span class=\"count\">(%s)</span>"
+msgstr[1] "Inactive <span class=\"count\">(%s)</span>"
+msgstr[2] "Inactivs <span class=\"count\">(%s)</span>"
 
 #: includes/admin/admin-field-group.php:68
 #: includes/admin/admin-field-group.php:69
@@ -151,99 +150,88 @@ msgstr "Grup programat pentru."
 msgid "Field group draft updated."
 msgstr "Ciorna grup actualizat."
 
-#: includes/admin/admin-field-group.php:183
-msgid "Location"
-msgstr "Locația"
-
-#: includes/admin/admin-field-group.php:184
-msgid "Settings"
-msgstr ""
-
-#: includes/admin/admin-field-group.php:269
-msgid "Move to trash. Are you sure?"
-msgstr "Mută în coșul de gunoi. Ești sigur?"
-
-#: includes/admin/admin-field-group.php:270
-msgid "checked"
-msgstr "marcat"
-
-#: includes/admin/admin-field-group.php:271
-msgid "No toggle fields available"
-msgstr "Nu sunt câmpuri de comutare disponibile"
-
-#: includes/admin/admin-field-group.php:272
-msgid "Field group title is required"
-msgstr "Titlul grupului este obligatoriu"
-
-#: includes/admin/admin-field-group.php:273
-#: includes/api/api-field-group.php:732
-msgid "copy"
-msgstr "copie"
-
-#: includes/admin/admin-field-group.php:274
-#: includes/admin/views/field-group-field-conditional-logic.php:54
-#: includes/admin/views/field-group-field-conditional-logic.php:154
-#: includes/admin/views/field-group-locations.php:29
-#: includes/admin/views/html-location-group.php:3
-#: includes/api/api-helpers.php:3964
-msgid "or"
-msgstr "sau"
-
-#: includes/admin/admin-field-group.php:276
-msgid "Parent fields"
-msgstr "Câpuri parinte"
-
-#: includes/admin/admin-field-group.php:277
-msgid "Sibling fields"
-msgstr "Câmpuri copil"
-
-#: includes/admin/admin-field-group.php:278
-msgid "Move Custom Field"
-msgstr "Mută câmpul personalizat"
-
-#: includes/admin/admin-field-group.php:279
-msgid "This field cannot be moved until its changes have been saved"
-msgstr "Acest câmp nu poate fi mutat decât după salvarea modificărilor"
-
-#: includes/admin/admin-field-group.php:280
-msgid "Null"
-msgstr "Gol"
-
-#: includes/admin/admin-field-group.php:281 includes/input.php:258
-msgid "The changes you made will be lost if you navigate away from this page"
-msgstr "Modificările făcute vor fi pierdute dacă nu salvați"
-
-#: includes/admin/admin-field-group.php:282
+#: includes/admin/admin-field-group.php:154
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "Textul \"field_\" nu poate fi folosit la începutul denumirii unui câmp"
 
-#: includes/admin/admin-field-group.php:360
-msgid "Field Keys"
-msgstr ""
+#: includes/admin/admin-field-group.php:155
+msgid "This field cannot be moved until its changes have been saved"
+msgstr "Acest câmp nu poate fi mutat decât după salvarea modificărilor"
 
-#: includes/admin/admin-field-group.php:390
+#: includes/admin/admin-field-group.php:156
+msgid "Field group title is required"
+msgstr "Titlul grupului este obligatoriu"
+
+#: includes/admin/admin-field-group.php:157
+msgid "Move to trash. Are you sure?"
+msgstr "Mută în coșul de gunoi. Ești sigur?"
+
+#: includes/admin/admin-field-group.php:158
+msgid "Move Custom Field"
+msgstr "Mută câmpul personalizat"
+
+#: includes/admin/admin-field-group.php:159
+msgid "checked"
+msgstr "marcat"
+
+#: includes/admin/admin-field-group.php:160
+msgid "(no label)"
+msgstr "(fără etichetă)"
+
+#: includes/admin/admin-field-group.php:161
+#: includes/api/api-field-group.php:751
+msgid "copy"
+msgstr "copie"
+
+#: includes/admin/admin-field-group.php:162
+#: includes/admin/views/field-group-field-conditional-logic.php:51
+#: includes/admin/views/field-group-field-conditional-logic.php:139
+#: includes/admin/views/field-group-locations.php:29
+#: includes/admin/views/html-location-group.php:3
+#: includes/api/api-helpers.php:4158
+msgid "or"
+msgstr "sau"
+
+#: includes/admin/admin-field-group.php:163
+msgid "Null"
+msgstr "Gol"
+
+#: includes/admin/admin-field-group.php:197
+msgid "Location"
+msgstr "Locația"
+
+#: includes/admin/admin-field-group.php:198
+#: includes/admin/tools/class-acf-admin-tool-export.php:295
+msgid "Settings"
+msgstr "Setări"
+
+#: includes/admin/admin-field-group.php:347
+msgid "Field Keys"
+msgstr "Cheile câmpulurilor"
+
+#: includes/admin/admin-field-group.php:377
 #: includes/admin/views/field-group-options.php:9
 msgid "Active"
-msgstr ""
+msgstr "Activ"
 
-#: includes/admin/admin-field-group.php:801
+#: includes/admin/admin-field-group.php:753
 msgid "Move Complete."
 msgstr "Mutare Completă."
 
-#: includes/admin/admin-field-group.php:802
+#: includes/admin/admin-field-group.php:754
 #, php-format
 msgid "The %s field can now be found in the %s field group"
 msgstr "Acest %s câmp acum poate fi găsit în %s grupul de câmpuri"
 
-#: includes/admin/admin-field-group.php:803
+#: includes/admin/admin-field-group.php:755
 msgid "Close Window"
 msgstr "Închide Fereastra"
 
-#: includes/admin/admin-field-group.php:844
+#: includes/admin/admin-field-group.php:796
 msgid "Please select the destination for this field"
 msgstr "Selectează destinația pentru acest câmp"
 
-#: includes/admin/admin-field-group.php:851
+#: includes/admin/admin-field-group.php:803
 msgid "Move Field"
 msgstr "Mută Câmpul"
 
@@ -251,9 +239,9 @@ msgstr "Mută Câmpul"
 #, php-format
 msgid "Active <span class=\"count\">(%s)</span>"
 msgid_plural "Active <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<span class=\"count\">(%s)</span> Activ"
+msgstr[1] "<span class=\"count\">(%s)</span> Active"
+msgstr[2] "<span class=\"count\">(%s)</span> Active"
 
 #: includes/admin/admin-field-groups.php:142
 #, php-format
@@ -297,27 +285,27 @@ msgstr "Titlu"
 #: includes/admin/views/install-network.php:29
 #: pro/fields/class-acf-field-gallery.php:382
 msgid "Description"
-msgstr ""
+msgstr "Descriere"
 
 #: includes/admin/admin-field-groups.php:509
 msgid "Status"
-msgstr ""
+msgstr "Stare"
 
 #. Description of the plugin/theme
 #: includes/admin/admin-field-groups.php:607
 msgid "Customise WordPress with powerful, professional and intuitive fields."
-msgstr ""
+msgstr "Adaugă câmpuri puternice și intuitive pentru a personaliza WordPress."
 
 #: includes/admin/admin-field-groups.php:609
 #: includes/admin/settings-info.php:76
-#: pro/admin/views/html-settings-updates.php:111
+#: pro/admin/views/html-settings-updates.php:107
 msgid "Changelog"
 msgstr "Catalog schimbări"
 
 #: includes/admin/admin-field-groups.php:614
 #, php-format
 msgid "See what's new in <a href=\"%s\">version %s</a>."
-msgstr ""
+msgstr "Vezi ce este nou în <a href=\"%s\">versiunea %s</a>."
 
 #: includes/admin/admin-field-groups.php:617
 msgid "Resources"
@@ -329,59 +317,64 @@ msgstr ""
 
 #: includes/admin/admin-field-groups.php:620
 msgid "Documentation"
-msgstr ""
+msgstr "Documentație"
 
 #: includes/admin/admin-field-groups.php:621
 msgid "Support"
-msgstr ""
+msgstr "Suport Tehnic"
 
 #: includes/admin/admin-field-groups.php:623
 msgid "Pro"
-msgstr ""
+msgstr "Pro"
 
 #: includes/admin/admin-field-groups.php:628
 #, php-format
 msgid "Thank you for creating with <a href=\"%s\">ACF</a>."
 msgstr ""
 
-#: includes/admin/admin-field-groups.php:668
+#: includes/admin/admin-field-groups.php:667
 msgid "Duplicate this item"
 msgstr "Copiază acest item"
 
-#: includes/admin/admin-field-groups.php:668
-#: includes/admin/admin-field-groups.php:684
-#: includes/admin/views/field-group-field.php:49
-#: pro/fields/class-acf-field-flexible-content.php:558
+#: includes/admin/admin-field-groups.php:667
+#: includes/admin/admin-field-groups.php:683
+#: includes/admin/views/field-group-field.php:46
+#: pro/fields/class-acf-field-flexible-content.php:550
 msgid "Duplicate"
 msgstr "Copiază"
 
-#: includes/admin/admin-field-groups.php:701
-#: includes/fields/class-acf-field-google-map.php:118
-#: includes/fields/class-acf-field-relationship.php:656
+#: includes/admin/admin-field-groups.php:700
+#: includes/fields/class-acf-field-google-map.php:113
+#: includes/fields/class-acf-field-relationship.php:657
 msgid "Search"
 msgstr "Caută"
 
-#: includes/admin/admin-field-groups.php:760
+#: includes/admin/admin-field-groups.php:759
 #, php-format
 msgid "Select %s"
 msgstr "Selectează %s"
 
-#: includes/admin/admin-field-groups.php:768
+#: includes/admin/admin-field-groups.php:767
 msgid "Synchronise field group"
 msgstr "Sincronizare grup de câmpuri"
 
-#: includes/admin/admin-field-groups.php:768
-#: includes/admin/admin-field-groups.php:798
+#: includes/admin/admin-field-groups.php:767
+#: includes/admin/admin-field-groups.php:797
 msgid "Sync"
 msgstr "Sincronizare"
 
-#: includes/admin/admin-field-groups.php:780
+#: includes/admin/admin-field-groups.php:779
 msgid "Apply"
-msgstr ""
+msgstr "Salvează"
 
-#: includes/admin/admin-field-groups.php:798
+#: includes/admin/admin-field-groups.php:797
 msgid "Bulk Actions"
-msgstr ""
+msgstr "Acțiuni în masă"
+
+#: includes/admin/admin-tools.php:116
+#: includes/admin/views/html-admin-tools.php:21
+msgid "Tools"
+msgstr "Unelte"
 
 #: includes/admin/admin.php:113
 #: includes/admin/views/field-group-options.php:118
@@ -391,7 +384,7 @@ msgstr "Câmpuri Personalizate"
 #: includes/admin/install-network.php:88 includes/admin/install.php:70
 #: includes/admin/install.php:121
 msgid "Upgrade Database"
-msgstr ""
+msgstr "Actualizează baza de date"
 
 #: includes/admin/install-network.php:140
 msgid "Review sites & upgrade"
@@ -401,7 +394,7 @@ msgstr ""
 msgid "Error validating request"
 msgstr ""
 
-#: includes/admin/install.php:210 includes/admin/views/install.php:105
+#: includes/admin/install.php:210 includes/admin/views/install.php:104
 msgid "No updates available."
 msgstr ""
 
@@ -422,160 +415,229 @@ msgstr "Informații"
 msgid "What's New"
 msgstr "Ce este nou"
 
-#: includes/admin/settings-tools.php:50
-#: includes/admin/views/settings-tools-export.php:19
-#: includes/admin/views/settings-tools.php:31
-msgid "Tools"
-msgstr ""
+#: includes/admin/tools/class-acf-admin-tool-export.php:33
+msgid "Export Field Groups"
+msgstr "Exportați Grupurile de Câmputri"
 
-#: includes/admin/settings-tools.php:147 includes/admin/settings-tools.php:380
+#: includes/admin/tools/class-acf-admin-tool-export.php:38
+#: includes/admin/tools/class-acf-admin-tool-export.php:342
+#: includes/admin/tools/class-acf-admin-tool-export.php:371
+msgid "Generate PHP"
+msgstr "Generează PHP"
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:97
+#: includes/admin/tools/class-acf-admin-tool-export.php:135
 msgid "No field groups selected"
 msgstr "Nu a fost selectat nici un grup de câmpuri"
 
-#: includes/admin/settings-tools.php:184
-#: includes/fields/class-acf-field-file.php:159
+#: includes/admin/tools/class-acf-admin-tool-export.php:174
+#, php-format
+msgid "Exported 1 field group."
+msgid_plural "Exported %s field groups."
+msgstr[0] "Un grup exportat."
+msgstr[1] "%s grupuri exportate."
+msgstr[2] "%s de grupuri exportate."
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:241
+#: includes/admin/tools/class-acf-admin-tool-export.php:269
+msgid "Select Field Groups"
+msgstr "Selectați Grupurile de Câmpuri"
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:336
+msgid ""
+"Select the field groups you would like to export and then select your export "
+"method. Use the download button to export to a .json file which you can then "
+"import to another ACF installation. Use the generate button to export to PHP "
+"code which you can place in your theme."
+msgstr ""
+"Selectați grupurile de câmpuri pe care doriți să le exportați și apoi "
+"selectați metoda de export. Folosiți butonul de descărcare pentru a exporta "
+"într-un fișier .json pe care apoi îl puteți folosi pentru a importa într-o "
+"altă instalare a ACF. Folosiți butonul Generare pentru a exporta totul în "
+"cod PHP, pe care îl puteți pune apoi in tema voastră."
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:341
+msgid "Export File"
+msgstr "Exportă fișierul"
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:414
+msgid ""
+"The following code can be used to register a local version of the selected "
+"field group(s). A local field group can provide many benefits such as faster "
+"load times, version control & dynamic fields/settings. Simply copy and paste "
+"the following code to your theme's functions.php file or include it within "
+"an external file."
+msgstr ""
+"Următorul bloc de cod poate fi folosit pentru a înregistra o copie locală a "
+"grupului(lor) de câmpuri selectat(e). Un grup de câmpuri local poate "
+"facilita multe beneficii cum ar fi un timp de încărcare mai mic, control al "
+"versiunii și câmpuri / setări dinamice. Pentru a beneficia de toate acestea "
+"nu trebuie decât să copiați și să inserați următorul bloc de cod în fișierul "
+"functions.php al temei sau să-l includeți într-un fișier extern."
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:446
+msgid "Copy to clipboard"
+msgstr "Copiază în clipboar"
+
+#: includes/admin/tools/class-acf-admin-tool-export.php:483
+msgid "Copied"
+msgstr "Copiat"
+
+#: includes/admin/tools/class-acf-admin-tool-import.php:26
+msgid "Import Field Groups"
+msgstr "Importă Grupurile de câmpuri"
+
+#: includes/admin/tools/class-acf-admin-tool-import.php:61
+msgid ""
+"Select the Advanced Custom Fields JSON file you would like to import. When "
+"you click the import button below, ACF will import the field groups."
+msgstr ""
+"Alege fișierul JSON ACF pe care dorești să-l imporți. Când vei apăsa butonul "
+"import de mai jos, ACF v-a importa toate grupurile de câmpuri."
+
+#: includes/admin/tools/class-acf-admin-tool-import.php:66
+#: includes/fields/class-acf-field-file.php:37
+msgid "Select File"
+msgstr "Selectează fișierul"
+
+#: includes/admin/tools/class-acf-admin-tool-import.php:76
+msgid "Import File"
+msgstr "Importă fișier"
+
+#: includes/admin/tools/class-acf-admin-tool-import.php:100
+#: includes/fields/class-acf-field-file.php:154
 msgid "No file selected"
 msgstr "Nu a fost selectat nici un fișier"
 
-#: includes/admin/settings-tools.php:197
+#: includes/admin/tools/class-acf-admin-tool-import.php:113
 msgid "Error uploading file. Please try again"
 msgstr "Eroare la încărcarea fișierului. Încearcă din nou"
 
-#: includes/admin/settings-tools.php:206
+#: includes/admin/tools/class-acf-admin-tool-import.php:122
 msgid "Incorrect file type"
 msgstr "Tipul fișierului este incorect"
 
-#: includes/admin/settings-tools.php:223
+#: includes/admin/tools/class-acf-admin-tool-import.php:139
 msgid "Import file empty"
 msgstr "Fișierul import este gol"
 
-#: includes/admin/settings-tools.php:331
+#: includes/admin/tools/class-acf-admin-tool-import.php:247
 #, php-format
 msgid "Imported 1 field group"
 msgid_plural "Imported %s field groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Un grup importat"
+msgstr[1] "%s grupuri importate"
+msgstr[2] "%s de grupuri importate"
 
-#: includes/admin/views/field-group-field-conditional-logic.php:28
+#: includes/admin/views/field-group-field-conditional-logic.php:25
 msgid "Conditional Logic"
 msgstr "Condiție Logică"
 
-#: includes/admin/views/field-group-field-conditional-logic.php:54
+#: includes/admin/views/field-group-field-conditional-logic.php:51
 msgid "Show this field if"
 msgstr "Arată acest câmp dacă"
 
-#: includes/admin/views/field-group-field-conditional-logic.php:103
-#: includes/locations.php:247
-msgid "is equal to"
-msgstr "este egal cu"
-
-#: includes/admin/views/field-group-field-conditional-logic.php:104
-#: includes/locations.php:248
-msgid "is not equal to"
-msgstr "nu este egal cu"
-
-#: includes/admin/views/field-group-field-conditional-logic.php:141
+#: includes/admin/views/field-group-field-conditional-logic.php:126
 #: includes/admin/views/html-location-rule.php:80
 msgid "and"
 msgstr "și"
 
-#: includes/admin/views/field-group-field-conditional-logic.php:156
+#: includes/admin/views/field-group-field-conditional-logic.php:141
 #: includes/admin/views/field-group-locations.php:31
 msgid "Add rule group"
 msgstr "Adaugă grup de reguli"
 
-#: includes/admin/views/field-group-field.php:41
-#: pro/fields/class-acf-field-flexible-content.php:405
-#: pro/fields/class-acf-field-repeater.php:302
+#: includes/admin/views/field-group-field.php:38
+#: pro/fields/class-acf-field-flexible-content.php:403
+#: pro/fields/class-acf-field-repeater.php:296
 msgid "Drag to reorder"
 msgstr "Trage pentru a reordona"
 
+#: includes/admin/views/field-group-field.php:42
 #: includes/admin/views/field-group-field.php:45
-#: includes/admin/views/field-group-field.php:48
 msgid "Edit field"
 msgstr "Editează câmp"
 
-#: includes/admin/views/field-group-field.php:48
-#: includes/fields/class-acf-field-image.php:125
+#: includes/admin/views/field-group-field.php:45
+#: includes/fields/class-acf-field-file.php:136
+#: includes/fields/class-acf-field-image.php:122
 #: includes/fields/class-acf-field-link.php:139
 #: pro/fields/class-acf-field-gallery.php:342
 msgid "Edit"
 msgstr "Editeză"
 
-#: includes/admin/views/field-group-field.php:49
+#: includes/admin/views/field-group-field.php:46
 msgid "Duplicate field"
 msgstr "Copiază câmp"
 
-#: includes/admin/views/field-group-field.php:50
+#: includes/admin/views/field-group-field.php:47
 msgid "Move field to another group"
 msgstr "Mută acest câmp în alt grup"
 
-#: includes/admin/views/field-group-field.php:50
+#: includes/admin/views/field-group-field.php:47
 msgid "Move"
 msgstr "Mută"
 
-#: includes/admin/views/field-group-field.php:51
+#: includes/admin/views/field-group-field.php:48
 msgid "Delete field"
 msgstr "Șterge câmp"
 
-#: includes/admin/views/field-group-field.php:51
-#: pro/fields/class-acf-field-flexible-content.php:557
+#: includes/admin/views/field-group-field.php:48
+#: pro/fields/class-acf-field-flexible-content.php:549
 msgid "Delete"
 msgstr "Șterge"
 
-#: includes/admin/views/field-group-field.php:67
+#: includes/admin/views/field-group-field.php:65
 msgid "Field Label"
 msgstr "Etichetă Câmp"
 
-#: includes/admin/views/field-group-field.php:68
+#: includes/admin/views/field-group-field.php:66
 msgid "This is the name which will appear on the EDIT page"
 msgstr "Acesta este numele care va apărea în pagina de editare"
 
-#: includes/admin/views/field-group-field.php:78
+#: includes/admin/views/field-group-field.php:75
 msgid "Field Name"
 msgstr "Nume Câmp"
 
-#: includes/admin/views/field-group-field.php:79
+#: includes/admin/views/field-group-field.php:76
 msgid "Single word, no spaces. Underscores and dashes allowed"
 msgstr ""
 "Un singur cuvânt, fără spații. Caracterele _ (underscore) și - (minus) sunt "
 "permise"
 
-#: includes/admin/views/field-group-field.php:89
+#: includes/admin/views/field-group-field.php:85
 msgid "Field Type"
 msgstr "Tipul Câmpului"
 
-#: includes/admin/views/field-group-field.php:101
-#: includes/fields/class-acf-field-tab.php:88
+#: includes/admin/views/field-group-field.php:96
 msgid "Instructions"
 msgstr "Instrucțiuni"
 
-#: includes/admin/views/field-group-field.php:102
+#: includes/admin/views/field-group-field.php:97
 msgid "Instructions for authors. Shown when submitting data"
 msgstr "Instrucțiuni pentru autor. Sunt afișate când se adaugă valori"
 
-#: includes/admin/views/field-group-field.php:111
+#: includes/admin/views/field-group-field.php:106
 msgid "Required?"
 msgstr "Obligatoriu?"
 
-#: includes/admin/views/field-group-field.php:134
+#: includes/admin/views/field-group-field.php:129
 msgid "Wrapper Attributes"
 msgstr "Atributele Wrapper-ului"
 
-#: includes/admin/views/field-group-field.php:140
+#: includes/admin/views/field-group-field.php:135
 msgid "width"
 msgstr "lățime"
 
-#: includes/admin/views/field-group-field.php:155
+#: includes/admin/views/field-group-field.php:150
 msgid "class"
 msgstr "clasă"
 
-#: includes/admin/views/field-group-field.php:168
+#: includes/admin/views/field-group-field.php:163
 msgid "id"
 msgstr "id"
 
-#: includes/admin/views/field-group-field.php:180
+#: includes/admin/views/field-group-field.php:175
 msgid "Close Field"
 msgstr "Închide Câmpul"
 
@@ -584,16 +646,17 @@ msgid "Order"
 msgstr "Ordine"
 
 #: includes/admin/views/field-group-fields.php:5
-#: includes/fields/class-acf-field-checkbox.php:415
-#: includes/fields/class-acf-field-radio.php:306
-#: includes/fields/class-acf-field-select.php:432
-#: pro/fields/class-acf-field-flexible-content.php:584
+#: includes/fields/class-acf-field-button-group.php:198
+#: includes/fields/class-acf-field-checkbox.php:420
+#: includes/fields/class-acf-field-radio.php:311
+#: includes/fields/class-acf-field-select.php:418
+#: pro/fields/class-acf-field-flexible-content.php:576
 msgid "Label"
 msgstr "Etichetă"
 
 #: includes/admin/views/field-group-fields.php:6
-#: includes/fields/class-acf-field-taxonomy.php:957
-#: pro/fields/class-acf-field-flexible-content.php:597
+#: includes/fields/class-acf-field-taxonomy.php:964
+#: pro/fields/class-acf-field-flexible-content.php:589
 msgid "Name"
 msgstr "Nume"
 
@@ -662,13 +725,13 @@ msgid "Label placement"
 msgstr "Poziționarea etichetei"
 
 #: includes/admin/views/field-group-options.php:62
-#: includes/fields/class-acf-field-tab.php:102
+#: includes/fields/class-acf-field-tab.php:106
 msgid "Top aligned"
 msgstr "Aliniere Sus"
 
 #: includes/admin/views/field-group-options.php:63
-#: includes/fields/class-acf-field-tab.php:103
-msgid "Left Aligned"
+#: includes/fields/class-acf-field-tab.php:107
+msgid "Left aligned"
 msgstr "Aliniere Stanga"
 
 #: includes/admin/views/field-group-options.php:70
@@ -755,7 +818,7 @@ msgid "Page Attributes"
 msgstr "Atributele Paginii"
 
 #: includes/admin/views/field-group-options.php:126
-#: includes/fields/class-acf-field-relationship.php:670
+#: includes/fields/class-acf-field-relationship.php:671
 msgid "Featured Image"
 msgstr "Imagine Reprezentativă"
 
@@ -907,7 +970,7 @@ msgstr ""
 
 #: includes/admin/views/settings-info.php:17
 msgid "A smoother custom field experience"
-msgstr "O folosire mai ușoara a câmpurilor personalizate."
+msgstr "O folosire mai ușoara a câmpurilor personalizate"
 
 #: includes/admin/views/settings-info.php:22
 msgid "Improved Usability"
@@ -921,7 +984,7 @@ msgid ""
 msgstr ""
 "Includerea popularei librării Select2 a îmbunătățit folosirea dar și viteaza "
 "pentru un număr ridicat de tipuri de câmpuri care includ, obiectele articol, "
-"legătura paginii, taxonomia și selecția. "
+"legătura paginii, taxonomia și selecția."
 
 #: includes/admin/views/settings-info.php:27
 msgid "Improved Design"
@@ -1061,7 +1124,7 @@ msgid ""
 "controlled"
 msgstr ""
 "Noua funcționalitate de auto export în JSON permite ca setările câmpurilor "
-"să fie ”version controlled”"
+"să fie versionabile"
 
 #: includes/admin/views/settings-info.php:93
 msgid "Swapped XML for JSON"
@@ -1153,7 +1216,7 @@ msgstr "Legătura Paginii"
 
 #: includes/admin/views/settings-info.php:145
 msgid "New archives group in page_link field selection"
-msgstr "Noua arhivă de grup în selecția page_link "
+msgstr "Noua arhivă de grup în selecția page_link"
 
 #: includes/admin/views/settings-info.php:149
 msgid "Better Options Pages"
@@ -1172,137 +1235,186 @@ msgstr ""
 msgid "We think you'll love the changes in %s."
 msgstr "Credem că vei îndrăgi shimbările în %s."
 
-#: includes/admin/views/settings-tools-export.php:23
-msgid "Export Field Groups to PHP"
-msgstr "Exportă Grupurile de Câmpuri în PHP"
-
-#: includes/admin/views/settings-tools-export.php:27
-msgid ""
-"The following code can be used to register a local version of the selected "
-"field group(s). A local field group can provide many benefits such as faster "
-"load times, version control & dynamic fields/settings. Simply copy and paste "
-"the following code to your theme's functions.php file or include it within "
-"an external file."
-msgstr ""
-"Următorul bloc de cod poate fi folosit pentru a înregistra o copie locală a "
-"grupului(lor) de câmpuri selectat(e). Un grup de câmpuri local poate "
-"facilita multe beneficii cum ar fi un timp de încărcare mai mic, control al "
-"versiunii și câmpuri / setări dinamice. Pentru a beneficia de toate acestea "
-"nu trebuie decât să copiați și să inserați următorul bloc de cod în fișierul "
-"functions.php al temei sau să-l includeți într-un fișier extern."
-
-#: includes/admin/views/settings-tools.php:5
-msgid "Select Field Groups"
-msgstr "Selectați Grupurile de Câmpuri"
-
-#: includes/admin/views/settings-tools.php:35
-msgid "Export Field Groups"
-msgstr "Exportați Grupurile de Câmputri"
-
-#: includes/admin/views/settings-tools.php:38
-msgid ""
-"Select the field groups you would like to export and then select your export "
-"method. Use the download button to export to a .json file which you can then "
-"import to another ACF installation. Use the generate button to export to PHP "
-"code which you can place in your theme."
-msgstr ""
-"Selectați grupurile de câmpuri pe care doriți să le exportați și apoi "
-"selectați metoda de export. Folosiți butonul de descărcare pentru a exporta "
-"într-un fișier .json pe care apoi îl puteți folosi pentru a importa într-o "
-"altă instalare a ACF. Folosiți butonul Generare pentru a exporta totul în "
-"cod PHP, pe care îl puteți pune apoi in tema voastră."
-
-#: includes/admin/views/settings-tools.php:50
-msgid "Download export file"
-msgstr "Descarcă fișierul de export"
-
-#: includes/admin/views/settings-tools.php:51
-msgid "Generate export code"
-msgstr "Generează codul de export"
-
-#: includes/admin/views/settings-tools.php:64
-msgid "Import Field Groups"
-msgstr "Importă Grupurile de câmpuri"
-
-#: includes/admin/views/settings-tools.php:67
-msgid ""
-"Select the Advanced Custom Fields JSON file you would like to import. When "
-"you click the import button below, ACF will import the field groups."
-msgstr ""
-"Alege fișierul JSON ACF pe care dorești să-l imporți. Când vei apăsa butonul "
-"import de mai jos, ACF v-a importa toate grupurile de câmpuri."
-
-#: includes/admin/views/settings-tools.php:77
-#: includes/fields/class-acf-field-file.php:35
-msgid "Select File"
-msgstr "Selectează fișierul"
-
-#: includes/admin/views/settings-tools.php:86
-msgid "Import"
-msgstr "Importă"
-
-#: includes/api/api-helpers.php:856
+#: includes/api/api-helpers.php:1039
 msgid "Thumbnail"
 msgstr "Miniatură"
 
-#: includes/api/api-helpers.php:857
+#: includes/api/api-helpers.php:1040
 msgid "Medium"
 msgstr "Mediu"
 
-#: includes/api/api-helpers.php:858
+#: includes/api/api-helpers.php:1041
 msgid "Large"
 msgstr "Mare"
 
-#: includes/api/api-helpers.php:907
+#: includes/api/api-helpers.php:1090
 msgid "Full Size"
 msgstr "Marime completă"
 
-#: includes/api/api-helpers.php:1248 includes/api/api-helpers.php:1831
-#: pro/fields/class-acf-field-clone.php:1008
+#: includes/api/api-helpers.php:1431 includes/api/api-helpers.php:2004
+#: pro/fields/class-acf-field-clone.php:996
 msgid "(no title)"
 msgstr "(fără titlu)"
 
-#: includes/api/api-helpers.php:1868
-#: includes/fields/class-acf-field-page_link.php:269
-#: includes/fields/class-acf-field-post_object.php:268
-#: includes/fields/class-acf-field-taxonomy.php:979
-msgid "Parent"
-msgstr ""
-
-#: includes/api/api-helpers.php:3885
+#: includes/api/api-helpers.php:4079
 #, php-format
 msgid "Image width must be at least %dpx."
 msgstr "Lățimea imaginii trebuie să fie cel puțin %dpx."
 
-#: includes/api/api-helpers.php:3890
+#: includes/api/api-helpers.php:4084
 #, php-format
 msgid "Image width must not exceed %dpx."
 msgstr "Lățimea imaginii nu trebuie să depășească %dpx."
 
-#: includes/api/api-helpers.php:3906
+#: includes/api/api-helpers.php:4100
 #, php-format
 msgid "Image height must be at least %dpx."
 msgstr "Înălțimea imaginii trebuie să fie cel puțin %dpx."
 
-#: includes/api/api-helpers.php:3911
+#: includes/api/api-helpers.php:4105
 #, php-format
 msgid "Image height must not exceed %dpx."
 msgstr "Înălțimea imaginii nu trebuie să depășească %dpx."
 
-#: includes/api/api-helpers.php:3929
+#: includes/api/api-helpers.php:4123
 #, php-format
 msgid "File size must be at least %s."
 msgstr "Mărimea fișierului trebuie să fie cel puțin %s."
 
-#: includes/api/api-helpers.php:3934
+#: includes/api/api-helpers.php:4128
 #, php-format
 msgid "File size must must not exceed %s."
 msgstr "Mărimea fișierului nu trebuie să depășească %s."
 
-#: includes/api/api-helpers.php:3968
+#: includes/api/api-helpers.php:4162
 #, php-format
 msgid "File type must be %s."
 msgstr "Tipul fișierului trebuie să fie %s."
+
+#: includes/assets.php:164
+msgid "The changes you made will be lost if you navigate away from this page"
+msgstr "Modificările făcute vor fi pierdute dacă nu salvați"
+
+#: includes/assets.php:167 includes/fields/class-acf-field-select.php:257
+msgctxt "verb"
+msgid "Select"
+msgstr "Selectează"
+
+#: includes/assets.php:168
+msgctxt "verb"
+msgid "Edit"
+msgstr "Editeză"
+
+#: includes/assets.php:169
+msgctxt "verb"
+msgid "Update"
+msgstr "Actualizează"
+
+#: includes/assets.php:170 pro/fields/class-acf-field-gallery.php:44
+msgid "Uploaded to this post"
+msgstr "Încărcate pentru acest articol"
+
+#: includes/assets.php:171
+msgid "Expand Details"
+msgstr "Extinde Detaliile"
+
+#: includes/assets.php:172
+msgid "Collapse Details"
+msgstr "Închide Detaliile"
+
+#: includes/assets.php:173
+msgid "Restricted"
+msgstr ""
+
+#: includes/assets.php:174
+msgid "All images"
+msgstr "Toate imaginiile"
+
+#: includes/assets.php:177
+msgid "Validation successful"
+msgstr "Validare a fost făcută cu succes"
+
+#: includes/assets.php:178 includes/validation.php:285
+#: includes/validation.php:296
+msgid "Validation failed"
+msgstr "Validarea a eșuat"
+
+#: includes/assets.php:179
+msgid "1 field requires attention"
+msgstr ""
+
+#: includes/assets.php:180
+#, php-format
+msgid "%d fields require attention"
+msgstr ""
+
+#: includes/assets.php:183
+msgid "Are you sure?"
+msgstr ""
+
+#: includes/assets.php:184 includes/fields/class-acf-field-true_false.php:79
+#: includes/fields/class-acf-field-true_false.php:159
+#: pro/admin/views/html-settings-updates.php:89
+msgid "Yes"
+msgstr "Da"
+
+#: includes/assets.php:185 includes/fields/class-acf-field-true_false.php:80
+#: includes/fields/class-acf-field-true_false.php:174
+#: pro/admin/views/html-settings-updates.php:99
+msgid "No"
+msgstr "Nu"
+
+#: includes/assets.php:186 includes/fields/class-acf-field-file.php:138
+#: includes/fields/class-acf-field-image.php:124
+#: includes/fields/class-acf-field-link.php:140
+#: pro/fields/class-acf-field-gallery.php:343
+#: pro/fields/class-acf-field-gallery.php:531
+msgid "Remove"
+msgstr "Înlătură"
+
+#: includes/assets.php:187
+msgid "Cancel"
+msgstr ""
+
+#: includes/assets.php:190
+msgid "Has any value"
+msgstr ""
+
+#: includes/assets.php:191
+msgid "Has no value"
+msgstr ""
+
+#: includes/assets.php:192
+msgid "Value is equal to"
+msgstr ""
+
+#: includes/assets.php:193
+msgid "Value is not equal to"
+msgstr ""
+
+#: includes/assets.php:194
+msgid "Value matches pattern"
+msgstr ""
+
+#: includes/assets.php:195
+msgid "Value contains"
+msgstr ""
+
+#: includes/assets.php:196
+msgid "Value is greater than"
+msgstr ""
+
+#: includes/assets.php:197
+msgid "Value is less than"
+msgstr ""
+
+#: includes/assets.php:198
+msgid "Selection is greater than"
+msgstr ""
+
+#: includes/assets.php:199
+msgid "Selection is less than"
+msgstr ""
 
 #: includes/fields.php:144
 msgid "Basic"
@@ -1324,13 +1436,14 @@ msgstr "Relațional"
 msgid "jQuery"
 msgstr "jQuery"
 
-#: includes/fields.php:149 includes/fields/class-acf-field-checkbox.php:384
-#: includes/fields/class-acf-field-group.php:472
-#: includes/fields/class-acf-field-radio.php:285
-#: pro/fields/class-acf-field-clone.php:855
-#: pro/fields/class-acf-field-flexible-content.php:554
-#: pro/fields/class-acf-field-flexible-content.php:603
-#: pro/fields/class-acf-field-repeater.php:458
+#: includes/fields.php:149 includes/fields/class-acf-field-button-group.php:177
+#: includes/fields/class-acf-field-checkbox.php:389
+#: includes/fields/class-acf-field-group.php:474
+#: includes/fields/class-acf-field-radio.php:290
+#: pro/fields/class-acf-field-clone.php:843
+#: pro/fields/class-acf-field-flexible-content.php:546
+#: pro/fields/class-acf-field-flexible-content.php:595
+#: pro/fields/class-acf-field-repeater.php:442
 msgid "Layout"
 msgstr "Schemă"
 
@@ -1342,8 +1455,156 @@ msgstr "Tipul câmpului nu există"
 msgid "Unknown"
 msgstr ""
 
+#: includes/fields/class-acf-field-accordion.php:24
+msgid "Accordion"
+msgstr ""
+
+#: includes/fields/class-acf-field-accordion.php:99
+msgid "Open"
+msgstr ""
+
+#: includes/fields/class-acf-field-accordion.php:100
+msgid "Display this accordion as open on page load."
+msgstr ""
+
+#: includes/fields/class-acf-field-accordion.php:109
+msgid "Multi-expand"
+msgstr ""
+
+#: includes/fields/class-acf-field-accordion.php:110
+msgid "Allow this accordion to open without closing others."
+msgstr ""
+
+#: includes/fields/class-acf-field-accordion.php:119
+#: includes/fields/class-acf-field-tab.php:114
+msgid "Endpoint"
+msgstr ""
+
+#: includes/fields/class-acf-field-accordion.php:120
+msgid ""
+"Define an endpoint for the previous accordion to stop. This accordion will "
+"not be visible."
+msgstr ""
+
+#: includes/fields/class-acf-field-button-group.php:24
+msgid "Button Group"
+msgstr ""
+
+#: includes/fields/class-acf-field-button-group.php:149
+#: includes/fields/class-acf-field-checkbox.php:344
+#: includes/fields/class-acf-field-radio.php:235
+#: includes/fields/class-acf-field-select.php:349
+msgid "Choices"
+msgstr "Alegere"
+
+#: includes/fields/class-acf-field-button-group.php:150
+#: includes/fields/class-acf-field-checkbox.php:345
+#: includes/fields/class-acf-field-radio.php:236
+#: includes/fields/class-acf-field-select.php:350
+msgid "Enter each choice on a new line."
+msgstr "Pune fiecare alegere pe o linie nouă."
+
+#: includes/fields/class-acf-field-button-group.php:150
+#: includes/fields/class-acf-field-checkbox.php:345
+#: includes/fields/class-acf-field-radio.php:236
+#: includes/fields/class-acf-field-select.php:350
+msgid "For more control, you may specify both a value and label like this:"
+msgstr ""
+"Pentru un mai bun control, poți specifica o valoare și o etichetă ca de "
+"exemplu:"
+
+#: includes/fields/class-acf-field-button-group.php:150
+#: includes/fields/class-acf-field-checkbox.php:345
+#: includes/fields/class-acf-field-radio.php:236
+#: includes/fields/class-acf-field-select.php:350
+msgid "red : Red"
+msgstr "roșu : Roșu"
+
+#: includes/fields/class-acf-field-button-group.php:158
+#: includes/fields/class-acf-field-page_link.php:513
+#: includes/fields/class-acf-field-post_object.php:412
+#: includes/fields/class-acf-field-radio.php:244
+#: includes/fields/class-acf-field-select.php:367
+#: includes/fields/class-acf-field-taxonomy.php:793
+#: includes/fields/class-acf-field-user.php:409
+msgid "Allow Null?"
+msgstr "Permite valori nule?"
+
+#: includes/fields/class-acf-field-button-group.php:168
+#: includes/fields/class-acf-field-checkbox.php:380
+#: includes/fields/class-acf-field-color_picker.php:131
+#: includes/fields/class-acf-field-email.php:118
+#: includes/fields/class-acf-field-number.php:127
+#: includes/fields/class-acf-field-radio.php:281
+#: includes/fields/class-acf-field-range.php:146
+#: includes/fields/class-acf-field-select.php:358
+#: includes/fields/class-acf-field-text.php:119
+#: includes/fields/class-acf-field-textarea.php:102
+#: includes/fields/class-acf-field-true_false.php:135
+#: includes/fields/class-acf-field-url.php:100
+#: includes/fields/class-acf-field-wysiwyg.php:410
+msgid "Default Value"
+msgstr "Valoare implicită"
+
+#: includes/fields/class-acf-field-button-group.php:169
+#: includes/fields/class-acf-field-email.php:119
+#: includes/fields/class-acf-field-number.php:128
+#: includes/fields/class-acf-field-radio.php:282
+#: includes/fields/class-acf-field-range.php:147
+#: includes/fields/class-acf-field-text.php:120
+#: includes/fields/class-acf-field-textarea.php:103
+#: includes/fields/class-acf-field-url.php:101
+#: includes/fields/class-acf-field-wysiwyg.php:411
+msgid "Appears when creating a new post"
+msgstr "Apare cănd creați un articol nou"
+
+#: includes/fields/class-acf-field-button-group.php:183
+#: includes/fields/class-acf-field-checkbox.php:396
+#: includes/fields/class-acf-field-radio.php:297
+msgid "Horizontal"
+msgstr "Orizontal"
+
+#: includes/fields/class-acf-field-button-group.php:184
+#: includes/fields/class-acf-field-checkbox.php:395
+#: includes/fields/class-acf-field-radio.php:296
+msgid "Vertical"
+msgstr "Vertical"
+
+#: includes/fields/class-acf-field-button-group.php:191
+#: includes/fields/class-acf-field-checkbox.php:413
+#: includes/fields/class-acf-field-file.php:199
+#: includes/fields/class-acf-field-image.php:188
+#: includes/fields/class-acf-field-link.php:166
+#: includes/fields/class-acf-field-radio.php:304
+#: includes/fields/class-acf-field-taxonomy.php:833
+msgid "Return Value"
+msgstr "Valoarea returnată"
+
+#: includes/fields/class-acf-field-button-group.php:192
+#: includes/fields/class-acf-field-checkbox.php:414
+#: includes/fields/class-acf-field-file.php:200
+#: includes/fields/class-acf-field-image.php:189
+#: includes/fields/class-acf-field-link.php:167
+#: includes/fields/class-acf-field-radio.php:305
+msgid "Specify the returned value on front end"
+msgstr "Specificați valoarea returnată în front end"
+
+#: includes/fields/class-acf-field-button-group.php:197
+#: includes/fields/class-acf-field-checkbox.php:419
+#: includes/fields/class-acf-field-radio.php:310
+#: includes/fields/class-acf-field-select.php:417
+msgid "Value"
+msgstr ""
+
+#: includes/fields/class-acf-field-button-group.php:199
+#: includes/fields/class-acf-field-checkbox.php:421
+#: includes/fields/class-acf-field-radio.php:312
+#: includes/fields/class-acf-field-select.php:419
+msgid "Both (Array)"
+msgstr ""
+
 #: includes/fields/class-acf-field-checkbox.php:25
-#: includes/fields/class-acf-field-taxonomy.php:773
+#: includes/fields/class-acf-field-taxonomy.php:780
 msgid "Checkbox"
 msgstr "Checkbox"
 
@@ -1354,32 +1615,6 @@ msgstr "Comută tot"
 #: includes/fields/class-acf-field-checkbox.php:221
 msgid "Add new choice"
 msgstr ""
-
-#: includes/fields/class-acf-field-checkbox.php:344
-#: includes/fields/class-acf-field-radio.php:235
-#: includes/fields/class-acf-field-select.php:368
-msgid "Choices"
-msgstr "Alegere"
-
-#: includes/fields/class-acf-field-checkbox.php:345
-#: includes/fields/class-acf-field-radio.php:236
-#: includes/fields/class-acf-field-select.php:369
-msgid "Enter each choice on a new line."
-msgstr "Pune fiecare alegere pe o linie nouă."
-
-#: includes/fields/class-acf-field-checkbox.php:345
-#: includes/fields/class-acf-field-radio.php:236
-#: includes/fields/class-acf-field-select.php:369
-msgid "For more control, you may specify both a value and label like this:"
-msgstr ""
-"Pentru un mai bun control, poți specifica o valoare și o etichetă ca de "
-"exemplu:"
-
-#: includes/fields/class-acf-field-checkbox.php:345
-#: includes/fields/class-acf-field-radio.php:236
-#: includes/fields/class-acf-field-select.php:369
-msgid "red : Red"
-msgstr "roșu : Roșu"
 
 #: includes/fields/class-acf-field-checkbox.php:353
 msgid "Allow Custom"
@@ -1397,70 +1632,17 @@ msgstr ""
 msgid "Save 'custom' values to the field's choices"
 msgstr ""
 
-#: includes/fields/class-acf-field-checkbox.php:375
-#: includes/fields/class-acf-field-color_picker.php:131
-#: includes/fields/class-acf-field-email.php:114
-#: includes/fields/class-acf-field-number.php:123
-#: includes/fields/class-acf-field-radio.php:276
-#: includes/fields/class-acf-field-select.php:377
-#: includes/fields/class-acf-field-text.php:115
-#: includes/fields/class-acf-field-textarea.php:98
-#: includes/fields/class-acf-field-true_false.php:135
-#: includes/fields/class-acf-field-url.php:96
-#: includes/fields/class-acf-field-wysiwyg.php:421
-msgid "Default Value"
-msgstr "Valoare implicită"
-
-#: includes/fields/class-acf-field-checkbox.php:376
-#: includes/fields/class-acf-field-select.php:378
+#: includes/fields/class-acf-field-checkbox.php:381
+#: includes/fields/class-acf-field-select.php:359
 msgid "Enter each default value on a new line"
 msgstr "Introdu fiecare valoare implicită pe o linie nouă"
 
-#: includes/fields/class-acf-field-checkbox.php:390
-#: includes/fields/class-acf-field-radio.php:291
-msgid "Vertical"
-msgstr "Vertical"
-
-#: includes/fields/class-acf-field-checkbox.php:391
-#: includes/fields/class-acf-field-radio.php:292
-msgid "Horizontal"
-msgstr "Orizontal"
-
-#: includes/fields/class-acf-field-checkbox.php:398
+#: includes/fields/class-acf-field-checkbox.php:403
 msgid "Toggle"
 msgstr ""
 
-#: includes/fields/class-acf-field-checkbox.php:399
+#: includes/fields/class-acf-field-checkbox.php:404
 msgid "Prepend an extra checkbox to toggle all choices"
-msgstr ""
-
-#: includes/fields/class-acf-field-checkbox.php:408
-#: includes/fields/class-acf-field-file.php:204
-#: includes/fields/class-acf-field-image.php:191
-#: includes/fields/class-acf-field-link.php:166
-#: includes/fields/class-acf-field-radio.php:299
-#: includes/fields/class-acf-field-taxonomy.php:826
-msgid "Return Value"
-msgstr "Valoarea returnată"
-
-#: includes/fields/class-acf-field-checkbox.php:409
-#: includes/fields/class-acf-field-file.php:205
-#: includes/fields/class-acf-field-image.php:192
-#: includes/fields/class-acf-field-link.php:167
-#: includes/fields/class-acf-field-radio.php:300
-msgid "Specify the returned value on front end"
-msgstr "Specificați valoarea returnată în front end"
-
-#: includes/fields/class-acf-field-checkbox.php:414
-#: includes/fields/class-acf-field-radio.php:305
-#: includes/fields/class-acf-field-select.php:431
-msgid "Value"
-msgstr ""
-
-#: includes/fields/class-acf-field-checkbox.php:416
-#: includes/fields/class-acf-field-radio.php:307
-#: includes/fields/class-acf-field-select.php:433
-msgid "Both (Array)"
 msgstr ""
 
 #: includes/fields/class-acf-field-color_picker.php:25
@@ -1487,77 +1669,78 @@ msgstr ""
 msgid "Date Picker"
 msgstr "Alege data calendaristică"
 
-#: includes/fields/class-acf-field-date_picker.php:33
+#: includes/fields/class-acf-field-date_picker.php:59
 msgctxt "Date Picker JS closeText"
 msgid "Done"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_picker.php:34
+#: includes/fields/class-acf-field-date_picker.php:60
 msgctxt "Date Picker JS currentText"
 msgid "Today"
-msgstr ""
+msgstr "Astăzi"
 
-#: includes/fields/class-acf-field-date_picker.php:35
+#: includes/fields/class-acf-field-date_picker.php:61
 msgctxt "Date Picker JS nextText"
 msgid "Next"
-msgstr ""
+msgstr "Următor"
 
-#: includes/fields/class-acf-field-date_picker.php:36
+#: includes/fields/class-acf-field-date_picker.php:62
 msgctxt "Date Picker JS prevText"
 msgid "Prev"
-msgstr ""
+msgstr "Anterior"
 
-#: includes/fields/class-acf-field-date_picker.php:37
+#: includes/fields/class-acf-field-date_picker.php:63
 msgctxt "Date Picker JS weekHeader"
 msgid "Wk"
-msgstr ""
+msgstr "Săpt"
 
-#: includes/fields/class-acf-field-date_picker.php:207
-#: includes/fields/class-acf-field-date_time_picker.php:181
+#: includes/fields/class-acf-field-date_picker.php:180
+#: includes/fields/class-acf-field-date_time_picker.php:183
 #: includes/fields/class-acf-field-time_picker.php:109
 msgid "Display Format"
 msgstr "Formatul de Afișare"
 
-#: includes/fields/class-acf-field-date_picker.php:208
-#: includes/fields/class-acf-field-date_time_picker.php:182
+#: includes/fields/class-acf-field-date_picker.php:181
+#: includes/fields/class-acf-field-date_time_picker.php:184
 #: includes/fields/class-acf-field-time_picker.php:110
 msgid "The format displayed when editing a post"
 msgstr "Formatul afișat în momentul editării unui articol"
 
-#: includes/fields/class-acf-field-date_picker.php:216
-#: includes/fields/class-acf-field-date_picker.php:247
-#: includes/fields/class-acf-field-date_time_picker.php:191
-#: includes/fields/class-acf-field-date_time_picker.php:208
+#: includes/fields/class-acf-field-date_picker.php:189
+#: includes/fields/class-acf-field-date_picker.php:220
+#: includes/fields/class-acf-field-date_time_picker.php:193
+#: includes/fields/class-acf-field-date_time_picker.php:210
 #: includes/fields/class-acf-field-time_picker.php:117
 #: includes/fields/class-acf-field-time_picker.php:132
 msgid "Custom:"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_picker.php:226
+#: includes/fields/class-acf-field-date_picker.php:199
 msgid "Save Format"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_picker.php:227
+#: includes/fields/class-acf-field-date_picker.php:200
 msgid "The format used when saving a value"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_picker.php:237
-#: includes/fields/class-acf-field-date_time_picker.php:198
+#: includes/fields/class-acf-field-date_picker.php:210
+#: includes/fields/class-acf-field-date_time_picker.php:200
 #: includes/fields/class-acf-field-post_object.php:432
-#: includes/fields/class-acf-field-relationship.php:697
-#: includes/fields/class-acf-field-select.php:426
+#: includes/fields/class-acf-field-relationship.php:698
+#: includes/fields/class-acf-field-select.php:412
 #: includes/fields/class-acf-field-time_picker.php:124
+#: includes/fields/class-acf-field-user.php:428
 msgid "Return Format"
 msgstr "Formatul Returnat"
 
-#: includes/fields/class-acf-field-date_picker.php:238
-#: includes/fields/class-acf-field-date_time_picker.php:199
+#: includes/fields/class-acf-field-date_picker.php:211
+#: includes/fields/class-acf-field-date_time_picker.php:201
 #: includes/fields/class-acf-field-time_picker.php:125
 msgid "The format returned via template functions"
 msgstr "Formatul rezultat via funcțiilor șablon"
 
-#: includes/fields/class-acf-field-date_picker.php:256
-#: includes/fields/class-acf-field-date_time_picker.php:215
+#: includes/fields/class-acf-field-date_picker.php:229
+#: includes/fields/class-acf-field-date_time_picker.php:217
 msgid "Week Starts On"
 msgstr "Săptămâna începe în ziua de"
 
@@ -1565,77 +1748,77 @@ msgstr "Săptămâna începe în ziua de"
 msgid "Date Time Picker"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:33
+#: includes/fields/class-acf-field-date_time_picker.php:68
 msgctxt "Date Time Picker JS timeOnlyTitle"
 msgid "Choose Time"
-msgstr ""
+msgstr "Alege ora"
 
-#: includes/fields/class-acf-field-date_time_picker.php:34
+#: includes/fields/class-acf-field-date_time_picker.php:69
 msgctxt "Date Time Picker JS timeText"
 msgid "Time"
-msgstr ""
+msgstr "Ora"
 
-#: includes/fields/class-acf-field-date_time_picker.php:35
+#: includes/fields/class-acf-field-date_time_picker.php:70
 msgctxt "Date Time Picker JS hourText"
 msgid "Hour"
-msgstr ""
+msgstr "Oră"
 
-#: includes/fields/class-acf-field-date_time_picker.php:36
+#: includes/fields/class-acf-field-date_time_picker.php:71
 msgctxt "Date Time Picker JS minuteText"
 msgid "Minute"
-msgstr ""
+msgstr "Minut"
 
-#: includes/fields/class-acf-field-date_time_picker.php:37
+#: includes/fields/class-acf-field-date_time_picker.php:72
 msgctxt "Date Time Picker JS secondText"
 msgid "Second"
-msgstr ""
+msgstr "Secundă"
 
-#: includes/fields/class-acf-field-date_time_picker.php:38
+#: includes/fields/class-acf-field-date_time_picker.php:73
 msgctxt "Date Time Picker JS millisecText"
 msgid "Millisecond"
-msgstr ""
+msgstr "Milisecundă"
 
-#: includes/fields/class-acf-field-date_time_picker.php:39
+#: includes/fields/class-acf-field-date_time_picker.php:74
 msgctxt "Date Time Picker JS microsecText"
 msgid "Microsecond"
-msgstr ""
+msgstr "Microsecundă"
 
-#: includes/fields/class-acf-field-date_time_picker.php:40
+#: includes/fields/class-acf-field-date_time_picker.php:75
 msgctxt "Date Time Picker JS timezoneText"
 msgid "Time Zone"
-msgstr ""
+msgstr "Fus Orar"
 
-#: includes/fields/class-acf-field-date_time_picker.php:41
+#: includes/fields/class-acf-field-date_time_picker.php:76
 msgctxt "Date Time Picker JS currentText"
 msgid "Now"
-msgstr ""
+msgstr "Acum"
 
-#: includes/fields/class-acf-field-date_time_picker.php:42
+#: includes/fields/class-acf-field-date_time_picker.php:77
 msgctxt "Date Time Picker JS closeText"
 msgid "Done"
-msgstr ""
+msgstr "Gata"
 
-#: includes/fields/class-acf-field-date_time_picker.php:43
+#: includes/fields/class-acf-field-date_time_picker.php:78
 msgctxt "Date Time Picker JS selectText"
 msgid "Select"
-msgstr ""
+msgstr "Selectează"
 
-#: includes/fields/class-acf-field-date_time_picker.php:45
+#: includes/fields/class-acf-field-date_time_picker.php:80
 msgctxt "Date Time Picker JS amText"
 msgid "AM"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:46
+#: includes/fields/class-acf-field-date_time_picker.php:81
 msgctxt "Date Time Picker JS amTextShort"
 msgid "A"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:49
+#: includes/fields/class-acf-field-date_time_picker.php:84
 msgctxt "Date Time Picker JS pmText"
 msgid "PM"
 msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:50
+#: includes/fields/class-acf-field-date_time_picker.php:85
 msgctxt "Date Time Picker JS pmTextShort"
 msgid "P"
 msgstr ""
@@ -1644,59 +1827,53 @@ msgstr ""
 msgid "Email"
 msgstr "Adresă de email"
 
-#: includes/fields/class-acf-field-email.php:115
-#: includes/fields/class-acf-field-number.php:124
-#: includes/fields/class-acf-field-radio.php:277
-#: includes/fields/class-acf-field-text.php:116
-#: includes/fields/class-acf-field-textarea.php:99
-#: includes/fields/class-acf-field-url.php:97
-#: includes/fields/class-acf-field-wysiwyg.php:422
-msgid "Appears when creating a new post"
-msgstr "Apare cănd creați un articol nou"
-
-#: includes/fields/class-acf-field-email.php:123
-#: includes/fields/class-acf-field-number.php:132
+#: includes/fields/class-acf-field-email.php:127
+#: includes/fields/class-acf-field-number.php:136
 #: includes/fields/class-acf-field-password.php:71
-#: includes/fields/class-acf-field-text.php:124
-#: includes/fields/class-acf-field-textarea.php:107
-#: includes/fields/class-acf-field-url.php:105
+#: includes/fields/class-acf-field-text.php:128
+#: includes/fields/class-acf-field-textarea.php:111
+#: includes/fields/class-acf-field-url.php:109
 msgid "Placeholder Text"
 msgstr "Textul afișat ca placeholder"
 
-#: includes/fields/class-acf-field-email.php:124
-#: includes/fields/class-acf-field-number.php:133
+#: includes/fields/class-acf-field-email.php:128
+#: includes/fields/class-acf-field-number.php:137
 #: includes/fields/class-acf-field-password.php:72
-#: includes/fields/class-acf-field-text.php:125
-#: includes/fields/class-acf-field-textarea.php:108
-#: includes/fields/class-acf-field-url.php:106
+#: includes/fields/class-acf-field-text.php:129
+#: includes/fields/class-acf-field-textarea.php:112
+#: includes/fields/class-acf-field-url.php:110
 msgid "Appears within the input"
 msgstr "Apare în intrare"
 
-#: includes/fields/class-acf-field-email.php:132
-#: includes/fields/class-acf-field-number.php:141
+#: includes/fields/class-acf-field-email.php:136
+#: includes/fields/class-acf-field-number.php:145
 #: includes/fields/class-acf-field-password.php:80
-#: includes/fields/class-acf-field-text.php:133
+#: includes/fields/class-acf-field-range.php:185
+#: includes/fields/class-acf-field-text.php:137
 msgid "Prepend"
 msgstr "Prefixează"
 
-#: includes/fields/class-acf-field-email.php:133
-#: includes/fields/class-acf-field-number.php:142
+#: includes/fields/class-acf-field-email.php:137
+#: includes/fields/class-acf-field-number.php:146
 #: includes/fields/class-acf-field-password.php:81
-#: includes/fields/class-acf-field-text.php:134
+#: includes/fields/class-acf-field-range.php:186
+#: includes/fields/class-acf-field-text.php:138
 msgid "Appears before the input"
 msgstr "Apare înainte de intrare"
 
-#: includes/fields/class-acf-field-email.php:141
-#: includes/fields/class-acf-field-number.php:150
+#: includes/fields/class-acf-field-email.php:145
+#: includes/fields/class-acf-field-number.php:154
 #: includes/fields/class-acf-field-password.php:89
-#: includes/fields/class-acf-field-text.php:142
+#: includes/fields/class-acf-field-range.php:194
+#: includes/fields/class-acf-field-text.php:146
 msgid "Append"
 msgstr "Adaugă"
 
-#: includes/fields/class-acf-field-email.php:142
-#: includes/fields/class-acf-field-number.php:151
+#: includes/fields/class-acf-field-email.php:146
+#: includes/fields/class-acf-field-number.php:155
 #: includes/fields/class-acf-field-password.php:90
-#: includes/fields/class-acf-field-text.php:143
+#: includes/fields/class-acf-field-range.php:195
+#: includes/fields/class-acf-field-text.php:147
 msgid "Appears after the input"
 msgstr "Apare după intrare"
 
@@ -1704,106 +1881,100 @@ msgstr "Apare după intrare"
 msgid "File"
 msgstr "Fișier"
 
-#: includes/fields/class-acf-field-file.php:36
+#: includes/fields/class-acf-field-file.php:38
 msgid "Edit File"
 msgstr "Editează fișierul"
 
-#: includes/fields/class-acf-field-file.php:37
+#: includes/fields/class-acf-field-file.php:39
 msgid "Update File"
 msgstr "Actualizează fișierul"
 
-#: includes/fields/class-acf-field-file.php:38
-#: includes/fields/class-acf-field-image.php:43 includes/media.php:57
-#: pro/fields/class-acf-field-gallery.php:44
-msgid "Uploaded to this post"
-msgstr "Încărcate pentru acest articol"
-
-#: includes/fields/class-acf-field-file.php:130
+#: includes/fields/class-acf-field-file.php:125
 msgid "File name"
 msgstr ""
 
-#: includes/fields/class-acf-field-file.php:134
-#: includes/fields/class-acf-field-file.php:237
-#: includes/fields/class-acf-field-file.php:248
-#: includes/fields/class-acf-field-image.php:251
-#: includes/fields/class-acf-field-image.php:280
+#: includes/fields/class-acf-field-file.php:129
+#: includes/fields/class-acf-field-file.php:232
+#: includes/fields/class-acf-field-file.php:243
+#: includes/fields/class-acf-field-image.php:248
+#: includes/fields/class-acf-field-image.php:277
 #: pro/fields/class-acf-field-gallery.php:690
 #: pro/fields/class-acf-field-gallery.php:719
 msgid "File size"
 msgstr "Mărime fișier"
 
-#: includes/fields/class-acf-field-file.php:159
+#: includes/fields/class-acf-field-file.php:154
 msgid "Add File"
 msgstr "Adaugă fișier"
 
-#: includes/fields/class-acf-field-file.php:210
+#: includes/fields/class-acf-field-file.php:205
 msgid "File Array"
 msgstr "Mulțime de fișier"
 
-#: includes/fields/class-acf-field-file.php:211
+#: includes/fields/class-acf-field-file.php:206
 msgid "File URL"
 msgstr "Cale Fișier"
 
-#: includes/fields/class-acf-field-file.php:212
+#: includes/fields/class-acf-field-file.php:207
 msgid "File ID"
 msgstr "ID Fișier"
 
-#: includes/fields/class-acf-field-file.php:219
-#: includes/fields/class-acf-field-image.php:216
+#: includes/fields/class-acf-field-file.php:214
+#: includes/fields/class-acf-field-image.php:213
 #: pro/fields/class-acf-field-gallery.php:655
 msgid "Library"
 msgstr "Librărie"
 
-#: includes/fields/class-acf-field-file.php:220
-#: includes/fields/class-acf-field-image.php:217
+#: includes/fields/class-acf-field-file.php:215
+#: includes/fields/class-acf-field-image.php:214
 #: pro/fields/class-acf-field-gallery.php:656
 msgid "Limit the media library choice"
 msgstr "Limitați alegerea librăriei media"
 
-#: includes/fields/class-acf-field-file.php:225
-#: includes/fields/class-acf-field-image.php:222
+#: includes/fields/class-acf-field-file.php:220
+#: includes/fields/class-acf-field-image.php:219
 #: includes/locations/class-acf-location-attachment.php:101
 #: includes/locations/class-acf-location-comment.php:79
 #: includes/locations/class-acf-location-nav-menu.php:102
 #: includes/locations/class-acf-location-taxonomy.php:79
 #: includes/locations/class-acf-location-user-form.php:87
-#: includes/locations/class-acf-location-user-role.php:104
+#: includes/locations/class-acf-location-user-role.php:111
 #: includes/locations/class-acf-location-widget.php:83
 #: pro/fields/class-acf-field-gallery.php:661
 msgid "All"
 msgstr "Toate"
 
-#: includes/fields/class-acf-field-file.php:226
-#: includes/fields/class-acf-field-image.php:223
+#: includes/fields/class-acf-field-file.php:221
+#: includes/fields/class-acf-field-image.php:220
 #: pro/fields/class-acf-field-gallery.php:662
 msgid "Uploaded to post"
 msgstr "Încărcate pentru acest articol"
 
-#: includes/fields/class-acf-field-file.php:233
-#: includes/fields/class-acf-field-image.php:230
+#: includes/fields/class-acf-field-file.php:228
+#: includes/fields/class-acf-field-image.php:227
 #: pro/fields/class-acf-field-gallery.php:669
 msgid "Minimum"
 msgstr "Minim"
 
-#: includes/fields/class-acf-field-file.php:234
-#: includes/fields/class-acf-field-file.php:245
+#: includes/fields/class-acf-field-file.php:229
+#: includes/fields/class-acf-field-file.php:240
 msgid "Restrict which files can be uploaded"
 msgstr "Restricționați ce tipuri de fișiere pot fi încărcate"
 
-#: includes/fields/class-acf-field-file.php:244
-#: includes/fields/class-acf-field-image.php:259
+#: includes/fields/class-acf-field-file.php:239
+#: includes/fields/class-acf-field-image.php:256
 #: pro/fields/class-acf-field-gallery.php:698
 msgid "Maximum"
 msgstr "Maxim"
 
-#: includes/fields/class-acf-field-file.php:255
-#: includes/fields/class-acf-field-image.php:288
+#: includes/fields/class-acf-field-file.php:250
+#: includes/fields/class-acf-field-image.php:285
 #: pro/fields/class-acf-field-gallery.php:727
 msgid "Allowed file types"
 msgstr "Tipuri de fișiere permise"
 
-#: includes/fields/class-acf-field-file.php:256
-#: includes/fields/class-acf-field-image.php:289
+#: includes/fields/class-acf-field-file.php:251
+#: includes/fields/class-acf-field-image.php:286
 #: pro/fields/class-acf-field-gallery.php:728
 msgid "Comma separated list. Leave blank for all types"
 msgstr "Listă separată prin virgulă. Lăsați liber pentru toate tipurile"
@@ -1812,54 +1983,50 @@ msgstr "Listă separată prin virgulă. Lăsați liber pentru toate tipurile"
 msgid "Google Map"
 msgstr "Hartă Google"
 
-#: includes/fields/class-acf-field-google-map.php:40
-msgid "Locating"
-msgstr "Localizare"
-
-#: includes/fields/class-acf-field-google-map.php:41
+#: includes/fields/class-acf-field-google-map.php:43
 msgid "Sorry, this browser does not support geolocation"
 msgstr "Ne pare rău, acest broswer nu suportă geo locația"
 
-#: includes/fields/class-acf-field-google-map.php:119
+#: includes/fields/class-acf-field-google-map.php:114
 msgid "Clear location"
 msgstr "Sterge Locația"
 
-#: includes/fields/class-acf-field-google-map.php:120
+#: includes/fields/class-acf-field-google-map.php:115
 msgid "Find current location"
 msgstr "Găsește locația curentă"
 
-#: includes/fields/class-acf-field-google-map.php:123
+#: includes/fields/class-acf-field-google-map.php:118
 msgid "Search for address..."
 msgstr "Caută adresa..."
 
-#: includes/fields/class-acf-field-google-map.php:153
-#: includes/fields/class-acf-field-google-map.php:164
+#: includes/fields/class-acf-field-google-map.php:148
+#: includes/fields/class-acf-field-google-map.php:159
 msgid "Center"
 msgstr "Centru"
 
-#: includes/fields/class-acf-field-google-map.php:154
-#: includes/fields/class-acf-field-google-map.php:165
+#: includes/fields/class-acf-field-google-map.php:149
+#: includes/fields/class-acf-field-google-map.php:160
 msgid "Center the initial map"
 msgstr "Centrează harta inițială"
 
-#: includes/fields/class-acf-field-google-map.php:176
+#: includes/fields/class-acf-field-google-map.php:171
 msgid "Zoom"
 msgstr "Zoom"
 
-#: includes/fields/class-acf-field-google-map.php:177
+#: includes/fields/class-acf-field-google-map.php:172
 msgid "Set the initial zoom level"
 msgstr "Setează nivelul de zoom inițial"
 
-#: includes/fields/class-acf-field-google-map.php:186
-#: includes/fields/class-acf-field-image.php:242
-#: includes/fields/class-acf-field-image.php:271
-#: includes/fields/class-acf-field-oembed.php:282
+#: includes/fields/class-acf-field-google-map.php:181
+#: includes/fields/class-acf-field-image.php:239
+#: includes/fields/class-acf-field-image.php:268
+#: includes/fields/class-acf-field-oembed.php:268
 #: pro/fields/class-acf-field-gallery.php:681
 #: pro/fields/class-acf-field-gallery.php:710
 msgid "Height"
 msgstr "Înălțime"
 
-#: includes/fields/class-acf-field-google-map.php:187
+#: includes/fields/class-acf-field-google-map.php:182
 msgid "Customise the map height"
 msgstr "Personalizați înălțimea hărții"
 
@@ -1867,34 +2034,34 @@ msgstr "Personalizați înălțimea hărții"
 msgid "Group"
 msgstr ""
 
-#: includes/fields/class-acf-field-group.php:456
-#: pro/fields/class-acf-field-repeater.php:397
+#: includes/fields/class-acf-field-group.php:459
+#: pro/fields/class-acf-field-repeater.php:381
 msgid "Sub Fields"
 msgstr "Sub câmpuri"
 
-#: includes/fields/class-acf-field-group.php:473
-#: pro/fields/class-acf-field-clone.php:856
+#: includes/fields/class-acf-field-group.php:475
+#: pro/fields/class-acf-field-clone.php:844
 msgid "Specify the style used to render the selected fields"
 msgstr ""
 
-#: includes/fields/class-acf-field-group.php:478
-#: pro/fields/class-acf-field-clone.php:861
-#: pro/fields/class-acf-field-flexible-content.php:614
-#: pro/fields/class-acf-field-repeater.php:466
+#: includes/fields/class-acf-field-group.php:480
+#: pro/fields/class-acf-field-clone.php:849
+#: pro/fields/class-acf-field-flexible-content.php:606
+#: pro/fields/class-acf-field-repeater.php:450
 msgid "Block"
 msgstr "Bloc"
 
-#: includes/fields/class-acf-field-group.php:479
-#: pro/fields/class-acf-field-clone.php:862
-#: pro/fields/class-acf-field-flexible-content.php:613
-#: pro/fields/class-acf-field-repeater.php:465
+#: includes/fields/class-acf-field-group.php:481
+#: pro/fields/class-acf-field-clone.php:850
+#: pro/fields/class-acf-field-flexible-content.php:605
+#: pro/fields/class-acf-field-repeater.php:449
 msgid "Table"
 msgstr "Tabel"
 
-#: includes/fields/class-acf-field-group.php:480
-#: pro/fields/class-acf-field-clone.php:863
-#: pro/fields/class-acf-field-flexible-content.php:615
-#: pro/fields/class-acf-field-repeater.php:467
+#: includes/fields/class-acf-field-group.php:482
+#: pro/fields/class-acf-field-clone.php:851
+#: pro/fields/class-acf-field-flexible-content.php:607
+#: pro/fields/class-acf-field-repeater.php:451
 msgid "Row"
 msgstr "Linie"
 
@@ -1902,69 +2069,58 @@ msgstr "Linie"
 msgid "Image"
 msgstr "Imagine"
 
-#: includes/fields/class-acf-field-image.php:40
+#: includes/fields/class-acf-field-image.php:42
 msgid "Select Image"
 msgstr "Alege imaginea"
 
-#: includes/fields/class-acf-field-image.php:41
+#: includes/fields/class-acf-field-image.php:43
 #: pro/fields/class-acf-field-gallery.php:42
 msgid "Edit Image"
 msgstr "Editează imaginea"
 
-#: includes/fields/class-acf-field-image.php:42
+#: includes/fields/class-acf-field-image.php:44
 #: pro/fields/class-acf-field-gallery.php:43
 msgid "Update Image"
 msgstr "Actualizează imaginea"
 
-#: includes/fields/class-acf-field-image.php:44
-msgid "All images"
-msgstr "Toate imaginiile"
-
-#: includes/fields/class-acf-field-image.php:127
-#: includes/fields/class-acf-field-link.php:140 includes/input.php:269
-#: pro/fields/class-acf-field-gallery.php:343
-#: pro/fields/class-acf-field-gallery.php:531
-msgid "Remove"
-msgstr "Înlătură"
-
-#: includes/fields/class-acf-field-image.php:143
+#: includes/fields/class-acf-field-image.php:140
 msgid "No image selected"
 msgstr "Nu ai selectat nici o imagine"
 
-#: includes/fields/class-acf-field-image.php:143
+#: includes/fields/class-acf-field-image.php:140
 msgid "Add Image"
 msgstr "Adaugă o imagine"
 
-#: includes/fields/class-acf-field-image.php:197
+#: includes/fields/class-acf-field-image.php:194
 msgid "Image Array"
 msgstr "Mulțime de imagini"
 
-#: includes/fields/class-acf-field-image.php:198
+#: includes/fields/class-acf-field-image.php:195
 msgid "Image URL"
 msgstr "URL-ul imaginii"
 
-#: includes/fields/class-acf-field-image.php:199
+#: includes/fields/class-acf-field-image.php:196
 msgid "Image ID"
 msgstr "ID-ul imaginii"
 
-#: includes/fields/class-acf-field-image.php:206
+#: includes/fields/class-acf-field-image.php:203
 msgid "Preview Size"
 msgstr "Dimensiunea previzualizării"
 
-#: includes/fields/class-acf-field-image.php:207
+#: includes/fields/class-acf-field-image.php:204
 msgid "Shown when entering data"
 msgstr "Afișat la introducerea datelor"
 
-#: includes/fields/class-acf-field-image.php:231
-#: includes/fields/class-acf-field-image.php:260
+#: includes/fields/class-acf-field-image.php:228
+#: includes/fields/class-acf-field-image.php:257
 #: pro/fields/class-acf-field-gallery.php:670
 #: pro/fields/class-acf-field-gallery.php:699
 msgid "Restrict which images can be uploaded"
 msgstr "Restricționează care imagini pot fi încărcate"
 
-#: includes/fields/class-acf-field-image.php:234
-#: includes/fields/class-acf-field-image.php:263
-#: includes/fields/class-acf-field-oembed.php:271
+#: includes/fields/class-acf-field-image.php:231
+#: includes/fields/class-acf-field-image.php:260
+#: includes/fields/class-acf-field-oembed.php:257
 #: pro/fields/class-acf-field-gallery.php:673
 #: pro/fields/class-acf-field-gallery.php:702
 msgid "Width"
@@ -1997,27 +2153,27 @@ msgid "Message"
 msgstr "Mesaj"
 
 #: includes/fields/class-acf-field-message.php:110
-#: includes/fields/class-acf-field-textarea.php:135
+#: includes/fields/class-acf-field-textarea.php:139
 msgid "New Lines"
 msgstr "Linii Noi"
 
 #: includes/fields/class-acf-field-message.php:111
-#: includes/fields/class-acf-field-textarea.php:136
+#: includes/fields/class-acf-field-textarea.php:140
 msgid "Controls how new lines are rendered"
 msgstr "Controlează cum sunt redate noile linii"
 
 #: includes/fields/class-acf-field-message.php:115
-#: includes/fields/class-acf-field-textarea.php:140
+#: includes/fields/class-acf-field-textarea.php:144
 msgid "Automatically add paragraphs"
 msgstr "Adaugă automat paragrafe"
 
 #: includes/fields/class-acf-field-message.php:116
-#: includes/fields/class-acf-field-textarea.php:141
+#: includes/fields/class-acf-field-textarea.php:145
 msgid "Automatically add &lt;br&gt;"
 msgstr "Adaugă automat &lt;br&gt;"
 
 #: includes/fields/class-acf-field-message.php:117
-#: includes/fields/class-acf-field-textarea.php:142
+#: includes/fields/class-acf-field-textarea.php:146
 msgid "No Formatting"
 msgstr "Nici o Formater"
 
@@ -2035,28 +2191,31 @@ msgstr ""
 msgid "Number"
 msgstr "Număr"
 
-#: includes/fields/class-acf-field-number.php:159
+#: includes/fields/class-acf-field-number.php:163
+#: includes/fields/class-acf-field-range.php:155
 msgid "Minimum Value"
 msgstr "Valoare minimă"
 
-#: includes/fields/class-acf-field-number.php:168
+#: includes/fields/class-acf-field-number.php:172
+#: includes/fields/class-acf-field-range.php:165
 msgid "Maximum Value"
 msgstr "Valoare maximă"
 
-#: includes/fields/class-acf-field-number.php:177
+#: includes/fields/class-acf-field-number.php:181
+#: includes/fields/class-acf-field-range.php:175
 msgid "Step Size"
 msgstr "Mărime pas"
 
-#: includes/fields/class-acf-field-number.php:215
+#: includes/fields/class-acf-field-number.php:219
 msgid "Value must be a number"
 msgstr "Valoarea trebuie să fie un număr"
 
-#: includes/fields/class-acf-field-number.php:233
+#: includes/fields/class-acf-field-number.php:237
 #, php-format
 msgid "Value must be equal to or higher than %d"
 msgstr "Valoarea trebuie să fie egală sau mai mare decât %d"
 
-#: includes/fields/class-acf-field-number.php:241
+#: includes/fields/class-acf-field-number.php:245
 #, php-format
 msgid "Value must be equal to or lower than %d"
 msgstr "Valoarea trebuie să fie egală sau mai mică decât %d"
@@ -2065,21 +2224,12 @@ msgstr "Valoarea trebuie să fie egală sau mai mică decât %d"
 msgid "oEmbed"
 msgstr "oEmbed"
 
-#: includes/fields/class-acf-field-oembed.php:222
+#: includes/fields/class-acf-field-oembed.php:216
 msgid "Enter URL"
 msgstr "Introduceți URL"
 
-#: includes/fields/class-acf-field-oembed.php:235
-#: includes/fields/class-acf-field-taxonomy.php:891
-msgid "Error."
-msgstr "Eroare."
-
-#: includes/fields/class-acf-field-oembed.php:235
-msgid "No embed found for the given URL."
-msgstr "Nu a fost găsit nici un oembed pentru URL introdus."
-
-#: includes/fields/class-acf-field-oembed.php:268
-#: includes/fields/class-acf-field-oembed.php:279
+#: includes/fields/class-acf-field-oembed.php:254
+#: includes/fields/class-acf-field-oembed.php:265
 msgid "Embed Size"
 msgstr "Marimea Embed"
 
@@ -2087,38 +2237,35 @@ msgstr "Marimea Embed"
 msgid "Archives"
 msgstr "Arhive"
 
+#: includes/fields/class-acf-field-page_link.php:269
+#: includes/fields/class-acf-field-post_object.php:268
+#: includes/fields/class-acf-field-taxonomy.php:986
+msgid "Parent"
+msgstr ""
+
 #: includes/fields/class-acf-field-page_link.php:485
 #: includes/fields/class-acf-field-post_object.php:384
-#: includes/fields/class-acf-field-relationship.php:623
+#: includes/fields/class-acf-field-relationship.php:624
 msgid "Filter by Post Type"
 msgstr "Filtur dupa Tipul Articolului"
 
 #: includes/fields/class-acf-field-page_link.php:493
 #: includes/fields/class-acf-field-post_object.php:392
-#: includes/fields/class-acf-field-relationship.php:631
+#: includes/fields/class-acf-field-relationship.php:632
 msgid "All post types"
 msgstr "Toate Tipurile Articolului"
 
 #: includes/fields/class-acf-field-page_link.php:499
 #: includes/fields/class-acf-field-post_object.php:398
-#: includes/fields/class-acf-field-relationship.php:637
+#: includes/fields/class-acf-field-relationship.php:638
 msgid "Filter by Taxonomy"
 msgstr "Filtru după Taxonomie"
 
 #: includes/fields/class-acf-field-page_link.php:507
 #: includes/fields/class-acf-field-post_object.php:406
-#: includes/fields/class-acf-field-relationship.php:645
+#: includes/fields/class-acf-field-relationship.php:646
 msgid "All taxonomies"
 msgstr "Toate Taxonomiile"
-
-#: includes/fields/class-acf-field-page_link.php:513
-#: includes/fields/class-acf-field-post_object.php:412
-#: includes/fields/class-acf-field-radio.php:244
-#: includes/fields/class-acf-field-select.php:386
-#: includes/fields/class-acf-field-taxonomy.php:786
-#: includes/fields/class-acf-field-user.php:408
-msgid "Allow Null?"
-msgstr "Permite valori nule?"
 
 #: includes/fields/class-acf-field-page_link.php:523
 msgid "Allow Archives URLs"
@@ -2126,8 +2273,8 @@ msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:533
 #: includes/fields/class-acf-field-post_object.php:422
-#: includes/fields/class-acf-field-select.php:396
-#: includes/fields/class-acf-field-user.php:418
+#: includes/fields/class-acf-field-select.php:377
+#: includes/fields/class-acf-field-user.php:419
 msgid "Select multiple values?"
 msgstr "Permite selecția de valori multiple?"
 
@@ -2137,12 +2284,12 @@ msgstr "Parolă"
 
 #: includes/fields/class-acf-field-post_object.php:25
 #: includes/fields/class-acf-field-post_object.php:437
-#: includes/fields/class-acf-field-relationship.php:702
+#: includes/fields/class-acf-field-relationship.php:703
 msgid "Post Object"
 msgstr "Obiect Articol"
 
 #: includes/fields/class-acf-field-post_object.php:438
-#: includes/fields/class-acf-field-relationship.php:703
+#: includes/fields/class-acf-field-relationship.php:704
 msgid "Post ID"
 msgstr "ID-ul Articolului"
 
@@ -2166,70 +2313,71 @@ msgstr "Salvează Altceva"
 msgid "Save 'other' values to the field's choices"
 msgstr "Salvează valoarea 'Altceva' la opțiunile câmpului"
 
+#: includes/fields/class-acf-field-range.php:25
+msgid "Range"
+msgstr ""
+
 #: includes/fields/class-acf-field-relationship.php:25
 msgid "Relationship"
 msgstr "Relație"
 
-#: includes/fields/class-acf-field-relationship.php:37
-msgid "Minimum values reached ( {min} values )"
-msgstr ""
-
-#: includes/fields/class-acf-field-relationship.php:38
+#: includes/fields/class-acf-field-relationship.php:40
 msgid "Maximum values reached ( {max} values )"
 msgstr "Valorile maxime atinse  ( {max} valori )"
 
-#: includes/fields/class-acf-field-relationship.php:39
+#: includes/fields/class-acf-field-relationship.php:41
 msgid "Loading"
 msgstr "Se încarcă"
 
-#: includes/fields/class-acf-field-relationship.php:40
+#: includes/fields/class-acf-field-relationship.php:42
 msgid "No matches found"
 msgstr "Nici un rezultat"
 
-#: includes/fields/class-acf-field-relationship.php:423
+#: includes/fields/class-acf-field-relationship.php:424
 msgid "Select post type"
 msgstr "Alegeți tipul articolului"
 
-#: includes/fields/class-acf-field-relationship.php:449
+#: includes/fields/class-acf-field-relationship.php:450
 msgid "Select taxonomy"
 msgstr "Alegeți taxonomia"
 
-#: includes/fields/class-acf-field-relationship.php:539
+#: includes/fields/class-acf-field-relationship.php:540
 msgid "Search..."
 msgstr "Caută..."
 
-#: includes/fields/class-acf-field-relationship.php:651
+#: includes/fields/class-acf-field-relationship.php:652
 msgid "Filters"
 msgstr "Filtre"
 
-#: includes/fields/class-acf-field-relationship.php:657
+#: includes/fields/class-acf-field-relationship.php:658
 #: includes/locations/class-acf-location-post-type.php:27
 msgid "Post Type"
 msgstr "Tipul Articolului"
 
-#: includes/fields/class-acf-field-relationship.php:658
+#: includes/fields/class-acf-field-relationship.php:659
 #: includes/fields/class-acf-field-taxonomy.php:28
-#: includes/fields/class-acf-field-taxonomy.php:756
+#: includes/fields/class-acf-field-taxonomy.php:763
+#: includes/locations/class-acf-location-taxonomy.php:27
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: includes/fields/class-acf-field-relationship.php:665
+#: includes/fields/class-acf-field-relationship.php:666
 msgid "Elements"
 msgstr "Elemente"
 
-#: includes/fields/class-acf-field-relationship.php:666
+#: includes/fields/class-acf-field-relationship.php:667
 msgid "Selected elements will be displayed in each result"
 msgstr "Elementele selectate vor apărea în fiecare rezultat"
 
-#: includes/fields/class-acf-field-relationship.php:677
+#: includes/fields/class-acf-field-relationship.php:678
 msgid "Minimum posts"
 msgstr ""
 
-#: includes/fields/class-acf-field-relationship.php:686
+#: includes/fields/class-acf-field-relationship.php:687
 msgid "Maximum posts"
 msgstr "Numărul maxim de articole"
 
-#: includes/fields/class-acf-field-relationship.php:790
+#: includes/fields/class-acf-field-relationship.php:791
 #: pro/fields/class-acf-field-gallery.php:800
 #, php-format
 msgid "%s requires at least %s selection"
@@ -2239,90 +2387,85 @@ msgstr[1] "%s necesită cel puțin %s selecții"
 msgstr[2] "%s necesită cel puțin %s selecții"
 
 #: includes/fields/class-acf-field-select.php:25
-#: includes/fields/class-acf-field-taxonomy.php:778
+#: includes/fields/class-acf-field-taxonomy.php:785
 msgctxt "noun"
 msgid "Select"
-msgstr ""
+msgstr "Selectează"
 
-#: includes/fields/class-acf-field-select.php:38
+#: includes/fields/class-acf-field-select.php:40
 msgctxt "Select2 JS matches_1"
 msgid "One result is available, press enter to select it."
-msgstr ""
+msgstr "Un rezultat disponibil, apasă enter pentru a-l selecta."
 
-#: includes/fields/class-acf-field-select.php:39
+#: includes/fields/class-acf-field-select.php:41
 #, php-format
 msgctxt "Select2 JS matches_n"
 msgid "%d results are available, use up and down arrow keys to navigate."
-msgstr ""
-
-#: includes/fields/class-acf-field-select.php:40
-msgctxt "Select2 JS matches_0"
-msgid "No matches found"
-msgstr ""
-
-#: includes/fields/class-acf-field-select.php:41
-msgctxt "Select2 JS input_too_short_1"
-msgid "Please enter 1 or more characters"
-msgstr ""
+msgstr "%d rezultate disponibile, apasă tastele sus/jos pentru a naviga."
 
 #: includes/fields/class-acf-field-select.php:42
-#, php-format
-msgctxt "Select2 JS input_too_short_n"
-msgid "Please enter %d or more characters"
-msgstr ""
+msgctxt "Select2 JS matches_0"
+msgid "No matches found"
+msgstr "Nici un rezultat"
 
 #: includes/fields/class-acf-field-select.php:43
-msgctxt "Select2 JS input_too_long_1"
-msgid "Please delete 1 character"
-msgstr ""
+msgctxt "Select2 JS input_too_short_1"
+msgid "Please enter 1 or more characters"
+msgstr "Te rog să introduci cel puțin un caracter"
 
 #: includes/fields/class-acf-field-select.php:44
 #, php-format
-msgctxt "Select2 JS input_too_long_n"
-msgid "Please delete %d characters"
-msgstr ""
+msgctxt "Select2 JS input_too_short_n"
+msgid "Please enter %d or more characters"
+msgstr "Te rog să introduci %d sau mai multe caractere"
 
 #: includes/fields/class-acf-field-select.php:45
-msgctxt "Select2 JS selection_too_long_1"
-msgid "You can only select 1 item"
-msgstr ""
+msgctxt "Select2 JS input_too_long_1"
+msgid "Please delete 1 character"
+msgstr "Te rog să ștergi un caracter"
 
 #: includes/fields/class-acf-field-select.php:46
 #, php-format
-msgctxt "Select2 JS selection_too_long_n"
-msgid "You can only select %d items"
-msgstr ""
+msgctxt "Select2 JS input_too_long_n"
+msgid "Please delete %d characters"
+msgstr "Te rog să ștergi %d caractere"
 
 #: includes/fields/class-acf-field-select.php:47
-msgctxt "Select2 JS load_more"
-msgid "Loading more results&hellip;"
-msgstr ""
+msgctxt "Select2 JS selection_too_long_1"
+msgid "You can only select 1 item"
+msgstr "Poți selecta un singur element"
 
 #: includes/fields/class-acf-field-select.php:48
-msgctxt "Select2 JS searching"
-msgid "Searching&hellip;"
-msgstr ""
+#, php-format
+msgctxt "Select2 JS selection_too_long_n"
+msgid "You can only select %d items"
+msgstr "Poți selecta %d elemente"
 
 #: includes/fields/class-acf-field-select.php:49
+msgctxt "Select2 JS load_more"
+msgid "Loading more results&hellip;"
+msgstr "Se încarcă mai multe rezultate&hellip;"
+
+#: includes/fields/class-acf-field-select.php:50
+msgctxt "Select2 JS searching"
+msgid "Searching&hellip;"
+msgstr "Se caută&hellip;"
+
+#: includes/fields/class-acf-field-select.php:51
 msgctxt "Select2 JS load_fail"
 msgid "Loading failed"
-msgstr ""
+msgstr "Încărcarea a eșuat"
 
-#: includes/fields/class-acf-field-select.php:255 includes/media.php:54
-msgctxt "verb"
-msgid "Select"
-msgstr ""
-
-#: includes/fields/class-acf-field-select.php:406
+#: includes/fields/class-acf-field-select.php:387
 #: includes/fields/class-acf-field-true_false.php:144
 msgid "Stylised UI"
 msgstr "UI stilizat"
 
-#: includes/fields/class-acf-field-select.php:416
+#: includes/fields/class-acf-field-select.php:397
 msgid "Use AJAX to lazy load choices?"
 msgstr "Folosiți AJAX pentru a încărca alegerile în modul ”Lazy Load”?"
 
-#: includes/fields/class-acf-field-select.php:427
+#: includes/fields/class-acf-field-select.php:413
 msgid "Specify the value returned"
 msgstr ""
 
@@ -2334,131 +2477,106 @@ msgstr ""
 msgid "Tab"
 msgstr "Tab"
 
-#: includes/fields/class-acf-field-tab.php:82
-msgid ""
-"The tab field will display incorrectly when added to a Table style repeater "
-"field or flexible content field layout"
-msgstr ""
-"Câmpul Tab nu va fi afișat corect când vei adauga un Câmp de tipul Tabel de "
-"stiluri repetitiv sau un Câmp de tipul Schemă de Conținut Flexibil"
-
-#: includes/fields/class-acf-field-tab.php:83
-msgid ""
-"Use \"Tab Fields\" to better organize your edit screen by grouping fields "
-"together."
-msgstr ""
-"Folosește  \"Tab Fields\" pentru o mai ușoară organizare și grupare a "
-"câmpurilor."
-
-#: includes/fields/class-acf-field-tab.php:84
-msgid ""
-"All fields following this \"tab field\" (or until another \"tab field\" is "
-"defined) will be grouped together using this field's label as the tab "
-"heading."
-msgstr ""
-"Toate câmpurile care urmează după acest  \"tab field\" (sau până când un "
-"alt  \"tab field\" este definit) vor fi grupate împreună folosind eticheta "
-"acestui câmp ca fiind Titlul Tabului."
-
-#: includes/fields/class-acf-field-tab.php:98
+#: includes/fields/class-acf-field-tab.php:102
 msgid "Placement"
 msgstr "Plasament"
 
-#: includes/fields/class-acf-field-tab.php:110
-msgid "End-point"
+#: includes/fields/class-acf-field-tab.php:115
+msgid ""
+"Define an endpoint for the previous tabs to stop. This will start a new "
+"group of tabs."
 msgstr ""
 
-#: includes/fields/class-acf-field-tab.php:111
-msgid "Use this field as an end-point and start a new group of tabs"
-msgstr ""
+#: includes/fields/class-acf-field-taxonomy.php:713
+#, php-format
+msgctxt "No terms"
+msgid "No %s"
+msgstr "Fără %s"
 
-#: includes/fields/class-acf-field-taxonomy.php:706
-#: includes/fields/class-acf-field-true_false.php:80
-#: includes/fields/class-acf-field-true_false.php:169 includes/input.php:268
-#: pro/admin/views/html-settings-updates.php:103
-msgid "No"
-msgstr "Nu"
-
-#: includes/fields/class-acf-field-taxonomy.php:725
+#: includes/fields/class-acf-field-taxonomy.php:732
 msgid "None"
 msgstr "Nici unul"
 
-#: includes/fields/class-acf-field-taxonomy.php:757
+#: includes/fields/class-acf-field-taxonomy.php:764
 msgid "Select the taxonomy to be displayed"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:766
+#: includes/fields/class-acf-field-taxonomy.php:773
 msgid "Appearance"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:767
+#: includes/fields/class-acf-field-taxonomy.php:774
 msgid "Select the appearance of this field"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:772
+#: includes/fields/class-acf-field-taxonomy.php:779
 msgid "Multiple Values"
 msgstr "Valori multiple"
 
-#: includes/fields/class-acf-field-taxonomy.php:774
+#: includes/fields/class-acf-field-taxonomy.php:781
 msgid "Multi Select"
 msgstr "Selectie multiplă"
 
-#: includes/fields/class-acf-field-taxonomy.php:776
+#: includes/fields/class-acf-field-taxonomy.php:783
 msgid "Single Value"
 msgstr "O singură valoare"
 
-#: includes/fields/class-acf-field-taxonomy.php:777
+#: includes/fields/class-acf-field-taxonomy.php:784
 msgid "Radio Buttons"
 msgstr "Butoane radio"
 
-#: includes/fields/class-acf-field-taxonomy.php:796
+#: includes/fields/class-acf-field-taxonomy.php:803
 msgid "Create Terms"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:797
+#: includes/fields/class-acf-field-taxonomy.php:804
 msgid "Allow new terms to be created whilst editing"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:806
+#: includes/fields/class-acf-field-taxonomy.php:813
 msgid "Save Terms"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:807
+#: includes/fields/class-acf-field-taxonomy.php:814
 msgid "Connect selected terms to the post"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:816
+#: includes/fields/class-acf-field-taxonomy.php:823
 msgid "Load Terms"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:817
+#: includes/fields/class-acf-field-taxonomy.php:824
 msgid "Load value from posts terms"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:831
+#: includes/fields/class-acf-field-taxonomy.php:838
 msgid "Term Object"
 msgstr "Obiectul Termen"
 
-#: includes/fields/class-acf-field-taxonomy.php:832
+#: includes/fields/class-acf-field-taxonomy.php:839
 msgid "Term ID"
 msgstr "ID-ul Termenului"
 
-#: includes/fields/class-acf-field-taxonomy.php:891
+#: includes/fields/class-acf-field-taxonomy.php:898
+msgid "Error."
+msgstr "Eroare."
+
+#: includes/fields/class-acf-field-taxonomy.php:898
 #, php-format
 msgid "User unable to add new %s"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:904
+#: includes/fields/class-acf-field-taxonomy.php:911
 #, php-format
 msgid "%s already exists"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:945
+#: includes/fields/class-acf-field-taxonomy.php:952
 #, php-format
 msgid "%s added"
 msgstr ""
 
-#: includes/fields/class-acf-field-taxonomy.php:990
+#: includes/fields/class-acf-field-taxonomy.php:998
 msgid "Add"
 msgstr ""
 
@@ -2466,13 +2584,13 @@ msgstr ""
 msgid "Text"
 msgstr "Text"
 
-#: includes/fields/class-acf-field-text.php:151
-#: includes/fields/class-acf-field-textarea.php:116
+#: includes/fields/class-acf-field-text.php:155
+#: includes/fields/class-acf-field-textarea.php:120
 msgid "Character Limit"
 msgstr "Limită de caractere"
 
-#: includes/fields/class-acf-field-text.php:152
-#: includes/fields/class-acf-field-textarea.php:117
+#: includes/fields/class-acf-field-text.php:156
+#: includes/fields/class-acf-field-textarea.php:121
 msgid "Leave blank for no limit"
 msgstr "Lasă gol pentru a nu a avea o limită"
 
@@ -2480,11 +2598,11 @@ msgstr "Lasă gol pentru a nu a avea o limită"
 msgid "Text Area"
 msgstr "Zonă de Text"
 
-#: includes/fields/class-acf-field-textarea.php:125
+#: includes/fields/class-acf-field-textarea.php:129
 msgid "Rows"
 msgstr "Linii"
 
-#: includes/fields/class-acf-field-textarea.php:126
+#: includes/fields/class-acf-field-textarea.php:130
 msgid "Sets the textarea height"
 msgstr "Setează înălțimea zonei de text"
 
@@ -2495,12 +2613,6 @@ msgstr ""
 #: includes/fields/class-acf-field-true_false.php:25
 msgid "True / False"
 msgstr "Adevărat / False"
-
-#: includes/fields/class-acf-field-true_false.php:79
-#: includes/fields/class-acf-field-true_false.php:159 includes/input.php:267
-#: pro/admin/views/html-settings-updates.php:93
-msgid "Yes"
-msgstr "Da"
 
 #: includes/fields/class-acf-field-true_false.php:127
 msgid "Displays text alongside the checkbox"
@@ -2514,11 +2626,11 @@ msgstr ""
 msgid "Text shown when active"
 msgstr ""
 
-#: includes/fields/class-acf-field-true_false.php:165
+#: includes/fields/class-acf-field-true_false.php:170
 msgid "Off Text"
 msgstr ""
 
-#: includes/fields/class-acf-field-true_false.php:166
+#: includes/fields/class-acf-field-true_false.php:171
 msgid "Text shown when inactive"
 msgstr ""
 
@@ -2526,7 +2638,7 @@ msgstr ""
 msgid "Url"
 msgstr "Url"
 
-#: includes/fields/class-acf-field-url.php:147
+#: includes/fields/class-acf-field-url.php:151
 msgid "Value must be a valid URL"
 msgstr "Valoarea trebuie să fie un URL valid"
 
@@ -2534,65 +2646,77 @@ msgstr "Valoarea trebuie să fie un URL valid"
 msgid "User"
 msgstr "Utilizatorul"
 
-#: includes/fields/class-acf-field-user.php:393
+#: includes/fields/class-acf-field-user.php:394
 msgid "Filter by role"
 msgstr "Filtrează după rol"
 
-#: includes/fields/class-acf-field-user.php:401
+#: includes/fields/class-acf-field-user.php:402
 msgid "All user roles"
 msgstr "Toate rolurile de utilizator"
 
+#: includes/fields/class-acf-field-user.php:433
+msgid "User Array"
+msgstr ""
+
+#: includes/fields/class-acf-field-user.php:434
+msgid "User Object"
+msgstr ""
+
+#: includes/fields/class-acf-field-user.php:435
+msgid "User ID"
+msgstr ""
+
 #: includes/fields/class-acf-field-wysiwyg.php:25
 msgid "Wysiwyg Editor"
-msgstr "Editor Wysiwyg "
+msgstr "Editor Vizual"
 
-#: includes/fields/class-acf-field-wysiwyg.php:370
+#: includes/fields/class-acf-field-wysiwyg.php:359
 msgid "Visual"
 msgstr "Visual"
 
-#: includes/fields/class-acf-field-wysiwyg.php:371
+#: includes/fields/class-acf-field-wysiwyg.php:360
 msgctxt "Name for the Text editor tab (formerly HTML)"
 msgid "Text"
 msgstr "Text"
 
-#: includes/fields/class-acf-field-wysiwyg.php:377
+#: includes/fields/class-acf-field-wysiwyg.php:366
 msgid "Click to initialize TinyMCE"
 msgstr ""
 
-#: includes/fields/class-acf-field-wysiwyg.php:430
+#: includes/fields/class-acf-field-wysiwyg.php:419
 msgid "Tabs"
 msgstr "Taburi"
 
-#: includes/fields/class-acf-field-wysiwyg.php:435
+#: includes/fields/class-acf-field-wysiwyg.php:424
 msgid "Visual & Text"
 msgstr "Vizual & Text"
 
-#: includes/fields/class-acf-field-wysiwyg.php:436
+#: includes/fields/class-acf-field-wysiwyg.php:425
 msgid "Visual Only"
 msgstr "Doar Vizual"
 
-#: includes/fields/class-acf-field-wysiwyg.php:437
+#: includes/fields/class-acf-field-wysiwyg.php:426
 msgid "Text Only"
 msgstr "Doar Text"
 
-#: includes/fields/class-acf-field-wysiwyg.php:444
+#: includes/fields/class-acf-field-wysiwyg.php:433
 msgid "Toolbar"
 msgstr "Bară de instrumente"
 
-#: includes/fields/class-acf-field-wysiwyg.php:454
+#: includes/fields/class-acf-field-wysiwyg.php:443
 msgid "Show Media Upload Buttons?"
-msgstr "Arată Butoanele de Încărcare a fișierelor Media"
+msgstr "Arată Butoanele de Încărcare a fișierelor Media?"
 
-#: includes/fields/class-acf-field-wysiwyg.php:464
+#: includes/fields/class-acf-field-wysiwyg.php:453
 msgid "Delay initialization?"
 msgstr ""
 
-#: includes/fields/class-acf-field-wysiwyg.php:465
+#: includes/fields/class-acf-field-wysiwyg.php:454
 msgid "TinyMCE will not be initalized until field is clicked"
 msgstr ""
 
 #: includes/forms/form-comment.php:166 includes/forms/form-post.php:303
-#: pro/admin/admin-options-page.php:304
+#: pro/admin/admin-options-page.php:308
 msgid "Edit field group"
 msgstr "Editează Grupul de Câmpuri"
 
@@ -2609,46 +2733,8 @@ msgstr "Actualizează"
 msgid "Post updated"
 msgstr "Articol Actualizat"
 
-#: includes/forms/form-front.php:229
+#: includes/forms/form-front.php:230
 msgid "Spam Detected"
-msgstr ""
-
-#: includes/input.php:259
-msgid "Expand Details"
-msgstr "Extinde Detaliile"
-
-#: includes/input.php:260
-msgid "Collapse Details"
-msgstr "Închide Detaliile"
-
-#: includes/input.php:261
-msgid "Validation successful"
-msgstr "Validare a fost făcută cu succes"
-
-#: includes/input.php:262 includes/validation.php:285
-#: includes/validation.php:296
-msgid "Validation failed"
-msgstr "Validarea a eșuat"
-
-#: includes/input.php:263
-msgid "1 field requires attention"
-msgstr ""
-
-#: includes/input.php:264
-#, php-format
-msgid "%d fields require attention"
-msgstr ""
-
-#: includes/input.php:265
-msgid "Restricted"
-msgstr ""
-
-#: includes/input.php:266
-msgid "Are you sure?"
-msgstr ""
-
-#: includes/input.php:270
-msgid "Cancel"
 msgstr ""
 
 #: includes/locations.php:93 includes/locations/class-acf-location-post.php:27
@@ -2662,6 +2748,14 @@ msgstr "Pagina"
 #: includes/locations.php:96
 msgid "Forms"
 msgstr "Formulare"
+
+#: includes/locations.php:247
+msgid "is equal to"
+msgstr "este egal cu"
+
+#: includes/locations.php:248
+msgid "is not equal to"
+msgstr "nu este egal cu"
 
 #: includes/locations/class-acf-location-attachment.php:27
 msgid "Attachment"
@@ -2733,23 +2827,23 @@ msgstr "Format Implicit"
 msgid "Page Type"
 msgstr "Tipul Pagini"
 
-#: includes/locations/class-acf-location-page-type.php:145
+#: includes/locations/class-acf-location-page-type.php:146
 msgid "Front Page"
 msgstr "Pagina principală"
 
-#: includes/locations/class-acf-location-page-type.php:146
+#: includes/locations/class-acf-location-page-type.php:147
 msgid "Posts Page"
 msgstr "Pagina Articolelor"
 
-#: includes/locations/class-acf-location-page-type.php:147
+#: includes/locations/class-acf-location-page-type.php:148
 msgid "Top Level Page (no parent)"
 msgstr "Pagina primului nivel (fără părinte)"
 
-#: includes/locations/class-acf-location-page-type.php:148
+#: includes/locations/class-acf-location-page-type.php:149
 msgid "Parent Page (has children)"
 msgstr "Pagina părinte (are succesori)"
 
-#: includes/locations/class-acf-location-page-type.php:149
+#: includes/locations/class-acf-location-page-type.php:150
 msgid "Child Page (has parent)"
 msgstr "Pagina Succesor (are părinte)"
 
@@ -2773,10 +2867,6 @@ msgstr "Taxonomia Articolului"
 msgid "Post Template"
 msgstr ""
 
-#: includes/locations/class-acf-location-taxonomy.php:27
-msgid "Taxonomy Term"
-msgstr "Termenul Taxonomiei"
-
 #: includes/locations/class-acf-location-user-form.php:27
 msgid "User Form"
 msgstr "Formularul Utilizatorului"
@@ -2797,16 +2887,6 @@ msgstr "Rolul Utilizatorului"
 msgid "Widget"
 msgstr "Piesă"
 
-#: includes/media.php:55
-msgctxt "verb"
-msgid "Edit"
-msgstr ""
-
-#: includes/media.php:56
-msgctxt "verb"
-msgid "Update"
-msgstr ""
-
 #: includes/validation.php:364
 #, php-format
 msgid "%s value is required"
@@ -2817,11 +2897,11 @@ msgstr "%s valoarea este obligatorie"
 msgid "Advanced Custom Fields PRO"
 msgstr "Câmpuri Avansate Personalizate PRO"
 
-#: pro/admin/admin-options-page.php:196
+#: pro/admin/admin-options-page.php:200
 msgid "Publish"
 msgstr "Publică"
 
-#: pro/admin/admin-options-page.php:202
+#: pro/admin/admin-options-page.php:206
 #, php-format
 msgid ""
 "No Custom Field Groups found for this options page. <a href=\"%s\">Create a "
@@ -2835,23 +2915,23 @@ msgid "<b>Error</b>. Could not connect to update server"
 msgstr "<b>Eroare</b>. Conexiunea cu servărul a fost pierdută"
 
 #: pro/admin/admin-settings-updates.php:162
-#: pro/admin/views/html-settings-updates.php:17
+#: pro/admin/views/html-settings-updates.php:13
 msgid "Updates"
 msgstr "Actualizări"
 
-#: pro/admin/views/html-settings-updates.php:11
+#: pro/admin/views/html-settings-updates.php:7
 msgid "Deactivate License"
 msgstr "Dezactivează Licența"
 
-#: pro/admin/views/html-settings-updates.php:11
+#: pro/admin/views/html-settings-updates.php:7
 msgid "Activate License"
 msgstr "Activează Licența"
 
-#: pro/admin/views/html-settings-updates.php:21
+#: pro/admin/views/html-settings-updates.php:17
 msgid "License Information"
 msgstr ""
 
-#: pro/admin/views/html-settings-updates.php:24
+#: pro/admin/views/html-settings-updates.php:20
 #, php-format
 msgid ""
 "To unlock updates, please enter your license key below. If you don't have a "
@@ -2859,103 +2939,103 @@ msgid ""
 "a>."
 msgstr ""
 
-#: pro/admin/views/html-settings-updates.php:33
+#: pro/admin/views/html-settings-updates.php:29
 msgid "License Key"
 msgstr "Cod de activare"
 
-#: pro/admin/views/html-settings-updates.php:65
+#: pro/admin/views/html-settings-updates.php:61
 msgid "Update Information"
 msgstr "Actualizează infromațiile"
 
-#: pro/admin/views/html-settings-updates.php:72
+#: pro/admin/views/html-settings-updates.php:68
 msgid "Current Version"
 msgstr "Versiunea curentă"
 
-#: pro/admin/views/html-settings-updates.php:80
+#: pro/admin/views/html-settings-updates.php:76
 msgid "Latest Version"
 msgstr "Ultima versiune"
 
-#: pro/admin/views/html-settings-updates.php:88
+#: pro/admin/views/html-settings-updates.php:84
 msgid "Update Available"
 msgstr "Sunt disponibile actualizări"
 
-#: pro/admin/views/html-settings-updates.php:96
+#: pro/admin/views/html-settings-updates.php:92
 msgid "Update Plugin"
 msgstr "Actualizează Modulul"
 
-#: pro/admin/views/html-settings-updates.php:98
+#: pro/admin/views/html-settings-updates.php:94
 msgid "Please enter your license key above to unlock updates"
 msgstr ""
 "Te rog sa introduci codul de activare în câmpul de mai sus pentru a permite "
 "actualizări"
 
-#: pro/admin/views/html-settings-updates.php:104
+#: pro/admin/views/html-settings-updates.php:100
 msgid "Check Again"
 msgstr "Verifică din nou"
 
-#: pro/admin/views/html-settings-updates.php:121
+#: pro/admin/views/html-settings-updates.php:117
 msgid "Upgrade Notice"
 msgstr "Anunț Actualizări"
 
 #: pro/fields/class-acf-field-clone.php:25
 msgctxt "noun"
 msgid "Clone"
-msgstr ""
+msgstr "Clonează"
 
-#: pro/fields/class-acf-field-clone.php:824
+#: pro/fields/class-acf-field-clone.php:812
 msgid "Select one or more fields you wish to clone"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:841
+#: pro/fields/class-acf-field-clone.php:829
 msgid "Display"
 msgstr "Arată"
 
-#: pro/fields/class-acf-field-clone.php:842
+#: pro/fields/class-acf-field-clone.php:830
 msgid "Specify the style used to render the clone field"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:847
+#: pro/fields/class-acf-field-clone.php:835
 msgid "Group (displays selected fields in a group within this field)"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:848
+#: pro/fields/class-acf-field-clone.php:836
 msgid "Seamless (replaces this field with selected fields)"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:869
+#: pro/fields/class-acf-field-clone.php:857
 #, php-format
 msgid "Labels will be displayed as %s"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:872
+#: pro/fields/class-acf-field-clone.php:860
 msgid "Prefix Field Labels"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:883
+#: pro/fields/class-acf-field-clone.php:871
 #, php-format
 msgid "Values will be saved as %s"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:886
+#: pro/fields/class-acf-field-clone.php:874
 msgid "Prefix Field Names"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:1004
+#: pro/fields/class-acf-field-clone.php:992
 msgid "Unknown field"
-msgstr ""
+msgstr "Câmp necunoscut"
 
-#: pro/fields/class-acf-field-clone.php:1043
+#: pro/fields/class-acf-field-clone.php:1031
 msgid "Unknown field group"
-msgstr ""
+msgstr "Grup de câmpuri necunoscut"
 
-#: pro/fields/class-acf-field-clone.php:1047
+#: pro/fields/class-acf-field-clone.php:1035
 #, php-format
 msgid "All fields from %s field group"
 msgstr ""
 
 #: pro/fields/class-acf-field-flexible-content.php:31
 #: pro/fields/class-acf-field-repeater.php:174
-#: pro/fields/class-acf-field-repeater.php:478
+#: pro/fields/class-acf-field-repeater.php:462
 msgid "Add Row"
 msgstr "Adaugă o linie nouă"
 
@@ -3004,57 +3084,57 @@ msgstr "Conținutul Flexibil necesită cel puțin 1 schemă"
 msgid "Click the \"%s\" button below to start creating your layout"
 msgstr "Apasă butonul  \"%s\" de mai jos pentru a începe să îți creezi schema"
 
-#: pro/fields/class-acf-field-flexible-content.php:408
+#: pro/fields/class-acf-field-flexible-content.php:406
 msgid "Add layout"
 msgstr "Adaugă Schema"
 
-#: pro/fields/class-acf-field-flexible-content.php:409
+#: pro/fields/class-acf-field-flexible-content.php:407
 msgid "Remove layout"
 msgstr "Înlătură Schema"
 
-#: pro/fields/class-acf-field-flexible-content.php:410
-#: pro/fields/class-acf-field-repeater.php:304
+#: pro/fields/class-acf-field-flexible-content.php:408
+#: pro/fields/class-acf-field-repeater.php:298
 msgid "Click to toggle"
 msgstr ""
 
-#: pro/fields/class-acf-field-flexible-content.php:556
+#: pro/fields/class-acf-field-flexible-content.php:548
 msgid "Reorder Layout"
 msgstr "Reordonează Schema"
 
-#: pro/fields/class-acf-field-flexible-content.php:556
+#: pro/fields/class-acf-field-flexible-content.php:548
 msgid "Reorder"
 msgstr "Reordonează"
 
-#: pro/fields/class-acf-field-flexible-content.php:557
+#: pro/fields/class-acf-field-flexible-content.php:549
 msgid "Delete Layout"
 msgstr "Șterge Schema"
 
-#: pro/fields/class-acf-field-flexible-content.php:558
+#: pro/fields/class-acf-field-flexible-content.php:550
 msgid "Duplicate Layout"
 msgstr "Copiază Schema"
 
-#: pro/fields/class-acf-field-flexible-content.php:559
+#: pro/fields/class-acf-field-flexible-content.php:551
 msgid "Add New Layout"
 msgstr "Adaugă o Nouă Schemă"
 
-#: pro/fields/class-acf-field-flexible-content.php:630
+#: pro/fields/class-acf-field-flexible-content.php:622
 msgid "Min"
 msgstr "Min"
 
-#: pro/fields/class-acf-field-flexible-content.php:643
+#: pro/fields/class-acf-field-flexible-content.php:635
 msgid "Max"
 msgstr "Max"
 
-#: pro/fields/class-acf-field-flexible-content.php:670
-#: pro/fields/class-acf-field-repeater.php:474
+#: pro/fields/class-acf-field-flexible-content.php:662
+#: pro/fields/class-acf-field-repeater.php:458
 msgid "Button Label"
 msgstr "Buton Etichetă"
 
-#: pro/fields/class-acf-field-flexible-content.php:679
+#: pro/fields/class-acf-field-flexible-content.php:671
 msgid "Minimum Layouts"
 msgstr "Scheme Minime"
 
-#: pro/fields/class-acf-field-flexible-content.php:688
+#: pro/fields/class-acf-field-flexible-content.php:680
 msgid "Maximum Layouts"
 msgstr "Scheme Maxime"
 
@@ -3138,27 +3218,27 @@ msgstr "Numărul minim de linii a fost atins ({min} rows)"
 msgid "Maximum rows reached ({max} rows)"
 msgstr "Numărul maxim de linii a fost atins ({max} rows)"
 
-#: pro/fields/class-acf-field-repeater.php:349
+#: pro/fields/class-acf-field-repeater.php:335
 msgid "Add row"
 msgstr "Adaugă linie"
 
-#: pro/fields/class-acf-field-repeater.php:350
+#: pro/fields/class-acf-field-repeater.php:336
 msgid "Remove row"
 msgstr "Înlătură linie"
 
-#: pro/fields/class-acf-field-repeater.php:427
+#: pro/fields/class-acf-field-repeater.php:411
 msgid "Collapsed"
 msgstr ""
 
-#: pro/fields/class-acf-field-repeater.php:428
+#: pro/fields/class-acf-field-repeater.php:412
 msgid "Select a sub field to show when row is collapsed"
 msgstr ""
 
-#: pro/fields/class-acf-field-repeater.php:438
+#: pro/fields/class-acf-field-repeater.php:422
 msgid "Minimum Rows"
 msgstr "Numărul minim de Linii"
 
-#: pro/fields/class-acf-field-repeater.php:448
+#: pro/fields/class-acf-field-repeater.php:432
 msgid "Maximum Rows"
 msgstr "Numărul maxim de Linii"
 
@@ -3181,6 +3261,9 @@ msgid ""
 "\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
 "\">details & pricing</a>."
 msgstr ""
+"Pentru a activa actualizările, este nevoie să introduci licența în pagina <a "
+"href=\"%s\">de actualizări</a>. Dacă nu ai o licență, verifică aici <a href="
+"\"%s\">detaliile și prețul</a>."
 
 #. Plugin URI of the plugin/theme
 msgid "https://www.advancedcustomfields.com/"
@@ -3193,6 +3276,59 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://www.elliotcondon.com/"
 msgstr ""
+
+#~ msgid "No toggle fields available"
+#~ msgstr "Nu sunt câmpuri de comutare disponibile"
+
+#~ msgid "Parent fields"
+#~ msgstr "Câpuri parinte"
+
+#~ msgid "Sibling fields"
+#~ msgstr "Câmpuri copil"
+
+#~ msgid "Export Field Groups to PHP"
+#~ msgstr "Exportă Grupurile de Câmpuri în PHP"
+
+#~ msgid "Download export file"
+#~ msgstr "Descarcă fișierul de export"
+
+#~ msgid "Generate export code"
+#~ msgstr "Generează codul de export"
+
+#~ msgid "Import"
+#~ msgstr "Importă"
+
+#~ msgid "Locating"
+#~ msgstr "Localizare"
+
+#~ msgid "No embed found for the given URL."
+#~ msgstr "Nu a fost găsit nici un oembed pentru URL introdus."
+
+#~ msgid ""
+#~ "The tab field will display incorrectly when added to a Table style "
+#~ "repeater field or flexible content field layout"
+#~ msgstr ""
+#~ "Câmpul Tab nu va fi afișat corect când vei adauga un Câmp de tipul Tabel "
+#~ "de stiluri repetitiv sau un Câmp de tipul Schemă de Conținut Flexibil"
+
+#~ msgid ""
+#~ "Use \"Tab Fields\" to better organize your edit screen by grouping fields "
+#~ "together."
+#~ msgstr ""
+#~ "Folosește  \"Tab Fields\" pentru o mai ușoară organizare și grupare a "
+#~ "câmpurilor."
+
+#~ msgid ""
+#~ "All fields following this \"tab field\" (or until another \"tab field\" "
+#~ "is defined) will be grouped together using this field's label as the tab "
+#~ "heading."
+#~ msgstr ""
+#~ "Toate câmpurile care urmează după acest  \"tab field\" (sau până când un "
+#~ "alt  \"tab field\" este definit) vor fi grupate împreună folosind "
+#~ "eticheta acestui câmp ca fiind Titlul Tabului."
+
+#~ msgid "Taxonomy Term"
+#~ msgstr "Termenul Taxonomiei"
 
 #~ msgid "See what's new in"
 #~ msgstr "Vezi ce este nou în"

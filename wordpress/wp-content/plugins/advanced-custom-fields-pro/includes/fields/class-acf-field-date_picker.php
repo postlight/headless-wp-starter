@@ -29,49 +29,6 @@ class acf_field_date_picker extends acf_field {
 			'return_format'		=> 'd/m/Y',
 			'first_day'			=> 1
 		);
-		$this->l10n = array(
-			'closeText'			=> _x('Done',	'Date Picker JS closeText',		'acf'),
-			'currentText'		=> _x('Today',	'Date Picker JS currentText',	'acf'),
-			'nextText'			=> _x('Next',	'Date Picker JS nextText',		'acf'),
-			'prevText'			=> _x('Prev',	'Date Picker JS prevText',		'acf'),
-			'weekHeader'		=> _x('Wk',		'Date Picker JS weekHeader',	'acf'),
-		);
-		
-		
-		// actions
-		add_action('init', array($this, 'init'));
-		
-	}
-	
-	
-	/*
-	*  init
-	*
-	*  This function is run on the 'init' action to set the field's $l10n data. Before the init action, 
-	*  access to the $wp_locale variable is not possible.
-	*
-	*  @type	action (init)
-	*  @date	3/09/13
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-	
-	function init() {
-		
-		// globals
-		global $wp_locale;
-		
-		
-		// append
-		$this->l10n = array_merge($this->l10n, array(
-			'monthNames'        => array_values( $wp_locale->month ),
-			'monthNamesShort'   => array_values( $wp_locale->month_abbrev ),
-			'dayNames'          => array_values( $wp_locale->weekday ),
-			'dayNamesMin'       => array_values( $wp_locale->weekday_initial ),
-			'dayNamesShort'     => array_values( $wp_locale->weekday_abbrev )
-		));
-		
 	}
 	
 	
@@ -91,16 +48,32 @@ class acf_field_date_picker extends acf_field {
 	function input_admin_enqueue_scripts() {
 		
 		// bail ealry if no enqueue
-	   	if( !acf_get_setting('enqueue_datepicker') ) return;
+	   	if( !acf_get_setting('enqueue_datepicker') ) {
+		   	return;
+	   	}
 	   	
+	   	// localize
+	   	global $wp_locale;
+	   	acf_localize_data(array(
+		   	'datePickerL10n'	=> array(
+				'closeText'			=> _x('Done',	'Date Picker JS closeText',		'acf'),
+				'currentText'		=> _x('Today',	'Date Picker JS currentText',	'acf'),
+				'nextText'			=> _x('Next',	'Date Picker JS nextText',		'acf'),
+				'prevText'			=> _x('Prev',	'Date Picker JS prevText',		'acf'),
+				'weekHeader'		=> _x('Wk',		'Date Picker JS weekHeader',	'acf'),
+				'monthNames'        => array_values( $wp_locale->month ),
+				'monthNamesShort'   => array_values( $wp_locale->month_abbrev ),
+				'dayNames'          => array_values( $wp_locale->weekday ),
+				'dayNamesMin'       => array_values( $wp_locale->weekday_initial ),
+				'dayNamesShort'     => array_values( $wp_locale->weekday_abbrev )
+			)
+	   	));
 	   	
 		// script
 		wp_enqueue_script('jquery-ui-datepicker');
 		
-		
 		// style
-		wp_enqueue_style('acf-datepicker', acf_get_dir('assets/inc/datepicker/jquery-ui.min.css'), '', '1.11.4' );
-		
+		wp_enqueue_style('acf-datepicker', acf_get_url('assets/inc/datepicker/jquery-ui.min.css'), array(), '1.11.4' );
 	}
 	
 	

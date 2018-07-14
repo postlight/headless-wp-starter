@@ -52,24 +52,33 @@
 .acf-field .acf-input > p.description {
   margin-top: 5px;
 }
-.acf-field .acf-error-message {
-  background: #F55E4F;
-  color: #fff;
-  margin: 0 0 10px;
-  display: inline-block;
-  border-radius: 3px;
-  border-left: none;
+.acf-field .acf-notice {
+  margin: 0 0 15px;
+  background: #edf2ff;
+  color: #2183b9;
+  border: none;
 }
-.acf-field .acf-error-message:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: transparent 5px solid;
-  border-top-color: #F55E4F;
-  position: absolute;
-  bottom: -10px;
-  left: 10px;
+.acf-field .acf-notice .acf-notice-dismiss {
+  background: transparent;
+  color: inherit;
+}
+.acf-field .acf-notice .acf-notice-dismiss:hover {
+  background: #fff;
+}
+.acf-field .acf-notice.-dismiss {
+  padding-right: 40px;
+}
+.acf-field .acf-notice.-error {
+  background: #ffe6e6;
+  color: #d12626;
+}
+.acf-field .acf-notice.-success {
+  background: #eefbe8;
+  color: #32a23b;
+}
+.acf-field .acf-notice.-warning {
+  background: #fff3e6;
+  color: #d16226;
 }
 .acf-fieldtd,
 .acf-fieldtr {
@@ -216,7 +225,7 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-label {
 html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
   float: right;
 }
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 640px) {
   .acf-fields.-left > .acf-field:before {
     display: none;
   }
@@ -265,9 +274,6 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 *--------------------------------------------------------------------------------------------*/
 .acf-postbox {
   position: relative;
-  /* position high */
-  /* inside */
-  /* hndle */
 }
 #acf_after_title-sortables .acf-postbox {
   margin: 20px 0 0;
@@ -293,8 +299,7 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 .acf-postbox > .hndle .acf-hndle-cog:hover {
   color: #777777;
 }
-.acf-postbox > .hndle:hover .acf-hndle-cog,
-.acf-postbox > .hndle.hover .acf-hndle-cog {
+.acf-postbox:hover > .hndle .acf-hndle-cog {
   display: block;
 }
 .acf-postbox .acf-replace-with-fields {
@@ -777,7 +782,7 @@ html[dir="rtl"] ul.acf-checkbox-list input[type="radio"] {
   background: #48a8f4;
 }
 .acf-button-group input {
-  display: none;
+  display: none !important;
 }
 .acf-button-group label {
   margin: 0 0 0 -1px;
@@ -788,8 +793,14 @@ html[dir="rtl"] ul.acf-checkbox-list input[type="radio"] {
 .acf-button-group label:first-child {
   border-radius: 3px 0 0 3px;
 }
+html[dir="rtl"] .acf-button-group label:first-child {
+  border-radius: 0 3px 3px 0;
+}
 .acf-button-group label:last-child {
   border-radius: 0 3px 3px 0;
+}
+html[dir="rtl"] .acf-button-group label:last-child {
+  border-radius: 3px 0 0 3px;
 }
 .acf-button-group label:only-child {
   border-radius: 3px;
@@ -1285,6 +1296,9 @@ html[dir="rtl"] .acf-relationship .selection .values .acf-icon {
   outline: none;
   box-shadow: none;
 }
+.acf-tab-group li a:empty {
+  display: none;
+}
 html[dir="rtl"] .acf-tab-group li {
   margin: 0 0 0 0.5em;
 }
@@ -1323,7 +1337,7 @@ html[dir="rtl"] .acf-tab-group li {
   /* mobile */
   /* rtl */
 }
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 640px) {
   .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
     padding-left: 10px;
   }
@@ -1565,8 +1579,7 @@ html[dir="rtl"] .form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
   border-bottom: #DFDFDF solid 1px;
   padding: 5px 10px;
 }
-.acf-oembed .title h4,
-.acf-oembed .title input[type="text"] {
+.acf-oembed .title .input-search {
   margin: 0;
   font-size: 14px;
   line-height: 30px;
@@ -1578,15 +1591,8 @@ html[dir="rtl"] .form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
   font-family: inherit;
   cursor: text;
 }
-.acf-oembed .title .search {
-  height: auto;
-  border: 0 none;
-}
 .acf-oembed .title .acf-actions {
   padding: 6px;
-}
-.acf-oembed .title:hover .acf-actions {
-  display: block;
 }
 .acf-oembed .canvas {
   position: relative;
@@ -1607,28 +1613,15 @@ html[dir="rtl"] .form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -21px 0 0 -21px;
+  transform: translate(-50%, -50%);
   z-index: 0;
   height: 42px;
   width: 42px;
   font-size: 42px;
   color: #999;
 }
-.acf-oembed .canvas .canvas-loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.acf-oembed .canvas .acf-loading-overlay {
   background: rgba(255, 255, 255, 0.9);
-  display: none;
-  z-index: 2;
-}
-.acf-oembed .canvas .canvas-loading i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -10px 0 0 -10px;
 }
 .acf-oembed .canvas .canvas-error {
   position: absolute;
@@ -1645,41 +1638,13 @@ html[dir="rtl"] .form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
   display: inline;
 }
 .acf-oembed.has-value .canvas {
-  min-height: 0;
+  min-height: 50;
 }
-/* states */
-.acf-oembed .title-value {
-  display: none;
+.acf-oembed.has-value .input-search {
+  font-weight: bold;
 }
-.acf-oembed .title-search {
+.acf-oembed.has-value .title:hover .acf-actions {
   display: block;
-}
-.acf-oembed.has-value .title-value {
-  display: block;
-}
-.acf-oembed.has-value .title-search {
-  display: none;
-}
-.acf-oembed.has-value .canvas .acf-icon {
-  display: none;
-}
-.acf-oembed.is-editing .title-value {
-  display: none;
-}
-.acf-oembed.is-editing .title-search {
-  display: block;
-}
-.acf-oembed.is-loading .canvas-loading {
-  display: block;
-}
-.acf-oembed.is-loading .title .acf-icon {
-  display: none;
-}
-.acf-oembed.has-error .canvas-error {
-  display: block;
-}
-.acf-oembed.has-error .canvas .acf-icon {
-  display: none;
 }
 /*--------------------------------------------------------------------------------------------
 *
@@ -1865,7 +1830,7 @@ html[dir="rtl"] .acf-file-uploader .file-info {
 .acf-taxonomy-field:hover .acf-actions {
   display: block;
 }
-.acf-taxonomy-field[data-type="select"] .acf-actions {
+.acf-taxonomy-field[data-ftype="select"] .acf-actions {
   padding: 0;
   margin: -9px;
 }
@@ -2187,7 +2152,6 @@ tr.acf-accordion + tr.acf-accordion {
 /* misc */
 .media-modal {
   /* compat-item */
-  /* fix % margin which causes .acf-uploadedTo to drop down below select */
   /* allow line breaks in upload error */
   /* fix required span */
   /* sidebar */
@@ -2196,18 +2160,6 @@ tr.acf-accordion + tr.acf-accordion {
 .media-modal .compat-field-acf-form-data,
 .media-modal .compat-field-acf-blank {
   display: none !important;
-}
-.media-modal select.attachment-filters {
-  margin-right: 6px !important;
-  vertical-align: middle;
-}
-.media-modal .acf-uploadedTo {
-  line-height: 28px;
-  height: 28px;
-  display: inline-block;
-  position: relative;
-  margin: 11px 6px 0 0;
-  vertical-align: middle;
 }
 .media-modal .upload-error-message {
   white-space: pre-wrap;
@@ -2256,6 +2208,7 @@ tr.acf-accordion + tr.acf-accordion {
   line-height: 18px;
   color: #AAAAAA;
   font-size: 12px;
+  /* mobile sm */
 }
 .media-modal .acf-expand-details:focus,
 .media-modal .acf-expand-details:active {
@@ -2281,6 +2234,11 @@ tr.acf-accordion + tr.acf-accordion {
 }
 .media-modal .acf-expand-details .is-closed {
   display: block;
+}
+@media (max-width: 640px) {
+  .media-modal .acf-expand-details {
+    display: none;
+  }
 }
 /* expanded */
 .media-modal.acf-expanded {
@@ -2365,6 +2323,18 @@ tr.acf-accordion + tr.acf-accordion {
 .acf-media-modal .media-embed .setting.link-to {
   display: none;
 }
+@media screen and (min-width: 1024px) {
+  .acf-media-modal .media-modal-content .media-frame .media-toolbar-secondary {
+    max-width: none;
+  }
+  .acf-media-modal .media-modal-content .media-frame .media-toolbar-secondary select.attachment-filters {
+    width: auto;
+    min-width: 150px;
+    max-width: none;
+    margin: 11px 6px 0 0;
+    vertical-align: middle;
+  }
+}
 /*---------------------------------------------------------------------------------------------
 *
 *  ACF Media Model (Select Mode)
@@ -2384,7 +2354,6 @@ tr.acf-accordion + tr.acf-accordion {
   /* hide elements */
   /* full width */
   /* tidy up incorrect distance */
-  /* WP4 */
   /* title box shadow (to match media grid) */
   /* sidebar */
   /* mobile md */
@@ -2405,9 +2374,6 @@ tr.acf-accordion + tr.acf-accordion {
   right: 0;
 }
 .acf-media-modal.-edit .media-frame-content {
-  top: 56px;
-}
-body.major-4 .acf-media-modal.-edit .media-frame-content {
   top: 50px;
 }
 .acf-media-modal.-edit .media-frame-title {
@@ -2493,7 +2459,7 @@ body.major-4 .acf-media-modal.-edit .media-frame-content {
 }
 .form-table > tbody > .acf-field > .acf-label {
   padding: 20px 10px 20px 0;
-  width: 200px;
+  width: 210px;
   /* rtl */
 }
 html[dir="rtl"] .form-table > tbody > .acf-field > .acf-label {
@@ -2520,18 +2486,74 @@ html[dir="rtl"] .form-table > tbody > .acf-tab-wrap td {
 .form-table > tbody .form-table th.acf-th {
   width: auto;
 }
+#your-profile,
+#createuser {
+  /* override for user css */
+  /* allow sub fields to display correctly */
+}
+#your-profile .acf-field input[type="text"],
+#createuser .acf-field input[type="text"],
+#your-profile .acf-field input[type="password"],
+#createuser .acf-field input[type="password"],
+#your-profile .acf-field input[type="number"],
+#createuser .acf-field input[type="number"],
+#your-profile .acf-field input[type="search"],
+#createuser .acf-field input[type="search"],
+#your-profile .acf-field input[type="email"],
+#createuser .acf-field input[type="email"],
+#your-profile .acf-field input[type="url"],
+#createuser .acf-field input[type="url"],
+#your-profile .acf-field select,
+#createuser .acf-field select {
+  max-width: 25em;
+}
+#your-profile .acf-field textarea,
+#createuser .acf-field textarea {
+  max-width: 500px;
+}
+#your-profile .acf-field .acf-field input[type="text"],
+#createuser .acf-field .acf-field input[type="text"],
+#your-profile .acf-field .acf-field input[type="password"],
+#createuser .acf-field .acf-field input[type="password"],
+#your-profile .acf-field .acf-field input[type="number"],
+#createuser .acf-field .acf-field input[type="number"],
+#your-profile .acf-field .acf-field input[type="search"],
+#createuser .acf-field .acf-field input[type="search"],
+#your-profile .acf-field .acf-field input[type="email"],
+#createuser .acf-field .acf-field input[type="email"],
+#your-profile .acf-field .acf-field input[type="url"],
+#createuser .acf-field .acf-field input[type="url"],
+#your-profile .acf-field .acf-field textarea,
+#createuser .acf-field .acf-field textarea,
+#your-profile .acf-field .acf-field select,
+#createuser .acf-field .acf-field select {
+  max-width: none;
+}
+#registerform h2 {
+  margin: 1em 0;
+}
+#registerform .acf-field .acf-label {
+  margin-bottom: 0;
+}
+#registerform .acf-field .acf-label label {
+  font-weight: normal;
+  font-size: 14px;
+}
+#registerform p.submit {
+  text-align: right;
+}
 /*--------------------------------------------------------------------------------------------
 *
 *	Term
 *
 *--------------------------------------------------------------------------------------------*/
-.acf-addterm-fields {
+#acf-term-fields {
   padding-right: 5%;
 }
-.acf-addterm-fields > .acf-field > .acf-label {
+#acf-term-fields > .acf-field > .acf-label {
   margin: 0;
 }
-.acf-addterm-fields > .acf-field > .acf-label label {
+#acf-term-fields > .acf-field > .acf-label label {
   font-size: 12px;
   font-weight: normal;
 }
@@ -2585,9 +2607,6 @@ p.submit .acf-spinner {
 .acf-widget-fields > .acf-field .acf-label label {
   font-weight: normal;
   margin: 0;
-}
-.widget form > .acf-error-message {
-  margin-top: 15px;
 }
 /*--------------------------------------------------------------------------------------------
 *
@@ -2659,3 +2678,31 @@ p.submit .acf-spinner {
 .acf-postbox.acf-hidden {
   display: none !important;
 }
+/*--------------------------------------------------------------------------------------------
+*
+*	Gutenberg
+*
+*--------------------------------------------------------------------------------------------*/
+/*
+#editor {
+	
+	.edit-post-layout__metaboxes {
+		//border-top: none;
+	}
+	
+	.edit-post-meta-boxes-area {
+		max-width: 80%;
+		
+		.postbox {
+			border: #e2e4e7 solid 1px;
+			border-bottom: none;
+			margin: 20px 0;
+		}
+		
+		input {
+			max-width: none;
+		}
+	}
+
+}
+*/

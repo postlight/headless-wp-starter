@@ -77,6 +77,7 @@ class acf_location_post extends acf_location {
 		
 		// get post types
 		$post_types = acf_get_post_types(array(
+			'show_ui'	=> 1,
 			'exclude'	=> array('page', 'attachment')
 		));
 		

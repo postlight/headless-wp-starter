@@ -35,7 +35,6 @@ class acf_field_wysiwyg extends acf_field {
     	
     	// add acf_the_content filters
     	$this->add_filters();
-    	
 	}
 	
 	
@@ -166,67 +165,55 @@ class acf_field_wysiwyg extends acf_field {
    	
    	
    	/*
-   	*  input_admin_footer
-   	*
-   	*  description
-   	*
-   	*  @type	function
-   	*  @date	6/03/2014
-   	*  @since	5.0.0
-   	*
-   	*  @param	$post_id (int)
-   	*  @return	$post_id (int)
-   	*/
-   	
-   	function input_admin_footer() {
-	   	
-	   	// vars
-		$json = array();
+	*  input_admin_enqueue_scripts
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	16/12/2015
+	*  @since	5.3.2
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function input_admin_enqueue_scripts() {
+		
+		// vars
+		$data = array();
 		$toolbars = $this->get_toolbars();
-
+		
 		
 		// bail ealry if no toolbars
 		if( empty($toolbars) ) {
-			
 			return;
-			
 		}
 		
-			
-		// loop through toolbars
+		
+		// loop
 		foreach( $toolbars as $label => $rows ) {
 			
 			// vars
-			$label = sanitize_title( $label );
-			$label = str_replace('-', '_', $label);
+			$key = $label;
+			$key = sanitize_title( $key );
+			$key = str_replace('-', '_', $key);
 			
 			
-			// append to $json
-			$json[ $label ] = array();
+			// append
+			$data[ $key ] = array();
 			
-			
-			// convert to strings
-			if( !empty($rows) ) {
-				
+			if( $rows ) {
 				foreach( $rows as $i => $row ) { 
-					
-					$json[ $label ][ $i ] = implode(',', $row);
-					
+					$data[ $key ][ $i ] = implode(',', $row);
 				}
-				
 			}
-			
 		}
 		
-
-?>
-<script type="text/javascript">
-	if( acf ) acf.tinymce.toolbars = <?php echo wp_json_encode($json); ?>;
-</script>
-<?php
-	
-   	}
-   	
+		// localize
+	   	acf_localize_data(array(
+		   	'toolbars'	=> $data
+	   	));
+	}
    	
    	/*
 	*  render_field()
@@ -434,7 +421,12 @@ class acf_field_wysiwyg extends acf_field {
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'toolbar',
-			'choices'		=> $choices
+			'choices'		=> $choices,
+			'conditions'	=> array(
+				'field'		=> 'tabs',
+				'operator'	=> '!=',
+				'value'		=> 'text'
+			)
 		));
 		
 		
@@ -455,6 +447,11 @@ class acf_field_wysiwyg extends acf_field {
 			'name'			=> 'delay',
 			'type'			=> 'true_false',
 			'ui'			=> 1,
+			'conditions'	=> array(
+				'field'		=> 'tabs',
+				'operator'	=> '!=',
+				'value'		=> 'text'
+			)
 		));
 
 	}

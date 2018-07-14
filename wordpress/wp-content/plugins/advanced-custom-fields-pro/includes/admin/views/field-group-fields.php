@@ -8,9 +8,9 @@
 		<li class="li-field-type"><?php _e('Type','acf'); ?></li>
 	</ul>
 	
-	<div class="acf-field-list">
+	<div class="acf-field-list<?php if( !$fields ){ echo ' -empty'; } ?>">
 		
-		<div class="no-fields-message" <?php if( $fields ){ echo 'style="display:none;"'; } ?>>
+		<div class="no-fields-message">
 			<?php _e("No fields. Click the <strong>+ Add Field</strong> button to create your first field.",'acf'); ?>
 		</div>
 		

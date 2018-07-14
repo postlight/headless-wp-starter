@@ -1,37 +1,6 @@
 <?php 
 
 /*
-*  acf_get_field_reference()
-*
-*  This function will find the $field_key that is related to the $field_name.
-*  This is know as the field value reference
-*
-*  @type	function
-*  @since	3.6
-*  @date	29/01/13
-*
-*  @param	$field_name (mixed) the name of the field. eg 'sub_heading'
-*  @param	$post_id (int) the post_id of which the value is saved against
-*  @return	$reference (string)	a string containing the field_key
-*/
-
-function acf_get_field_reference( $field_name, $post_id ) {
-	
-	// vars
-	$field_key = acf_get_metadata( $post_id, $field_name, true );
-	
-	
-	// filter
-	$field_key = apply_filters('acf/get_field_reference', $field_key, $field_name, $post_id);
-	
-	
-	// return
-	return $field_key;
-	
-}
-
-
-/*
 *  get_field()
 *
 *  This function will return a custom field value for a specific field name/key + post_id.

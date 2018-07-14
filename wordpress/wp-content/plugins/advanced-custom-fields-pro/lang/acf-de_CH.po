@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.6.6\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-10-04 14:50+1000\n"
-"PO-Revision-Date: 2017-11-30 16:45+0100\n"
+"PO-Revision-Date: 2018-02-06 10:05+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Raphael Hüni <rafhun@gmail.com>\n"
 "Language: de_CH\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -788,7 +788,7 @@ msgstr "Über dem Feld"
 # @ acf
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:103
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Links neben dem Feld"
 
 # @ acf
@@ -1579,7 +1579,8 @@ msgid "jQuery"
 msgstr "jQuery"
 
 # @ acf
-#: includes/fields.php:149 includes/fields/class-acf-field-button-group.php:177
+#: includes/fields.php:149
+#: includes/fields/class-acf-field-button-group.php:177
 #: includes/fields/class-acf-field-checkbox.php:384
 #: includes/fields/class-acf-field-group.php:474
 #: includes/fields/class-acf-field-radio.php:285
@@ -3085,8 +3086,8 @@ msgid "Validate Email"
 msgstr "E-Mail bestätigen"
 
 # @ acf
-#: includes/forms/form-front.php:103 pro/fields/class-acf-field-gallery.php:573
-#: pro/options-page.php:81
+#: includes/forms/form-front.php:103
+#: pro/fields/class-acf-field-gallery.php:573 pro/options-page.php:81
 msgid "Update"
 msgstr "Aktualisieren"
 

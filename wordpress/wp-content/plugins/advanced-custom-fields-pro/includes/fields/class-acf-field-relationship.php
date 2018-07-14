@@ -33,18 +33,36 @@ class acf_field_relationship extends acf_field {
 			'elements' 			=> array(),
 			'return_format'		=> 'object'
 		);
-		$this->l10n = array(
-			'min'		=> __("Minimum values reached ( {min} values )",'acf'),
-			'max'		=> __("Maximum values reached ( {max} values )",'acf'),
-			'loading'	=> __('Loading','acf'),
-			'empty'		=> __('No matches found','acf'),
-		);
-		
 		
 		// extra
 		add_action('wp_ajax_acf/fields/relationship/query',			array($this, 'ajax_query'));
 		add_action('wp_ajax_nopriv_acf/fields/relationship/query',	array($this, 'ajax_query'));
     	
+	}
+	
+	
+	/*
+	*  input_admin_enqueue_scripts
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	16/12/2015
+	*  @since	5.3.2
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function input_admin_enqueue_scripts() {
+		
+		// localize
+		acf_localize_text(array(
+			//'Minimum values reached ( {min} values )'	=> __('Minimum values reached ( {min} values )', 'acf'),
+			'Maximum values reached ( {max} values )'	=> __('Maximum values reached ( {max} values )', 'acf'),
+			'Loading'									=> __('Loading', 'acf'),
+			'No matches found'							=> __('No matches found', 'acf'),
+	   	));
 	}
 	
 	
@@ -565,10 +583,10 @@ class acf_field_relationship extends acf_field {
 	
 	<div class="selection">
 		<div class="choices">
-			<ul class="acf-bl list"></ul>
+			<ul class="acf-bl list choices-list"></ul>
 		</div>
 		<div class="values">
-			<ul class="acf-bl list">
+			<ul class="acf-bl list values-list">
 			<?php if( !empty($field['value']) ): 
 				
 				// get posts

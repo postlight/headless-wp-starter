@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-06-27 15:33+1000\n"
-"PO-Revision-Date: 2017-06-27 15:33+1000\n"
+"PO-Revision-Date: 2018-02-06 10:06+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -662,7 +662,7 @@ msgstr "Toppjustert"
 
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:117
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Venstrejustert"
 
 #: includes/admin/views/field-group-options.php:70

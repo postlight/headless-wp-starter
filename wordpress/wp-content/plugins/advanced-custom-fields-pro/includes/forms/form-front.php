@@ -618,8 +618,8 @@ class acf_form_front {
 			
 		// render post data
 		acf_form_data(array( 
-			'post_id'	=> $args['post_id'], 
-			'nonce'		=> 'acf_form',
+			'screen'	=> 'acf_form',
+			'post_id'	=> $args['post_id'],
 			'form'		=> acf_encrypt(json_encode($args))
 		));
 		
@@ -634,7 +634,7 @@ class acf_form_front {
 			
 			
 			// render
-			acf_render_fields( $post_id, $fields, $args['field_el'], $args['instruction_placement'] );
+			acf_render_fields( $fields, $post_id, $args['field_el'], $args['instruction_placement'] );
 			
 			
 			// html after fields

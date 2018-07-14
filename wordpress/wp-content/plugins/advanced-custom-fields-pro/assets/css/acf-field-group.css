@@ -58,7 +58,6 @@
   box-shadow: none;
   /* metabox */
   /* links */
-  /* no fields */
   /* table header */
   /* show keys */
   /* fields */
@@ -74,10 +73,6 @@
 #acf-field-group-fields a:focus {
   outline: none;
   box-shadow: none;
-}
-#acf-field-group-fields .no-fields-message {
-  padding: 15px 15px;
-  background: #fff;
 }
 #acf-field-group-fields .li-field-order {
   width: 20%;
@@ -109,6 +104,16 @@
 #acf-field-group-fields .acf-field-list {
   background: #F9F9F9;
   margin-top: -1px;
+  /* no fields */
+  /* empty */
+}
+#acf-field-group-fields .acf-field-list .no-fields-message {
+  padding: 15px 15px;
+  background: #fff;
+  display: none;
+}
+#acf-field-group-fields .acf-field-list.-empty .no-fields-message {
+  display: block;
 }
 /* field object */
 .acf-field-object {
@@ -118,6 +123,20 @@
   /* meta */
   /* handle */
   /* open */
+  /*
+	// debug
+	&[data-save="meta"] {
+		> .handle {
+			border-left: #ffb700 solid 5px !important;
+		}
+	}
+	
+	&[data-save="settings"] {
+		> .handle {
+			border-left: #0ec563 solid 5px !important;
+		}
+	}
+*/
   /* hover */
   /* settings */
   /* conditional logic */
@@ -207,7 +226,8 @@
 .acf-field-object.open > .handle .acf-required {
   color: #fff;
 }
-.acf-field-object:hover > .handle .row-options {
+.acf-field-object:hover > .handle .row-options,
+.acf-field-object.-hover > .handle .row-options {
   visibility: visible;
 }
 .acf-field-object > .settings {
@@ -230,6 +250,7 @@
 }
 .rule-groups .rule-group {
   margin: 0 0 5px;
+  /* Don't allow user to delete the first field group */
 }
 .rule-groups .rule-group h4 {
   margin: 0 0 3px;
@@ -246,14 +267,18 @@
 .rule-groups .rule-group td.remove {
   width: 28px;
   vertical-align: middle;
+}
+.rule-groups .rule-group td.remove a {
   visibility: hidden;
 }
-.rule-groups .rule-group tr:hover td.remove {
+.rule-groups .rule-group tr:hover td.remove a {
   visibility: visible;
 }
-/* Don't allow user to delete the first field group */
-.rule-groups .rule-group:first-child tr:first-child td.remove {
+.rule-groups .rule-group:first-child tr:first-child td.remove a {
   visibility: hidden !important;
+}
+.rule-groups .rule-group select:empty {
+  background: #f8f8f8;
 }
 /*---------------------------------------------------------------------------------------------
 *

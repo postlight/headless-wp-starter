@@ -7,9 +7,9 @@ if( ! class_exists('acf_updates') ) :
 class acf_updates {
 	
 	// vars
-	var $version = '2.2',
+	var $version = '2.3',
 		$plugins = array(),
-		$updates = false,
+		$force_check = false,
 		$dev = 0;
 	
 	
@@ -28,13 +28,16 @@ class acf_updates {
 	
 	function __construct() {
 		
+		// vars
+		$this->force_check = !empty($_GET['force-check']);
+		
+		
 		// append update information to transient
 		add_filter('pre_set_site_transient_update_plugins', array($this, 'modify_plugins_transient'), 10, 1);
 		
 		
 		// modify plugin data visible in the 'View details' popup
 	    add_filter('plugins_api', array($this, 'modify_plugin_details'), 10, 3);
-	    
 	}
 	
 	
@@ -62,32 +65,16 @@ class acf_updates {
 			'version'	=> '',
 		));
 		
-		
 		// Check if is_plugin_active() function exists. This is required on the front end of the
 		// site, since it is in a file that is normally only loaded in the admin.
 		if( !function_exists( 'is_plugin_active' ) ) {
-			
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
-			
 		}
 		
-		
-		// bail early if not active plugin (included in theme)
-		if( !is_plugin_active($plugin['basename']) ) return;
-		
-		
-		// add custom message in plugin update row
-		// removed: decided this message will have a negative impact on user
-		// if( is_admin() ) {
-		//	
-		//	 add_action('in_plugin_update_message-' . $plugin['basename'], array($this, 'modify_plugin_update_message'), 10, 2 );
-		//	
-		// }
-		
-			
-		// append
-		$this->plugins[ $plugin['basename'] ] = $plugin;
-		
+		// add if is active plugin (not included in theme)
+		if( is_plugin_active($plugin['basename']) ) {
+			$this->plugins[ $plugin['basename'] ] = $plugin;
+		}
 	}
 		
 	
@@ -110,14 +97,11 @@ class acf_updates {
 		// vars
 		$url = 'https://connect.advancedcustomfields.com/' . $query;
 		
-		
-		// test
-		if( $this->dev ) $url = 'http://connect/' . $query;
-		
-		
-		// log
-		//acf_log('acf connect: '. $url, $body);
-		
+		// development mode
+		if( $this->dev ) {
+			$url = 'http://connect/' . $query;
+			acf_log('acf connect: '. $url, $body);
+		}
 		
 		// post
 		$raw_response = wp_remote_post( $url, array(
@@ -125,35 +109,25 @@ class acf_updates {
 			'body'		=> $body
 		));
 		
-		
 		// wp error
 		if( is_wp_error($raw_response) ) {
-			
 			return $raw_response;
 		
 		// http error
 		} elseif( wp_remote_retrieve_response_code($raw_response) != 200 ) {
-			
 			return new WP_Error( 'server_error', wp_remote_retrieve_response_message($raw_response) );
-			
 		}
-		
 		
 		// decode response
 		$json = json_decode( wp_remote_retrieve_body($raw_response), true );
 		
-		
 		// allow non json value
 		if( $json === null ) {
-			
 			return wp_remote_retrieve_body($raw_response);
-			
 		}
-		
 		
 		// return
 		return $json;
-		
 	}
 	
 	
@@ -173,41 +147,130 @@ class acf_updates {
 	function get_plugin_info( $id = '' ) {
 		
 		// var
-		$transient_name = 'acf_plugin_info_'.$id;
+		$transient_name = 'acf_plugin_info_' . $id;
 		
-		
-		// delete transient (force-check is used to refresh)
-		if( !empty($_GET['force-check']) ) {
-		
-			delete_transient($transient_name);
+		// ignore cache (only once)
+		if( $this->force_check ) {
+			$this->force_check = false;
 			
+		// check cache
+		} else {
+			$transient = get_transient($transient_name);
+			if( $transient !== false ) return $transient;
 		}
-	
-	
-		// try transient
-		$transient = get_transient($transient_name);
-		if( $transient !== false ) return $transient;
-		
 		
 		// connect
 		$response = $this->request('v2/plugins/get-info?p='.$id);
 		
-		
-		// ensure response is expected JSON array (not string)
+		// convert string (misc error) to WP_Error object
 		if( is_string($response) ) {
 			$response = new WP_Error( 'server_error', esc_html($response) );
 		}
 		
+		// allow json to include expiration but force minimum and max for safety
+		$expiration = $this->get_expiration($response, DAY_IN_SECONDS, MONTH_IN_SECONDS);
 		
 		// update transient
-		set_transient($transient_name, $response, HOUR_IN_SECONDS );
-		
+		set_transient($transient_name, $response, $expiration );
 		
 		// return
 		return $response;
-		
 	}
 	
+	
+	/**
+	*  get_plugin_updates
+	*
+	*  description
+	*
+	*  @date	8/7/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	function get_plugin_updates() {
+		
+		// var
+		$transient_name = 'acf_plugin_updates';
+		
+		// ignore cache (only once)
+		if( $this->force_check ) {
+			$this->force_check = false;
+			
+		// check cache
+		} else {
+			$transient = get_transient($transient_name);
+			if( $transient !== false ) return $transient;
+		}
+		
+		// vars
+		$post = array(
+			'plugins'		=> wp_json_encode($this->plugins),
+			'wp'			=> wp_json_encode(array(
+				'wp_name'		=> get_bloginfo('name'),
+				'wp_url'		=> home_url(),
+				'wp_version'	=> get_bloginfo('version'),
+				'wp_language'	=> get_bloginfo('language'),
+				'wp_timezone'	=> get_option('timezone_string'),
+			)),
+			'acf'			=> wp_json_encode(array(
+				'acf_version'	=> get_option('acf_version'),
+				'acf_pro'		=> (defined('ACF_PRO') && ACF_PRO),
+			)),
+		);
+		
+		// request
+		$response = $this->request('v2/plugins/update-check', $post);
+		
+		// allow json to include expiration but force minimum and max for safety
+		$expiration = $this->get_expiration($response, DAY_IN_SECONDS, MONTH_IN_SECONDS);
+		
+		// update transient
+		set_transient($transient_name, $response, $expiration );
+		
+		// return
+		return $response;
+	}
+	
+	/**
+	*  get_expiration
+	*
+	*  This function safely gets the expiration value from a response
+	*
+	*  @date	8/7/18
+	*  @since	5.6.9
+	*
+	*  @param	mixed $response The response from the server. Default false.
+	*  @param	int $min The minimum expiration limit. Default 0.
+	*  @param	int $max The maximum expiration limit. Default 0.
+	*  @return	int
+	*/
+	
+	function get_expiration( $response = false, $min = 0, $max = 0 ) {
+		
+		// vars
+		$expiration = 0;
+		
+		// check
+		if( is_array($response) && isset($response['expiration']) ) {
+			$expiration = (int) $response['expiration'];
+		}
+		
+		// min
+		if( $expiration < $min ) {
+			return $min;
+		}
+		
+		// max
+		if( $expiration > $max ) {
+			return $max;
+		}
+		
+		// return
+		return $expiration;
+	}
 	
 	/*
 	*  refresh_plugins_transient
@@ -227,14 +290,12 @@ class acf_updates {
 		// vars
 		$transient = get_site_transient('update_plugins');
 		
-		
 		// bail early if no transient
 		if( empty($transient) ) return;
 		
-		
 		// update (will trigger modify function)
+		$this->force_check = true;
 		set_site_transient( 'update_plugins', $transient );
-		
 	}
 	
 	
@@ -254,50 +315,22 @@ class acf_updates {
 	function modify_plugins_transient( $transient ) {
 		
 		// bail early if no response (error)
-		if( !isset($transient->response) ) return $transient;
-		
-		
-		// fetch updates once (this filter is called multiple times during a single page load)
-		if( !$this->updates ) {
-			
-			// vars
-			$post = array(
-				'plugins'		=> wp_json_encode($this->plugins),
-				'wp'			=> wp_json_encode(array(
-					'wp_name'		=> get_bloginfo('name'),
-					'wp_url'		=> home_url(),
-					'wp_version'	=> get_bloginfo('version'),
-					'wp_language'	=> get_bloginfo('language'),
-					'wp_timezone'	=> get_option('timezone_string'),
-				)),
-				'acf'			=> wp_json_encode(array(
-					'acf_version'	=> get_option('acf_version'),
-					'acf_pro'		=> (defined('ACF_PRO') && ACF_PRO),
-				)),
-			);
-					
-			
-			// connect
-			$this->updates = $this->request('v2/plugins/update-check', $post);
-			
+		if( !isset($transient->response) ) {
+			return $transient;
 		}
 		
+		// fetch updates (this filter is called multiple times during a single page load)
+		$updates = $this->get_plugin_updates();
 		
 		// append
-		if( is_array($this->updates) ) {
-			
-			foreach( $this->updates['plugins'] as $basename => $update ) {
-				
+		if( is_array($updates) ) {
+			foreach( $updates['plugins'] as $basename => $update ) {
 				$transient->response[ $basename ] = (object) $update;
-				
 			}
-			
 		}
-		
 		
 		// return 
         return $transient;
-        
 	}
 	
 	
@@ -375,35 +408,6 @@ class acf_updates {
         return $response;
         
 	}
-	
-	
-	/*
-	*  modify_plugin_update_message
-	*
-	*  Displays an update message for plugin list screens.
-	*  Shows only the version updates from the current until the newest version
-	*
-	*  @type	function
-	*  @date	14/06/2016
-	*  @since	5.3.8
-	*
-	*  @param	$plugin_data (array)
-	*  @param	$r (object)
-	*  @return	n/a
-	*/
-
-/*
-	function modify_plugin_update_message( $plugin_data, $response ) {
-		
-		// show notice if exists in transient data
-		if( isset($response->notice) ) {
-			
-			echo '<div class="acf-plugin-upgrade-notice">' . $response->notice . '</div>';
-			
-		}
-	
-	}
-*/
 		
 }
 

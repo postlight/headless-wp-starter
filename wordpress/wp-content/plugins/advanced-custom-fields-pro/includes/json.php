@@ -141,6 +141,8 @@ class acf_json {
 		// open
 		$dir = opendir( $path );
     
+		// bail early if not valid
+		if( !$dir ) return false;
 		
 		// loop over files
 	    while(false !== ( $file = readdir($dir)) ) {

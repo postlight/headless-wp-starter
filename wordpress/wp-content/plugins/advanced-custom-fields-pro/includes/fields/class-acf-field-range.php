@@ -55,51 +55,51 @@ class acf_field_range extends acf_field_number {
 		$keys2 = array( 'readonly', 'disabled', 'required' );
 		$html = '';
 		
-		
 		// step
-		if( !$field['step'] ) $field['step'] = 1;
-		
+		if( !$field['step'] ) {
+			$field['step'] = 1;
+		}
 		
 		// min / max
-		if( !$field['min'] ) $field['min'] = 0;
-		if( !$field['max'] ) $field['max'] = 100;
+		if( !$field['min'] ) {
+			$field['min'] = 0;
+		}
+		if( !$field['max'] ) {
+			$field['max'] = 100;
+		}
 		
-		
-		// value
+		// allow for prev 'non numeric' value
 		if( !is_numeric($field['value']) ) {
 			$field['value'] = 0;
 		}
 		
+		// constrain within max and min
+		$field['value'] = max($field['value'], $field['min']);
+		$field['value'] = min($field['value'], $field['max']);
 		
 		// atts (value="123")
 		foreach( $keys as $k ) {
 			if( isset($field[ $k ]) ) $atts[ $k ] = $field[ $k ];
 		}
 		
-		
 		// atts2 (disabled="disabled")
 		foreach( $keys2 as $k ) {
 			if( !empty($field[ $k ]) ) $atts[ $k ] = $k;
 		}
 		
-		
 		// remove empty atts
 		$atts = acf_clean_atts( $atts );
 		
-		
 		// open
 		$html .= '<div class="acf-range-wrap">';
-			
 			
 			// prepend
 			if( $field['prepend'] !== '' ) {
 				$html .= '<div class="acf-prepend">' . acf_esc_html($field['prepend']) . '</div>';
 			}
 			
-			
 			// range
 			$html .= acf_get_text_input( $atts );
-			
 			
 			// input
 			$len = strlen( (string) $field['max'] );
@@ -108,23 +108,21 @@ class acf_field_range extends acf_field_number {
 				'id'	=> $atts['id'] . '-alt', 
 				'value'	=> $atts['value'],
 				'step'	=> $atts['step'],
+				//'min'	=> $atts['min'], // removed to avoid browser validation errors
+				//'max'	=> $atts['max'],
 				'style'	=> 'width: ' . (1.8 + $len*0.7) . 'em;'
 			));
-			
 			
 			// append
 			if( $field['append'] !== '' ) {
 				$html .= '<div class="acf-append">' . acf_esc_html($field['append']) . '</div>';
 			}
 		
-		
 		// close
 		$html .= '</div>';
 		
-		
 		// return
 		echo $html;
-		
 	}
 	
 	

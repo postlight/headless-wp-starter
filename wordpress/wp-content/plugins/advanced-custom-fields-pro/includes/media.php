@@ -1,6 +1,10 @@
 <?php 
 
-class acf_media {
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+if( ! class_exists('ACF_Media') ) :
+
+class ACF_Media {
 	
 	
 	/*
@@ -19,51 +23,40 @@ class acf_media {
 	function __construct() {
 		
 		// actions
+		add_action('acf/enqueue_scripts',			array($this, 'enqueue_scripts'));
 		add_action('acf/save_post', 				array($this, 'save_files'), 5, 1);
-		add_action('acf/input/admin_footer', 		array($this, 'admin_footer'));
 		
 		
 		// filters
 		add_filter('wp_handle_upload_prefilter', 	array($this, 'handle_upload_prefilter'), 10, 1);
-		add_filter('acf/input/admin_l10n',			array($this, 'acf_input_admin_l10n'), 10, 1);
 		
 		
 		// ajax
-		add_action( 'wp_ajax_query-attachments',	array($this, 'wp_ajax_query_attachments'), -1);
-		
+		add_action('wp_ajax_query-attachments',		array($this, 'wp_ajax_query_attachments'), -1);
 	}
 	
 	
-	/*
-	*  acf_input_admin_l10n
+	/**
+	*  enqueue_scripts
 	*
-	*  This function will append l10n strings for JS use
+	*  Localizes data
 	*
-	*  @type	function
-	*  @date	11/04/2016
-	*  @since	5.3.8
+	*  @date	27/4/18
+	*  @since	5.6.9
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	void
+	*  @return	void
 	*/
 	
-	function acf_input_admin_l10n( $l10n ) {
+	function enqueue_scripts(){
 		
-		// append
-		$l10n['media'] = array(
-			'select'		=> _x('Select', 'verb', 'acf'),
-			'edit'			=> _x('Edit', 'verb', 'acf'),
-			'update'		=> _x('Update', 'verb', 'acf'),
-			'uploadedTo'	=> __("Uploaded to this post",'acf'),
-			'default_icon'	=> wp_mime_type_icon()
-		);
-		
-		
-		// return
-		return $l10n;
-		
+		// localize
+		acf_localize_data(array(
+			'mimeTypeIcon'	=> wp_mime_type_icon(),
+			'mimeTypes'		=> get_allowed_mime_types()
+		));
 	}
-	
+		
 		
 	/*
 	*  handle_upload_prefilter
@@ -82,19 +75,14 @@ class acf_media {
 		
 		// bail early if no acf field
 		if( empty($_POST['_acfuploader']) ) {
-		
 			return $file;
-			
 		}
 		
 		
 		// load field
 		$field = acf_get_field( $_POST['_acfuploader'] );
-		
 		if( !$field ) {
-		
 			return $file;
-			
 		}
 		
 		
@@ -111,15 +99,12 @@ class acf_media {
 		
 		// append error
 		if( !empty($errors) ) {
-			
 			$file['error'] = implode("\n", $errors);
-			
 		}
 		
 		
 		// return
 		return $file;
-		
 	}
 
 	
@@ -140,39 +125,12 @@ class acf_media {
 		
 		// bail early if no $_FILES data
 		if( empty($_FILES['acf']['name']) ) {
-			
 			return;
-			
 		}
 		
 		
 		// upload files
 		acf_upload_files();
-	
-	}
-	
-	
-	/*
-	*  admin_footer
-	*
-	*  description
-	*
-	*  @type	function
-	*  @date	19/02/2015
-	*  @since	5.1.5
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	function admin_footer() {
-		
-?>
-<script type="text/javascript">
-	if( acf ) acf.media.mime_types = <?php echo json_encode( get_allowed_mime_types() ); ?>;
-</script>
-<?php
-		
 	}
 	
 	
@@ -203,19 +161,14 @@ class acf_media {
 		
 		// bail early if no acf field
 		if( empty($_POST['query']['_acfuploader']) ) {
-		
 			return $response;
-			
 		}
 		
 		
 		// load field
 		$field = acf_get_field( $_POST['query']['_acfuploader'] );
-		
 		if( !$field ) {
-		
 			return $response;
-			
 		}
 		
 		
@@ -225,21 +178,18 @@ class acf_media {
 		
 		// append errors
 		if( !empty($errors) ) {
-			
 			$response['acf_errors'] = implode('<br />', $errors);
-			
 		}
 		
 		
 		// return
 		return $response;
-		
 	}
-	
 }
 
+// instantiate
+acf_new_instance('ACF_Media');
 
-// initialize
-new acf_media();
+endif; // class_exists check
 
 ?>

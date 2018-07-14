@@ -16,14 +16,6 @@
 *	General
 *
 *--------------------------------------------------------------------------------------------*/
-/* box-sizing */
-/*
-[class^="acf-"] {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-*/
 /* Horizontal List */
 .acf-hl {
   padding: 0;
@@ -71,18 +63,15 @@
   padding: 0;
   float: none;
 }
-/* Full width */
-img.acf-fw {
-  width: 100%;
-}
-/* Browser */
-.acf-visible {
-  display: block;
-  visibility: visible;
-}
+/* Visibility */
 .acf-hidden {
-  display: none;
-  visibility: visible;
+  display: none !important;
+}
+.acf-empty {
+  display: table-cell !important;
+}
+.acf-empty * {
+  display: none !important;
 }
 /* Float */
 .acf-fl {
@@ -178,6 +167,7 @@ img.acf-fw {
   padding: 5px 10px;
   position: absolute;
   font-size: 12px;
+  line-height: 1.4em;
   z-index: 900000;
   /* tip */
   /* positions */
@@ -229,6 +219,9 @@ img.acf-fw {
   border-left-color: #2F353E;
   border-right-width: 0;
 }
+.acf-tooltip .acf-overlay {
+  z-index: -1;
+}
 /* confirm */
 .acf-tooltip.-confirm {
   z-index: 900001;
@@ -240,8 +233,41 @@ img.acf-fw {
 .acf-tooltip.-confirm a:hover {
   text-decoration: underline;
 }
-.acf-tooltip.-confirm a.-red {
+.acf-tooltip.-confirm a[data-event="confirm"] {
   color: #F55E4F;
+}
+.acf-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: default;
+}
+.acf-tooltip-target {
+  position: relative;
+  z-index: 900002;
+}
+/*---------------------------------------------------------------------------------------------
+*
+*  loading
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-loading-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: default;
+  z-index: 99;
+  background: rgba(249, 249, 249, 0.5);
+}
+.acf-loading-overlay i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -614,48 +640,52 @@ a.acf-icon.-cancel.grey:hover {
 .acf-box .footer p {
   margin: 0;
 }
-/* error */
-.acf-error-message {
+/*--------------------------------------------------------------------------------------------
+*
+*	acf-notice
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-notice {
   position: relative;
   display: block;
-  background: #F55E4F;
+  color: #fff;
   margin: 5px 0 15px;
-  padding: 1px 12px;
-  min-height: 0px;
-  border-left: #dd4232 solid 4px;
+  padding: 3px 12px;
+  background: #2a9bd9;
+  border-left: #2183b9 solid 4px;
 }
-.acf-error-message p {
-  font-size: 13px !important;
+.acf-notice p {
+  font-size: 13px;
   line-height: 1.5;
   margin: 0.5em 0;
-  padding: 2px;
   text-shadow: none;
-  color: #fff;
+  color: inherit;
 }
-.acf-error-message .acf-icon {
+.acf-notice a.acf-notice-dismiss {
   position: absolute;
+  border-color: transparent;
   top: 9px;
   right: 12px;
-  background-color: #dd4232;
-  border-color: transparent;
   color: #fff;
+  background: rgba(0, 0, 0, 0.1);
 }
-/* important to include .-cancel to override .acf-icon.-cancel class */
-.acf-error-message .acf-icon.-cancel:hover {
-  background-color: #191e23;
-  color: #F55E4F;
+.acf-notice a.acf-notice-dismiss:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
-/* success */
-.acf-error-message.-success {
-  background-color: #46b450;
-  border-color: #32973b;
+.acf-notice.-dismiss {
+  padding-right: 40px;
 }
-.acf-error-message.-success .acf-icon {
-  background-color: #32973b;
+.acf-notice.-error {
+  background: #F55E4F;
+  border-color: #f33b28;
 }
-.acf-error-message.-success .acf-icon.-cancel:hover {
-  background-color: #191e23;
-  color: #46b450;
+.acf-notice.-success {
+  background: #46b450;
+  border-color: #3b9743;
+}
+.acf-notice.-warning {
+  background: #fd8d3b;
+  border-color: #fd7613;
 }
 /*--------------------------------------------------------------------------------------------
 *
@@ -955,6 +985,7 @@ html[dir="rtl"] .acf-columns-2 .acf-column-2 {
   left: 0;
   right: 0;
   bottom: 0;
+  text-align: center;
 }
 #acf-popup .bg {
   position: absolute;
@@ -965,59 +996,69 @@ html[dir="rtl"] .acf-columns-2 .acf-column-2 {
   z-index: 0;
   background: rgba(0, 0, 0, 0.25);
 }
-#acf-popup .acf-popup-box {
-  position: absolute;
-  z-index: 1;
-  width: 300px;
-  height: 300px;
-  left: 50%;
-  top: 50%;
-  margin: -150px 0 0 -150px;
-  border-color: #aaaaaa;
+#acf-popup:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
-#acf-popup .title .acf-icon {
+#acf-popup .acf-popup-box {
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 1;
+  min-width: 300px;
+  min-height: 160px;
+  border-color: #aaaaaa;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+html[dir="rtl"] #acf-popup .acf-popup-box {
+  text-align: right;
+}
+#acf-popup .acf-popup-box .title {
+  min-height: 15px;
+  line-height: 15px;
+}
+#acf-popup .acf-popup-box .title .acf-icon {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-html[dir="rtl"] #acf-popup .title .acf-icon {
+html[dir="rtl"] #acf-popup .acf-popup-box .title .acf-icon {
   right: auto;
   left: 10px;
 }
-#acf-popup .acf-popup-box .inner,
+#acf-popup .acf-popup-box .inner {
+  min-height: 50px;
+  padding: 0;
+  margin: 15px;
+}
 #acf-popup .acf-popup-box .loading {
   position: absolute;
-  top: 44px;
+  top: 45px;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
-}
-#acf-popup .acf-popup-box .loading {
-  background: rgba(0, 0, 0, 0.1);
   z-index: 2;
-  border-top: #DDDDDD solid 1px;
+  background: rgba(0, 0, 0, 0.1);
   display: none;
 }
-#acf-popup .acf-popup-box .loading .acf-loading {
+#acf-popup .acf-popup-box .loading i {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -10px 0 0 -10px;
+  transform: translate(-50%, -50%);
 }
-#acf-popup .inner > *:first-child {
-  margin-top: 0;
-}
-/* submit p */
 .acf-submit {
   margin-bottom: 0;
+  line-height: 28px;
 }
 .acf-submit span {
   float: right;
   color: #999;
 }
-.acf-submit .acf-loading {
-  display: none;
+.acf-submit span.-error {
+  color: #dd4232;
 }
 .acf-submit .button {
   margin-right: 5px;
@@ -1129,7 +1170,7 @@ html[dir="rtl"] #acf-popup .title .acf-icon {
   width: 25%;
 }
 /* mobile */
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 640px) {
   .acf-hl[data-cols] {
     margin-left: 0;
     margin-right: 0;

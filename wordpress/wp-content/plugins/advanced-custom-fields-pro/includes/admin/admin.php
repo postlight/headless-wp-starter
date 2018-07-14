@@ -177,7 +177,7 @@ class acf_admin {
 			}
 				
 			?>
-			<div class="notice is-dismissible <?php echo esc_attr($notice['class']); ?> acf-notice"><?php echo $open . $notice['text'] . $close; ?></div>
+			<div class="acf-admin-notice notice is-dismissible <?php echo esc_attr($notice['class']); ?>"><?php echo $open . $notice['text'] . $close; ?></div>
 			<?php
 				
 		}

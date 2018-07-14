@@ -118,6 +118,10 @@ class acf_field_clone extends acf_field {
 	
 	function acf_get_fields( $fields, $parent ) {
 		
+		// bail early if empty
+		if( empty($fields) ) return $fields;
+		
+		
 		// bail early if not enabled
 		if( !$this->is_enabled() ) return $fields;
 		
@@ -1321,7 +1325,7 @@ class acf_field_clone extends acf_field {
 
 
 // initialize
-acf_register_field_type( new acf_field_clone() );
+acf_register_field_type( 'acf_field_clone' );
 
 endif; // class_exists check
 

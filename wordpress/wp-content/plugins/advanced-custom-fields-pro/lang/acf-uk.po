@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-10-04 14:50+1000\n"
-"PO-Revision-Date: 2017-11-05 04:07+0200\n"
-"Last-Translator: Jurko Chervony <info@skinik.name>\n"
+"PO-Revision-Date: 2018-02-06 10:06+1000\n"
+"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: skinik <info@skinik.name>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -670,7 +670,7 @@ msgstr "Зверху"
 
 #: includes/admin/views/field-group-options.php:63
 #: includes/fields/class-acf-field-tab.php:103
-msgid "Left Aligned"
+msgid "Left aligned"
 msgstr "Зліва"
 
 #: includes/admin/views/field-group-options.php:70
@@ -1274,7 +1274,8 @@ msgstr ""
 msgid "jQuery"
 msgstr ""
 
-#: includes/fields.php:149 includes/fields/class-acf-field-button-group.php:177
+#: includes/fields.php:149
+#: includes/fields/class-acf-field-button-group.php:177
 #: includes/fields/class-acf-field-checkbox.php:384
 #: includes/fields/class-acf-field-group.php:474
 #: includes/fields/class-acf-field-radio.php:285
@@ -2609,8 +2610,8 @@ msgstr "Редагувати групу полів"
 msgid "Validate Email"
 msgstr ""
 
-#: includes/forms/form-front.php:103 pro/fields/class-acf-field-gallery.php:573
-#: pro/options-page.php:81
+#: includes/forms/form-front.php:103
+#: pro/fields/class-acf-field-gallery.php:573 pro/options-page.php:81
 msgid "Update"
 msgstr "Оновити"
 
