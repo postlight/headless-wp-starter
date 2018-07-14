@@ -253,7 +253,10 @@ function cptui_get_single_taxonomy_registery( $taxonomy = array() ) {
 		$show_in_nav_menus = $public;
 	}
 
-	$my_theme = wp_get_theme();
+	$show_in_rest = ( ! empty( $taxonomy['show_in_rest'] ) && false !== get_disp_boolean( $taxonomy['show_in_rest'] ) ) ? 'true' : 'false';
+	$rest_base    = ( ! empty( $taxonomy['rest_base'] ) ) ? $taxonomy['rest_base'] : $taxonomy['name'];
+
+	$my_theme   = wp_get_theme();
 	$textdomain = $my_theme->get( 'TextDomain' );
 ?>
 
@@ -285,8 +288,8 @@ function cptui_get_single_taxonomy_registery( $taxonomy = array() ) {
 		"query_var" => <?php echo disp_boolean( $taxonomy['query_var'] );?>,
 		"rewrite" => <?php echo $rewrite; ?>,
 		"show_admin_column" => <?php echo $taxonomy['show_admin_column']; ?>,
-		"show_in_rest" => <?php echo disp_boolean( $taxonomy['show_in_rest'] ); ?>,
-		"rest_base" => "<?php echo $taxonomy['rest_base']; ?>",
+		"show_in_rest" => <?php echo $show_in_rest; ?>,
+		"rest_base" => "<?php echo $rest_base; ?>",
 		"show_in_quick_edit" => <?php echo $show_in_quick_edit; ?>,
 	);
 	register_taxonomy( "<?php echo $taxonomy['name']; ?>", <?php echo $post_types; ?>, $args );
@@ -419,6 +422,22 @@ function cptui_get_single_post_type_registery( $post_type = array() ) {
 		$post_type['show_in_rest'] = 'false';
 	}
 
+	$show_in_menu = get_disp_boolean( $post_type['show_in_menu'] );
+	if ( false !== $show_in_menu ) {
+		$show_in_menu = disp_boolean( $post_type['show_in_menu'] );
+		if ( ! empty( $post_type['show_in_menu_string'] ) ) {
+			$show_in_menu = '"' . $post_type['show_in_menu_string'] . '"';
+		}
+	} else {
+		$show_in_menu = disp_boolean( $post_type['show_in_menu'] );
+	}
+
+	$public = ( isset( $post_type['public'] ) ) ? disp_boolean( $post_type['public'] ) : 'true';
+	$show_in_nav_menus = ( ! empty( $post_type['show_in_nav_menus'] ) && false !== get_disp_boolean( $post_type['show_in_nav_menus'] ) ) ? 'true' : 'false';
+	if ( empty( $post_type['show_in_nav_menus'] ) ) {
+		$show_in_nav_menus = $public;
+	}
+
 	$post_type['description'] = addslashes( $post_type['description'] );
 
 	$my_theme = wp_get_theme();
@@ -456,10 +475,8 @@ function cptui_get_single_post_type_registery( $post_type = array() ) {
 		"show_in_rest" => <?php echo disp_boolean( $post_type['show_in_rest'] ); ?>,
 		"rest_base" => "<?php echo $post_type['rest_base']; ?>",
 		"has_archive" => <?php echo $has_archive; ?>,
-		"show_in_menu" => <?php echo disp_boolean( $post_type['show_in_menu'] ); ?>,
-<?php if ( ! empty( $post_type['show_in_menu_string'] ) ) { ?>
-		"show_in_menu_string" => "<?php echo $post_type['show_in_menu_string']; ?>",
-<?php } ?>
+		"show_in_menu" => <?php echo $show_in_menu; ?>,
+		"show_in_nav_menus" => <?php echo $show_in_nav_menus; ?>,
 		"exclude_from_search" => <?php echo disp_boolean( $post_type['exclude_from_search'] ); ?>,
 		"capability_type" => "<?php echo $post_type['capability_type']; ?>",
 		"map_meta_cap" => <?php echo disp_boolean( $post_type['map_meta_cap'] ); ?>,

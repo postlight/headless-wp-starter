@@ -401,19 +401,19 @@ function cptui_get_ads() {
  */
 function cptui_default_ads( $ads = array() ) {
 	$ads[] = array(
-		'url'   => 'https://pluginize.com/plugins/custom-post-type-ui-extended/ref/pluginizeaff/?campaign=cptui-sidebar-extended',
+		'url'   => 'https://pluginize.com/plugins/custom-post-type-ui-extended/?utm_source=cptui-sidebar&utm_medium=text&utm_campaign=cptui',
 		'image' => plugin_dir_url( dirname( __FILE__ ) ) . 'images/wds_ads/cptui-extended.png',
 		'text'  => 'Custom Post Type UI Extended product ad',
 	);
 
 	$ads[] = array(
-		'url'   => 'https://pluginize.com/plugins/instago/ref/pluginizeaff/?campaign=cptui-sidebar-ig',
+		'url'   => 'https://pluginize.com/plugins/instago/?utm_source=cptui-sidebar&utm_medium=text&utm_campaign=instago',
 		'image' => plugin_dir_url( dirname( __FILE__ ) ) . 'images/wds_ads/instago.png',
 		'text'  => 'InstaGo product ad',
 	);
 
 	$ads[] = array(
-		'url'   => 'https://pluginize.com/plugins/buddypages/ref/pluginizeaff/?campaign=cptui-sidebar-buddypages',
+		'url'   => 'https://pluginize.com/plugins/buddypages/?utm_source=cptui-sidebar&utm_medium=text&utm_campaign=buddypages',
 		'image' => plugin_dir_url( dirname( __FILE__ ) ) . 'images/wds_ads/buddypages.png',
 		'text'  => 'BuddyPages product ad',
 	);
@@ -793,3 +793,23 @@ function cptui_post_type_supports( $post_type, $feature ) {
 
 	return false;
 }
+
+/**
+ * Add missing post_format taxonomy support for CPTUI post types.
+ *
+ * Addresses bug wih previewing changes for published posts with post types that
+ * have post-formats support.
+ *
+ * @since 1.5.8
+ *
+ * @param array $post_types Array of CPTUI post types.
+ */
+function cptui_published_post_format_fix( $post_types ) {
+	foreach ( $post_types as $type ) {
+		if ( in_array( 'post-formats', $type['supports'], true ) ) {
+			add_post_type_support( $type['name'], 'post-formats' );
+			register_taxonomy_for_object_type( 'post_format', $type['name'] );
+		}
+	}
+}
+add_action( 'cptui_post_register_post_types', 'cptui_published_post_format_fix' );

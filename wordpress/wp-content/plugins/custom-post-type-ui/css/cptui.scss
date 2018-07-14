@@ -199,12 +199,6 @@ $max-tablet: "screen and (max-width: 768px)";
 	    right: 0;
 	}
 }
-.js {
-	#cptui_select_post_type input[type='submit'],
-	#cptui_select_taxonomy input[type='submit'] {
-		display: none;
-	}
-}
 #togglelabels {
 	display: none;
 	.js & {
