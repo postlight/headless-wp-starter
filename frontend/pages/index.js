@@ -29,9 +29,9 @@ class Index extends Component {
     }
 
     render() {
-        const posts = this.props.posts.map((post, index) => {
+        const posts = this.props.posts.map((post) => {
             return (
-                <ul key={index}>
+                <ul key={post.id}>
                     <li>
                         <Link
                             as={`/post/${post.slug}`}
@@ -43,9 +43,9 @@ class Index extends Component {
                 </ul>
             );
         });
-        const pages = this.props.pages.map((page, index) => {
+        const pages = this.props.pages.map((page) => {
             return (
-                <ul key={index}>
+                <ul key={page.id}>
                     <li>
                         <Link
                             as={`/page/${page.slug}`}

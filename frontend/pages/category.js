@@ -29,9 +29,9 @@ class Category extends Component {
         if (this.props.categories.length == 0)
             return <Error statusCode={404} />;
 
-        const posts = this.props.posts.map((post, index) => {
+        const posts = this.props.posts.map((post) => {
             return (
-                <ul key={index}>
+                <ul key={index.id}>
                     <li>
                         <Link
                             as={`/post/${post.slug}`}

@@ -1,15 +1,8 @@
-import React, { Component } from "react";
-import Link from "next/link";
+import React, { PureComponent } from "react";
 import Head from "next/head";
-import Menu from "./Menu.js";
-import { Config } from "../config.js";
 import stylesheet from '../src/styles/style.scss'
 
-class Header extends Component {
-    constructor() {
-        super();
-    }
-
+class Header extends PureComponent {
     render() {
 
         return (
