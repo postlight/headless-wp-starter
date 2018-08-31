@@ -25,7 +25,7 @@ RUN wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
 RUN dpkg -i mysql-apt-config_0.8.10-1_all.deb
 RUN apt-get update
 RUN apt-get -qy install mysql-server
-RUN mysql -e "CREATE USER 'root'@'%'; GRANT ALL ON *.* to 'root'@'%'; FLUSH PRIVILEGES;"
+RUN mysql -e "CREATE USER 'root'@'%'; GRANT ALL ON *.* TO 'root'@'%'; FLUSH PRIVILEGES;"
 
 EXPOSE 8080
 CMD [ "./start_docker.sh" ]

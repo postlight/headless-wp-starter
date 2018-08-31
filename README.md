@@ -31,7 +31,7 @@ Before you install WordPress, make sure you have all the required software insta
 *   **Ubuntu Linux:** You'll need the latest version of NodeJS, Yarn and debconf-utils installed first. Follow this [simple guide](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) to get the latest version of NodeJS installed. Install the rest of the packages using the `apt-get` package manager. _Note: During the WordPress installation, you may be asked to enter the root password at the prompt due to the use of the `sudo` command_
 *   **Docker**: You'll need to install Docker [for your platform](https://www.docker.com/community-edition).
 
-### Install
+### Install locally
 
 The following command will get WordPress running locally on your machine, along with the WordPress plugins you'll need to create and serve custom data via the WP REST API.
 
@@ -39,7 +39,7 @@ The following command will get WordPress running locally on your machine, along 
 > yarn install && yarn start
 ```
 
-#### Install with Docker
+#### OR Install with Docker
 
 ```zsh
 > yarn docker:build && yarn docker:start
@@ -50,6 +50,7 @@ When the installation process completes successfully:
 *   The WordPress REST API is available at [http://localhost:8080](http://localhost:8080)
 *   The WordPress GraphQL API is available at [http://localhost:8080/graphql](http://localhost:8080/graphql)
 *   The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) default login credentials `nedstark` / `winteriscoming`
+*   The MySQL service is available via `mysql -h127.0.0.1 -uroot`
 
 ### Import Data (Optional)
 
