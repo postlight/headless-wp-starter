@@ -55,11 +55,17 @@ When the installation process completes successfully:
 
 To import data and media from a live WordPress installation, you can use the Migrate DB Pro plugin, which is already installed. To do so, in the `robo.yml` file, set the plugin license and source install. Run `robo wordpress:setup`, then run `robo wordpress:import` to pull in the data.
 
+### Note for Pre-Installed Wordpress Installation
+
+If you are using a pre-installed  wordpress, make sure that you create a welcome page with ```welcome``` slug.
+
 ### Extend the REST and GraphQL APIs
 
 At this point you can start setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about).
 
 The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](README-linting.md) as you go.
+
+
 
 ## React Frontend
 
