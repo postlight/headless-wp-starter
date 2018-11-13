@@ -37,10 +37,10 @@ class Menu extends Component {
 
     return(
       <nav>
-        <div class="nav-brand">
-          <Link href="/">Meredith Monk</Link>
+        <div className="nav-brand">
+          <Link href="/"><a>Meredith Monk</a></Link>
         </div>
-        <div class="nav-links">
+        <div className="nav-links">
           {menuItems}
         </div>
       </nav>

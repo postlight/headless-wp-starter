@@ -19,7 +19,6 @@ class Index extends Component {
     return (
       <Layout>
         <Menu menu={this.props.headerMenu} />
-        <h1>{this.props.page.title.rendered}</h1>
         <div
           dangerouslySetInnerHTML={{
             __html: this.props.page.content.rendered
