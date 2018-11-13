@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Link from "next/link";
 import { Config } from "../config.js";
 
-const linkStyle = {
-  marginRight: 15
-};
-
 class Menu extends Component {
   constructor() {
     super();
@@ -21,7 +17,7 @@ class Menu extends Component {
       if (item.object === "custom") {
         return (
           <Link href={item.url} key={item.ID}>
-            <a style={linkStyle}>{item.title}</a>
+            <a>{item.title}</a>
           </Link>
         );
       }
@@ -33,16 +29,21 @@ class Menu extends Component {
           href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
           key={item.ID}
         >
-          <a style={linkStyle}>{item.title}</a>
+          <a>{item.title}</a>
         </Link>
       );
     });
 
 
     return(
-      <div>
-        {menuItems}
-      </div>
+      <nav>
+        <div class="nav-brand">
+          <Link href="/">Meredith Monk</Link>
+        </div>
+        <div class="nav-links">
+          {menuItems}
+        </div>
+      </nav>
     )
   }
 

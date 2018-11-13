@@ -1,10 +1,39 @@
 @import 'theme-colors';
-$theme-font: 100% verdana, sans-serif;
+
+html { font-size: 62.5%; }
 
 body {
-  font: $theme-font;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
   background-color: $themeColor-Light;
   h1, h2 {
-      color: $themeColor-Dark
+    color: $themeColor-Dark
   }
 }
+
+/* wrapper -- page content never gets wider than this */
+#wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* header navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+  .nav-brand {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+  }
+  .nav-links {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    a {
+      margin-right: 20px;
+    }
+  }
+}
+
