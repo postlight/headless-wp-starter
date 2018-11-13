@@ -21,7 +21,7 @@ class Menu extends Component {
       if (item.object === "custom") {
         return (
           <Link href={item.url} key={item.ID}>
-          <a style={linkStyle}>{item.title}</a>
+            <a style={linkStyle}>{item.title}</a>
           </Link>
         );
       }
@@ -29,11 +29,11 @@ class Menu extends Component {
       const actualPage = item.object === "category" ? "category" : "post";
       return (
         <Link
-        as={`/${item.object}/${slug}`}
-        href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-        key={item.ID}
+          as={`/${item.object}/${slug}`}
+          href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+          key={item.ID}
         >
-        <a style={linkStyle}>{item.title}</a>
+          <a style={linkStyle}>{item.title}</a>
         </Link>
       );
     });
@@ -41,7 +41,7 @@ class Menu extends Component {
 
     return(
       <div>
-      {menuItems}
+        {menuItems}
       </div>
     )
   }
