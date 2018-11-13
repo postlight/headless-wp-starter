@@ -12,8 +12,7 @@
         "docker:stop": "docker stop frontend",
         "docker:start": "docker start frontend && yarn run docker:logs",
         "docker:logs": "docker logs -f frontend",
-        "deploy":
-            "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+        "deploy": "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
     },
     "keywords": [],
     "author": "",
@@ -21,7 +20,7 @@
     "dependencies": {
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
-        "next": "latest",
+        "next": "^7.0.2",
         "react": "^16.0.0"
     },
     "devDependencies": {
