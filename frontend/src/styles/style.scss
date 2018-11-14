@@ -21,6 +21,7 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   a {
     text-decoration: none;
   }
@@ -30,7 +31,7 @@ nav {
   }
   .nav-links {
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     a {
       margin-right: 20px;
     }
