@@ -67,6 +67,11 @@ add_action(
                 return current_user_can( 'edit_posts' );
             },
         ] );
+
+        register_rest_route( 'postlight/v1', '/settings', [
+            'methods'  => 'GET',
+            'callback' => 'rest_get_settings',
+        ] );        
     }
 );
 
@@ -226,4 +231,13 @@ function rest_get_post_preview( WP_REST_Request $request ) {
     }
     $response = $controller->prepare_response_for_collection( $data );
     return new WP_REST_Response( $response );
+}
+
+function rest_get_settings() {
+    $settings = [
+        'site_title' => get_option('blogname'),
+        'tagline' => get_option('blogdescription')
+    ];
+
+    return $settings;
 }
