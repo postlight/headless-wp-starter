@@ -18,8 +18,8 @@ export const createLink = (item, index) => {
   if (item.link) {
     return (
       <Link
-        as={item.link}
-        href={item.link}
+        as={`/${item.slug}`}
+        href={`/${item.slug}`}
         key={item.id}
       >
         <a>{item.title.rendered}</a>
@@ -31,7 +31,7 @@ export const createLink = (item, index) => {
   const actualPage = item.object === "category" ? "category" : "post";
   return (
     <Link
-      as={`/${item.object}/${slug}`}
+      as={`/${slug}`}
       href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
       key={item.id}
     >
