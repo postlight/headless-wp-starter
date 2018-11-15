@@ -35,7 +35,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Cellular Songs Concert",
+                    "placeholder": "",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -54,10 +54,27 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "October 14-16, 2018",
+                    "placeholder": "",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5bedfc69260a0",
+                    "label": "Event Date (used for sorting)",
+                    "name": "sort_date",
+                    "type": "date_picker",
+                    "instructions": "Select a date that will be used to determine if the event is upcoming or in the past and to keep events in the correct order. If the event spans multiple days, this should be the last day of the event.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "m\/d\/Y",
+                    "return_format": "Y-m-d",
+                    "first_day": 0
                 },
                 {
                     "key": "field_5beddc7e12682",
@@ -73,7 +90,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "(le) poisson rouge, New York, NY",
+                    "placeholder": "",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -113,5 +130,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542318296
+    "modified": 1542325374
 }

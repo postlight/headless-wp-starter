@@ -33,7 +33,7 @@ export const createLink = (item, index) => {
     <Link
       as={`/${slug}`}
       href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-      key={item.id}
+      key={index}
     >
       <a>{item.title}</a>
     </Link>
