@@ -11,6 +11,10 @@ body {
   }
 }
 
+h1 {
+  font-size: 2.0rem;
+}
+
 /* wrapper -- page content never gets wider than this */
 #wrapper {
   max-width: 1440px;
@@ -22,6 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 36px;
   a {
     text-decoration: none;
   }
@@ -39,8 +44,19 @@ nav {
 }
 
 #calendar-events {
-  width: 100%;
-  td, th {
-    text-align: left;
+  table {
+    width: 100%;
+    td, th {
+      text-align: left;
+      &:nth-child(1) {
+        width: 30%;
+      }
+      &:nth-child(2) {
+        width: 20%;
+      }
+      &:nth-child(3) {
+        width: 30%;
+      }
+    }
   }
 }
