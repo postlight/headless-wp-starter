@@ -1,0 +1,48 @@
+{
+    "name": "google/cloud-core",
+    "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
+    "license": "Apache-2.0",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5",
+        "rize/uri-template": "~0.3",
+        "google/auth": "^1.2",
+        "guzzlehttp/guzzle": "^5.3|^6.0",
+        "guzzlehttp/psr7": "^1.2",
+        "monolog/monolog": "~1",
+        "psr/http-message": "1.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8|^5.0",
+        "squizlabs/php_codesniffer": "2.*",
+        "phpdocumentor/reflection": "^3.0",
+        "erusev/parsedown": "^1.6",
+        "google/gax": "^0.36",
+        "opis/closure": "^3"
+    },
+    "suggest": {
+        "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
+        "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
+    },
+    "extra": {
+        "component": {
+            "id": "cloud-core",
+            "target": "GoogleCloudPlatform/google-cloud-php-core.git",
+            "path": "Core",
+            "entry": "src/ServiceBuilder.php"
+        }
+    },
+    "bin": [
+        "bin/google-cloud-batch"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Google\\Cloud\\Core\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Google\\Cloud\\Core\\Tests\\": "tests"
+        }
+    }
+}

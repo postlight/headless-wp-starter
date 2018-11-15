@@ -1,0 +1,24 @@
+{
+    "name": "rize/uri-template",
+    "type": "library",
+    "description": "PHP URI Template (RFC 6570) supports both expansion & extraction",
+    "keywords": ["URI", "Template", "RFC 6570"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marut K",
+            "homepage": "http://twitter.com/rezigned"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rize\\UriTemplate": "src/"
+        }
+    }
+}

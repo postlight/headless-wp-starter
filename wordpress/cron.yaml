@@ -1,0 +1,4 @@
+cron:
+- description: "wordpress cron tasks"
+  url: /wp-cron.php
+  schedule: every 15 minutes

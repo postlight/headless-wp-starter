@@ -1,0 +1,6 @@
+{
+  "client_id": "valid.apps.googleusercontent.com",
+  "client_secret": "dummy_client_secret",
+  "refresh_token": "dummy_refresh_token",
+  "type": "authorized_user"
+}

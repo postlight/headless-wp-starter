@@ -1,0 +1,32 @@
+language: php
+
+branches:
+  only: [master]
+
+sudo: false
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+
+env:
+  -
+  - COMPOSER_ARGS="--prefer-lowest"
+matrix:
+  include:
+    - php: "7.2"
+      env: RUN_CS_FIXER=true
+
+before_script:
+  - composer update $COMPOSER_ARGS
+
+script:
+  - if [ "${RUN_CS_FIXER}" = "true" ]; then
+      vendor/bin/php-cs-fixer fix --dry-run --diff --config-file=.php_cs .;
+    else
+      vendor/bin/phpunit;
+    fi
