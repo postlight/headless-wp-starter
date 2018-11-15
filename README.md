@@ -1,4 +1,6 @@
-![WordPress + React Starter Kit](frontend/static/images/wordpress-plus-react-header.png)
+# meredithmonk.org Headless Wordpress Site
+
+meredithmonk.org is build using Postlight's Wordpress starter.
 
 Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up two things:
 
