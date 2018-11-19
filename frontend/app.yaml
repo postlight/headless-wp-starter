@@ -1,5 +1,2 @@
 runtime: nodejs8
 service: frontend
-
-env_variables:
-  WORDPRESS_URL: https://wordpress-dot-wordpress-test-222422.appspot.com
