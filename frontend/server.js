@@ -11,8 +11,14 @@ app
         const server = express();
 
         server.get("/*", (req, res) => {
-            const queryParams = { slug: req.param(0) || 'welcome', apiRoute: "page" };
-            app.render(req, res, '/index', queryParams);
+            // index.js : homepage
+            // page.js  : all other pages
+            const templateFile = req.path === '/' ?
+                '/index' :
+                '/page';
+
+            const queryParams = { slug: req.path === '/' ? 'welcome' : getSlug(req.path), apiRoute: "page" };
+            app.render(req, res, templateFile, queryParams);
         });
 
         server.listen(3000, err => {
@@ -24,3 +30,8 @@ app
         console.error(ex.stack);
         process.exit(1);
     });
+
+function getSlug(url) {
+    const parts = url.split("/");
+    return parts.pop() || parts.pop();
+}

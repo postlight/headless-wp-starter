@@ -22,7 +22,8 @@
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
         "next": "^7.0.2",
-        "react": "^16.0.0"
+        "react": "^16.0.0",
+        "url-parse": "^1.4.4"
     },
     "devDependencies": {
         "autoprefixer": "7.1.5",
