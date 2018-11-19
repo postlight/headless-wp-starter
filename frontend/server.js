@@ -5,8 +5,8 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-// Listen to the App Engine-specified port, or 8080 otherwise
-const PORT = process.env.PORT || 8080;
+// Listen to the App Engine-specified port, or 3000 otherwise
+const PORT = process.env.PORT || 3000;
 
 app
     .prepare()
