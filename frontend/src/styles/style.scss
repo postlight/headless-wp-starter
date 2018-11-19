@@ -1,4 +1,5 @@
 @import 'theme-colors';
+@import 'custom';
 
 html { font-size: 62.5%; }
 
@@ -16,31 +17,38 @@ h1 {
 }
 
 /* wrapper -- page content never gets wider than this */
-#wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-}
+#wrapper { }
 
 /* header navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 36px;
-  a {
-    text-decoration: none;
-  }
-  .nav-brand {
+.navbar {
+  .navbar-brand {
     text-transform: uppercase;
     font-size: 2.4rem;
   }
-  .nav-links {
+  .nav-link {
     text-transform: uppercase;
-    font-size: 1.6rem;
-    a {
-      margin-right: 20px;
+  }
+}
+
+#main {
+  margin-top: 2rem;
+}
+
+#subnav {
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      border-bottom: 1px solid $gray-600;
+      &:first-of-type {
+        border-top: 1px solid $gray-600;
+      }
     }
   }
+}
+
+#content {
+  background: $light;
 }
 
 #calendar-events {

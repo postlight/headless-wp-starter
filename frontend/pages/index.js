@@ -29,12 +29,14 @@ class Index extends Component {
     return (
       <Layout>
         <Menu menu={this.props.headerMenu} />
-        <div>(note, this template is pages/index.js, all the other pages are pages/page.js)</div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: this.props.post.content.rendered
-          }}
-        />
+        <div className="container" id="main">
+          <div>(note, this template is pages/index.js, all the other pages are pages/page.js)</div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: this.props.post.content.rendered
+            }}
+          />
+        </div>
       </Layout>
     );
   }
