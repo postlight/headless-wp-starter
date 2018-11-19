@@ -16,18 +16,25 @@ class Post extends Component {
       `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
     const post = await res.json();
-    const childrenRes = await fetch(
-      `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${post.id}`
+
+    const ancestorSlug = context.asPath.split('/')[1]
+    const ancestorRes = await fetch(
+      `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${ancestorSlug}`
     );
-    const children = await childrenRes.json();
-    return { post, children };
+    const ancestor = await ancestorRes.json();
+
+    const menuItemRes = await fetch(
+      `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${ancestor.id}`
+    );
+    const menuItems = await menuItemRes.json();
+    return { post, menuItems };
   }
 
   render() {
     const {
       post,
       post: { acf },
-      children
+      menuItems
     } = this.props
 
     if (!post.title) return <Error statusCode={404} />;
@@ -37,9 +44,9 @@ class Post extends Component {
         <Menu menu={this.props.headerMenu} />
 
         {/* display submenu, if there are child pages */}
-        { !!children.length &&
+        { !!menuItems.length &&
           <ul id="sub-nav">
-            { children.map(createLink).map((child, i) =>
+            { menuItems.map(createLink).map((child, i) =>
               <li key={i}>{child}</li>
             )}
           </ul>

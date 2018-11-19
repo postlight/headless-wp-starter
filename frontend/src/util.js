@@ -1,10 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-
-const getSlug = (url) => {
-  const parts = url.split("/");
-  return parts.length > 2 ? parts[parts.length - 2] : "";
-}
+import urlParse from 'url-parse';
 
 export const createLink = (item, index) => {
   if (item.object === "custom") {
@@ -18,8 +14,8 @@ export const createLink = (item, index) => {
   if (item.link) {
     return (
       <Link
-        as={`/${item.slug}`}
-        href={`/${item.slug}`}
+        as={`${getLocation(item.link)}`}
+        href={`/page?slug=${item.slug}&apiRoute=page`}
         key={item.id}
       >
         <a>{item.title.rendered}</a>
@@ -28,14 +24,23 @@ export const createLink = (item, index) => {
   }
 
   const slug = getSlug(item.url);
-  const actualPage = item.object === "category" ? "category" : "post";
   return (
     <Link
-      as={`/${slug}`}
-      href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+      as={`/${slug}/`}
+      href={`/page?slug=${slug}&apiRoute=${item.object}`}
       key={index}
     >
       <a>{item.title}</a>
     </Link>
   );
+}
+
+function getLocation(href) {
+  const url = urlParse(href);
+  return url.pathname;
+};
+
+function getSlug(url) {
+  const parts = url.split("/");
+  return parts.length > 2 ? parts[parts.length - 2] : "";
 }

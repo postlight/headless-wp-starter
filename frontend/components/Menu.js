@@ -14,7 +14,7 @@ class Menu extends Component {
     return( 
       <nav>
         <div className="nav-brand">
-          <Link href="/"><a>Meredith Monk</a></Link>
+          <Link href="/welcome" as="/"><a>Meredith Monk</a></Link>
         </div>
         <div className="nav-links">
           {menuItems}
