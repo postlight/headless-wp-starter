@@ -28,11 +28,10 @@ export const createLink = (item, index) => {
   }
 
   const slug = getSlug(item.url);
-  const actualPage = item.object === "category" ? "category" : "post";
   return (
     <Link
       as={`/${slug}`}
-      href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+      href={`/page?slug=${slug}&apiRoute=${item.object}`}
       key={index}
     >
       <a>{item.title}</a>

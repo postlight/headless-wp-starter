@@ -11,12 +11,8 @@ app
         const server = express();
 
         server.get("/*", (req, res) => {
-            const queryParams = { slug: req.param(0), apiRoute: "page" };
-            app.render(req, res, actualPage, queryParams);
-        });
-
-        server.get("*", (req, res) => {
-            return handle(req, res);
+            const queryParams = { slug: req.param(0) || 'welcome', apiRoute: "page" };
+            app.render(req, res, '/index', queryParams);
         });
 
         server.listen(3000, err => {
