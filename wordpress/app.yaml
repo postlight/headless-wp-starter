@@ -27,4 +27,4 @@ handlers:
   script: auto
 
 env_variables:
-  FRONTEND_URL: https://frontend-dot-wordpress-test-222422.appspot.com/
+  FRONTEND_URL: https://frontend-dot-wordpress-test-222422.appspot.com
