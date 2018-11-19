@@ -4,6 +4,7 @@ runtime: php72
 # serve a custom PHP front controller (e.g. "serve backend/index.php") or to
 # run a long-running PHP script as a worker process (e.g. "php worker.php").
 entrypoint: serve gae-app.php
+service: wordpress
 
 handlers:
 - url: /(.*\.(htm|html|css|js))
