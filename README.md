@@ -2,6 +2,27 @@
 
 meredithmonk.org is build using Postlight's Wordpress starter.
 
+## Dev Setup
+
+See wp-postlight instructions below.
+
+## Deploy
+
+Install the google cloud cli and login.
+
+https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
+
+To deploy the node frontend: 
+
+`gcloud beta app deploy frontend/app.yaml  --no-cache`
+
+To deploy the wordpress backend, add a `wp-config.php` file with database creds
+to `wordpress`, and run:
+
+`gcloud app deploy wordpress/app.yaml`
+
+## Postlight Headless WordPress + React Starter Kit Info
+
 Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up two things:
 
 1.  A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/) and [GraphQL](http://graphql.org/) (**new!**).
