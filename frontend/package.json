@@ -12,7 +12,8 @@
         "docker:stop": "docker stop frontend",
         "docker:start": "docker start frontend && yarn run docker:logs",
         "docker:logs": "docker logs -f frontend",
-        "deploy": "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+        "deploy": "yarn run docker:build && yarn run docker:clean && yarn run docker:run",
+        "gcp-build": "npm run build"
     },
     "keywords": [],
     "author": "",

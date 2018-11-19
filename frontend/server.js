@@ -5,6 +5,9 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+// Listen to the App Engine-specified port, or 8080 otherwise
+const PORT = process.env.PORT || 8080;
+
 app
     .prepare()
     .then(() => {
@@ -21,9 +24,9 @@ app
             app.render(req, res, templateFile, queryParams);
         });
 
-        server.listen(3000, err => {
+        server.listen(PORT, err => {
             if (err) throw err;
-            console.log("> Ready on http://localhost:3000");
+            console.log(`> Ready on port ${PORT}`);
         });
     })
     .catch(ex => {
