@@ -42,7 +42,6 @@ class Post extends Component {
     return (
       <Layout>
         <Menu menu={this.props.headerMenu} />
-
         <div className="container" id="main">
           <div className="row">
             { !!menuItems.length &&
