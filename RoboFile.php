@@ -103,7 +103,8 @@ class RoboFile extends \Robo\Tasks {
         $this->_exec( 'mysql -uroot -p' . $db_pass . ' -h ' . $db_ip . " -e 'flush privileges'" );
 
         $this->wp( 'core download --version=4.9.7 --locale=en_US --force' );
-        $this->_exec( 'rm wordpress/wp-config.php > /dev/null 2>&1 || true' );
+        // This line prevented the final build from finding the wordpress config:
+        // $this->_exec( 'rm wordpress/wp-config.php > /dev/null 2>&1 || true' );
         $this->wp(
             'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass='
             . $opts['wp-db-name'] . ' --dbhost=' . $db_ip

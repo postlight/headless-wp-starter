@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # Install PHP and PHP MySQL Plugin
-    sudo apt-get -y install php php-mysql mysql-client
+    # Install PHP, PHP MySQL Plugin and MySQL Server
+    sudo apt-get -y install php php-mysql mysql-server mysql-client
     # Download and install wp-cli
     wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     sudo chmod +x wp-cli.phar
