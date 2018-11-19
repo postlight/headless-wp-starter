@@ -43,23 +43,29 @@ class Post extends Component {
       <Layout>
         <Menu menu={this.props.headerMenu} />
 
-        {/* display submenu, if there are child pages */}
-        { !!menuItems.length &&
-          <ul id="sub-nav">
-            { menuItems.map(createLink).map((child, i) =>
-              <li key={i}>{child}</li>
-            )}
-          </ul>
-        }
+        <div className="container" id="main">
+          <div className="row">
+            { !!menuItems.length &&
+              <div className="col-3" id="subnav">              
+                <ul id="sub-nav">
+                  { menuItems.map(createLink).map((child, i) =>
+                    <li key={i}>{child}</li>
+                  )}
+                </ul>
+              </div>
+            }
+            <div className="col" id="content">
+              <div dangerouslySetInnerHTML={{
+                  __html: post.content.rendered
+                }}>
+              </div>
+              {/* calendar events */}
+              { acf && acf.events && <CalendarEvents events={acf.events} /> }
+            </div>
+          </div>
+        </div>
 
-        <div
-          dangerouslySetInnerHTML={{
-            __html: post.content.rendered
-          }}
-        />
 
-        {/* calendar events */}
-        { acf && acf.events && <CalendarEvents events={acf.events} /> }
       </Layout>
     );
   }

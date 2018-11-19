@@ -33,6 +33,27 @@ h1 {
   }
 }
 
+#main {
+  margin-top: 2rem;
+}
+
+#subnav {
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      border-bottom: 1px solid $gray-600;
+      &:first-of-type {
+        border-top: 1px solid $gray-600;
+      }
+    }
+  }
+}
+
+#content {
+  background: $light;
+}
+
 #calendar-events {
   table {
     width: 100%;
