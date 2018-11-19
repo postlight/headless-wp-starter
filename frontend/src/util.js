@@ -30,7 +30,7 @@ export const createLink = (item, index) => {
       href={`/page?slug=${slug}&apiRoute=${item.object}`}
       key={index}
     >
-      <a>{item.title}</a>
+      <a className="nav-link">{item.title}</a>
     </Link>
   );
 }
