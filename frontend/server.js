@@ -17,7 +17,7 @@ app
             // index.js : homepage
             // page.js  : all other pages
             const templateFile = req.path === '/' ?
-                '/index' :
+                '/welcome' :
                 '/page';
 
             const queryParams = { slug: req.path === '/' ? 'welcome' : getSlug(req.path), apiRoute: "page" };

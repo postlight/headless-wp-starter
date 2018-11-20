@@ -13,7 +13,7 @@ class Menu extends Component {
 
     return ( 
       <nav className="navbar navbar-expand-lg navbar-light bg-light container">
-        <Link href="/welcome" as="/">
+        <Link href="/welcome/?slug=welcome&apiRoute=welcome" as="/">
           <a className="navbar-brand">Meredith Monk</a>
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
