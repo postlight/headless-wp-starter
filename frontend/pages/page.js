@@ -43,7 +43,7 @@ class Post extends Component {
     return (
       <Layout>
         <Menu menu={this.props.headerMenu} />
-        <div className="container" id="main">
+        <div className="container-fluid" id="main">
           <div className="row">
             { !!menuItems.length &&
               <div className="col-3" id="subnav">              
