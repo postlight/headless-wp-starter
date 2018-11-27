@@ -12,7 +12,7 @@ class Menu extends Component {
     const menuItems = this.props.menu.items
 
     return ( 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light light container-fluid">
         <Link href="/welcome/?slug=welcome&apiRoute=welcome" as="/">
           <a className="navbar-brand">Meredith Monk</a>
         </Link>
