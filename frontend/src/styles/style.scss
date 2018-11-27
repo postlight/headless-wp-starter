@@ -34,6 +34,9 @@ h1 {
     text-transform: uppercase;
     font-size: 2.4rem;
   }
+  .nav-item.active {
+    text-decoration: underline;
+  }
   .nav-link {
     text-transform: uppercase;
   }
