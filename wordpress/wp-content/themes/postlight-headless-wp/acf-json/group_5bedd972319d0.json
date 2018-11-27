@@ -64,7 +64,7 @@
                     "label": "Event Date (used for sorting)",
                     "name": "sort_date",
                     "type": "date_picker",
-                    "instructions": "Select a date that will be used to determine if the event is upcoming or in the past and to keep events in the correct order. If the event spans multiple days, this should be the last day of the event.",
+                    "instructions": "Select the event date on the calendar. If the event spans multiple days, this should be the last day of the event.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -130,5 +130,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542325374
+    "modified": 1543281670
 }
