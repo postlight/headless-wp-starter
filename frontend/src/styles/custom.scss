@@ -72,7 +72,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $purple !default;
+$primary:       $gray-800 !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -201,7 +201,7 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
+  sm: 576px,
   md: 720px,
   lg: 960px,
   xl: 1140px

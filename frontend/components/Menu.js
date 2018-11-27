@@ -12,8 +12,8 @@ class Menu extends Component {
     const menuItems = this.props.menu.items
 
     return ( 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light container">
-        <Link href="/welcome" as="/">
+      <nav className="navbar navbar-expand-lg navbar-light light container-fluid">
+        <Link href="/welcome/?slug=welcome&apiRoute=welcome" as="/">
           <a className="navbar-brand">Meredith Monk</a>
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">

@@ -8,6 +8,7 @@ import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import { createLink } from "../src/util.js";
 import CalendarEvents from "../components/CalendarEvents.js";
+import sortBy from 'lodash/sortBy';
 
 class Post extends Component {
   static async getInitialProps(context) {
@@ -42,13 +43,15 @@ class Post extends Component {
     return (
       <Layout>
         <Menu menu={this.props.headerMenu} />
-        <div className="container" id="main">
+        <div className="container-fluid" id="main">
           <div className="row">
             { !!menuItems.length &&
               <div className="col-3" id="subnav">              
                 <ul id="sub-nav">
-                  { menuItems.map(createLink).map((child, i) =>
-                    <li key={i}>{child}</li>
+                  { sortBy(menuItems, 'menu_order')
+                    .map(createLink)
+                    .map((child, i) =>
+                      <li key={i}>{child}</li>
                   )}
                 </ul>
               </div>

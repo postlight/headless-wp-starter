@@ -7,20 +7,29 @@ body {
   font-family: Arial, sans-serif;
   font-size: 1.4rem;
   background-color: $themeColor-Light;
-  h1, h2 {
-    color: $themeColor-Dark
-  }
+}
+
+h1, h2 {
+  color: $themeColor-Dark
 }
 
 h1 {
-  font-size: 2.0rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  display: inline-block;
 }
 
 /* wrapper -- page content never gets wider than this */
-#wrapper { }
+#wrapper {
+  padding: 20px 20px 0 20px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
 
 /* header navigation */
 .navbar {
+  margin-bottom: 30px;
   .navbar-brand {
     text-transform: uppercase;
     font-size: 2.4rem;
@@ -48,23 +57,63 @@ h1 {
 }
 
 #content {
-  background: $light;
+  a {
+    text-decoration: underline;
+  }
 }
 
 #calendar-events {
   table {
     width: 100%;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    tr {
+      &:first-of-type { border-top: 1px solid $gray-200; }
+      border-bottom: 1px solid $gray-200;
+      padding: 10px;
+    }
     td, th {
-      text-align: left;
+      padding: 10px;
+      vertical-align: top;
       &:nth-child(1) {
-        width: 30%;
+        width: 40%;
       }
       &:nth-child(2) {
-        width: 20%;
+        width: 30%;
       }
       &:nth-child(3) {
         width: 30%;
       }
+      @media only screen and (max-width: 768px) {
+        width: 100% !important;
+        padding: 4px 10px !important;
+      }
+    }
+  }
+}
+
+
+/* hide table headers (but not display: none;, for accessibility) */
+#calendar-events thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+@media only screen and (max-width: 768px) {
+  #calendar-events table,
+  #calendar-events thead,
+  #calendar-events tbody,
+  #calendar-events th,
+  #calendar-events td,
+  #calendar-events tr {
+    display: block;
+  }
+    
+  #calendar-events td {
+    border-bottom: 1px solid $gray-200;
+    @media only screen and (max-width: 768px) {
+      border: none !important;
     }
   }
 }

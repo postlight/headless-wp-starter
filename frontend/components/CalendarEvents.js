@@ -13,30 +13,30 @@ const CalendarEvents = ({events}) => {
       {[upcoming_events, past_events].map((events, i) =>
         <React.Fragment key={i}>
           <h1>{labels[i]}</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-            {events.map(({name, date, location, link}) =>
-              <tr key={name}>
-                <td>{name}</td>
-                <td>{date}</td>
-                <td>{location}</td>
-                <td>
-                  {link &&
-                    <a href={link.url} target={link.target} title={link.title}>{link.title}</a>
-                  }
-                </td>
-              </tr>
-            )}
-            </tbody>
-          </table>
+          <div id="calendar-events" className="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Location</th>
+                </tr>
+              </thead>
+              <tbody>
+              {events.map(({name, date, location, link}) =>
+                <tr key={name}>
+                  <td>{link ?
+                      <a href={link.url} target={link.target} title={link.title}>{name}</a> :
+                      <>{name}</>
+                    }
+                  </td>
+                  <td>{date}</td>
+                  <td>{location}</td>
+                </tr>
+              )}
+              </tbody>
+            </table>
+          </div>
         </React.Fragment>
       )}
     </div>
