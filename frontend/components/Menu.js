@@ -17,7 +17,6 @@ class Menu extends Component {
 
   render() {
     const menuItems = this.props.menu.items
-    console.log(this.props.router.asPath)
 
     return ( 
       <nav className="navbar navbar-expand-lg navbar-light light container-fluid">
