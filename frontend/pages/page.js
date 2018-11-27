@@ -8,6 +8,7 @@ import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import { createLink } from "../src/util.js";
 import CalendarEvents from "../components/CalendarEvents.js";
+import Shop from "../components/Shop.js";
 import sortBy from 'lodash/sortBy';
 
 class Post extends Component {
@@ -61,8 +62,12 @@ class Post extends Component {
                   __html: post.content.rendered
                 }}>
               </div>
+
               {/* calendar events */}
               { acf && acf.events && <CalendarEvents events={acf.events} /> }
+
+              {/* shop */}
+              { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
             </div>
           </div>
         </div>

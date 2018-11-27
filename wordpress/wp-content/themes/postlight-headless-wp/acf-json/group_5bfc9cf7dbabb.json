@@ -4,30 +4,30 @@
     "fields": [
         {
             "key": "field_5bfc9d0919284",
-            "label": "category",
-            "name": "Category",
+            "label": "Product Categories",
+            "name": "product_categories",
             "type": "repeater",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "collapsed": "field_5bfc9d6899f34",
             "min": 0,
             "max": 0,
-            "layout": "table",
-            "button_label": "",
+            "layout": "row",
+            "button_label": "Add Category",
             "sub_fields": [
                 {
                     "key": "field_5bfc9d6899f34",
-                    "label": "Name",
+                    "label": "Category Name",
                     "name": "name",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -53,15 +53,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
+                    "collapsed": "field_5bfca39099f36",
                     "min": 0,
                     "max": 0,
-                    "layout": "table",
-                    "button_label": "",
+                    "layout": "row",
+                    "button_label": "Add Product",
                     "sub_fields": [
                         {
                             "key": "field_5bfca39099f36",
-                            "label": "Name",
+                            "label": "Product Name",
                             "name": "name",
                             "type": "text",
                             "instructions": "",
@@ -79,8 +79,27 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5bfda4e24325b",
+                            "label": "Year \/ Additional Info",
+                            "name": "subtitle",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5bfca3a199f37",
-                            "label": "Image",
+                            "label": "Product Image",
                             "name": "image",
                             "type": "image",
                             "instructions": "",
@@ -108,7 +127,7 @@
                             "name": "purchase_links",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -118,23 +137,27 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            "layout": "row",
+                            "button_label": "Add Purchase Link",
                             "sub_fields": [
                                 {
                                     "key": "field_5bfca3d999f39",
                                     "label": "Link",
                                     "name": "link",
-                                    "type": "link",
+                                    "type": "text",
                                     "instructions": "",
-                                    "required": 1,
+                                    "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "array"
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         }
@@ -159,6 +182,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "",
-    "modified": 1543283712
+    "description": "Product categories for online store",
+    "modified": 1543349518
 }
