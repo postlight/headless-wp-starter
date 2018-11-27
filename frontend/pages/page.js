@@ -17,7 +17,6 @@ class Post extends Component {
     const res = await fetch(
       `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
-    const post = await res.json();
 
     const ancestorSlug = context.asPath.split('/')[1]
     const ancestorRes = await fetch(
@@ -29,6 +28,9 @@ class Post extends Component {
       `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${ancestor.id}`
     );
     const menuItems = await menuItemRes.json();
+    
+    const post = await res.json();
+
     return { post, menuItems };
   }
 
