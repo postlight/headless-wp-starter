@@ -13,3 +13,5 @@
 /wp-content/index.php
 /wp-content/debug.log
 /wp-content/uploads/**
+
+/gcs-service-account.json

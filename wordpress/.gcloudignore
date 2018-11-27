@@ -16,3 +16,5 @@
 # PHP Composer dependencies:
 ## Ensures only top-level "vendor" is ignored
 /vendor/
+
+/gcs-service-account.json
