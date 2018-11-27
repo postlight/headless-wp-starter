@@ -7,20 +7,22 @@ const Shop = ({categories}) => {
       {categories.map((category, i) =>
         <div className="category" key={i}>
           <h1>{category.name}</h1>
-          {category.products.map((product, j) =>
-            <div className="product card" key={j}>
-              <img className="card-img-top" src={product.image.sizes.medium} alt={product.name} />
-              <div className="card-body">
-                <div className="product-name card-text">{product.name}</div>
-                <div className="product-subtitle card-text">{product.subtitle}</div>
-                <ul className="product-purchase-links">
-                  {product.purchase_links.map((link, k) => 
-                    <li key={k}>{prettyLink(link.link)}</li>
-                  )}
-                </ul>
+          <div className="products">
+            {category.products.map((product, j) =>
+              <div className="product card m-2" key={j}>
+                <img className="card-img-top" src={product.image.sizes.medium} alt={product.name} />
+                <div className="card-body">
+                  <div className="product-name card-text">{product.name}</div>
+                  <div className="product-subtitle card-text">{product.subtitle}</div>
+                  <ul className="product-purchase-links">
+                    {product.purchase_links.map((link, k) => 
+                      <li key={k}>{prettyLink(link.link)}</li>
+                    )}
+                  </ul>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
     </div>
