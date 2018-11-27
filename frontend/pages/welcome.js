@@ -10,7 +10,6 @@ import { createLink } from "../src/util.js";
 
 class Index extends Component {
   static async getInitialProps(context) {
-    console.log(context)
     const { slug, apiRoute } = context.query;
     const res = await fetch(
       `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
