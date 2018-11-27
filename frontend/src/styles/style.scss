@@ -62,6 +62,8 @@ h1 {
   }
 }
 
+/* calendar */
+
 #calendar-events {
   table {
     width: 100%;
@@ -92,8 +94,6 @@ h1 {
   }
 }
 
-
-/* hide table headers (but not display: none;, for accessibility) */
 #calendar-events thead tr {
   position: absolute;
   top: -9999px;
@@ -114,6 +114,29 @@ h1 {
     border-bottom: 1px solid $gray-200;
     @media only screen and (max-width: 768px) {
       border: none !important;
+    }
+  }
+}
+
+/* shop */
+
+.product {
+  width: 20rem;
+  line-height: 1.4;
+
+  .product-name {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  ul.product-purchase-links {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+    list-style-type: circle;
+    font-size: 1.3rem;
+    li a {
+      display: inline-block;
+      margin-left: -0.25rem;
     }
   }
 }
