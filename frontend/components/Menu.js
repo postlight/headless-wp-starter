@@ -12,7 +12,7 @@ class Menu extends Component {
 
   isActive(link) {
     const currentPath = this.props.router.asPath
-    return currentPath.indexOf(link.props.as) > -1
+    return currentPath.indexOf(link.props.as) === 0
   }
 
   render() {
