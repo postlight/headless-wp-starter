@@ -14,22 +14,27 @@ app
         const server = express();
 
         server.get("/*", (req, res) => {
-            // index.js : homepage
-            // page.js  : all other pages
-            let templateFile = req.path === '/' ?
-                '/welcome' :
-                '/page';
 
-            let slug = req.path === '/' ? 'welcome' : getSlug(req.path)
-            
-            let apiRoute = "page"
+            // index.js : homepage
+            // work.js  : repertory work individual page
+            // page.js  : all other pages
+
+            let slug = getSlug(req.path)
+            let apiRoute = 'page'
+            let templateFile = '/page'
+
+            if (req.path === '/') {
+                slug = 'welcome'
+                templateFile = '/welcome'
+            }
+
+            // individual repertory work page
             if (req.path.indexOf('/current-repertory/') === 0 && req.path !== '/current-repertory/') {
                 apiRoute = 'work'
                 templateFile = '/work'
             }
 
             const queryParams = { slug, apiRoute };
-            console.log(queryParams)
             app.render(req, res, templateFile, queryParams);
         });
 
