@@ -58,7 +58,7 @@ class Page extends Component {
         <div className="container-fluid" id="main">
           <div className="row">
             { !!menuItems.length &&
-              <div className="col-sm-3" id="subnav">              
+              <div className="col-md-3" id="subnav">              
                 <ul id="sub-nav">
                   { sortBy(menuItems, 'menu_order')
                     .map(createLink)
@@ -69,6 +69,7 @@ class Page extends Component {
               </div>
             }
             <div className="col" id="content">
+              {/* <h1>{page.title.rendered}</h1> */}
               <div dangerouslySetInnerHTML={{
                   __html: page.content.rendered
                 }}>
