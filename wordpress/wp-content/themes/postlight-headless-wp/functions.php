@@ -23,3 +23,10 @@ require_once 'inc/acf-options.php';
 
 // Add custom API endpoints
 require_once 'inc/api-routes.php';
+
+// Custom post types
+function my_cptui_featured_image_support() {
+	$cptui_post_types = array( 'work' );
+	add_theme_support( 'post-thumbnails', $cptui_post_types );
+}
+add_action( 'after_setup_theme', 'my_cptui_featured_image_support' );

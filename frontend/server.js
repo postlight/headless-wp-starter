@@ -16,11 +16,20 @@ app
         server.get("/*", (req, res) => {
             // index.js : homepage
             // page.js  : all other pages
-            const templateFile = req.path === '/' ?
+            let templateFile = req.path === '/' ?
                 '/welcome' :
                 '/page';
 
-            const queryParams = { slug: req.path === '/' ? 'welcome' : getSlug(req.path), apiRoute: "page" };
+            let slug = req.path === '/' ? 'welcome' : getSlug(req.path)
+            
+            let apiRoute = "page"
+            if (req.path.indexOf('/current-repertory/') === 0 && req.path !== '/current-repertory/') {
+                apiRoute = 'work'
+                templateFile = '/work'
+            }
+
+            const queryParams = { slug, apiRoute };
+            console.log(queryParams)
             app.render(req, res, templateFile, queryParams);
         });
 

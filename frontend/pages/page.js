@@ -1,14 +1,15 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
-import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
+import { withRouter } from 'next/router'
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import { createLink } from "../src/util.js";
 import CalendarEvents from "../components/CalendarEvents.js";
 import Shop from "../components/Shop.js";
+import WorksGallery from "../components/WorksGallery.js";
 import sortBy from 'lodash/sortBy';
 
 class Post extends Component {
@@ -31,14 +32,25 @@ class Post extends Component {
 
     const post = await res.json();
 
-    return { post, menuItems };
+    const worksRes = await fetch(
+      `${Config.apiUrl}/wp-json/wp/v2/work?_embed`
+    );
+    const works = await worksRes.json();
+
+    return { post, menuItems, works };
+  }
+
+  isActive(slug) {
+    const currentPath = this.props.router.asPath
+    return currentPath.indexOf(slug) === 0
   }
 
   render() {
     const {
       post,
       post: { acf },
-      menuItems
+      menuItems,
+      works
     } = this.props
 
     if (!post.title) return <Error statusCode={404} />;
@@ -70,6 +82,9 @@ class Post extends Component {
 
               {/* shop */}
               { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
+
+              {/* repertory works */}
+              { this.isActive('/current-repertory') && <WorksGallery works={works} />}
             </div>
           </div>
         </div>
@@ -80,4 +95,4 @@ class Post extends Component {
   }
 }
 
-export default PageWrapper(Post);
+export default withRouter(PageWrapper(Post));
