@@ -28,7 +28,7 @@ class Post extends Component {
       `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${ancestor.id}`
     );
     const menuItems = await menuItemRes.json();
-    
+
     const post = await res.json();
 
     return { post, menuItems };
@@ -49,7 +49,7 @@ class Post extends Component {
         <div className="container-fluid" id="main">
           <div className="row">
             { !!menuItems.length &&
-              <div className="col-3" id="subnav">              
+              <div className="col-sm-3" id="subnav">              
                 <ul id="sub-nav">
                   { sortBy(menuItems, 'menu_order')
                     .map(createLink)
