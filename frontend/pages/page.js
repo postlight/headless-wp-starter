@@ -9,13 +9,14 @@ import { Config } from "../config.js";
 import { createLink } from "../src/util.js";
 import CalendarEvents from "../components/CalendarEvents.js";
 import Shop from "../components/Shop.js";
-import WorksGallery from "../components/WorksGallery.js";
+import RepertoryWorks from "../components/RepertoryWorks.js";
 import sortBy from 'lodash/sortBy';
 
-class Post extends Component {
+class Page extends Component {
   static async getInitialProps(context) {
     const { slug, apiRoute } = context.query;
-    const res = await fetch(
+
+    const pageRes = await fetch(
       `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
 
@@ -28,16 +29,11 @@ class Post extends Component {
     const menuItemRes = await fetch(
       `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${ancestor.id}`
     );
+
     const menuItems = await menuItemRes.json();
+    const page = await pageRes.json();
 
-    const post = await res.json();
-
-    const worksRes = await fetch(
-      `${Config.apiUrl}/wp-json/wp/v2/work?_embed`
-    );
-    const works = await worksRes.json();
-
-    return { post, menuItems, works };
+    return { page, menuItems };
   }
 
   isActive(slug) {
@@ -47,17 +43,18 @@ class Post extends Component {
 
   render() {
     const {
-      post,
-      post: { acf },
+      page,
+      page: { acf },
       menuItems,
-      works
+      headerMenu,
+      repertoryWorks
     } = this.props
 
-    if (!post.title) return <Error statusCode={404} />;
+    if (!page.title) return <Error statusCode={404} />;
 
     return (
       <Layout>
-        <Menu menu={this.props.headerMenu} />
+        <Menu menu={headerMenu} />
         <div className="container-fluid" id="main">
           <div className="row">
             { !!menuItems.length &&
@@ -73,7 +70,7 @@ class Post extends Component {
             }
             <div className="col" id="content">
               <div dangerouslySetInnerHTML={{
-                  __html: post.content.rendered
+                  __html: page.content.rendered
                 }}>
               </div>
 
@@ -84,7 +81,7 @@ class Post extends Component {
               { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
 
               {/* repertory works */}
-              { this.isActive('/current-repertory') && <WorksGallery works={works} />}
+              { this.isActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
             </div>
           </div>
         </div>
@@ -95,4 +92,4 @@ class Post extends Component {
   }
 }
 
-export default withRouter(PageWrapper(Post));
+export default withRouter(PageWrapper(Page));

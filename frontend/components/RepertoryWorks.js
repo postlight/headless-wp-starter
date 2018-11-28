@@ -2,10 +2,10 @@ import React from 'react'
 import urlParse from 'url-parse'
 import Link from "next/link";
 
-const WorksGallery = ({works}) => {
+const RepertoryWorks = ({repertoryWorks}) => {
   return (
     <div id="works-gallery">
-      {works.map((work, i) =>
+      {repertoryWorks.map((work, i) =>
         <div className="work card m-2" key={i}>
           <img className="card-img-top" src={work['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']} alt={work.title.rendered} />
           <div className="card-body">
@@ -25,4 +25,4 @@ const WorksGallery = ({works}) => {
   )
 }
 
-export default WorksGallery;
+export default RepertoryWorks;
