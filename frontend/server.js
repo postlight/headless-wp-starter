@@ -14,6 +14,11 @@ app
         const server = express();
 
         server.get("/*", (req, res) => {
+            // redirect some pages to their first children
+            // must also edit src/util.js for client-side redirect
+            if (req.path.match(/^\/about\/?$/)) {
+                res.redirect('/about/biography/');
+            }
 
             // index.js : homepage
             // work.js  : repertory work individual page

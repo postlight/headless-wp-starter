@@ -16,11 +16,17 @@ export const createLink = (item, index) => {
     )
   }
 
-  const slug = getSlug(item.url);
+  let slug = getSlug(item.url);
+  let asSlug = slug
+  if (asSlug === "about") {
+    asSlug = "about/biography"
+    slug = "biography"
+  }
+
   return (
     <Link
       prefetch
-      as={`/${slug}/`}
+      as={`/${asSlug}/`}
       href={`/page?slug=${slug}&apiRoute=${item.object}`}
       key={index}
     >
