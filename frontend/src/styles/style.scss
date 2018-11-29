@@ -68,7 +68,17 @@ h1, h2 {
       }
       a {
         display: inline-block;
-        margin-left: 3px;
+        margin-left: 0.3rem;
+      }
+      &.active {
+        a {
+          margin-left: 1rem;
+          &:before {
+            content: '→';
+            position: relative;
+            left: -0.7rem;
+          }
+        }
       }
     }
   }

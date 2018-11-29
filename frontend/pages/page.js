@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
 import { withRouter } from 'next/router'
+import classNames from "classnames";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
@@ -36,9 +37,14 @@ class Page extends Component {
     return { page, menuItems };
   }
 
-  isActive(slug) {
+  isSectionActive(slug) {
     const currentPath = this.props.router.asPath
     return currentPath.indexOf(slug) === 0
+  }
+
+  isPageActive(child) {
+    const currentPath = this.props.router.asPath
+    return currentPath === child.props.as
   }
 
   render() {
@@ -63,7 +69,9 @@ class Page extends Component {
                   { sortBy(menuItems, 'menu_order')
                     .map(createLink)
                     .map((child, i) =>
-                      <li key={i}>{child}</li>
+                      <li className={classNames({['active']: this.isPageActive(child)})} key={i}>
+                        {child}
+                      </li>
                   )}
                 </ul>
               </div>
@@ -82,7 +90,7 @@ class Page extends Component {
               { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
 
               {/* repertory works */}
-              { this.isActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
+              { this.isSectionActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
             </div>
           </div>
         </div>
