@@ -34,7 +34,7 @@ class Work extends Component {
                 }}>
               </div>
               <div className="see-more">
-                <span class="arrow">←</span>
+                <span className="arrow">←</span>
                 <Link
                   as="/current-repertory"
                   href="/page?slug=current-repertory&apiRoute=page">
