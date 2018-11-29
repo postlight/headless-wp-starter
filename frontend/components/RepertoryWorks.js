@@ -15,7 +15,7 @@ const RepertoryWorks = ({repertoryWorks}) => {
             href={work.link}
           >
             <a>
-              <img className="card-img-top" src={safeGet(work, "['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']")} alt={work.title.rendered} />
+              <img className="card-img-top" src={safeGet(work, "['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['thumbnail']['source_url']")} alt={work.title.rendered} />
             </a>
           </Link>
           <div className="card-body">
