@@ -10,7 +10,7 @@ const Shop = ({categories}) => {
           <h1>{category.name}</h1>
           <div className="products">
             {category.products.map((product, j) =>
-              <div className="product card m-2" key={j}>
+              <div className="product card" key={j}>
                 <img className="card-img-top" src={safeGet(product, 'image.sizes.thumbnail')} alt={product.name} />
                 <div className="card-body">
                   <div className="product-name card-text">{product.name}</div>

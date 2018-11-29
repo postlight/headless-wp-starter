@@ -79,12 +79,14 @@ h1, h2 {
   a {
     text-decoration: underline;
   }
-
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   h1 {
     font-weight: bold;
     font-size: 2rem;
   }
-
   h2 {
     font-size: 2rem;
     margin-top: 2rem;
@@ -149,12 +151,22 @@ h1, h2 {
 
 /* shop */
 
+$grid_gutter_size: 1.5rem;
+
 .products {
+  margin: 0 -#{$grid_gutter_size};
   display: flex;
+  flex-wrap: wrap;
 }
 
 .product {
-  width: 20rem;
+  width: calc(50% - #{$grid_gutter_size} - #{$grid_gutter_size});
+  @include media-breakpoint-up(sm) { width: calc(25% - #{$grid_gutter_size} - #{$grid_gutter_size}); }
+  @include media-breakpoint-up(md) { width: calc(20% - #{$grid_gutter_size} - #{$grid_gutter_size}); }
+  min-width: 10rem;
+  margin: #{$grid_gutter_size};
+  margin-top: 0;
+  border: none;
   line-height: 1.4;
 
   .product-name {
@@ -183,7 +195,6 @@ $grid_gutter_size: 0.75rem;
   margin: 0 -#{$grid_gutter_size};
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .work {
