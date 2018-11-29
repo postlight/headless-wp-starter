@@ -177,12 +177,19 @@ $grid_gutter_size: 1.5rem;
   ul.product-purchase-links {
     margin-top: 0.5rem;
     margin-bottom: 0;
-    padding-left: 1.5rem;
-    list-style-type: circle;
+    padding-left: 0;
     font-size: 1.3rem;
-    li a {
-      display: inline-block;
-      margin-left: -0.25rem;
+    list-style: none;
+    li {
+      &:before {
+        content: "\2043";
+        width: 1.5rem;
+        display: inline-block;
+      }
+      a {
+        display: inline-block;
+        margin-left: -0.25rem;
+      }
     }
   }
 }
