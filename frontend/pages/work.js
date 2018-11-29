@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import Layout from "../components/Layout.js";
 import Menu from "../components/Menu.js";
+import Link from "next/link";
 import { Config } from "../config.js";
 import safeGet from "lodash/get";
 
@@ -22,11 +23,23 @@ class Work extends Component {
         <Menu menu={this.props.headerMenu} />
         <div className="container-fluid" id="main">
           <div className="row">
-            <div className="col" id="content">
-              <img src={safeGet(post, "['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']")} alt={post.title.rendered} />
+            <div className="col">
+              <img className="work-featured-image" src={safeGet(post, "['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url']")} alt={post.title.rendered} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col" id="content" className="work-description">
               <div dangerouslySetInnerHTML={{
                   __html: post.content.rendered
                 }}>
+              </div>
+              <div>
+                ←&nbsp;
+                <Link
+                  as="/current-repertory"
+                  href="/page?slug=current-repertory&apiRoute=page">
+                    <a>See more work</a>
+                </Link>
               </div>
             </div>
           </div>

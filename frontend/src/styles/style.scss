@@ -202,3 +202,18 @@ $grid_gutter_size: 0.75rem;
     }
   }
 }
+
+/* individual work page */
+.work-featured-image {
+  display: block;
+  margin: 0 auto 3rem auto;
+  padding: 3px;
+  border: 1px solid $gray-200;
+  width: 100%;
+  max-width: 500px;
+}
+
+.work-description {
+  max-width: 800px;
+  margin: 0 auto;
+}
