@@ -45,7 +45,7 @@ h1, h2 {
 }
 
 #main {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 #subnav {
@@ -171,12 +171,34 @@ h1, h2 {
 }
 
 /* current repertory */
+
+$grid_gutter_size: 0.75rem;
+
 #works-gallery {
-  margin-top: 2rem;
+  margin: 0 -#{$grid_gutter_size};
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .work {
-  width: 30rem;
+  width: calc(100% - #{$grid_gutter_size} - #{$grid_gutter_size});
+  @include media-breakpoint-up(sm) { width: calc(50% - #{$grid_gutter_size} - #{$grid_gutter_size}); }
+  @include media-breakpoint-up(md) { width: calc(33.3333% - #{$grid_gutter_size} - #{$grid_gutter_size}); }
+  min-width: 20rem;
+  margin: #{$grid_gutter_size};
   border: none;
   text-align: center;
+  &.card {
+    margin-top: 0;
+    .card-body {
+      padding: 0.5rem 0 0.75rem 0;
+      .card-text {
+        text-transform: uppercase;
+        a {
+          text-decoration: none !important;
+        }
+      }
+    }
+  }
 }

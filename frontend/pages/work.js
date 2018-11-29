@@ -20,11 +20,15 @@ class Work extends Component {
     return (
       <Layout>
         <Menu menu={this.props.headerMenu} />
-        <img src={safeGet(post, "['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']")} alt={post.title.rendered} />
-        <div className="col" id="content">
-          <div dangerouslySetInnerHTML={{
-              __html: post.content.rendered
-            }}>
+        <div className="container-fluid" id="main">
+          <div className="row">
+            <div className="col" id="content">
+              <img src={safeGet(post, "['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']")} alt={post.title.rendered} />
+              <div dangerouslySetInnerHTML={{
+                  __html: post.content.rendered
+                }}>
+              </div>
+            </div>
           </div>
         </div>
       </Layout>
