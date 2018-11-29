@@ -51,6 +51,19 @@ add_action(
             ],
         ] );
 
+        register_rest_route( 'postlight/v1', '/work', [
+            'methods'  => 'GET',
+            'callback' => 'rest_get_work',
+            'args' => [
+                'slug' => array_merge(
+                    $post_slug_arg,
+                    [
+                        'required' => true,
+                    ]
+                ),
+            ],
+        ] );
+
         register_rest_route('postlight/v1', '/post/preview', [
             'methods'  => 'GET',
             'callback' => 'rest_get_post_preview',
@@ -91,6 +104,16 @@ function rest_get_page( WP_REST_Request $request ) {
 }
 
 /**
+ * Respond to a REST API request to get repertory work data.
+ *
+ * @param WP_REST_Request $request Request.
+ * @return WP_REST_Response
+ */
+function rest_get_work( WP_REST_Request $request ) {
+    return rest_get_content( $request, 'work', __FUNCTION__ );
+}
+
+/**
  * Respond to a REST API request to get post or page data.
  * * Handles changed slugs
  * * Doesn't return posts whose status isn't published
@@ -107,6 +130,7 @@ function rest_get_content( WP_REST_Request $request, $type, $function_name ) {
         [
             'post',
             'page',
+            'work'
         ],
         true
     );
@@ -151,6 +175,7 @@ function get_content_by_slug( $slug, $type = 'post' ) {
         [
             'post',
             'page',
+            'work'
         ],
         true
     );

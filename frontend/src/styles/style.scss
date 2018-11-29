@@ -13,26 +13,31 @@ h1, h2 {
   color: $themeColor-Dark
 }
 
-h1 {
-  font-size: 1.6rem;
-  font-weight: bold;
-  padding: 2px 5px;
-  display: inline-block;
-}
-
 /* wrapper -- page content never gets wider than this */
 #wrapper {
   padding: 20px 20px 0 20px;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1200px;
 }
 
 /* header navigation */
 .navbar {
   margin-bottom: 30px;
+  padding: 0 15px;
   .navbar-brand {
     text-transform: uppercase;
     font-size: 2.4rem;
+  }
+  .nav-item.active {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      right: 10px;
+      border-bottom: 1px solid $primary;
+    }
   }
   .nav-link {
     text-transform: uppercase;
@@ -48,19 +53,40 @@ h1 {
     padding-left: 0;
     list-style-type: none;
     li {
+      max-width: 200px;
+      padding: 3px 0 2px;
       border-bottom: 1px solid $gray-600;
+      margin: 0 auto;
+      @include media-breakpoint-up(md) { margin: 0;}
       &:first-of-type {
         border-top: 1px solid $gray-600;
+      }
+      a {
+        display: inline-block;
+        margin-left: 3px;
       }
     }
   }
 }
 
 #content {
+  * > :first-child { margin-top: 0 }
   a {
     text-decoration: underline;
   }
+
+  h1 {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
 }
+
+/* calendar */
 
 #calendar-events {
   table {
@@ -92,8 +118,6 @@ h1 {
   }
 }
 
-
-/* hide table headers (but not display: none;, for accessibility) */
 #calendar-events thead tr {
   position: absolute;
   top: -9999px;
@@ -116,4 +140,43 @@ h1 {
       border: none !important;
     }
   }
+}
+
+/* shop */
+
+.products {
+  display: flex;
+}
+
+.product {
+  width: 20rem;
+  line-height: 1.4;
+
+  .product-name {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  ul.product-purchase-links {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+    list-style-type: circle;
+    font-size: 1.3rem;
+    li a {
+      display: inline-block;
+      margin-left: -0.25rem;
+    }
+  }
+}
+
+/* current repertory */
+#works-gallery {
+  margin-top: 2rem;
+}
+
+.work {
+  width: 30rem;
+  border: none;
+  text-align: center;
 }

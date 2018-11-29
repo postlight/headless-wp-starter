@@ -12,7 +12,7 @@ const CalendarEvents = ({events}) => {
     <div id="calendar-events">
       {[upcoming_events, past_events].map((events, i) =>
         <React.Fragment key={i}>
-          <h1>{labels[i]}</h1>
+          <h2>{labels[i]}</h2>
           <div id="calendar-events" className="table-responsive">
             <table>
               <thead>

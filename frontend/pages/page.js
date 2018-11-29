@@ -1,22 +1,24 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
-import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
+import { withRouter } from 'next/router'
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import { createLink } from "../src/util.js";
 import CalendarEvents from "../components/CalendarEvents.js";
+import Shop from "../components/Shop.js";
+import RepertoryWorks from "../components/RepertoryWorks.js";
 import sortBy from 'lodash/sortBy';
 
-class Post extends Component {
+class Page extends Component {
   static async getInitialProps(context) {
     const { slug, apiRoute } = context.query;
-    const res = await fetch(
+
+    const pageRes = await fetch(
       `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
-    const post = await res.json();
 
     const ancestorSlug = context.asPath.split('/')[1]
     const ancestorRes = await fetch(
@@ -27,26 +29,36 @@ class Post extends Component {
     const menuItemRes = await fetch(
       `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${ancestor.id}`
     );
+
     const menuItems = await menuItemRes.json();
-    return { post, menuItems };
+    const page = await pageRes.json();
+
+    return { page, menuItems };
+  }
+
+  isActive(slug) {
+    const currentPath = this.props.router.asPath
+    return currentPath.indexOf(slug) === 0
   }
 
   render() {
     const {
-      post,
-      post: { acf },
-      menuItems
+      page,
+      page: { acf },
+      menuItems,
+      headerMenu,
+      repertoryWorks
     } = this.props
 
-    if (!post.title) return <Error statusCode={404} />;
+    if (!page.title) return <Error statusCode={404} />;
 
     return (
       <Layout>
-        <Menu menu={this.props.headerMenu} />
+        <Menu menu={headerMenu} />
         <div className="container-fluid" id="main">
           <div className="row">
             { !!menuItems.length &&
-              <div className="col-3" id="subnav">              
+              <div className="col-md-3" id="subnav">              
                 <ul id="sub-nav">
                   { sortBy(menuItems, 'menu_order')
                     .map(createLink)
@@ -57,12 +69,20 @@ class Post extends Component {
               </div>
             }
             <div className="col" id="content">
+              {/* <h1>{page.title.rendered}</h1> */}
               <div dangerouslySetInnerHTML={{
-                  __html: post.content.rendered
+                  __html: page.content.rendered
                 }}>
               </div>
+
               {/* calendar events */}
               { acf && acf.events && <CalendarEvents events={acf.events} /> }
+
+              {/* shop */}
+              { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
+
+              {/* repertory works */}
+              { this.isActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
             </div>
           </div>
         </div>
@@ -73,4 +93,4 @@ class Post extends Component {
   }
 }
 
-export default PageWrapper(Post);
+export default withRouter(PageWrapper(Page));
