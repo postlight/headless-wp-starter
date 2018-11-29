@@ -33,8 +33,8 @@ class Work extends Component {
                   __html: post.content.rendered
                 }}>
               </div>
-              <div>
-                ←&nbsp;
+              <div className="see-more">
+                <span class="arrow">←</span>
                 <Link
                   as="/current-repertory"
                   href="/page?slug=current-repertory&apiRoute=page">

@@ -233,3 +233,10 @@ $grid_gutter_size: 0.75rem;
   max-width: 800px;
   margin: 0 auto;
 }
+
+.see-more {
+  padding-top: 1rem;
+  .arrow {
+    margin-right: 0.5rem;
+  }
+}
