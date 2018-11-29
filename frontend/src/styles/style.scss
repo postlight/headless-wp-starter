@@ -28,15 +28,20 @@ h1, h2 {
     text-transform: uppercase;
     font-size: 2.4rem;
   }
-  .nav-item.active {
-    position: relative;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 5px;
-      left: 10px;
-      right: 10px;
-      border-bottom: 1px solid $primary;
+  .nav-item {
+    &:last-of-type a {
+      padding-right: 0;
+    }
+    &.active {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        right: 10px;
+        border-bottom: 1px solid $primary;
+      }
     }
   }
   .nav-link {
