@@ -63,20 +63,7 @@ class Page extends Component {
         <Menu menu={headerMenu} />
         <div className="container-fluid" id="main">
           <div className="row">
-            { !!menuItems.length &&
-              <div className="col-md-3" id="subnav">              
-                <ul id="sub-nav">
-                  { sortBy(menuItems, 'menu_order')
-                    .map(createLink)
-                    .map((child, i) =>
-                      <li className={classNames({['active']: this.isPageActive(child)})} key={i}>
-                        {child}
-                      </li>
-                  )}
-                </ul>
-              </div>
-            }
-            <div className="col" id="content">
+            <div className={classNames('col', {['solo']: !menuItems.length})} id="content">
               {/* <h1>{page.title.rendered}</h1> */}
               <div dangerouslySetInnerHTML={{
                   __html: page.content.rendered
@@ -92,10 +79,21 @@ class Page extends Component {
               {/* repertory works */}
               { this.isSectionActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
             </div>
+            { !!menuItems.length &&
+              <div className="col-md-3" id="subnav">              
+                <ul id="sub-nav">
+                  { sortBy(menuItems, 'menu_order')
+                    .map(createLink)
+                    .map((child, i) =>
+                      <li className={classNames({['active']: this.isPageActive(child)})} key={i}>
+                        {child}
+                      </li>
+                  )}
+                </ul>
+              </div>
+            }
           </div>
         </div>
-
-
       </Layout>
     );
   }

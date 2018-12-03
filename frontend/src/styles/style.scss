@@ -65,7 +65,11 @@ h1, h2 {
 }
 
 #main {
-  margin-top: 4rem;
+  margin-top: 2rem;
+  & > .row {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 #subnav {
@@ -73,26 +77,32 @@ h1, h2 {
     padding-left: 0;
     list-style-type: none;
     li {
-      max-width: 200px;
-      padding: 3px 0 2px;
-      border-bottom: 1px solid $gray-600;
+      border-bottom: 1px solid $gray-300;
       margin: 0 auto;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: bold;
+      position: relative;
       @include media-breakpoint-up(md) { margin: 0;}
       &:first-of-type {
-        border-top: 1px solid $gray-600;
+        border-top: 1px solid $gray-300;
       }
       a {
         display: inline-block;
-        margin-left: 0.3rem;
+        width: 100%;
+        margin-left: 2rem;
+        padding: 1.6rem 0.8rem;
       }
-      &.active {
-        a {
-          margin-left: 1rem;
-          &:before {
-            content: '→';
-            position: relative;
-            left: -0.7rem;
-          }
+      &:hover {
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background-color: $gray-800;
+          pointer-events: none;
         }
       }
     }
@@ -100,6 +110,15 @@ h1, h2 {
 }
 
 #content {
+  border-top: 1px solid $gray-300;
+  padding-top: 1.6rem;
+  font-size: 1.6rem;
+  max-width: 760px;
+  &.solo {
+    max-width: none;
+  }
+  padding-right: 40px;
+
   * > :first-child { margin-top: 0 }
   a {
     text-decoration: underline;
@@ -276,8 +295,10 @@ $grid_gutter_size: 0.75rem;
 #footer {
   display: flex;
   align-items: center;
+  border-top: 1px solid $gray-200;
+  margin-top: 1.6rem;
   > div {
-    margin: 4rem auto 1rem auto;
+    margin: 3.2rem auto 1.6rem auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -292,7 +313,7 @@ $grid_gutter_size: 0.75rem;
     > * {
       margin: 1rem 0;
       @include media-breakpoint-up(sm) {
-        margin: 0 1rem;
+        margin: 0 1.6rem;
       }
     }
     address {
