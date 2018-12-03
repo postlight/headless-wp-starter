@@ -27,7 +27,7 @@ class Menu extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarToggler">
-          <ul className="navbar-nav ml-auto mt-2">
+          <ul className="navbar-nav ml-auto">
             { menuItems.map(createLink).map((link, i) =>
               <li className={classNames("nav-item", {['active']: this.isActive(link)})} key={i}>
                 { link }
