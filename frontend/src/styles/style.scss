@@ -36,26 +36,31 @@ h1, h2 {
   }
   .navbar-nav {
     position: relative;
-    top: 5px;
+    left: 1rem;
   }
   .nav-item {
     font-size: 1.7rem;
-    &:last-of-type a {
-      padding-right: 0;
+    &:before {
+      opacity: 0;
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 10px;
+      right: 10px;
+      height: 0;
+      // border-radius: 2px;
+      border-bottom: 4px solid $mm-brand;
+      // border-left: 3px solid transparent;
+      // border-right: 3px solid transparent;
+      margin-top: 4px;
+      z-index: -1;
     }
     &.active {
       position: relative;
-      &:after {
-        // opacity: 0.4;
-        // content: '';
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        // width: 50px;
-        // height: 50px;
-        // border-radius: 50%;
-        // background: $mm-brand;
+      &:before {
+        opacity: 0.75;
+        margin-top: 0;
+        transition: opacity 0.35s ease, margin-top 0.2s ease;
       }
     }
   }
@@ -76,16 +81,17 @@ h1, h2 {
   ul {
     padding-left: 0;
     list-style-type: none;
+    border: 1px solid $gray-300;
     li {
-      border-bottom: 1px solid $gray-300;
       margin: 0 auto;
       text-transform: uppercase;
       font-size: 1.2rem;
       font-weight: bold;
       position: relative;
       @include media-breakpoint-up(md) { margin: 0;}
-      &:first-of-type {
-        border-top: 1px solid $gray-300;
+      border-bottom: 1px solid $gray-200;
+      &:last-of-type {
+        border-bottom: none;
       }
       a {
         display: inline-block;
@@ -100,17 +106,19 @@ h1, h2 {
           bottom: 0;
           left: 0;
           right: 0;
-          height: 3px;
-          background-color: $gray-800;
+          height: 2px;
+          background-color: $gray-700;
           pointer-events: none;
         }
+      }
+      &.active {
+        background: $gray-200;
       }
     }
   }
 }
 
 #content {
-  border-top: 1px solid $gray-300;
   padding-top: 1.6rem;
   font-size: 1.6rem;
   max-width: 760px;
@@ -295,7 +303,6 @@ $grid_gutter_size: 0.75rem;
 #footer {
   display: flex;
   align-items: center;
-  border-top: 1px solid $gray-200;
   margin-top: 1.6rem;
   > div {
     margin: 3.2rem auto 1.6rem auto;
