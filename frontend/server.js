@@ -19,6 +19,9 @@ app
             if (req.path.match(/^\/about\/?$/)) {
                 res.redirect('/about/biography/');
             }
+            if (req.path.match(/^\/education\/?$/)) {
+                res.redirect('/about/workshops/');
+            }
 
             // index.js : homepage
             // work.js  : repertory work individual page

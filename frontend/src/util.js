@@ -17,10 +17,15 @@ export const createLink = (item, index) => {
   }
 
   let slug = getSlug(item.url);
-  let asSlug = slug
-  if (asSlug === "about") {
+  let asSlug
+  if (slug === "about") {
     asSlug = "about/biography"
     slug = "biography"
+  } else if (slug === "education") {
+    asSlug = "education/workshops"
+    slug = "workshops"
+  } else {
+    asSlug = slug
   }
 
   return (
