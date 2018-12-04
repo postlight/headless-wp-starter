@@ -12,7 +12,8 @@ class Menu extends Component {
 
   isActive(link) {
     const currentPath = this.props.router.asPath
-    return currentPath.indexOf(link.props.as) === 0
+    const linkBase = '/' + link.props.as.split('/')[1]
+    return currentPath.indexOf(linkBase) === 0
   }
 
   render() {
@@ -27,7 +28,7 @@ class Menu extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarToggler">
-          <ul className="navbar-nav ml-auto mt-2">
+          <ul className="navbar-nav ml-auto">
             { menuItems.map(createLink).map((link, i) =>
               <li className={classNames("nav-item", {['active']: this.isActive(link)})} key={i}>
                 { link }

@@ -16,17 +16,34 @@ export const createLink = (item, index) => {
     )
   }
 
-  const slug = getSlug(item.url);
+  let slug = getSlug(item.url);
+  let asSlug
+  if (slug === "about") {
+    asSlug = "about/biography"
+    slug = "biography"
+  } else if (slug === "education") {
+    asSlug = "education/workshops"
+    slug = "workshops"
+  } else {
+    asSlug = slug
+  }
+
   return (
     <Link
       prefetch
-      as={`/${slug}/`}
+      as={`/${asSlug}/`}
       href={`/page?slug=${slug}&apiRoute=${item.object}`}
       key={index}
     >
-      <a className="nav-link">{item.title}</a>
+      <a className="nav-link" onClick={clickMenuItem}>{item.title}</a>
     </Link>
   );
+}
+
+function clickMenuItem() {
+  window.setTimeout(() => {
+    $('.navbar-collapse.show').length && $('.navbar-toggler').trigger('click');
+  }, 50);
 }
 
 function getLocation(href) {

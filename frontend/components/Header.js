@@ -21,6 +21,8 @@ class Header extends Component {
             content="width=device-width, initial-scale=1"
           />
           <meta charSet="utf-8" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Raleway:300&text=Merdithonk" rel="stylesheet" />
           <title>
             Meredith Monk
           </title>

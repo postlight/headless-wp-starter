@@ -27,6 +27,7 @@
         "lodash": "^4.17.11",
         "next": "^7.0.2",
         "react": "^16.0.0",
+        "serve-favicon": "^2.5.0",
         "url-parse": "^1.4.4"
     },
     "devDependencies": {

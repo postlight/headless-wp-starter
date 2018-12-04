@@ -1,5 +1,7 @@
 const express = require("express");
 const next = require("next");
+const favicon = require('serve-favicon');
+const path = require('path');
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -13,7 +15,17 @@ app
     .then(() => {
         const server = express();
 
+        server.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
+
         server.get("/*", (req, res) => {
+            // redirect some pages to their first children
+            // must also edit src/util.js for client-side redirect
+            if (req.path.match(/^\/about\/?$/)) {
+                res.redirect('/about/biography/');
+            }
+            if (req.path.match(/^\/education\/?$/)) {
+                res.redirect('/about/workshops/');
+            }
 
             // index.js : homepage
             // work.js  : repertory work individual page

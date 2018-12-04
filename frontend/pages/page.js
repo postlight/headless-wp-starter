@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
 import { withRouter } from 'next/router'
+import classNames from "classnames";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
@@ -11,6 +12,7 @@ import CalendarEvents from "../components/CalendarEvents.js";
 import Shop from "../components/Shop.js";
 import RepertoryWorks from "../components/RepertoryWorks.js";
 import sortBy from 'lodash/sortBy';
+import safeGet from 'lodash/get';
 
 class Page extends Component {
   static async getInitialProps(context) {
@@ -36,9 +38,14 @@ class Page extends Component {
     return { page, menuItems };
   }
 
-  isActive(slug) {
+  isSectionActive(slug) {
     const currentPath = this.props.router.asPath
     return currentPath.indexOf(slug) === 0
+  }
+
+  isPageActive(child) {
+    const currentPath = this.props.router.asPath
+    return currentPath === child.props.as
   }
 
   render() {
@@ -57,18 +64,7 @@ class Page extends Component {
         <Menu menu={headerMenu} />
         <div className="container-fluid" id="main">
           <div className="row">
-            { !!menuItems.length &&
-              <div className="col-md-3" id="subnav">              
-                <ul id="sub-nav">
-                  { sortBy(menuItems, 'menu_order')
-                    .map(createLink)
-                    .map((child, i) =>
-                      <li key={i}>{child}</li>
-                  )}
-                </ul>
-              </div>
-            }
-            <div className="col" id="content">
+            <div className={classNames('col', {['solo']: !menuItems.length})} id="content">
               {/* <h1>{page.title.rendered}</h1> */}
               <div dangerouslySetInnerHTML={{
                   __html: page.content.rendered
@@ -79,15 +75,41 @@ class Page extends Component {
               { acf && acf.events && <CalendarEvents events={acf.events} /> }
 
               {/* shop */}
-              { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
+              {acf && 
+                <div>
+                  {acf.featured_product_image &&
+                    <div class="featured-product">
+                      <img src={safeGet(acf, 'featured_product_image.sizes.thumbnail')} />
+                      <div dangerouslySetInnerHTML={{
+                          __html: acf.featured_product_description
+                        }}>
+                      </div>
+                    </div>
+                  }
+                  {acf.product_categories &&
+                    <Shop categories={acf.product_categories} />
+                  }
+                </div>
+              }
 
               {/* repertory works */}
-              { this.isActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
+              { this.isSectionActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
             </div>
+            { !!menuItems.length &&
+              <div className="col-md-3" id="subnav">              
+                <ul id="sub-nav">
+                  { sortBy(menuItems, 'menu_order')
+                    .map(createLink)
+                    .map((child, i) =>
+                      <li className={classNames({['active']: this.isPageActive(child)})} key={i}>
+                        {child}
+                      </li>
+                  )}
+                </ul>
+              </div>
+            }
           </div>
         </div>
-
-
       </Layout>
     );
   }

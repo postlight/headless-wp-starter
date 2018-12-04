@@ -1,5 +1,6 @@
 import React from 'react'
 import urlParse from 'url-parse'
+import safeGet from "lodash/get";
 
 const Shop = ({categories}) => {
   return (
@@ -9,8 +10,8 @@ const Shop = ({categories}) => {
           <h1>{category.name}</h1>
           <div className="products">
             {category.products.map((product, j) =>
-              <div className="product card m-2" key={j}>
-                <img className="card-img-top" src={product.image.sizes.medium} alt={product.name} />
+              <div className="product card" key={j}>
+                <img className="card-img-top" src={safeGet(product, 'image.sizes.thumbnail')} alt={product.name} />
                 <div className="card-body">
                   <div className="product-name card-text">{product.name}</div>
                   <div className="product-subtitle card-text">{product.subtitle}</div>
