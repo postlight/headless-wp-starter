@@ -4,7 +4,7 @@
 html { font-size: 62.5%; }
 
 body {
-  font-family: "Proxima Nova", Montserrat, sans-serif; // still need to add proxima nova webfont
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   background-color: $themeColor-Light;
 }
@@ -39,6 +39,7 @@ h1, h2 {
     left: 1rem;
   }
   .nav-item {
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 1.7rem;
     &:before {
       opacity: 0;
@@ -81,12 +82,14 @@ h1, h2 {
   margin-top: 2rem;
   & > .row {
     display: flex;
-    justify-content: space-between;
   }
 }
 
 #subnav {
   order: 2;
+  max-width: 25rem;
+  margin: 0 auto;
+  @include media-breakpoint-up(md) { margin: 0;}
   ul {
     padding-left: 0;
     list-style-type: none;
@@ -103,6 +106,7 @@ h1, h2 {
         border-bottom: none;
       }
       a {
+        font-family: "Roboto Condensed", sans-serif;
         display: inline-block;
         width: 100%;
         margin-left: 2rem;
@@ -128,14 +132,10 @@ h1, h2 {
 }
 
 #content {
-  order: 1;
-  @media only screen and (max-width: 768px) {
-    order: 3;
-  }
-  padding-top: 1.6rem;
+  order: 3;
   font-size: 1.6rem;
   max-width: 760px;
-  padding-right: 40px;
+  @include media-breakpoint-up(md) { padding-right: 40px; }
   &.solo {
     max-width: none;
     padding-right: 0;

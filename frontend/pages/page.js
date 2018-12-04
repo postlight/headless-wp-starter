@@ -59,8 +59,6 @@ class Page extends Component {
 
     if (!page.title) return <Error statusCode={404} />;
 
-    console.log(acf)
-
     return (
       <Layout>
         <Menu menu={headerMenu} />
