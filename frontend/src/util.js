@@ -30,9 +30,15 @@ export const createLink = (item, index) => {
       href={`/page?slug=${slug}&apiRoute=${item.object}`}
       key={index}
     >
-      <a className="nav-link">{item.title}</a>
+      <a className="nav-link" onClick={clickMenuItem}>{item.title}</a>
     </Link>
   );
+}
+
+function clickMenuItem() {
+  window.setTimeout(() => {
+    $('.navbar-collapse.show').length && $('.navbar-toggler').trigger('click');
+  }, 50);
 }
 
 function getLocation(href) {

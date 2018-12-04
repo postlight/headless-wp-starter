@@ -12,7 +12,8 @@ class Menu extends Component {
 
   isActive(link) {
     const currentPath = this.props.router.asPath
-    return currentPath.indexOf(link.props.as) === 0
+    const linkBase = '/' + link.props.as.split('/')[1]
+    return currentPath.indexOf(linkBase) === 0
   }
 
   render() {

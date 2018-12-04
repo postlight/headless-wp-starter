@@ -44,28 +44,36 @@ h1, h2 {
       opacity: 0;
       content: '';
       position: absolute;
-      bottom: 2px;
+      bottom: -4px;
       left: 10px;
       right: 10px;
-      height: 0;
-      // border-radius: 2px;
       border-bottom: 4px solid $mm-brand;
-      // border-left: 3px solid transparent;
-      // border-right: 3px solid transparent;
       margin-top: 4px;
       z-index: -1;
     }
     &.active {
-      position: relative;
-      &:before {
-        opacity: 0.75;
-        margin-top: 0;
-        transition: opacity 0.35s ease, margin-top 0.2s ease;
+      font-weight: bold;
+      @include media-breakpoint-up(lg) {
+        font-weight: normal;
+        position: relative;
+        &:before {
+          opacity: 0.75;
+          bottom: 2px;
+          transition: opacity 0.35s ease, bottom 0.2s ease;
+        }
       }
     }
   }
   .nav-link {
     text-transform: uppercase;
+  }
+}
+
+.navbar-collapse {
+  margin-left: 2px;
+  border-left: 3px solid $gray-300;
+  @include media-breakpoint-up(lg) {
+    border-left: none;
   }
 }
 
@@ -78,6 +86,7 @@ h1, h2 {
 }
 
 #subnav {
+  order: 2;
   ul {
     padding-left: 0;
     list-style-type: none;
@@ -119,6 +128,10 @@ h1, h2 {
 }
 
 #content {
+  order: 1;
+  @media only screen and (max-width: 768px) {
+    order: 3;
+  }
   padding-top: 1.6rem;
   font-size: 1.6rem;
   max-width: 760px;
