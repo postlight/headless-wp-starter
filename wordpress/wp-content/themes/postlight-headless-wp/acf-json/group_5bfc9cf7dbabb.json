@@ -3,6 +3,49 @@
     "title": "Store",
     "fields": [
         {
+            "key": "field_5c05d6df327e6",
+            "label": "Featured Product Image",
+            "name": "featured_product_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c05d700327e7",
+            "label": "Featured Product Description",
+            "name": "featured_product_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_5bfc9d0919284",
             "label": "Product Categories",
             "name": "product_categories",
@@ -183,5 +226,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Product categories for online store",
-    "modified": 1543349518
+    "modified": 1543886665
 }

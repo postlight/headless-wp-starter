@@ -4,7 +4,7 @@
 html { font-size: 62.5%; }
 
 body {
-  font-family: "Proxima Nova", Montserrat, sans-serif;
+  font-family: "Proxima Nova", Montserrat, sans-serif; // still need to add proxima nova webfont
   font-size: 1.6rem;
   background-color: $themeColor-Light;
 }
@@ -135,10 +135,11 @@ h1, h2 {
   padding-top: 1.6rem;
   font-size: 1.6rem;
   max-width: 760px;
+  padding-right: 40px;
   &.solo {
     max-width: none;
+    padding-right: 0;
   }
-  padding-right: 40px;
 
   * > :first-child { margin-top: 0 }
   a {
@@ -216,6 +217,26 @@ h1, h2 {
 
 /* shop */
 
+.featured-product {
+  margin: 0 0 4rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+  > img {
+    margin-right: 2rem;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      align-self: flex-start;
+      width: auto;
+    }
+  }
+  border: 1px solid $gray-300;
+  background: $gray-100;
+}
+
 $grid_gutter_size: 1.5rem;
 
 .products {
@@ -239,6 +260,10 @@ $grid_gutter_size: 1.5rem;
     font-weight: bold;
   }
 
+  .card-body {
+    padding: 0.75rem;
+  }
+
   ul.product-purchase-links {
     margin-top: 0.5rem;
     margin-bottom: 0;
@@ -246,14 +271,16 @@ $grid_gutter_size: 1.5rem;
     font-size: 1.3rem;
     list-style: none;
     li {
-      &:before {
-        content: "\2043";
-        width: 1.5rem;
-        display: inline-block;
-      }
-      a {
-        display: inline-block;
-        margin-left: -0.25rem;
+      @include media-breakpoint-up(lg) {
+        // &:before {
+        //   content: "\2043";
+        //   width: 1.25rem;
+        //   display: inline;
+        // }
+        a {
+          display: inline;
+          // margin-left: -0.25rem;
+        }
       }
     }
   }

@@ -12,6 +12,7 @@ import CalendarEvents from "../components/CalendarEvents.js";
 import Shop from "../components/Shop.js";
 import RepertoryWorks from "../components/RepertoryWorks.js";
 import sortBy from 'lodash/sortBy';
+import safeGet from 'lodash/get';
 
 class Page extends Component {
   static async getInitialProps(context) {
@@ -58,6 +59,8 @@ class Page extends Component {
 
     if (!page.title) return <Error statusCode={404} />;
 
+    console.log(acf)
+
     return (
       <Layout>
         <Menu menu={headerMenu} />
@@ -74,7 +77,22 @@ class Page extends Component {
               { acf && acf.events && <CalendarEvents events={acf.events} /> }
 
               {/* shop */}
-              { acf && acf.product_categories && <Shop categories={acf.product_categories} /> }
+              {acf && 
+                <div>
+                  {acf.featured_product_image &&
+                    <div class="featured-product">
+                      <img src={safeGet(acf, 'featured_product_image.sizes.thumbnail')} />
+                      <div dangerouslySetInnerHTML={{
+                          __html: acf.featured_product_description
+                        }}>
+                      </div>
+                    </div>
+                  }
+                  {acf.product_categories &&
+                    <Shop categories={acf.product_categories} />
+                  }
+                </div>
+              }
 
               {/* repertory works */}
               { this.isSectionActive('/current-repertory') && <RepertoryWorks repertoryWorks={repertoryWorks} />}
