@@ -158,7 +158,7 @@ h1, h2 {
     font-size: 2rem;
     margin-top: 2rem;
     text-transform: uppercase;
-    color: #986cb7;
+    color: $mm-purple;
   }
 }
 
@@ -241,6 +241,15 @@ h1, h2 {
 }
 
 $grid_gutter_size: 1.5rem;
+
+.category-name {
+  padding-left: 1rem;
+  border-bottom: 1px solid $gray-500;
+  padding-bottom: 1rem;
+  margin-bottom: 1.6rem;
+  padding-top: 1.6rem;
+  color: $mm-purple;
+}
 
 .products {
   margin: 0 -#{$grid_gutter_size};

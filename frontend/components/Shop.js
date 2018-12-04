@@ -7,7 +7,7 @@ const Shop = ({categories}) => {
     <div id="shop">
       {categories.map((category, i) =>
         <div className="category" key={i}>
-          <h1>{category.name}</h1>
+          <h1 className="category-name">{category.name}</h1>
           <div className="products">
             {category.products.map((product, j) =>
               <div className="product card" key={j}>
