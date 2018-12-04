@@ -26,10 +26,11 @@ h1, h2 {
   padding: 0 15px;
   // align-items: flex-end;
   .navbar-brand {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-size: 3.4rem;
     color: $mm-brand;
     letter-spacing: -0.1rem;
+    font-family: Raleway, sans-serif;
     &:hover {
       color: $mm-brand;
     }
@@ -37,6 +38,7 @@ h1, h2 {
   .navbar-nav {
     position: relative;
     left: 1rem;
+    bottom: 4px;
   }
   .nav-item {
     font-family: "Roboto Condensed", sans-serif;
