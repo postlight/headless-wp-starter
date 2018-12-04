@@ -90,11 +90,20 @@ class ACF_Media {
 		$errors = acf_validate_attachment( $file, $field, 'upload' );
 		
 		
-		// filter for 3rd party customization
-		$errors = apply_filters("acf/upload_prefilter", $errors, $file, $field);
-		$errors = apply_filters("acf/upload_prefilter/type={$field['type']}", $errors, $file, $field );
-		$errors = apply_filters("acf/upload_prefilter/name={$field['name']}", $errors, $file, $field );
-		$errors = apply_filters("acf/upload_prefilter/key={$field['key']}", $errors, $file, $field );
+		/**
+		*  Filters the errors for a file before it is uploaded to WordPress.
+		*
+		*  @date	16/02/2015
+		*  @since	5.1.5
+		*
+		*  @param	array $errors An array of errors.
+		*  @param	array $file An array of data for a single file.
+		*  @param	array $field The field array.
+		*/
+		$errors = apply_filters( "acf/upload_prefilter/type={$field['type']}",	$errors, $file, $field );
+		$errors = apply_filters( "acf/upload_prefilter/name={$field['_name']}",	$errors, $file, $field );
+		$errors = apply_filters( "acf/upload_prefilter/key={$field['key']}", 	$errors, $file, $field );
+		$errors = apply_filters( "acf/upload_prefilter", 						$errors, $file, $field );
 		
 		
 		// append error

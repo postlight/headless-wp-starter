@@ -38,7 +38,7 @@
 				e.preventDefault();
 				
 				// unlock form
-				acf.validation.unlockForm( $el );
+				acf.unlockForm( $el );
 				
 				// alert
 				alert( acf.__('Field group title is required') );
@@ -102,7 +102,6 @@
 			
 			// initialize
 			this.$el = $('#acf-field-key-hide');
-			this.addEvents();
 			
 			// render
 			this.render();
@@ -247,8 +246,16 @@
 			return $('#' + this.getInputId() + '-' + name);
 		},
 		
+		$meta: function(){
+			return this.$('.meta:first');
+		},
+		
+		$handle: function(){
+			return this.$('.handle:first');
+		},
+		
 		$settings: function(){
-			return this.$('.acf-field-settings:first > .acf-field');
+			return this.$('.settings:first');
 		},
 		
 		$setting: function( name ){
@@ -308,7 +315,6 @@
 			
 			// get input value
 			var $input = this.$input( name );
-			//console.log($input );
 			var value = $input.length ? $input.val() : null;
 			
 			// set data silently (cache)
@@ -540,15 +546,16 @@
 			acf.doAction('submit_field_object', this);
 		},
 		
-		onChange: function(){
-			//console.log('onChange');
+		onChange: function( e, $el ){
+			
+			// save settings
 			this.save();
 			
 			// action for 3rd party customization
 			acf.doAction('change_field_object', this);
 		},
 		
-		onChanged: function( e, name, value ){
+		onChanged: function( e, $el, name, value ){
 			
 			// ignore 'save'
 			if( name == 'save' ) {
@@ -972,7 +979,7 @@
 			// check parent
 			var parent = this.getParent();
 			if( parent ) {
-				ID = parent.prop('ID') || parent.prop('key');
+				ID = parseInt(parent.prop('ID')) || parent.prop('key');
 			}
 			
 			// update
@@ -1966,7 +1973,7 @@
 			$el.sortable({
 				handle: '.acf-sortable-handle',
 				connectWith: '.acf-field-list',
-				start: function(e, ui){
+				start: function( e, ui ){
 					var field = acf.getFieldObject( ui.item );
 			        ui.placeholder.height( ui.item.height() );
 			        acf.doAction('sortstart_field_object', field, $el);
@@ -2499,4 +2506,3 @@
 // @codekit-prepend "../js/field-group-fields.js";
 // @codekit-prepend "../js/field-group-locations.js";
 // @codekit-prepend "../js/field-group-compatibility.js";
-

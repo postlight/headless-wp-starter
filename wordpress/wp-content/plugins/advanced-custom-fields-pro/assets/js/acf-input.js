@@ -52,7 +52,7 @@
 	*/
 	
 	acf.has = function( name ){
-		return this.get(data) !== null;
+		return this.get(name) !== null;
 	};
 	
 	
@@ -474,7 +474,7 @@
             
             // extra
             ' ': '_',
-			'\'': '',
+			"'": '',
 			'?': '',
 			'/': '',
 			'\\': '',
@@ -496,7 +496,7 @@
 		// vars
 		var nonWord = /\W/g;
         var mapping = function (c) {
-            return map[c] || c; 
+            return (map[c] !== undefined) ? map[c] : c;
         };
         
         // replace
@@ -684,7 +684,7 @@
 	*/
 	
 	var buildObject = function( obj, name, value ){
-		//console.log('buildObject', obj, name);
+		
 		// replace [] with placeholder
 		name = name.replace('[]', '[%%index%%]');
 		
@@ -731,15 +731,14 @@
 				// crawl
 				ref = ref[ key ];
 			}
-			//console.log('ref:', ref);
 		}
 	};
 	
 	acf.serialize = function( $el, prefix ){
-		//console.time('serialize');		
+			
 		// vars
 		var obj = {};
-		var inputs = $el.find('select, textarea, input').serializeArray();
+		var inputs = acf.serializeArray( $el );
 		
 		// prefix
 		if( prefix !== undefined ) {
@@ -757,12 +756,90 @@
 		for( var i = 0; i < inputs.length; i++ ) {
 			buildObject( obj, inputs[i].name, inputs[i].value );
 		}
-		//console.timeEnd('serialize');
 		
 		// return
 		return obj;
 	};
 	
+	/**
+	*  acf.serializeArray
+	*
+	*  Similar to $.serializeArray() but works with a parent wrapping element.
+	*
+	*  @date	19/8/18
+	*  @since	5.7.3
+	*
+	*  @param	jQuery $el The element or form to serialize.
+	*  @return	array
+	*/
+	
+	acf.serializeArray = function( $el ){
+		return $el.find('select, textarea, input').serializeArray();
+	}
+	
+	
+	/**
+	*  acf.serializeAjax
+	*
+	*  Returns an object containing name => value data ready to be encoded for Ajax.
+	*
+	*  @date	15/8/18
+	*  @since	5.7.3
+	*
+	*  @param	jQUery $el The element or form to serialize.
+	*  @param	string prefix The input prefix to scope to.
+	*  @return	object
+	*/
+	
+/*
+	acf.serializeAjax = function( $el, prefix ){
+			
+		// vars
+		var data = {};
+		var index = {};
+		var inputs = $el.find('select, textarea, input').serializeArray();
+		
+		// remove prefix
+		if( prefix !== undefined ) {
+			
+			// filter and modify
+			inputs = inputs.filter(function( item ){
+				return item.name.indexOf(prefix) === 0;
+			}).map(function( item ){
+				
+				// remove prefix from name
+				item.name = item.name.slice(prefix.length);
+				
+				// fix [foo][bar] to foo[bar]
+				if( item.name.slice(0, 1) == '[' ) {
+					item.name = item.name.slice(1).replace(']', '');
+				}
+				return item;
+			});
+		}
+		
+		// build object
+		inputs.map(function( item ){
+			
+			// fix foo[] to foo[0], foo[1], etc
+			if( item.name.slice(-2) === '[]' ) {
+				
+				// ensure index exists
+				index[ item.name ] = index[ item.name ] || 0;
+				index[ item.name ]++;
+				
+				// replace [] with [0]
+				item.name = item.name.replace('[]', '[' + (index[ item.name ]-1) + ']');
+			}
+			
+			// append to data
+			data[ item.name ] = item.value;
+		});
+		
+		// return
+		return data;
+	};
+*/
 	
 	/**
 	*  addAction
@@ -983,10 +1060,13 @@
 	};
 */
 	
-	
 	// Preferences
-	var preferences = localStorage.getItem('acf');
-	preferences = preferences ? JSON.parse(preferences) : {};
+	// - use try/catch to avoid JS error if cookies are disabled on front-end form
+	try {
+		var preferences = JSON.parse(localStorage.getItem('acf')) || {};
+	} catch(e) {
+		var preferences = {};
+	}
 	
 	
 	/**
@@ -1381,6 +1461,11 @@
 		data.nonce = acf.get('nonce');
 		data.post_id = acf.get('post_id');
 		
+		// language
+		if( acf.has('language') ) {
+			data.lang = acf.get('language');
+		}
+		
 		// filter for 3rd party customization
 		data = acf.applyFilters('prepare_for_ajax', data);	
 		
@@ -1448,7 +1533,7 @@
 	acf.updateUserSetting = function( name, value ){
 		
 		var ajaxData = {
-			action: 'acf/update_user_setting',
+			action: 'acf/ajax/user_setting',
 			name: name,
 			value: value
 		};
@@ -1485,13 +1570,14 @@
 			return false
 		}
 		
-		// bail if select option does not exist
-		if( $input.is('select') && !$input.find('option[value="'+value+'"]').length ) {
-			return false;
-		}
-		
 		// update value
 		$input.val( value );
+		
+		// prevent select elements displaying blank value if option doesn't exist
+		if( $input.is('select') && $input.val() === null ) {
+			$input.val( prevValue );
+			return false;
+		}
 		
 		// update with trigger
 		if( silent !== true ) {
@@ -1753,7 +1839,7 @@
 	
 	acf.isset = function( obj /*, level1, level2, ... */ ) {
 		for( var i = 1; i < arguments.length; i++ ) {
-			if( !obj.hasOwnProperty(arguments[i]) ) {
+			if( !obj || !obj.hasOwnProperty(arguments[i]) ) {
 				return false;
 			}
 			obj = obj[ arguments[i] ];
@@ -1775,7 +1861,7 @@
 	
 	acf.isget = function( obj /*, level1, level2, ... */ ) {
 		for( var i = 1; i < arguments.length; i++ ) {
-			if( !obj.hasOwnProperty(arguments[i]) ) {
+			if( !obj || !obj.hasOwnProperty(arguments[i]) ) {
 				return null;
 			}
 			obj = obj[ arguments[i] ];
@@ -2092,7 +2178,7 @@
 		acf.doAction('load');
 	});
 	
-	$(window).on('unload', function(){
+	$(window).on('beforeunload', function(){
 		acf.doAction('unload');
 	});
 	
@@ -2552,8 +2638,8 @@
 			// trigger events
 			if( !silent ) {
 				this.changed = true;
-				this.trigger('changed:' + name, [value]);
-				this.trigger('changed', [name, value]);
+				this.trigger('changed:' + name, [value, prevValue]);
+				this.trigger('changed', [name, value, prevValue]);
 			}
 			
 			// return
@@ -2762,12 +2848,19 @@
 		
 		proxyEvent: function( callback ){
 			return this.proxy(function(e){
+				
+				// validate
 				if( !this.validateEvent(e) ) {
 					return;
 				}
-				var args = acf.arrayArgs(arguments);
-				args.push( $(e.currentTarget) );
-				callback.apply(this, args);
+				
+				// construct args
+				var args = acf.arrayArgs( arguments );
+				var extraArgs = args.slice(1);
+				var eventArgs = [ e, $(e.currentTarget) ].concat( extraArgs );
+				
+				// callback
+				callback.apply(this, eventArgs);
 			});
 		},
 		
@@ -3396,12 +3489,12 @@
 		changed: false,
 		
 		actions: {
-			'change_field': 'startListening',
-			'validation_failure': 'startListening'
+			'validation_failure':	'startListening'
 		},
 		
 		events: {
-			'submit form':	'stopListening'
+			'change .acf-field':	'startListening',
+			'submit form':			'stopListening'
 		},
 				
 		reset: function(){
@@ -3539,6 +3632,10 @@
 			
 			// re-initialize
 			this.initialize();
+			
+			// refresh events
+			this.removeEvents();
+			this.addEvents();
 		},
 		
 		show: function(){
@@ -3621,70 +3718,220 @@
 
 (function($, undefined){
 	
+	/**
+	*  acf.getPostbox
+	*
+	*  Returns a postbox instance.
+	*
+	*  @date	23/9/18
+	*  @since	5.7.7
+	*
+	*  @param	mixed $el Either a jQuery element or the postbox id.
+	*  @return	object
+	*/
+	acf.getPostbox = function( $el ){
+		
+		// allow string parameter
+		if( typeof arguments[0] == 'string' ) {
+			$el = $('#' + arguments[0]);
+		}
+		
+		// return instance
+		return acf.getInstance( $el );
+	};
+	
+	/**
+	*  acf.getPostboxes
+	*
+	*  Returns an array of postbox instances.
+	*
+	*  @date	23/9/18
+	*  @since	5.7.7
+	*
+	*  @param	void
+	*  @return	array
+	*/
+	acf.getPostboxes = function(){
+		
+		// find all postboxes
+		var $postboxes = $('.acf-postbox');
+		
+		// return instances
+		return acf.getInstances( $postboxes );
+	};
+	
+	/**
+	*  acf.newPostbox
+	*
+	*  Returns a new postbox instance for the given props.
+	*
+	*  @date	20/9/18
+	*  @since	5.7.6
+	*
+	*  @param	object props The postbox properties.
+	*  @return	object
+	*/
+	acf.newPostbox = function( props ){
+		return new acf.models.Postbox( props );
+	};
+	
+	/**
+	*  acf.models.Postbox
+	*
+	*  The postbox model.
+	*
+	*  @date	20/9/18
+	*  @since	5.7.6
+	*
+	*  @param	void
+	*  @return	void
+	*/
 	acf.models.Postbox = acf.Model.extend({
 		
 		data: {
-			id: 		'',
+			id:			'',
 			key:		'',
 			style: 		'default',
 			label: 		'top',
-			editLink:	'',
-			editTitle:	'',
-			visibility:	true
+			visible: 	true,
+			edit:		'',
+			html: 		true,
 		},
 		
 		setup: function( props ){
+			
+			// compatibilty
+			if( props.editLink ) {
+				props.edit = props.editLink;
+			}
+			
+			// extend data
 			$.extend(this.data, props);
+			
+			// set $el
+			this.$el = this.$postbox();
+		},
+		
+		$postbox: function(){
+			return $('#' + this.get('id'));
+		},
+		
+		$placeholder: function(){
+			return $('#' + this.get('id') + '-placeholder');
+		},
+		
+		$hide: function(){
+			return $('#' + this.get('id') + '-hide');
+		},
+		
+		$hideLabel: function(){
+			return this.$hide().parent();
+		},
+		
+		$hndle: function(){
+			return this.$('> .hndle');
+		},
+		
+		$inside: function(){
+			return this.$('> .inside');
+		},
+		
+		isVisible: function(){
+			return this.get('visible');
+		},
+		
+		hasHTML: function(){
+			return this.get('html');
 		},
 		
 		initialize: function(){
 			
-			// vars
-			var id = this.get('id');
-			var $postbox = $('#' + id);
-			var $toggle = $('#' + id + '-hide');
-			var $label = $toggle.parent();
+			// Add default class.
+			this.$el.addClass('acf-postbox');
 			
-			// add class
-			$postbox.addClass('acf-postbox');
-			$label.addClass('acf-postbox-toggle');
+			// Remove 'hide-if-js class.
+			// This class is added by WP to postboxes that are hidden via the "Screen Options" tab.
+			this.$el.removeClass('hide-if-js');
 			
-			// remove class
-			$postbox.removeClass('hide-if-js');
-			$label.removeClass('hide-if-js');
-			
-			// field group style
+			// Add field group style class.
 			var style = this.get('style');
 			if( style !== 'default' ) {
-				$postbox.addClass( style );
+				this.$el.addClass( style );
 			}
 			
-			// .inside class
-			$postbox.children('.inside').addClass('acf-fields').addClass('-' + this.get('label'));
+			// Add .inside class.
+			this.$inside().addClass('acf-fields').addClass('-' + this.get('label'));
 			
-				
-			// visibility
-			if( this.get('visibility') ) {
-				$toggle.prop('checked', true);
+			// Append edit link.
+			var edit = this.get('edit');
+			if( edit ) {
+				this.$hndle().append('<a href="' + edit + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + acf.__('Edit field group') + '"></a>');
+			}
+			
+			// Show postbox.
+			if( this.isVisible() ) {
+				this.show();
+			
+			// Hide postbox.
+			// Hidden postboxes do not contain HTML and are used as placeholders.
 			} else {
-				$postbox.addClass('acf-hidden');
-				$label.addClass('acf-hidden');
+				this.set('html', false);
+				this.hide();
 			}
+		},
+		
+		show: function(){
 			
-			// edit link
-			var editLink = this.get('editLink');
-			var editTitle = this.get('editTitle');
-			if( editLink ) {
-				
-				$postbox.children('.hndle').append('<a href="' + editLink + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + editTitle + '"></a>');
-			}
+			// Show label.
+			this.$hideLabel().show();
+			
+			// toggle on checkbox
+			this.$hide().prop('checked', true);
+			
+			// Show postbox
+			this.$el.show();
+		},
+		
+		enable: function(){
+			acf.enable( this.$el, 'postbox' );
+		},
+		
+		showEnable: function(){
+			this.show();
+			this.enable();
+		},
+		
+		hide: function(){
+			
+			// Hide label.
+			this.$hideLabel().hide();
+			
+			// Hide postbox
+			this.$el.hide();
+		},
+		
+		disable: function(){
+			acf.disable( this.$el, 'postbox' );
+		},
+		
+		hideDisable: function(){
+			this.hide();
+			this.disable();
+		},
+		
+		html: function( html ){
+			
+			// Update HTML.
+			this.$inside().html( html );
+			
+			// Keep a record that this postbox has HTML.
+			this.set('html', true);
+			
+			// Do action.
+			acf.doAction('append', this.$el);
 		}
 	});
-	
-	acf.newPostbox = function( props ){
-		return new acf.models.Postbox( props );
-	};
-			
+		
 })(jQuery);
 
 (function($, undefined){
@@ -4892,10 +5139,18 @@
 	var fieldsEventManager = new acf.Model({
 		id: 'fieldsEventManager',
 		events: {
-			'click .acf-field a[href="#"]': 'onClick'
+			'click .acf-field a[href="#"]':	'onClick',
+			'change .acf-field':			'onChange'
 		},
 		onClick: function( e ){
+			
+			// prevent default of any link with an href of #
 			e.preventDefault();
+		},
+		onChange: function(){
+			
+			// preview hack allows post to save with no title or content
+			$('#_acf_changed').val(1);
 		}
 	});
 	
@@ -5612,6 +5867,10 @@
 			return this.$('.search');
 		},
 		
+		$canvas: function(){
+			return this.$('.canvas');
+		},
+		
 		addClass: function( name ){
 			this.$control().addClass( name );
 		},
@@ -5634,8 +5893,8 @@
 				val[ $(this).data('name') ] = $(this).val();
 			});
 			
-			// return false if no address
-			if( !val.address ) {
+			// return false if no lat/lng
+			if( !val.lat || !val.lng ) {
 				val = false;
 			}
 			
@@ -5657,8 +5916,8 @@
 				acf.val( this.$input(name), val[name] );
 			}
 			
-			// return false if no address
-			if( !val.address ) {
+			// return false if no lat/lng
+			if( !val.lat || !val.lng ) {
 				val = false;
 			}
 			
@@ -5729,10 +5988,6 @@
 			return this.$search().val();
 		},
 		
-		getCanvas: function(){
-			return this.$('.canvas');
-		},
-		
 		initialize: function(){
 			
 			// bail early if too early
@@ -5770,7 +6025,7 @@
 		    	autocomplete: {}
         	};
         	mapArgs = acf.applyFilters('google_map_args', mapArgs, this);       	
-        	var map = new google.maps.Map( this.getCanvas()[0], mapArgs );
+        	var map = new google.maps.Map( this.$canvas()[0], mapArgs );
         	this.addMapEvents( map, this );
         	
         	
@@ -5810,15 +6065,17 @@
 				// bind
 				autocomplete.bindTo('bounds', map);
 				
-				// event
+				// autocomplete event place_changed is triggered each time the input changes
+				// customize the place object with the current "search value" to allow users controll over the address text
 				google.maps.event.addListener(autocomplete, 'place_changed', function() {
-				    field.setPlace( this.getPlace() );
+					var place = this.getPlace();
+					place.address = field.getSearchVal();
+				    field.setPlace( place );
 				});
 	        }
 	        
 	        // click
 	        google.maps.event.addListener( map, 'click', function( e ) {
-				
 				// vars
 				var lat = e.latLng.lat();
 				var lng = e.latLng.lng();
@@ -5832,7 +6089,6 @@
 			
 			// dragend
 		    google.maps.event.addListener( marker, 'dragend', function(){
-		    	
 		    	// vars
 				var position = this.getPosition();
 				var lat = position.lat();
@@ -5901,7 +6157,7 @@
 			// vars
 			var lat = place.geometry.location.lat();
 			var lng = place.geometry.location.lng();
-			var address = place.formatted_address;
+			var address = place.address || place.formatted_address;
 			
 			// update
 			this.setValue({
@@ -5937,7 +6193,7 @@
 		    $wrap.addClass('-loading');
 		    
 		    // callback
-		    var callback = $.proxy(function( results, status ){
+		    var callback = this.proxy(function( results, status ){
 			    
 			    // remove class
 			    $wrap.removeClass('-loading');
@@ -5954,7 +6210,7 @@
 				} else {
 					lat = results[0].geometry.location.lat();
 					lng = results[0].geometry.location.lng();
-					address = results[0].formatted_address;
+					//address = results[0].formatted_address;
 				}
 				
 				// update val
@@ -5966,7 +6222,7 @@
 				
 				//acf.doAction('google_map_geocode_results', results, status, this.$el, this);
 				
-		    }, this);
+		    });
 		    
 		    // query
 		    api.geocoder.geocode({ 'address' : address }, callback);
@@ -6848,8 +7104,8 @@
 		
 		getValue: function(){
 			var val = this.$input().val();
-			if( val === 'other' ) {
-				val = this.inputText().val();
+			if( val === 'other' && this.get('other_choice') ) {
+				val = this.$inputText().val();
 			}
 			return val;
 		},
@@ -8034,6 +8290,7 @@
 				
 				// prevent
 				e.preventDefault();
+				e.stopImmediatePropagation();
 				
 				// basic validation
 				if( $name.val() === '' ) {
@@ -8519,6 +8776,9 @@
 			var oldId = $textarea.attr('id');
 			var newId = acf.uniqueId('acf-editor-');
 			
+			// store copy of textarea data
+			var data = $textarea.data();
+			
 			// rename
 			acf.rename({
 				target: $wrap,
@@ -8532,6 +8792,10 @@
 			
 			// initialize
 			acf.tinymce.initialize( newId, args );
+			
+			// apply data to new textarea (acf.rename creates a new textarea element due to destructive mode)
+			// fixes bug where conditional logic "disabled" is lost during "screen_check"
+			this.$input().data(data);
 		},
 		
 		onMousedown: function( e ){
@@ -8622,7 +8886,7 @@
 		},
 		
 		choices: function( field ){
-			return '<intput type="text" />';
+			return '<input type="text" />';
 		}
 	});
 	
@@ -9312,7 +9576,7 @@
 		type: 'contains',
 		operator: '==contains',
 		label: __('Value contains'),
-		fieldTypes: [ 'text', 'textarea', 'number', 'email', 'url', 'password', 'wysiwyg', 'oembed' ],
+		fieldTypes: [ 'text', 'textarea', 'number', 'email', 'url', 'password', 'wysiwyg', 'oembed', 'select' ],
 		match: function( rule, field ){
 			return containsString( field.val(), rule.value );
 		},
@@ -9734,7 +9998,7 @@
 		
 		remove: function(){
 			this.frame.detach();
-			this.frame.dispose();
+			this.frame.remove();
 		},
 		
 		getFrameOptions: function(){
@@ -10105,8 +10369,14 @@
 		initialize: function(){
 			
 			// bail early if no media views
-			if( !acf.isset(wp, 'media', 'view') ) {
+			if( !acf.isset(window, 'wp', 'media', 'view') ) {
 				return;
+			}
+			
+			// fix bug where CPT without "editor" does not set post.id setting which then prevents uploadedTo from working
+			var postID = getPostID();
+			if( postID && acf.isset(wp, 'media', 'view', 'settings', 'post') ) {
+				wp.media.view.settings.post.id = postID;
 			}
 			
 			// customize
@@ -10215,46 +10485,30 @@
 					// Each instance will attempt to render when a new modal is created.
 					// Use a property to avoid this and only render once per instance.
 					if( this.rendered ) {
-						//console.log('ignore render', this.cid);
 						return this;
 					}
-					this.rendered = true;
 					
-					// render
-					//console.log('render', this.cid);
+					// render HTML
 					AttachmentCompat.prototype.render.apply( this, arguments );
+					
+					// when uploading, render is called twice.
+					// ignore first render by checking for #acf-form-data element
+					if( !this.$('#acf-form-data').length ) {
+						return this;
+					}
 					
 					// clear timeout
 					clearTimeout( timeout );
 					
 					// setTimeout
 					timeout = setTimeout($.proxy(function(){
-						
-						// check if element is visible to avoid logic on previous instances (which are hidden)
-						if( this.$el.is(':visible') ) {
-							//console.log('append', this.cid);
-							acf.doAction('append', this.$el);
-						}
-						
+						this.rendered = true;
+						acf.doAction('append', this.$el);
 					}, this), 50);
 					
 					// return
 					return this;
-				},
-				
-				// commented out function causing JS errors when navigating through media grid
-				// dispose (and remove) are called after the element has been detached, so this only causes extra JS initialization
-				dispose: function(){
-						
-					// remove
-					if( this.$el.is(':visible') ) {
-						//acf.doAction('remove', this.$el);
-						console.log('removed visible');
-					}
-					// dispose
-					return AttachmentCompat.prototype.dispose.apply( this, arguments );
 				}
-			
 			});
 
 		},
@@ -10381,33 +10635,167 @@
 		
 		xhr: false,
 		
-		wait: 'ready',
+		timeout: false,
+		
+		wait: 'load',
 		
 		events: {
-			'change #page_template':								'onChangeTemplate',
-			'change #parent_id':									'onChangeParent',
-			'change #post-formats-select input':					'onChangeFormat',
-			'change .categorychecklist input':						'onChangeTerm',
-			'change .categorychecklist select':						'onChangeTerm',
-			'change .acf-taxonomy-field[data-save="1"] input':		'onChangeTerm',
-			'change .acf-taxonomy-field[data-save="1"] select':		'onChangeTerm'
+			'change #page_template':						'onChange',
+			'change #parent_id':							'onChange',
+			'change #post-formats-select':					'onChange',
+			'change .categorychecklist':					'onChange',
+			'change .tagsdiv':								'onChange',
+			'change .acf-taxonomy-field[data-save="1"]':	'onChange',
+			'change #product-type':							'onChange'
 		},
 		
-		data: {
-			//'post_id':		0,
-			//'page_template':	0,
-			//'page_parent':	0,
-			//'page_type':		0,
-			//'post_format':	0,
-			//'post_taxonomy':	0
+		initialize: function(){
+			
 		},
+/*
+		
+		checkScreenEvents: function(){
 			
-		fetch: function(){
+			// vars
+			var events = [
+				'change #page_template',
+				'change #parent_id',
+				'change #post-formats-select input',
+				'change .categorychecklist input',
+				'change .categorychecklist select',
+				'change .acf-taxonomy-field[data-save="1"] input',
+				'change .acf-taxonomy-field[data-save="1"] select',
+				'change #product-type'	
+			];
 			
-			// bail early if not active
-			if( !this.active ) {
-				return;
+			acf.screen.on('change', '#product-type', 'fetch');
+		},
+*/
+		
+		
+		isPost: function(){
+			return acf.get('screen') === 'post';
+		},
+		
+		isUser: function(){
+			return acf.get('screen') === 'user';
+		},
+		
+		isTaxonomy: function(){
+			return acf.get('screen') === 'taxonomy';
+		},
+		
+		isAttachment: function(){
+			return acf.get('screen') === 'attachment';
+		},
+		
+		isNavMenu: function(){
+			return acf.get('screen') === 'nav_menu';
+		},
+		
+		isWidget: function(){
+			return acf.get('screen') === 'widget';
+		},
+		
+		isComment: function(){
+			return acf.get('screen') === 'comment';
+		},
+		
+		getPageTemplate: function(){
+			var $el = $('#page_template');
+			return $el.length ? $el.val() : null;
+		},
+		
+		getPageParent: function( e, $el ){
+			var $el = $('#parent_id');
+			return $el.length ? $el.val() : null;
+		},
+		
+		getPageType: function( e, $el ){
+			return this.getPageParent() ? 'child' : 'parent';
+		},
+		
+		getPostFormat: function( e, $el ){
+			var $el = $('#post-formats-select input:checked');
+			if( $el.length ) {
+				var val = $el.val();
+				return (val == '0') ? 'standard' : val;
 			}
+			return null;
+		},
+		
+		getPostTerms: function(){
+			
+			// vars
+			var terms = {};
+			
+			// serialize WP taxonomy postboxes		
+			var data = acf.serialize( $('.categorydiv, .tagsdiv') );
+			
+			// use tax_input (tag, custom-taxonomy) when possible.
+			// this data is already formatted in taxonomy => [terms].
+			if( data.tax_input ) {
+				terms = data.tax_input;
+			}
+			
+			// append "category" which uses a different name
+			if( data.post_category ) {
+				terms.category = data.post_category;
+			}
+			
+			// convert any string values (tags) into array format
+			for( var tax in terms ) {
+				if( !acf.isArray(terms[tax]) ) {
+					terms[tax] = terms[tax].split(', ');
+				}
+			}
+			
+			// loop over taxonomy fields and add their values
+			acf.getFields({type: 'taxonomy'}).map(function( field ){
+				
+				// ignore fields that don't save
+				if( !field.get('save') ) {
+					return;
+				}
+				
+				// vars
+				var val = field.val();
+				var tax = field.get('taxonomy');
+				
+				// check val
+				if( val ) {
+					
+					// ensure terms exists
+					terms[ tax ] = terms[ tax ] || [];
+					
+					// ensure val is an array
+					val = acf.isArray(val) ? val : [val];
+					
+					// append
+					terms[ tax ] = terms[ tax ].concat( val );
+				}
+			});
+			
+			// add WC product type
+			if( (productType = this.getProductType()) !== null ) {
+				terms.product_type = [productType];
+			}
+			
+			// remove duplicate values
+			for( var tax in terms ) {
+				terms[tax] = acf.uniqueArray(terms[tax]);
+			}
+			
+			// return
+			return terms;
+		},
+		
+		getProductType: function(){
+			var $el = $('#product-type');
+			return $el.length ? $el.val() : null;
+		},
+		
+		check: function(){
 			
 			// bail early if not for post
 			if( acf.get('screen') !== 'post' ) {
@@ -10421,17 +10809,50 @@
 			
 			// vars
 			var ajaxData = acf.parseArgs(this.data, {
-				post_id: acf.get('post_id')
+				action:	'acf/ajax/check_screen',
+				screen: acf.get('screen'),
+				exists: []
 			});
 			
-			// add action url
-			ajaxData.action = 'acf/post/get_field_groups';
+			// post id
+			if( this.isPost() ) {
+				ajaxData.post_id = acf.get('post_id');
+			}
 			
-			// add ignore
-			ajaxData.exists = [];
-			$('.acf-postbox').not('.acf-hidden').each(function(){
-				ajaxData.exists.push( $(this).attr('id').substr(4) );
+			// page template
+			if( (pageTemplate = this.getPageTemplate()) !== null ) {
+				ajaxData.page_template = pageTemplate;
+			}
+			
+			// page parent
+			if( (pageParent = this.getPageParent()) !== null ) {
+				ajaxData.page_parent = pageParent;
+			}
+			
+			// page type
+			if( (pageType = this.getPageType()) !== null ) {
+				ajaxData.page_type = pageType;
+			}
+			
+			// post format
+			if( (postFormat = this.getPostFormat()) !== null ) {
+				ajaxData.post_format = postFormat;
+			}
+			
+			// post terms
+			if( (postTerms = this.getPostTerms()) !== null ) {
+				ajaxData.post_terms = postTerms;
+			}
+			
+			// add array of existing postboxes to increase performance and reduce JSON HTML
+			acf.getPostboxes().map(function( postbox ){
+				if( postbox.hasHTML() ) {
+					ajaxData.exists.push( postbox.get('key') );
+				}
 			});
+			
+			// filter
+			ajaxData = acf.applyFilters('check_screen_args', ajaxData);
 			
 			// success
 			var onSuccess = function( json ){
@@ -10441,51 +10862,40 @@
 					return;
 				}
 				
-				// hide
-				$('.acf-postbox').addClass('acf-hidden');
-				$('.acf-postbox-toggle').addClass('acf-hidden');
-				
-				// reset style
-				$('#acf-style').html('');
+				// vars
+				var visible = [];
 				
 				// loop
-				json.data.map(function( fieldGroup, i ){
+				json.data.results.map(function( fieldGroup, i ){
 					
 					// vars
-					var $postbox = $('#acf-' + fieldGroup.key);
-					var $toggle = $('#acf-' + fieldGroup.key + '-hide');
-					var $label = $toggle.parent();
-						
-					// show
-					// use show() to force display when postbox has been hidden by 'Show on screen' toggle
-					$postbox.removeClass('acf-hidden hide-if-js').show();
-					$label.removeClass('acf-hidden hide-if-js').show();
-					$toggle.prop('checked', true);
+					var id = 'acf-' + fieldGroup.key;
+					var postbox = acf.getPostbox( id );
 					
-					// replace HTML if needed
-					var $replace = $postbox.find('.acf-replace-with-fields');
-					if( $replace.exists() ) {
-						$replace.replaceWith( fieldGroup.html );
-						acf.doAction('append', $postbox);
+					// show postbox
+					postbox.showEnable();
+					
+					// append
+					visible.push( id );
+					
+					// update HTML
+					if( !postbox.hasHTML() && fieldGroup.html ) {
+						postbox.html( fieldGroup.html );
 					}
-					
-					// update style if needed
-					if( i === 0 ) {
-						$('#acf-style').html( fieldGroup.style );
-					}
-					
-					// enable inputs
-					acf.enable( $postbox, 'postbox' );
 				});
-			};
-			
-			// complete
-			var onComplete = function( json ){
 				
-				// disable inputs
-				$('.acf-postbox.acf-hidden').each(function(){
-					acf.disable( $(this), 'postbox' );
+				// hide other postboxes
+				acf.getPostboxes().map(function( postbox ){
+					if( visible.indexOf( postbox.get('id') ) === -1 ) {
+						postbox.hideDisable();
+					}
 				});
+				
+				// reset style
+				$('#acf-style').html( json.data.style );
+				
+				// action
+				acf.doAction('check_screen_complete', json.data, ajaxData);
 			};
 			
 			// ajax
@@ -10495,146 +10905,57 @@
 				type: 'post',
 				dataType: 'json',
 				context: this,
-				success: onSuccess,
-				complete: onComplete
+				success: onSuccess
 			});
 		},
 		
-		syncTaxonomyTerms: function(){
-			
-			// vars
-			var values = [''];
-			
-			// loop over term lists
-			$('.categorychecklist, .acf-taxonomy-field').each(function(){
-				
-				// vars
-				var $el = $(this),
-					$checkbox = $el.find('input[type="checkbox"]').not(':disabled'),
-					$radio = $el.find('input[type="radio"]').not(':disabled'),
-					$select = $el.find('select').not(':disabled'),
-					$hidden = $el.find('input[type="hidden"]').not(':disabled');
-				
-				
-				// bail early if not a field which saves taxonomy terms to post
-				if( $el.is('.acf-taxonomy-field') && $el.attr('data-save') != '1' ) {
-					
-					return;
-					
-				}
-				
-				
-				// bail early if in attachment
-				if( $el.closest('.media-frame').exists() ) {
-					
-					return;
-				
-				}
-				
-				
-				// checkbox
-				if( $checkbox.exists() ) {
-					
-					$checkbox.filter(':checked').each(function(){
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				} else if( $radio.exists() ) {
-					
-					$radio.filter(':checked').each(function(){
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				} else if( $select.exists() ) {
-					
-					$select.find('option:selected').each(function(){
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				} else if( $hidden.exists() ) {
-					
-					$hidden.each(function(){
-						
-						// ignor blank values
-						if( ! $(this).val() ) {
-							
-							return;
-							
-						}
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				}
-								
-			});
-	
-			
-			// filter duplicates
-			values = values.filter(function(item, pos, self) {
-			    return self.indexOf(item) == pos;
-			});
-			
-			
-			// update screen
-			this.set( 'post_taxonomy', values ).fetch();
-		},
-		
-		onChangeTemplate: function( e, $el ){
-			
-			// update & fetch
-			this.set('page_template', $el.val()).fetch();
-		},
-		
-		onChangeParent: function( e, $el ){
-			
-			// vars
-			var pageType = 'parent';
-			var pageParent = 0;
-			
-			// if is child
-			if( $el.val() != "" ) {
-				pageType = 'child';
-				pageParent = $el.val();
-			}
-			
-			// update & fetch
-			this.set('page_type', pageType).set('page_parent', pageParent).fetch();
-		},
-		
-		onChangeFormat: function( e, $el ){
-			
-			// vars			
-			var postFormat = $el.val();
-			
-			// default
-			if( postFormat == '0' ) {
-				postFormat = 'standard';
-			}
-			
-			// update & fetch
-			this.set('post_format', postFormat).fetch();
-		},
-		
-		onChangeTerm: function( e, $el ){
-			
-			// bail early if within media popup
-			if( $el.closest('.media-frame').exists() ) {
-				return;
-			}
-			
-			// set timeout to fix issue with chrome which does not register the change has yet happened
-			this.setTimeout(this.syncTaxonomyTerms, 1);
+		onChange: function( e, $el ){
+			this.setTimeout(this.check, 1);
 		}
 	});
 	
+/*	
+	// tests
+	acf.registerScreenChange('#page_template', function( e, $el ){
+		return $('#page_template').val();
+	});
+	
+	acf.registerScreenData({
+		name: 'page_template',
+		change: '#page_template',
+		val: function(){
+			var $input = $(this.el);
+			return $input.length ? $input.val() : null;
+		}
+	});
+	
+	acf.registerScreenData({
+		name: 'post_terms',
+		change: '.acf-taxonomy-field[data-save="1"]',
+		val: function(){
+			var $input = $(this.el);
+			return $input.length ? $input.val() : null;
+		}
+	});
+	
+	acf.registerScreenData({
+		name: 'post_terms',
+		change: '#product-type',
+		val: function( terms ){
+			var $select = $('#product-type');
+			if( $select.length ) {
+				terms.push('product_cat:'+$select.val());
+			}
+			return terms;
+		}
+	});
+	
+	
+	acf.screen.get('post_terms');
+	acf.screen.getPostTerms();
+	
+*/
+
 })(jQuery);
 
 (function($, undefined){
@@ -11296,6 +11617,7 @@
 			var locale = acf.get('locale');
 			var rtl = acf.get('rtl');
 			var l10n = acf.get('select2L10n');
+			var version = getVersion();
 			
 			// bail ealry if no l10n
 			if( !l10n ) {
@@ -11308,9 +11630,9 @@
 			}
 			
 			// initialize
-			if( getVersion() == 4 ) {
+			if( version == 4 ) {
 				this.addTranslations4();
-			} else {
+			} else if( version == 3 ) {
 				this.addTranslations3();
 			}
 		},
@@ -11537,7 +11859,7 @@
 			
 			// toolbar
 			var toolbar = args.toolbar;
-			if( toolbar && typeof toolbars[toolbar] !== 'undefined' ) {
+			if( toolbar && toolbars && toolbars[toolbar] ) {
 				
 				for( var i = 1; i <= 4; i++ ) {
 					init[ 'toolbar' + i ] = toolbars[toolbar][i] || '';
@@ -11814,108 +12136,125 @@
 (function($, undefined){
 	
 	/**
-	*  acf.validation
+	*  Validator
 	*
-	*  Global validation logic
+	*  The model for validating forms
 	*
-	*  @date	4/4/18
-	*  @since	5.6.9
+	*  @date	4/9/18
+	*  @since	5.7.5
 	*
 	*  @param	void
 	*  @return	void
 	*/
-	
-	acf.validation = new acf.Model({
+	var Validator = acf.Model.extend({
 		
-		// enable / disable validation logic
-		active: true,
+		/** @var string The model identifier. */
+		id: 'Validator',
+		
+		/** @var object The model data. */
+		data: {
 			
-		// temp ignore flag allowing bypass of validation
-		ignore: false,
-		
-		// errors
-		errors: [],
-		
-		// active form
-		form: false,
-		
-		// wait
-		wait: 'prepare',
-		
-		actions: {
-			'ready':	'addInputEvents',
-			'append':	'addInputEvents'
+			/** @var array The form errors. */
+			errors: [],
+			
+			/** @var object The form notice. */
+			notice: null,
+			
+			/** @var string The form status. loading, invalid, valid */
+			status: ''
 		},
 		
+		/** @var object The model events. */
 		events: {
-			'click #publish':	'onClickPublish',
-			'click #submit':	'onClickPublish',
-			'click #save-post':	'onClickSave',
-			'submit form':		'onSubmit',
+			'changed:status': 'onChangeStatus'
 		},
 		
-		initialize: function(){
-			
-			// load global setting
-			if( !acf.get('validation') ) {
-				this.disable();
-				this.actions = {};
-				this.events = {};
-			}
-		},
-		
-		getForm: function( $form ){
-			
-			// instantiate
-			var form = $form.data('acf');
-			if( !form ) {
-				form = new Form( $form );
-			}
-			
-			// store
-			this.form = form;
-			
-			// return
-			return form;
-		},
-		
-		enable: function(){
-			this.active = true;
-		},
-		
-		disable: function(){
-			this.active = false;
-		},
-		
-		pass: function(){
-			this.ignore = true;
-			this.setTimeout(function(){
-				this.ignore = false;
-			}, 100);
-		},
-		
-		reset: function(){
-			this.ignore = false;
-			this.errors = [];
-			this.form = false;
-		},
-		
-		getErrors: function(){
-			return this.errors;
-		},
-		
-		hasErrors: function(){
-			return this.errors.length;
-		},
-		
+		/**
+		*  addErrors
+		*
+		*  Adds errors to the form.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	array errors An array of errors.
+		*  @return	void
+		*/
 		addErrors: function( errors ){
 			errors.map( this.addError, this );
 		},
 		
+		/**
+		*  addError
+		*
+		*  Adds and error to the form.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object error An error object containing input and message.
+		*  @return	void
+		*/
 		addError: function( error ){
-			this.errors.push( error );
+			this.data.errors.push( error );
 		},
 		
+		/**
+		*  hasErrors
+		*
+		*  Returns true if the form has errors.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	bool
+		*/
+		hasErrors: function(){
+			return this.data.errors.length;
+		},
+		
+		/**
+		*  clearErrors
+		*
+		*  Removes any errors.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	void
+		*/
+		clearErrors: function(){
+			return this.data.errors = [];
+		},
+		
+		/**
+		*  getErrors
+		*
+		*  Returns the forms errors.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	array
+		*/
+		getErrors: function(){
+			return this.data.errors;
+		},
+		
+		/**
+		*  getFieldErrors
+		*
+		*  Returns the forms field errors.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	array
+		*/
 		getFieldErrors: function(){
 			
 			// vars
@@ -11944,6 +12283,17 @@
 			return errors;
 		},
 		
+		/**
+		*  getGlobalErrors
+		*
+		*  Returns the forms global errors (errors without a specific input).
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	array
+		*/
 		getGlobalErrors: function(){
 			
 			// return array of errors that contain no input
@@ -11952,7 +12302,18 @@
 			});
 		},
 		
-		showErrors: function( $form ){
+		/**
+		*  showErrors
+		*
+		*  Displays all errors for this form.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	void
+		*/
+		showErrors: function(){
 			
 			// bail early if no errors
 			if( !this.hasErrors() ) {
@@ -11960,7 +12321,6 @@
 			}
 			
 			// vars
-			var form = this.getForm( $form );
 			var fieldErrors = this.getFieldErrors();
 			var globalErrors = this.getGlobalErrors();
 			
@@ -11972,15 +12332,15 @@
 			fieldErrors.map(function( error ){
 				
 				// get input
-				var $input = $form.find('[name="' + error.input + '"]').first();
+				var $input = this.$('[name="' + error.input + '"]').first();
 				
 				// if $_POST value was an array, this $input may not exist
-				if( !$input.exists() ) {
-					$input = $form.find('[name^="' + error.input + '"]').first();
+				if( !$input.length ) {
+					$input = this.$('[name^="' + error.input + '"]').first();
 				}
 				
 				// bail early if input doesn't exist
-				if( !$input.exists() ) {
+				if( !$input.length ) {
 					return;
 				}
 				
@@ -12001,6 +12361,9 @@
 			
 			// errorMessage
 			var errorMessage = acf.__('Validation failed');
+			globalErrors.map(function( error ){
+				errorMessage += '. ' + error.message;
+			});
 			if( errorCount == 1 ) {
 				errorMessage += '. ' + acf.__('1 field requires attention');
 			} else if( errorCount > 1 ) {
@@ -12008,22 +12371,23 @@
 			}
 			
 			// notice
-			if( form.notice ) {
-				form.notice.update({
+			if( this.has('notice') ) {
+				this.get('notice').update({
 					type: 'error',
 					text: errorMessage
 				});
 			} else {
-				form.notice = acf.newNotice({
+				var notice = acf.newNotice({
 					type: 'error',
 					text: errorMessage,
-					target: $form
+					target: this.$el
 				});
+				this.set('notice', notice);
 			}
 			
 			// if no $scrollTo, set to message
 			if( !$scrollTo ) {
-				$scrollTo = form.notice.$el;
+				$scrollTo = this.get('notice').$el;
 			}
 			
 			// timeout
@@ -12032,27 +12396,45 @@
 			}, 10);
 		},
 		
-		fetch: function( args ){
+		/**
+		*  onChangeStatus
+		*
+		*  Update the form class when changing the 'status' data
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The form element.
+		*  @param	string value The new status.
+		*  @param	string prevValue The old status.
+		*  @return	void
+		*/
+		onChangeStatus: function( e, $el, value, prevValue ){
+			this.$el.removeClass('is-'+prevValue).addClass('is-'+value);
+		},
+		
+		/**
+		*  validate
+		*
+		*  Vaildates the form via AJAX.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object args A list of settings to customize the validation process.
+		*  @return	bool True if the form is valid.
+		*/
+		validate: function( args ){
 			
-			// bail early if busy
-			if( this.busy ) {
-				return;
-			}
-			
-			// set busy
-			this.busy = 1;
-
-			// vars
+			// default args
 			args = acf.parseArgs(args, {
-				
-				// form element
-				form: false,
 				
 				// trigger event
 				event: false,
 				
-				// lock form on success
-				lock: true,
+				// reset the form after submit
+				reset: false,
 				
 				// loading callback
 				loading: function(){},
@@ -12069,32 +12451,42 @@
 				}
 			});
 			
-			// vars
-			var $form = args.form;
-			var form = this.getForm( $form );
+			// return true if is valid - allows form submit
+			if( this.get('status') == 'valid' ) {
+				return true;
+			}
 			
-			// create event specific success callback
+			// return false if is currently validating - prevents form submit
+			if( this.get('status') == 'validating' ) {
+				return false;
+			}
+			
+			// return true if no ACF fields exist (no need to validate)
+			if( !this.$('.acf-field').length ) {
+				return true;
+			}
+			
+			// if event is provided, create a new success callback.
 			if( args.event ) {
 				var event = $.Event(null, args.event);
 				args.success = function(){
-					$(event.target).trigger( event );
+					acf.enableSubmit( $(event.target) ).trigger( event );
 				}
 			}
 			
 			// action for 3rd party
-			acf.doAction('validation_begin', $form);
-				
-			// data
-			var data = acf.serialize( $form );	
-			data.action = 'acf/validate_save_post';
+			acf.doAction('validation_begin', this.$el);
 			
 			// lock form
-			this.lockForm( $form );
-			
+			acf.lockForm( this.$el );
+						
 			// loading callback
-			args.loading( $form );
+			args.loading( this.$el );
 			
-			// success
+			// update status
+			this.set('status', 'validating');
+			
+			// success callback
 			var onSuccess = function( json ){
 				
 				// validate
@@ -12103,7 +12495,7 @@
 				}
 				
 				// filter
-				data = acf.applyFilters('validation_complete', json.data, $form);
+				var data = acf.applyFilters('validation_complete', json.data, this.$el);
 				
 				// add errors
 				if( !data.valid ) {
@@ -12114,33 +12506,33 @@
 			// complete
 			var onComplete = function(){
 				
-				// set busy
-				this.busy = 0;
-				
 				// unlock form
-				this.unlockForm( $form );
+				acf.unlockForm( this.$el );
 				
 				// failure
 				if( this.hasErrors() ) {
 					
+					// update status
+					this.set('status', 'invalid');
+			
 					// action
-					acf.doAction('validation_failure', $form);
+					acf.doAction('validation_failure', this.$el);
 					
 					// display errors
-					this.showErrors( $form );
+					this.showErrors();
 					
 					// failure callback
-					args.failure( $form );
+					args.failure( this.$el );
 				
 				// success
 				} else {
 					
-					// allow for to pass
-					this.pass();
+					// update status
+					this.set('status', 'valid');
 					
 					// remove previous error message
-					if( form.notice ) {
-						form.notice.update({
+					if( this.has('notice') ) {
+						this.get('notice').update({
 							type: 'success',
 							text: acf.__('Validation successful'),
 							timeout: 1000
@@ -12148,24 +12540,31 @@
 					}
 					
 					// action
-					acf.doAction('validation_success', $form);
-					acf.doAction('submit', $form);
+					acf.doAction('validation_success', this.$el);
+					acf.doAction('submit', this.$el);
 					
 					// success callback (submit form)
-					args.success( $form );
+					args.success( this.$el );
 					
 					// lock form
-					if( args.lock ) {
-						this.lockForm( $form );
+					acf.lockForm( this.$el );
+					
+					// reset
+					if( args.reset ) {
+						this.reset();	
 					}
 				}
 				
-				// reset
-				this.reset();
-				
 				// complete callback
-				args.complete( $form );
+				args.complete( this.$el );
+				
+				// clear errors
+				this.clearErrors();
 			};
+			
+			// serialize form data
+			var data = acf.serialize( this.$el );
+			data.action = 'acf/validate_save_post';
 			
 			// ajax
 			$.ajax({
@@ -12179,10 +12578,361 @@
 			});
 		},
 		
+		/**
+		*  setup
+		*
+		*  Called during the constructor function to setup this instance
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	jQuery $form The form element.
+		*  @return	void
+		*/
+		setup: function( $form ){
+			
+			// set $el
+			this.$el = $form;
+		},
+		
+		/**
+		*  reset
+		*
+		*  Rests the validation to be used again.
+		*
+		*  @date	6/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	void
+		*/
+		reset: function(){
+			
+			// reset data
+			this.set('errors', []);
+			this.set('notice', null);
+			this.set('status', '');
+			
+			// unlock form
+			acf.unlockForm( this.$el );
+		}
+	});
+	
+	/**
+	*  getValidator
+	*
+	*  Returns the instance for a given form element.
+	*
+	*  @date	4/9/18
+	*  @since	5.7.5
+	*
+	*  @param	jQuery $el The form element.
+	*  @return	object
+	*/
+	var getValidator = function( $el ){
+		
+		// instantiate
+		var validator = $el.data('acf');
+		if( !validator ) {
+			validator = new Validator( $el );
+		}
+		
+		// return
+		return validator;
+	};
+	
+	/**
+	*  acf.validateForm
+	*
+	*  A helper function for the Validator.validate() function.
+	*  Returns true if form is valid, or fetches a validation request and returns false.
+	*
+	*  @date	4/4/18
+	*  @since	5.6.9
+	*
+	*  @param	object args A list of settings to customize the validation process.
+	*  @return	bool
+	*/
+	
+	acf.validateForm = function( args ){
+		return getValidator( args.form ).validate( args );
+	};
+	
+	/**
+	*  acf.enableSubmit
+	*
+	*  Enables a submit button and returns the element.
+	*
+	*  @date	30/8/18
+	*  @since	5.7.4
+	*
+	*  @param	jQuery $submit The submit button.
+	*  @return	jQuery
+	*/
+	acf.enableSubmit = function( $submit ){
+		return $submit.removeClass('disabled');
+	};
+		
+	/**
+	*  acf.disableSubmit
+	*
+	*  Disables a submit button and returns the element.
+	*
+	*  @date	30/8/18
+	*  @since	5.7.4
+	*
+	*  @param	jQuery $submit The submit button.
+	*  @return	jQuery
+	*/
+	acf.disableSubmit = function( $submit ){
+		return $submit.addClass('disabled');
+	};
+	
+	/**
+	*  acf.showSpinner
+	*
+	*  Shows the spinner element.
+	*
+	*  @date	4/9/18
+	*  @since	5.7.5
+	*
+	*  @param	jQuery $spinner The spinner element.
+	*  @return	jQuery
+	*/
+	acf.showSpinner = function( $spinner ){
+		$spinner.addClass('is-active');				// add class (WP > 4.2)
+		$spinner.css('display', 'inline-block');	// css (WP < 4.2)
+		return $spinner;
+	};
+	
+	/**
+	*  acf.hideSpinner
+	*
+	*  Hides the spinner element.
+	*
+	*  @date	4/9/18
+	*  @since	5.7.5
+	*
+	*  @param	jQuery $spinner The spinner element.
+	*  @return	jQuery
+	*/
+	acf.hideSpinner = function( $spinner ){
+		$spinner.removeClass('is-active');			// add class (WP > 4.2)
+		$spinner.css('display', 'none');			// css (WP < 4.2)
+		return $spinner;
+	};
+	
+	/**
+	*  acf.lockForm
+	*
+	*  Locks a form by disabeling its primary inputs and showing a spinner.
+	*
+	*  @date	4/9/18
+	*  @since	5.7.5
+	*
+	*  @param	jQuery $form The form element.
+	*  @return	jQuery
+	*/
+	acf.lockForm = function( $form ){
+		
+		// vars
+		var $wrap = findSubmitWrap( $form );
+		var $submit = $wrap.find('.button, [type="submit"]');
+		var $spinner = $wrap.find('.spinner, .acf-spinner');
+		
+		// hide all spinners (hides the preview spinner)
+		acf.hideSpinner( $spinner );
+		
+		// lock
+		acf.disableSubmit( $submit );
+		acf.showSpinner( $spinner.last() );
+		return $form;
+	};
+	
+	/**
+	*  acf.unlockForm
+	*
+	*  Unlocks a form by enabeling its primary inputs and hiding all spinners.
+	*
+	*  @date	4/9/18
+	*  @since	5.7.5
+	*
+	*  @param	jQuery $form The form element.
+	*  @return	jQuery
+	*/
+	acf.unlockForm = function( $form ){
+		
+		// vars
+		var $wrap = findSubmitWrap( $form );
+		var $submit = $wrap.find('.button, [type="submit"]');
+		var $spinner = $wrap.find('.spinner, .acf-spinner');
+		
+		// unlock
+		acf.enableSubmit( $submit );
+		acf.hideSpinner( $spinner );
+		return $form;
+	};
+	
+	/**
+	*  findSubmitWrap
+	*
+	*  An internal function to find the 'primary' form submit wrapping element.
+	*
+	*  @date	4/9/18
+	*  @since	5.7.5
+	*
+	*  @param	jQuery $form The form element.
+	*  @return	jQuery
+	*/
+	var findSubmitWrap = function( $form ){
+		
+		// default post submit div
+		var $wrap = $form.find('#submitdiv');
+		if( $wrap.length ) {
+			return $wrap;
+		}
+		
+		// 3rd party publish box
+		var $wrap = $form.find('#submitpost');
+		if( $wrap.length ) {
+			return $wrap;
+		}
+		
+		// term, user
+		var $wrap = $form.find('p.submit').last();
+		if( $wrap.length ) {
+			return $wrap;
+		}
+		
+		// front end form
+		var $wrap = $form.find('.acf-form-submit');
+		if( $wrap.length ) {
+			return $wrap;
+		}
+		
+		// default
+		return $form;
+	};
+	
+	/**
+	*  acf.validation
+	*
+	*  Global validation logic
+	*
+	*  @date	4/4/18
+	*  @since	5.6.9
+	*
+	*  @param	void
+	*  @return	void
+	*/
+	
+	acf.validation = new acf.Model({
+		
+		/** @var string The model identifier. */
+		id: 'validation',
+		
+		/** @var bool The active state. Set to false before 'prepare' to prevent validation. */
+		active: true,
+		
+		/** @var string The model initialize time. */
+		wait: 'prepare',
+		
+		/** @var object The model actions. */
+		actions: {
+			'ready':	'addInputEvents',
+			'append':	'addInputEvents'
+		},
+		
+		/** @var object The model events. */
+		events: {
+			'click input[type="submit"]':	'onClickSubmit',
+			'click button[type="submit"]':	'onClickSubmit',
+			'click #save-post':				'onClickSave',
+			'mousedown #post-preview':		'onClickPreview', // use mousedown to hook in before WP click event
+			'submit form':					'onSubmit',
+		},
+		
+		/**
+		*  initialize
+		*
+		*  Called when initializing the model.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	void
+		*/
+		initialize: function(){
+			
+			// check 'validation' setting
+			if( !acf.get('validation') ) {
+				this.active = false;
+				this.actions = {};
+				this.events = {};
+			}
+		},
+		
+		/**
+		*  enable
+		*
+		*  Enables validation.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	void
+		*/
+		enable: function(){
+			this.active = true;
+		},
+		
+		/**
+		*  disable
+		*
+		*  Disables validation.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	void
+		*  @return	void
+		*/
+		disable: function(){
+			this.active = false;
+		},
+		
+		/**
+		*  reset
+		*
+		*  Rests the form validation to be used again
+		*
+		*  @date	6/9/18
+		*  @since	5.7.5
+		*
+		*  @param	jQuery $form The form element.
+		*  @return	void
+		*/
+		reset: function( $form ){
+			getValidator( $form ).reset();
+		},
+		
+		/**
+		*  addInputEvents
+		*
+		*  Adds 'invalid' event listeners to HTML inputs.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	jQuery $el The element being added / readied.
+		*  @return	void
+		*/
 		addInputEvents: function( $el ){
 			
 			// vars
-			var $inputs = $('.acf-field [name]');
+			var $inputs = $('.acf-field [name]', $el);
 			
 			// check
 			if( $inputs.length ) {
@@ -12190,213 +12940,135 @@
 			}
 		},
 		
+		/**
+		*  onInvalid
+		*
+		*  Callback for the 'invalid' event.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The input element.
+		*  @return	void
+		*/
 		onInvalid: function( e, $el ){
-			
-			// vars
-			var $form = $el.closest('form');
-			
-			// add error
-			this.addError({
-				input: $el.attr('name'),
-				message: e.target.validationMessage
-			});
 			
 			// prevent default
 			// - prevents browser error message
 			// - also fixes chrome bug where 'hidden-by-tab' field throws focus error
 			e.preventDefault();
+				
+			// vars
+			var $form = $el.closest('form');
 			
-			// trigger submit on $form
-			// - allows for "save", "preview" and "publish" to work
-			$form.submit();
+			// check form exists
+			if( $form.length ) {
+				
+				// add error to validator
+				getValidator( $form ).addError({
+					input: $el.attr('name'),
+					message: e.target.validationMessage
+				});
+				
+				// trigger submit on $form
+				// - allows for "save", "preview" and "publish" to work
+				$form.submit();
+			}
 		},
 		
-		// fixes bug on User Profile edit form
-		// - WP prevents $form.submit() events for unknown reason
-		// - temp store 'click event' and use later in onSubmit
-		onClickPublish: function( e, $el ){
+		/**
+		*  onClickSubmit
+		*
+		*  Callback when clicking submit.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The input element.
+		*  @return	void
+		*/
+		onClickSubmit: function( e, $el ){
+			
+			// store the "click event" for later use in this.onSubmit()
 			this.set('originalEvent', e);
-			this.setTimeout(function(){
-				this.set('originalEvent', null);
-			}, 100);
 		},
 		
+		/**
+		*  onClickSave
+		*
+		*  Set ignore to true when saving a draft.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The input element.
+		*  @return	void
+		*/
 		onClickSave: function( e, $el ) {
-			
-			// ignore errors
-			this.pass();
+			this.set('ignore', true);
 		},
 		
-		onSubmit: function( e, $form ){
+		/**
+		*  onClickPreview
+		*
+		*  Set ignore to true when previewing a post.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The input element.
+		*  @return	void
+		*/
+		onClickPreview: function( e, $el ) {
+			this.set('ignore', true);
+			
+			// if post has previously been published but prevented by an error, WP core has
+			// added a custom 'submit.edit-post' event which causes the input buttons to become disabled.
+			// remove this event to prevent UX issues.
+			$('form#post').off('submit.edit-post');
+		},
+		
+		/**
+		*  onSubmit
+		*
+		*  Callback when the form is submit.
+		*
+		*  @date	4/9/18
+		*  @since	5.7.5
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The input element.
+		*  @return	void
+		*/
+		onSubmit: function( e, $el ){
+			
+			// bail early if is disabled
+			if( !this.active ) {
+				return;
+			}
+			
+			// bail early if is ignore
+			if( this.get('ignore') ) {
+				this.set('ignore', false);
+				return;
+			}
 			
 			// validate
 			var valid = acf.validateForm({
-				form: $form,
-				event: this.get('originalEvent') || e
+				form: $el,
+				event: this.get('originalEvent')
 			});
 			
 			// if not valid, stop event and allow validation to continue
 			if( !valid ) {
 				e.preventDefault();
 			}
-		},
-		
-		showSpinner: function( $spinner ){
-			$spinner.addClass('is-active');				// add class (WP > 4.2)
-			$spinner.css('display', 'inline-block');	// css (WP < 4.2)
-		},
-		
-		hideSpinner: function( $spinner ){
-			$spinner.removeClass('is-active');			// add class (WP > 4.2)
-			$spinner.css('display', 'none');			// css (WP < 4.2)
-		},
-		
-		disableSubmit: function( $submit ){
-			$submit.prop('disabled', true).addClass('disabled');
-		},
-		
-		enableSubmit: function( $submit ){
-			$submit.prop('disabled', false).removeClass('disabled');
-		},
-		
-		findSubmitWrap: function( $form ){
-			
-			// default post submit div
-			var $wrap = $('#submitdiv');
-			if( $wrap.length ) {
-				return $wrap;
-			}
-			
-			// 3rd party publish box
-			var $wrap = $('#submitpost');
-			if( $wrap.length ) {
-				return $wrap;
-			}
-			
-			// term, user
-			var $wrap = $form.find('p.submit').last();
-			if( $wrap.length ) {
-				return $wrap;
-			}
-			
-			// front end form
-			var $wrap = $form.find('.acf-form-submit');
-			if( $wrap.length ) {
-				return $wrap;
-			}
-			
-			// default
-			return $form;
-		},
-		
-		lockForm: function( $form ){
-			
-			// vars
-			var $wrap = this.findSubmitWrap( $form );
-			var $submit = $wrap.find('.button, .acf-button');
-			var $spinner = $wrap.find('.spinner, .acf-spinner');
-			
-			// hide all spinners (hides the preview spinner)
-			this.hideSpinner( $spinner );
-			
-			// lock
-			this.disableSubmit( $submit );
-			this.showSpinner( $spinner.last() );
-		},
-		
-		unlockForm: function( $form ){
-			
-			// vars
-			var $wrap = this.findSubmitWrap( $form );
-			var $submit = $wrap.find('.button, .acf-button');
-			var $spinner = $wrap.find('.spinner, .acf-spinner');
-			
-			// unlock
-			this.enableSubmit( $submit );
-			this.hideSpinner( $spinner );
-		}
-		
-	});
-	
-	/**
-	*  Form
-	*
-	*  description
-	*
-	*  @date	5/4/18
-	*  @since	5.6.9
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	var Form = acf.Model.extend({
-		notice: false,
-		setup: function( $form ){
-			this.$el = $form;
-		},
-		lock: function(){
-			acf.validation.lockForm( this.$el );
-		},
-		unlock: function(){
-			acf.validation.unlockForm( this.$el );
 		}
 	});
-	
-	/**
-	*  acf.validateForm
-	*
-	*  description
-	*
-	*  @date	4/4/18
-	*  @since	5.6.9
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.validateForm = function( args ){
-		
-		// bail early if no form
-		// - return true allowing form submit
-		if( !args.form ) {
-			return true;
-		}
-		
-		// get form
-		var form = acf.validation.getForm( args.form );
-		
-		// bail early if not active
-		// - return true allowing form submit
-		if( !acf.validation.active ) {
-			return true;
-		}
-		
-		// bail early if ignore
-		// - return true allowing form submit
-		if( acf.validation.ignore ) {
-			return true;
-		}
-		
-		// bail early if is preview
-		// - return true allowing form submit
-		if( form.$('#wp-preview').val() ) {
-			form.unlock();
-			return true;
-		}
-		
-		// bail early if this form does not contain ACF data
-		// - return true allowing form submit
-		if( !form.$('#acf-form-data').length ) {
-			return true;
-		}
-		
-		// validate
-		acf.validation.fetch( args );
-		
-		// return false preventing form submit
-		return false;
-	};
 	
 })(jQuery);
 
@@ -12697,6 +13369,11 @@
 					top = 0;
 					height = 0;
 					$row = $();
+				}
+				
+				// rtl
+				if( acf.get('rtl') ) {
+					thisLeft = Math.ceil( $field.parent().width() - (position.left + $field.outerWidth()) );
 				}
 				
 				// add classes
@@ -13278,7 +13955,14 @@
 				type: 'warning',
 				timeout: 1000
 			});
-		}
+		},
+		fetch:			acf.validateForm,
+		enableSubmit: 	acf.enableSubmit,
+		disableSubmit: 	acf.disableSubmit,
+		showSpinner:	acf.showSpinner,
+		hideSpinner:	acf.hideSpinner,
+		unlockForm:		acf.unlockForm,
+		lockForm:		acf.lockForm
 	});
 	
 	
@@ -13477,7 +14161,8 @@
 	acf.newCompatibility(acf.screen, {
 		update: function(){
 			return this.set.apply(this, arguments);
-		}
+		},
+		fetch: acf.screen.check
 	});
 	_acf.ajax = acf.screen;
 	
@@ -13528,5 +14213,3 @@
 // @codekit-prepend "../js/acf-validation.js";
 // @codekit-prepend "../js/acf-helpers.js";
 // @codekit-prepend "../js/acf-compatibility";
-
-

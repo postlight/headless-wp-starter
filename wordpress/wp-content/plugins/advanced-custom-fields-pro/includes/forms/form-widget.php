@@ -256,7 +256,6 @@ class acf_form_widget {
 	*/
 	
 	function admin_footer() {
-		
 ?>
 <script type="text/javascript">
 (function($) {
@@ -264,16 +263,17 @@ class acf_form_widget {
 	// vars
 	acf.set('post_id', 'widgets');
 	
-	// restrict get fields
-	acf.addFilter('find_fields_args', function( args ){
+	// Only initialize visible fields.
+	acf.addFilter('find_fields', function( $fields ){
 		
-		// add parent
-		if( !args.parent ) {
-			args.parent = $('#widgets-right');
-		}
+		// not templates
+		$fields = $fields.not('#available-widgets .acf-field');
+		
+		// not widget dragging in
+		$fields = $fields.not('.widget.ui-draggable-dragging .acf-field');
 		
 		// return
-		return args;
+		return $fields;
 	});
 	
 	// on publish
@@ -287,7 +287,7 @@ class acf_form_widget {
 		var valid = acf.validateForm({
 			form: $form,
 			event: e,
-			lock: false
+			reset: true
 		});
 		
 		// if not valid, stop event and allow validation to continue

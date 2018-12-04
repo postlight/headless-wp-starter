@@ -39,9 +39,26 @@ class acf_admin_field_groups {
 		add_action('trashed_post',			array($this, 'trashed_post'));
 		add_action('untrashed_post',		array($this, 'untrashed_post'));
 		add_action('deleted_post',			array($this, 'deleted_post'));
-		
+		add_action('load-edit.php',			array($this, 'maybe_redirect_edit'));
 	}
 	
+	/**
+	*  maybe_redirect_edit
+	*
+	*  Redirects the user from the old ACF4 edit page to the new ACF5 edit page
+	*
+	*  @date	17/9/18
+	*  @since	5.7.6
+	*
+	*  @param	void
+	*  @return	void
+	*/
+	function maybe_redirect_edit() {
+		if( acf_maybe_get_GET('post_type') == 'acf' ) {
+			wp_redirect( admin_url($this->url) );
+			exit;
+		}
+	}
 	
 	/*
 	*  current_screen
@@ -60,9 +77,7 @@ class acf_admin_field_groups {
 		
 		// validate screen
 		if( !acf_is_screen('edit-acf-field-group') ) {
-		
 			return;
-			
 		}
 		
 

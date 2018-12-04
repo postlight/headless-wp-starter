@@ -221,10 +221,9 @@ class acf_field_post_object extends acf_field {
 		
 		
 		// optgroup or single
-		if( count($args['post_type']) == 1 ) {
-			
+		$post_type = acf_get_array( $args['post_type'] );
+		if( count($post_type) == 1 ) {
 			$results = $results[0]['children'];
-			
 		}
 		
 		

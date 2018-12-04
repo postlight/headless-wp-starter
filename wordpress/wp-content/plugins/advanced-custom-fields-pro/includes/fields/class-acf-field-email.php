@@ -50,7 +50,7 @@ class acf_field_email extends acf_field {
 		// vars
 		$atts = array();
 		$keys = array( 'type', 'id', 'class', 'name', 'value', 'placeholder', 'pattern' );
-		$keys2 = array( 'readonly', 'disabled', 'required' );
+		$keys2 = array( 'readonly', 'disabled', 'required', 'multiple' );
 		$html = '';
 		
 		

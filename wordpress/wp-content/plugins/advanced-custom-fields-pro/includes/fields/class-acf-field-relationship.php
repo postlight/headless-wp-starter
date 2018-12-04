@@ -194,7 +194,9 @@ class acf_field_relationship extends acf_field {
 			
 			
 			// append to $args
-			$args['tax_query'] = array();
+			$args['tax_query'] = array(
+				'relation' => 'OR',
+			);
 			
 			
 			// now create the tax queries
@@ -393,150 +395,68 @@ class acf_field_relationship extends acf_field {
 	function render_field( $field ) {
 		
 		// vars
-		$values = array();
+		$post_type = acf_get_array( $field['post_type'] );
+		$taxonomy = acf_get_array( $field['taxonomy'] );
+		$filters = acf_get_array( $field['filters'] );
+		
+		// filters
+		$filter_count = count($filters);
+		$filter_post_type_choices = array();
+		$filter_taxonomy_choices = array();
+		
+		// post_type filter
+		if( in_array('post_type', $filters) ) {
+			
+			$filter_post_type_choices = array(
+				''	=> __('Select post type', 'acf')
+			) + acf_get_pretty_post_types( $post_type );
+		}
+		
+		// taxonomy filter
+		if( in_array('taxonomy', $filters) ) {
+			
+			$term_choices = array();
+			$filter_taxonomy_choices = array(
+				''	=> __('Select taxonomy', 'acf')
+			);
+			
+			// check for specific taxonomy setting
+			if( $taxonomy ) {
+				$terms = acf_get_encoded_terms( $taxonomy );
+				$term_choices = acf_get_choices_from_terms( $terms, 'slug' );
+			
+			// if no terms were specified, find all terms
+			} else {
+				
+				// restrict taxonomies by the post_type selected
+				$term_args = array();
+				if( $post_type ) {
+					$term_args['taxonomy'] = acf_get_taxonomies(array(
+						'post_type'	=> $post_type
+					));
+				}
+				
+				// get terms
+				$terms = acf_get_grouped_terms( $term_args );
+				$term_choices = acf_get_choices_from_grouped_terms( $terms, 'slug' );
+			}
+			
+			// append term choices
+			$filter_taxonomy_choices = $filter_taxonomy_choices + $term_choices;
+			
+		}
+		
+		// div attributes
 		$atts = array(
 			'id'				=> $field['id'],
 			'class'				=> "acf-relationship {$field['class']}",
 			'data-min'			=> $field['min'],
 			'data-max'			=> $field['max'],
 			'data-s'			=> '',
+			'data-paged'		=> 1,
 			'data-post_type'	=> '',
 			'data-taxonomy'		=> '',
-			'data-paged'		=> 1,
 		);
-		
-		
-		// Lang
-		if( defined('ICL_LANGUAGE_CODE') ) {
-		
-			$atts['data-lang'] = ICL_LANGUAGE_CODE;
-			
-		}
-		
-		
-		// data types
-		$field['post_type'] = acf_get_array( $field['post_type'] );
-		$field['taxonomy'] = acf_get_array( $field['taxonomy'] );
-		$field['filters'] = acf_get_array( $field['filters'] );
-		
-		
-		// filters
-		$filters = array(
-			'count'		=> count($field['filters']),
-			'search'	=> false,
-			'post_type'	=> false,
-			'taxonomy'	=> false
-		);
-		
-		foreach( $field['filters'] as $filter ) {
-			$filters[ $filter ] = true;
-		}
-		
-		
-		// filter - post_type
-		if( $filters['post_type'] ) {
-			
-			// choices
-			$choices = array(
-				''	=> __('Select post type', 'acf')
-			);
-			
-			
-			// get post types
-			$post_types = acf_get_pretty_post_types($field['post_type']);
-			
-			
-			// append
-			$choices = $choices + $post_types;
-			
-			
-			// set filter
-			$filters['post_type'] = $choices;
-			
-		}
-		
-
-		
-		// taxonomy filter
-		if( $filters['taxonomy'] ) {
-			
-			// vars
-			$groups = array();
-			$taxonomies = array();
-			$choices = array(
-				''	=> __('Select taxonomy', 'acf')
-			);
-			
-			
-			// get taxonomies from  setting
-			if( !empty($field['taxonomy']) ) {
-				
-				$term_groups = acf_decode_taxonomy_terms( $field['taxonomy'] );
-				$taxonomies = array_keys($term_groups);
-				
-				// check empty
-				$taxonomies = empty($taxonomies) ? false : $taxonomies;
-			
-			} elseif( !empty($field['post_type']) ) {
-				
-				// loop
-				foreach( $field['post_type'] as $post_type ) {
-					
-					// get connected taxonomies
-					$post_taxonomies = get_object_taxonomies( $post_type );
-					
-
-					// loop
-					foreach( $post_taxonomies as $name ) {
-						$taxonomies[ $name ] = 1;						
-					}
-							
-				}
-				
-				
-				// convert back to array
-				$taxonomies = array_keys($taxonomies);
-				
-				// check empty
-				$taxonomies = empty($taxonomies) ? false : $taxonomies;
-				
-			}
-			
-			
-			// terms
-			if( $taxonomies !== false ) {
-				$groups = acf_get_taxonomy_terms( $taxonomies );
-			}
-			
-			
-			// update $term_groups with specific terms
-			if( !empty($field['taxonomy']) ) {
-				
-				foreach( $groups as $taxonomy => $terms ) {
-					
-					foreach( $terms as $slug => $name ) {
-						
-						if( !in_array($slug, $field['taxonomy']) ) {
-							
-							unset($groups[ $taxonomy ][ $slug ]);
-							
-						}
-						
-					}
-					
-				}
-				
-			}
-
-			
-			// append
-			$choices = $choices + $groups;
-			
-			
-			// set filter
-			$filters['taxonomy'] = $choices;
-			
-		}
 		
 		?>
 <div <?php acf_esc_attr_e($atts); ?>>
@@ -546,12 +466,12 @@ class acf_field_relationship extends acf_field {
 	<?php 
 	
 	/* filters */	
-	if( $filters['count'] ): ?>
-	<div class="filters -f<?php echo esc_attr($filters['count']); ?>">
+	if( $filter_count ): ?>
+	<div class="filters -f<?php echo esc_attr($filter_count); ?>">
 		<?php 
 	
 		/* search */	
-		if( $filters['search'] ): ?>
+		if( in_array('search', $filters) ): ?>
 		<div class="filter -search">
 			<span>
 				<?php acf_text_input( array('placeholder' => __("Search...",'acf'), 'data-filter' => 's') ); ?>
@@ -561,20 +481,20 @@ class acf_field_relationship extends acf_field {
 		
 		
 		/* post_type */	
-		if( $filters['post_type'] ): ?>
+		if( in_array('post_type', $filters) ): ?>
 		<div class="filter -post_type">
 			<span>
-				<?php acf_select_input( array('choices' => $filters['post_type'], 'data-filter' => 'post_type') ); ?>
+				<?php acf_select_input( array('choices' => $filter_post_type_choices, 'data-filter' => 'post_type') ); ?>
 			</span>
 		</div>
 		<?php endif; 
 		
 		
 		/* post_type */	
-		if( $filters['taxonomy'] ): ?>
+		if( in_array('taxonomy', $filters) ): ?>
 		<div class="filter -taxonomy">
 			<span>
-				<?php acf_select_input( array('choices' => $filters['taxonomy'], 'data-filter' => 'taxonomy') ); ?>
+				<?php acf_select_input( array('choices' => $filter_taxonomy_choices, 'data-filter' => 'taxonomy') ); ?>
 			</span>
 		</div>
 		<?php endif; ?>		
@@ -614,7 +534,6 @@ class acf_field_relationship extends acf_field {
 		<?php
 	}
 	
-
 	
 	/*
 	*  render_field_settings()

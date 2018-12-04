@@ -261,6 +261,15 @@ class acf_admin_options_page {
 	
 	function postbox_submitdiv( $post, $args ) {
 		
+		/**
+		*   Fires before the major-publishing-actions div.
+		*
+		*  @date	24/9/18
+		*  @since	5.7.7
+		*
+		*  @param array $page The current options page.
+		*/
+		do_action( 'acf/options_page/submitbox_before_major_actions', $this->page );
 		?>
 		<div id="major-publishing-actions">
 
@@ -269,11 +278,21 @@ class acf_admin_options_page {
 				<input type="submit" accesskey="p" value="<?php echo $this->page['update_button']; ?>" class="button button-primary button-large" id="publish" name="publish">
 			</div>
 			
+			<?php
+			/**
+			*   Fires before the major-publishing-actions div.
+			*
+			*  @date	24/9/18
+			*  @since	5.7.7
+			*
+			*  @param array $page The current options page.
+			*/
+			do_action( 'acf/options_page/submitbox_major_actions', $this->page );
+			?>
 			<div class="clear"></div>
 		
 		</div>
 		<?php
-		
 	}
 	
 	

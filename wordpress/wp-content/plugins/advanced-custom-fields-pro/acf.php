@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields PRO
 Plugin URI: https://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields.
-Version: 5.7.0
+Version: 5.7.7
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
@@ -18,7 +18,7 @@ if( ! class_exists('ACF') ) :
 class ACF {
 	
 	/** @var string The plugin version number */
-	var $version = '5.7.0';
+	var $version = '5.7.7';
 	
 	/** @var array The plugin settings array */
 	var $settings = array();
@@ -118,6 +118,7 @@ class ACF {
 		$this->define( 'ACF', 			true );
 		$this->define( 'ACF_VERSION', 	$version );
 		$this->define( 'ACF_PATH', 		$path );
+		//$this->define( 'ACF_DEV', 		true );
 		
 		
 		// api
@@ -127,7 +128,7 @@ class ACF {
 		acf_include('includes/api/api-field.php');
 		acf_include('includes/api/api-field-group.php');
 		acf_include('includes/api/api-template.php');
-		
+		acf_include('includes/api/api-term.php');
 		
 		// fields
 		acf_include('includes/fields.php');
@@ -141,7 +142,6 @@ class ACF {
 		
 		// core
 		acf_include('includes/assets.php');
-		acf_include('includes/ajax.php');
 		acf_include('includes/cache.php');
 		acf_include('includes/compatibility.php');
 		acf_include('includes/deprecated.php');
@@ -152,8 +152,16 @@ class ACF {
 		acf_include('includes/media.php');
 		acf_include('includes/revisions.php');
 		acf_include('includes/updates.php');
+		acf_include('includes/upgrades.php');
 		acf_include('includes/validation.php');
 		
+		// ajax
+		acf_include('includes/ajax/class-acf-ajax.php');
+		acf_include('includes/ajax/class-acf-ajax-check-screen.php');
+		acf_include('includes/ajax/class-acf-ajax-user-setting.php');
+		acf_include('includes/ajax/class-acf-ajax-upgrade.php');
+		acf_include('includes/ajax/class-acf-ajax-query.php');
+		acf_include('includes/ajax/class-acf-ajax-query-terms.php');
 		
 		// forms
 		acf_include('includes/forms/form-attachment.php');
@@ -169,21 +177,12 @@ class ACF {
 		
 		// admin
 		if( is_admin() ) {
-			
 			acf_include('includes/admin/admin.php');
 			acf_include('includes/admin/admin-field-group.php');
 			acf_include('includes/admin/admin-field-groups.php');
-			acf_include('includes/admin/install.php');
 			acf_include('includes/admin/admin-tools.php');
+			acf_include('includes/admin/admin-upgrade.php');
 			acf_include('includes/admin/settings-info.php');
-			
-			
-			// network
-			if( is_network_admin() ) {
-				
-				acf_include('includes/admin/install-network.php');
-				
-			}
 		}
 		
 		

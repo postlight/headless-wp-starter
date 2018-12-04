@@ -161,10 +161,6 @@ class ACF_Assets {
 			add_action($actions['admin_footer'], 'acf_enqueue_uploader', 5);
 		}
 		
-		// enqueue
-		wp_enqueue_script('acf-input');
-		wp_enqueue_style('acf-input');
-		
 		// localize text
 		acf_localize_text(array(
 			
@@ -205,10 +201,10 @@ class ACF_Assets {
 			'Value is less than'		=> __('Value is less than', 'acf'),
 			'Selection is greater than'	=> __('Selection is greater than', 'acf'),
 			'Selection is less than'	=> __('Selection is less than', 'acf'),
+			
+			// misc
+			'Edit field group'	=> __('Edit field group', 'acf'),
 		));
-		
-		// action
-		do_action('acf/enqueue_scripts');
 	}
 	
 	
@@ -226,10 +222,15 @@ class ACF_Assets {
 	
 	function admin_enqueue_scripts() {
 		
+		// enqueue
+		wp_enqueue_script('acf-input');
+		wp_enqueue_style('acf-input');
+		
 		// vars
 		$text = array();
 		
 		// actions
+		do_action('acf/enqueue_scripts');
 		do_action('acf/admin_enqueue_scripts');
 		do_action('acf/input/admin_enqueue_scripts');
 		
@@ -396,6 +397,9 @@ acf.doAction('prepare');
 			<?php wp_editor( '', 'acf_content' ); ?>
 		</div>
 		<?php
+			
+		// action
+		do_action('acf/enqueue_uploader');
 	}
 }
 

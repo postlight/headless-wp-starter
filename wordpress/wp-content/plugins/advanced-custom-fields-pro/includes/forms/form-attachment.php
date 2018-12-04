@@ -216,24 +216,21 @@ acf.unload.active = 0;
 	function save_attachment( $post, $attachment ) {
 		
 		// bail early if not valid nonce
-		if( ! acf_verify_nonce('attachment') ) {
-		
+		if( !acf_verify_nonce('attachment') ) {
 			return $post;
-			
 		}
 		
-	    
-	    // validate and save
-	    if( acf_validate_save_post(true) ) {
-	    
+		// bypass validation for ajax
+		if( acf_is_ajax('save-attachment-compat') ) {
 			acf_save_post( $post['ID'] );
-			
-		}
 		
+		// validate and save
+		} elseif( acf_validate_save_post(true) ) {
+			acf_save_post( $post['ID'] );
+		}
 		
 		// return
-		return $post;
-			
+		return $post;	
 	}
 	
 			

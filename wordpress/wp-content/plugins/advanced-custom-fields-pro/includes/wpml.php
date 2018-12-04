@@ -1,175 +1,118 @@
-<?php 
+<?php
 
-class acf_wpml_compatibility {
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+if( ! class_exists('ACF_WPML_Compatibility') ) :
+
+class ACF_WPML_Compatibility {
 	
-	var $lang = '';
-	
-	
-	/*
-	*  Constructor
+	/**
+	*  __construct
 	*
-	*  This function will construct all the neccessary actions and filters
+	*  Sets up the class functionality.
 	*
-	*  @type	function
 	*  @date	23/06/12
 	*  @since	3.1.8
 	*
-	*  @param	N/A
-	*  @return	N/A
+	*  @param	void
+	*  @return	void
 	*/
-	
 	function __construct() {
 		
 		// global
 		global $sitepress;
 		
-		
-		// vars
-		$this->lang = acf_maybe_get_POST('_acf_lang', ICL_LANGUAGE_CODE);
-		
-		
 		// update settings
 		acf_update_setting('default_language', $sitepress->get_default_language());
-		acf_update_setting('current_language', $this->lang);
+		acf_update_setting('current_language', $sitepress->get_current_language());
 		
+		// localize data
+		acf_localize_data(array(
+		   	'language' => $sitepress->get_current_language()
+	   	));
 		
-		// actions
-		add_action('acf/verify_ajax',					array($this, 'verify_ajax'));
-		add_action('acf/input/admin_footer',			array($this, 'admin_footer'));
-		add_action('acf/input/form_data',				array($this, 'acf_input_form_data'), 10, 1);
+		// switch lang during AJAX action
+		add_action('acf/verify_ajax', array($this, 'verify_ajax'));
 		
+		// prevent 'acf-field' from being translated
+		add_filter('get_translatable_documents', array($this, 'get_translatable_documents'));
 		
-		// always prevent 'acf-field' from being translated
-		add_filter('get_translatable_documents',		array($this, 'get_translatable_documents'));
-		
-		
-		// bail early if not transaltable
-		if( !$this->is_translatable() ) return;
-		
-		
-		// actions
-		add_action('acf/update_500',					array($this, 'update_500'), 10);
-		add_action('acf/update_500_field_group',		array($this, 'update_500_field_group'), 10, 2);
-		add_action('acf/update_field_group',			array($this, 'update_field_group'), 2, 1);
-		add_action('icl_make_duplicate',				array($this, 'icl_make_duplicate'), 10, 4);
-		
-		
-		// filters
-		add_filter('acf/settings/save_json',			array($this, 'settings_save_json'));
-		add_filter('acf/settings/load_json',			array($this, 'settings_load_json'));
-		
+		// check if 'acf-field-group' is translatable
+		if( $this->is_translatable() ) {
+			
+			// actions
+			add_action('acf/upgrade_500_field_group',		array($this, 'upgrade_500_field_group'), 10, 2);
+			add_action('icl_make_duplicate',				array($this, 'icl_make_duplicate'), 10, 4);
+			
+			// filters
+			add_filter('acf/settings/save_json',			array($this, 'settings_save_json'));
+			add_filter('acf/settings/load_json',			array($this, 'settings_load_json'));
+		}
 	}
 	
-	
-	/*
+	/**
 	*  is_translatable
 	*
-	*  This fucntion will return true if the acf-field-group post type is translatable
+	*  Returns true if the acf-field-group post type is translatable.
+	*  Also adds compatibility with ACF4 settings
 	*
-	*  @type	function
 	*  @date	10/04/2015
 	*  @since	5.2.3
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	void
+	*  @return	bool
 	*/
-	
 	function is_translatable() {
 		
 		// global
 		global $sitepress;
 		
-		
 		// vars
 		$post_types = $sitepress->get_setting('custom_posts_sync_option');
 		
+		// return false if no post types
+		if( !acf_is_array($post_types) ) {
+			return false;
+		}
 		
-		// bail early if no post types
-		if( !acf_is_array($post_types) ) return false;
+		// prevent 'acf-field' from being translated
+		if( !empty($post_types['acf-field']) ) {
+			$post_types['acf-field'] = 0;
+			$sitepress->set_setting('custom_posts_sync_option', $post_types);
+		}
 		
-		
-		// always prevent 'acf-field' from being translated
-		$post_types['acf-field'] = 0;
-		$sitepress->set_setting('custom_posts_sync_option', $post_types);
-		
+		// when upgrading to version 5, review 'acf' setting
+		// update 'acf-field-group' if 'acf' is translatable, and 'acf-field-group' does not yet exist
+		if( !empty($post_types['acf']) && !isset($post_types['acf-field-group']) ) {
+			$post_types['acf-field-group'] = 1;
+			$sitepress->set_setting('custom_posts_sync_option', $post_types);
+		}
 		
 		// return true if acf-field-group is translatable
 		if( !empty($post_types['acf-field-group']) ) {
 			return true;
 		}
 		
-		
-		// return true if acf is translatable, and acf-field-group does not yet exist
-		if( !empty($post_types['acf']) && !isset($post_types['acf-field-group']) ) {
-			return true;
-		}
-		
-		
 		// return
 		return false;
-		
 	}
 	
-	
-	/*
-	*  update_500
+	/**
+	*  upgrade_500_field_group
 	*
-	*  This function will update the WPML settings to allow 'acf-field-group' to be translatable
+	*  Update the icl_translations table data when creating the field groups.
 	*
-	*  @type	function
 	*  @date	10/04/2015
 	*  @since	5.2.3
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	array $field_group The new field group array.
+	*  @param	object $ofg The old field group WP_Post object.
+	*  @return	void
 	*/
-	
-	function update_500() {
-		
-		// global
-		global $sitepress;
-		
-		
-		// vars
-		$post_types = $sitepress->get_setting('custom_posts_sync_option');
-		
-		
-		// bail early if no post types
-		if( !acf_is_array($post_types) ) return false;
-		
-		
-		// post type has changed from 'acf' to 'acf-field-group'
-		if( !empty($post_types['acf']) ) {
-			
-			$post_types['acf-field-group'] = 1;
-			
-		}
-		
-		
-		// update
-		$sitepress->set_setting('custom_posts_sync_option', $post_types);
-		
-	}
-	
-	
-	/*
-	*  update_500_field_group
-	*
-	*  This function will update the icl_translations table data when creating the fiedl groups
-	*
-	*  @type	function
-	*  @date	10/04/2015
-	*  @since	5.2.3
-	*
-	*  @param	$field_group (array)
-	*  @return	n/a
-	*/
-	
-	function update_500_field_group($field_group, $ofg) {
+	function upgrade_500_field_group($field_group, $ofg) {
 		
 		// global
 		global $wpdb;
-		
 		
 		// get translation rows (old acf4 and new acf5)
 		$old_row = $wpdb->get_row($wpdb->prepare(
@@ -182,37 +125,27 @@ class acf_wpml_compatibility {
 			'post_acf-field-group', $field_group['ID']
 		), ARRAY_A);
 		
-		
 		// bail ealry if no rows
 		if( !$old_row || !$new_row ) {
-			
 			return;
-			
 		}
-		
 		
 		// create reference of old trid to new trid
 		// trid is a simple int used to find associated objects
 		if( empty($this->trid_ref) ) {
-			
 			$this->trid_ref = array();
-			
 		}
-		
 		
 		// update trid
 		if( isset($this->trid_ref[ $old_row['trid'] ]) ) {
 			
 			// this field group is a translation of another, update it's trid to match the previously inserted group
 			$new_row['trid'] = $this->trid_ref[ $old_row['trid'] ];
-			
 		} else {
 			
 			// this field group is the first of it's translations, update the reference for future groups
 			$this->trid_ref[ $old_row['trid'] ] = $new_row['trid'];
-			
 		}
-		
 		
 		// update icl_translations
 		// Row is created by WPML, and much easier to tweak it here due to the very complicated and nonsensical WPML logic
@@ -222,292 +155,148 @@ class acf_wpml_compatibility {
 		$data_format = array( '%d', '%s' );
 		$where_format = array( '%d' );
 		
-		
 		// allow source_language_code to equal NULL
 		if( $old_row['source_language_code'] ) {
 			
 			$data['source_language_code'] = $old_row['source_language_code'];
 			$data_format[] = '%s';
-			
 		}
-		
 		
 		// update wpdb
 		$result = $wpdb->update( $table, $data, $where, $data_format, $where_format );
-		
 	}
 	
-	
-	/*
-	*  update_field_group
-	*
-	*  This function will update the lang when saving a field group
-	*
-	*  @type	function
-	*  @date	10/03/2014
-	*  @since	5.0.0
-	*
-	*  @param	$field_group (array)
-	*  @return	n/a
-	*/
-	
-	function update_field_group( $field_group ) {
-		
-		global $sitepress;
-		
-		$this->lang = $sitepress->get_language_for_element($field_group['ID'], 'post_acf-field-group');
-		
-	}
-
-	
-	/*
+	/**
 	*  settings_save_json
 	*
-	*  This function is hooked into the acf/update_field_group action and will save all field group data to a .json file 
+	*  Modifies the json path.
 	*
-	*  @type	function
 	*  @date	19/05/2014
 	*  @since	5.0.0
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	string $path The json save path.
+	*  @return	string
 	*/
-	
 	function settings_save_json( $path ) {	
-		
+
 		// bail early if dir does not exist
 		if( !is_writable($path) ) {
-			
 			return $path;
-			
 		}
 		
-		
-		// remove trailing slash
-		$path = untrailingslashit( $path );
-
-			
 		// ammend
-		$path = $path . '/' . $this->lang;
-		
+		$path = untrailingslashit($path) . '/' . acf_get_setting('current_language');
 		
 		// make dir if does not exist
 		if( !file_exists($path) ) {
-			
 			mkdir($path, 0777, true);
-			
 		}
-		
 		
 		// return
 		return $path;
-		
 	}
 	
-	
-	/*
+	/**
 	*  settings_load_json
 	*
-	*  description
+	*  Modifies the json path.
 	*
-	*  @type	function
 	*  @date	19/05/2014
 	*  @since	5.0.0
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
+	*  @param	string $path The json save path.
+	*  @return	string
+	*/	
 	function settings_load_json( $paths ) {
 		
-		if( !empty($paths) ) {
-			
-			foreach( $paths as $i => $path ) {
-				
-				// remove trailing slash
-				$path = untrailingslashit( $path );
-				
-				
-				// ammend
-				$paths[ $i ] = $path . '/' . $this->lang;
-			
-			}
-		}
-		
+		// loop
+		if( $paths ) {
+		foreach( $paths as $i => $path ) {
+			$paths[ $i ] = untrailingslashit($path) . '/' . acf_get_setting('current_language');
+		}}
 		
 		// return
 		return $paths;
-		
 	}
 	
-	
-	
-	/*
+	/**
 	*  icl_make_duplicate
 	*
 	*  description
 	*
-	*  @type	function
 	*  @date	26/02/2014
 	*  @since	5.0.0
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	void
+	*  @return	void
 	*/
-	
 	function icl_make_duplicate( $master_post_id, $lang, $postarr, $id ) {
 		
-		// validate
+		// bail early if not acf-field-group
 		if( $postarr['post_type'] != 'acf-field-group' ) {
-		
 			return;
-			
 		}
 		
+		// update the lang
+		acf_update_setting('current_language', $lang);
 		
-		// duplicate field group
+		// duplicate field group specifying the $post_id
 		acf_duplicate_field_group( $master_post_id, $id );
-		
 		
 		// always translate independately to avoid many many bugs!
 		// - translation post gets a new key (post_name) when origional post is saved
 		// - local json creates new files due to changed key
 		global $iclTranslationManagement;
-		
 		$iclTranslationManagement->reset_duplicate_flag( $id );
-
 	}
 	
 	
-	/*
-	*  admin_footer
-	*
-	*  description
-	*
-	*  @type	function
-	*  @date	27/02/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	function admin_footer() {
-		
-		?>
-		<script type="text/javascript">
-		(function($) {
-			
-			// add filter
-			acf.add_filter('prepare_for_ajax', function( args ){
-				
-				// append
-				args.lang = '<?php echo $this->lang; ?>';
-				
-				
-				// return
-				return args;
-				
-			});
-			
-		})(jQuery);	
-		</script>
-		<?php
-		
-	}
-	
-	
-	/*
+	/**
 	*  verify_ajax
 	*
-	*  This function will help avoid WPML conflicts when performing an ACF ajax request
+	*  Sets the correct language during AJAX requests.
 	*
 	*  @type	function
 	*  @date	7/08/2015
 	*  @since	5.2.3
 	*
-	*  @param	n/a
-	*  @return	n/a
+	*  @param	void
+	*  @return	void
 	*/
-	
 	function verify_ajax() {
 		
-		// globals
-		global $sitepress;
-		
-		
-		// vars
-		$lang = acf_maybe_get($_POST, 'lang');
-		
-		
-		// bail early if no lang
-		if( !$lang ) return;
-		
-		
-		// switch lang
+		// set the language for this AJAX request
 		// this will allow get_posts to work as expected (load posts from the correct language)
-		$sitepress->switch_lang( $_REQUEST['lang'] );
-			
-		
-		// remove post_id
-		// this will prevent WPML from setting the current language based on the current post being edited
-		// in theory, WPML is correct, however, when adding a new post, the post's lang is not found and will default to 'en'
-		unset( $_REQUEST['post_id'] );
-		
+		if( isset($_REQUEST['lang']) ) {
+			global $sitepress;
+			$sitepress->switch_lang( $_REQUEST['lang'] );
+		}
 	}
 	
-	
-	/*
-	*  acf_input_form_data
-	*
-	*  description
-	*
-	*  @type	function
-	*  @date	16/12/16
-	*  @since	5.5.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	function acf_input_form_data( $data ) {
-		
-		// bail early if not options
-		if( $data['nonce'] !== 'options' ) return;
-		
-		
-		// add hidden input
-		acf_hidden_input(array('id' => '_acf_lang', 'name' => '_acf_lang', 'value' => $this->lang));
-		
-	}
-	
-	
-	/*
+	/**
 	*  get_translatable_documents
 	*
-	*  This filter will remove 'acf-field' from the available post types for translation
+	*  Removes 'acf-field' from the available post types for translation.
 	*
 	*  @type	function
 	*  @date	17/8/17
 	*  @since	5.6.0
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	array $icl_post_types The array of post types.
+	*  @return	array
 	*/
-	
 	function get_translatable_documents( $icl_post_types ) {
 		
 		// unset
 		unset( $icl_post_types['acf-field'] );
 		
-		
 		// return
 		return $icl_post_types;
-		
 	}
-	
 }
 
-new acf_wpml_compatibility();
+acf_new_instance('ACF_WPML_Compatibility');
+
+endif; // class_exists check
 
 ?>

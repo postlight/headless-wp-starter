@@ -45,6 +45,11 @@ class acf_third_party {
 		if( function_exists('espresso_version') ) {
 			add_filter('acf/get_post_types', array($this, 'ee_get_post_types'), 10, 2);
 		}
+		
+		// Dark Mode
+		if( class_exists('Dark_Mode') ) {
+			add_action('doing_dark_mode', array($this, 'doing_dark_mode'));
+		}
 	}
 	
 	
@@ -182,7 +187,23 @@ class acf_third_party {
 		// return
 		return $pages;
 		
-	}	
+	}
+	
+	/**
+	*  doing_dark_mode
+	*
+	*  Runs during 'admin_enqueue_scripts' if dark mode is enabled
+	*
+	*  @date	13/8/18
+	*  @since	5.7.3
+	*
+	*  @param	void
+	*  @return	void
+	*/
+	
+	function doing_dark_mode() {
+		wp_enqueue_style('acf-dark', acf_get_url('assets/css/acf-dark.css'), array(), ACF_VERSION );
+	}
 	
 }
 

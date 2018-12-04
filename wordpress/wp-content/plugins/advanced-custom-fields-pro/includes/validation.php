@@ -377,11 +377,21 @@ function acf_validate_value( $value, $field, $input ) {
 	}
 	
 	
-	// filter for 3rd party customization
-	$valid = apply_filters( "acf/validate_value", $valid, $value, $field, $input );
-	$valid = apply_filters( "acf/validate_value/type={$field['type']}", $valid, $value, $field, $input );
-	$valid = apply_filters( "acf/validate_value/name={$field['name']}", $valid, $value, $field, $input );
-	$valid = apply_filters( "acf/validate_value/key={$field['key']}", $valid, $value, $field, $input );
+	/**
+	*  Filters whether the value is valid.
+	*
+	*  @date	28/09/13
+	*  @since	5.0.0
+	*
+	*  @param	bool $valid The valid status. Return a string to display a custom error message.
+	*  @param	mixed $value The value.
+	*  @param	array $field The field array.
+	*  @param	string $input The input element's name attribute.
+	*/
+	$valid = apply_filters( "acf/validate_value/type={$field['type']}",		$valid, $value, $field, $input );
+	$valid = apply_filters( "acf/validate_value/name={$field['_name']}", 	$valid, $value, $field, $input );
+	$valid = apply_filters( "acf/validate_value/key={$field['key']}", 		$valid, $value, $field, $input );
+	$valid = apply_filters( "acf/validate_value", 							$valid, $value, $field, $input );
 	
 	
 	// allow $valid to be a custom error message

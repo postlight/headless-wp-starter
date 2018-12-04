@@ -162,8 +162,8 @@ class acf_deprecated {
 	function acf_validate_field( $field ) {
 		
 		// 5.5.6 - changed filter name
-		$field = apply_filters( "acf/get_valid_field", $field );
 		$field = apply_filters( "acf/get_valid_field/type={$field['type']}", $field );
+		$field = apply_filters( "acf/get_valid_field", $field );
 		
 		
 		// return

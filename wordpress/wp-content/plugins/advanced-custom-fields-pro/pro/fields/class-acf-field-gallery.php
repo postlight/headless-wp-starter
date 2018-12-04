@@ -100,7 +100,9 @@ class acf_field_gallery extends acf_field {
    		
 		
 		// validate
-		if( !wp_verify_nonce($options['nonce'], 'acf_nonce') ) die();
+		if( !acf_verify_ajax() ) {
+			die();
+		}
 		
 		
 		// bail early if no id

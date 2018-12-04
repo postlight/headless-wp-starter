@@ -266,27 +266,16 @@ class acf_field_select extends acf_field {
 		}
 		
 		
-		// prepend empty choice for single inputs
-		$prepend = false;
-		
-		if( !$field['multiple'] ) {
-			
-			// allow null or ajax
-			if( $field['allow_null'] || $field['ajax'] ) {
-				$prepend = true;
-			}
-		}
-		
-		// allow null
+		// prepend empty choice
+		// - only for single selects
 		// - have tried array_merge but this causes keys to re-index if is numeric (post ID's)
-		if( $prepend ) {
-			$placeholder = '- ' . $field['placeholder'] . ' -';
-			$choices = array( '' => $placeholder ) + $choices;
+		if( $field['allow_null'] && !$field['multiple'] ) {
+			$choices = array( '' => "- {$field['placeholder']} -" ) + $choices;
 		}
-		
+				
 		
 		// clean up choices if using ajax
-		if( $field['ajax'] ) {
+		if( $field['ui'] && $field['ajax'] ) {
 			$minimal = array();
 			foreach( $value as $key ) {
 				if( isset($choices[ $key ]) ) {

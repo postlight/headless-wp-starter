@@ -277,7 +277,7 @@ if( $this->view == 'add' ): ?>
 		var valid = acf.validateForm({
 			form: $form,
 			event: e,
-			lock: false
+			reset: true
 		});
 		
 		// if not valid, stop event and allow validation to continue

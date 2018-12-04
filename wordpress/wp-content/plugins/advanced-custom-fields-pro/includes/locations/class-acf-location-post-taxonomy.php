@@ -48,74 +48,43 @@ class acf_location_post_taxonomy extends acf_location {
 		
 		// vars
 		$post_id = acf_maybe_get( $screen, 'post_id' );
-		$terms = acf_maybe_get( $screen, 'post_taxonomy' );
-		
+		$post_terms = acf_maybe_get( $screen, 'post_terms' );
 		
 		// bail early if not a post
 		if( !$post_id ) return false;
 		
-		
-		// get term data
-		$data = acf_decode_taxonomy_term( $rule['value'] );
-		$term = get_term_by( 'slug', $data['term'], $data['taxonomy'] );
-		
-		
-		// attempt get term via ID (ACF4 uses ID)
-		if( !$term && is_numeric($data['term']) ) {
-			
-			$term = get_term_by( 'id', $data['term'], $data['taxonomy'] );
-			
-		}
-		
+		// get selected term from rule
+		$term = acf_get_term( $rule['value'] );
 		
 		// bail early if no term
-		if( !$term ) return false;
+		if( !$term || is_wp_error($term) ) return false;
 		
+		// if ajax, find the terms for the correct category
+		if( $post_terms !== null ) {
+			$post_terms = acf_maybe_get( $post_terms, $term->taxonomy, array() );
 		
-		// not ajax, load real post's terms
-		if( $terms === null ) {
-			
-			$terms = wp_get_post_terms( $post_id, $term->taxonomy, array('fields' => 'ids') );
-			
+		// if not ajax, load post's terms
+		} else {
+			$post_terms = wp_get_post_terms( $post_id, $term->taxonomy, array('fields' => 'ids') );
 		}
-		
 		
 		// If no terms, this is a new post and should be treated as if it has the "Uncategorized" (1) category ticked
-		if( empty($terms) ) {
-			
-			// get post type
-			$post_type = get_post_type( $post_id );
-			
-			
-			// if is category
-			if( is_object_in_taxonomy($post_type, 'category') ) {
-			
-				$terms = array( 1 );
-				
-			}
-			
+		if( !$post_terms && $term->taxonomy == 'category' ) {
+			$post_terms = array( 1 );
 		}
 		
-		
-		// match
-		if( !empty($terms) ) {
-			
-			$result = in_array( $term->term_id, $terms );
-			
+		// compare term IDs and slugs
+		if( in_array($term->term_id, $post_terms) || in_array($term->slug, $post_terms) ) {
+			$result = true;
 		}
 		
-		
-		// reverse if 'not equal to'
-        if( $rule['operator'] === '!=' ) {
-	        	
-        	$result = !$result;
-        
+		 // reverse if 'not equal to'
+        if( $rule['operator'] == '!=' ) {
+			$result = !$result;
         }
-        
         
         // return
         return $result;
-		
 	}
 	
 	

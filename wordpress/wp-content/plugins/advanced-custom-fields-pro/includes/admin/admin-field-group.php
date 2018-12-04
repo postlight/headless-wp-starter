@@ -444,7 +444,7 @@ class acf_admin_field_group {
 		acf_disable_filters();
 		
         // save fields
-       if( !empty($_POST['acf_fields']) ) {
+        if( !empty($_POST['acf_fields']) ) {
 			
 			// loop
 			foreach( $_POST['acf_fields'] as $field ) {
@@ -639,20 +639,16 @@ class acf_admin_field_group {
 		// validate
 		if( !acf_verify_ajax() ) die();
 		
-		
-		// valid rule
-		$rule = acf_get_valid_location_rule($_POST['rule']);
-				
-		
+		// validate rule
+		$rule = acf_validate_location_rule($_POST['rule']);
+			
 		// view
 		acf_get_view( 'html-location-rule', array(
 			'rule' => $rule
 		));
 		
-		
 		// die
-		die();
-								
+		die();						
 	}
 	
 	

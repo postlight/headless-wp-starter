@@ -316,7 +316,7 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 }
 .acf-postbox.seamless > .hndle,
 .acf-postbox.seamless > .handlediv {
-  display: none;
+  display: none !important;
 }
 .acf-postbox.seamless > .inside {
   display: block !important;
@@ -343,10 +343,6 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
   .acf-postbox.seamless > .acf-fields.-left > .acf-field > .acf-input {
     padding: 0;
   }
-}
-/* override WP CSS */
-.metabox-prefs label.acf-hidden {
-  display: none;
 }
 /*---------------------------------------------------------------------------------------------
 *

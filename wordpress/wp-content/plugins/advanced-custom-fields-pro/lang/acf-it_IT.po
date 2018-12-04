@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2018-04-16 17:11+1000\n"
-"PO-Revision-Date: 2018-04-30 05:17+0200\n"
+"PO-Revision-Date: 2018-07-16 09:34+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Elliot Condon <e@elliotcondon.com>\n"
 "Language: it_IT\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Loco-Target-Locale: it_IT\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -864,7 +864,7 @@ msgstr "Formato"
 
 #: includes/admin/views/field-group-options.php:125
 msgid "Page Attributes"
-msgstr "Atrributi Pagina"
+msgstr "Attributi di Pagina"
 
 #: includes/admin/views/field-group-options.php:126
 #: includes/fields/class-acf-field-relationship.php:671
@@ -1497,7 +1497,8 @@ msgstr "Relazionale"
 msgid "jQuery"
 msgstr "jQuery"
 
-#: includes/fields.php:149 includes/fields/class-acf-field-button-group.php:177
+#: includes/fields.php:149
+#: includes/fields/class-acf-field-button-group.php:177
 #: includes/fields/class-acf-field-checkbox.php:389
 #: includes/fields/class-acf-field-group.php:474
 #: includes/fields/class-acf-field-radio.php:290
@@ -2787,8 +2788,8 @@ msgstr "Modifica Field Group"
 msgid "Validate Email"
 msgstr "Valida Email"
 
-#: includes/forms/form-front.php:103 pro/fields/class-acf-field-gallery.php:573
-#: pro/options-page.php:81
+#: includes/forms/form-front.php:103
+#: pro/fields/class-acf-field-gallery.php:573 pro/options-page.php:81
 msgid "Update"
 msgstr "Aggiorna"
 

@@ -288,7 +288,7 @@ class acf_form_customizer {
 		}
 		
 		// return
-		return $value;
+		return $field_key;
 	}
 		
 	

@@ -77,7 +77,7 @@ class acf_location_taxonomy extends acf_location {
 		
 		// vars
 		$choices = array( 'all' => __('All', 'acf') );
-		$choices = array_merge( $choices, acf_get_taxonomies() );
+		$choices = array_merge( $choices, acf_get_taxonomy_labels() );
 		
 		
 		// return

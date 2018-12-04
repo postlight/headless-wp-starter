@@ -123,7 +123,7 @@
 			
 			// disable clone
 			acf.disable( this.$clone(), this.cid );
-						
+			
 			// render
 			this.render();
 		},
@@ -200,32 +200,33 @@
 				return false;
 			}
 			
-			// vars
-			var $clone = this.$clone();
-			
 			// defaults
 			args = acf.parseArgs(args, {
-				before: $clone
+				before: false
 			});
 			
 			// add row
 			var $el = acf.duplicate({
-				target: $clone,
-				append: function( $el, $el2 ){
+				target: this.$clone(),
+				append: this.proxy(function( $el, $el2 ){
+					
+					// append
+					if( args.before ) {
+						args.before.before( $el2 );
+					} else {
+						$el.before( $el2 );
+					}
 					
 					// remove clone class
 					$el2.removeClass('acf-clone');
 					
-					// append
-					args.before.before( $el2 );
-				}
+					// enable
+					acf.enable( $el2, this.cid );
+					
+					// render
+					this.render();
+				})
 			});
-			
-			// enable 
-			acf.enable_form( $el, this.cid );
-			
-			// update order
-			this.render();
 			
 			// trigger change for validation errors
 			this.$input().trigger('change');
@@ -336,7 +337,7 @@
 			}	
 		},
 		
-		onShow: function( e, context ){
+		onShow: function( e, $el, context ){
 			
 			// get sub fields
 			var fields = acf.getFields({
@@ -670,7 +671,7 @@
 			}
 		},
 		
-		onShow: function( e, context ){
+		onShow: function( e, $el, context ){
 			
 			// get sub fields
 			var fields = acf.getFields({
@@ -764,9 +765,6 @@
 				before: false
 			});
 			
-			// append
-			args.append = this.$layoutsWrap();
-			
 			// validate
 			if( !this.allowAdd() ) {
 				return false;
@@ -775,21 +773,22 @@
 			// add row
 			var $el = acf.duplicate({
 				target: this.$clone( args.layout ),
-				append: function( $el, $el2 ){
+				append: this.proxy(function( $el, $el2 ){
 					
+					// append
 					if( args.before ) {
 						args.before.before( $el2 );
 					} else {
-						args.append.append( $el2 );
+						this.$layoutsWrap().append( $el2 );
 					}
-				}
+					
+					// enable 
+					acf.enable( $el2, this.cid );
+					
+					// render
+					this.render();
+				})
 			});
-			
-			// enable 
-			acf.enable_form( $el, this.cid );
-			
-			// update order
-			this.render();
 			
 			// trigger change for validation errors
 			this.$input().trigger('change');
@@ -1705,4 +1704,3 @@
 // @codekit-prepend "../js/acf-field-repeater.js";
 // @codekit-prepend "../js/acf-field-flexible-content.js";
 // @codekit-prepend "../js/acf-field-gallery.js";
-

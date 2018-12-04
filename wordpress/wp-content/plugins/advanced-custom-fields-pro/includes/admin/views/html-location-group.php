@@ -6,14 +6,12 @@
 		<tbody>
 			<?php foreach( $group as $i => $rule ):
 				
-				// append id
+				// validate rule
+				$rule = acf_validate_location_rule($rule);
+				
+				// append id and group
 				$rule['id'] = "rule_{$i}";
 				$rule['group'] = $group_id;
-				
-				
-				// valid rule
-				$rule = acf_get_valid_location_rule($rule);
-				
 				
 				// view
 				acf_get_view('html-location-rule', array(

@@ -192,20 +192,19 @@ function acf_get_location_rule_types() {
 }
 
 
-/*
-*  acf_get_valid_location_rule
+/**
+*  acf_validate_location_rule
 *
-*  This function will return a valid location rule array
+*  Returns a valid location rule array.
 *
-*  @type	function
-*  @date	30/5/17
-*  @since	5.6.0
+*  @date	28/8/18
+*  @since	5.7.4
 *
-*  @param	$rule (array)
-*  @return	(array)
+*  @param	$rule array The rule array.
+*  @return	array
 */
 
-function acf_get_valid_location_rule( $rule ) {
+function acf_validate_location_rule( $rule = false ) {
 	
 	// defaults
 	$rule = wp_parse_args( $rule, array(
@@ -216,16 +215,13 @@ function acf_get_valid_location_rule( $rule ) {
 		'value'		=> '',
 	));
 	
-	
-	// prefix for inputs
-	$rule['prefix'] = 'acf_field_group[location]['.$rule['group'].']['.$rule['id'].']';
-	
+	// filter
+	$rule = apply_filters( "acf/location/validate_rule/type={$rule['param']}", $rule );
+	$rule = apply_filters( "acf/location/validate_rule", $rule);
 	
 	// return
 	return $rule;
-	
 }
-
 
 /*
 *  acf_get_location_rule_operators
@@ -250,6 +246,7 @@ function acf_get_location_rule_operators( $rule ) {
 	
 	
 	// filter
+	$operators = apply_filters( "acf/location/rule_operators/type={$rule['param']}", $operators, $rule );
 	$operators = apply_filters( "acf/location/rule_operators/{$rule['param']}", $operators, $rule );
 	$operators = apply_filters( "acf/location/rule_operators", $operators, $rule );
 	
@@ -280,6 +277,7 @@ function acf_get_location_rule_values( $rule ) {
 	
 	
 	// filter
+	$values = apply_filters( "acf/location/rule_values/type={$rule['param']}", $values, $rule );
 	$values = apply_filters( "acf/location/rule_values/{$rule['param']}", $values, $rule );
 	$values = apply_filters( "acf/location/rule_values", $values, $rule );
 	
@@ -311,6 +309,8 @@ function acf_match_location_rule( $rule, $screen ) {
 	
 	
 	// filter
+	$result = apply_filters( "acf/location/match_rule/type={$rule['param']}", $result, $rule, $screen );
+	$result = apply_filters( "acf/location/match_rule", $result, $rule, $screen );
 	$result = apply_filters( "acf/location/rule_match/{$rule['param']}", $result, $rule, $screen );
 	$result = apply_filters( "acf/location/rule_match", $result, $rule, $screen );
 	
@@ -351,6 +351,22 @@ function acf_get_location_screen( $screen, $field_group ) {
 	// return
 	return $screen;
 	
+}
+
+/**
+*  acf_get_valid_location_rule
+*
+*  Deprecated in 5.7.4. Use acf_validate_location_rule() instead.
+*
+*  @date	30/5/17
+*  @since	5.6.0
+*
+*  @param	$rule array The rule array.
+*  @return	array
+*/
+
+function acf_get_valid_location_rule( $rule ) {
+	return acf_validate_location_rule( $rule );
 }
 
 ?>
