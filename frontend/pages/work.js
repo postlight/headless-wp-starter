@@ -5,6 +5,7 @@ import Menu from "../components/Menu.js";
 import Link from "next/link";
 import { Config } from "../config.js";
 import safeGet from "lodash/get";
+import fetch from "isomorphic-unfetch";
 
 class Work extends Component {
   static async getInitialProps(context) {
