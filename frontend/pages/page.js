@@ -18,22 +18,33 @@ class Page extends Component {
   static async getInitialProps(context) {
     const { slug, apiRoute } = context.query;
 
+    // get data for this page
     const pageRes = await fetch(
       `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
 
+    // get data for the top ancestor of this page, if it's different from this page
     const ancestorSlug = context.asPath.split('/')[1]
-    const ancestorRes = await fetch(
-      `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${ancestorSlug}`
-    );
-    const ancestor = await ancestorRes.json();
+    let ancestor, thisPage
+    if (ancestorSlug !== slug) {
+      const ancestorRes = await fetch(
+        `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${ancestorSlug}`
+      );
+      ancestor = await ancestorRes.json();
+    } else {
+      thisPage = await pageRes.json();
+      ancestor = {
+        id: thisPage.id
+      }
+    }
 
+    // get menu items for this page, if they exist
     const menuItemRes = await fetch(
       `${Config.apiUrl}/wp-json/wp/v2/pages?parent=${ancestor.id}`
     );
 
     const menuItems = await menuItemRes.json();
-    const page = await pageRes.json();
+    const page = thisPage || await pageRes.json();
 
     return { page, menuItems };
   }
