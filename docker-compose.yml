@@ -1,0 +1,40 @@
+
+version: '3.3'
+
+services:
+    db_container:
+      build:
+        context: .
+        dockerfile: Dockerfile-db
+      container_name: db_container
+      ports:
+        - "3307:3306"
+      networks:
+        - headless_net
+      restart: always
+      volumes:
+        - ./docker/dbshared:/var/dbshared
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: wp_headless
+        MYSQL_USER: wp_headless
+        MYSQL_PASSWORD: wp_headless
+
+    wp_container:
+      build:
+        context: .
+        dockerfile: Dockerfile-wp
+      depends_on:
+        - db_container
+      volumes:
+        - .:/var/www/html
+      container_name: wp_container
+      ports:
+        - "8080:8080"
+        - "3000:3000"
+      networks:
+        - headless_net
+      restart: always
+networks:
+  headless_net:
+    driver: bridge

@@ -27,63 +27,26 @@ class RoboFile extends \Robo\Tasks {
             'wp-db-name' => 'wp_headless',
             'wp-description' => 'Just another (headless) WordPress site',
             'wp-plugins' => [],
-            'docker' => false,
         ]
     ) {
-        $confirm = $this->io()->confirm( 'This will replace your current ' .
-        'WordPress install. Are you sure you want to do this?', false );
+        $confirm = $this->io()->confirm(
+            'This will replace your current WordPress install. Are you sure you want to do this?',
+            false
+        );
 
         if ( ! $confirm ) {
             return 1;
         }
 
-        $uname = php_uname();
-        $is_darwin = ( strpos( $uname, 'Darwin' ) === 0 );
-        $config_db_answer = $this->ask(
-            "Do you have an existing database you'd like to use and configure yourself? (y/n): "
-        );
-        $db_ip = '';
-        $db_pass = '';
-        if ( 'y' === $config_db_answer ) {
-            $db_ip = $this->ask( 'Database IP address (press Enter for default value [0.0.0.0]): ' );
-            $db_pass = $this->ask( 'Database root password (press Enter for default value [root]): ' );
-            if ( $is_darwin ) {
-                $this->_exec( 'mysql.server start' );
-            } else {
-                $this->_exec( 'sudo service mysql start' );
-            }
-        } else {
-            if ( $is_darwin ) {
-                $this->_exec( 'brew install mysql' );
-                $this->_exec( 'mysql.server start' );
-                $this->_exec( './mysql_config.sh' );
-            } else {
-                if ( !$opts['docker'] ) {
-                    $this->_exec(
-                        "echo 'mysql-server mysql-server/root_password_again password root' | ".
-                        'sudo debconf-set-selections'
-                    );
-                    $this->_exec(
-                        "echo 'mysql-server mysql-server/root_password_again password root' | ".
-                        'sudo debconf-set-selections'
-                    );
-                    $this->_exec( 'sudo apt-get -y install mysql-server' );
-                    $this->_exec( 'sudo usermod -d /var/lib/mysql/ mysql' );
-                    $this->_exec( 'sudo service mysql start' );
-                }
-            }
-        }
+        $db_ip = $this->ask( 'Database IP address (press Enter for default value [172.21.0.2]): ' );
+        $db_pass = $this->ask( 'Database root password (press Enter for default value [root]): ' );
 
         if ( !$db_pass || strlen( $db_pass ) === 0 ) {
             $db_pass = 'root';
         }
 
         if ( !$db_ip || strlen( $db_ip ) === 0 ) {
-            if ( !$opts['docker'] ) {
-                $db_ip = '0.0.0.0';
-            } else {
-                $db_ip = 'localhost';
-            }
+            $db_ip = '172.21.0.2';
         }
 
         $this->_exec(
@@ -102,7 +65,7 @@ class RoboFile extends \Robo\Tasks {
 
         $this->_exec( 'mysql -uroot -p' . $db_pass . ' -h ' . $db_ip . " -e 'flush privileges'" );
 
-        $this->wp( 'core download --version=4.9.7 --locale=en_US --force' );
+        $this->wp( 'core download --version=4.9.8 --locale=en_US --force' );
         $this->_exec( 'rm wordpress/wp-config.php > /dev/null 2>&1 || true' );
         $this->wp(
             'core config --dbname=' . $opts['wp-db-name'] . ' --dbuser=' . $opts['wp-db-name'] . ' --dbpass='
@@ -111,15 +74,16 @@ class RoboFile extends \Robo\Tasks {
         $this->wp( 'db drop --yes' );
         $this->wp( 'db create' );
 
+
         $install_command = implode( ' ', [
-            'core install',
-            '--url=localhost:8080',
-            '--title="' . $opts['wp-theme-name'] . '"',
-            '--admin_user="' . $opts['wp-user'] . '"',
-            '--admin_password="' . $opts['wp-pw'] . '"',
-            '--admin_email="' . $opts['wp-email'] . '"',
-            '--skip-email',
-        ] );
+                'core install',
+                '--url=localhost:8080',
+                '--title="' . $opts['wp-theme-name'] . '"',
+                '--admin_user="' . $opts['wp-user'] . '"',
+                '--admin_password="' . $opts['wp-pw'] . '"',
+                '--admin_email="' . $opts['wp-email'] . '"',
+                '--skip-email',
+            ] );
 
         $this->wp( $install_command );
 
