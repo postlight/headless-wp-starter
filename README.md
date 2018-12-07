@@ -24,8 +24,7 @@ Let's get started.
 
 Before you install WordPress, make sure you have all the required software installed for your operating system.
 
-### Prerequisites
-*   **Docker**: You'll need to install Docker [for your platform](https://www.docker.com/community-edition).
+**Prerequisite:** [Docker](https://www.docker.com) is required.
 
 ### Install
 
