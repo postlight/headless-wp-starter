@@ -31,16 +31,15 @@ The following commands will get WordPress running on your machine using Docker, 
 ```zsh
 > docker-compose up -d
 ```
-- Get the IDs of all running containers then get the IP address of `db_container`
+- Copy the IP address of `db_headless` to your clipboard.
 ```zsh
-> docker ps
-> docker inspect REPLACE_WITH_DB_CONTAINER_ID | grep "IPAddress"
+> docker inspect db_headless | grep "IPAddress"
 ```
-- Attach to `wp_container`
+- Attach to the `wp_headless` container.
 ```zsh
-> docker exec -it REPLACE_WITH_WP_CONTAINER_ID /bin/bash
+> docker exec -it wp_headless /bin/bash
 ```
-- Setup headless wordpress by running yarn, provide the `db_container` container IP once asked and use default password `root`
+- Setup headless wordpress by running yarn. When prompted, provide the `db_headless` container IP and use the default password `root`.
 ```zsh
 > yarn install
 ```
@@ -67,7 +66,7 @@ The primary theme code is located in `wordpress/wp-content/themes/postlight-head
 To spin up the frontend client app, run the following commands:
 
 ```zsh
-> docker exec -it REPLACE_WITH_WP_CONTAINER_ID /bin/bash
+> docker exec -it wp_headless /bin/bash
 > cd frontend && yarn install && yarn start
 ```
 
