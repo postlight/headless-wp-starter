@@ -22,9 +22,7 @@ Let's get started.
 
 ## WordPress Backend
 
-Before you install WordPress, make sure you have all the required software installed for your operating system.
-
-**Prerequisite:** [Docker](https://www.docker.com) is required.
+Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed.
 
 ### Install
 
