@@ -1,3 +1,0 @@
-FROM mysql:5.7.24
-VOLUME /var/dbshared
-EXPOSE 3307

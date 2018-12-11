@@ -3,15 +3,10 @@ version: '3.3'
 
 services:
     db_headless:
-      build:
-        context: .
-        dockerfile: Dockerfile-db
+      image: mysql:5.7.24
       container_name: db_headless
       ports:
         - "3307:3306"
-      networks:
-        - headless_net
-      restart: always
       volumes:
         - ./docker/dbshared:/var/dbshared
       environment:
@@ -28,13 +23,9 @@ services:
         - db_headless
       volumes:
         - .:/var/www/html
+      environment:
+        WORDPRESS_DB_HOST: "mysql:3307"
       container_name: wp_headless
       ports:
         - "8080:8080"
         - "3000:3000"
-      networks:
-        - headless_net
-      restart: always
-networks:
-  headless_net:
-    driver: bridge
