@@ -31,15 +31,11 @@ The following commands will get WordPress running on your machine using Docker, 
 ```zsh
 > docker-compose up -d
 ```
-- Copy the IP address of `db_headless` to your clipboard.
-```zsh
-> docker inspect db_headless | grep "IPAddress"
-```
 - Attach to the `wp_headless` container.
 ```zsh
 > docker exec -it wp_headless /bin/bash
 ```
-- Setup headless wordpress by running yarn. When prompted, provide the `db_headless` container IP and use the default password `root`.
+- Setup headless wordpress by running yarn
 ```zsh
 > yarn install
 ```
