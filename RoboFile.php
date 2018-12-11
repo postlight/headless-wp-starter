@@ -38,16 +38,8 @@ class RoboFile extends \Robo\Tasks {
             return 1;
         }
 
-        $db_ip = $this->ask( 'Database IP address (press Enter for default value [172.21.0.2]): ' );
-        $db_pass = $this->ask( 'Database root password (press Enter for default value [root]): ' );
-
-        if ( !$db_pass || strlen( $db_pass ) === 0 ) {
-            $db_pass = 'root';
-        }
-
-        if ( !$db_ip || strlen( $db_ip ) === 0 ) {
-            $db_ip = '172.21.0.2';
-        }
+        $db_ip = 'db_headless';
+        $db_pass = 'root';
 
         $this->_exec(
             'mysql -uroot -p' . $db_pass . ' -h ' . $db_ip . " -e 'create user if not exists "
