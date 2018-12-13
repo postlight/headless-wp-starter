@@ -1,10 +1,12 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
-import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
+import WPAPI from "wpapi";
+
+const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 const headerImageStyle = {
     marginTop: 50,
@@ -13,18 +15,13 @@ const headerImageStyle = {
 
 class Index extends Component {
     static async getInitialProps(context) {
-        const pageRes = await fetch(
-            `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
-        );
-        const page = await pageRes.json();
-        const postsRes = await fetch(
-            `${Config.apiUrl}/wp-json/wp/v2/posts?_embed`
-        );
-        const posts = await postsRes.json();
-        const pagesRes = await fetch(
-            `${Config.apiUrl}/wp-json/wp/v2/pages?_embed`
-        );
-        const pages = await pagesRes.json();
+        const page = await wp.pages().slug('welcome').embed()
+            .then((data) => {
+                return data[0];
+            });
+        const posts = await wp.posts().embed();
+        const pages = await wp.pages().embed();
+
         return { page, posts, pages };
     }
 
@@ -35,7 +32,7 @@ class Index extends Component {
                     <li>
                         <Link
                             as={`/post/${post.slug}`}
-                            href={`/post?slug=${post.slug}&apiRoute=post`}
+                            href={`/post?slug=${post.slug}&apiRoute=posts`}
                         >
                             <a>{post.title.rendered}</a>
                         </Link>
@@ -49,7 +46,7 @@ class Index extends Component {
                     <li>
                         <Link
                             as={`/page/${page.slug}`}
-                            href={`/post?slug=${page.slug}&apiRoute=page`}
+                            href={`/post?slug=${page.slug}&apiRoute=pages`}
                         >
                             <a>{page.title.rendered}</a>
                         </Link>

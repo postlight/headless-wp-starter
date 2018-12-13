@@ -1,28 +1,25 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import Link from "next/link";
-import fetch from "isomorphic-unfetch";
 import Error from "next/error";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
+import WPAPI from "wpapi";
+
+const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 class Category extends Component {
     static async getInitialProps(context) {
         const { slug } = context.query;
-        const categoriesRes = await fetch(
-            `${Config.apiUrl}/wp-json/wp/v2/categories?slug=${slug}`
-        );
-        const categories = await categoriesRes.json();
+
+        const categories = await wp.categories().slug(slug).embed();
+
         if (categories.length > 0) {
-            const postsRes = await fetch(
-                `${Config.apiUrl}/wp-json/wp/v2/posts?_embed&categories=${
-                    categories[0].id
-                }`
-            );
-            const posts = await postsRes.json();
+            const posts = await wp.posts().category(categories[0].id).embed();
             return { categories, posts };
         }
+
         return { categories };
     }
     render() {

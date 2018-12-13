@@ -22,7 +22,8 @@
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
         "next": "latest",
-        "react": "^16.0.0"
+        "react": "^16.0.0",
+        "wpapi": "^1.1.2"
     },
     "devDependencies": {
         "autoprefixer": "7.1.5",

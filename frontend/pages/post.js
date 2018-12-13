@@ -1,18 +1,33 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
-import fetch from "isomorphic-unfetch";
 import Error from "next/error";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
+import WPAPI from "wpapi";
+
+const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 class Post extends Component {
     static async getInitialProps(context) {
         const { slug, apiRoute } = context.query;
-        const res = await fetch(
-            `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
-        );
-        const post = await res.json();
+
+        let apiMethod = wp.posts();
+
+        switch (apiRoute) {
+            case 'category':
+                apiMethod = wp.categories();
+                break;
+            case 'page':
+                apiMethod = wp.pages();
+                break;
+        };
+
+        const post = await apiMethod.slug(slug).embed()
+            .then((data) => {
+                return data[0];
+            });
+
         return { post };
     }
 
