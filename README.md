@@ -22,7 +22,7 @@ Let's get started.
 
 ## WordPress Backend
 
-Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed.
+Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed. On Linux, you might need to install [docker-compose](https://docs.docker.com/compose/install/#install-compose) separately.
 
 ### Install
 
@@ -56,8 +56,6 @@ At this point you can start setting up custom fields in the WordPress admin, and
 The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](README-linting.md) as you go.
 
 ## React Frontend
-
-**Prerequisite:** Node 7 is required.
 
 To spin up the frontend client app, run the following commands:
 
