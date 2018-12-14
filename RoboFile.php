@@ -38,7 +38,7 @@ class RoboFile extends \Robo\Tasks {
             return 1;
         }
 
-        $db_ip = 'db_headless';
+        $db_ip = 'db-headless';
         $db_pass = 'root';
 
         $this->_exec(
