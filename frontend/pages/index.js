@@ -32,7 +32,7 @@ class Index extends Component {
                     <li>
                         <Link
                             as={`/post/${post.slug}`}
-                            href={`/post?slug=${post.slug}&apiRoute=posts`}
+                            href={`/post?slug=${post.slug}&apiRoute=post`}
                         >
                             <a>{post.title.rendered}</a>
                         </Link>
@@ -46,7 +46,7 @@ class Index extends Component {
                     <li>
                         <Link
                             as={`/page/${page.slug}`}
-                            href={`/post?slug=${page.slug}&apiRoute=pages`}
+                            href={`/post?slug=${page.slug}&apiRoute=page`}
                         >
                             <a>{page.title.rendered}</a>
                         </Link>
