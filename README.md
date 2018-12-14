@@ -31,9 +31,9 @@ The following commands will get WordPress running on your machine using Docker, 
 ```zsh
 > docker-compose up -d
 ```
-- Attach to the `wp-headless` container.
+- Attach to the `wp_headless` container.
 ```zsh
-> docker exec -it wp-headless /bin/bash
+> docker exec -it wp_headless /bin/bash
 ```
 - Setup headless wordpress by running yarn
 ```zsh
@@ -60,7 +60,7 @@ The primary theme code is located in `wordpress/wp-content/themes/postlight-head
 To spin up the frontend client app, run the following commands:
 
 ```zsh
-> docker exec -it wp-headless /bin/bash
+> docker exec -it wp_headless /bin/bash
 > cd frontend && yarn install && yarn start
 ```
 
