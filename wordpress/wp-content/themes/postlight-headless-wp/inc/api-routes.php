@@ -5,7 +5,7 @@
 add_action(
     'rest_api_init',
     function () {
-        register_rest_route('postlight/v1', '/post/preview', [
+        register_rest_route('postlight/v1', '/preview', [
             'methods'  => 'GET',
             'callback' => 'rest_get_post_preview',
             'args' => [

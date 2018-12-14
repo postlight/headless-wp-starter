@@ -6,24 +6,24 @@ import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import WPAPI from "wpapi";
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
-
-wp.postPreview = wp.registerRoute('postlight/v1', '/post/preview');
+const wp = new WPAPI({
+    endpoint: Config.apiUrl,
+    username: Config.apiUsername,
+    password: Config.apiPassword,
+});
 
 class Preview extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
+        const { id, wpnonce } = this.props.url.query;
+
         this.state = {
             post: null
         };
-    }
 
-    componentDidMount() {
-        const { id, wpnonce } = this.props.url.query;
-
-        wp.postPreview().param('id', id).param('_wpnonce', wpnonce)
+        wp.posts().id(id)
             .then((res) => {
-                console.log('result', res);
                 this.setState({
                     post: res
                 });
@@ -35,8 +35,9 @@ class Preview extends Component {
             this.state.post &&
             this.state.post.code &&
             this.state.post.code === "rest_cookie_invalid_nonce"
-        )
+        ) {
             return <Error statusCode={404} />;
+        }
 
         return (
             <Layout>
