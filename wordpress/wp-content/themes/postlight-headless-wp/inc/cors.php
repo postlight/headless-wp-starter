@@ -11,7 +11,6 @@ add_action( 'rest_api_init', function () {
         header( 'Access-Control-Allow-Origin: ' . get_frontend_origin() );
         header( 'Access-Control-Allow-Methods: GET' );
         header( 'Access-Control-Allow-Credentials: true' );
-        header( 'Access-Control-Allow-Headers: X-WP-Nonce' );
         return $value;
     });
 }, 15 );
