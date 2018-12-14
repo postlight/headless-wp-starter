@@ -26,15 +26,10 @@ RUN apt-get update
 RUN sudo a2enmod rewrite
 RUN chown -R www-data:www-data /var/www/html/
 
-EXPOSE 8080 3000
-
 COPY mysql_config.sh RoboFile.php wp-cli.yml robo.yml /var/www/html/
 COPY docker/000-default.conf /etc/apache2/sites-enabled/
 COPY docker/ports.conf /etc/apache2/
 WORKDIR /var/www/html
-
-ADD . /var/www/html
-VOLUME /var/www/html
 
 RUN apt-get update
 

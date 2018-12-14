@@ -2,9 +2,9 @@
 version: '3.3'
 
 services:
-    db_headless:
+    db-headless:
       image: mysql:5.7.24
-      container_name: db_headless
+      container_name: db-headless
       ports:
         - "3307:3306"
       volumes:
@@ -15,15 +15,26 @@ services:
         MYSQL_USER: wp_headless
         MYSQL_PASSWORD: wp_headless
 
-    wp_headless:
+    wp-headless:
       build:
         context: .
-        dockerfile: Dockerfile-wp
+        dockerfile: Dockerfile
       depends_on:
-        - db_headless
+        - db-headless
       volumes:
         - .:/var/www/html
-      container_name: wp_headless
+      container_name: wp-headless
       ports:
         - "8080:8080"
+
+    fe-headless:
+      build:
+        context: ./frontend
+        dockerfile: Dockerfile
+      depends_on:
+        - wp-headless
+      volumes:
+        - ./frontend:/usr/src/app
+      container_name: fe-headless
+      ports:
         - "3000:3000"

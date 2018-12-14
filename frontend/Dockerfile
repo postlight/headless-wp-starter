@@ -1,16 +1,19 @@
-FROM node:7
+FROM ubuntu:18.04
 
-# Create app directory
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update
+RUN apt-get install -yq curl gnupg wget sudo lsb-release debconf-utils less
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# Install app dependencies
-COPY package.json /usr/src/app/
-RUN npm install
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list
 
-# Bundle app source
-COPY . /usr/src/app
-RUN npm run build
+RUN apt-get update
+RUN apt-get install -yq yarn
 
-EXPOSE 3000
-CMD [ "npm", "start" ]
+RUN apt-get update
+
+CMD yarn install && yarn start
