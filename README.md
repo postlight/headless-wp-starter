@@ -37,7 +37,9 @@ The following commands will get WordPress running on your machine using Docker, 
 ```
 - Setup headless wordpress by running yarn
 ```zsh
-> yarn install
+> cd frontend
+> yarn
+> yarn start
 ```
 When the installation process completes successfully:
 
