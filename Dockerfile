@@ -20,7 +20,6 @@ RUN ./install_php_extensions.sh
 
 RUN wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
 RUN dpkg -i mysql-apt-config_0.8.10-1_all.deb
-RUN apt-get update
 RUN sudo a2enmod rewrite
 RUN chown -R www-data:www-data /var/www/html/
 
@@ -28,7 +27,5 @@ COPY mysql_config.sh RoboFile.php wp-cli.yml robo.yml /var/www/html/
 COPY docker/000-default.conf /etc/apache2/sites-enabled/
 COPY docker/ports.conf /etc/apache2/
 WORKDIR /var/www/html
-
-RUN apt-get update
 
 CMD apachectl -D FOREGROUND
