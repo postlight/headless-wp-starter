@@ -81,7 +81,7 @@ To run the Docker container locally:
 
 Or, you can deploy both the WordPress application and frontend to a cloud platform and leverage that cloud's SQL and media storage services. There's a large number of possible options you could use, including:
 
-- App Engine PaaS on Google Cloud Platform ([setup guide](https://computerlab.io/2018/12/20/deploying-headless-wordpress-on-gcp/)
+- App Engine PaaS on Google Cloud Platform ([setup guide](https://computerlab.io/2018/12/20/deploying-headless-wordpress-on-gcp/))
 - Elastic Beanstalk PaaS on AWS
 - Managed Kubernetes services like GKE / AKS
 - PaaSes / VMs provided by any cloud
