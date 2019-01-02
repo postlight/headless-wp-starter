@@ -12,7 +12,7 @@ To lint your PHP code, you'll need to install PHPCS and the WordPress coding sta
 
 To install the latest stable version of PHPCS with Homebrew on the Mac, run:
 
-`brew install homebrew/php/php-code-sniffer`
+`brew install php-code-sniffer`
 
 ### WordPress Coding Standards
 

@@ -1,0 +1,29 @@
+
+version: '3.3'
+
+services:
+    db-headless:
+      image: mysql:5.7.24
+      container_name: db-headless
+      ports:
+        - "3307:3306"
+      volumes:
+        - ./docker/dbshared:/var/dbshared
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: wp_headless
+        MYSQL_USER: wp_headless
+        MYSQL_PASSWORD: wp_headless
+
+    wp-headless:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      depends_on:
+        - db-headless
+      volumes:
+        - .:/var/www/html
+      container_name: wp-headless
+      ports:
+        - "8080:8080"
+        - "3000:3000"
