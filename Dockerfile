@@ -1,31 +1,31 @@
-FROM ubuntu:18.04
+FROM wordpress
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
-RUN apt-get update && apt-get install -yq curl php gnupg wget sudo lsb-release debconf-utils less
+RUN apt-get update; \
+	apt-get install -y netcat
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# intl
+RUN apt-get install -y libicu-dev; \
+	docker-php-ext-install intl
 
-COPY install.sh /usr/src/app/install.sh
-COPY docker/install_php_extensions.sh /usr/src/app/install_php_extensions.sh
+# memcached
+RUN apt-get install -y libmemcached-dev zlib1g-dev; \
+	pecl install memcached; \
+	docker-php-ext-enable memcached
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list
+# xdebug
+RUN pecl install xdebug; \
+	docker-php-ext-enable xdebug
 
-RUN apt-get update && apt-get install -yq yarn
+# wp-cli
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; \
+	chmod +x wp-cli.phar; \
+	mv wp-cli.phar /usr/local/bin/wp
 
-RUN ./install.sh
-RUN ./install_php_extensions.sh
-
-RUN wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
-RUN dpkg -i mysql-apt-config_0.8.10-1_all.deb
-RUN sudo a2enmod rewrite
-RUN chown -R www-data:www-data /var/www/html/
-
-COPY mysql_config.sh RoboFile.php wp-cli.yml robo.yml /var/www/html/
-COPY docker/000-default.conf /etc/apache2/sites-enabled/
-COPY docker/ports.conf /etc/apache2/
-WORKDIR /var/www/html
-
-CMD apachectl -D FOREGROUND
+# yarn
+#RUN apt-get install -yq gnupg; \
+#	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
+#	echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list; \
+#	apt-get update; \
+#	apt-get install -yq yarn

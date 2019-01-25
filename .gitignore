@@ -1,5 +1,11 @@
 node_modules
 npm-debug.log
 yarn-error.log
-wordpress/wp-content/languages/
 data
+wordpress/wp-content/languages/
+wordpress/wp-content/plugins/acf-to-wp-api/
+wordpress/wp-content/plugins/advanced-custom-fields/
+wordpress/wp-content/plugins/custom-post-type-ui/
+wordpress/wp-content/plugins/wordpress-importer/
+wordpress/wp-content/plugins/wp-graphql/
+wordpress/wp-content/plugins/wp-rest-api-v2-menus/

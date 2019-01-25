@@ -1,13 +1,12 @@
 {
   "name": "headless-wp-starter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": "git@github.com:postlight/headless-wp-starter.git",
   "author": "Postlight",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "preinstall": "chmod +x install.sh && chmod +x mysql_config.sh && ./install.sh",
-    "postinstall": "robo wordpress:setup",
+    "install": "docker-compose run --rm wp-cli install_wordpress",
     "lint": "phpcs -v wordpress/wp-content/themes/postlight-headless-wp/. RoboFile.php"
   }
 }
