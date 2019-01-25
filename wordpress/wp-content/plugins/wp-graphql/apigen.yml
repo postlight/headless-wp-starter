@@ -1,6 +1,0 @@
-parameters:
-    visibilityLevels: [public, protected] # array
-    annotationGroups: [todo, deprecated] # array
-    title: "WPGraphQL" # string
-    baseUrl: "https://www.wpgraphql.com/" # string
-    overwrite: false # bool
