@@ -40,11 +40,10 @@ services:
             - ./docker/wp-migrate-db-pro-cli.zip:/tmp/wp-migrate-db-pro-cli.zip
             - ./docker/wp-migrate-db-pro-media-files.zip:/tmp/wp-migrate-db-pro-media-files.zip
     frontend:
-        command: yarn version
+        build: frontend
         container_name: frontend
         depends_on:
             - wp-headless
-        image: node
         ports:
             - 3000:3000
         user: node
