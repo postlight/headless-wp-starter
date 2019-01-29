@@ -2,8 +2,7 @@ FROM wordpress
 
 RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
-RUN apt-get update; \
-	apt-get install -y netcat
+RUN apt-get update
 
 # intl
 RUN apt-get install -y libicu-dev; \
@@ -22,10 +21,3 @@ RUN pecl install xdebug; \
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; \
 	chmod +x wp-cli.phar; \
 	mv wp-cli.phar /usr/local/bin/wp
-
-# yarn
-#RUN apt-get install -yq gnupg; \
-#	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
-#	echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list; \
-#	apt-get update; \
-#	apt-get install -yq yarn
