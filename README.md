@@ -20,36 +20,58 @@ You can read all about it in [this handy introduction](https://trackchanges.post
 
 Let's get started.
 
-## WordPress Backend
-
 Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed. On Linux, you might need to install [docker-compose](https://docs.docker.com/compose/install/#install-compose) separately.
 
-### Install
+## Install
 
-The following command will get WordPress & React running on your machine using Docker, along with the WordPress plugins you'll need to create and serve custom data via the WP REST API.
+    docker-compose up -d
 
-```zsh
-docker-compose up -d
-```
+This takes a few minutes. When it's finished, the following services will be available:
 
-When the installation process completes successfully:
+### Frontend
 
-*   The WordPress REST API is available at [http://localhost:8080](http://localhost:8080)
-*   The WordPress GraphQL API is available at [http://localhost:8080/graphql](http://localhost:8080/graphql)
-*   The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) default login credentials `nedstark` / `winteriscoming`
-*   The Next.js app will be running on [http://localhost:3000](http://localhost:3000).
+The `frontend` container exposes Node on host port `3000`: [http://localhost:3000](http://localhost:3000)
 
-### Import Data (Optional)
+### Backend
+
+The `wp-headless` container exposes Apache on host port `8080`:
+
+Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin)
+REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
+GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
+
+The default credentials are `nedstark`/`winteriscoming`.
+
+WP-CLI is also available:
+
+    docker-compose run --rm wp-headless wp --info
+
+### Database
+
+The `db-headless` container exposes MySQL on host port `3307`:
+
+    mysql -uwp_headless -pwp_headless -h127.0.0.1 -P3307 wp_headless
+
+You can also run commands on the container:
+
+    docker-compose run --rm db-headless mysql -hmysql -uwordpress -pwordpress wordpress
+
+For example, to import a sqldump to WordPress:
+
+    docker-compose run db-headless mysql -hmysql -uwordpress -pwordpress wordpress < example.sql
+    docker-compose run --rm wp-headless search-replace https://example.com http://localhost:8080
+
+## Import Data (Optional)
 
 To import data and media from a live WordPress installation, you can use the Migrate DB Pro plugin, which is already installed. To do so, in the `robo.yml` file, set the plugin license and source install. Run `robo wordpress:setup`, then run `robo wordpress:import` to pull in the data.
 
-### Extend the REST and GraphQL APIs
+## Extend the REST and GraphQL APIs
 
 At this point you can start setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about).
 
 The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](README-linting.md) as you go.
 
-### Hosting
+## Hosting
 
 Most WordPress hosts don't also host Node applications, so when it's time to go live, you will need to find a hosting service for the frontend.
 
