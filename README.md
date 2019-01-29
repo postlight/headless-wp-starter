@@ -37,7 +37,9 @@ The `frontend` container exposes Node on host port `3000`: [http://localhost:300
 The `wp-headless` container exposes Apache on host port `8080`:
 
 Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin)
+
 REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
+
 GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 
 The default credentials are `nedstark`/`winteriscoming`.
