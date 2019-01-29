@@ -13,6 +13,7 @@ services:
             - 3307:3306
     wp-headless:
         build: .
+        command: bash -c 'install_wordpress && apache2-foreground'
         container_name: wp-headless
         depends_on:
             - db-headless
@@ -41,6 +42,7 @@ services:
             - ./docker/wp-migrate-db-pro-media-files.zip:/tmp/wp-migrate-db-pro-media-files.zip
     frontend:
         build: frontend
+        command: bash -c 'yarn && yarn start'
         container_name: frontend
         depends_on:
             - wp-headless
