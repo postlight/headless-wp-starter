@@ -24,9 +24,13 @@ Before you install WordPress, make sure you have [Docker](https://www.docker.com
 
 ## Install
 
-    docker-compose up -d
+    docker-compose up
 
-This takes a few minutes. When it's finished, the following services will be available:
+This takes a few minutes. You'll know it's finished when you see:
+
+    frontend       | > Ready on http://localhost:3000
+
+Then the following services will be available:
 
 ### Frontend
 
@@ -36,17 +40,13 @@ The `frontend` container exposes Node on host port `3000`: [http://localhost:300
 
 The `wp-headless` container exposes Apache on host port `8080`:
 
-Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin)
-
-REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
-
-GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
-
-The default credentials are `nedstark`/`winteriscoming`.
+* Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
+* REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
+* GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 
 WP-CLI is also available:
 
-    docker-compose run --rm wp-headless wp --info
+    docker-compose run --user=www-data wp-headless wp --info
 
 ### Database
 
@@ -54,14 +54,14 @@ The `db-headless` container exposes MySQL on host port `3307`:
 
     mysql -uwp_headless -pwp_headless -h127.0.0.1 -P3307 wp_headless
 
-You can also run commands on the container:
+You can also run a mysql shell on the container:
 
-    docker-compose run --rm db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
+    docker-compose run db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
 
-For example, to import a sqldump to WordPress:
+For example, to import a sqldump:
 
-    docker-compose run --rm db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
-    docker-compose run --rm wp-headless search-replace https://example.com http://localhost:8080
+    docker-compose run db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
+    docker-compose run --user=www-data wp-headless wp search-replace https://example.com http://localhost:8080
 
 ## Import Data (Optional)
 

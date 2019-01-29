@@ -18,16 +18,6 @@ then
     echo
 fi
 
-if $wp core is-installed
-then
-    echo "This will replace your current WordPress install. Are you sure you want to do this?" 
-    read sure
-
-    [ "$sure" -eq "${sure#[Yy]}" ] && exit
-
-    $wp db reset --yes
-fi
-
 $wp core download --force
 $wp core install \
     --url="$WORDPRESS_URL" \
