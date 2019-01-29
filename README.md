@@ -56,11 +56,11 @@ The `db-headless` container exposes MySQL on host port `3307`:
 
 You can also run commands on the container:
 
-    docker-compose run --rm db-headless mysql -hmysql -uwordpress -pwordpress wordpress
+    docker-compose run --rm db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
 
 For example, to import a sqldump to WordPress:
 
-    docker-compose run db-headless mysql -hmysql -uwordpress -pwordpress wordpress < example.sql
+    docker-compose run --rm db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker-compose run --rm wp-headless search-replace https://example.com http://localhost:8080
 
 ## Import Data (Optional)
