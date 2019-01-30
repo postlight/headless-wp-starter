@@ -22,7 +22,9 @@ RUN pecl install xdebug; \
 # wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; \
 	chmod +x wp-cli.phar; \
-	mv wp-cli.phar /usr/local/bin/wp
+	mv wp-cli.phar /usr/local/bin/wp; \
+	mkdir /var/www/.wp-cli; \
+	chown www-data:www-data /var/www/.wp-cli
 
 # php-cs-fixer
 RUN curl -L https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer; \

@@ -42,7 +42,7 @@ $wp plugin install --activate --force \
     wp-rest-api-v2-menus \
     wordpress-importer \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
-    /tmp/wp-migrate-db-pro*.zip
+    /var/www/wp-migrate-db-pro*.zip
 
 $wp term update category 1 --name="Sample Category"
 $wp menu create "Header Menu"
@@ -52,6 +52,6 @@ $wp menu item add-term header-menu category 1
 $wp menu item add-custom header-menu "Read about the Starter Kit on Medium" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c
 $wp menu location assign header-menu header-menu
 $wp post update 1 --post_title="Sample Post" --post_name=sample-post
-$wp import /tmp/postlightheadlesswpstarter.wordpress.xml --authors=skip
+$wp import /var/www/postlightheadlesswpstarter.wordpress.xml --authors=skip
 
 echo "Great. You can now log into WordPress at: $WORDPRESS_URL/wp-admin ($WORDPRESS_ADMIN_USER/$WORDPRESS_ADMIN_PASSWORD)"

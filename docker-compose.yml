@@ -28,16 +28,15 @@ services:
             - WORDPRESS_PERMALINK_STRUCTURE
             - WORDPRESS_TITLE
             - WORDPRESS_URL
-            - WP_CLI_CACHE_DIR
         ports:
             - 8080:80
         volumes:
             - ./wordpress:/var/www/html
             - ./docker/install_wordpress.sh:/usr/local/bin/install_wordpress
-            - ./docker/postlightheadlesswpstarter.wordpress.xml:/tmp/postlightheadlesswpstarter.wordpress.xml
-            - ./docker/wp-migrate-db-pro.zip:/tmp/wp-migrate-db-pro.zip
-            - ./docker/wp-migrate-db-pro-cli.zip:/tmp/wp-migrate-db-pro-cli.zip
-            - ./docker/wp-migrate-db-pro-media-files.zip:/tmp/wp-migrate-db-pro-media-files.zip
+            - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
+            - ./docker/wp-migrate-db-pro.zip:/var/www/wp-migrate-db-pro.zip
+            - ./docker/wp-migrate-db-pro-cli.zip:/var/www/wp-migrate-db-pro-cli.zip
+            - ./docker/wp-migrate-db-pro-media-files.zip:/var/www/wp-migrate-db-pro-media-files.zip
     frontend:
         build: frontend
         command: bash -c 'yarn && yarn start'

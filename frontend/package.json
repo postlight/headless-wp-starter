@@ -1,18 +1,11 @@
 {
     "name": "frontend",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "build": "next build",
-        "start": "node server.js",
-        "docker:build": "docker build -t frontend .",
-        "docker:clean": "docker rm -f frontend || true",
-        "docker:run": "docker run -p 3000:3000 --name frontend frontend",
-        "docker:stop": "docker stop frontend",
-        "docker:start": "docker start frontend && yarn run docker:logs",
-        "docker:logs": "docker logs -f frontend",
-        "deploy": "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+        "start": "node server.js"
     },
     "keywords": [],
     "author": "",
