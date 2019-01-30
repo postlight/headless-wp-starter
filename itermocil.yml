@@ -5,8 +5,8 @@ windows:
     root: ~/headless-wp-starter/
     layout: main-vertical
     panes:
-      - wp server
+      - docker-compose logs -f wp-headless
       - commands:
-          - cd frontend && yarn install && yarn start
+          - docker-compose logs -f frontend
         name: 'git'
       - git status
