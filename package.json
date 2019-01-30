@@ -6,6 +6,6 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "install": "docker-compose run --rm wp-cli install_wordpress",
+    "install": "docker-compose run --rm wp-cli install_wordpress"
   }
 }
