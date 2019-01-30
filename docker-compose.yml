@@ -4,10 +4,10 @@ services:
     db-headless:
         container_name: db-headless
         environment:
-            - MYSQL_ROOT_PASSWORD
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes
             - MYSQL_DATABASE=${WORDPRESS_DB_NAME}
-            - MYSQL_USER=${WORDPRESS_DB_USER}
             - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
+            - MYSQL_USER=${WORDPRESS_DB_USER}
         image: mariadb
         ports:
             - 3307:3306
@@ -15,8 +15,6 @@ services:
         build: .
         command: bash -c 'install_wordpress && apache2-foreground'
         container_name: wp-headless
-        depends_on:
-            - db-headless
         environment:
             - WORDPRESS_ADMIN_USER
             - WORDPRESS_ADMIN_PASSWORD
@@ -44,8 +42,8 @@ services:
         build: frontend
         command: bash -c 'yarn && yarn start'
         container_name: frontend
-        depends_on:
-            - wp-headless
+        environment:
+            - WORDPRESS_URL
         ports:
             - 3000:3000
         user: node

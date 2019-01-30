@@ -26,7 +26,7 @@ Before you install WordPress, make sure you have [Docker](https://www.docker.com
 
     docker-compose up
 
-This takes a few minutes. You'll know it's finished when you see:
+This takes a few minutes - it's finished when you see:
 
     frontend       | > Ready on http://localhost:3000
 
@@ -44,9 +44,13 @@ The `wp-headless` container exposes Apache on host port `8080`:
 * REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
 * GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 
-WP-CLI is also available:
+There are a few tools also available:
 
     docker-compose run --user=www-data wp-headless wp --info
+    docker-compose run --user=www-data wp-headless phpcs --help
+    docker-compose run --user=www-data wp-headless phpcbf --help
+    docker-compose run --user=www-data wp-headless php-cs-fixer --help
+    docker-compose run --user=www-data wp-headless composer --help
 
 ### Database
 
@@ -58,7 +62,14 @@ You can also run a mysql shell on the container:
 
     docker-compose run db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
 
-For example, to import a sqldump:
+## Reinstall/Import
+
+To reinstall WordPress from scratch:
+
+    docker-compose run --user=www-data wp-headless wp db reset
+    docker-compose run wp-headless install_wordpress
+
+To import a sqldump with `mysql`:
 
     docker-compose run db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker-compose run --user=www-data wp-headless wp search-replace https://example.com http://localhost:8080

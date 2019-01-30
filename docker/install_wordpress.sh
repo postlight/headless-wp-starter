@@ -5,8 +5,6 @@ set -e
 mysql_ready='nc -z db-headless 3306'
 wp='sudo -Eu www-data wp'
 
-apt-get install -y netcat sudo
-
 if ! $mysql_ready
 then
     printf 'Waiting for MySQL.'
@@ -17,6 +15,8 @@ then
     done
     echo
 fi
+
+$wp core is-installed && exit
 
 $wp core download --force
 $wp core install \
@@ -30,18 +30,19 @@ $wp core install \
 $wp option update blogdescription "$WORDPRESS_DESCRIPTION"
 $wp rewrite structure "$WORDPRESS_PERMALINK_STRUCTURE"
 
+$wp theme activate postlight-headless-wp
+$wp theme delete twentysixteen twentyseventeen twentynineteen
+
 $wp plugin delete akismet hello
 $wp plugin install --activate --force \
-    advanced-custom-fields \
     acf-to-wp-api \
+    advanced-custom-fields \
     custom-post-type-ui \
+    query-monitor \
     wp-rest-api-v2-menus \
     wordpress-importer \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
     /tmp/wp-migrate-db-pro*.zip
-
-$wp theme activate postlight-headless-wp
-$wp theme delete twentysixteen twentyseventeen twentynineteen
 
 $wp term update category 1 --name="Sample Category"
 $wp menu create "Header Menu"
