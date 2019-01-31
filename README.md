@@ -24,17 +24,30 @@ Before you install WordPress, make sure you have [Docker](https://www.docker.com
 
 ## Install
 
-    docker-compose up
+Docker Compose builds and starts three containers by default - `db-headless`, `wp-headless`, & `frontend`:
 
-This takes a few minutes - it's finished when you see:
+    docker-compose up -d
 
-    frontend       | > Ready on http://localhost:3000
+Alternatively, run WordPress with Docker & the frontend locally:
 
-Then the following services will be available:
+    docker-compose up -d wp-headless
+    cd frontend && yarn && yarn start
+
+In either case you can follow the Docker output to see build progress and logs:
+
+    docker-compose logs -f
+
+Wait a few minutes for Docker to build the services for the first time. After the initial build, startup should only take a few seconds.
 
 ### Frontend
 
 The `frontend` container exposes Node on host port `3000`: [http://localhost:3000](http://localhost:3000)
+
+Follow `docker-compose logs -f frontend` for the output of `yarn start`.
+
+If you need to restart that process, restart the container:
+
+    docker-compose restart frontend
 
 ### Backend
 
@@ -44,13 +57,16 @@ The `wp-headless` container exposes Apache on host port `8080`:
 * REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
 * GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 
-There are a few tools also available:
+This container includes some development tools:
 
-    docker-compose run --user=www-data wp-headless wp --info
-    docker-compose run --user=www-data wp-headless phpcs --help
-    docker-compose run --user=www-data wp-headless phpcbf --help
-    docker-compose run --user=www-data wp-headless php-cs-fixer --help
     docker-compose run --user=www-data wp-headless composer --help
+    docker-compose run --user=www-data wp-headless php-cs-fixer --help
+    docker-compose run --user=www-data wp-headless phpcbf --help
+    docker-compose run --user=www-data wp-headless phpcs --help
+    docker-compose run --user=www-data wp-headless phpunit --help
+    docker-compose run --user=www-data wp-headless wp --info
+
+Apache/PHP logs are available via `docker-compose logs -f wp-headless`.
 
 ### Database
 
@@ -64,19 +80,19 @@ You can also run a mysql shell on the container:
 
 ## Reinstall/Import
 
-To reinstall WordPress from scratch:
+Reinstall WordPress from scratch:
 
     docker-compose run --user=www-data wp-headless wp db reset
     docker-compose run wp-headless install_wordpress
 
-To import a sqldump with `mysql`:
+Import data from a mysqldump with `mysql`:
 
     docker-compose run db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker-compose run --user=www-data wp-headless wp search-replace https://example.com http://localhost:8080
 
-## Import Data (Optional)
-
-To import data and media from a live WordPress installation, you can use the Migrate DB Pro plugin, which is already installed. To do so, in the `robo.yml` file, set the plugin license and source install. Run `robo wordpress:setup`, then run `robo wordpress:import` to pull in the data.
+Import data using `Migrate DB Pro`:
+	TODO
+	To import data and media from a live WordPress installation, you can use the Migrate DB Pro plugin, which is already installed. To do so, in the `robo.yml` file, set the plugin license and source install. Run `robo wordpress:setup`, then run `robo wordpress:import` to pull in the data.
 
 ## Extend the REST and GraphQL APIs
 

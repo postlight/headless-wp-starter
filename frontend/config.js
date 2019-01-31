@@ -1,9 +1,7 @@
-let wpUrl;
+let wpUrl = 'http://localhost:8080/wp-json';
 
-// Use localhost for clientside requests & docker hostname for serverside.
-if (typeof window !== 'undefined') {
-    wpUrl = process.env.WORDPRESS_URL || 'http://localhost:8080/wp-json';
-} else {
+// If we're running on Docker, use the WordPress container hostname instead of localhost.
+if (process.env.HOME === '/home/node') {
     wpUrl = 'http://wp-headless/wp-json';
 }
 

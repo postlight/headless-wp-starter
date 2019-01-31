@@ -3,8 +3,6 @@
 set -e
 
 mysql_ready='nc -z db-headless 3306'
-wp='sudo -Eu www-data wp'
-
 if ! $mysql_ready
 then
     printf 'Waiting for MySQL.'
@@ -16,6 +14,7 @@ then
     echo
 fi
 
+wp='sudo -Eu www-data wp'
 $wp core is-installed && exit
 
 $wp core download --force
@@ -38,7 +37,6 @@ $wp plugin install --activate --force \
     acf-to-wp-api \
     advanced-custom-fields \
     custom-post-type-ui \
-    query-monitor \
     wp-rest-api-v2-menus \
     wordpress-importer \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
