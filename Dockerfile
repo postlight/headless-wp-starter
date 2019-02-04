@@ -13,11 +13,11 @@ RUN apt-get install -y libicu-dev; \
 # php memcached
 RUN apt-get install -y libmemcached-dev zlib1g-dev; \
 	pecl install memcached; \
-	docker-php-ext-enable memcached
+	docker-php-ext-install memcached
 
 # php xdebug
 RUN pecl install xdebug; \
-	docker-php-ext-enable xdebug
+	docker-php-ext-install xdebug
 
 # php-cs-fixer
 RUN curl -L https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer; \
