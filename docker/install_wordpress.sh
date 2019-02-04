@@ -2,7 +2,11 @@
 
 set -e
 
+export WP_CLI_CACHE_DIR=/var/www/.wp-cli/cache
+
 mysql_ready='nc -z db-headless 3306'
+wp='sudo -Eu www-data wp'
+
 if ! $mysql_ready
 then
     printf 'Waiting for MySQL.'
@@ -14,8 +18,13 @@ then
     echo
 fi
 
-wp='sudo -Eu www-data wp'
 $wp core is-installed && exit
+
+[ -f wp-config.php ] || $wp config create \
+    --dbhost="$WORDPRESS_DB_HOST" \
+    --dbname="$WORDPRESS_DB_NAME" \
+    --dbuser="$WORDPRESS_DB_USER" \
+    --dbpass="$WORDPRESS_DB_PASSWORD"
 
 $wp core download --force
 $wp core install \
