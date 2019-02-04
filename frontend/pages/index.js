@@ -15,12 +15,14 @@ const headerImageStyle = {
 
 class Index extends Component {
     static async getInitialProps(context) {
-        const page = await wp.pages().slug('welcome').embed()
-            .then((data) => {
-                return data[0];
-            });
-        const posts = await wp.posts().embed();
-        const pages = await wp.pages().embed();
+        const [page, posts, pages] = await Promise.all([
+            wp.pages().slug('welcome').embed()
+                .then((data) => {
+                    return data[0];
+                }),
+            wp.posts().embed(),
+            wp.pages().embed(),
+        ]);
 
         return { page, posts, pages };
     }
