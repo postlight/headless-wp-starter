@@ -40,11 +40,11 @@ services:
             - ./docker/wp-migrate-db-pro-cli.zip:/var/www/wp-migrate-db-pro-cli.zip
             - ./docker/wp-migrate-db-pro-media-files.zip:/var/www/wp-migrate-db-pro-media-files.zip
     frontend:
-        build: frontend
         command: bash -c 'yarn && yarn start'
         container_name: frontend
-        environment:
-            - WORDPRESS_URL
+        expose:
+            - 3000
+        image: node
         ports:
             - 3000:3000
         user: node
