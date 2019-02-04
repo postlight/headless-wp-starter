@@ -36,9 +36,7 @@ services:
             - ./wordpress:/var/www/html
             - ./docker/install_wordpress.sh:/usr/local/bin/install_wordpress
             - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
-            - ./docker/wp-migrate-db-pro.zip:/var/www/wp-migrate-db-pro.zip
-            - ./docker/wp-migrate-db-pro-cli.zip:/var/www/wp-migrate-db-pro-cli.zip
-            - ./docker/wp-migrate-db-pro-media-files.zip:/var/www/wp-migrate-db-pro-media-files.zip
+            - ./docker/plugins:/var/www/plugins
     frontend:
         command: bash -c 'yarn && yarn start'
         container_name: frontend

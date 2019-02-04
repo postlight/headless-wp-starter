@@ -40,7 +40,7 @@ $wp plugin install --activate --force \
     wp-rest-api-v2-menus \
     wordpress-importer \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
-    /var/www/wp-migrate-db-pro*.zip
+    /var/www/plugins/*.zip
 
 $wp term update category 1 --name="Sample Category"
 $wp menu create "Header Menu"
