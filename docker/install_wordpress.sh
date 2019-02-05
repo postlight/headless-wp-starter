@@ -48,10 +48,10 @@ wp plugin install --force \
     acf-to-wp-api \
     advanced-custom-fields \
     custom-post-type-ui \
-    wordpress-importer \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
     /var/www/plugins/*.zip
 wp plugin install --activate --force \
+    wordpress-importer \
     wp-rest-api-v2-menus
 
 
