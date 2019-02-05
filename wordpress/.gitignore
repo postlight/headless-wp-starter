@@ -1,7 +1,8 @@
 /index.php
 /wp-*.php
 /wp-content/index.php
-/wp-content/plugins/index.php
+/wp-content/languages/
+/wp-content/plugins/
 /wp-content/themes/index.php
 /wp-content/uploads/wp-migrate-db/index.php
 /license.txt

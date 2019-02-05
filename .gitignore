@@ -2,5 +2,3 @@ node_modules
 npm-debug.log
 yarn-error.log
 data
-wordpress/wp-content/languages/
-wordpress/wp-content/plugins/
