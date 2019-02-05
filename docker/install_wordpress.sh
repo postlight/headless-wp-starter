@@ -18,7 +18,13 @@ then
     echo
 fi
 
-$wp core is-installed && exit
+if $wp core is-installed
+then
+    echo "WordPress is already installed, exiting."
+    exit
+fi
+
+$wp core download --force
 
 [ -f wp-config.php ] || $wp config create \
     --dbhost="$WORDPRESS_DB_HOST" \
@@ -26,7 +32,6 @@ $wp core is-installed && exit
     --dbuser="$WORDPRESS_DB_USER" \
     --dbpass="$WORDPRESS_DB_PASSWORD"
 
-$wp core download --force
 $wp core install \
     --url="$WORDPRESS_URL" \
     --title="$WORDPRESS_TITLE" \
