@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "repository": "git@github.com:postlight/headless-wp-starter.git",
   "author": "Postlight",
-  "license": "UNLICENSED",
+  "license": "GPL 2.0",
   "private": true,
   "scripts": {
     "postinstall": "docker-compose run --rm wp-headless install_wordpress",
