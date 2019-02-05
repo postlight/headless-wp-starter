@@ -59,12 +59,12 @@ The `wp-headless` container exposes Apache on host port `8080`:
 
 This container includes some development tools:
 
-    docker-compose run --user=www-data wp-headless composer --help
-    docker-compose run --user=www-data wp-headless php-cs-fixer --help
-    docker-compose run --user=www-data wp-headless phpcbf --help
-    docker-compose run --user=www-data wp-headless phpcs --help
-    docker-compose run --user=www-data wp-headless phpunit --help
-    docker-compose run --user=www-data wp-headless wp --info
+    docker-compose run wp-headless composer --help
+    docker-compose run wp-headless php-cs-fixer --help
+    docker-compose run wp-headless phpcbf --help
+    docker-compose run wp-headless phpcs --help
+    docker-compose run wp-headless phpunit --help
+    docker-compose run wp-headless wp --info
 
 Apache/PHP logs are available via `docker-compose logs -f wp-headless`.
 
@@ -82,13 +82,13 @@ You can also run a mysql shell on the container:
 
 Reinstall WordPress from scratch:
 
-    docker-compose run --user=www-data wp-headless wp db reset
+    docker-compose run wp-headless wp db reset
     docker-compose run wp-headless install_wordpress
 
 Import data from a mysqldump with `mysql`:
 
     docker-compose run db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
-    docker-compose run --user=www-data wp-headless wp search-replace https://example.com http://localhost:8080
+    docker-compose run wp-headless wp search-replace https://example.com http://localhost:8080
 
 Import data using `Migrate DB Pro`:
 	TODO

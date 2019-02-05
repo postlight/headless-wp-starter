@@ -1,5 +1,7 @@
 FROM wordpress
 
+RUN sed -i 's/80/8080/' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf
+
 RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
 # install_wordpress.sh dependencies
@@ -18,7 +20,6 @@ RUN apt-get install -yq libmemcached-dev zlib1g-dev; \
 # php xdebug
 RUN pecl install xdebug; \
 	docker-php-ext-enable xdebug
-
 
 # php-cs-fixer
 RUN curl -sL https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer; \
@@ -46,3 +47,5 @@ RUN curl -sL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cl
 	mv wp /usr/local/bin/; \
 	mkdir /var/www/.wp-cli; \
 	chown www-data:www-data /var/www/.wp-cli
+
+EXPOSE 8080
