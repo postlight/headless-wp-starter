@@ -44,14 +44,16 @@ wp theme activate postlight-headless-wp
 wp theme delete twentysixteen twentyseventeen twentynineteen
 
 wp plugin delete akismet hello
-wp plugin install --activate --force \
+wp plugin install --force \
     acf-to-wp-api \
     advanced-custom-fields \
     custom-post-type-ui \
-    wp-rest-api-v2-menus \
     wordpress-importer \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
     /var/www/plugins/*.zip
+wp plugin install --activate --force \
+    wp-rest-api-v2-menus
+
 
 wp term update category 1 --name="Sample Category"
 wp menu create "Header Menu"
