@@ -1,0 +1,9 @@
+services:
+    - docker
+
+before_script:
+    - docker-compose up -d
+
+script:
+    - curl -i localhost:3000
+    - curl -i localhost:8080
