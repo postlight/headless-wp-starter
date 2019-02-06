@@ -110,7 +110,7 @@ If you need more advanced functionality check out the available WP-CLI commands:
 
 At this point you can start activating plugins & setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about).
 
-The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](wordpress/wp-content/themes/README-linting.md) as you go.
+The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](wordpress/wp-content/themes/postlight-headless-wp/README-linting.md) as you go.
 
 ## Hosting
 
