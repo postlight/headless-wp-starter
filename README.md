@@ -94,9 +94,9 @@ Import data from a mysqldump with `mysql`:
 
 ## Migrate DB Pro:
 
-First set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` and restart `wp-headless` to enact the changes.
+First set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` and recreate containers to enact the changes.
 
-    docker-compose restart wp-headless
+    docker-compose up -d
 
 Then run the import script:
 
