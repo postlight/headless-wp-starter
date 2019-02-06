@@ -17,20 +17,8 @@ services:
         container_name: wp-headless
         depends_on:
             - db-headless
-        environment:
-            - WORDPRESS_ADMIN_USER
-            - WORDPRESS_ADMIN_PASSWORD
-            - WORDPRESS_ADMIN_EMAIL
-            - WORDPRESS_DB_HOST
-            - WORDPRESS_DB_NAME
-            - WORDPRESS_DB_PASSWORD
-            - WORDPRESS_DB_USER
-            - WORDPRESS_DESCRIPTION
-            - WORDPRESS_PERMALINK_STRUCTURE
-            - WORDPRESS_TITLE
-            - WORDPRESS_URL
-            - MIGRATEDB_LICENSE
-            - MIGRATEDB_FROM
+        env_file:
+            ./.env
         ports:
             - "8080:8080"
         user: www-data
