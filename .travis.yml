@@ -2,6 +2,8 @@ services:
     - docker
 
 before_script:
+    - whoami
+    - ls -la . frontend
     - docker-compose up
     # wait for installation after containers are up
     - while ! ((docker logs frontend) | grep 'Ready'); do sleep 10; done
