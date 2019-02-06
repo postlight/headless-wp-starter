@@ -8,19 +8,6 @@ RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 RUN apt-get update; \
 	apt-get install -yq mysql-client netcat sudo
 
-# php intl
-RUN apt-get install -yq libicu-dev; \
-	docker-php-ext-install intl
-
-# php memcached
-RUN apt-get install -yq libmemcached-dev zlib1g-dev; \
-	pecl install memcached; \
-	docker-php-ext-enable memcached
-
-# php xdebug
-RUN pecl install xdebug; \
-	docker-php-ext-enable xdebug
-
 # php-cs-fixer
 RUN curl -sL https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer; \
 	chmod +x php-cs-fixer; \

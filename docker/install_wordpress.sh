@@ -54,7 +54,6 @@ wp plugin install --activate --force \
     wordpress-importer \
     wp-rest-api-v2-menus
 
-
 wp term update category 1 --name="Sample Category"
 wp menu create "Header Menu"
 wp menu item add-post header-menu 1
