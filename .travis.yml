@@ -2,7 +2,7 @@ services:
     - docker
 
 before_script:
-    - docker-compose up -d
+    - docker-compose up
     # wait for installation after containers are up
     - while ! ((docker logs frontend) | grep 'Ready'); do sleep 10; done
     - while ! ((docker logs wp-headless) | grep 'You can now log in'); do sleep 10; done
