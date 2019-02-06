@@ -84,8 +84,7 @@ You can also run a mysql shell on the container:
 
 Reinstall WordPress from scratch:
 
-    docker-compose exec wp-headless wp db reset
-    docker-compose exec wp-headless install_wordpress
+    docker-compose exec wp-headless sh -c 'wp db reset && install_wordpress'
 
 Import data from a mysqldump with `mysql`:
 
