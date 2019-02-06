@@ -92,9 +92,9 @@ Import data from a mysqldump with `mysql`:
     docker-compose exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker-compose exec wp-headless wp search-replace https://example.com http://localhost:8080
 
-Import data using `Migrate DB Pro`:
-	TODO
-	To import data and media from a live WordPress installation, you can use the Migrate DB Pro plugin, which is already installed. To do so, in the `robo.yml` file, set the plugin license and source install. Run `robo wordpress:setup`, then run `robo wordpress:import` to pull in the data.
+Import data using `Migrate DB Pro` (set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` first):
+
+    docker-compose exec wp-headless migratedb_import
 
 ## Extend the REST and GraphQL APIs
 
