@@ -6,5 +6,4 @@ before_script:
     - sleep 300 # wait for installation after containers are up
 
 script:
-    - curl -i localhost:3000
-    - curl -i localhost:8080
+    - curl localhost:3000 | grep 'Congratulations!'
