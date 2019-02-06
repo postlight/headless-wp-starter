@@ -92,7 +92,7 @@ Import data from a mysqldump with `mysql`:
     docker-compose exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker-compose exec wp-headless wp search-replace https://example.com http://localhost:8080
 
-Import data using `Migrate DB Pro` (set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` first):
+Import data using Migrate DB Pro (set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` first):
 
     docker-compose exec wp-headless migratedb_import
 
