@@ -2,13 +2,10 @@ services:
     - docker
 
 before_script:
-    - whoami
-    - chmod -R o+w .
-    - ls -la . frontend
-    - docker-compose up
-    # wait for installation after containers are up
-    - while ! ((docker logs frontend) | grep 'Ready'); do sleep 10; done
-    - while ! ((docker logs wp-headless) | grep 'You can now log in'); do sleep 10; done
+    - chmod -R o+w . # ensure docker can write wp & frontend installation files
+    - docker-compose up -d
+    - while ! ((docker logs frontend) | grep 'Ready'); do sleep 10; done # wait for frontend install
+    - while ! ((docker logs wp-headless) | grep 'You can now log in'); do sleep 10; done # wait for wordpress install
 
 script:
     - curl localhost:3000 | grep 'Congratulations!'
