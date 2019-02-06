@@ -19,6 +19,10 @@ RUN curl -sL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -o phpcs; \
 	chmod +x phpcs phpcbf; \
 	mv phpcs phpcbf /usr/local/bin/
 
+# wpcs
+RUN git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git /var/www/wpcs; \
+	phpcs --config-set installed_paths /var/www/wpcs
+
 # phpunit
 RUN curl -sL https://phar.phpunit.de/phpunit-6.5.phar -o phpunit; \
 	chmod +x phpunit; \
