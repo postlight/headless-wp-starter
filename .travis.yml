@@ -3,6 +3,7 @@ services:
 
 before_script:
     - docker-compose up -d
+    - sleep 300 # wait for installation after containers are up
 
 script:
     - curl -i localhost:3000
