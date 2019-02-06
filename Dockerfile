@@ -4,9 +4,9 @@ RUN sed -i 's/80/8080/' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-d
 
 RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
-# install_wordpress.sh dependencies
+# install_wordpress.sh & misc. dependencies
 RUN apt-get update; \
-	apt-get install -yq mysql-client netcat sudo
+	apt-get install -yq mysql-client netcat sudo less
 
 # php-cs-fixer
 RUN curl -sL https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer; \

@@ -92,15 +92,25 @@ Import data from a mysqldump with `mysql`:
     docker-compose exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker-compose exec wp-headless wp search-replace https://example.com http://localhost:8080
 
-Import data using Migrate DB Pro (set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` first):
+## Migrate DB Pro:
+
+First set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` and restart `wp-headless` to enact the changes.
+
+    docker-compose restart wp-headless
+
+Then run the import script:
 
     docker-compose exec wp-headless migratedb_import
+
+If you need more advanced functionality check out the available WP-CLI commands:
+
+    docker-compose exec wp-headless wp help migratedb
 
 ## Extend the REST and GraphQL APIs
 
 At this point you can start activating plugins & setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about).
 
-The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](README-linting.md) as you go.
+The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to [lint your code](wordpress/wp-content/themes/README-linting.md) as you go.
 
 ## Hosting
 
