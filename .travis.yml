@@ -3,6 +3,7 @@ services:
 
 before_script:
     - whoami
+    - chmod -R o+w .
     - ls -la . frontend
     - docker-compose up
     # wait for installation after containers are up
