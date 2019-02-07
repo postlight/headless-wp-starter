@@ -58,7 +58,7 @@ wp menu create "Header Menu"
 wp menu item add-post header-menu 1
 wp menu item add-post header-menu 2
 wp menu item add-term header-menu category 1
-wp menu item add-custom header-menu "Read about the Starter Kit on Medium" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c
+wp menu item add-custom header-menu "Read about the Starter Kit" https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c
 wp menu location assign header-menu header-menu
 wp post update 1 --post_title="Sample Post" --post_name=sample-post
 wp import /var/www/postlightheadlesswpstarter.wordpress.xml --authors=skip
