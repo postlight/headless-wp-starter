@@ -111,7 +111,7 @@ At this point you can start setting up custom fields in the WordPress admin, and
 
 The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to lint your code as you go:
 
-    docker exec wp-headless phpcs wp-content/themes/postlight-headless-wp
+    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
 
 ## Hosting
 
