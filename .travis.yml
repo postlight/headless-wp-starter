@@ -1,6 +1,11 @@
 services:
     - docker
 
+addons:
+    apt:
+        packages:
+            - docker-ce
+
 before_script:
     - chmod -R o+w . # ensure docker can write wp & frontend installation files
     - docker-compose up -d
