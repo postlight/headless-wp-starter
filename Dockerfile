@@ -6,31 +6,7 @@ RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
 # install_wordpress.sh & misc. dependencies
 RUN apt-get update; \
-	apt-get install -yq mysql-client netcat sudo less
-
-# php-cs-fixer
-RUN curl -sL https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer; \
-	chmod +x php-cs-fixer; \
-	mv php-cs-fixer /usr/local/bin/
-
-# phpcs & phpcbf
-RUN curl -sL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -o phpcs; \
-	curl -sL https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar -o phpcbf; \
-	chmod +x phpcs phpcbf; \
-	mv phpcs phpcbf /usr/local/bin/
-
-# wpcs
-RUN git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git /var/www/wpcs; \
-	phpcs --config-set installed_paths /var/www/wpcs
-
-# phpunit
-RUN curl -sL https://phar.phpunit.de/phpunit-6.5.phar -o phpunit; \
-	chmod +x phpunit; \
-	mv phpunit /usr/local/bin/
-
-# composer
-RUN curl -sL https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer | php; \
-	mv composer.phar /usr/local/bin/composer
+	apt-get install -yq mysql-client netcat sudo less git unzip
 
 # wp-cli
 RUN curl -sL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o wp; \
@@ -38,5 +14,20 @@ RUN curl -sL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cl
 	mv wp /usr/local/bin/; \
 	mkdir /var/www/.wp-cli; \
 	chown www-data:www-data /var/www/.wp-cli
+
+# composer
+RUN curl -sL https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer | php; \
+	mv composer.phar /usr/local/bin/composer; \
+	mkdir /var/www/.composer; \
+	chown www-data:www-data /var/www/.composer
+
+RUN sudo -u www-data composer global require \
+	phpunit/phpunit \
+	dealerdirect/phpcodesniffer-composer-installer \
+	phpcompatibility/phpcompatibility-wp \
+	automattic/vipwpcs
+
+# include composer-installed executables in $PATH
+ENV PATH="/var/www/.composer/vendor/bin:${PATH}"
 
 EXPOSE 8080
