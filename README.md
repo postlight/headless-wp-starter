@@ -62,7 +62,6 @@ The `wp-headless` container exposes Apache on host port `8080`:
 This container includes some development tools:
 
     docker exec wp-headless composer --help
-    docker exec wp-headless php-cs-fixer --help
     docker exec wp-headless phpcbf --help
     docker exec wp-headless phpcs --help
     docker exec wp-headless phpunit --help

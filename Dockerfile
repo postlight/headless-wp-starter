@@ -21,6 +21,7 @@ RUN curl -sL https://raw.githubusercontent.com/composer/getcomposer.org/master/w
 	mkdir /var/www/.composer; \
 	chown www-data:www-data /var/www/.composer
 
+# phpunit, phpcs, wpcs
 RUN sudo -u www-data composer global require \
 	phpunit/phpunit \
 	dealerdirect/phpcodesniffer-composer-installer \
