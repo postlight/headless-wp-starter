@@ -45,7 +45,7 @@ class Category extends Component {
                     <div className="flex items-center" />
                     <div className="ml1">
                         {this.state.category.posts.map((post, index) => (
-                            <div>
+                            <div key={index}>
                                 <span className="gray">{index + 1}.</span>
                                 <Link
                                     to={post.node.link}
@@ -69,7 +69,6 @@ class Category extends Component {
             query: CATEGORY_QUERY,
             variables: { filter }
         });
-        console.log(result);
         const name = result.data.categories.edges[0].node.name;
         let posts = result.data.posts.edges;
         posts = posts.map(post => {

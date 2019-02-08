@@ -38,10 +38,11 @@ class Header extends Component {
                         Home
                     </Link>
                     {this.state.menus.map(
-                        function(menu) {
+                        function(menu, index) {
                             if (this.isInternal(menu.type)) {
                                 return (
                                     <Link
+                                        key={index}
                                         to={menu.url}
                                         className="ml1 no-underline black"
                                     >
@@ -51,6 +52,7 @@ class Header extends Component {
                             } else {
                                 return (
                                     <a
+                                        key={index}
                                         href={menu.url}
                                         className="ml1 no-underline black"
                                     >

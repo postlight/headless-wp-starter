@@ -48,7 +48,7 @@ class Search extends Component {
                     <div className="flex items-center" />
                     <div className="ml1">
                         {this.state.posts.map((post, index) => (
-                            <div>
+                            <div key={index}>
                                 <span className="gray">{index + 1}.</span>
                                 <Link
                                     to={post.node.link}
