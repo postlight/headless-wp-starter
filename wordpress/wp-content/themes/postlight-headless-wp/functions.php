@@ -28,5 +28,5 @@ require_once 'inc/menus.php';
 // Add Headless Settings area.
 require_once 'inc/acf-options.php';
 
-// Add GraphQL resolvers
+// Add GraphQL resolvers.
 require_once 'inc/graphql/resolvers.php';
