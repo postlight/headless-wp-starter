@@ -5,5 +5,7 @@
  * @package  Postlight_Headless_WP
  */
 
-// Add header menu resolver.
-require_once 'resolvers/class-headermenutype.php';
+if ( function_exists( 'register_graphql_field' ) ) {
+	// Add header menu resolver.
+	require_once 'resolvers/class-headermenutype.php';
+}

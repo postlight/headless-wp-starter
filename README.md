@@ -11,14 +11,14 @@ You can read all about it in [this handy introduction](https://trackchanges.post
 
 **What's inside:**
 
-- An automated installer script which bootstraps a core WordPress installation that provides an established, stable REST API.
-- A plugin which exposes a newer, in-progress [GraphQL API for WordPress](https://wpgraphql.com/).
-- The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
-- Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
-- All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
-- A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
-- A starter frontend React app powered by [Next.js](https://learnnextjs.com/).
-- [Docker](https://www.docker.com/) containers and scripts to manage them, for easily running the frontend React app and backend locally or deploying it to any hosting provider with Docker support.
+-   An automated installer script which bootstraps a core WordPress installation that provides an established, stable REST API.
+-   A plugin which exposes a newer, in-progress [GraphQL API for WordPress](https://wpgraphql.com/).
+-   The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
+-   Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
+-   All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
+-   A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
+-   A starter frontend React app powered by [Next.js](https://learnnextjs.com/).
+-   [Docker](https://www.docker.com/) containers and scripts to manage them, for easily running the frontend React app and backend locally or deploying it to any hosting provider with Docker support.
 
 Let's get started.
 
@@ -55,9 +55,9 @@ If you need to restart that process, restart the container:
 
 The `wp-headless` container exposes Apache on host port `8080`:
 
-- Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
-- REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
-- GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql) (WP GraphQL plugin needs to be enabled first)
+-   Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
+-   REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
+-   GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql) (WP GraphQL plugin needs to be enabled first)
 
 This container includes some development tools:
 
@@ -111,6 +111,10 @@ At this point you can start setting up custom fields in the WordPress admin, and
 The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to lint your code as you go:
 
     docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
+
+You may also attempt to auto fix lint errors:
+
+    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcbf
 
 ## Hosting
 
