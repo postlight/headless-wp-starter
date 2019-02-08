@@ -1,0 +1,25 @@
+{
+    "name": "hackernews-react-apollo",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "apollo-boost": "0.1.4",
+        "apollo-link-context": "1.0.7",
+        "apollo-link-ws": "1.0.7",
+        "graphql": "0.13.1",
+        "react": "16.2.0",
+        "react-apollo": "2.1.0",
+        "react-dom": "16.2.0",
+        "react-router": "4.2.0",
+        "react-router-dom": "4.2.2",
+        "react-scripts": "1.1.1",
+        "recompose": "^0.30.0",
+        "subscriptions-transport-ws": "0.9.7"
+    },
+    "scripts": {
+        "start": "PORT=3001 react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    }
+}
