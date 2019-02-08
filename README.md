@@ -61,12 +61,11 @@ The `wp-headless` container exposes Apache on host port `8080`:
 
 This container includes some development tools:
 
-    docker-compose exec wp-headless composer --help
-    docker-compose exec wp-headless php-cs-fixer --help
-    docker-compose exec wp-headless phpcbf --help
-    docker-compose exec wp-headless phpcs --help
-    docker-compose exec wp-headless phpunit --help
-    docker-compose exec wp-headless wp --info
+    docker exec wp-headless composer --help
+    docker exec wp-headless phpcbf --help
+    docker exec wp-headless phpcs --help
+    docker exec wp-headless phpunit --help
+    docker exec wp-headless wp --info
 
 Apache/PHP logs are available via `docker-compose logs -f wp-headless`.
 
@@ -78,19 +77,18 @@ The `db-headless` container exposes MySQL on host port `3307`:
 
 You can also run a mysql shell on the container:
 
-    docker-compose exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
+    docker exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
 
 ## Reinstall/Import
 
 Reinstall WordPress from scratch:
 
-    docker-compose exec wp-headless wp db reset
-    docker-compose exec wp-headless install_wordpress
+    docker exec wp-headless sh -c 'wp db reset && install_wordpress'
 
 Import data from a mysqldump with `mysql`:
 
-    docker-compose exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
-    docker-compose exec wp-headless wp search-replace https://example.com http://localhost:8080
+    docker exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
+    docker exec wp-headless wp search-replace https://example.com http://localhost:8080
 
 ## Migrate DB Pro:
 
@@ -100,11 +98,11 @@ First set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` and recreate containe
 
 Then run the import script:
 
-    docker-compose exec wp-headless migratedb_import
+    docker exec wp-headless migratedb_import
 
 If you need more advanced functionality check out the available WP-CLI commands:
 
-    docker-compose exec wp-headless wp help migratedb
+    docker exec wp-headless wp help migratedb
 
 ## Extend the REST and GraphQL APIs
 
@@ -112,7 +110,7 @@ At this point you can start setting up custom fields in the WordPress admin, and
 
 The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to lint your code as you go:
 
-    docker-compose exec wp-headless phpcs wp-content/themes/postlight-headless-wp
+    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
 
 ## Hosting
 
