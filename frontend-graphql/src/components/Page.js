@@ -31,7 +31,7 @@ class Page extends Component {
         return (
             <div>
                 <div className="pa2">
-                    <div>{this.state.page.title}</div>
+                    <h1>{this.state.page.title}</h1>
                 </div>
                 <div
                     dangerouslySetInnerHTML={{
@@ -44,7 +44,10 @@ class Page extends Component {
 
     _executePageQuery = async () => {
         const { params } = this.props.match;
-        const filter = params.slug;
+        let filter = params.slug;
+        if (!filter) {
+            filter = 'welcome';
+        }
         const result = await this.props.client.query({
             query: PAGE_QUERY,
             variables: { filter }

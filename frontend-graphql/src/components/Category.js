@@ -9,8 +9,7 @@ const CATEGORY_QUERY = gql`
             edges {
                 node {
                     title
-                    content
-                    link
+                    slug
                 }
             }
         }
@@ -40,7 +39,7 @@ class Category extends Component {
     render() {
         return (
             <div className="pa2">
-                <div>{this.state.category.name}</div>
+                <h1>{this.state.category.name}</h1>
                 <div className="flex mt2 items-start">
                     <div className="flex items-center" />
                     <div className="ml1">
@@ -72,11 +71,8 @@ class Category extends Component {
         const name = result.data.categories.edges[0].node.name;
         let posts = result.data.posts.edges;
         posts = posts.map(post => {
-            const res = post.node.link.split('/');
-            if (res[res.length - 2] !== 'post') {
-                const finalLink = '/post/' + res[res.length - 2];
-                post.node = { ...post.node, link: finalLink };
-            }
+            const finalLink = '/post/' + post.node.slug;
+            post.node = { ...post.node, link: finalLink };
             return post;
         });
 

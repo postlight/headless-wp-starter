@@ -1,10 +1,10 @@
-import Layout from "../components/Layout.js";
-import React, { Component } from "react";
-import Link from "next/link";
-import PageWrapper from "../components/PageWrapper.js";
-import Menu from "../components/Menu.js";
-import { Config } from "../config.js";
-import WPAPI from "wpapi";
+import Layout from '../components/Layout.js';
+import React, { Component } from 'react';
+import Link from 'next/link';
+import PageWrapper from '../components/PageWrapper.js';
+import Menu from '../components/Menu.js';
+import { Config } from '../config.js';
+import WPAPI from 'wpapi';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -16,12 +16,15 @@ const headerImageStyle = {
 class Index extends Component {
     static async getInitialProps(context) {
         const [page, posts, pages] = await Promise.all([
-            wp.pages().slug('welcome').embed()
-                .then((data) => {
+            wp
+                .pages()
+                .slug('welcome')
+                .embed()
+                .then(data => {
                     return data[0];
                 }),
             wp.posts().embed(),
-            wp.pages().embed(),
+            wp.pages().embed()
         ]);
 
         return { page, posts, pages };
@@ -70,6 +73,11 @@ class Index extends Component {
                         __html: this.props.page.content.rendered
                     }}
                 />
+                <p>
+                    Make sure to check the{' '}
+                    <a href="http://localhost:3001/">React frontend</a>, built
+                    with <a href="https://graphql.org/">GraphQL</a>!
+                </p>
                 <h2>Posts</h2>
                 {posts}
                 <h2>Pages</h2>

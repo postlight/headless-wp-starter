@@ -29,18 +29,29 @@ div {
 }
 
 .search {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .padding {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.table {
+    display: table;
 }
 
 .pa1 {
     height: 50px;
     line-height: 50px;
+}
+
+.bottomborder {
     border-bottom: 1px solid #f1f1f1;
+}
+
+.topborder {
+    border-top: 1px solid #f1f1f1;
 }
 
 .pa2 {

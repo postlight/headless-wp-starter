@@ -32,7 +32,7 @@ class Header extends Component {
     render() {
         const authToken = localStorage.getItem(AUTH_TOKEN);
         return (
-            <div className="flex pa1 justify-between nowrap padding">
+            <div className="flex pa1 justify-between nowrap padding bottomborder">
                 <div className="flex flex-fixed black">
                     <Link to="/" className="ml1 no-underline black">
                         Home

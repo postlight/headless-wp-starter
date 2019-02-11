@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
+import Home from './Home';
 import Login from './Login';
 import Search from './Search';
-import Home from './Home';
 import Page from './Page';
 import Post from './Post';
 import Category from './Category';
@@ -13,7 +14,7 @@ class App extends Component {
         return (
             <div className="center">
                 <Header />
-                <div className="pa1 padding">
+                <div className="pa1 padding table">
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
@@ -27,6 +28,7 @@ class App extends Component {
                         />
                     </Switch>
                 </div>
+                <Footer />
             </div>
         );
     }

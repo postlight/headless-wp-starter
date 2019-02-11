@@ -16,31 +16,33 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<rss version="2.0"
-	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
-	xmlns:content="http://purl.org/rss/1.0/modules/content/"
-	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:wp="http://wordpress.org/export/1.2/"
->
+<rss version="2.0" 
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" 
+	xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:wp="http://wordpress.org/export/1.2/">
 
-<channel>
-	<wp:wxr_version>1.2</wp:wxr_version>
-	<wp:base_site_url>http://localhost:8080</wp:base_site_url>
-	<wp:base_blog_url>http://localhost:8080</wp:base_blog_url>
+	<channel>
+		<wp:wxr_version>1.2</wp:wxr_version>
+		<wp:base_site_url>http://localhost:8080</wp:base_site_url>
+		<wp:base_blog_url>http://localhost:8080</wp:base_blog_url>
 
-	<wp:author><wp:author_login><![CDATA[nedstark]]></wp:author_login><wp:author_display_name><![CDATA[nedstark]]></wp:author_display_name></wp:author>
+		<wp:author>
+			<wp:author_login><![CDATA[nedstark]]></wp:author_login>
+			<wp:author_display_name><![CDATA[nedstark]]></wp:author_display_name>
+		</wp:author>
 
-	<item>
-		<title>Congratulations!</title>
-		<content:encoded><![CDATA[You've successfully set up <a href="https://github.com/postlight/headless-wp-starter" target="_new">Postlight's WordPress + React Starter Kit</a> on your computer.
+		<item>
+			<title>Congratulations!</title>
+			<content:encoded><![CDATA[You've successfully set up <a href="https://github.com/postlight/headless-wp-starter" target="_new">Postlight's WordPress + React Starter Kit</a> on your computer.
 
-You are now running a <a href="http://localhost:8080/wp-admin/">WordPress backend</a> and you're looking at the React frontend, built with <a href="http://learnnextjs.com" target="_new">Next.js</a>.
+You are now running a <a href="http://localhost:8080/wp-admin/">WordPress backend</a> and you're looking at the React frontend.
 
 All the content you see here is created in WordPress -- posts, pages, categories, and menus. <a href="http://localhost:8080/wp-admin/post.php?post=9&action=edit" target="_new">Edit this page</a> to update it.]]></content:encoded>
-		<wp:post_name><![CDATA[welcome]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-	</item>
-</channel>
+			<wp:post_name><![CDATA[welcome]]></wp:post_name>
+			<wp:status><![CDATA[publish]]></wp:status>
+			<wp:post_type><![CDATA[page]]></wp:post_type>
+		</item>
+	</channel>
 </rss>

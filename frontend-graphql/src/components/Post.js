@@ -33,7 +33,7 @@ class Post extends Component {
         return (
             <div>
                 <div className="pa2">
-                    <div>{this.state.post.title}</div>
+                    <h1>{this.state.post.title}</h1>
                 </div>
                 <div
                     dangerouslySetInnerHTML={{
