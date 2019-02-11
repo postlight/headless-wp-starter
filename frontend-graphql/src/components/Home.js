@@ -5,141 +5,139 @@ import { Link } from 'react-router-dom';
 import logo from '../static/images/wordpress-plus-react-header.png';
 
 const headerImageStyle = {
-    marginTop: 50,
-    marginBottom: 50
+  marginTop: 50,
+  marginBottom: 50,
 };
 
 const PAGE_QUERY = gql`
-    query PageQuery($filter: String!) {
-        pages(where: { name: $filter }) {
-            edges {
-                node {
-                    title
-                    slug
-                    content
-                }
-            }
+  query PageQuery($filter: String!) {
+    pages(where: { name: $filter }) {
+      edges {
+        node {
+          title
+          slug
+          content
         }
+      }
     }
+  }
 `;
 
 const PAGES_AND_CATEGORIES_QUERY = gql`
-    query PagesAndPostsQuery {
-        posts {
-            edges {
-                node {
-                    title
-                    slug
-                }
-            }
+  query PagesAndPostsQuery {
+    posts {
+      edges {
+        node {
+          title
+          slug
         }
-        pages {
-            edges {
-                node {
-                    title
-                    slug
-                }
-            }
-        }
+      }
     }
+    pages {
+      edges {
+        node {
+          title
+          slug
+        }
+      }
+    }
+  }
 `;
 
 class Home extends Component {
-    state = {
-        page: {
-            title: '',
-            content: ''
-        },
-        pages: [],
-        posts: []
-    };
+  state = {
+    page: {
+      title: '',
+      content: '',
+    },
+    pages: [],
+    posts: [],
+  };
 
-    componentDidMount() {
-        this._executePageQuery();
-        this._executePagesAndCategoriesQuery();
+  componentDidMount() {
+    this.executePageQuery();
+    this.executePagesAndCategoriesQuery();
+  }
+
+  executePageQuery = async () => {
+    const { match, client } = this.props;
+    let filter = match.params.slug;
+    if (!filter) {
+      filter = 'welcome';
     }
+    const result = await client.query({
+      query: PAGE_QUERY,
+      variables: { filter },
+    });
+    const page = result.data.pages.edges[0].node;
+    this.setState({ page });
+  };
 
-    render() {
-        return (
-            <div>
-                <div className="pa2">
-                    <img src={logo} width="815" style={headerImageStyle} />
-                    <h1>{this.state.page.title}</h1>
-                    <span
-                        dangerouslySetInnerHTML={{
-                            __html: this.state.page.content
-                        }}
-                    />
-                    <p>
-                        Make sure to check the{' '}
-                        <a href="http://localhost:3000/">React frontend</a>,
-                        built with <a href="http://learnnextjs.com/">Next.js</a>
-                        !
-                    </p>
-                    <h2>Posts</h2>
-                    <ul>
-                        {this.state.posts.map((post, index) => (
-                            <li key={index}>
-                                <Link
-                                    to={post.node.link}
-                                    className="ml1 no-underline black"
-                                >
-                                    {post.node.title}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                    <h2>Pages</h2>
-                    <ul>
-                        {this.state.pages.map((page, index) => (
-                            <li key={index}>
-                                <Link
-                                    to={page.node.link}
-                                    className="ml1 no-underline black"
-                                >
-                                    {page.node.title}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        );
-    }
+  executePagesAndCategoriesQuery = async () => {
+    const { client } = this.props;
+    const result = await client.query({
+      query: PAGES_AND_CATEGORIES_QUERY,
+    });
+    let posts = result.data.posts.edges;
+    posts = posts.map(post => {
+      const finalLink = `/post/${post.node.slug}`;
+      const modifiedPost = { ...post };
+      modifiedPost.node.link = finalLink;
+      return modifiedPost;
+    });
+    let pages = result.data.pages.edges;
+    pages = pages.map(page => {
+      const finalLink = `/page/${page.node.slug}`;
+      const modifiedPage = { ...page };
+      modifiedPage.node.link = finalLink;
+      return modifiedPage;
+    });
 
-    _executePageQuery = async () => {
-        const { params } = this.props.match;
-        let filter = params.slug;
-        if (!filter) {
-            filter = 'welcome';
-        }
-        const result = await this.props.client.query({
-            query: PAGE_QUERY,
-            variables: { filter }
-        });
-        const page = result.data.pages.edges[0].node;
-        this.setState({ page });
-    };
+    this.setState({ posts, pages });
+  };
 
-    _executePagesAndCategoriesQuery = async () => {
-        const result = await this.props.client.query({
-            query: PAGES_AND_CATEGORIES_QUERY
-        });
-        let posts = result.data.posts.edges;
-        posts = posts.map(post => {
-            const finalLink = '/post/' + post.node.slug;
-            post.node = { ...post.node, link: finalLink };
-            return post;
-        });
-        let pages = result.data.pages.edges;
-        pages = pages.map(page => {
-            const finalLink = '/page/' + page.node.slug;
-            page.node = { ...page.node, link: finalLink };
-            return page;
-        });
-
-        this.setState({ posts, pages });
-    };
+  render() {
+    const { page, posts, pages } = this.state;
+    return (
+      <div>
+        <div className="pa2">
+          <img src={logo} width="815" style={headerImageStyle} alt="logo" />
+          <h1>{page.title}</h1>
+          <span
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: page.content,
+            }}
+          />
+          <p>
+            Make sure to check the{' '}
+            <a href="http://localhost:3000/">React frontend</a>, built with{' '}
+            <a href="http://learnnextjs.com/">Next.js</a>!
+          </p>
+          <h2>Posts</h2>
+          <ul>
+            {posts.map(post => (
+              <li key={post.node.slug}>
+                <Link to={post.node.link} className="ml1 no-underline black">
+                  {post.node.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h2>Pages</h2>
+          <ul>
+            {pages.map(pageit => (
+              <li key={pageit.node.slug}>
+                <Link to={pageit.node.link} className="ml1 no-underline black">
+                  {pageit.node.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default withApollo(Home);

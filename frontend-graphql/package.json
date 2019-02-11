@@ -1,25 +1,42 @@
 {
-    "name": "hackernews-react-apollo",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "apollo-boost": "0.1.4",
-        "apollo-link-context": "1.0.7",
-        "apollo-link-ws": "1.0.7",
-        "graphql": "0.13.1",
-        "react": "16.2.0",
-        "react-apollo": "2.1.0",
-        "react-dom": "16.2.0",
-        "react-router": "4.2.0",
-        "react-router-dom": "4.2.2",
-        "react-scripts": "1.1.1",
-        "recompose": "^0.30.0",
-        "subscriptions-transport-ws": "0.9.7"
-    },
-    "scripts": {
-        "start": "PORT=3001 react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    }
+  "name": "hackernews-react-apollo",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.1.27",
+    "apollo-cache-inmemory": "^1.4.2",
+    "apollo-link-context": "^1.0.14",
+    "apollo-link-ws": "^1.0.14",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "react": "^16.8.1",
+    "react-apollo": "^2.4.1",
+    "react-dom": "^16.8.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.4",
+    "recompose": "^0.30.0",
+    "subscriptions-transport-ws": "^0.9.15"
+  },
+  "scripts": {
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

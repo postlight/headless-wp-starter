@@ -3,58 +3,60 @@ import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 
 const PAGE_QUERY = gql`
-    query PageQuery($filter: String!) {
-        pages(where: { name: $filter }) {
-            edges {
-                node {
-                    title
-                    content
-                }
-            }
+  query PageQuery($filter: String!) {
+    pages(where: { name: $filter }) {
+      edges {
+        node {
+          title
+          content
         }
+      }
     }
+  }
 `;
 
 class Page extends Component {
-    state = {
-        page: {
-            title: '',
-            content: ''
-        }
-    };
+  state = {
+    page: {
+      title: '',
+      content: '',
+    },
+  };
 
-    componentDidMount() {
-        this._executePageQuery();
+  componentDidMount() {
+    this.executePageQuery();
+  }
+
+  executePageQuery = async () => {
+    const { match, client } = this.props;
+    let filter = match.params.slug;
+    if (!filter) {
+      filter = 'welcome';
     }
+    const result = await client.query({
+      query: PAGE_QUERY,
+      variables: { filter },
+    });
+    const page = result.data.pages.edges[0].node;
+    this.setState({ page });
+  };
 
-    render() {
-        return (
-            <div>
-                <div className="pa2">
-                    <h1>{this.state.page.title}</h1>
-                </div>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: this.state.page.content
-                    }}
-                />
-            </div>
-        );
-    }
-
-    _executePageQuery = async () => {
-        const { params } = this.props.match;
-        let filter = params.slug;
-        if (!filter) {
-            filter = 'welcome';
-        }
-        const result = await this.props.client.query({
-            query: PAGE_QUERY,
-            variables: { filter }
-        });
-        const page = result.data.pages.edges[0].node;
-        this.setState({ page });
-    };
+  render() {
+    const { page } = this.state;
+    return (
+      <div>
+        <div className="pa2">
+          <h1>{page.title}</h1>
+        </div>
+        <div
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: page.content,
+          }}
+        />
+      </div>
+    );
+  }
 }
 
 export default withApollo(Page);
