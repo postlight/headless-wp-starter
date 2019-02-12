@@ -6,7 +6,10 @@ const Footer = () => (
       <span role="img" aria-label="love">
         ❤️
       </span>{' '}
-      <a href="https://postlight.com">Made by postlight</a>. 🍴{' '}
+      <a href="https://postlight.com">Made by postlight</a>.
+      <span role="img" aria-label="fork">
+        🍴
+      </span>{' '}
       <a href="https://github.com/postlight/headless-wp-starter">
         Fork on GitHub
       </a>

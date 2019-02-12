@@ -67,7 +67,7 @@ class Search extends Component {
             {posts.map((post, index) => (
               <div key={post.node.slug}>
                 <span className="gray">{index + 1}.</span>
-                <Link to={post.node.link} className="ml1 no-underline black">
+                <Link to={post.node.link} className="ml1 black">
                   {post.node.title}
                 </Link>
                 <span className="gray"> by {post.node.author.nickname}</span>

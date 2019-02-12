@@ -118,7 +118,7 @@ class Home extends Component {
           <ul>
             {posts.map(post => (
               <li key={post.node.slug}>
-                <Link to={post.node.link} className="ml1 no-underline black">
+                <Link to={post.node.link} className="ml1 black">
                   {post.node.title}
                 </Link>
               </li>
@@ -128,7 +128,7 @@ class Home extends Component {
           <ul>
             {pages.map(pageit => (
               <li key={pageit.node.slug}>
-                <Link to={pageit.node.link} className="ml1 no-underline black">
+                <Link to={pageit.node.link} className="ml1 black">
                   {pageit.node.title}
                 </Link>
               </li>
