@@ -66,11 +66,9 @@ To spin up the frontend client app, run the following commands:
 
 The Next.js app will be running on [http://localhost:3000](http://localhost:3000).
 
-### Docker
+### Deploying
 
-Most WordPress hosts don't also host Node applications, so when it's time to go live, you will need to find a hosting service for the frontend.
-
-That's why we've packaged the frontend app in a Docker container, which can be deployed to a hosting provider with Docker support like Amazon Web Services or Google Cloud Platform. For a fast, easier alternative, check out [Now](https://zeit.co/now).
+If you're hosting WordPress on a traditional WordPress hosting provider like BlueHost, DreamHost, or SiteGround, when it's time to go live, you will likely need to find a hosting service for the frontend. That's why we've packaged the frontend app in a Docker container, which can be deployed to a hosting provider with Docker support like Amazon Web Services or Google Cloud Platform or for a fast, easier alternative check out [Now](https://zeit.co/now).
 
 To run the Docker container locally:
 
@@ -80,6 +78,13 @@ To run the Docker container locally:
 ```zsh
 > yarn run deploy
 ```
+
+Or, you can deploy both the WordPress application and frontend to a cloud platform and leverage that cloud's SQL and media storage services. There's a large number of possible options you could use, including:
+
+- App Engine PaaS on Google Cloud Platform ([setup guide](https://computerlab.io/2018/12/20/deploying-headless-wordpress-on-gcp/))
+- Elastic Beanstalk PaaS on AWS
+- Managed Kubernetes services like GKE / AKS
+- PaaSes / VMs provided by any cloud
 
 ## Troubleshooting Common Errors
 **Breaking Change Alert - Docker**
