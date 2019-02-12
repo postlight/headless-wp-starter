@@ -25,21 +25,33 @@ class Search extends Component {
     filter: '',
   };
 
+  handleKeyDown = e => {
+    if (e.keyCode === 13) {
+      this.executeSearch();
+    }
+    return true;
+  };
+
   executeSearch = async () => {
     const { client } = this.props;
     const { filter } = this.state;
-    const result = await client.query({
-      query: POST_SEARCH_QUERY,
-      variables: { filter },
-    });
-    let posts = result.data.posts.edges;
-    posts = posts.map(post => {
-      const finalLink = `/post/${post.node.slug}`;
-      const modifiedPost = { ...post };
-      modifiedPost.node.link = finalLink;
-      return modifiedPost;
-    });
-    this.setState({ posts });
+    let posts = [];
+    if (filter.length === 0) {
+      this.setState({ posts });
+    } else {
+      const result = await client.query({
+        query: POST_SEARCH_QUERY,
+        variables: { filter },
+      });
+      posts = result.data.posts.edges;
+      posts = posts.map(post => {
+        const finalLink = `/post/${post.node.slug}`;
+        const modifiedPost = { ...post };
+        modifiedPost.node.link = finalLink;
+        return modifiedPost;
+      });
+      this.setState({ posts });
+    }
   };
 
   render() {
@@ -52,6 +64,7 @@ class Search extends Component {
             className="search"
             type="text"
             onChange={e => this.setState({ filter: e.target.value })}
+            onKeyDown={this.handleKeyDown}
           />
           <button
             className="search"
