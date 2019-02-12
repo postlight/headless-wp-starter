@@ -1,94 +1,80 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import { AUTH_TOKEN } from '../constants';
-
-const SIGNUP_MUTATION = gql`
-  mutation SignupMutation($email: String!, $password: String!, $name: String!) {
-    signup(email: $email, password: $password, name: $name) {
-      token
-    }
-  }
-`;
+import { AUTH_TOKEN, USERNAME } from '../constants';
 
 const LOGIN_MUTATION = gql`
-  mutation LoginMutation($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
+  mutation LoginMutation(
+    $username: String!
+    $password: String!
+    $clientMutationId: String!
+  ) {
+    login(
+      input: {
+        clientMutationId: $clientMutationId
+        username: $username
+        password: $password
+      }
+    ) {
+      authToken
+      user {
+        nickname
+      }
     }
   }
 `;
 
 class Login extends Component {
   state = {
-    login: true, // switch between Login and SignUp
-    email: '',
+    username: '',
     password: '',
-    name: '',
   };
 
   confirm = async data => {
-    const { login } = this.state;
     const { history } = this.props;
-    const { token } = login ? data.login : data.signup;
-    this.saveUserData(token);
+    const { authToken, user } = data.login;
+    localStorage.setItem(AUTH_TOKEN, authToken);
+    localStorage.setItem(USERNAME, user.nickname);
     history.push(`/`);
   };
 
-  saveUserData = token => {
-    localStorage.setItem(AUTH_TOKEN, token);
-  };
-
   render() {
-    const { login, email, password, name } = this.state;
+    const { username, password } = this.state;
+    const clientMutationId =
+      Math.random()
+        .toString(36)
+        .substring(2) + new Date().getTime().toString(36);
     return (
       <div>
-        <h4 className="mv3">{login ? 'Login' : 'Sign Up'}</h4>
-        <div className="flex flex-column">
-          {!login && (
-            <input
-              value={name}
-              onChange={e => this.setState({ name: e.target.value })}
-              type="text"
-              placeholder="Your name"
-            />
-          )}
+        <h4>Login</h4>
+        <div className="flex flex-column login">
           <input
-            value={email}
-            onChange={e => this.setState({ email: e.target.value })}
+            className="input-padding"
+            value={username}
+            onChange={e => this.setState({ username: e.target.value })}
             type="text"
-            placeholder="Your email address"
+            placeholder="Your username"
           />
           <input
+            className="input-padding"
             value={password}
             onChange={e => this.setState({ password: e.target.value })}
             type="password"
-            placeholder="Choose a safe password"
+            placeholder="Your password"
           />
         </div>
-        <div className="flex mt3">
+        <div className=" mt3">
           <Mutation
-            mutation={login ? LOGIN_MUTATION : SIGNUP_MUTATION}
-            variables={{ email, password, name }}
+            mutation={LOGIN_MUTATION}
+            variables={{ username, password, clientMutationId }}
             onCompleted={data => this.confirm(data)}
           >
             {mutation => (
-              <button
-                className="pointer mr2 button"
-                type="button"
-                onClick={mutation}
-              >
-                {login ? 'login' : 'create account'}
+              <button className="pointer" type="button" onClick={mutation}>
+                {'login'}
               </button>
             )}
           </Mutation>
-          <button
-            type="button"
-            className="pointer button"
-            onClick={() => this.setState({ login: !login })}
-          >
-            {login ? 'need to create an account?' : 'already have an account?'}
-          </button>
         </div>
       </div>
     );

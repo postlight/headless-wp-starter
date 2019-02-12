@@ -20,6 +20,10 @@ div {
   background-color: #ff6600;
 }
 
+.login {
+  width: 300px;
+}
+
 .items-start {
   margin-top: 20px;
 }
@@ -35,6 +39,10 @@ div {
 .padding {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.input-padding {
+  padding: 0px 20px;
 }
 
 .table {

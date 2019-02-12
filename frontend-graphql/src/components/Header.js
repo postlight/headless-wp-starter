@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import { withApollo } from 'react-apollo';
 import { compose } from 'recompose';
 import gql from 'graphql-tag';
-import { AUTH_TOKEN } from '../constants';
+import { AUTH_TOKEN, USERNAME } from '../constants';
 
 const MENU_QUERY = gql`
   query MenuQuery {
@@ -77,13 +77,13 @@ class Header extends Component {
           {authToken ? (
             <button
               type="button"
-              className="ml1 pointer black"
+              className="pointer black"
               onClick={() => {
                 localStorage.removeItem(AUTH_TOKEN);
                 history.push(`/`);
               }}
             >
-              Logout
+              Logout {localStorage.getItem(USERNAME)}
             </button>
           ) : (
             <Link to="/login" className="ml1 no-underline black">
