@@ -11,6 +11,17 @@ class Header extends Component {
     }
 
     render() {
+        let title = '';
+        if ( this.props.title ) {
+            title = this.props.title;
+            if ( this.props.settings ) {
+                title += ' | ' + this.props.settings.site_title;
+            }
+        } else if ( this.props.settings ) {
+            title = this.props.settings.site_title;
+        } else {
+            title = 'WordPress + React Starter Kit Frontend by Postlight';
+        }
 
         return (
             <div>
@@ -21,9 +32,7 @@ class Header extends Component {
                         content="width=device-width, initial-scale=1"
                     />
                     <meta charSet="utf-8" />
-                    <title>
-                        WordPress + React Starter Kit Frontend by Postlight
-                    </title>
+                    <title>{title}</title>
                 </Head>
             </div>
         );
