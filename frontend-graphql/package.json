@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "eslint": "5.12.0",
     "babel-eslint": "9.0.0",
+    "eslint": "5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
@@ -17,6 +17,7 @@
     "apollo-boost": "^0.1.27",
     "apollo-cache-inmemory": "^1.4.2",
     "apollo-link-context": "^1.0.14",
+    "apollo-link-http": "^1.5.11",
     "apollo-link-ws": "^1.0.14",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",

@@ -3,6 +3,7 @@ import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
 import logo from '../static/images/wordpress-plus-react-header.png';
+import { AUTH_TOKEN } from '../constants';
 
 const headerImageStyle = {
   marginTop: 50,
@@ -44,8 +45,18 @@ const PAGES_AND_CATEGORIES_QUERY = gql`
   }
 `;
 
+const PROTECTED_QUERY = gql`
+  query ProtectedQuery {
+    viewer {
+      id
+      username
+    }
+  }
+`;
+
 class Home extends Component {
   state = {
+    id: null,
     page: {
       title: '',
       content: '',
@@ -57,7 +68,21 @@ class Home extends Component {
   componentDidMount() {
     this.executePageQuery();
     this.executePagesAndCategoriesQuery();
+    const authToken = localStorage.getItem(AUTH_TOKEN);
+    if (authToken) {
+      this.executeProtectedQuery();
+    }
   }
+
+  executeProtectedQuery = async () => {
+    const { client } = this.props;
+
+    const result = await client.query({
+      query: PROTECTED_QUERY,
+    });
+    const { id } = result.data.viewer;
+    this.setState({ id });
+  };
 
   executePageQuery = async () => {
     const { match, client } = this.props;
@@ -97,7 +122,8 @@ class Home extends Component {
   };
 
   render() {
-    const { page, posts, pages } = this.state;
+    const { page, posts, pages, id } = this.state;
+    const authToken = localStorage.getItem(AUTH_TOKEN);
     return (
       <div>
         <div className="pa2">
@@ -134,6 +160,16 @@ class Home extends Component {
               </li>
             ))}
           </ul>
+          {authToken ? (
+            <div>
+              <h2>You Are Logged In</h2>
+              <p>
+                Using an authenticated query, we got your id: <span>{id}</span>
+              </p>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
       </div>
     );
