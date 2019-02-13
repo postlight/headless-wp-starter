@@ -9,3 +9,17 @@ body {
     color: $themeColor-Dark;
   }
 }
+
+.input-padding {
+  padding: 10px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  .button {
+    height: 40px;
+    margin-top: 20px;
+  }
+}
