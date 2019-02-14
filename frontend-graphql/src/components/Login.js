@@ -28,6 +28,7 @@ class Login extends Component {
   state = {
     username: '',
     password: '',
+    message: '',
   };
 
   confirm = async data => {
@@ -38,15 +39,20 @@ class Login extends Component {
     history.push(`/`);
   };
 
+  handleError = () => {
+    const message = ' - Wrong password';
+    this.setState({ message });
+  };
+
   render() {
-    const { username, password } = this.state;
+    const { username, password, message } = this.state;
     const clientMutationId =
       Math.random()
         .toString(36)
         .substring(2) + new Date().getTime().toString(36);
     return (
       <div>
-        <h4>Login</h4>
+        <h4>Login {message}</h4>
         <div className="flex flex-column login">
           <input
             className="input-padding"
@@ -68,6 +74,7 @@ class Login extends Component {
             mutation={LOGIN_MUTATION}
             variables={{ username, password, clientMutationId }}
             onCompleted={data => this.confirm(data)}
+            onError={() => this.handleError()}
           >
             {mutation => (
               <button className="pointer" type="button" onClick={mutation}>
