@@ -10,6 +10,7 @@ class Login extends Component {
   state = {
     username: '',
     password: '',
+    message: '',
   };
 
   static async getInitialProps() {
@@ -17,6 +18,8 @@ class Login extends Component {
   }
 
   login() {
+    let message = '';
+    this.setState({ message });
     const { username, password } = this.state;
     axios
       .post(`${Config.apiUrl}/jwt-auth/v1/token`, {
@@ -28,17 +31,21 @@ class Login extends Component {
         localStorage.setItem(Config.AUTH_TOKEN, data.token);
         localStorage.setItem(Config.USERNAME, data.user_nicename);
         Router.push('/');
+      })
+      .catch(() => {
+        message = ' - Wrong password';
+        this.setState({ message });
       });
   }
 
   render() {
-    const { username, password } = this.state;
+    const { username, password, message } = this.state;
     const { headerMenu } = this.props;
 
     return (
       <Layout>
         <Menu menu={headerMenu} />
-        <h1>Login</h1>
+        <h1>Login {message}</h1>
         <div className="login">
           <input
             className="input-padding"

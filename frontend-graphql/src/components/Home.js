@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloClient } from 'apollo-boost';
 import logo from '../static/images/wordpress-plus-react-header.png';
 import { AUTH_TOKEN } from '../constants';
+import Config from '../config';
 
 const headerImageStyle = {
   marginTop: 50,
@@ -48,7 +52,7 @@ const PAGES_AND_CATEGORIES_QUERY = gql`
 const PROTECTED_QUERY = gql`
   query ProtectedQuery {
     viewer {
-      id
+      userId
       username
     }
   }
@@ -56,7 +60,7 @@ const PROTECTED_QUERY = gql`
 
 class Home extends Component {
   state = {
-    id: null,
+    userId: null,
     page: {
       title: '',
       content: '',
@@ -65,23 +69,32 @@ class Home extends Component {
     posts: [],
   };
 
+  authClient = null;
+
   componentDidMount() {
     this.executePageQuery();
     this.executePagesAndCategoriesQuery();
     const authToken = localStorage.getItem(AUTH_TOKEN);
     if (authToken) {
+      this.authClient = new ApolloClient({
+        link: createHttpLink({
+          uri: Config.gqlUrl,
+          headers: {
+            Authorization: authToken ? `Bearer ${authToken}` : null,
+          },
+        }),
+        cache: new InMemoryCache(),
+      });
       this.executeProtectedQuery();
     }
   }
 
   executeProtectedQuery = async () => {
-    const { client } = this.props;
-
-    const result = await client.query({
+    const result = await this.authClient.query({
       query: PROTECTED_QUERY,
     });
-    const { id } = result.data.viewer;
-    this.setState({ id });
+    const { userId } = result.data.viewer;
+    this.setState({ userId });
   };
 
   executePageQuery = async () => {
@@ -122,8 +135,8 @@ class Home extends Component {
   };
 
   render() {
-    const { page, posts, pages, id } = this.state;
     const authToken = localStorage.getItem(AUTH_TOKEN);
+    const { page, posts, pages, userId } = this.state;
     return (
       <div>
         <div className="pa2">
@@ -164,7 +177,8 @@ class Home extends Component {
             <div>
               <h2>You Are Logged In</h2>
               <p>
-                Using an authenticated query, we got your id: <span>{id}</span>
+                Using an authenticated query, we got your id:{' '}
+                <span>{userId}</span>
               </p>
             </div>
           ) : (

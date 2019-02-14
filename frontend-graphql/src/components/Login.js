@@ -36,7 +36,6 @@ class Login extends Component {
     localStorage.setItem(AUTH_TOKEN, authToken);
     localStorage.setItem(USERNAME, user.nickname);
     history.push(`/`);
-    window.location.reload();
   };
 
   render() {

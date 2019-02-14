@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import Router from 'next/router';
 import WPAPI from 'wpapi';
 import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
@@ -14,23 +15,53 @@ const headerImageStyle = {
 };
 
 class Index extends Component {
-  static async getInitialProps() {
-    const [page, posts, pages] = await Promise.all([
-      wp
-        .pages()
-        .slug('welcome')
-        .embed()
-        .then(data => {
-          return data[0];
-        }),
-      wp.posts().embed(),
-      wp.pages().embed(),
-    ]);
+  state = {
+    id: '',
+  };
 
-    return { page, posts, pages };
+  static async getInitialProps() {
+    try {
+      const [page, posts, pages] = await Promise.all([
+        wp
+          .pages()
+          .slug('welcome')
+          .embed()
+          .then(data => {
+            return data[0];
+          }),
+        wp.posts().embed(),
+        wp.pages().embed(),
+      ]);
+
+      return { page, posts, pages };
+    } catch (err) {
+      localStorage.removeItem(Config.AUTH_TOKEN);
+      wp.setHeaders('Authorization', '');
+      Router.push('/');
+    }
+
+    return null;
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem(Config.AUTH_TOKEN);
+    if (token) {
+      wp.setHeaders('Authorization', `Bearer ${token}`);
+      wp.users()
+        .me()
+        .then(data => {
+          const { id } = data;
+          this.setState({ id });
+        })
+        .catch(() => {
+          localStorage.removeItem(Config.AUTH_TOKEN);
+          Router.push('/');
+        });
+    }
   }
 
   render() {
+    const { id } = this.state;
     const { posts, pages, headerMenu, page } = this.props;
     const fposts = posts.map(post => {
       return (
@@ -85,6 +116,16 @@ class Index extends Component {
         {fposts}
         <h2>Pages</h2>
         {fpages}
+        {id ? (
+          <div>
+            <h2>You Are Logged In</h2>
+            <p>
+              Using an authenticated query, we got your id: <span>{id}</span>
+            </p>
+          </div>
+        ) : (
+          ''
+        )}
       </Layout>
     );
   }
