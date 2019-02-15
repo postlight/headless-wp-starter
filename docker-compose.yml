@@ -10,17 +10,16 @@ services:
             - MYSQL_USER=${WORDPRESS_DB_USER}
         image: mariadb
         ports:
-            - "3307:3306"
+            - '3307:3306'
     wp-headless:
         build: .
         command: bash -c 'install_wordpress && apache2-foreground'
         container_name: wp-headless
         depends_on:
             - db-headless
-        env_file:
-            ./.env
+        env_file: ./.env
         ports:
-            - "8080:8080"
+            - '8080:8080'
         user: www-data
         volumes:
             - ./wordpress:/var/www/html
@@ -32,10 +31,10 @@ services:
         command: bash -c 'yarn && yarn start'
         container_name: frontend
         expose:
-            - "3000"
+            - '3000'
         image: node
         ports:
-            - "3000:3000"
+            - '3000:3000'
         user: node
         volumes:
             - ./frontend:/home/node/app
@@ -44,10 +43,10 @@ services:
         command: bash -c 'yarn && yarn start'
         container_name: frontend-graphql
         expose:
-            - "3001"
+            - '3001'
         image: node
         ports:
-            - "3001:3001"
+            - '3001:3001'
         user: node
         volumes:
             - ./frontend-graphql:/home/node/app

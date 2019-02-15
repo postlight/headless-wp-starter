@@ -2,10 +2,11 @@
 
 [![Build status](https://travis-ci.org/postlight/headless-wp-starter.svg)](https://travis-ci.org/postlight/headless-wp-starter)
 
-Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up two things:
+Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up three things:
 
-1.  A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/) and [GraphQL](http://graphql.org/) (**new!**).
+1.  A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/) and [GraphQL](http://graphql.org/).
 2.  A server-side rendered React frontend using [Next.js](https://github.com/zeit/next.js/).
+3.  A React frontend powered by GraphQL
 
 You can read all about it in [this handy introduction](https://trackchanges.postlight.com/introducing-postlights-wordpress-react-starter-kit-a61e2633c48c).
 
@@ -15,10 +16,12 @@ You can read all about it in [this handy introduction](https://trackchanges.post
 -   A plugin which exposes a newer, in-progress [GraphQL API for WordPress](https://wpgraphql.com/).
 -   The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
 -   Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
+-   JWT Authentication Plugins: [JWT WP REST](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) and [JWT WP GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication)
 -   All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
 -   A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
 -   A starter frontend React app powered by [Next.js](https://learnnextjs.com/).
--   [Docker](https://www.docker.com/) containers and scripts to manage them, for easily running the frontend React app and backend locally or deploying it to any hosting provider with Docker support.
+-   A starter frontend React app powered by [GraphQL](http://graphql.org/).
+-   [Docker](https://www.docker.com/) containers and scripts to manage them, for easily running the frontend React apps and backend locally or deploying it to any hosting provider with Docker support.
 
 Let's get started.
 
@@ -26,7 +29,7 @@ Before you install WordPress, make sure you have [Docker](https://www.docker.com
 
 ## Install
 
-Docker Compose builds and starts three containers by default - `db-headless`, `wp-headless`, & `frontend`:
+Docker Compose builds and starts four containers by default - `db-headless`, `wp-headless`, `frontend` & `frontend-graphql`:
 
     docker-compose up -d
 
@@ -39,17 +42,24 @@ In either case you can follow the Docker output to see build progress and logs:
 
     docker-compose logs -f
 
-Wait a few minutes for Docker to build the services for the first time. After the initial build, startup should only take a few seconds.
+**Wait a few minutes** for Docker to build the services for the first time. After the initial build, startup should only take a few seconds.
 
 ### Frontend
 
-The `frontend` container exposes Node on host port `3000`: [http://localhost:3000](http://localhost:3000)
+This starter kit provides two frontend containers:
 
-Follow `docker-compose logs -f frontend` for the output of `yarn start`.
+-   `frontend` container powered by Next.js, exposed on port `3000`: [http://localhost:3000](http://localhost:3000)
+-   `frontend-graphql` container powered by GraphQL, exposed on port `3001`: [http://localhost:3001](http://localhost:3001)
+
+Follow `yarn start` output, by running docker-compose `logs` command followed by the container name, for example:
+
+    docker-compose logs -f frontend
 
 If you need to restart that process, restart the container:
 
     docker-compose restart frontend
+
+**PS:** Browsing the Next.js frontend in development mode is relatively slow due to the fact that pages are being built on demand. In a production environment, there will be a significant improvement in page load.
 
 ### Backend
 
@@ -106,9 +116,15 @@ If you need more advanced functionality check out the available WP-CLI commands:
 
 ## Extend the REST and GraphQL APIs
 
-At this point you can start setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme. You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about).
+At this point you can start setting up custom fields in the WordPress admin, and if necessary, creating [custom REST API endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) in the Postlight Headless WordPress Starter theme.
 
-The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`. Remember to lint your code as you go:
+The primary theme code is located in `wordpress/wp-content/themes/postlight-headless-wp`.
+
+You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about), An example of creating a Custom Type and registering a Resolver is located in: `wordpress/wp-content/themes/postlight-headless-wp/inc/graphql`.
+
+## Linting
+
+Remember to lint your code as you go:
 
     docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
 
