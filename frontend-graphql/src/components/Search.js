@@ -39,7 +39,7 @@ class Search extends Component {
   };
 
   /**
-   * Execute page query, process the response and set the state
+   * Execute search query, process the response and set the state
    */
   executeSearch = async () => {
     const { client } = this.props;
