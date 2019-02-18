@@ -110,11 +110,22 @@ class Home extends Component {
    * Execute the protected query and update state
    */
   executeProtectedQuery = async () => {
-    const result = await this.authClient.query({
-      query: PROTECTED_QUERY,
-    });
-    const { userId } = result.data.viewer;
-    this.setState({ userId });
+    let error = null;
+    const result = await this.authClient
+      .query({
+        query: PROTECTED_QUERY,
+      })
+      .catch(err => {
+        error = err;
+      });
+    if (!error) {
+      const { userId } = result.data.viewer;
+      this.setState({ userId });
+    } else {
+      const { history } = this.props;
+      localStorage.removeItem(AUTH_TOKEN);
+      history.push(`/login`);
+    }
   };
 
   /**
