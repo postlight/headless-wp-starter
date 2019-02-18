@@ -124,7 +124,9 @@ You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/gett
 
 ## REST & GraphQL JWT Authentication
 
-For the JWT Authentication to work, you need to edit the `.htaccess` file. For the REST JWT add the following:
+JWT Authentication requires some modifications in the `.htaccess` file.
+
+For the REST JWT implementation, add the following:
 
 ```
 RewriteEngine on
@@ -132,7 +134,7 @@ RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 ```
 
-For the GraphQL implementation, add the following:
+For the GraphQL JWT implementation, add the following:
 
 ```
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
@@ -140,11 +142,11 @@ SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 
 On another note, It's recommended that you use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define them in `wp-config.php`
 
-for the Rest API:
+For the Rest API:
 
     define('JWT_AUTH_SECRET_KEY', 'your-secret-here');
 
-for the GraphQL API:
+For the GraphQL API:
 
     define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', 'your-secret-here');
 
