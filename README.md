@@ -122,9 +122,23 @@ The primary theme code is located in `wordpress/wp-content/themes/postlight-head
 
 You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/getting-started/about), An example of creating a Custom Type and registering a Resolver is located in: `wordpress/wp-content/themes/postlight-headless-wp/inc/graphql`.
 
-## Rest & GraphQL JWT Authentication
+## REST & GraphQL JWT Authentication
 
-It's recommended that you use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define them in `wp-config.php`.
+For the JWT Authentication to work, you need to edit the `.htaccess` file. For the REST JWT add the following:
+
+```
+RewriteEngine on
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+```
+
+For the GraphQL implementation, add the following:
+
+```
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+```
+
+On another note, It's recommended that you use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define them in `wp-config.php`
 
 for the Rest API:
 
@@ -133,6 +147,8 @@ for the Rest API:
 for the GraphQL API:
 
     define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', 'your-secret-here');
+
+Make sure to read the documentation of [JWT REST](https://github.com/Tmeister/wp-api-jwt-auth) and [JWT GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication) for more info.
 
 ## Linting
 
