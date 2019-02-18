@@ -14,6 +14,14 @@ const headerImageStyle = {
   marginBottom: 50,
 };
 
+const tokenExpired = () => {
+  if (process.browser) {
+    localStorage.removeItem(Config.AUTH_TOKEN);
+  }
+  wp.setHeaders('Authorization', '');
+  Router.push('/login');
+};
+
 class Index extends Component {
   state = {
     id: '',
@@ -35,9 +43,9 @@ class Index extends Component {
 
       return { page, posts, pages };
     } catch (err) {
-      localStorage.removeItem(Config.AUTH_TOKEN);
-      wp.setHeaders('Authorization', '');
-      Router.push('/');
+      if (err.data.status === 403) {
+        tokenExpired();
+      }
     }
 
     return null;
@@ -53,9 +61,10 @@ class Index extends Component {
           const { id } = data;
           this.setState({ id });
         })
-        .catch(() => {
-          localStorage.removeItem(Config.AUTH_TOKEN);
-          Router.push('/');
+        .catch(err => {
+          if (err.data.status === 403) {
+            tokenExpired();
+          }
         });
     }
   }
