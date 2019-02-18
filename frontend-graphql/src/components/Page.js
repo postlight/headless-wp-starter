@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 
+/**
+ * GraphQL page query that takes a page slug as a filter
+ * Returns the title and content of the page
+ */
 const PAGE_QUERY = gql`
   query PageQuery($filter: String!) {
     pages(where: { name: $filter }) {
@@ -15,6 +19,9 @@ const PAGE_QUERY = gql`
   }
 `;
 
+/**
+ * Fetch and display a Page
+ */
 class Page extends Component {
   state = {
     page: {
@@ -27,6 +34,9 @@ class Page extends Component {
     this.executePageQuery();
   }
 
+  /**
+   * Execute page query, process the response and set the state
+   */
   executePageQuery = async () => {
     const { match, client } = this.props;
     let filter = match.params.slug;

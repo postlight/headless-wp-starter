@@ -9,6 +9,7 @@ import { createHttpLink } from 'apollo-link-http';
 import App from './components/App';
 import Config from './config';
 
+// Apollo GraphQL client
 const client = new ApolloClient({
   link: createHttpLink({
     uri: Config.gqlUrl,

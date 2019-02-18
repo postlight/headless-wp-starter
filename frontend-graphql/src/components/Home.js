@@ -14,6 +14,10 @@ const headerImageStyle = {
   marginBottom: 50,
 };
 
+/**
+ * GraphQL page query
+ * Gets page's tilte and content using slug as filter
+ */
 const PAGE_QUERY = gql`
   query PageQuery($filter: String!) {
     pages(where: { name: $filter }) {
@@ -28,6 +32,10 @@ const PAGE_QUERY = gql`
   }
 `;
 
+/**
+ * GraphQL pages and categories query
+ * Gets all available pages and posts tiltes and slugs
+ */
 const PAGES_AND_CATEGORIES_QUERY = gql`
   query PagesAndPostsQuery {
     posts {
@@ -49,6 +57,11 @@ const PAGES_AND_CATEGORIES_QUERY = gql`
   }
 `;
 
+/**
+ * GraphQL protected query, an example of an authenticated query
+ * If not authenticated it will return an error
+ * If authenticated it will return the viewer's id and username
+ */
 const PROTECTED_QUERY = gql`
   query ProtectedQuery {
     viewer {
@@ -69,11 +82,15 @@ class Home extends Component {
     posts: [],
   };
 
+  // used as a authenticated GraphQL client
   authClient = null;
 
   componentDidMount() {
     this.executePageQuery();
     this.executePagesAndCategoriesQuery();
+
+    // if localstorage contains a JWT token
+    // initiate a authenticated client and execute a protected query
     const authToken = localStorage.getItem(AUTH_TOKEN);
     if (authToken) {
       this.authClient = new ApolloClient({
@@ -89,6 +106,9 @@ class Home extends Component {
     }
   }
 
+  /**
+   * Execute the protected query and update state
+   */
   executeProtectedQuery = async () => {
     const result = await this.authClient.query({
       query: PROTECTED_QUERY,
@@ -97,6 +117,9 @@ class Home extends Component {
     this.setState({ userId });
   };
 
+  /**
+   * Execute the page query using filter and set the state
+   */
   executePageQuery = async () => {
     const { match, client } = this.props;
     let filter = match.params.slug;
@@ -111,6 +134,9 @@ class Home extends Component {
     this.setState({ page });
   };
 
+  /**
+   * Execute the pages and categories query and set the state
+   */
   executePagesAndCategoriesQuery = async () => {
     const { client } = this.props;
     const result = await client.query({

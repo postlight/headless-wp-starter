@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
-
+/**
+ * GraphQL post search query that takes a filter
+ * Returns the titles, slugs and authors of posts found
+ */
 const POST_SEARCH_QUERY = gql`
   query PostSearchQuery($filter: String!) {
     posts(where: { search: $filter }) {
@@ -19,6 +22,9 @@ const POST_SEARCH_QUERY = gql`
   }
 `;
 
+/**
+ * Search component that fetches results by filter
+ */
 class Search extends Component {
   state = {
     posts: [],
@@ -32,6 +38,9 @@ class Search extends Component {
     return true;
   };
 
+  /**
+   * Execute page query, process the response and set the state
+   */
   executeSearch = async () => {
     const { client } = this.props;
     const { filter } = this.state;

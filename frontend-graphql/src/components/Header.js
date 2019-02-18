@@ -6,6 +6,10 @@ import { compose } from 'recompose';
 import gql from 'graphql-tag';
 import { AUTH_TOKEN, USERNAME } from '../constants';
 
+/**
+ * GraphQL menu query
+ * Gets the labels, types (internal or external) and URLs
+ */
 const MENU_QUERY = gql`
   query MenuQuery {
     headerMenu {
@@ -16,6 +20,7 @@ const MENU_QUERY = gql`
   }
 `;
 
+// Checks if urltype is internal or external
 const isInternal = urltype => urltype.includes('internal');
 
 class Header extends Component {
@@ -27,6 +32,9 @@ class Header extends Component {
     this.executeMenu();
   }
 
+  /**
+   * Execute the menu query, parse the result and set the state
+   */
   executeMenu = async () => {
     const { client } = this.props;
     const result = await client.query({

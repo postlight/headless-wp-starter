@@ -3,6 +3,10 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { AUTH_TOKEN, USERNAME } from '../constants';
 
+/**
+ * GraphQL mutation used for logging in
+ * Returns an authToken and nickname
+ */
 const LOGIN_MUTATION = gql`
   mutation LoginMutation(
     $username: String!
@@ -24,6 +28,9 @@ const LOGIN_MUTATION = gql`
   }
 `;
 
+/**
+ * Login component that uses a graphql mutation
+ */
 class Login extends Component {
   state = {
     username: '',

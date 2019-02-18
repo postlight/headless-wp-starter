@@ -3,6 +3,10 @@ import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
 
+/**
+ * GraphQL category query that takes a category slug as a filter
+ * Returns the posts belonging to the category and the category name and ID
+ */
 const CATEGORY_QUERY = gql`
   query CategoryQuery($filter: String!) {
     posts(where: { categoryName: $filter }) {
@@ -24,6 +28,9 @@ const CATEGORY_QUERY = gql`
   }
 `;
 
+/**
+ * Fetch and display a Category
+ */
 class Category extends Component {
   state = {
     category: {
@@ -36,6 +43,9 @@ class Category extends Component {
     this.executeCategoryQuery();
   }
 
+  /**
+   * Execute the category query, parse the result and set the state
+   */
   executeCategoryQuery = async () => {
     const { match, client } = this.props;
     const filter = match.params.slug;
