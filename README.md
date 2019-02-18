@@ -172,8 +172,12 @@ That's why we've packaged the frontend app in a Docker container, which can be d
 
 **Breaking Change Alert - Docker**
 
-If you had the project already setup and then updated to a commit newer than `99b4d7b`, you will need to go through the [installation](https://github.com/postlight/headless-wp-starter/tree/feat-docker#install) process again because the project was migrated to Docker.
+If you had the project already setup and then updated to a commit newer than `99b4d7b`, you will need to go through the installation process again because the project was migrated to Docker.
 You will need to also migrate MySQL data to the new MySQL db container.
+
+**Docker Caching**
+
+In some cases, you need to delete the `wp-headless` image (not only the container) and rebuild it.
 
 **CORS errors**
 
