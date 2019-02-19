@@ -33,18 +33,20 @@ Docker Compose builds and starts four containers by default - `db-headless`, `wp
 
     docker-compose up -d
 
-Alternatively, run WordPress with Docker & the frontend locally:
+**Wait a few minutes** for Docker to build the services for the first time. After the initial build, startup should only take a few seconds.
+
+You can follow the Docker output to see build progress and logs:
+
+    docker-compose logs -f
+
+Alternatively, you can use some useful Docker tools like Kitematic and/or VSCode Docker plugin to follow logs, start / stop / remove containers and images.
+
+_Optional:_ you can run the frontend locally while WordPress still runs on Docker:
 
     docker-compose up -d wp-headless
     cd frontend && yarn && yarn start
 
-In either case you can follow the Docker output to see build progress and logs:
-
-    docker-compose logs -f
-
-**Wait a few minutes** for Docker to build the services for the first time. After the initial build, startup should only take a few seconds.
-
-### Frontend
+## Frontend
 
 This starter kit provides two frontend containers:
 
@@ -61,7 +63,7 @@ If you need to restart that process, restart the container:
 
 **PS:** Browsing the Next.js frontend in development mode is relatively slow due to the fact that pages are being built on demand. In a production environment, there will be a significant improvement in page load.
 
-### Backend
+## Backend
 
 The `wp-headless` container exposes Apache on host port `8080`:
 
@@ -79,7 +81,7 @@ This container includes some development tools:
 
 Apache/PHP logs are available via `docker-compose logs -f wp-headless`.
 
-### Database
+## Database
 
 The `db-headless` container exposes MySQL on host port `3307`:
 
@@ -140,7 +142,7 @@ For the GraphQL JWT implementation, add the following:
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ```
 
-On another note, It's recommended that you use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define them in `wp-config.php`
+It's recommended that you use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define them in `wp-config.php`
 
 For the Rest API:
 
