@@ -21,6 +21,7 @@ class RoboFile extends \Robo\Tasks {
         $opts = [
             'wp-user' => 'nedstark',
             'wp-pw' => 'winteriscoming',
+            'wp-url' => 'localhost:8080',
             'wp-theme-dir' => 'postlight-headless-wp',
             'wp-theme-name' => 'Postlight Headless WP Starter',
             'wp-email' => 'nedstark@headlesswpstarter.dev',
@@ -69,7 +70,7 @@ class RoboFile extends \Robo\Tasks {
 
         $install_command = implode( ' ', [
                 'core install',
-                '--url=localhost:8080',
+                '--url="' . $opts['wp-url']. '"',
                 '--title="' . $opts['wp-theme-name'] . '"',
                 '--admin_user="' . $opts['wp-user'] . '"',
                 '--admin_password="' . $opts['wp-pw'] . '"',
@@ -144,7 +145,7 @@ class RoboFile extends \Robo\Tasks {
         $this->wp( 'menu location assign header-menu header-menu' );
 
         $this->io()->success(
-            'Great. You can now log into WordPress at: http://localhost:8080/wp-admin ('
+            'Great. You can now log into WordPress at: http://' . $opts['wp-url'] . '/wp-admin ('
             . $opts['wp-user'] . '/' . $opts['wp-pw'] . ')'
         );
     }
@@ -183,8 +184,8 @@ class RoboFile extends \Robo\Tasks {
             $this->io()->success( 'About to run data migration from ' . $opts['migratedb-from'] );
             $this->taskExec( $command )->run();
             // Set siteurl and home
-            $this->wp( 'option update siteurl http://localhost:8080' );
-            $this->wp( 'option update home http://localhost:8080' );
+            $this->wp( 'option update siteurl http://'. $opts['wp-url']);
+            $this->wp( 'option update home http://' . $opts['wp-url']);
         } else {
             $this->say(
                 'WP Migrate DB Pro: No source installation specified. Please set migratedb-from in the robo.yml file.'

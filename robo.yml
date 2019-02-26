@@ -4,6 +4,7 @@ command:
         options:
           wp-user: nedstark
           wp-pw: winteriscoming
+          wp-url: "localhost:8080"
           wp-theme-dir: postlight-headless-wp
           wp-theme-name: Postlight Headless WP Starter
           wp-email: nedstark@headlesswpstarter.dev
