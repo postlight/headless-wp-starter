@@ -1,25 +1,29 @@
-import React from "react";
-import { Config } from "../config.js";
+import React from 'react';
+import WPAPI from 'wpapi';
+import Config from '../config';
 
-const PageWrapper = Comp => (
+const wp = new WPAPI({ endpoint: Config.apiUrl });
+
+// This route is copied from the plugin: wordpress/wp-content/plugins/wp-rest-api-v2-menus/wp-rest-api-v2-menus.php
+wp.menus = wp.registerRoute('menus/v1', '/menus/(?P<id>[a-zA-Z(-]+)');
+
+const PageWrapper = Comp =>
   class extends React.Component {
     static async getInitialProps(args) {
-      const headerMenuRes = await fetch(
-        `${Config.apiUrl}/wp-json/menus/v1/menus/header-menu`
-      );
-      const headerMenu = await headerMenuRes.json();
+      const [headerMenu, childProps] = await Promise.all([
+        wp.menus().id('header-menu'),
+        Comp.getInitialProps(args),
+      ]);
+
       return {
         headerMenu,
-        ...(Comp.getInitialProps ? await Comp.getInitialProps(args) : null),
+        ...(Comp.getInitialProps ? childProps : null),
       };
     }
 
     render() {
-      return (
-        <Comp {...this.props} />
-      )
+      return <Comp {...this.props} />;
     }
-  }
-)
+  };
 
 export default PageWrapper;

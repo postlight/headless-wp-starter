@@ -1,83 +1,143 @@
-import Layout from "../components/Layout.js";
-import React, { Component } from "react";
-import fetch from "isomorphic-unfetch";
-import Link from "next/link";
-import PageWrapper from "../components/PageWrapper.js";
-import Menu from "../components/Menu.js";
-import { Config } from "../config.js";
+import React, { Component } from 'react';
+import Link from 'next/link';
+import Router from 'next/router';
+import WPAPI from 'wpapi';
+import Layout from '../components/Layout';
+import PageWrapper from '../components/PageWrapper';
+import Menu from '../components/Menu';
+import Config from '../config';
+
+const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 const headerImageStyle = {
-    marginTop: 50,
-    marginBottom: 50
+  marginTop: 50,
+  marginBottom: 50,
+};
+
+const tokenExpired = () => {
+  if (process.browser) {
+    localStorage.removeItem(Config.AUTH_TOKEN);
+  }
+  wp.setHeaders('Authorization', '');
+  Router.push('/login');
 };
 
 class Index extends Component {
-    static async getInitialProps(context) {
-        const pageRes = await fetch(
-            `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
-        );
-        const page = await pageRes.json();
-        const postsRes = await fetch(
-            `${Config.apiUrl}/wp-json/wp/v2/posts?_embed`
-        );
-        const posts = await postsRes.json();
-        const pagesRes = await fetch(
-            `${Config.apiUrl}/wp-json/wp/v2/pages?_embed`
-        );
-        const pages = await pagesRes.json();
-        return { page, posts, pages };
+  state = {
+    id: '',
+  };
+
+  static async getInitialProps() {
+    try {
+      const [page, posts, pages] = await Promise.all([
+        wp
+          .pages()
+          .slug('welcome')
+          .embed()
+          .then(data => {
+            return data[0];
+          }),
+        wp.posts().embed(),
+        wp.pages().embed(),
+      ]);
+
+      return { page, posts, pages };
+    } catch (err) {
+      if (err.data.status === 403) {
+        tokenExpired();
+      }
     }
 
-    render() {
-        const posts = this.props.posts.map((post, index) => {
-            return (
-                <ul key={index}>
-                    <li>
-                        <Link
-                            as={`/post/${post.slug}`}
-                            href={`/post?slug=${post.slug}&apiRoute=post`}
-                        >
-                            <a>{post.title.rendered}</a>
-                        </Link>
-                    </li>
-                </ul>
-            );
+    return null;
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem(Config.AUTH_TOKEN);
+    if (token) {
+      wp.setHeaders('Authorization', `Bearer ${token}`);
+      wp.users()
+        .me()
+        .then(data => {
+          const { id } = data;
+          this.setState({ id });
+        })
+        .catch(err => {
+          if (err.data.status === 403) {
+            tokenExpired();
+          }
         });
-        const pages = this.props.pages.map((page, index) => {
-            return (
-                <ul key={index}>
-                    <li>
-                        <Link
-                            as={`/page/${page.slug}`}
-                            href={`/post?slug=${page.slug}&apiRoute=page`}
-                        >
-                            <a>{page.title.rendered}</a>
-                        </Link>
-                    </li>
-                </ul>
-            );
-        });
-        return (
-            <Layout>
-                <Menu menu={this.props.headerMenu} />
-                <img
-                    src="/static/images/wordpress-plus-react-header.png"
-                    width="815"
-                    style={headerImageStyle}
-                />
-                <h1>{this.props.page.title.rendered}</h1>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: this.props.page.content.rendered
-                    }}
-                />
-                <h2>Posts</h2>
-                {posts}
-                <h2>Pages</h2>
-                {pages}
-            </Layout>
-        );
     }
+  }
+
+  render() {
+    const { id } = this.state;
+    const { posts, pages, headerMenu, page } = this.props;
+    const fposts = posts.map(post => {
+      return (
+        <ul key={post.slug}>
+          <li>
+            <Link
+              as={`/post/${post.slug}`}
+              href={`/post?slug=${post.slug}&apiRoute=post`}
+            >
+              {post.title.rendered}
+            </Link>
+          </li>
+        </ul>
+      );
+    });
+    const fpages = pages.map(ipage => {
+      return (
+        <ul key={ipage.slug}>
+          <li>
+            <Link
+              as={`/page/${ipage.slug}`}
+              href={`/post?slug=${ipage.slug}&apiRoute=page`}
+            >
+              {ipage.title.rendered}
+            </Link>
+          </li>
+        </ul>
+      );
+    });
+    return (
+      <Layout>
+        <Menu menu={headerMenu} />
+        <img
+          src="/static/images/wordpress-plus-react-header.png"
+          width="815"
+          alt="logo"
+          style={headerImageStyle}
+        />
+        <h1>{page.title.rendered}</h1>
+        <div
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: page.content.rendered,
+          }}
+        />
+        <p>
+          Make sure to check the{' '}
+          <a href="http://localhost:3001/">React frontend</a>, built with{' '}
+          <a href="https://graphql.org/">GraphQL</a>!
+        </p>
+        <h2>Posts</h2>
+        {fposts}
+        <h2>Pages</h2>
+        {fpages}
+        {id ? (
+          <div>
+            <h2>You Are Logged In</h2>
+            <p>
+              Using an authenticated query, we got your id: <span>{id}</span>
+            </p>
+          </div>
+        ) : (
+          ''
+        )}
+      </Layout>
+    );
+  }
 }
 
 export default PageWrapper(Index);

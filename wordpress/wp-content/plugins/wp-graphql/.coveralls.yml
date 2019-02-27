@@ -1,2 +1,0 @@
-service_name: travis-ci
-coverage_clover: tests/_output/coverage.xml

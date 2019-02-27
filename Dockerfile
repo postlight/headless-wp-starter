@@ -1,31 +1,34 @@
-FROM ubuntu:18.04
+FROM wordpress
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN sed -i 's/80/8080/' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf
 
-RUN apt-get update && apt-get install -yq curl php gnupg wget sudo lsb-release debconf-utils less
+RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# install_wordpress.sh & misc. dependencies
+RUN apt-get update; \
+	apt-get install -yq mysql-client netcat sudo less git unzip
 
-COPY install.sh /usr/src/app/install.sh
-COPY docker/install_php_extensions.sh /usr/src/app/install_php_extensions.sh
+# wp-cli
+RUN curl -sL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o wp; \
+	chmod +x wp; \
+	mv wp /usr/local/bin/; \
+	mkdir /var/www/.wp-cli; \
+	chown www-data:www-data /var/www/.wp-cli
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list
+# composer
+RUN curl -sL https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer | php; \
+	mv composer.phar /usr/local/bin/composer; \
+	mkdir /var/www/.composer; \
+	chown www-data:www-data /var/www/.composer
 
-RUN apt-get update && apt-get install -yq yarn
+# phpunit, phpcs, wpcs
+RUN sudo -u www-data composer global require \
+	phpunit/phpunit \
+	dealerdirect/phpcodesniffer-composer-installer \
+	phpcompatibility/phpcompatibility-wp \
+	automattic/vipwpcs
 
-RUN ./install.sh
-RUN ./install_php_extensions.sh
+# include composer-installed executables in $PATH
+ENV PATH="/var/www/.composer/vendor/bin:${PATH}"
 
-RUN wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
-RUN dpkg -i mysql-apt-config_0.8.10-1_all.deb
-RUN sudo a2enmod rewrite
-RUN chown -R www-data:www-data /var/www/html/
-
-COPY mysql_config.sh RoboFile.php wp-cli.yml robo.yml /var/www/html/
-COPY docker/000-default.conf /etc/apache2/sites-enabled/
-COPY docker/ports.conf /etc/apache2/
-WORKDIR /var/www/html
-
-CMD apachectl -D FOREGROUND
+EXPOSE 8080

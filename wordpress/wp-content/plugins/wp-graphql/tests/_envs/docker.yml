@@ -1,8 +1,0 @@
-modules:
-    config:
-        WPDb:
-            dsn: 'mysql:host=mysql_test;dbname=wpgraphql_test'
-            password: 'testing'
-        WPLoader:
-            dbHost: "mysql_test"
-            dbPassword: "testing"

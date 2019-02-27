@@ -1,0 +1,17 @@
+services:
+    - docker
+
+addons:
+    apt:
+        packages:
+            - docker-ce
+
+before_script:
+    - chmod -R o+w . # ensure docker can write wp & frontend installation files
+    - docker-compose up -d
+    - while ! ((docker logs frontend) | grep 'Ready'); do sleep 10; done # wait for frontend install
+    - while ! ((docker logs wp-headless) | grep 'You can now log in'); do sleep 10; done # wait for wordpress install
+
+script:
+    - curl localhost:3000 | grep 'Congratulations!'
+    - docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs

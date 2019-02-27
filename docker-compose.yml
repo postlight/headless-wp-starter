@@ -1,29 +1,53 @@
-
-version: '3.3'
+version: '3'
 
 services:
     db-headless:
-      image: mysql:5.7.24
-      container_name: db-headless
-      ports:
-        - "3307:3306"
-      volumes:
-        - ./docker/dbshared:/var/dbshared
-      environment:
-        MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: wp_headless
-        MYSQL_USER: wp_headless
-        MYSQL_PASSWORD: wp_headless
-
+        container_name: db-headless
+        environment:
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes
+            - MYSQL_DATABASE=${WORDPRESS_DB_NAME}
+            - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
+            - MYSQL_USER=${WORDPRESS_DB_USER}
+        image: mariadb
+        ports:
+            - '3307:3306'
     wp-headless:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      depends_on:
-        - db-headless
-      volumes:
-        - .:/var/www/html
-      container_name: wp-headless
-      ports:
-        - "8080:8080"
-        - "3000:3000"
+        build: .
+        command: bash -c 'install_wordpress && apache2-foreground'
+        container_name: wp-headless
+        depends_on:
+            - db-headless
+        env_file: ./.env
+        ports:
+            - '8080:8080'
+        user: www-data
+        volumes:
+            - ./wordpress:/var/www/html
+            - ./docker/install_wordpress.sh:/usr/local/bin/install_wordpress
+            - ./docker/migratedb_import.sh:/usr/local/bin/migratedb_import
+            - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
+            - ./docker/plugins:/var/www/plugins
+    frontend:
+        command: bash -c 'yarn && yarn start'
+        container_name: frontend
+        expose:
+            - '3000'
+        image: node
+        ports:
+            - '3000:3000'
+        user: node
+        volumes:
+            - ./frontend:/home/node/app
+        working_dir: /home/node/app
+    frontend-graphql:
+        command: bash -c 'yarn && yarn start'
+        container_name: frontend-graphql
+        expose:
+            - '3001'
+        image: node
+        ports:
+            - '3001:3001'
+        user: node
+        volumes:
+            - ./frontend-graphql:/home/node/app
+        working_dir: /home/node/app

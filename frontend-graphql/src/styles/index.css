@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+input {
+  max-width: 500px;
+}
+
+.gray {
+  color: #828282;
+}
+
+div {
+  box-sizing: unset;
+}
+
+.orange {
+  background-color: #ff6600;
+}
+
+.login {
+  width: 300px;
+}
+
+.items-start {
+  margin-top: 20px;
+}
+
+.background-gray {
+  background-color: rgb(246, 246, 239);
+}
+
+.search {
+  margin-left: 30px;
+}
+
+.padding {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.input-padding {
+  padding: 0px 20px;
+}
+
+.table {
+  display: table;
+}
+
+.pa1 {
+  height: 50px;
+  line-height: 50px;
+}
+
+.bottomborder {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.topborder {
+  border-top: 1px solid #f1f1f1;
+}
+
+.pa2 {
+  line-height: 30px;
+  padding-left: 0px;
+}
+
+.f11 {
+  font-size: 11px;
+}
+
+.ml1 {
+  padding-right: 20px;
+}
+
+.button {
+  font-family: monospace;
+  font-size: 10pt;
+  color: black;
+  background-color: buttonface;
+  text-align: center;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  cursor: pointer;
+  max-width: 250px;
+}
