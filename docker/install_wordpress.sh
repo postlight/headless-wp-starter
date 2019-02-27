@@ -52,8 +52,7 @@ wp plugin install --activate --force \
     wp-rest-api-v2-menus \
     jwt-authentication-for-wp-rest-api \
     https://github.com/wp-graphql/wp-graphql/archive/master.zip \
-    /var/www/plugins/*.zip \
-    https://github.com/wp-graphql/wp-graphql-jwt-authentication/archive/master.zip \
+    https://github.com/wp-graphql/wp-graphql-jwt-authentication/archive/v0.3.1.zip \
     /var/www/plugins/*.zip
 
 wp term update category 1 --name="Sample Category"
