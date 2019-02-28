@@ -80,7 +80,7 @@ class Index extends Component {
               as={`/post/${post.slug}`}
               href={`/post?slug=${post.slug}&apiRoute=post`}
             >
-              {post.title.rendered}
+              <a>{post.title.rendered}</a>
             </Link>
           </li>
         </ul>
@@ -94,7 +94,7 @@ class Index extends Component {
               as={`/page/${ipage.slug}`}
               href={`/post?slug=${ipage.slug}&apiRoute=page`}
             >
-              {ipage.title.rendered}
+              <a>{ipage.title.rendered}</a>
             </Link>
           </li>
         </ul>
