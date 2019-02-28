@@ -33,7 +33,8 @@ class Login extends Component {
         Router.push('/');
       })
       .catch(() => {
-        message = ' - Wrong password';
+        message =
+          ' -  Sorry, that username and password combination is not valid.';
         this.setState({ message });
       });
   }
