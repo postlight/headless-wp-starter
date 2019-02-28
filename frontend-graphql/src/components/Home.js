@@ -205,22 +205,29 @@ class Home extends Component {
               </li>
             ))}
           </ul>
+          {authToken ? (
+            <div>
+              <h2>You Are Logged In</h2>
+              <p>
+                Your user ID is <span>{userId}</span>, retrieved via an
+                authenticated API query.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <h2>You Are Not Logged In</h2>
+              <p>
+                The frontend is not making authenticated API requests.{' '}
+                <a href="/login">Log in.</a>
+              </p>
+            </div>
+          )}
+          <h2>Where You're At</h2>
           <p>
             You are looking at the GraphQL-powered React frontend. Be sure to
             also check out the{' '}
             <a href="http://localhost:3000/">REST-powered frontend</a>.
           </p>
-          {authToken ? (
-            <div>
-              <h2>You Are Logged In</h2>
-              <p>
-                Using an authenticated query, we got your id:{' '}
-                <span>{userId}</span>
-              </p>
-            </div>
-          ) : (
-            ''
-          )}
         </div>
       </div>
     );
