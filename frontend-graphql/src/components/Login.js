@@ -47,7 +47,8 @@ class Login extends Component {
   };
 
   handleError = () => {
-    const message = ' - Wrong password';
+    const message =
+      ' - Sorry, that username and password combination is not valid.';
     this.setState({ message });
   };
 
