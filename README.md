@@ -2,32 +2,32 @@
 
 [![Build status](https://travis-ci.org/postlight/headless-wp-starter.svg)](https://travis-ci.org/postlight/headless-wp-starter)
 
-Postlight's Headless WordPress + React Starter Kit is an automated toolset that will spin up three things:
+[Postlight](https://postlight.com)'s Headless WordPress + React Starter Kit is an automated toolset that will spin up three things:
 
 1.  A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/) and [GraphQL](http://graphql.org/).
-2.  A server-side rendered React frontend using [Next.js](https://github.com/zeit/next.js/).
-3.  Another React frontend powered by GraphQL
+2.  A sample React frontend powered by the [WP GraphQL API](https://www.wpgraphql.com/) which supports posts, pages, categories, menus, search, and user sign-in.
+3.  Another sample server-side rendered React frontend using [Next.js](https://github.com/zeit/next.js/) powered by the WP REST API.
 
 You can read all about it in [this handy introduction](https://postlight.com/trackchanges/introducing-postlights-wordpress-react-starter-kit).
 
 **What's inside:**
 
--   An automated installer script which bootstraps a core WordPress installation that provides an established, stable REST API.
--   A plugin which exposes a newer, in-progress [GraphQL API for WordPress](https://wpgraphql.com/).
--   The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
--   Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
--   JWT Authentication Plugins: [JWT WP REST](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) and [JWT WP GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication)
--   All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
--   A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
--   A starter frontend React app powered by [Next.js](https://learnnextjs.com/).
--   A starter frontend React app powered by [GraphQL](http://graphql.org/).
--   [Docker](https://www.docker.com/) containers and scripts to manage them, for easily running the frontend React apps and backend locally or deploying it to any hosting provider with Docker support.
+- An automated installer script which bootstraps a core WordPress installation that provides an established, stable REST API.
+- A plugin which exposes a newer, in-progress [GraphQL API for WordPress](https://wpgraphql.com/).
+- The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
+- Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
+- JWT authentication plugins: [JWT WP REST](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) and [JWT WP GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication).
+- All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS `Allow-Origin` headers, and useful logging functions for easy debugging.
+- A mechanism for easily importing data from an existing WordPress installation anywhere on the web using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) and its accompanying plugins (license required).
+- A sample, starter frontend React app powered by [GraphQL](http://graphql.org/).
+- Another sample, starter frontend React app, server-side rendered via [Next.js](https://learnnextjs.com/), powered by the WP REST API.
+- [Docker](https://www.docker.com/) containers and scripts to manage them, for easily running the frontend React apps and backend locally or deploying it to any hosting provider with Docker support.
 
 Let's get started.
 
-Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed. On Linux, you might need to install [docker-compose](https://docs.docker.com/compose/install/#install-compose) separately.
-
 ## Install
+
+Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed. On Linux, you might need to install [docker-compose](https://docs.docker.com/compose/install/#install-compose) separately.
 
 Docker Compose builds and starts four containers by default - `db-headless`, `wp-headless`, `frontend` & `frontend-graphql`:
 
@@ -46,14 +46,16 @@ _Optional:_ you can run the frontend locally while WordPress still runs on Docke
     docker-compose up -d wp-headless
     cd frontend && yarn && yarn start
 
+Once the containers are running, you can access the frontend and backend.
+
 ## Frontend
 
 This starter kit provides two frontend containers:
 
--   `frontend` container powered by Next.js, exposed on port `3000`: [http://localhost:3000](http://localhost:3000)
--   `frontend-graphql` container powered by GraphQL, exposed on port `3001`: [http://localhost:3001](http://localhost:3001)
+- `frontend` container powered by the WP REST API is server-side rendered using Next.js, and exposed on port `3000`: [http://localhost:3000](http://localhost:3000)
+- `frontend-graphql` container powered by GraphQL, exposed on port `3001`: [http://localhost:3001](http://localhost:3001)
 
-Follow `yarn start` output, by running docker-compose `logs` command followed by the container name, for example:
+Follow `yarn start` output by running docker-compose `logs` command followed by the container name. For example:
 
     docker-compose logs -f frontend
 
@@ -61,15 +63,15 @@ If you need to restart that process, restart the container:
 
     docker-compose restart frontend
 
-**PS:** Browsing the Next.js frontend in development mode is relatively slow due to the fact that pages are being built on demand. In a production environment, there will be a significant improvement in page load.
+**PS:** Browsing the Next.js frontend in development mode is relatively slow due to the fact that pages are being built on demand. In a production environment, there would be a significant improvement in page load.
 
 ## Backend
 
 The `wp-headless` container exposes Apache on host port `8080`:
 
--   Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
--   REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
--   GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql) (WP GraphQL plugin needs to be enabled first)
+- Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
+- REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
+- GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql) (Note: the WP GraphQL plugin needs to be enabled first)
 
 This container includes some development tools:
 
@@ -142,9 +144,9 @@ For the GraphQL JWT implementation, add the following:
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ```
 
-It's recommended that you use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define them in `wp-config.php`
+Use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define it in `wp-config.php`
 
-For the Rest API:
+For the REST API:
 
     define('JWT_AUTH_SECRET_KEY', 'your-secret-here');
 
@@ -152,11 +154,11 @@ For the GraphQL API:
 
     define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', 'your-secret-here');
 
-Make sure to read the documentation of [JWT REST](https://github.com/Tmeister/wp-api-jwt-auth) and [JWT GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication) for more info.
+Make sure to read [JWT REST](https://github.com/Tmeister/wp-api-jwt-auth) and [JWT GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication) documentation for more info.
 
 ## Linting
 
-Remember to lint your code as you go:
+Don't forget to lint your code as you go:
 
     docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
 
@@ -189,4 +191,4 @@ See anything else you'd like to add here? Please send a pull request!
 
 ---
 
-Made with ❤️ by [Postlight](https://postlight.com). Happy coding!
+🔬 A Labs project from your friends at [Postlight](https://postlight.com). Happy coding!
