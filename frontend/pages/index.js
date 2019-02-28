@@ -116,15 +116,16 @@ class Index extends Component {
             __html: page.content.rendered,
           }}
         />
-        <p>
-          Make sure to check the{' '}
-          <a href="http://localhost:3001/">React frontend</a>, built with{' '}
-          <a href="https://graphql.org/">GraphQL</a>!
-        </p>
         <h2>Posts</h2>
         {fposts}
         <h2>Pages</h2>
         {fpages}
+
+        <p>
+          You are looking at the REST API-powered React frontend. Be sure to
+          also check out the{' '}
+          <a href="http://localhost:3001/">GraphQL-powered frontend</a>.
+        </p>
         {id ? (
           <div>
             <h2>You Are Logged In</h2>

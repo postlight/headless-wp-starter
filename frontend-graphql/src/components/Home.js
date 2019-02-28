@@ -185,11 +185,6 @@ class Home extends Component {
               __html: page.content,
             }}
           />
-          <p>
-            Make sure to check the{' '}
-            <a href="http://localhost:3000/">React frontend</a>, built with{' '}
-            <a href="http://learnnextjs.com/">Next.js</a>!
-          </p>
           <h2>Posts</h2>
           <ul>
             {posts.map(post => (
@@ -210,6 +205,11 @@ class Home extends Component {
               </li>
             ))}
           </ul>
+          <p>
+            You are looking at the GraphQL-powered React frontend. Be sure to
+            also check out the{' '}
+            <a href="http://localhost:3000/">REST-powered frontend</a>.
+          </p>
           {authToken ? (
             <div>
               <h2>You Are Logged In</h2>
