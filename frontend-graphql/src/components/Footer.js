@@ -3,10 +3,10 @@ import React from 'react';
 const Footer = () => (
   <div className="padding topborder">
     <p>
-      <span role="img" aria-label="love">
-        ❤️
+      <span role="img" aria-label="microscope">
+        🔬
       </span>{' '}
-      <a href="https://postlight.com">Made by postlight</a>.
+      A <a href="https://postlight.com">Postlight Labs</a> project.
       <span role="img" aria-label="fork">
         🍴
       </span>{' '}
@@ -17,12 +17,13 @@ const Footer = () => (
     </p>
     <p>
       <span role="img" aria-label="wave">
-        👋
+        👋‍
       </span>{' '}
       Need help with your publishing platform?{' '}
       <a href="mailto:hello@postlight.com?subject=Partner+with+Postlight+on+a+headless+CMS+project">
-        Say hi.
+        Contact us
       </a>
+      .
     </p>
   </div>
 );
