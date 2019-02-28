@@ -63,7 +63,7 @@ class Post extends Component {
             __html: post.content,
           }}
         />
-        <div>{post.author.nickname}</div>
+        <div>Written by {post.author.nickname}</div>
       </div>
     );
   }
