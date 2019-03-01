@@ -5,14 +5,14 @@
 [Postlight](https://postlight.com)'s Headless WordPress + React Starter Kit is an automated toolset that will spin up three things:
 
 1.  A WordPress backend that serves its data via the [WP REST API](https://developer.wordpress.org/rest-api/) and [GraphQL](http://graphql.org/).
-2.  A sample React frontend powered by the [WP GraphQL API](https://www.wpgraphql.com/) which supports posts, pages, categories, menus, search, and user sign-in.
+2.  A sample React frontend powered by the [WP GraphQL API](https://www.wpgraphql.com/), which supports posts, pages, categories, menus, search, and user sign-in.
 3.  Another sample server-side rendered React frontend using [Next.js](https://github.com/zeit/next.js/) powered by the WP REST API.
 
 You can read all about it in [this handy introduction](https://postlight.com/trackchanges/introducing-postlights-wordpress-react-starter-kit).
 
 **What's inside:**
 
-- An automated installer script which bootstraps a core WordPress installation that provides an established, stable REST API.
+- An automated installer which bootstraps a core WordPress installation that provides an established, stable REST API.
 - A plugin which exposes a newer, in-progress [GraphQL API for WordPress](https://wpgraphql.com/).
 - The WordPress plugins you need to set up custom post types and custom fields ([Advanced Custom Fields](https://www.advancedcustomfields.com/) and [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)).
 - Plugins which expose those custom fields and WordPress menus in the [WP REST API](https://developer.wordpress.org/rest-api/) ([ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/) and [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)).
@@ -27,9 +27,9 @@ Let's get started.
 
 ## Install
 
-Before you install WordPress, make sure you have [Docker](https://www.docker.com) installed. On Linux, you might need to install [docker-compose](https://docs.docker.com/compose/install/#install-compose) separately.
+_Prerequisite:_ Before you begin, you need [Docker](https://www.docker.com) installed. On Linux, you might need to install [docker-compose](https://docs.docker.com/compose/install/#install-compose) separately.
 
-Docker Compose builds and starts four containers by default - `db-headless`, `wp-headless`, `frontend` & `frontend-graphql`:
+Docker Compose builds and starts four containers by default: `db-headless`, `wp-headless`, `frontend` & `frontend-graphql`:
 
     docker-compose up -d
 
@@ -46,7 +46,7 @@ _Optional:_ you can run the frontend locally while WordPress still runs on Docke
     docker-compose up -d wp-headless
     cd frontend && yarn && yarn start
 
-Once the containers are running, you can access the frontend and backend.
+Once the containers are running, you can visit the React frontends and backend WordPress admin in your browser.
 
 ## Frontend
 
@@ -71,7 +71,7 @@ The `wp-headless` container exposes Apache on host port `8080`:
 
 - Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
 - REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
-- GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql) (Note: the WP GraphQL plugin needs to be enabled first)
+- GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 
 This container includes some development tools:
 
@@ -95,11 +95,11 @@ You can also run a mysql shell on the container:
 
 ## Reinstall/Import
 
-Reinstall WordPress from scratch:
+To reinstall WordPress from scratch, run:
 
     docker exec wp-headless wp db reset --yes && docker exec wp-headless install_wordpress
 
-Import data from a mysqldump with `mysql`:
+To import data from a mysqldump with `mysql`, run:
 
     docker exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker exec wp-headless wp search-replace https://example.com http://localhost:8080
@@ -154,11 +154,11 @@ For the GraphQL API:
 
     define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', 'your-secret-here');
 
-Make sure to read [JWT REST](https://github.com/Tmeister/wp-api-jwt-auth) and [JWT GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication) documentation for more info.
+Make sure to read the [JWT REST](https://github.com/Tmeister/wp-api-jwt-auth) and [JWT GraphQL](https://github.com/wp-graphql/wp-graphql-jwt-authentication) documentation for more info.
 
 ## Linting
 
-Don't forget to lint your code as you go:
+Remember to lint your code as you go:
 
     docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
 
