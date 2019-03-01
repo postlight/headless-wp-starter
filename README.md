@@ -55,7 +55,11 @@ This starter kit provides two frontend containers:
 - `frontend` container powered by the WP REST API is server-side rendered using Next.js, and exposed on port `3000`: [http://localhost:3000](http://localhost:3000)
 - `frontend-graphql` container powered by GraphQL, exposed on port `3001`: [http://localhost:3001](http://localhost:3001)
 
-Follow `yarn start` output by running docker-compose `logs` command followed by the container name. For example:
+Here's what the frontend looks like:
+
+![Frontend Screencast](/wordpress-react-starter-kit-fe.gif)
+
+You can follow the `yarn start` output by running docker-compose `logs` command followed by the container name. For example:
 
     docker-compose logs -f frontend
 
