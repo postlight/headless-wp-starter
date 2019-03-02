@@ -16,7 +16,7 @@ const headerImageStyle = {
 
 /**
  * GraphQL page query
- * Gets page's tilte and content using slug as uri
+ * Gets page's title and content using slug as uri
  */
 const PAGE_QUERY = gql`
   query PageQuery($uri: String!) {
@@ -29,7 +29,7 @@ const PAGE_QUERY = gql`
 
 /**
  * GraphQL pages and categories query
- * Gets all available pages and posts tiltes and slugs
+ * Gets all available pages and posts titles and slugs
  */
 const PAGES_AND_CATEGORIES_QUERY = gql`
   query PagesAndPostsQuery {
