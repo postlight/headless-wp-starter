@@ -16,25 +16,20 @@ const headerImageStyle = {
 
 /**
  * GraphQL page query
- * Gets page's tilte and content using slug as filter
+ * Gets page's title and content using slug as uri
  */
 const PAGE_QUERY = gql`
-  query PageQuery($filter: String!) {
-    pages(where: { name: $filter }) {
-      edges {
-        node {
-          title
-          slug
-          content
-        }
-      }
+  query PageQuery($uri: String!) {
+    pageBy(uri: $uri) {
+      title
+      content
     }
   }
 `;
 
 /**
  * GraphQL pages and categories query
- * Gets all available pages and posts tiltes and slugs
+ * Gets all available pages and posts titles and slugs
  */
 const PAGES_AND_CATEGORIES_QUERY = gql`
   query PagesAndPostsQuery {
@@ -129,19 +124,19 @@ class Home extends Component {
   };
 
   /**
-   * Execute the page query using filter and set the state
+   * Execute the page query using uri and set the state
    */
   executePageQuery = async () => {
     const { match, client } = this.props;
-    let filter = match.params.slug;
-    if (!filter) {
-      filter = 'welcome';
+    let uri = match.params.slug;
+    if (!uri) {
+      uri = 'welcome';
     }
     const result = await client.query({
       query: PAGE_QUERY,
-      variables: { filter },
+      variables: { uri },
     });
-    const page = result.data.pages.edges[0].node;
+    const page = result.data.pageBy;
     this.setState({ page });
   };
 
