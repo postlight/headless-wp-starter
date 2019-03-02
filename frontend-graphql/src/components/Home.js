@@ -16,11 +16,11 @@ const headerImageStyle = {
 
 /**
  * GraphQL page query
- * Gets page's tilte and content using slug as filter
+ * Gets page's tilte and content using slug as uri
  */
 const PAGE_QUERY = gql`
-  query PageQuery($filter: String!) {
-    pageBy(uri: $filter) {
+  query PageQuery($uri: String!) {
+    pageBy(uri: $uri) {
       title
       content
     }
@@ -124,17 +124,17 @@ class Home extends Component {
   };
 
   /**
-   * Execute the page query using filter and set the state
+   * Execute the page query using uri and set the state
    */
   executePageQuery = async () => {
     const { match, client } = this.props;
-    let filter = match.params.slug;
-    if (!filter) {
-      filter = 'welcome';
+    let uri = match.params.slug;
+    if (!uri) {
+      uri = 'welcome';
     }
     const result = await client.query({
       query: PAGE_QUERY,
-      variables: { filter },
+      variables: { uri },
     });
     const page = result.data.pageBy;
     this.setState({ page });

@@ -3,12 +3,12 @@ import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 
 /**
- * GraphQL page query that takes a page slug as a filter
+ * GraphQL page query that takes a page slug as a uri
  * Returns the title and content of the page
  */
 const PAGE_QUERY = gql`
-  query PageQuery($filter: String!) {
-    pageBy(uri: $filter) {
+  query PageQuery($uri: String!) {
+    pageBy(uri: $uri) {
       title
       content
     }
@@ -35,13 +35,13 @@ class Page extends Component {
    */
   executePageQuery = async () => {
     const { match, client } = this.props;
-    let filter = match.params.slug;
-    if (!filter) {
-      filter = 'welcome';
+    let uri = match.params.slug;
+    if (!uri) {
+      uri = 'welcome';
     }
     const result = await client.query({
       query: PAGE_QUERY,
-      variables: { filter },
+      variables: { uri },
     });
     const page = result.data.pageBy;
     this.setState({ page });
