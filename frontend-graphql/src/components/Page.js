@@ -8,13 +8,9 @@ import gql from 'graphql-tag';
  */
 const PAGE_QUERY = gql`
   query PageQuery($filter: String!) {
-    pages(where: { name: $filter }) {
-      edges {
-        node {
-          title
-          content
-        }
-      }
+    pageBy(uri: $filter) {
+      title
+      content
     }
   }
 `;
@@ -47,7 +43,7 @@ class Page extends Component {
       query: PAGE_QUERY,
       variables: { filter },
     });
-    const page = result.data.pages.edges[0].node;
+    const page = result.data.pageBy;
     this.setState({ page });
   };
 
