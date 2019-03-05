@@ -108,9 +108,11 @@ To import data from a mysqldump with `mysql`, run:
     docker exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless < example.sql
     docker exec wp-headless wp search-replace https://example.com http://localhost:8080
 
-## Migrate DB Pro:
+## Import Data from Another WordPress Installation
 
-First set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` and recreate containers to enact the changes.
+You can use a plugin called [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) to connect to another WordPress installation and import data from it. (A Pro license will be required.)
+
+To do so, first set `MIGRATEDB_LICENSE` & `MIGRATEDB_FROM` in `.env` and recreate containers to enact the changes.
 
     docker-compose up -d
 
