@@ -132,23 +132,7 @@ You can also [modify and extend the GraphQL API](https://wpgraphql.com/docs/gett
 
 ## REST & GraphQL JWT Authentication
 
-JWT Authentication requires some modifications in the `.htaccess` file.
-
-For the REST JWT implementation, add the following:
-
-```
-RewriteEngine on
-RewriteCond %{HTTP:Authorization} ^(.*)
-RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
-```
-
-For the GraphQL JWT implementation, add the following:
-
-```
-SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
-```
-
-Use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define it in `wp-config.php`
+To give WordPress users the ability to sign in via the frontend app, use something like the [WordPress Salt generator](https://api.wordpress.org/secret-key/1.1/salt/) to generate a secret for JWT, then define it in `wp-config.php`
 
 For the REST API:
 
