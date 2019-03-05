@@ -148,13 +148,17 @@ Make sure to read the [JWT REST](https://github.com/Tmeister/wp-api-jwt-auth) an
 
 ## Linting
 
-Remember to lint your code as you go:
+Remember to lint your code as you go.
+
+To lint WordPress theme modifications, you can use [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) like this:
 
     docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
 
-You may also attempt to auto fix lint errors:
+You may also attempt to autofix PHPCS errors:
 
     docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcbf
+
+To lint and format the JavaScript apps, both [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) configuration files are included.
 
 ## Hosting
 
