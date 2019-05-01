@@ -51,3 +51,11 @@ services:
         volumes:
             - ./frontend-graphql:/home/node/app
         working_dir: /home/node/app
+
+    nginx:
+        image: nginx:alpine
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - '80:80'
+            - '443:443'
