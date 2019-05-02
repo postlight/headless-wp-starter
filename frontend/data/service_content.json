@@ -1,0 +1,28 @@
+{
+  "data": [{
+    "imgSrc":"/img/analysis.svg",
+    "imgAlt":"analysis",
+    "title":"日本市場分析",
+    "description":"分析產品在日本市場的需求，競爭產品的定位/價格，過去類似的募資專案來確定產品定位，並配合團隊的目標，選定適合的募資平台"
+  }, {
+    "imgSrc":"/img/ui.svg",
+    "imgAlt":"ui",
+    "title":"募資頁面製作",
+    "description":"依團隊需求，我們可根據產品原有的內容/素材，打造在地化的頁面；也可以由在日本的母語人士及專業設計師重新量身打造頁面"
+  }, {
+    "imgSrc":"/img/market.svg",
+    "imgAlt":"market",
+    "title":"市場預熱行銷",
+    "description":"幫團隊製作預熱的Landing Page，事先搜集受眾，優化廣告轉化率，開設日本版粉絲頁社群，並聯繫相關公關媒體報導，為專案線上當天準備"
+  }, {
+    "imgSrc":"/img/promote.svg",
+    "imgAlt":"promote",
+    "title":"專案上線推廣",
+    "description":"根據團隊預算，擬定適合團隊的專案上線後行銷策略，包含日本各式廣告投放、當地KOL操作、試用會舉辦，並透過募資平台與出資者互動、擴散行銷"
+  }, {
+    "imgSrc":"/img/manage.svg",
+    "imgAlt":"manage",
+    "title":"募資後管理/開發",
+    "description":"募資後，持續協助團隊與出資者的溝通、進度報告、協助商品的發送以及後續的售後服務；依團隊需求，開拓後續日本持續販賣的市場通路"
+  }]
+}
