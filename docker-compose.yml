@@ -27,35 +27,13 @@ services:
             - ./docker/migratedb_import.sh:/usr/local/bin/migratedb_import
             - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
             - ./docker/plugins:/var/www/plugins
-    frontend:
-        command: bash -c 'yarn && yarn start'
-        container_name: frontend
-        expose:
-            - '3000'
-        image: node
-        ports:
-            - '3000:3000'
-        user: node
-        volumes:
-            - ./frontend:/home/node/app
-        working_dir: /home/node/app
-    frontend-graphql:
-        command: bash -c 'yarn && yarn start'
-        container_name: frontend-graphql
-        expose:
-            - '3001'
-        image: node
-        ports:
-            - '3001:3001'
-        user: node
-        volumes:
-            - ./frontend-graphql:/home/node/app
-        working_dir: /home/node/app
-
     nginx:
         image: nginx:alpine
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./frontend:/var/www
         ports:
             - '80:80'
             - '443:443'
+        depends_on:
+            - wp-headless
