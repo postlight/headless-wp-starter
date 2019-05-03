@@ -183,6 +183,26 @@ If you have deployed your WordPress install and are having CORS issues be sure t
 
 See anything else you'd like to add here? Please send a pull request!
 
+## custom .env file
+
+We use `.env` file to provide environment variables. Currently I decided to remove from git, and if you want to launch this project, don't forget to create this file, which contains key-values as the example below:
+
+```
+WORDPRESS_ADMIN_USER=nedstark
+WORDPRESS_ADMIN_PASSWORD=winteriscoming
+WORDPRESS_ADMIN_EMAIL=nedstark@headlesswpstarter.dev
+WORDPRESS_DB_HOST=db-headless
+WORDPRESS_DB_NAME=wp_headless
+WORDPRESS_DB_PASSWORD=wp_headless
+WORDPRESS_DB_USER=wp_headless
+WORDPRESS_DESCRIPTION=Just another (headless) WordPress site
+WORDPRESS_PERMALINK_STRUCTURE=/%year%/%monthnum%/%day%/%postname%/
+WORDPRESS_TITLE=Postlight Headless WP Starter
+WORDPRESS_URL=http://localhost:8080
+MIGRATEDB_LICENSE=
+MIGRATEDB_FROM=
+```
+
 ---
 
 🔬 A Labs project from your friends at [Postlight](https://postlight.com). Happy coding!
