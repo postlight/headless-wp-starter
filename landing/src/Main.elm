@@ -96,6 +96,10 @@ assetPath =
     "img/"
 
 
+linkPath =
+    "post/"
+
+
 type CarouselBehaviour
     = Next
     | Prev
@@ -331,6 +335,7 @@ update msg model =
 
                 Err _ ->
                     ( model, Cmd.none )
+
         GotPartnerList result ->
             case result of
                 Ok partnerList ->
@@ -338,6 +343,7 @@ update msg model =
 
                 Err _ ->
                     ( model, Cmd.none )
+
         GotTeamMemberList result ->
             case result of
                 Ok teamMemberList ->
@@ -422,7 +428,7 @@ subscriptions model =
 viewHeader : Model -> Html Msg
 viewHeader model =
     header []
-        [ a [ id "logo-link", href "#top"  ]
+        [ a [ id "logo-link", href "#top" ]
             [ figure []
                 [ img
                     [ src "img/logo.svg"
@@ -435,7 +441,7 @@ viewHeader model =
                 ]
             ]
         , nav [ class (String.join " " model.navBarClassNames) ]
-            [ a [ id "top-link", href "#top", class "selected" ] [ text "首頁"]
+            [ a [ id "top-link", href "#top", class "selected" ] [ text "首頁" ]
             , a [ href "#service" ] [ text "服務內容" ]
             , a [ href "#success-case" ] [ text "過去實績" ]
             , a [ href "#team" ] [ text "團隊成員" ]
@@ -799,6 +805,9 @@ viewArticle { imgSrc, date, title, description, link } =
     let
         imgSrcPath =
             append assetPath imgSrc
+
+        linkHrefPath =
+            append linkPath link
     in
     article [ class "three-grid-item list-item-shadow" ]
         [ img [ class "big-image red-bottome-border", src imgSrcPath, alt title ] []
@@ -811,7 +820,7 @@ viewArticle { imgSrc, date, title, description, link } =
                 , div [ class "blog-item-title" ] [ text title ]
                 ]
             , p [ class "blog-item-description" ] [ text description ]
-            , a [ class "continue-reading", href link ] [ text "(...繼續閱讀)" ]
+            , a [ class "continue-reading", href linkHrefPath ] [ text "(...繼續閱讀)" ]
             ]
         ]
 
@@ -902,6 +911,7 @@ viewSectionPartner { partnerList } =
             (List.map viewPartner partnerList)
         ]
 
+
 viewPartner : String -> Html Msg
 viewPartner imgName =
     let
@@ -912,6 +922,7 @@ viewPartner imgName =
             imgName
     in
     figure [] [ img [ class "media-image big-image", src imgSrc, alt imgAlt ] [] ]
+
 
 viewSectionMedia : Model -> Html Msg
 viewSectionMedia { mediaList } =
