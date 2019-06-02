@@ -40,11 +40,11 @@ services:
         depends_on:
             - wp-headless
     frontend:
-        command: bash -c 'yarn && yarn start'
+        command: sh -c 'yarn && yarn start'
         container_name: frontend
         expose:
             - '3000'
-        image: node
+        image: node:10.16.0
         ports:
             - '3000:3000'
         user: node
