@@ -40,7 +40,7 @@ services:
         depends_on:
             - wp-headless
     frontend:
-        command: sh -c 'yarn && yarn start'
+        command: sh -c 'yarn && yarn build && yarn start:prod'
         container_name: frontend
         expose:
             - '3000'
