@@ -5,6 +5,7 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Menu from '../components/Menu';
 import NavBar from '../components/NavBar';
+import RecentPosts from '../components/RecentPosts';
 import PageWrapper from '../components/PageWrapper';
 import Config from '../config';
 
@@ -36,7 +37,19 @@ class Post extends Component {
 
     return { post };
   }
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      rencentPosts: [],
+    };
+  }
+  componentDidMount() {
+    wp.posts()
+      .embed()
+      .then(posts => {
+        this.setState({ rencentPosts: posts.slice(0, 9) });
+      });
+  }
   render() {
     const { post, headerMenu } = this.props;
     if (!post.title) return <Error statusCode={404} />;
@@ -46,6 +59,21 @@ class Post extends Component {
         {/* <Menu menu={headerMenu} /> */}
         <NavBar />
         <Article post={post} />
+        <section className="floatingSide">
+          {this.state.rencentPosts.length > 0 ? (
+            <RecentPosts posts={this.state.rencentPosts} />
+          ) : null}
+        </section>
+        <style jsx>
+          {`
+            .floatingSide {
+              position: fixed;
+              right: 30px;
+              top: 25%;
+              max-width: 20%;
+            }
+          `}
+        </style>
       </Layout>
     );
   }
