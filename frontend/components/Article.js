@@ -3,7 +3,7 @@ import { secondaryTextColor, titleColor } from './constants';
 import stylesheet from '../src/styles/article.scss';
 
 // TODO: Add type for Post
-const Article = ({ post: { title, content, date, author } }) => (
+const Article = ({ post: { title, content, date, _embedded } }) => (
   <section className="block">
     <Head>
       <style
@@ -13,11 +13,12 @@ const Article = ({ post: { title, content, date, author } }) => (
     </Head>
     <div className="articleInfo">
       <h1 className="title">{title.rendered}</h1>
-      {/* TODO: fix date format */}
-      <span className="date">Posted on {date}</span>
+      <span className="date">
+        Posted on {new Date(date).toLocaleDateString()}
+      </span>
       <span className="author">
-        {/* TODO: fix author mapping */}
-        Posted by {author}
+        Posted by{' '}
+        {_embedded.author && _embedded.author[0] && _embedded.author[0].name}
       </span>
     </div>
     <article
