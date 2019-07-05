@@ -947,7 +947,19 @@ viewMedia imgName =
 
 viewFooter : Html Msg
 viewFooter =
-    footer [] [ figure [] [ img [ class "media-image", src "img/logo.svg", alt "logo" ] [] ] ]
+    footer []
+        [ figure [] [ img [ class "media-image", src "img/logo.svg", alt "logo" ] [] ]
+        , div [ class "about-us-footer" ]
+            [ p [ class "about-us-title" ]
+                [ text "關於我們" ]
+            , p
+                [ class "about-us-info" ]
+                [ text "contact@japaninsider.co" ]
+            , p
+                [ class "about-us-info" ]
+                [ text "106-0046 東京都港区元麻布3-1-6" ]
+            ]
+        ]
 
 
 view : Model -> Document Msg
