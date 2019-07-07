@@ -32,8 +32,8 @@ const Article = ({ post: { title, content, date, _embedded } }) => (
           flex-direction: column;
           justify-content: center;
           margin-top: 50px;
-          max-width: 70%;
-          padding-left: 20px;
+          max-width: 60%;
+          margin-left: 10%;
         }
         .articleInfo {
           font-size: 14px;
