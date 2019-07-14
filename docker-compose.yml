@@ -30,7 +30,7 @@ services:
             - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
             - ./docker/plugins:/var/www/plugins
     nginx:
-        image: nginx:alpine
+        image: nginx:1.17.1-alpine
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./landing:/var/www
