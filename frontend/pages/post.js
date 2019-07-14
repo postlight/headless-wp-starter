@@ -40,14 +40,14 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rencentPosts: [],
+      recentPosts: [],
     };
   }
   componentDidMount() {
     wp.posts()
       .embed()
       .then(posts => {
-        this.setState({ rencentPosts: posts.slice(0, 9) });
+        this.setState({ recentPosts: posts.slice(0, 9) });
       });
   }
   render() {
@@ -58,22 +58,7 @@ class Post extends Component {
       <Layout>
         {/* <Menu menu={headerMenu} /> */}
         <NavBar />
-        <Article post={post} />
-        <section className="floatingSide">
-          {this.state.rencentPosts.length > 0 ? (
-            <RecentPosts posts={this.state.rencentPosts} />
-          ) : null}
-        </section>
-        <style jsx>
-          {`
-            .floatingSide {
-              position: fixed;
-              right: 30px;
-              top: 25%;
-              max-width: 20%;
-            }
-          `}
-        </style>
+        <Article post={post} recentPosts={this.state.recentPosts} />
       </Layout>
     );
   }

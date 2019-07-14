@@ -1,4 +1,4 @@
-import { backgroundColor, textColor } from './constants';
+import { lightGray, textColor, titleColor } from './constants';
 
 const RecentPosts = ({ posts }) => (
   <section className="block">
@@ -6,20 +6,28 @@ const RecentPosts = ({ posts }) => (
     <ul>
       {posts.map(post => (
         <li className="title">
-          <a href={`/post/${post.slug}`}>{post.title.rendered}</a>
+          <a className="link" href={`/post/${post.slug}`}>
+            {post.title.rendered}
+          </a>
         </li>
       ))}
     </ul>
     <style jsx>{`
       h3 {
         font-size: 1.8rem;
-        color: ${backgroundColor};
-        margin-bottom: 15px;
+        color: ${titleColor};
+        margin-bottom: 30px;
       }
       .title {
         font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+      .link {
+        color: ${lightGray};
+        text-decoration: none;
+      }
+      .link:hover {
         color: ${textColor};
-        line-height: 2;
       }
     `}</style>
   </section>
