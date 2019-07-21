@@ -47,7 +47,7 @@ services:
             - ./certbot/conf:/etc/letsencrypt
             - ./certbot/www:/var/www/certbot
     frontend:
-        command: sh -c 'yarn && yarn build && yarn start'
+        command: sh -c 'yarn && yarn build && yarn start:prod'
         container_name: frontend
         expose:
             - '3000'
