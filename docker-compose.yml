@@ -34,11 +34,18 @@ services:
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./landing:/var/www
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/www:/var/www/certbot
         ports:
             - '80:80'
             - '443:443'
         depends_on:
             - wp-headless
+    certbot:
+        image: certbot/certbot
+        volumes:
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/www:/var/www/certbot
     frontend:
         command: sh -c 'yarn && yarn build && yarn start'
         container_name: frontend
