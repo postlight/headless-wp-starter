@@ -1,49 +1,101 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Coding Standards based custom ruleset for your plugin">
-	<description>Generally-applicable sniffs for WordPress plugins.</description>
+<ruleset name="Postlight PHPCS Config">
+  <!--
+    See also:
+    https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
+    https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage
+  -->
+  <description>Postlight PHP coding standards configuration.</description>
 
-	<!-- What to scan -->
-	<file>.</file>
-	<exclude-pattern>/vendor/</exclude-pattern>
-	<exclude-pattern>/node_modules/</exclude-pattern>
+  <!-- Command line args, compare to: /vendor/bin/phpcs -(v)s -extensions=php -colors -->
+  <arg value="s"/>     <!-- Show sniffs report. -->
+  <arg name="colors"/> <!-- Use colors in reports. -->
+  <arg name="extensions" value="php,dist" /> <!-- Sniff these file types. -->
 
-	<!-- How to scan -->
-	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
-	<!-- Annotated ruleset: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-	<arg value="sp"/> <!-- Show sniff and progress -->
-	<arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
-	<arg name="colors"/>
-	<arg name="extensions" value="php"/>
-	<arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
+  <!--
+    ============================================================================
+    PSR-2 ruleset:
+    https://github.com/squizlabs/PHP_CodeSniffer/blob/master/src/Standards/PSR2/ruleset.xml
+  -->
+  <rule ref="PSR2">
+    <exclude name="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket" />
+    <exclude name="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket" />
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpen" />
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose" />
+    <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+    <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine" />
+    <exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
+    <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps" />
+    <exclude name="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterOpen" />
+    <exclude name="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeClose" />
+    <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceAfterOpen" />
+    <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceBeforeClose" />
+    <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
+    <exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeEquals" />
+    <exclude name="PSR2.Namespaces.UseDeclaration.MultipleDeclarations" />
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+    <!-- This is how WordPress gets template metadata. -->
+    <exclude name="Squiz.Commenting.BlockComment.NoEmptyLineBefore" />
+  </rule>
 
-	<!-- Rules: Check PHP version compatibility -->
-	<!-- https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions -->
-	<config name="testVersion" value="5.4-"/>
-	<!-- https://github.com/PHPCompatibility/PHPCompatibilityWP -->
-	<rule ref="PHPCompatibilityWP"/>
+  <rule ref="PSR2.ControlStructures.ControlStructureSpacing">
+    <properties>
+      <property name="requiredSpacesAfterOpen" value="1" />
+      <property name="requiredSpacesBeforeClose" value="1" />
+    </properties>
+  </rule>
 
-	<!-- Rules: WordPress Coding Standards -->
-	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
-	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
-	<config name="minimum_supported_wp_version" value="4.6"/>
-	<rule ref="WordPress">
-		<exclude name="WordPress.VIP"/>
-	</rule>
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<properties>
-			<!-- Value: replace the function, class, and variable prefixes used. Separate multiple prefixes with a comma. -->
-			<property name="prefixes" type="array" value=""/>
-		</properties>
-	</rule>
-	<rule ref="WordPress.WP.I18n">
-		<properties>
-			<!-- Value: replace the text domain used. -->
-			<property name="text_domain" type="array" value="postlight-headless-wp"/>
-		</properties>
-	</rule>
-	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
-		<properties>
-			<property name="blank_line_check" value="true"/>
-		</properties>
-	</rule>
+  <!--
+    ============================================================================
+    WordPress rulesets:
+    WordPress-Extra: https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/blob/develop/WordPress-Extra/ruleset.xml
+  -->
+  <rule ref="WordPress-Extra">
+    <!-- Allow spaces -->
+    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+    <exclude name="WordPress.VIP.SuperGlobalInputUsage.AccessDetected" />
+    <exclude name="WordPress.WhiteSpace.OperatorSpacing" />
+    <!-- Support PSR4 autoloading conventions. -->
+    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+    <!-- Permit path-style hook names. -->
+    <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
+  </rule>
+
+  <!--
+    ============================================================================
+    Documentation rulesets:
+    WordPress-Docs:     https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/blob/develop/WordPress-Docs/ruleset.xml
+                        https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/
+    Generic Commenting: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Generic/Sniffs/Commenting
+  -->
+  <rule ref="WordPress-Docs">
+    <!-- Do not enforce having a file comment for each file. -->
+    <exclude name="Squiz.Commenting.FileComment" />
+    <!-- Don't require full stop in comments. -->
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+    <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
+    <!-- Don't require comment capitalization. -->
+    <exclude name="Generic.Commenting.DocComment.LongNotCapital" />
+  </rule>
+
+  <rule ref="Generic.Commenting">
+    <exclude name="Generic.Commenting.DocComment.MissingShort" />
+    <exclude name="Generic.Commenting.Fixme" />
+    <exclude name="Generic.Commenting.Todo" />
+  </rule>
+
+  <!--
+    ============================================================================
+    Special or one-off rules.
+  -->
+
+  <!-- Normalize all require/require_onces to use statement, not function, syntax. -->
+  <rule ref="PEAR.Files.IncludingFile.BracketsNotRequired" />
+
+  <!-- Require short array syntax -->
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 </ruleset>
