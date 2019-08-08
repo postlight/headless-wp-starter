@@ -2,7 +2,8 @@
 /**
  * Theme for the Postlight Headless WordPress Starter Kit.
  *
- * Read more about this project at https://postlight.com/trackchanges/introducing-postlights-wordpress-react-starter-kit.
+ * Read more about this project at:
+ * https://postlight.com/trackchanges/introducing-postlights-wordpress-react-starter-kit
  *
  * @package  Postlight_Headless_WP
  */

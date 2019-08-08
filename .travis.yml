@@ -14,4 +14,4 @@ before_script:
 
 script:
     - curl localhost:3000 | grep 'Congratulations!'
-    - docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
+    - docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs -v .
