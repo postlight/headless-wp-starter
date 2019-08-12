@@ -33,7 +33,7 @@ services:
         image: nginx:1.17.1-alpine
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-            - ./landing:/var/www
+            - ./landing/build:/var/www
             - ./certbot/conf:/etc/letsencrypt
             - ./certbot/www:/var/www/certbot
         ports:

@@ -1,9 +1,26 @@
+/*
+  elm-hot creates an additional div wrapper around the app to make HMR possible.
+  This could break styling in development mode if you are using Elm UI.
+
+  More context in the issue:
+    https://github.com/halfzebra/create-elm-app/issues/320
+*/
+[data-elm-hot="true"] {
+  height: inherit;
+}
+
 html {
+  /* To make 1rem == 10px */
   font-size: 62.5%;
 }
+
 body {
   font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  text-align: center;
+  color: #293c4b;
 }
+
 /* Header */
 header {
   display: -webkit-box;
@@ -159,7 +176,7 @@ footer {
 #top {
   width: 100%;
   height: 100vh;
-  background-image: url('./img/top-1.jpg');
+  background-image: url('/static/assets/images/top-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -325,7 +342,7 @@ footer {
 #team-introduction {
   width: 100%;
   height: 912px;
-  background-image: url('./img/team-background.jpg');
+  background-image: url('/static/assets/images/team-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -436,7 +453,7 @@ footer {
 #market-development-description {
   width: 100%;
   height: 912px;
-  background-image: url('./img/market-development.jpg');
+  background-image: url('/static/assets/images/market-development.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1103,3 +1120,4 @@ li>img {
     width: 70%;
   }
 }
+

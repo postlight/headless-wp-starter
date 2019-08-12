@@ -1,5 +1,6 @@
 module Main exposing (init, view)
 
+import Asset
 import Browser exposing (Document)
 import Browser.Navigation
 import Html exposing (Html, a, article, aside, div, em, figure, footer, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
@@ -93,7 +94,7 @@ serviceCarouselLength =
 
 
 assetPath =
-    "img/"
+    "%PUBLIC_URL%/assets/images/"
 
 
 linkPath =
@@ -141,35 +142,35 @@ init _ =
       }
     , Cmd.batch
         [ Http.get
-            { url = "../data/service_content.json"
+            { url = "%PUBLIC_URL%/assets/data/service_content.json"
             , expect = Http.expectJson GotServiceContentList decodeServiceContentList
             }
         , Http.get
-            { url = "../data/service_detail.json"
+            { url = "%PUBLIC_URL%/assets/data/service_detail.json"
             , expect = Http.expectJson GotServiceDetailList decodeServiceDetailList
             }
         , Http.get
-            { url = "../data/media.json"
+            { url = "%PUBLIC_URL%/assets/data/media.json"
             , expect = Http.expectJson GotMediaList decodeMediaList
             }
         , Http.get
-            { url = "../data/partner.json"
+            { url = "%PUBLIC_URL%/assets/data/partner.json"
             , expect = Http.expectJson GotPartnerList decodeMediaList
             }
         , Http.get
-            { url = "../data/team.json"
+            { url = "%PUBLIC_URL%/assets/data/team.json"
             , expect = Http.expectJson GotTeamMemberList decodeTeamMemberList
             }
         , Http.get
-            { url = "../data/article.json"
+            { url = "%PUBLIC_URL%/assets/data/article.json"
             , expect = Http.expectJson GotArticleList decodeArticleList
             }
         , Http.get
-            { url = "../data/story.json"
+            { url = "%PUBLIC_URL%/assets/data/story.json"
             , expect = Http.expectJson GotStoryList decodeStoryList
             }
         , Http.get
-            { url = "../data/fund_raise_stats.json"
+            { url = "%PUBLIC_URL%/assets/data/fund_raise_stats.json"
             , expect = Http.expectJson GotFundRaiseStats decodeFundRaiseStats
             }
         ]
@@ -431,7 +432,7 @@ viewHeader model =
         [ a [ id "logo-link", href "#top" ]
             [ figure []
                 [ img
-                    [ src "img/logo.svg"
+                    [ Asset.src Asset.logo
                     , alt "logo"
                     , width 25
                     , height 25
@@ -449,7 +450,7 @@ viewHeader model =
             , a [ href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "聯絡我們" ]
             ]
         , a [ class "hamburger", onClick TOGGLE ]
-            [ img [ src "./img/hamburger.svg", width 25, height 25 ] [] ]
+            [ img [ Asset.src Asset.hamburger, width 25, height 25, alt "Menu" ] [] ]
         ]
 
 
@@ -458,7 +459,7 @@ viewMailBtn =
     div [ class "mailBtn" ]
         [ a [ href "https://japaninsider.typeform.com/to/S7rcLo" ]
             [ figure []
-                [ img [ src "./img/mail.svg", alt "mail button" ] []
+                [ img [ Asset.src Asset.mail, alt "mail button" ] []
                 ]
             ]
         ]
@@ -466,7 +467,7 @@ viewMailBtn =
 
 viewSectionTop : Model -> Html Msg
 viewSectionTop { topIndex } =
-    section [ id "top", style "background-image" ("url('./img/top-" ++ String.fromInt topIndex ++ ".jpg')") ]
+    section [ id "top", style "background-image" ("url(" ++ Asset.topImage topIndex ++ ")") ]
         [ aside []
             [ h2 [] [ text "成為你日本現地的即時成員" ]
             , h2 [] [ text "支援日本群眾募資的專業團隊" ]
@@ -576,8 +577,12 @@ viewSectionService { serviceContentList, serviceDetailList, serviceIndex } =
 
 viewServiceContent : ServiceContent -> Html Msg
 viewServiceContent { imgSrc, imgAlt, title, description } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
     article [ class "three-grid-item" ]
-        [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrc, alt imgAlt ] [] ] ]
+        [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ] ]
         , h3 [ class "custom-list-item-title" ] [ text title ]
         , p [ class "custom-list-item-description" ] [ text description ]
         ]
@@ -948,7 +953,7 @@ viewMedia imgName =
 viewFooter : Html Msg
 viewFooter =
     footer []
-        [ figure [] [ img [ class "media-image", src "img/logo.svg", alt "logo" ] [] ]
+        [ figure [] [ img [ class "media-image", Asset.src Asset.logo, alt "logo" ] [] ]
         , div [ class "about-us-footer" ]
             [ p [ class "about-us-title" ]
                 [ text "關於我們" ]
@@ -982,6 +987,10 @@ view model =
         , viewFooter
         ]
     }
+
+
+
+-- PROGRAM
 
 
 main : Program () Model Msg
