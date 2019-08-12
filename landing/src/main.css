@@ -176,7 +176,7 @@ footer {
 #top {
   width: 100%;
   height: 100vh;
-  background-image: url('/static/assets/images/top-1.jpg');
+  background-image: url('/assets/images/top-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -342,7 +342,7 @@ footer {
 #team-introduction {
   width: 100%;
   height: 912px;
-  background-image: url('/static/assets/images/team-background.jpg');
+  background-image: url('/assets/images/team-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -453,7 +453,7 @@ footer {
 #market-development-description {
   width: 100%;
   height: 912px;
-  background-image: url('/static/assets/images/market-development.jpg');
+  background-image: url('/assets/images/market-development.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -590,8 +590,12 @@ viewServiceContent { imgSrc, imgAlt, title, description } =
 
 viewMobileServiceContent : ServiceContent -> Html Msg
 viewMobileServiceContent { imgSrc, imgAlt, title, description } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
     article [ class "list-item no-bottom-border" ]
-        [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrc, alt imgAlt ] [] ] ]
+        [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ] ]
         , h3 [ class "custom-list-item-title" ] [ text title ]
         , p [ class "custom-list-item-description" ] [ text description ]
         ]
