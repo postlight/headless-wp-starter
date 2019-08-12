@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# This is the script to:
+# 1. Create a dummy certificate
+# 2. Start nginx
+# 3. Delete the dummy
+# 4. Request the real certificates
+# , in order to solve chicken-egg problems.
+
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: docker-compose is not installed.' >&2
   exit 1

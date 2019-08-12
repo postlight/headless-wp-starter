@@ -30,11 +30,16 @@ services:
             - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
             - ./docker/plugins:/var/www/plugins
     nginx:
+        # This is to make sure that nginx reloads the newly obtained certificates
+        command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
         image: nginx:1.17.1-alpine
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./landing/build:/var/www
+            # These are share volumes with cerbot,
+            # This is for the actual certificate.
             - ./certbot/conf:/etc/letsencrypt
+            # This is for validation challenges.
             - ./certbot/www:/var/www/certbot
         ports:
             - '80:80'
@@ -46,6 +51,9 @@ services:
         volumes:
             - ./certbot/conf:/etc/letsencrypt
             - ./certbot/www:/var/www/certbot
+        # This will check if the certificate is up for renewal every 12 hours
+        # https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
+        entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     frontend:
         command: sh -c 'yarn && yarn build && yarn start:prod'
         container_name: frontend
