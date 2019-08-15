@@ -3,7 +3,7 @@ module Main exposing (init, view)
 import Asset
 import Browser exposing (Document)
 import Browser.Navigation
-import Html exposing (Html, a, article, aside, div, em, figure, footer, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
+import Html exposing (Html, a, article, aside, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Http
@@ -465,61 +465,20 @@ viewMailBtn =
 
 viewSectionTop : Model -> Html Msg
 viewSectionTop { topIndex } =
-    section [ id "top", style "background-image" ("url(" ++ Asset.topImage topIndex ++ ")") ]
-        [ aside []
-            [ h2 [] [ text "成為你日本現地的即時成員" ]
-            , h2 [] [ text "支援日本群眾募資的專業團隊" ]
+    section [ id "top", class "top" ]
+        [ div [ class "hero-description" ]
+            [ h3 [] [ text "JapanInsider是提供日本群眾募資，線上電商營運，線下通路開發的專業顧問團隊" ]
+            , h1 [] [ text "以群眾募資為起跑點，<br/>一起開始日本市場的開拓之旅！" ]
+            , h2 [] [ text "已協助 N 個團隊在日本募資 JPY 58,600,000" ]
             ]
-        , div [ class "dot-container" ]
-            [ div
-                [ id "dot-1"
-                , class
-                    ("dot"
-                        ++ (if topIndex == 1 then
-                                " selected"
-
-                            else
-                                ""
-                           )
-                    )
-                , onClick (DotClick 1)
-                ]
-                []
-            , div
-                [ id "dot-2"
-                , class
-                    ("dot"
-                        ++ (if topIndex == 2 then
-                                " selected"
-
-                            else
-                                ""
-                           )
-                    )
-                , onClick (DotClick 2)
-                ]
-                []
-            , div
-                [ id "dot-3"
-                , class
-                    ("dot"
-                        ++ (if topIndex == 3 then
-                                " selected"
-
-                            else
-                                ""
-                           )
-                    )
-                , onClick (DotClick 3)
-                ]
-                []
-            ]
+        , figure []
+            [ img [ class "hero-img", Asset.src Asset.flightMap, alt "hero image" ] [] ]
         ]
 
 
 viewSectionIntroduction : Html Msg
 viewSectionIntroduction =
-    section [ id "id", class "intro-description" ]
+    section [ id "id", class "top" ]
         [ h2 []
             [ text "提供日本群眾募資"
             , em [] [ text "在地化、全方位" ]

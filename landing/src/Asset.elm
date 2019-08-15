@@ -1,4 +1,4 @@
-module Asset exposing (Image, hamburger, logo, mail, src, topImage)
+module Asset exposing (Image, flightMap, hamburger, logo, mail, src, topImage)
 
 {-| Assets, such as images, videos, and audio. (We only have images for now.)
 
@@ -27,6 +27,11 @@ hamburger =
 logo : Image
 logo =
     image "logo.svg"
+
+
+flightMap : Image
+flightMap =
+    image "flight-map.svg"
 
 
 mail : Image
