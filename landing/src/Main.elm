@@ -429,25 +429,23 @@ subscriptions model =
 viewHeader : Model -> Html Msg
 viewHeader model =
     header []
-        [ a [ id "logo-link", href "#top" ]
-            [ figure []
-                [ img
-                    [ Asset.src Asset.logo
-                    , alt "logo"
-                    , width 25
-                    , height 25
-                    , alt "menu"
+        [ nav [ class (String.join " " model.navBarClassNames) ]
+            [ a [ id "logo-link", href "#top" ]
+                [ figure []
+                    [ img
+                        [ Asset.src Asset.logo
+                        , alt "logo"
+                        , class "logo"
+                        ]
+                        []
                     ]
-                    []
                 ]
-            ]
-        , nav [ class (String.join " " model.navBarClassNames) ]
-            [ a [ id "top-link", href "#top", class "selected" ] [ text "首頁" ]
-            , a [ href "#service" ] [ text "服務內容" ]
-            , a [ href "#success-case" ] [ text "過去實績" ]
-            , a [ href "#team" ] [ text "團隊成員" ]
-            , a [ href "#japan-insider" ] [ text "日本內幕" ]
-            , a [ href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "聯絡我們" ]
+            , div [ class "nav-link" ]
+                [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "免費諮詢" ]
+                , a [ href "#service" ] [ text "服務內容" ]
+                , a [ href "#service" ] [ text "常見問題" ]
+                , a [ href "#article" ] [ text "最新文章" ]
+                ]
             ]
         , a [ class "hamburger", onClick TOGGLE ]
             [ img [ Asset.src Asset.hamburger, width 25, height 25, alt "Menu" ] [] ]
@@ -976,7 +974,8 @@ view model =
     { title = "日本インサイド"
     , body =
         [ viewHeader model
-        , viewMailBtn
+
+        -- , viewMailBtn
         , viewSectionTop model
         , viewSectionIntroduction
         , viewSectionService model
