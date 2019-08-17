@@ -468,6 +468,15 @@ viewHeader model =
                 , a [ href "#service" ] [ text "服務內容" ]
                 , a [ href "#faq" ] [ text "常見問題" ]
                 , a [ href "#article" ] [ text "最新文章" ]
+                , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
+                    [ figure []
+                        [ img
+                            [ Asset.src Asset.fb
+                            , alt "fb logo"
+                            ]
+                            []
+                        ]
+                    ]
                 ]
             ]
         , a [ class "hamburger", onClick TOGGLE ]
@@ -631,10 +640,12 @@ viewArticle { imgSrc, date, title, link } =
         linkHrefPath =
             append linkPath link
     in
-    article [ class "article-item" ]
-        [ figure [] [ img [ src imgSrcPath, alt title ] [] ]
-        , p [ class "article-item-date" ] [ text date ]
-        , p [ class "article-item-title" ] [ text title ]
+    a [ href linkHrefPath, class "link-container" ]
+        [ article [ class "article-item" ]
+            [ figure [] [ img [ src imgSrcPath, alt title ] [] ]
+            , p [ class "article-item-date" ] [ text date ]
+            , p [ class "article-item-title" ] [ text title ]
+            ]
         ]
 
 

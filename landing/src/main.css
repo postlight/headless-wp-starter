@@ -69,6 +69,10 @@ nav {
   opacity: 0.7;
 }
 
+.nav-link a.fb-logo {
+  margin-left: 32px;
+}
+
 a.hamburger {
   display: none;
   margin-left: 10rem;
@@ -407,6 +411,10 @@ section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 48px;
+}
+
+.link-container {
+  text-decoration: none;
 }
 
 .article-item {
