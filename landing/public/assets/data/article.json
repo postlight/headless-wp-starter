@@ -1,33 +1,18 @@
 {
   "data": [{
     "imgSrc": "blog-post-1.jpg",
-    "title": "Japan Insider 談訪系列: 打造無國界的驚喜送禮體驗 Giftpack 的日本營運模式",
-    "date": {
-      "year": "2019",
-      "month": "06",
-      "day": "05"
-    },
-    "description": "Japan Insider 探險「日本裡面」的新創生態圈，走訪最前端的日本企業、新創，分享日本商業資訊，協助團隊、企業更了解「日本裡面」的商業環境。Japan Insider的訪談系列，針對已經進入日本市場的團隊、企業進行訪問...",
+    "title": "打造無國界的驚喜送禮體驗 Giftpack 的日本營運模式",
+    "date": "2019.06.05",
     "link": "giftpack-operation-model-in-japan"
   }, {
     "imgSrc": "blog-post-2.png",
     "title": "日本群募的生態圈發展: 公關x實體通路x設計x商社",
-    "date": {
-      "year": "2019",
-      "month": "04",
-      "day": "14"
-    },
-    "description": "觀察日本的群眾募資生態圈是蠻有趣的，感覺像是小時間在家裡後面觀察蝌蚪、青蛙、蜻蜓多種生物的互動，同時周遭還有野狗、三不五時又會有農夫跑到趕我們的場景，有很多的面向。當然多了解日本的群眾募資生態...",
+    "date": "2019.04.14",
     "link": "ecosystem-update-for-crowdfunding-in-japan"
   }, {
     "imgSrc": "blog-post-3.jpg",
     "title": "東京的「亞馬遜」時尚週",
-    "date": {
-      "year": "2019",
-      "month": "03",
-      "day": "16"
-    },
-    "description": "最近 Japan Insider 的日本內幕專欄 (就是你現在看文章的所在地) 收到讀者的反應，說內容有點太硬，對於流量來說不好，建議我們可以寫些軟一點的文章，像是旅遊、購物之類的。真的感謝這位讀者，還幫忙想到流量，...",
+    "date": "2019.03.16",
     "link": "amazon-fashion-week"
   }]
 }

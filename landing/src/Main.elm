@@ -66,9 +66,8 @@ type alias Date =
 
 type alias Article =
     { imgSrc : String
-    , date : Date
+    , date : String
     , title : String
-    , description : String
     , link : String
     }
 
@@ -239,21 +238,12 @@ decodeTeamMemberList =
     field "data" (list teamMemberDecoder)
 
 
-dateDecoder : Decoder Date
-dateDecoder =
-    map3 Date
-        (field "year" string)
-        (field "month" string)
-        (field "day" string)
-
-
 articleDecoder : Decoder Article
 articleDecoder =
-    map5 Article
+    map4 Article
         (field "imgSrc" string)
-        (field "date" dateDecoder)
+        (field "date" string)
         (field "title" string)
-        (field "description" string)
         (field "link" string)
 
 
@@ -547,7 +537,7 @@ viewSectionIntroduction { successStoryList } =
 viewSectionService : Model -> Html Msg
 viewSectionService { serviceContentList } =
     section [ id "service", class "service" ]
-        [ h2 [ class "service-section-title" ] [ text "服務內容" ]
+        [ h2 [ class "section-title" ] [ text "服務內容" ]
         , div [ class "service-content-container" ] (List.map viewServiceContent serviceContentList)
         ]
 
@@ -606,7 +596,7 @@ viewServiceContent { imgSrc, imgAlt, title, description } =
 viewSectionFaq : Model -> Html Msg
 viewSectionFaq { faqList } =
     section [ id "faq", class "faq" ]
-        [ h2 [ class "service-section-title" ] [ text "常見問題" ]
+        [ h2 [ class "section-title" ] [ text "常見問題" ]
         , div [ class "faq-container" ] (List.map viewFaq faqList)
         ]
 
@@ -618,6 +608,51 @@ viewFaq { question, answer } =
         , p
             [ class "faq-answer" ]
             [ text ("A: " ++ answer) ]
+        ]
+
+
+viewSectionArticle : Model -> Html Msg
+viewSectionArticle { articleList } =
+    section [ id "article", class "article" ]
+        [ h3 [ class "section-title" ] [ text "最新文章" ]
+        , div [ class "article-container" ] (List.map viewArticle articleList)
+
+        -- TODO @paipo: add article link
+        , a [ class "know-more-btn", href "#" ] [ text "瀏覽更多" ]
+        ]
+
+
+viewArticle : Article -> Html Msg
+viewArticle { imgSrc, date, title, link } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+
+        linkHrefPath =
+            append linkPath link
+    in
+    article [ class "article-item" ]
+        [ figure [] [ img [ src imgSrcPath, alt title ] [] ]
+        , p [ class "article-item-date" ] [ text date ]
+        , p [ class "article-item-title" ] [ text title ]
+        ]
+
+
+viewSectionEnterpriseRegister : Html Msg
+viewSectionEnterpriseRegister =
+    section [ id "enterprise-register", class "enterprise-register" ]
+        [ div [ class "enterprise-register-description" ]
+            [ h2 [] [ text "進入日本市場的海外企業" ]
+            , p [] [ text "想認識更多在日本的人脈嗎?  " ]
+            , p [] [ text "想在未來建立自己在日本的團隊嗎?" ]
+            , p [] [ text "想了解更多日本的商業環境嗎?" ]
+            , p [ class "last-line" ] [ text "立即登錄您的企業資訊，讓更多在日本的跨境人才看到您們的團隊！" ]
+
+            -- TODO @paipo: add another typeform link here
+            , a [ class "consult-btn", href "" ] [ text "登錄企業資訊" ]
+            ]
+        , figure []
+            [ img [ Asset.src Asset.enterpriseRegisterImage, alt "register as enterprise" ] [] ]
         ]
 
 
@@ -677,7 +712,6 @@ viewSectionSuccessCase { fundRaiseStats, successStoryList, successCaseIndex } =
             , div [ class "next" ] [ div [ class "arrow-right", onClick (Carousel SuccessCase Next) ] [] ]
             ]
         , viewMobileSuccessResult fundRaiseStats
-        , div [ class "mobile-list-container" ] (List.map viewMobileStory successStoryList)
         ]
 
 
@@ -838,53 +872,6 @@ viewSectionJapanInsider { articleList } =
     section [ id "japan-insider" ]
         [ h3 [ class "section-title" ] [ text "日本內幕部落格" ]
         , div [ class "three-grid-view-container" ] (List.map viewArticle articleList)
-        , div [ class "mobile-list-container" ] (List.map viewMobileArticle articleList)
-        ]
-
-
-viewArticle : Article -> Html Msg
-viewArticle { imgSrc, date, title, description, link } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-
-        linkHrefPath =
-            append linkPath link
-    in
-    article [ class "three-grid-item list-item-shadow" ]
-        [ img [ class "big-image red-bottome-border", src imgSrcPath, alt title ] []
-        , div [ class "blog-text-content" ]
-            [ div [ class "blog-item-header" ]
-                [ div [ class "blog-item-date" ]
-                    [ p [] [ text (date.year ++ ".") ]
-                    , p [] [ text (date.month ++ "." ++ date.day) ]
-                    ]
-                , div [ class "blog-item-title" ] [ text title ]
-                ]
-            , p [ class "blog-item-description" ] [ text description ]
-            , a [ class "continue-reading", href linkHrefPath ] [ text "(...繼續閱讀)" ]
-            ]
-        ]
-
-
-viewMobileArticle : Article -> Html Msg
-viewMobileArticle { imgSrc, date, title, description, link } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
-    article [ class "list-item list-item-shadow no-bottom-border" ]
-        [ img [ class "red-bottome-border", src imgSrcPath, alt title ] []
-        , div [ class "blog-text-content" ]
-            [ div [ class "blog-item-header" ] []
-            , div [ class "blog-item-date" ]
-                [ p [] [ text (date.year ++ ".") ]
-                , p [] [ text (date.month ++ "." ++ date.day) ]
-                ]
-            , div [ class "blog-item-title" ] [ text title ]
-            , p [ class "blog-item-description" ] [ text description ]
-            , a [ class "continue-reading", href link ] [ text "(...繼續閱讀)" ]
-            ]
         ]
 
 
@@ -901,26 +888,6 @@ viewStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
             ]
         , img [ class "fund-raise-image", src imgSrcPath, alt title ] []
         , a [ class "know-more-btn", href link ] [ text "募資頁面" ]
-        ]
-
-
-viewMobileStory : Story -> Html Msg
-viewMobileStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
-    article [ class "list-item fund-raise-link", onClick (LinkToUrl link) ]
-        [ img [ class "fund-raise-image", src imgSrcPath, alt title ] []
-        , div [ class "fund-raise-content" ]
-            [ h3 [ class "fund-raise-title" ] [ text title ]
-            , p [ class "fund-raise-description" ] [ text description ]
-            , div [ class "fund-raise-detail" ]
-                [ h4 [] [ text "FUND RAISED:" ]
-                , p [ class "fund-raise-amount" ] [ text ("¥" ++ fundRaiseAmount) ]
-                , p [ class "funder-numbers" ] [ text ("funder" ++ String.fromInt funders) ]
-                ]
-            ]
         ]
 
 
@@ -1011,11 +978,12 @@ view model =
         , viewSectionIntroduction model
         , viewSectionService model
         , viewSectionFaq model
+        , viewSectionArticle model
+        , viewSectionEnterpriseRegister
         , viewSectionPromotion
         , viewSectionSuccessCase model
         , viewSectionTeamIntroduction
         , viewSectionTeam model
-        , viewSectionJapanInsider model
         , viewSectionMarketDev
         , viewSectionPartner model
         , viewSectionMedia model

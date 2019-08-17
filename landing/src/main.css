@@ -336,7 +336,7 @@ section {
   padding-top: 40px;
 }
 
-.service-section-title {
+.section-title {
   color: #011F26;
   font-size: 2rem;
   font-weight: bold;
@@ -397,6 +397,82 @@ section {
 .faq-answer {
   color: #636363;
   margin-bottom: 16px;
+}
+
+.article {
+  padding-top: 80px;
+}
+
+.article > .know-more-btn {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 82px;
+}
+
+.article-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.article-item {
+  text-align: left;
+  width: 305px;
+}
+
+.article-item > figure {
+  height: 227px;
+  margin-bottom: 10px;
+}
+
+.article-item img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+
+.article-item-date {
+  color: #636363;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.article-item-title {
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 19px;
+}
+
+.enterprise-register {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  text-align: left;
+}
+
+.enterprise-register-description > h2 {
+  color: #011F26;
+  font-size: 3rem;
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+
+.enterprise-register-description > p {
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 28px;
+}
+
+.enterprise-register-description p.last-line {
+  margin-top: 30px;
+  margin-bottom: 32px;
+}
+
+.enterprise-register-description > a.consult-btn {
+  width: 140px;
 }
 
 /* Success case */
@@ -672,24 +748,6 @@ section {
     width: 100%;
     height: 40px;
   }
-}
-
-/* Section Title */
-.section-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: rgb(212, 0, 0);
-}
-
-.section-title:after {
-  content: '';
-  height: 2px;
-  width: 30px;
-  margin-top: 20px;
-  background-color: rgb(212, 0, 0);
 }
 
 .intro-description {
