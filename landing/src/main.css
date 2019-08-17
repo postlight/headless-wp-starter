@@ -192,14 +192,16 @@ footer {
   }
 }
 
-/* Top */
+section {
+  margin: auto;
+  max-width: 960px;
+  width: 100%;
+}
+
 .top {
   display: flex;
   justify-content: center;
-  margin: auto;
-  max-width: 960px;
   padding-top: 200px;
-  width: 100%;
   text-align: left;
 }
 
@@ -277,6 +279,58 @@ footer {
   z-index: 0;
 }
 
+.introduction-background-wrapper {
+  background: #FFF6F4;
+}
+
+.introduction {
+  padding-top: 80px;
+  padding-bottom: 86px;
+  text-align: left;
+}
+
+.introduction > h2 {
+  color: #011F26;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.crd-introduction {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 115px;
+}
+
+.crd-introduction-description {
+  font-size: 1.6rem;
+  line-height: 28px;
+  width: 466px;
+}
+
+.crd-introduction-description > p:first-child {
+  margin-bottom: 40px;
+}
+
+.success-crd {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.story-item {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 42px;
+  position: relative;
+  text-decoration: none;
+  width: 300px;
+}
+
 /* Service */
 #service {
   padding-top: 75px;
@@ -324,61 +378,53 @@ footer {
   cursor: pointer;
 }
 .fund-raise-image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  margin-bottom: 29px;
+  object-fit: cover;
   width: 100%;
 }
 .fund-raise-content {
   padding: 10px;
 }
+
 .fund-raise-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: rgb(150, 121, 38);
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+  color:  #D94A3D;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1.1px;
+  margin-bottom: 24px;
 }
-.fund-raise-title:after {
-  content: '';
-  height: 1px;
-  width: 30px;
-  margin-top: 10px;
-  background-color: rgb(150, 121, 38);
+
+.quotation-mark {
+  color: #C4C4C4;
+  font-size: 6rem;
 }
+
+.fund-raise-description:before {
+  content: "“";
+  color: #C4C4C4;
+  font-size: 4rem;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
 .fund-raise-description {
-  font-size: 1.2rem;
   color: #333333;
-  line-height: 1.2;
-  letter-spacing: 1.3px;
+  font-size: 1.2rem;
+  height: 150px;
   margin-bottom: 30px;
-  height: 120px;
+  padding: 20px;
+  position: relative;
 }
 
-.fund-raise-detail > h4 {
-  color: #333333;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+.fund-raise-description:after {
+  bottom: -5px;
+  content: "”";
+  color: #C4C4C4;
+  font-size: 4rem;
+  position: absolute;
+  right: -5px;
 }
-
-.fund-raise-amount {
-  color: rgb(150, 121, 38);
-  font-size: 1.8rem;
-  margin-bottom: 5px;
-}
-
-.funder-numbers {
-  font-size: 1.1rem;
-  color: rgb(150, 121, 38);
-}
-
 
 /* Team */
 #team-introduction {
@@ -392,11 +438,8 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
 }
 #team-introduction:before {
   content: '';
@@ -562,32 +605,7 @@ footer {
   display: none;
 }
 
-/* H2 */
-h2 {
-  padding: 15px;
-  font-size: 4.4rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-}
-
-h3 {
-  font-size: 3rem;
-}
-
-@media screen and (max-width: 900px) {
-  h2 {
-    padding: 10px;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-}
-
 @media screen and (max-width: 600px) {
-  h2 {
-    padding: 5px;
-    font-size: 1.7rem;
-    letter-spacing: 2px;
-  }
   .media-image {
     width: 100%;
     height: 40px;
@@ -681,17 +699,10 @@ aside {
 }
 
 .three-grid-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 250px;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
   position: relative;
   background-color: white;
 }
@@ -963,8 +974,7 @@ aside {
 }
 /* Box Shadow of List Item*/
 .list-item-shadow {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 /* Floating title */
 .float-title {

@@ -487,19 +487,26 @@ viewSectionTop { topIndex } =
         ]
 
 
-viewSectionIntroduction : Html Msg
-viewSectionIntroduction =
-    section [ id "id", class "top" ]
-        [ h2 []
-            [ text "提供日本群眾募資"
-            , em [] [ text "在地化、全方位" ]
-            , text "支援"
-            ]
-        , h2 [] [ text "成功經驗累積成的專業流程" ]
-        , h2 []
-            [ text "能依據團隊需求為您"
-            , em [] [ text "客製化" ]
-            , text "服務"
+viewSectionIntroduction : Model -> Html Msg
+viewSectionIntroduction { successStoryList } =
+    div [ class "introduction-background-wrapper" ]
+        [ section [ id "introduction", class "introduction" ]
+            [ h2 []
+                [ text "日本群眾募資市場"
+                ]
+            , div [ class "crd-introduction" ]
+                [ div [ class "crd-introduction-description" ]
+                    [ p [] [ text "群眾募資在日本越來越普及，過去幾年的募資金額都有大幅成長，也漸漸成為海外新創進日本市場的前哨站。" ]
+                    , p [] [ text "日本群眾募資的特色之一是平台眾多，每個平台有各自的特性及優點。每個團隊目標皆不同，必須要有相應策略指南，才能在市場的開拓旅程中勝出！" ]
+                    ]
+                , figure []
+                    [ img [ Asset.src Asset.crowdSourcePartner, alt "crowd sourcing partner" ] []
+                    ]
+                ]
+            , h2 [] [ text "那些年與我們一起開拓的團隊" ]
+            , div [ class "success-crd" ]
+                -- TODO @paipo: make carousel and take more items
+                (List.map viewStory (List.take 3 successStoryList))
             ]
         ]
 
@@ -829,17 +836,13 @@ viewStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
         imgSrcPath =
             append assetPath imgSrc
     in
-    article [ class "three-grid-item list-item-shadow fund-raise-link", onClick (LinkToUrl link) ]
-        [ img [ class "fund-raise-image", src imgSrcPath, alt title ] []
+    article [ class "story-item", onClick (LinkToUrl link) ]
+        [ h2 [ class "fund-raise-title" ] [ text (title ++ " 成功募資 " ++ fundRaiseAmount ++ " 萬日幣") ]
         , div [ class "fund-raise-content" ]
-            [ h3 [ class "fund-raise-title" ] [ text title ]
-            , p [ class "fund-raise-description" ] [ text description ]
-            , div [ class "fund-raise-detail" ]
-                [ h4 [] [ text "FUND RAISED:" ]
-                , p [ class "fund-raise-amount" ] [ text ("¥" ++ fundRaiseAmount) ]
-                , p [ class "funder-numbers" ] [ text ("funder" ++ String.fromInt funders) ]
-                ]
+            [ p [ class "fund-raise-description" ] [ text description ]
             ]
+        , img [ class "fund-raise-image", src imgSrcPath, alt title ] []
+        , a [ class "know-more-btn", href link ] [ text "募資頁面" ]
         ]
 
 
@@ -947,7 +950,7 @@ view model =
 
         -- , viewMailBtn
         , viewSectionTop model
-        , viewSectionIntroduction
+        , viewSectionIntroduction model
         , viewSectionService model
         , viewSectionPromotion
         , viewSectionSuccessCase model
