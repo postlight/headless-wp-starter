@@ -512,42 +512,49 @@ viewSectionIntroduction { successStoryList } =
 
 
 viewSectionService : Model -> Html Msg
-viewSectionService { serviceContentList, serviceDetailList, serviceIndex } =
-    section [ id "service" ]
-        [ h3 [ class "section-title" ] [ text "服務內容" ]
-        , div [ class "carousel" ]
-            [ div [ class "prev" ] [ div [ class "arrow-left", onClick (Carousel Service Prev) ] [] ]
-            , ul [ class "slider" ]
-                [ li
-                    [ class
-                        (if serviceIndex == 0 then
-                            "visible"
-
-                         else
-                            ""
-                        )
-                    ]
-                    [ div [ class "three-grid-view-container" ]
-                        (List.map viewServiceContent serviceContentList)
-                    ]
-                , li
-                    [ class
-                        (if serviceIndex == 1 then
-                            "visible"
-
-                         else
-                            ""
-                        )
-                    ]
-                    [ div [ class "four-grid-view-container" ]
-                        (List.map viewServiceDetail serviceDetailList)
-                    ]
-                ]
-            , div [ class "next" ] [ div [ class "arrow-right", onClick (Carousel Service Next) ] [] ]
-            ]
-        , div [ class "mobile-list-container" ]
-            (List.map viewMobileServiceContent serviceContentList)
+viewSectionService { serviceContentList } =
+    section [ id "service", class "service" ]
+        [ h2 [ class "service-section-title" ] [ text "服務內容" ]
+        , div [ class "service-content-container" ] (List.map viewServiceContent serviceContentList)
         ]
+
+
+
+-- viewSectionService : Model -> Html Msg
+-- viewSectionService { serviceContentList, serviceDetailList, serviceIndex } =
+--     section [ id "service" ]
+--         [ h3 [ class "section-title" ] [ text "服務內容" ]
+--         , div [ class "carousel" ]
+--             [ div [ class "prev" ] [ div [ class "arrow-left", onClick (Carousel Service Prev) ] [] ]
+--             , ul [ class "slider" ]
+--                 [ li
+--                     [ class
+--                         (if serviceIndex == 0 then
+--                             "visible"
+--                          else
+--                             ""
+--                         )
+--                     ]
+--                     [ div [ class "three-grid-view-container" ]
+--                         (List.map viewServiceContent serviceContentList)
+--                     ]
+--                 , li
+--                     [ class
+--                         (if serviceIndex == 1 then
+--                             "visible"
+--                          else
+--                             ""
+--                         )
+--                     ]
+--                     [ div [ class "four-grid-view-container" ]
+--                         (List.map viewServiceDetail serviceDetailList)
+--                     ]
+--                 ]
+--             , div [ class "next" ] [ div [ class "arrow-right", onClick (Carousel Service Next) ] [] ]
+--             ]
+--         , div [ class "mobile-list-container" ]
+--             (List.map viewMobileServiceContent serviceContentList)
+--         ]
 
 
 viewServiceContent : ServiceContent -> Html Msg
@@ -556,9 +563,9 @@ viewServiceContent { imgSrc, imgAlt, title, description } =
         imgSrcPath =
             append assetPath imgSrc
     in
-    article [ class "three-grid-item" ]
-        [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ] ]
-        , h3 [ class "custom-list-item-title" ] [ text title ]
+    article [ class "service-content-item" ]
+        [ h2 [] [ text title ]
+        , figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ]
         , p [ class "custom-list-item-description" ] [ text description ]
         ]
 
@@ -572,7 +579,7 @@ viewMobileServiceContent { imgSrc, imgAlt, title, description } =
     article [ class "list-item no-bottom-border" ]
         [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ] ]
         , h3 [ class "custom-list-item-title" ] [ text title ]
-        , p [ class "custom-list-item-description" ] [ text description ]
+        , p [] [ text description ]
         ]
 
 
@@ -836,7 +843,7 @@ viewStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
         imgSrcPath =
             append assetPath imgSrc
     in
-    article [ class "story-item", onClick (LinkToUrl link) ]
+    article [ class "story-item" ]
         [ h2 [ class "fund-raise-title" ] [ text (title ++ " 成功募資 " ++ fundRaiseAmount ++ " 萬日幣") ]
         , div [ class "fund-raise-content" ]
             [ p [ class "fund-raise-description" ] [ text description ]
