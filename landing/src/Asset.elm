@@ -1,4 +1,4 @@
-module Asset exposing (Image, flightMap, hamburger, logo, mail, src, topImage)
+module Asset exposing (Image, crowdSourcePartner, flightMap, hamburger, logo, mail, src, topImage)
 
 {-| Assets, such as images, videos, and audio. (We only have images for now.)
 
@@ -32,6 +32,11 @@ logo =
 flightMap : Image
 flightMap =
     image "flight-map.svg"
+
+
+crowdSourcePartner : Image
+crowdSourcePartner =
+    image "japan-crd-service.svg"
 
 
 mail : Image

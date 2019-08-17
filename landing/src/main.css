@@ -80,13 +80,13 @@ a.consult-btn {
   border-radius: 54px;
   color: #ffffff;
   display: flex;
+  font-size: 1.6rem;
   height: 36px;
   justify-content: center;
   margin-left: 0;
+  text-decoration: none;
   width: 96px;
 }
-
-
 
 @media screen and (max-width: 600px) {
   nav a {
@@ -195,18 +195,27 @@ footer {
 /* Top */
 .top {
   display: flex;
-  height: 100vh;
   justify-content: center;
   margin: auto;
   max-width: 960px;
   padding-top: 200px;
   width: 100%;
+  text-align: left;
 }
 
-.hero-description > h3 {
+.hero-description {
+  position: relative;
+  width: 540px;
+  z-index: 1;
+}
+
+.hero-description > h2 {
   font-size: 1.6rem;
-  line-height: 18px;
+  font-weight: normal;
+  letter-spacing: 0;
   margin-bottom: 24px;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .hero-description > h1 {
@@ -216,19 +225,57 @@ footer {
   margin-bottom: 16px;
 }
 
-.hero-description > h2 {
+.hero-description > p {
   color: #636363;
   font-size: 1.6rem;
+  letter-spacing: 1.1px;
   line-height: 18px;
+  margin-bottom: 4.2rem;
 }
 
+.hero-description > p > em {
+  color: #636363;
+  font-size: 2.4rem;
+  margin-left: 6px;
+  margin-right: 6px;
+}
 
+.top-section-action-container {
+  display: flex;
+}
+
+.top-section-action-container > .know-more-btn {
+  margin-left: 10px;
+}
+
+.know-more-btn {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #011F26;
+  border-radius: 54px;
+  color: #011F26;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.6rem;
+  height: 40px;
+  justify-content: center;
+  text-decoration: none;
+  width: 100px;
+}
+
+.know-more-btn:hover {
+  opacity: 0.7;
+}
+
+.consult-btn:hover {
+  opacity: 0.7;
+}
 
 .hero-img {
+  position: relative;
   width: 421px;
+  z-index: 0;
 }
-
-
 
 /* Service */
 #service {

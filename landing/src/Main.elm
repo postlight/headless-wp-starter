@@ -3,7 +3,7 @@ module Main exposing (init, view)
 import Asset
 import Browser exposing (Document)
 import Browser.Navigation
-import Html exposing (Html, a, article, aside, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
+import Html exposing (Html, a, article, aside, br, button, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Http
@@ -467,9 +467,20 @@ viewSectionTop : Model -> Html Msg
 viewSectionTop { topIndex } =
     section [ id "top", class "top" ]
         [ div [ class "hero-description" ]
-            [ h3 [] [ text "JapanInsider是提供日本群眾募資，線上電商營運，線下通路開發的專業顧問團隊" ]
-            , h1 [] [ text "以群眾募資為起跑點，<br/>一起開始日本市場的開拓之旅！" ]
-            , h2 [] [ text "已協助 N 個團隊在日本募資 JPY 58,600,000" ]
+            [ h2 [] [ text "JapanInsider是提供日本群眾募資，線上電商營運，線下通路開發的專業顧問團隊" ]
+            , h1 [] [ text "以群眾募資為起跑點，", br [] [], text "一起開始日本市場的開拓之旅！" ]
+            , p []
+                [ span [] [ text "已協助" ]
+                , em [] [ text "N" ]
+                , span [] [ text "個團隊在日本募資" ]
+                , em [] [ text "JPY 58,600,000" ]
+                ]
+            , div [ class "top-section-action-container" ]
+                [ a
+                    [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ]
+                    [ text "免費諮詢" ]
+                , a [ class "know-more-btn", href "#service" ] [ text "了解更多" ]
+                ]
             ]
         , figure []
             [ img [ class "hero-img", Asset.src Asset.flightMap, alt "hero image" ] [] ]
