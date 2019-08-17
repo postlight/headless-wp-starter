@@ -614,7 +614,7 @@ viewFaq { question, answer } =
 viewSectionArticle : Model -> Html Msg
 viewSectionArticle { articleList } =
     section [ id "article", class "article" ]
-        [ h3 [ class "section-title" ] [ text "最新文章" ]
+        [ h2 [ class "section-title" ] [ text "最新文章" ]
         , div [ class "article-container" ] (List.map viewArticle articleList)
 
         -- TODO @paipo: add article link
@@ -653,6 +653,18 @@ viewSectionEnterpriseRegister =
             ]
         , figure []
             [ img [ Asset.src Asset.enterpriseRegisterImage, alt "register as enterprise" ] [] ]
+        ]
+
+
+viewSectionTeam : Html Msg
+viewSectionTeam =
+    div [ id "team", class "team" ]
+        [ h2 [ class "section-title" ] [ text "團隊成員" ]
+        , div [ class "team-description" ]
+            [ h2 []
+                [ text "JAPAN INSIDER 成員皆任職於日本的公司，精通中、日、英文，背景包括數位行銷、產品設計、軟體開發、工程、供應鏈等。讓熟悉日本市場的專業團隊, 成為您專案的一份子, 協助您進入日本市場。"
+                ]
+            ]
         ]
 
 
@@ -818,63 +830,6 @@ viewSectionTeamIntroduction =
         ]
 
 
-viewSectionTeam : Model -> Html Msg
-viewSectionTeam { teamMemberList, selectedTeamMemberIndex } =
-    section [ id "team" ]
-        [ h3 [ class "section-title" ] [ text "團隊成員" ]
-        , div [ class "three-grid-view-container" ] (List.indexedMap (viewTeamMember selectedTeamMemberIndex) teamMemberList)
-        , div [ class "mobile-list-container" ] (List.map viewMobileTeamMember teamMemberList)
-        ]
-
-
-viewTeamMember : Int -> Int -> TeamMember -> Html Msg
-viewTeamMember selectedTeamMemberIndex index { name, imgSrc, position, introduction } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
-    article
-        [ class
-            ("three-grid-item black-border-bottom"
-                ++ (if selectedTeamMemberIndex == index then
-                        " selected"
-
-                    else
-                        ""
-                   )
-            )
-        , onClick (SelectTeamMember index)
-        ]
-        [ div [ class "self-introduction" ] [ text introduction ]
-        , img [ src imgSrcPath, alt imgSrc ] []
-        , p [ class "list-item-title" ] [ text position ]
-        , div [ class "list-item-description align-left" ]
-            [ text name, div [ class "big-arrow" ] [] ]
-        ]
-
-
-viewMobileTeamMember : TeamMember -> Html Msg
-viewMobileTeamMember { name, imgSrc, position, introduction } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
-    article [ class "list-item" ]
-        [ div [ class "self-introduction" ] [ text introduction ]
-        , img [ src imgSrcPath, alt imgSrc ] []
-        , p [ class "list-item-title" ] [ text position ]
-        , div [ class "list-item-description" ] [ text name, div [ class "big-arrow" ] [] ]
-        ]
-
-
-viewSectionJapanInsider : Model -> Html Msg
-viewSectionJapanInsider { articleList } =
-    section [ id "japan-insider" ]
-        [ h3 [ class "section-title" ] [ text "日本內幕部落格" ]
-        , div [ class "three-grid-view-container" ] (List.map viewArticle articleList)
-        ]
-
-
 viewStory : Story -> Html Msg
 viewStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
     let
@@ -953,16 +908,16 @@ viewMedia imgName =
 viewFooter : Html Msg
 viewFooter =
     footer []
-        [ figure [] [ img [ class "media-image", Asset.src Asset.logo, alt "logo" ] [] ]
-        , div [ class "about-us-footer" ]
-            [ p [ class "about-us-title" ]
-                [ text "關於我們" ]
+        [ div [ class "footer-info" ]
+            [ figure []
+                [ img [ Asset.src Asset.whiteLogo, alt "logo" ] [] ]
             , p
-                [ class "about-us-info" ]
+                [ class "about-us-email" ]
                 [ text "contact@japaninsider.co" ]
             , p
-                [ class "about-us-info" ]
+                [ class "about-us-address" ]
                 [ text "106-0046 東京都港区元麻布3-1-6" ]
+            , a [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "免費諮詢" ]
             ]
         ]
 
@@ -980,13 +935,7 @@ view model =
         , viewSectionFaq model
         , viewSectionArticle model
         , viewSectionEnterpriseRegister
-        , viewSectionPromotion
-        , viewSectionSuccessCase model
-        , viewSectionTeamIntroduction
-        , viewSectionTeam model
-        , viewSectionMarketDev
-        , viewSectionPartner model
-        , viewSectionMedia model
+        , viewSectionTeam
         , viewFooter
         ]
     }

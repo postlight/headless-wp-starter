@@ -155,42 +155,36 @@ a.consult-btn {
   transition: all 0.3s ease 0s;
 }
 
-
-/* Header */
-/* Footer */
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgb(77, 77, 77);
-  padding-top: 40px;
-  padding-bottom: 20px;
+  background: #D94A3D;
+  height: 264px;
+  padding: 33px 0 32px 240px;
 }
-.about-us-footer {
-  margin-top: 30px;
-  margin-left: 50px;
+
+.footer-info {
+  color: #ffffff;
+  font-size: 1.4rem;
+  line-height: 20px;
+  text-align: left;
 }
-.about-us-title {
-  border-top: 1px solid #aaaaaa;
-  color: white;
-  font-size: 12px;
-  margin-bottom: 30px;
-  padding-top: 15px;
+
+.footer-info > figure {
+  margin-bottom: 9px;
 }
-.about-us-info {
-  color: #aaaaaa;
-  margin-bottom: 15px;
+
+.about-us-email {
+  margin-bottom: 5px;
 }
-@media screen and (max-width: 600px) {
-  footer {
-    flex-direction: column;
-  }
-  .about-us-title {
-    border: none;
-  }
+
+.about-us-address {
+  margin-bottom: 36px;
+}
+
+.footer-info > .consult-btn {
+  background: #ffffff;
+  border-radius: 100px;
+  color: #011F26;
+  width: 126px;
 }
 
 section {
@@ -474,6 +468,34 @@ section {
 
 .enterprise-register-description > a.consult-btn {
   width: 140px;
+}
+
+.team {
+  background-image: url('/assets/images/team-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 678px;
+  justify-content: space-between;
+  margin-bottom: 203px;
+  padding-top: 56px;
+  padding-bottom: 42px;
+  position: relative;
+}
+
+.team-description {
+  background: linear-gradient(0deg, rgba(217, 74, 61, 0.8), rgba(217, 74, 61, 0.8));
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  height: 144px;
+  line-height: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 24px;
+  text-align: left;
+  width: 459px;
 }
 
 /* Success case */
