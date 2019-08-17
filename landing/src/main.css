@@ -34,6 +34,8 @@ header {
   font-size: 1.6rem;
   height: 100px;
   justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -47,9 +49,9 @@ nav {
 }
 
 .logo {
-  width: 100%;
-  object-fit: contain;
   height: 51px;
+  object-fit: contain;
+  width: 245px;
 }
 
 .nav-link {
@@ -93,31 +95,6 @@ a.consult-btn {
   width: 96px;
 }
 
-@media screen and (max-width: 600px) {
-  nav a {
-    display: none;
-  }
-  a.hamburger {
-    display: block;
-
-  }
-  nav {
-    margin-left: 0;
-  }
-  nav.responsive {
-    width: 100%;
-    position: absolute;
-    top: 100px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-  }
-  nav.responsive a {
-    display: block;
-    margin-left: 10px;
-    margin-bottom: 15px;
-  }
-}
-
 .mailBtn {
   width: 75px;
   height: 75px;
@@ -134,15 +111,6 @@ a.consult-btn {
   right: 50px;
   bottom: 50px;
   z-index: 20;
-}
-
-@media screen and (max-width: 600px) {
-  .mailBtn {
-    width: 50px;
-    height: 50px;
-    right: 20px;
-    bottom: 20px;
-  }
 }
 
 .mailBtn > a {
@@ -194,6 +162,8 @@ footer {
 section {
   margin: auto;
   max-width: 960px;
+  padding-left: 32px;
+  padding-right: 32px;
   width: 100%;
 }
 
@@ -201,6 +171,7 @@ section {
   display: flex;
   justify-content: center;
   padding-top: 200px;
+  padding-bottom: 82px;
   text-align: left;
 }
 
@@ -219,9 +190,19 @@ section {
   white-space: nowrap;
 }
 
-.hero-description > h1 {
+.top-title {
   color: #011F26;
   font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 48px;
+  margin-bottom: 16px;
+}
+
+.top-mobile-title {
+  color: #011F26;
+  display: none;
+  font-size: 3.6rem;
+  font-weight: bold;
   line-height: 48px;
   margin-bottom: 16px;
 }
@@ -482,7 +463,7 @@ section {
   background-image: url('/assets/images/team-background.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   height: 678px;
@@ -513,22 +494,6 @@ section {
 
 .mobile-flex-container {
   display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .mobile-flex-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 65px;
-  }
 }
 
 .success-title {
@@ -617,17 +582,6 @@ section {
   background-color: rgba(255, 255, 255, 0.66);
   width: 100%;
   height: 100%;
-}
-#team {
-  padding-top: 75px;
-  padding-bottom: 50px;
-  background-color: rgb(242, 242, 242);
-}
-
-@media screen and (max-width: 600px) {
-  #team-introduction {
-    height: 300px;
-  }
 }
 
 /* Japan Insider */
@@ -730,12 +684,6 @@ section {
   height: 100%;
 }
 
-@media screen and (max-width: 600px) {
-  #market-development-description {
-    height: 500px;
-  }
-}
-
 #media {
   padding-top: 30px;
   margin-bottom: 50px;
@@ -772,13 +720,6 @@ section {
 /* Hide element */
 .invisible {
   display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .media-image {
-    width: 100%;
-    height: 40px;
-  }
 }
 
 .intro-description {
@@ -963,12 +904,6 @@ aside {
   width: 20%;
   margin-left: 25px;
   margin-right: 25px;
-}
-
-@media screen and (max-width: 600px) {
-  .list-item {
-    width: 100%;
-  }
 }
 
 .list-item > img {
@@ -1165,14 +1100,6 @@ aside {
   letter-spacing: 1.1px;
 }
 
-@media screen and (max-width: 600px) {
-  #amazon-link {
-    font-size: 0.6rem;
-    width: 90px;
-    height: 20px;
-    padding: 0.8rem;
-  }
-}
 
 /* Carousel */
 div.carousel {
@@ -1267,40 +1194,241 @@ li>img {
   display: none;
 }
 
-@media screen and (max-width: 1100px) {
-  #team .three-grid-view-container {
-    display: none;
+/* Tablet */
+@media screen and (max-width: 768px) {
+  header {
+    max-width: 768px;
   }
-  #japan-insider .three-grid-view-container {
-    display: none;
+
+  section {
+    max-width: 768px;
   }
-  #japan-insider .mobile-list-container .big-image {
-    height: 100px;
+
+  .top {
+    justify-content: flex-start;
   }
-  .blog-text-content {
-    height: 220px;
+
+  .hero-img {
+    position: absolute;
+    right: 32px;
+    width: 238px;
   }
-  div.carousel {
-    display: none;
+
+  .story-item {
+    width: 200px;
   }
-  .mobile-list-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 65px 15px 15px 15px;
+
+  .fund-raise-title {
+    padding-left: 24px;
   }
-  .mobile-list-container .list-item {
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+
+  .fund-raise-content {
+    padding-bottom: 20px;
+  }
+
+  .service-content-container {
+    margin-bottom: 80px;
+  }
+
+  .service-content-item {
+    width: 200px;
+  }
+
+  .service-content-item > figure {
+    margin-bottom: 0;
+  }
+
+  .service-content-item img {
+    max-width: 100%;
+  }
+
+  .article-item {
+    width: 224px;
+  }
+
+  .enterprise-register {
+    width: 704px;
+  }
+
+  .team {
+    height: 452px;
+    padding-bottom: 0;
+  }
+
+  .team-description {
+    bottom: 0;
+    padding-bottom: 0;
     width: 100%;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
-  #logo-link .big-image {
-    width: 70%;
+
+  footer {
+    padding-left: 34px;
   }
 }
 
+/* Mobile */
+@media screen and (max-width: 375px) {
+  header {
+    max-width: 375px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  section {
+    max-width: 375px;
+  }
+
+  .top {
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-top: 115px;
+  }
+
+  .hero-description {
+    width: 100%;
+  }
+
+  .hero-description > h2 {
+    line-height: 24px;
+    white-space: normal;
+  }
+
+  .hero-description > p {
+    line-height: 24px;
+  }
+
+  .top-title {
+    display: none;
+  }
+
+  .top-mobile-title {
+    display: block;
+  }
+
+  .hero-img {
+    position: relative;
+  }
+
+  .top-section-action-container {
+    justify-content: center;
+  }
+
+  .introduction {
+    padding-top: 40px;
+  }
+
+  .crd-introduction {
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 61px;
+  }
+
+  .crd-introduction img {
+    max-width: 100%;
+  }
+
+  .crd-introduction-description {
+    margin-bottom: 19px;
+    width: 100%;
+  }
+
+  .success-crd {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .story-item {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .fund-raise-title {
+    padding-left: 0;
+  }
+
+  .fund-raise-description {
+    margin-bottom: 0;
+  }
+
+  .service-content-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .service-content-item {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .service-content-item > figure {
+    margin-bottom: 10px;
+  }
+
+  .faq-answer {
+    line-height: 1.2;
+  }
+
+  .article-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .article-item {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .article > .know-more-btn {
+    margin-bottom: 40px;
+  }
+
+  .enterprise-register {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .enterprise-register > figure {
+    margin-bottom: 32px;
+  }
+
+  .enterprise-register-description {
+    text-align: center;
+  }
+
+  .enterprise-register-description > .consult-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team {
+    margin-bottom: 40px;
+  }
+
+  .team > .section-title {
+    position: relative;
+    top: -100px;
+  }
+
+  .team-description {
+    height: 177px;
+  }
+
+  footer {
+    padding-left: 0;
+  }
+
+  footer figure, footer p {
+    margin-left: 18px;
+  }
+
+  .footer-info > .consult-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
