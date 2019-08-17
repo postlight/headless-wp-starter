@@ -339,6 +339,7 @@ section {
 .service-section-title {
   color: #011F26;
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 24px;
 }
 
@@ -352,7 +353,7 @@ section {
   background: #ffffff;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
   height: 400px;
-  padding: 40px 0 29px 24px;
+  padding: 40px 24px 29px;
   text-align: left;
   width: 307px;
 }
@@ -375,6 +376,27 @@ section {
   line-height: 28px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.faq {
+  margin-bottom: 16px;
+}
+
+.faq-container {
+  border: 1px solid #ECECEC;
+  font-size: 1.6rem;
+  padding: 24px 18px;
+  text-align: left;
+}
+
+.faq-question {
+  color:#011F26;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  color: #636363;
+  margin-bottom: 16px;
 }
 
 /* Success case */

@@ -29,6 +29,7 @@ type alias Model =
     , articleList : List Article
     , fundRaiseStats : FundRaiseStats
     , successStoryList : List Story
+    , faqList : List Faq
     , errorMsg : Maybe Http.Error
     , topIndex : Int
     }
@@ -89,6 +90,12 @@ type CarouselUseCase
     | SuccessCase
 
 
+type alias Faq =
+    { question : String
+    , answer : String
+    }
+
+
 serviceCarouselLength =
     2
 
@@ -116,6 +123,7 @@ type Msg
     | GotTeamMemberList (Result Http.Error (List TeamMember))
     | GotArticleList (Result Http.Error (List Article))
     | GotStoryList (Result Http.Error (List Story))
+    | GotFaqList (Result Http.Error (List Faq))
     | GotFundRaiseStats (Result Http.Error FundRaiseStats)
     | LinkToUrl String
     | SelectTeamMember Int
@@ -137,6 +145,7 @@ init _ =
       , articleList = []
       , fundRaiseStats = { successCaseNum = 0, successRate = 0, totalFund = "", funders = 0 }
       , successStoryList = []
+      , faqList = []
       , errorMsg = Nothing
       , topIndex = 1
       }
@@ -168,6 +177,10 @@ init _ =
         , Http.get
             { url = "%PUBLIC_URL%/assets/data/story.json"
             , expect = Http.expectJson GotStoryList decodeStoryList
+            }
+        , Http.get
+            { url = "%PUBLIC_URL%/assets/data/faq.json"
+            , expect = Http.expectJson GotFaqList decodeFaqList
             }
         , Http.get
             { url = "%PUBLIC_URL%/assets/data/fund_raise_stats.json"
@@ -263,6 +276,18 @@ storyDecoder =
 decodeStoryList : Decoder (List Story)
 decodeStoryList =
     field "data" (list storyDecoder)
+
+
+faqDecoder : Decoder Faq
+faqDecoder =
+    map2 Faq
+        (field "question" string)
+        (field "answer" string)
+
+
+decodeFaqList : Decoder (List Faq)
+decodeFaqList =
+    field "data" (list faqDecoder)
 
 
 decodeFundRaiseStats : Decoder FundRaiseStats
@@ -369,6 +394,14 @@ update msg model =
                 Err _ ->
                     ( model, Cmd.none )
 
+        GotFaqList result ->
+            case result of
+                Ok faqList ->
+                    ( { model | faqList = faqList }, Cmd.none )
+
+                Err _ ->
+                    ( model, Cmd.none )
+
         GotFundRaiseStats result ->
             case result of
                 Ok fundRaiseStats ->
@@ -443,7 +476,7 @@ viewHeader model =
             , div [ class "nav-link" ]
                 [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "免費諮詢" ]
                 , a [ href "#service" ] [ text "服務內容" ]
-                , a [ href "#service" ] [ text "常見問題" ]
+                , a [ href "#faq" ] [ text "常見問題" ]
                 , a [ href "#article" ] [ text "最新文章" ]
                 ]
             ]
@@ -519,6 +552,19 @@ viewSectionService { serviceContentList } =
         ]
 
 
+viewServiceContent : ServiceContent -> Html Msg
+viewServiceContent { imgSrc, imgAlt, title, description } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
+    article [ class "service-content-item" ]
+        [ h2 [] [ text title ]
+        , figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ]
+        , p [] [ text description ]
+        ]
+
+
 
 -- viewSectionService : Model -> Html Msg
 -- viewSectionService { serviceContentList, serviceDetailList, serviceIndex } =
@@ -557,16 +603,21 @@ viewSectionService { serviceContentList } =
 --         ]
 
 
-viewServiceContent : ServiceContent -> Html Msg
-viewServiceContent { imgSrc, imgAlt, title, description } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
-    article [ class "service-content-item" ]
-        [ h2 [] [ text title ]
-        , figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ]
-        , p [ class "custom-list-item-description" ] [ text description ]
+viewSectionFaq : Model -> Html Msg
+viewSectionFaq { faqList } =
+    section [ id "faq", class "faq" ]
+        [ h2 [ class "service-section-title" ] [ text "常見問題" ]
+        , div [ class "faq-container" ] (List.map viewFaq faqList)
+        ]
+
+
+viewFaq { question, answer } =
+    article []
+        [ p [ class "faq-question" ]
+            [ text ("Q: " ++ question) ]
+        , p
+            [ class "faq-answer" ]
+            [ text ("A: " ++ answer) ]
         ]
 
 
@@ -959,6 +1010,7 @@ view model =
         , viewSectionTop model
         , viewSectionIntroduction model
         , viewSectionService model
+        , viewSectionFaq model
         , viewSectionPromotion
         , viewSectionSuccessCase model
         , viewSectionTeamIntroduction
