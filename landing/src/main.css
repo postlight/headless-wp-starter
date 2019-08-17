@@ -449,6 +449,7 @@ section {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
+  margin-bottom: 84px;
   padding: 40px;
   text-align: left;
 }
