@@ -37,7 +37,9 @@ class Post extends Component {
 
   render() {
     const { post, headerMenu } = this.props;
-    if (!post.title) return <Error statusCode={404} />;
+    if (!post.title) {
+      return <Error statusCode={404} />;
+    }
 
     return (
       <Layout>
