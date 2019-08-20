@@ -12,32 +12,21 @@ class Post extends Component {
   static async getInitialProps(context) {
     const { slug, apiRoute } = context.query;
 
-    let apiMethod = wp.posts();
-
-    switch (apiRoute) {
-      case 'category':
-        apiMethod = wp.categories();
-        break;
-      case 'page':
-        apiMethod = wp.pages();
-        break;
-      default:
-        break;
-    }
+    const apiMethod = (apiRoute === 'post') ? wp.posts() : wp.pages();
 
     const post = await apiMethod
       .slug(slug)
       .embed()
-      .then(data => {
-        return data[0];
-      });
+      .then(data => data[0]);
 
     return { post };
   }
 
   render() {
     const { post, headerMenu } = this.props;
-    if (!post.title) return <Error statusCode={404} />;
+    if (!post || !post.title) {
+      return <Error statusCode={404} />;
+    }
 
     return (
       <Layout>
