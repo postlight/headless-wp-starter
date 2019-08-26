@@ -3,8 +3,8 @@
   "name": "Create Elm App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "./favicon.ico",
+      "sizes": "67x67",
       "type": "image/png"
     }
   ],
