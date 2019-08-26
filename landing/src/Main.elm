@@ -626,9 +626,7 @@ viewSectionArticle { articleList } =
     section [ id "article", class "article" ]
         [ h2 [ class "section-title" ] [ text "最新文章" ]
         , div [ class "article-container" ] (List.map viewArticle articleList)
-
-        -- TODO @paipo: add article link
-        , a [ class "know-more-btn", href "#" ] [ text "瀏覽更多" ]
+        , a [ class "know-more-btn", href "https://www.japaninsider.co/post/post-list/" ] [ text "瀏覽更多" ]
         ]
 
 
@@ -659,9 +657,7 @@ viewSectionEnterpriseRegister =
             , p [] [ text "想在未來建立自己在日本的團隊嗎?" ]
             , p [] [ text "想了解更多日本的商業環境嗎?" ]
             , p [ class "last-line" ] [ text "立即登錄您的企業資訊，讓更多在日本的跨境人才看到您們的團隊！" ]
-
-            -- TODO @paipo: add another typeform link here
-            , a [ class "consult-btn", href "" ] [ text "登錄企業資訊" ]
+            , a [ class "consult-btn", href "https://www.surveycake.com/s/Xvn8m" ] [ text "登錄企業資訊" ]
             ]
         , figure []
             [ img [ Asset.src Asset.enterpriseRegisterImage, alt "register as enterprise" ] [] ]
