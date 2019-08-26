@@ -55,7 +55,7 @@ services:
         # https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
         entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     frontend:
-        command: sh -c 'yarn && yarn build && yarn start:prod'
+        command: sh -c 'yarn && yarn build && yarn start:dev'
         container_name: frontend
         expose:
             - '3000'

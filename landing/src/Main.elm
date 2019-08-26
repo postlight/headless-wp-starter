@@ -7,7 +7,7 @@ import Html exposing (Html, a, article, aside, br, button, div, em, figure, foot
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Http
-import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, string)
+import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, map7, map8, string)
 import String exposing (append)
 import Time
 
@@ -81,7 +81,7 @@ type alias FundRaiseStats =
 
 
 type alias Story =
-    { link : String, imgSrc : String, title : String, description : String, fundRaiseAmount : String, funders : Int }
+    { link : String, imgSrc : String, title : String, description : String, subtitle : String, testimony : String, fundRaiseAmount : String, funders : Int }
 
 
 type CarouselUseCase
@@ -254,11 +254,13 @@ decodeArticleList =
 
 storyDecoder : Decoder Story
 storyDecoder =
-    map6 Story
+    map8 Story
         (field "link" string)
         (field "imgSrc" string)
         (field "title" string)
         (field "description" string)
+        (field "subtitle" string)
+        (field "testimony" string)
         (field "fundRaiseAmount" string)
         (field "funders" int)
 
@@ -464,10 +466,10 @@ viewHeader model =
                     ]
                 ]
             , div [ class "nav-link" ]
-                [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "免費諮詢" ]
+                [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
                 , a [ href "#service" ] [ text "服務內容" ]
                 , a [ href "#faq" ] [ text "常見問題" ]
-                , a [ href "#article" ] [ text "最新文章" ]
+                , a [ href "#article" ] [ text "精選文章" ]
                 , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
                     [ figure []
                         [ img
@@ -487,7 +489,7 @@ viewHeader model =
 viewMailBtn : Html Msg
 viewMailBtn =
     div [ class "mailBtn" ]
-        [ a [ href "https://japaninsider.typeform.com/to/S7rcLo" ]
+        [ a [ href "https://japaninsider.typeform.com/to/yvsVAD" ]
             [ figure []
                 [ img [ Asset.src Asset.mail, alt "mail button" ] []
                 ]
@@ -499,18 +501,18 @@ viewSectionTop : Model -> Html Msg
 viewSectionTop { topIndex } =
     section [ id "top", class "top" ]
         [ div [ class "hero-description" ]
-            [ h2 [] [ text "JapanInsider是提供日本群眾募資，線上電商營運，線下通路開發的專業顧問團隊" ]
+            [ h2 [] [ text "Japan Insider 是提供日本群眾募資、線上電商營運、線下通路開發顧問的專業團隊" ]
             , h1 [ class "top-title" ] [ text "以群眾募資為起跑點，", br [] [], text "一起開始日本市場的開拓之旅！" ]
             , h1 [ class "top-mobile-title" ] [ text "以群眾募資為起跑點，一起開始日本市場的開拓之旅！" ]
             , p []
                 [ span [] [ text "已協助" ]
-                , em [] [ text "N" ]
+                , em [] [ text "8" ]
                 , span [] [ text "個團隊在日本募資" ]
-                , em [] [ text "JPY 58,600,000" ]
+                , em [] [ text "JPY 53,000,000" ]
                 ]
             , div [ class "top-section-action-container" ]
                 [ a
-                    [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ]
+                    [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ]
                     [ text "免費諮詢" ]
                 , a [ class "know-more-btn", href "#service" ] [ text "了解更多" ]
                 ]
@@ -624,7 +626,7 @@ viewFaq { question, answer } =
 viewSectionArticle : Model -> Html Msg
 viewSectionArticle { articleList } =
     section [ id "article", class "article" ]
-        [ h2 [ class "section-title" ] [ text "最新文章" ]
+        [ h2 [ class "section-title" ] [ text "精選文章" ]
         , div [ class "article-container" ] (List.map viewArticle articleList)
         , a [ class "know-more-btn", href "https://www.japaninsider.co/post/post-list/" ] [ text "瀏覽更多" ]
         ]
@@ -635,14 +637,12 @@ viewArticle { imgSrc, date, title, link } =
     let
         imgSrcPath =
             append assetPath imgSrc
-
-        linkHrefPath =
-            append linkPath link
     in
-    a [ href linkHrefPath, class "link-container" ]
+    a [ href link, class "link-container" ]
         [ article [ class "article-item" ]
             [ figure [] [ img [ src imgSrcPath, alt title ] [] ]
-            , p [ class "article-item-date" ] [ text date ]
+
+            -- , p [ class "article-item-date" ] [ text date ]
             , p [ class "article-item-title" ] [ text title ]
             ]
         ]
@@ -652,12 +652,12 @@ viewSectionEnterpriseRegister : Html Msg
 viewSectionEnterpriseRegister =
     section [ id "enterprise-register", class "enterprise-register" ]
         [ div [ class "enterprise-register-description" ]
-            [ h2 [] [ text "進入日本市場的海外企業" ]
+            [ h2 [] [ text "加入 Japan Insider 新創團隊社群" ]
             , p [] [ text "想認識更多在日本的人脈嗎?  " ]
             , p [] [ text "想在未來建立自己在日本的團隊嗎?" ]
             , p [] [ text "想了解更多日本的商業環境嗎?" ]
             , p [ class "last-line" ] [ text "立即登錄您的企業資訊，讓更多在日本的跨境人才看到您們的團隊！" ]
-            , a [ class "consult-btn", href "https://www.surveycake.com/s/Xvn8m" ] [ text "登錄企業資訊" ]
+            , a [ class "consult-btn", href "https://www.surveycake.com/s/Xvn8m", target "_blank" ] [ text "登錄社群" ]
             ]
         , figure []
             [ img [ Asset.src Asset.enterpriseRegisterImage, alt "register as enterprise" ] [] ]
@@ -670,7 +670,7 @@ viewSectionTeam =
         [ h2 [ class "section-title" ] [ text "團隊成員" ]
         , div [ class "team-description" ]
             [ h2 []
-                [ text "JAPAN INSIDER 成員皆任職於日本的公司，精通中、日、英文，背景包括數位行銷、產品設計、軟體開發、工程、供應鏈等。讓熟悉日本市場的專業團隊, 成為您專案的一份子, 協助您進入日本市場。"
+                [ text "JAPAN INSIDER 成員皆位於日本，精通中、日、英文，背景包括數位行銷、產品設計、軟體開發、工程、供應鏈等。讓熟悉日本市場的專業團隊，成為您專案的一份子，協助您進入日本市場。"
                 ]
             ]
         ]
@@ -839,7 +839,7 @@ viewSectionTeamIntroduction =
 
 
 viewStory : Story -> Html Msg
-viewStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
+viewStory { link, imgSrc, title, description, testimony, fundRaiseAmount, funders, subtitle } =
     let
         imgSrcPath =
             append assetPath imgSrc
@@ -848,9 +848,11 @@ viewStory { link, imgSrc, title, description, fundRaiseAmount, funders } =
         [ h2 [ class "fund-raise-title" ] [ text (title ++ " 成功募資 " ++ fundRaiseAmount ++ " 萬日幣") ]
         , div [ class "fund-raise-content" ]
             [ p [ class "fund-raise-description" ] [ text description ]
+            , p [ class "fund-raise-testimony" ] [ text testimony ]
             ]
         , img [ class "fund-raise-image", src imgSrcPath, alt title ] []
-        , a [ class "know-more-btn", href link ] [ text "募資頁面" ]
+        , p [ class "fund-raise-subtitle" ] [ text subtitle ]
+        , a [ class "know-more-btn", href link, target "_blank" ] [ text "募資頁面" ]
         ]
 
 
@@ -925,7 +927,6 @@ viewFooter =
             , p
                 [ class "about-us-address" ]
                 [ text "106-0046 東京都港区元麻布3-1-6" ]
-            , a [ class "consult-btn", href "https://japaninsider.typeform.com/to/S7rcLo" ] [ text "免費諮詢" ]
             ]
         ]
 

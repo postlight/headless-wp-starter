@@ -129,7 +129,7 @@ a.consult-btn {
 
 footer {
   background: #D94A3D;
-  height: 264px;
+  height: 200px;
   padding: 33px 0 32px 240px;
 }
 
@@ -146,11 +146,13 @@ footer {
 }
 
 .about-us-email {
+  font-size: 1.6rem;
   margin-bottom: 5px;
 }
 
 .about-us-address {
-  margin-bottom: 36px;
+  font-size: 1.6rem;
+  /* margin-bottom: 36px; */
 }
 
 .footer-info > .consult-btn {
@@ -363,18 +365,19 @@ section {
 .faq-container {
   border: 1px solid #ECECEC;
   font-size: 1.6rem;
-  padding: 24px 18px;
+  padding: 56px 18px 24px 18px;
   text-align: left;
 }
 
 .faq-question {
   color:#011F26;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
 .faq-answer {
   color: #636363;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .article {
@@ -467,7 +470,6 @@ section {
   flex-direction: column;
   height: 678px;
   justify-content: space-between;
-  margin-bottom: 203px;
   padding-top: 56px;
   padding-bottom: 42px;
   position: relative;
@@ -511,7 +513,8 @@ section {
   cursor: pointer;
 }
 .fund-raise-image {
-  margin-bottom: 29px;
+  height: 200px;
+  margin-bottom: 15px;
   object-fit: cover;
   width: 100%;
 }
@@ -524,7 +527,13 @@ section {
   font-size: 1.6rem;
   font-weight: bold;
   letter-spacing: 1.1px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+}
+
+.fund-raise-subtitle {
+  font-size: 1.2rem;
+  margin-left: 24px;
+  margin-bottom: 18px;
 }
 
 .quotation-mark {
@@ -535,7 +544,9 @@ section {
 .fund-raise-description:before {
   content: "“";
   color: #C4C4C4;
+  font-family: Helvetica;
   font-size: 4rem;
+  height: 36px;
   position: absolute;
   top: -5px;
   left: -5px;
@@ -543,20 +554,27 @@ section {
 
 .fund-raise-description {
   color: #333333;
-  font-size: 1.2rem;
-  height: 150px;
-  margin-bottom: 30px;
-  padding: 20px;
+  font-size: 1.4rem;
+  height: 140px;
+  line-height: 1.8;
+  padding: 20px 20px 0 20px;
   position: relative;
 }
 
 .fund-raise-description:after {
-  bottom: -5px;
   content: "”";
   color: #C4C4C4;
+  font-family: Helvetica;
   font-size: 4rem;
+  height: 36px;
   position: absolute;
   right: -5px;
+}
+
+.fund-raise-testimony {
+  margin-left: 18px;
+  font-size: 1.4rem;
+  font-style: italic;
 }
 
 /* Team */
@@ -1196,6 +1214,11 @@ li>img {
 /* Tablet */
 @media screen and (max-width: 768px) {
 
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .top {
     justify-content: flex-start;
   }
@@ -1257,13 +1280,17 @@ li>img {
 /* Mobile */
 @media screen and (max-width: 540px) {
 
-  nav {
-    justify-content: center;
+  header {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    height: 60px;
   }
 
-  section {
-    padding-left: 16px;
-    padding-right: 16px;
+  .logo {
+    height: 40px;
+  }
+
+  nav {
+    justify-content: center;
   }
 
   .nav-link {
@@ -1363,10 +1390,11 @@ li>img {
   .article-container {
     align-items: center;
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .article-item {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     width: 100%;
   }
 
@@ -1393,7 +1421,8 @@ li>img {
   }
 
   .team {
-    margin-bottom: 40px;
+    background-position: 0% 0%;
+    height: 427px;
   }
 
   .team > .section-title {
