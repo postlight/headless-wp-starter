@@ -137,6 +137,7 @@ footer {
   color: #ffffff;
   font-size: 1.4rem;
   line-height: 20px;
+  max-width: 960px;
   text-align: left;
 }
 
@@ -162,8 +163,6 @@ footer {
 section {
   margin: auto;
   max-width: 960px;
-  padding-left: 32px;
-  padding-right: 32px;
   width: 100%;
 }
 
@@ -1196,13 +1195,6 @@ li>img {
 
 /* Tablet */
 @media screen and (max-width: 768px) {
-  header {
-    max-width: 768px;
-  }
-
-  section {
-    max-width: 768px;
-  }
 
   .top {
     justify-content: flex-start;
@@ -1246,10 +1238,6 @@ li>img {
     width: 224px;
   }
 
-  .enterprise-register {
-    width: 704px;
-  }
-
   .team {
     height: 452px;
     padding-bottom: 0;
@@ -1267,21 +1255,19 @@ li>img {
 }
 
 /* Mobile */
-@media screen and (max-width: 375px) {
-  header {
-    max-width: 375px;
-  }
+@media screen and (max-width: 540px) {
 
   nav {
     justify-content: center;
   }
 
-  .nav-link {
-    display: none;
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  section {
-    max-width: 375px;
+  .nav-link {
+    display: none;
   }
 
   .top {
