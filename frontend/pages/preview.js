@@ -21,30 +21,21 @@ class Preview extends Component {
     // but the latter isn't documented.
 
     // checking if the post/page is a draft or a revision.
+    let postUrl = `${Config.apiUrl}/wp/v2/${type}s/${id}/revisions/${rev}?_wpnonce=${wpnonce}`;
     if( status === 'draft' ) {
-      fetch(
-        `${Config.apiUrl}/wp/v2/${type}s/${rev}?_wpnonce=${wpnonce}`,
-        { credentials: 'include' }, // required for cookie nonce auth
-      )
-        .then(res => res.json())
-        .then(res => {
-          this.setState({
-            post: res,
-          });
-        });
+      postUrl = `${Config.apiUrl}/wp/v2/${type}s/${rev}?_wpnonce=${wpnonce}`;
     }
-    else {
-      fetch(
-        `${Config.apiUrl}/wp/v2/${type}s/${id}/revisions/${rev}?_wpnonce=${wpnonce}`,
-        { credentials: 'include' }, // required for cookie nonce auth
-      )
-        .then(res => res.json())
-        .then(res => {
-          this.setState({
-            post: res,
-          });
+
+    fetch(
+      postUrl,
+      { credentials: 'include' }, // required for cookie nonce auth
+    )
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          post: res,
         });
-    }
+      });
   }
 
   render() {
