@@ -28,10 +28,10 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
-    server.get('/_preview/:id/:rev/:type/:wpnonce', (req, res) => {
+    server.get('/_preview/:id/:rev/:type/:status/:wpnonce', (req, res) => {
       const actualPage = '/preview';
-      const { id, rev, type, wpnonce } = req.params;
-      const queryParams = { id, rev, type, wpnonce };
+      const { id, rev, type, status, wpnonce } = req.params;
+      const queryParams = { id, rev, type, status, wpnonce };
       app.render(req, res, actualPage, queryParams);
     });
 

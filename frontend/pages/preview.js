@@ -16,19 +16,35 @@ class Preview extends Component {
 
   componentDidMount() {
     const { url } = this.props;
-    const { id, rev, type, wpnonce } = url.query;
+    const { id, rev, type, status, wpnonce } = url.query;
     // The REST posts controller handles both posts/#/revisions/# and pages/#/revisions/#
     // but the latter isn't documented.
-    fetch(
-      `${Config.apiUrl}/wp/v2/${type}s/${id}/revisions/${rev}?_wpnonce=${wpnonce}`,
-      { credentials: 'include' }, // required for cookie nonce auth
-    )
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          post: res,
+
+    // checking if the post/page is a draft or a revision.
+    if( status === 'draft' ) {
+      fetch(
+        `${Config.apiUrl}/wp/v2/${type}s/${rev}?_wpnonce=${wpnonce}`,
+        { credentials: 'include' }, // required for cookie nonce auth
+      )
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            post: res,
+          });
         });
-      });
+    }
+    else {
+      fetch(
+        `${Config.apiUrl}/wp/v2/${type}s/${id}/revisions/${rev}?_wpnonce=${wpnonce}`,
+        { credentials: 'include' }, // required for cookie nonce auth
+      )
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            post: res,
+          });
+        });
+    }
   }
 
   render() {
