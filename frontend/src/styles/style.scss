@@ -4,10 +4,6 @@ $theme-font: 100% verdana, sans-serif;
 body {
   font: $theme-font;
   background-color: $themeColor-Light;
-  h1,
-  h2 {
-    color: $themeColor-Dark;
-  }
 }
 
 .input-padding {
