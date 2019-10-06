@@ -8,23 +8,30 @@ const NavBar = () => (
       </figure>
     </a>
     <nav>
-      <a href="https://www.japaninsider.co/" target="_blank">
-        首頁
+      <a
+        className="consultBtn"
+        href="https://japaninsider.typeform.com/to/yvsVAD"
+        target="_blank"
+      >
+        免費諮詢
       </a>
       <a href="https://www.japaninsider.co/#service" target="_blank">
         服務內容
       </a>
-      <a href="https://www.japaninsider.co/#success-case" target="_blank">
-        過去實績
+      <a href="https://www.japaninsider.co/#faq" target="_blank">
+        常見問題
       </a>
-      <a href="https://www.japaninsider.co/#team" target="_blank">
-        團隊成員
+      <a href="https://www.japaninsider.co/#article" target="_blank">
+        精選文章
       </a>
-      <a href="https://www.japaninsider.co/#japan-insider" target="_blank">
-        日本內幕
-      </a>
-      <a href="https://japaninsider.typeform.com/to/S7rcLo" target="_blank">
-        聯絡我們
+      <a
+        className="fbLogo"
+        href="https://www.facebook.com/japaninsiders/"
+        target="_blank"
+      >
+        <figure>
+          <img src="/static/images/fb.svg" alt="fb logo" />
+        </figure>
       </a>
     </nav>
     <style jsx>
@@ -36,8 +43,8 @@ const NavBar = () => (
           display: flex;
           font-size: 1.6rem;
           height: 100px;
-          justify-content: center;
-          padding: 40px 30px 6px;
+          justify-content: space-between;
+          max-width: 960px;
           position: fixed;
           top: 0;
           width: 100%;
@@ -46,20 +53,38 @@ const NavBar = () => (
         .logo {
           height: 40px;
           object-fit: contain;
-          width: 100%;
         }
         nav {
           margin-left: 137px;
         }
         nav a {
-          color: ${textColor};
+          color: #01403a;
           padding: 8px;
           text-decoration: none;
         }
         nav a:hover,
         nav a:focus,
         nav a.selected {
-          color: ${titleColor};
+          opacity: 0.7;
+        }
+        .consultBtn {
+          align-items: center;
+          background: #d94a3d;
+          border-radius: 54px;
+          color: #ffffff;
+          display: flex;
+          font-size: 1.6rem;
+          height: 36px;
+          justify-content: center;
+          margin-left: 0;
+          text-decoration: none;
+          width: 96px;
+        }
+        .consultBtn:hover {
+          opacity: 0.7;
+        }
+        .fbLogo {
+          margin-left: 32px;
         }
       `}
     </style>

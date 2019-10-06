@@ -2,7 +2,7 @@ import { lightGray, textColor, titleColor } from './constants';
 
 const RecentPosts = ({ posts }) => (
   <section className="block">
-    <h3>Recent Posts</h3>
+    <h3>最新文章</h3>
     <ul>
       {posts.map(post => (
         <li className="title">
@@ -23,11 +23,11 @@ const RecentPosts = ({ posts }) => (
         margin-bottom: 20px;
       }
       .link {
-        color: ${lightGray};
+        color: #636363;
         text-decoration: none;
       }
       .link:hover {
-        color: ${textColor};
+        color: ${lightGray};
       }
     `}</style>
   </section>

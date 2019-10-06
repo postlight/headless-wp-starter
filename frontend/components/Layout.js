@@ -12,6 +12,8 @@ const Layout = props => {
       <style jsx>{`
         .layout {
           padding-top: 100px;
+          margin: auto;
+          max-width: 960px;
         }
       `}</style>
     </div>

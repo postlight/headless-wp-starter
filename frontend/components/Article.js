@@ -41,8 +41,8 @@ const Article = ({
           margin-left: 10%;
         }
         .currentPost {
-          width: 60%;
-          max-width: 1090px;
+          width: 100%;
+          max-width: 633px;
         }
         .articleInfo {
           margin: 0 auto 30px auto;
@@ -63,10 +63,14 @@ const Article = ({
           margin: 0 auto 10px auto;
         }
         .recentPost {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          padding: 30px;
+          width: 307px;
+          height: 659px;
+          border: 1px solid #eeeeee;
+          box-sizing: border-box;
+          border-radius: 8px;
+          padding-top: 32px;
+          padding-left: 20px;
+          padding-right: 20px;
         }
       `}
     </style>
