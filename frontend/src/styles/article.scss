@@ -4,14 +4,51 @@
   img {
     max-width: 100%;
   }
+}
 
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 4.2rem;
+  color: #d94a3d;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 2.8rem;
+  color: #d94a3d;
+}
+
+h3 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: #001f26;
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 2.4rem;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #001f26;
+}
+
+h5,
+h6 {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #636363;
+}
+
+p {
+  color: #636363;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+a {
+  color: #001f26;
+  text-decoration: underline;
+  text-decoration-style: dashed;
 }
 
 img {

@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import stylesheet from '../src/styles/article.scss';
 import RecentPosts from './RecentPosts';
 import { secondaryTextColor, titleColor } from './constants';
-import stylesheet from '../src/styles/article.scss';
 
 // TODO: Add type for Post
 const Article = ({
@@ -45,24 +45,21 @@ const Article = ({
           max-width: 1090px;
         }
         .articleInfo {
-          font-size: 14px;
           margin: 0 auto 30px auto;
         }
         .title {
-          color: ${titleColor};
-          font-weight: bold;
-          font-size: 3.6rem;
           margin-bottom: 10px;
         }
         .date {
-          color: ${secondaryTextColor};
+          color: #636363;
+          font-size: 1.4rem;
         }
         .author {
+          color: #636363;
+          font-size: 1.4rem;
           margin-left: 20px;
         }
         article {
-          font-size: 1.4rem;
-          line-height: 2;
           margin: 0 auto 10px auto;
         }
         .recentPost {
