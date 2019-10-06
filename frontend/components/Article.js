@@ -38,7 +38,6 @@ const Article = ({
           display: flex;
           justify-content: space-between;
           margin-top: 50px;
-          margin-left: 10%;
         }
         .currentPost {
           width: 100%;

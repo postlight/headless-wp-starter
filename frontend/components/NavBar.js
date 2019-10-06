@@ -54,11 +54,9 @@ const NavBar = () => (
           height: 40px;
           object-fit: contain;
         }
-        nav {
-          margin-left: 137px;
-        }
         nav a {
           color: #01403a;
+          margin-left: 16px;
           padding: 8px;
           text-decoration: none;
         }

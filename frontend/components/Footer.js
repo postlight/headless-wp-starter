@@ -30,11 +30,13 @@ const Footer = () => (
         }
 
         .aboutUsEmail {
+          color: #ffffff;
           font-size: 1.6rem;
           margin-bottom: 5px;
         }
 
         .aboutUsAddress {
+          color: #ffffff;
           font-size: 1.6rem;
         }
       `}

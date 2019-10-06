@@ -5,9 +5,11 @@ import Header from './Header';
 const Layout = props => {
   const { children } = props;
   return (
-    <div className="layout">
-      <Header />
-      {children}
+    <>
+      <div className="layout">
+        <Header />
+        {children}
+      </div>
       <Footer />
       <style jsx>{`
         .layout {
@@ -16,7 +18,7 @@ const Layout = props => {
           max-width: 960px;
         }
       `}</style>
-    </div>
+    </>
   );
 };
 export default Layout;
