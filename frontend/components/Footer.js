@@ -13,6 +13,7 @@ const Footer = () => (
       {`
         footer {
           background: #d94a3d;
+          box-sizing: border-box;
           height: 200px;
           padding: 33px 0 32px 240px;
         }

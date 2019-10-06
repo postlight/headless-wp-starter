@@ -54,10 +54,13 @@ const NavBar = () => (
           height: 40px;
           object-fit: contain;
         }
+        nav {
+          display: flex;
+          align-items: center;
+        }
         nav a {
           color: #01403a;
           margin-left: 16px;
-          padding: 8px;
           text-decoration: none;
         }
         nav a:hover,
@@ -65,7 +68,7 @@ const NavBar = () => (
         nav a.selected {
           opacity: 0.7;
         }
-        .consultBtn {
+        nav a.consultBtn {
           align-items: center;
           background: #d94a3d;
           border-radius: 54px;
