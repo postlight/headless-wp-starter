@@ -17,8 +17,7 @@ jobs:
     working_directory: ~/repo/frontend
 
     steps:
-      - checkout:
-        path: ~/repo
+      - checkout
 
       # Download and cache dependencies
       - restore_cache:
