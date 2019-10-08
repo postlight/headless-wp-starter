@@ -28,7 +28,11 @@ jobs:
       - run:
           name: switch to frontend subdirectory
           command: cd frontend
-          
+
+      - run:
+          name: where am i
+          command: pwd
+
       - run: yarn install
 
       - save_cache:
