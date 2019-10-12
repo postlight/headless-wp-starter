@@ -145,6 +145,10 @@ footer {
   margin-bottom: 9px;
 }
 
+.footer-logo {
+  max-width: 245px;
+}
+
 .about-us-email {
   font-size: 1.6rem;
   margin-bottom: 5px;

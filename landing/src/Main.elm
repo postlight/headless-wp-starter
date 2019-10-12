@@ -920,7 +920,7 @@ viewFooter =
     footer []
         [ div [ class "footer-info" ]
             [ figure []
-                [ img [ Asset.src Asset.whiteLogo, alt "logo" ] [] ]
+                [ img [ Asset.src Asset.whiteLogo, alt "logo", class "footer-logo" ] [] ]
             , p
                 [ class "about-us-email" ]
                 [ text "contact@japaninsider.co" ]
