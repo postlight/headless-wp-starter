@@ -11,22 +11,33 @@ services:
         image: mariadb
         ports:
             - '3307:3306'
+
+    nginx:
+        build: docker/dockerfiles/nginx
+        container_name: nginx
+        command: sh -c "wait-for-backend && nginx -g 'daemon off;'"
+        depends_on:
+          - wp-headless
+        volumes:
+          - ./wordpress:/var/www/html
+          - ./docker/wait-for-backend.sh:/usr/local/bin/wait-for-backend
+        ports:
+          - 8080:80
+
     wp-headless:
-        build: .
-        command: bash -c 'install_wordpress && apache2-foreground'
+        build: docker/dockerfiles/wordpress
+        command: bash -c 'install_wordpress && php-fpm'
         container_name: wp-headless
         depends_on:
             - db-headless
         env_file: ./.env
-        ports:
-            - '8080:8080'
-        user: www-data
         volumes:
             - ./wordpress:/var/www/html
             - ./docker/install_wordpress.sh:/usr/local/bin/install_wordpress
             - ./docker/migratedb_import.sh:/usr/local/bin/migratedb_import
             - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
             - ./docker/plugins:/var/www/plugins
+
     frontend:
         command: bash -c 'yarn && yarn start'
         container_name: frontend
@@ -39,6 +50,7 @@ services:
         volumes:
             - ./frontend:/home/node/app
         working_dir: /home/node/app
+
     frontend-graphql:
         command: bash -c 'yarn && yarn start'
         container_name: frontend-graphql
