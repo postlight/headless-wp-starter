@@ -1,15 +1,19 @@
 module Main exposing (init, view)
 
+-- import Browser exposing (Document)
+
 import Asset
-import Browser exposing (Document)
-import Browser.Navigation
-import Html exposing (Html, a, article, aside, br, button, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
+import Browser
+import Browser.Navigation as Nav
+import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Http
 import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, map7, map8, string)
 import String exposing (append)
 import Time
+import Url
+import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
 
 
 
@@ -19,6 +23,7 @@ import Time
 type alias Model =
     { navBarClassNames : List String
     , serviceContentList : List ServiceContent
+    , jpServiceContentList : List ServiceContent
     , serviceDetailList : List ServiceDetail
     , serviceIndex : Int
     , successCaseIndex : Int
@@ -32,6 +37,8 @@ type alias Model =
     , faqList : List Faq
     , errorMsg : Maybe Http.Error
     , topIndex : Int
+    , url : Url.Url
+    , key : Nav.Key
     }
 
 
@@ -115,6 +122,7 @@ type CarouselBehaviour
 type Msg
     = TOGGLE
     | GotServiceContentList (Result Http.Error (List ServiceContent))
+    | GotJpServiceContentList (Result Http.Error (List ServiceContent))
     | GotServiceDetailList (Result Http.Error (List ServiceDetail))
     | Carousel CarouselUseCase CarouselBehaviour
     | GotMediaList (Result Http.Error (List String))
@@ -124,16 +132,18 @@ type Msg
     | GotStoryList (Result Http.Error (List Story))
     | GotFaqList (Result Http.Error (List Faq))
     | GotFundRaiseStats (Result Http.Error FundRaiseStats)
-    | LinkToUrl String
     | SelectTeamMember Int
     | DotClick Int
     | SwitchTopImage Time.Posix
+    | LinkClicked Browser.UrlRequest
+    | UrlChanged Url.Url
 
 
-init : () -> ( Model, Cmd Msg )
-init _ =
+init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
+init flags url key =
     ( { navBarClassNames = []
       , serviceContentList = []
+      , jpServiceContentList = []
       , serviceDetailList = []
       , serviceIndex = 0
       , successCaseIndex = 0
@@ -147,11 +157,17 @@ init _ =
       , faqList = []
       , errorMsg = Nothing
       , topIndex = 1
+      , key = key
+      , url = url
       }
     , Cmd.batch
         [ Http.get
             { url = "%PUBLIC_URL%/assets/data/service_content.json"
             , expect = Http.expectJson GotServiceContentList decodeServiceContentList
+            }
+        , Http.get
+            { url = "%PUBLIC_URL%/assets/data/jp_service_content.json"
+            , expect = Http.expectJson GotJpServiceContentList decodeServiceContentList
             }
         , Http.get
             { url = "%PUBLIC_URL%/assets/data/service_detail.json"
@@ -302,6 +318,17 @@ update msg model =
             round (toFloat (List.length model.successStoryList) / 3) + 1
     in
     case msg of
+        LinkClicked urlRequest ->
+            case urlRequest of
+                Browser.Internal url ->
+                    ( model, Nav.pushUrl model.key (Url.toString url) )
+
+                Browser.External href ->
+                    ( model, Nav.load href )
+
+        UrlChanged url ->
+            ( { model | url = url }, Cmd.none )
+
         TOGGLE ->
             case List.length model.navBarClassNames of
                 0 ->
@@ -316,6 +343,14 @@ update msg model =
             case result of
                 Ok serviceContentList ->
                     ( { model | serviceContentList = serviceContentList }, Cmd.none )
+
+                Err _ ->
+                    ( model, Cmd.none )
+
+        GotJpServiceContentList result ->
+            case result of
+                Ok jpServiceContentList ->
+                    ( { model | jpServiceContentList = jpServiceContentList }, Cmd.none )
 
                 Err _ ->
                     ( model, Cmd.none )
@@ -402,9 +437,6 @@ update msg model =
                 Err err ->
                     ( { model | errorMsg = Just err }, Cmd.none )
 
-        LinkToUrl link ->
-            ( model, Browser.Navigation.load link )
-
         SelectTeamMember index ->
             ( { model | selectedTeamMemberIndex = index }, Cmd.none )
 
@@ -465,19 +497,51 @@ viewHeader model =
                         []
                     ]
                 ]
-            , div [ class "nav-link" ]
-                [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
-                , a [ href "#service" ] [ text "服務內容" ]
-                , a [ href "#faq" ] [ text "常見問題" ]
-                , a [ href "#article" ] [ text "精選文章" ]
-                , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
-                    [ figure []
-                        [ img
-                            [ Asset.src Asset.fb
-                            , alt "fb logo"
+            , div [ class "nav-link-wrapper" ]
+                [ div [ class "lang-toggle" ] [ a [ class "selected", href "/" ] [ text "TW" ], a [ href "/jp" ] [ text "JP" ] ]
+                , div [ class "nav-link" ]
+                    [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
+                    , a [ href "#service" ] [ text "服務內容" ]
+                    , a [ href "#faq" ] [ text "常見問題" ]
+                    , a [ href "#article" ] [ text "精選文章" ]
+                    , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
+                        [ figure []
+                            [ img
+                                [ Asset.src Asset.fb
+                                , alt "fb logo"
+                                ]
+                                []
                             ]
-                            []
                         ]
+                    ]
+                ]
+            ]
+        , a [ class "hamburger", onClick TOGGLE ]
+            [ img [ Asset.src Asset.hamburger, width 25, height 25, alt "Menu" ] [] ]
+        ]
+
+
+viewJpHeader : Model -> Html Msg
+viewJpHeader model =
+    header []
+        [ nav [ class (String.join " " model.navBarClassNames) ]
+            [ a [ id "logo-link", href "#top" ]
+                [ figure []
+                    [ img
+                        [ Asset.src Asset.logo
+                        , alt "logo"
+                        , class "logo"
+                        ]
+                        []
+                    ]
+                ]
+            , div [ class "nav-link-wrapper" ]
+                [ div [ class "lang-toggle" ] [ a [ href "/" ] [ text "TW" ], a [ class "selected", href "/jp" ] [ text "JP" ] ]
+                , div [ class "nav-link" ]
+                    [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "お問い合わせ" ]
+                    , a [ href "#service" ] [ text "事業內容" ]
+                    , a [ href "#company-spirit" ] [ text "会社精神" ]
+                    , a [ href "#company-summary" ] [ text "会社概要" ]
                     ]
                 ]
             ]
@@ -522,6 +586,16 @@ viewSectionTop { topIndex } =
         ]
 
 
+viewJpTop : Html Msg
+viewJpTop =
+    section [ id "top", class "jp-top" ]
+        [ div [ class "jp-top-description" ]
+            [ h2 [] [ text "Bridge Cross-Border Connection" ]
+            , h1 [] [ text "台湾企業の日本進出する新モデルを創出" ]
+            ]
+        ]
+
+
 viewSectionIntroduction : Model -> Html Msg
 viewSectionIntroduction { successStoryList } =
     div [ class "introduction-background-wrapper" ]
@@ -551,6 +625,13 @@ viewSectionService { serviceContentList } =
     section [ id "service", class "service" ]
         [ h2 [ class "section-title" ] [ text "服務內容" ]
         , div [ class "service-content-container" ] (List.map viewServiceContent serviceContentList)
+        ]
+
+
+viewJpSectionService { jpServiceContentList } =
+    section [ id "service", class "service" ]
+        [ h2 [ class "section-title" ] [ text "事業內容" ]
+        , div [ class "service-content-container" ] (List.map viewServiceContent jpServiceContentList)
         ]
 
 
@@ -661,6 +742,20 @@ viewSectionEnterpriseRegister =
             ]
         , figure []
             [ img [ Asset.src Asset.enterpriseRegisterImage, alt "register as enterprise" ] [] ]
+        ]
+
+
+viewJpSectionEnterpriseRegister : Html Msg
+viewJpSectionEnterpriseRegister =
+    section [ id "enterprise-register", class "enterprise-register" ]
+        [ div [ class "enterprise-register-description" ]
+            [ h2 [] [ text "商品・ブランドのお問い合わせはこちら" ]
+            , p [ id "jp-enterprise-register-paragraph" ]
+                [ text "商品の取り扱い、輸入、物販、などに関するご質問は以下のフォームにご記入いただけますと幸いです。" ]
+            , a [ class "consult-btn", href "https://www.surveycake.com/s/Xvn8m", target "_blank" ] [ text "お問い合わせ" ]
+            ]
+        , figure []
+            [ img [ Asset.src Asset.jpEnterpriseRegisterImage, alt "consult as enterprise" ] [] ]
         ]
 
 
@@ -915,6 +1010,33 @@ viewMedia imgName =
     figure [] [ img [ class "media-image", src imgSrc, alt imgAlt ] [] ]
 
 
+viewJpSectionSpirit : Html Msg
+viewJpSectionSpirit =
+    section [ id "company-spirit", class "jp-spirit" ]
+        [ h2 [] [ text "会社精神" ]
+        , div [ class "jp-spirit-content-wrapper" ]
+            [ h2 [] [ text "「日本にいる外人たちの力を発揮」そして「外から日本にイノベーションをもたらすこと」" ]
+            , p [] [ text "リソースが少ないうち、ビジネスの成長が急務、海外（日本）展開を急がなければというベンチャー企業に対して、日本語が話せる、日本の商習慣が理解できる、かつ日本におり、現地での対応が可能な「Japan Insider」(在日外国人)の力を借りて日本進出をサポートするというモデルが私だちのソリューションです。" ]
+            , p [] [ text "次世代の進出モデルを構築することで日本の市場を活発させ、イノベーションをもたらすことができると私たちは信じています。現在まで数多くの海外ベンチャーの商品を日本市場に浸透させ、市場テスト、ネットワークの連携や売り上げアップなどに貢献してきました。" ]
+            ]
+        ]
+
+
+viewJpSectionSummary : Html Msg
+viewJpSectionSummary =
+    section [ id "company-summary", class "jp-summary" ]
+        [ h2 [] [ text "会社概要" ]
+        , div [ class "jp-summary-content-wrapper" ]
+            [ p [] [ b [] [ text "住所" ], span [] [ text "〒106-00046 東京都港区元麻布3-1-6 Blink Smart WorkSpace" ] ]
+            , p [] [ b [] [ text "E-mail" ], span [] [ text "contact@japaninsider.co" ] ]
+            , p [] [ b [] [ text "成立" ], span [] [ text "2018年12月" ] ]
+            , p [] [ b [] [ text "資本金" ], span [] [ text "3,000,000円" ] ]
+            , p [] [ b [] [ text "取引銀行" ], span [] [ text "三菱UFJ銀行" ] ]
+            , p [] [ b [] [ text "事業内容" ], span [] [ text "輸入・事業・WEB販促コンサルティング" ] ]
+            ]
+        ]
+
+
 viewFooter : Html Msg
 viewFooter =
     footer []
@@ -931,22 +1053,77 @@ viewFooter =
         ]
 
 
-view : Model -> Document Msg
+viewJpFooter : Html Msg
+viewJpFooter =
+    footer []
+        [ div [ class "footer-info" ]
+            [ figure []
+                [ img [ Asset.src Asset.whiteLogo, alt "logo", class "footer-logo" ] [] ]
+            , p
+                [ class "about-us-email" ]
+                [ text "contact@japaninsider.co" ]
+            , p
+                [ class "about-us-address" ]
+                [ text "106-0046 東京都港区元麻布3-1-6" ]
+            ]
+        ]
+
+
+type Route
+    = Home
+    | JpHome
+    | NotFound
+
+
+route : Parser (Route -> a) a
+route =
+    oneOf
+        [ map Home top
+        , map JpHome (s "jp")
+        ]
+
+
+toRoute : String -> Route
+toRoute string =
+    case Url.fromString string of
+        Nothing ->
+            NotFound
+
+        Just url ->
+            Maybe.withDefault NotFound (parse route url)
+
+
+view : Model -> Browser.Document Msg
 view model =
     { title = "日本インサイド"
     , body =
-        [ viewHeader model
+        case toRoute (Url.toString model.url) of
+            Home ->
+                [ viewHeader model
 
-        -- , viewMailBtn
-        , viewSectionTop model
-        , viewSectionIntroduction model
-        , viewSectionService model
-        , viewSectionFaq model
-        , viewSectionArticle model
-        , viewSectionEnterpriseRegister
-        , viewSectionTeam
-        , viewFooter
-        ]
+                -- , viewMailBtn
+                , viewSectionTop model
+                , viewSectionIntroduction model
+                , viewSectionService model
+                , viewSectionFaq model
+                , viewSectionArticle model
+                , viewSectionEnterpriseRegister
+                , viewSectionTeam
+                , viewFooter
+                ]
+
+            JpHome ->
+                [ viewJpHeader model
+                , viewJpTop
+                , viewJpSectionService model
+                , viewJpSectionEnterpriseRegister
+                , viewJpSectionSpirit
+                , viewJpSectionSummary
+                , viewJpFooter
+                ]
+
+            _ ->
+                [ text "Something WRong" ]
     }
 
 
@@ -956,9 +1133,11 @@ view model =
 
 main : Program () Model Msg
 main =
-    Browser.document
+    Browser.application
         { init = init
         , view = view
         , subscriptions = subscriptions
         , update = update
+        , onUrlChange = UrlChanged
+        , onUrlRequest = LinkClicked
         }

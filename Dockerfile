@@ -6,7 +6,7 @@ RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
 
 # install_wordpress.sh & misc. dependencies
 RUN apt-get update; \
-	apt-get install -yq mysql-client netcat sudo less git unzip
+	apt-get install -yq mariadb-client netcat sudo less git unzip
 
 # wp-cli
 RUN curl -sL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o wp; \
