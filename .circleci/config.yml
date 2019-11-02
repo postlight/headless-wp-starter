@@ -23,12 +23,9 @@ jobs:
       # - v1-dependencies-
 
       - run:
-          name: where am i
-          command: pwd
-
-      - run:
           name: Install create-elm-app
-          command: npm install create-elm-app -g
+          # Set unsafe-perm to true to suppress the UID/GID switching when running package scripts. If set explicitly to false, then installing as a non-root user will fail.
+          command: sudo npm install -g create-elm-app@4.0.0 --unsafe-perm=true
 
       - run: elm-app build
 

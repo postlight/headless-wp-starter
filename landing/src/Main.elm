@@ -6,7 +6,7 @@ import Asset
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (alt, class, height, href, id, src, target, width)
 import Html.Events exposing (onClick)
 import Http
 import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, map7, map8, string)
