@@ -31,3 +31,9 @@ jobs:
           command: npm install create-elm-app -g
 
       - run: elm-app build
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-landing
