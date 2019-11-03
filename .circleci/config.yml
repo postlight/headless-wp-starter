@@ -35,10 +35,25 @@ jobs:
   deploy-landing:
     executor: landing-page-executor
     steps:
+      # Get the build result from previous job
       - attach_workspace:
           at: ~/repo/landing
 
-      - run: ls
+      - add_ssh_keys:
+          fingerprints:
+            - 'a5:7a:8f:d8:2e:2f:09:40:89:b8:89:ce:58:f4:98:f7'
+
+      - run:
+          name: Archive build folder
+          command: tar -zcvf landing_page.tar.gz build/
+
+      - run:
+          name: Send the archived build folder to ec2 instance
+          command: scp landing_page.tar.gz ubuntu@52.198.50.117:/home/ubuntu/app/landing
+
+      - run:
+          name: Extract archived build folder on ec2 using ssh
+          command: ssh ubuntu@52.198.50.117 tar -xvzf lnading_page.tar.gz
 
 workflows:
   version: 2
