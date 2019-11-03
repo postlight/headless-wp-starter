@@ -27,7 +27,7 @@ jobs:
       - run: elm-app build
 
       # Persist build folder to the worksapce for deploy job
-      - persit_to_workspace:
+      - persist_to_workspace:
           root: ./
           paths:
             - build
