@@ -631,7 +631,7 @@ viewSectionService { serviceContentList } =
 viewJpSectionService { jpServiceContentList } =
     section [ id "service", class "service" ]
         [ h2 [ class "section-title" ] [ text "事業內容" ]
-        , div [ class "service-content-container" ] (List.map viewServiceContent jpServiceContentList)
+        , div [ class "jp-service-content-container" ] (List.map viewServiceContent jpServiceContentList)
         ]
 
 
@@ -951,6 +951,19 @@ viewStory { link, imgSrc, title, description, testimony, fundRaiseAmount, funder
         ]
 
 
+viewJpStory : Story -> Html Msg
+viewJpStory { link, imgSrc, title, subtitle } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
+    article [ class "jp-story-item" ]
+        [ h2 [ class "jp-fund-raise-title" ] [ text subtitle ]
+        , img [ class "jp-fund-raise-image", src imgSrcPath, alt title ] []
+        , a [ class "know-more-btn", href link, target "_blank" ] [ text "商品ページ" ]
+        ]
+
+
 viewSectionMarketDev : Html Msg
 viewSectionMarketDev =
     section [ id "market-development-description" ]
@@ -1037,6 +1050,16 @@ viewJpSectionSummary =
         ]
 
 
+viewJpSectionSuccessCase : Model -> Html Msg
+viewJpSectionSuccessCase { successStoryList } =
+    section [ id "jp-success-case", class "jp-success-case" ]
+        [ h2 [ class "section-title" ] [ text "取扱商品・ブランドのピックアップ" ]
+        , div [ class "jp-success-crd" ]
+            -- TODO @paipo: make carousel and take more items
+            (List.map viewJpStory (List.take 4 successStoryList))
+        ]
+
+
 viewFooter : Html Msg
 viewFooter =
     footer []
@@ -1116,6 +1139,7 @@ view model =
                 [ viewJpHeader model
                 , viewJpTop
                 , viewJpSectionService model
+                , viewJpSectionSuccessCase model
                 , viewJpSectionEnterpriseRegister
                 , viewJpSectionSpirit
                 , viewJpSectionSummary
