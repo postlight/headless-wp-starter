@@ -53,7 +53,7 @@ jobs:
 
       - run:
           name: Extract archived build folder on ec2 using ssh
-          command: ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@52.198.50.117 tar -xvzf lnading_page.tar.gz
+          command: ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@52.198.50.117 tar -xvzf landing_page.tar.gz
 
 workflows:
   version: 2
