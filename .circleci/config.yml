@@ -2,25 +2,22 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
-jobs:
-  build-landing:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10.16
+version: 2.1
 
+# Reuse this executor (docker image) between jobs
+# https://circleci.com/docs/2.0/reusing-config/#authoring-reusable-executors
+executors:
+  landing-page-executor:
+    docker:
+      - image: circleci/node:10.16
     working_directory: ~/repo/landing
 
+jobs:
+  build-landing:
+    executor: landing-page-executor
     steps:
       - checkout:
           path: ~/repo
-
-      # Download and cache dependencies
-      # - restore_cache:
-      #     keys:
-      #       - v1-dependencies-{{ checksum "package.json" }}
-      # fallback to using the latest cache if no exact match is found
-      # - v1-dependencies-
 
       - run:
           name: Install create-elm-app
@@ -29,8 +26,29 @@ jobs:
 
       - run: elm-app build
 
+      # Persist build folder to the worksapce for deploy job
+      - persit_to_workspace:
+          root: ./
+          paths:
+            - build
+
+  deploy-landing:
+    executor: landing-page-executor
+    steps:
+      - attach_workspace:
+          at: ~/repo/landing
+
+      - run: ls
+
 workflows:
   version: 2
-  build:
+  build-and-deploy:
     jobs:
       - build-landing
+      - deploy-landing:
+          type: approval
+          requires:
+            - build-landing
+          filters:
+            branches:
+              only: master
