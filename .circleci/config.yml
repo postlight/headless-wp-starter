@@ -46,7 +46,6 @@ workflows:
     jobs:
       - build-landing
       - deploy-landing:
-          type: approval
           requires:
             - build-landing
           filters:
