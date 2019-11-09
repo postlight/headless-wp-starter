@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "imgSrc": "marketing.svg",
+      "title": "行銷",
+      "titleEng": "Marketing"
+    },
+    {
+      "imgSrc": "event.svg",
+      "title": "活動/展覽",
+      "titleEng": "Event"
+    },
+    {
+      "imgSrc": "design.svg",
+      "title": "設計",
+      "titleEng": "Design"
+    },
+    {
+      "imgSrc": "ecommerce.svg",
+      "title": "電商",
+      "titleEng": "ECommerce"
+    },
+    {
+      "imgSrc": "bd.svg",
+      "title": "商業開發",
+      "titleEng": "Business development"
+    },
+    {
+      "imgSrc": "interview.svg",
+      "title": "面試服務",
+      "titleEng": "Interview"
+    },
+    {
+      "imgSrc": "nonprofit.svg",
+      "title": "非營利活動",
+      "titleEng": "Non-profit organizer"
+    },
+    {
+      "imgSrc": "pm.svg",
+      "title": "專案管理",
+      "titleEng": "Product management"
+    }
+  ]
+}

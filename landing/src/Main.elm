@@ -5,8 +5,8 @@ module Main exposing (init, view)
 import Asset
 import Browser
 import Browser.Navigation as Nav
-import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, footer, h1, h2, h3, h4, header, img, li, nav, p, section, span, text, ul)
-import Html.Attributes exposing (alt, class, height, href, id, src, target, width)
+import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, footer, form, h1, h2, h3, h4, header, img, input, label, li, nav, p, section, span, text, ul)
+import Html.Attributes exposing (action, alt, class, for, height, href, id, method, name, novalidate, placeholder, required, src, style, tabindex, target, type_, value, width)
 import Html.Events exposing (onClick)
 import Http
 import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, map7, map8, string)
@@ -23,6 +23,7 @@ import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
 type alias Model =
     { navBarClassNames : List String
     , serviceContentList : List ServiceContent
+    , serviceCategoryList : List ServiceCategory
     , jpServiceContentList : List ServiceContent
     , serviceDetailList : List ServiceDetail
     , serviceIndex : Int
@@ -30,8 +31,11 @@ type alias Model =
     , mediaList : List String
     , partnerList : List String
     , teamMemberList : List TeamMember
+    , talentList : List Talent
+    , selectedTalentCategory : Int
     , selectedTeamMemberIndex : Int
     , articleList : List Article
+    , benefitList : List Benefit
     , fundRaiseStats : FundRaiseStats
     , successStoryList : List Story
     , faqList : List Faq
@@ -39,6 +43,13 @@ type alias Model =
     , topIndex : Int
     , url : Url.Url
     , key : Nav.Key
+    }
+
+
+type alias ServiceCategory =
+    { imgSrc : String
+    , title : String
+    , titleEng : String
     }
 
 
@@ -102,6 +113,14 @@ type alias Faq =
     }
 
 
+type alias Benefit =
+    { imgSrc : String, title : String, description : String }
+
+
+type alias Talent =
+    { id : Int, imgSrc : String, field : String, fieldEng : String, name : String, services : List String, intro : String }
+
+
 serviceCarouselLength =
     2
 
@@ -119,10 +138,17 @@ type CarouselBehaviour
     | Prev
 
 
+type TalentCategory
+    = Marketing
+    | Design
+    | Operation
+
+
 type Msg
     = TOGGLE
     | GotServiceContentList (Result Http.Error (List ServiceContent))
     | GotJpServiceContentList (Result Http.Error (List ServiceContent))
+    | GotServiceCategoryList (Result Http.Error (List ServiceCategory))
     | GotServiceDetailList (Result Http.Error (List ServiceDetail))
     | Carousel CarouselUseCase CarouselBehaviour
     | GotMediaList (Result Http.Error (List String))
@@ -132,17 +158,21 @@ type Msg
     | GotStoryList (Result Http.Error (List Story))
     | GotFaqList (Result Http.Error (List Faq))
     | GotFundRaiseStats (Result Http.Error FundRaiseStats)
+    | GotBenefitList (Result Http.Error (List Benefit))
+    | GotTalentList (Result Http.Error (List Talent))
     | SelectTeamMember Int
     | DotClick Int
     | SwitchTopImage Time.Posix
     | LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
+    | SwitchCategory TalentCategory
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { navBarClassNames = []
       , serviceContentList = []
+      , serviceCategoryList = []
       , jpServiceContentList = []
       , serviceDetailList = []
       , serviceIndex = 0
@@ -150,8 +180,11 @@ init flags url key =
       , mediaList = []
       , partnerList = []
       , teamMemberList = []
+      , talentList = []
+      , selectedTalentCategory = 1
       , selectedTeamMemberIndex = -1
       , articleList = []
+      , benefitList = []
       , fundRaiseStats = { successCaseNum = 0, successRate = 0, totalFund = "", funders = 0 }
       , successStoryList = []
       , faqList = []
@@ -168,6 +201,10 @@ init flags url key =
         , Http.get
             { url = "%PUBLIC_URL%/assets/data/jp_service_content.json"
             , expect = Http.expectJson GotJpServiceContentList decodeServiceContentList
+            }
+        , Http.get
+            { url = "%PUBLIC_URL%/assets/data/service_category.json"
+            , expect = Http.expectJson GotServiceCategoryList decodeServiceCategoryList
             }
         , Http.get
             { url = "%PUBLIC_URL%/assets/data/service_detail.json"
@@ -201,6 +238,14 @@ init flags url key =
             { url = "%PUBLIC_URL%/assets/data/fund_raise_stats.json"
             , expect = Http.expectJson GotFundRaiseStats decodeFundRaiseStats
             }
+        , Http.get
+            { url = "%PUBLIC_URL%/assets/data/benefit.json"
+            , expect = Http.expectJson GotBenefitList decodeBenefitList
+            }
+        , Http.get
+            { url = "%PUBLIC_URL%/assets/data/talent.json"
+            , expect = Http.expectJson GotTalentList decodeTalentList
+            }
         ]
     )
 
@@ -221,6 +266,19 @@ serviceContentDecoder =
         (field "imgAlt" string)
         (field "title" string)
         (field "description" string)
+
+
+decodeServiceCategoryList : Decoder (List ServiceCategory)
+decodeServiceCategoryList =
+    field "data" (list serviceCategoryDecoder)
+
+
+serviceCategoryDecoder : Decoder ServiceCategory
+serviceCategoryDecoder =
+    map3 ServiceCategory
+        (field "imgSrc" string)
+        (field "title" string)
+        (field "titleEng" string)
 
 
 decodeServiceDetailList : Decoder (List ServiceDetail)
@@ -307,6 +365,36 @@ decodeFundRaiseStats =
         (field "funders" int)
 
 
+decodeBenefitList : Decoder (List Benefit)
+decodeBenefitList =
+    field "data" (list benefitDecoder)
+
+
+benefitDecoder : Decoder Benefit
+benefitDecoder =
+    map3 Benefit
+        (field "imgSrc" string)
+        (field "title" string)
+        (field "description" string)
+
+
+decodeTalentList : Decoder (List Talent)
+decodeTalentList =
+    field "data" (list talentDecoder)
+
+
+talentDecoder : Decoder Talent
+talentDecoder =
+    map7 Talent
+        (field "id" int)
+        (field "imgSrc" string)
+        (field "field" string)
+        (field "fieldEng" string)
+        (field "name" string)
+        (field "services" (list string))
+        (field "intro" string)
+
+
 
 -- UPDATE
 
@@ -339,6 +427,17 @@ update msg model =
                 _ ->
                     ( { model | navBarClassNames = [] }, Cmd.none )
 
+        SwitchCategory category ->
+            case category of
+                Marketing ->
+                    ( { model | selectedTalentCategory = 1 }, Cmd.none )
+
+                Design ->
+                    ( { model | selectedTalentCategory = 2 }, Cmd.none )
+
+                Operation ->
+                    ( { model | selectedTalentCategory = 3 }, Cmd.none )
+
         GotServiceContentList result ->
             case result of
                 Ok serviceContentList ->
@@ -351,6 +450,14 @@ update msg model =
             case result of
                 Ok jpServiceContentList ->
                     ( { model | jpServiceContentList = jpServiceContentList }, Cmd.none )
+
+                Err _ ->
+                    ( model, Cmd.none )
+
+        GotServiceCategoryList result ->
+            case result of
+                Ok serviceCategoryList ->
+                    ( { model | serviceCategoryList = serviceCategoryList }, Cmd.none )
 
                 Err _ ->
                     ( model, Cmd.none )
@@ -437,6 +544,22 @@ update msg model =
                 Err err ->
                     ( { model | errorMsg = Just err }, Cmd.none )
 
+        GotBenefitList result ->
+            case result of
+                Ok benefitList ->
+                    ( { model | benefitList = benefitList }, Cmd.none )
+
+                Err err ->
+                    ( { model | errorMsg = Just err }, Cmd.none )
+
+        GotTalentList result ->
+            case result of
+                Ok talentList ->
+                    ( { model | talentList = talentList }, Cmd.none )
+
+                Err err ->
+                    ( { model | errorMsg = Just err }, Cmd.none )
+
         SelectTeamMember index ->
             ( { model | selectedTeamMemberIndex = index }, Cmd.none )
 
@@ -487,7 +610,7 @@ viewHeader : Model -> Html Msg
 viewHeader model =
     header []
         [ nav [ class (String.join " " model.navBarClassNames) ]
-            [ a [ id "logo-link", href "#top" ]
+            [ a [ id "logo-link", href "/#top" ]
                 [ figure []
                     [ img
                         [ Asset.src Asset.logo
@@ -501,9 +624,10 @@ viewHeader model =
                 [ div [ class "lang-toggle" ] [ a [ class "selected", href "/" ] [ text "TW" ], a [ href "/jp" ] [ text "JP" ] ]
                 , div [ class "nav-link" ]
                     [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
-                    , a [ href "#service" ] [ text "服務內容" ]
-                    , a [ href "#faq" ] [ text "常見問題" ]
-                    , a [ href "#article" ] [ text "精選文章" ]
+                    , a [ href "/#service" ] [ text "服務內容" ]
+                    , a [ href "/cross-border-sourcing" ] [ text "跨境外包" ]
+                    , a [ href "/#faq" ] [ text "常見問題" ]
+                    , a [ href "/#article" ] [ text "精選文章" ]
                     , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
                         [ figure []
                             [ img
@@ -592,6 +716,168 @@ viewJpTop =
         [ div [ class "jp-top-description" ]
             [ h2 [] [ text "Bridge Cross-Border Connection" ]
             , h1 [] [ text "台湾企業の日本進出する新モデルを創出" ]
+            ]
+        ]
+
+
+viewCrossBorderTop : Html Msg
+viewCrossBorderTop =
+    section [ class "cross-border-top" ]
+        [ div [ class "cross-border-hero-description" ]
+            [ h2 [] [ text "COMING SOON!" ]
+            , h1 [ class "top-title" ] [ text "尋找在日的台灣人才，", br [] [], text "協助你拓展日本市場！" ]
+            , p []
+                [ span [] [ text "第一個台日線上外包平台" ]
+                ]
+            ]
+        , figure []
+            [ img [ class "cross-border-hero-img", Asset.src Asset.talentMatch, alt "hero image" ] [] ]
+        ]
+
+
+viewCrossBorderRegister : Html Msg
+viewCrossBorderRegister =
+    div [ class "cross-border-register" ] [ p [] [ text "預先登錄，搶先接收平台上線通知" ], a [ class "consult-btn", href "/cross-border-sourcing#mc_embed_signup" ] [ text "登錄" ] ]
+
+
+viewCrossBorderBenefit : Model -> Html Msg
+viewCrossBorderBenefit { benefitList } =
+    section [ class "cross-border-benefit-section" ]
+        [ div [ class "cross-border-benefit-content" ]
+            [ h2 [] [ text "採用「跨境外包」進入日本市場的好處" ]
+            , div [ class "cross-border-benefit-intro" ] [ p [] [ text "群眾募資在日本越來越普及，過去幾年的募資金額都有大幅成長，也漸漸成為海外新創進日本市場的前哨站。" ], p [] [ text "日本群眾募資的特色之一是平台眾多，每個平台有各自的特性及優點。每個團隊目標皆不同，必須要有相應策略指南，才能在市場的開拓旅程中勝出！" ] ]
+            , div [ class "cross-border-benefit-list" ] (List.map viewBenefitItem (List.take 3 benefitList))
+            ]
+        ]
+
+
+viewBenefitItem : Benefit -> Html Msg
+viewBenefitItem { title, imgSrc, description } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
+    article [ class "benefit-item" ]
+        [ -- img [ class "benefit-item-image", src imgSrcPath, alt title ] []
+          h2 [ class "benefit-item-title" ] [ text title ]
+        , p [ class "benefit-item-description" ] [ text description ]
+        ]
+
+
+viewCrossBorderServiceType : Model -> Html Msg
+viewCrossBorderServiceType { talentList, selectedTalentCategory } =
+    section [ class "cross-border-service-type" ]
+        [ h2 [ class "cross-border-promo-title" ] [ text "日本6萬名的台灣海漂族，協助你快速進入拓展日本市場" ]
+        , p [ class "cross-border-promo-description" ] [ text "在日本已經超過6萬名的台灣人才，我們都具有多重語言、多重商業文化的背景; 希望透過自己的跨境背景，參與協助海外團隊進入日本市場。" ]
+        , h2 [] [ text "服務種類" ]
+        , viewTalent (List.head (List.filter (\talent -> talent.id == selectedTalentCategory) talentList))
+        ]
+
+
+viewTalent : Maybe Talent -> Html Msg
+viewTalent maybeTalent =
+    case maybeTalent of
+        Just talent ->
+            let
+                imgSrcPath =
+                    append assetPath talent.imgSrc
+            in
+            div [ class "talent-container" ]
+                [ div [ class "talent-description" ]
+                    [ h3 [] [ text talent.fieldEng ]
+                    , h2 [] [ text talent.field ]
+                    , div [ class "talent-service-wrapper" ] (List.map (\service -> p [] [ text service ]) talent.services)
+                    , div [ class "talent-category" ]
+                        [ button
+                            [ class
+                                (if talent.id == 1 then
+                                    "selected"
+
+                                 else
+                                    ""
+                                )
+                            , onClick (SwitchCategory Marketing)
+                            ]
+                            [ text "行銷" ]
+                        , button
+                            [ class
+                                (if talent.id == 2 then
+                                    "selected"
+
+                                 else
+                                    ""
+                                )
+                            , onClick (SwitchCategory Design)
+                            ]
+                            [ text "設計" ]
+                        , button
+                            [ class
+                                (if talent.id == 3 then
+                                    "selected"
+
+                                 else
+                                    ""
+                                )
+                            , onClick (SwitchCategory Operation)
+                            ]
+                            [ text "營運" ]
+                        ]
+                    ]
+                , div [ class "talent-intro" ]
+                    [ figure []
+                        [ img [ src imgSrcPath, alt "talent photo", class "talent-img" ] []
+                        ]
+                    , div [ class "talent-intro-float-wrapper" ]
+                        [ h3 [] [ text talent.name ]
+                        , p [] [ text talent.intro ]
+                        ]
+                    ]
+                ]
+
+        Nothing ->
+            div [] []
+
+
+viewCrossBorderServiceCategory : Model -> Html Msg
+viewCrossBorderServiceCategory { serviceCategoryList } =
+    section [ class "cross-border-service-category" ]
+        (List.map viewServiceCategory (List.take 8 serviceCategoryList))
+
+
+viewServiceCategory : ServiceCategory -> Html Msg
+viewServiceCategory { imgSrc, title, titleEng } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
+    article [ class "service-category-item" ]
+        [ img [ src imgSrcPath, alt title ] []
+        , h2 [] [ text title ]
+        , p [] [ text titleEng ]
+        ]
+
+
+viewCrossBorderProcess : Html Msg
+viewCrossBorderProcess =
+    section [ class "cross-border-process-section" ]
+        [ h2 [] [ text "服務流程" ]
+        , div [ class "flow-chart" ]
+            [ div [ class "flow-node", style "z-index" "4" ]
+                [ h2 [] [ text "1. 發佈任務" ]
+                , p [] [ text "專任人員了解您的需求，在平台上發佈任務，並協助尋找合適的Japan Insider。" ]
+                ]
+            , div [ class "flow-node", style "z-index" "3" ]
+                [ h2 [] [ text "2. 收到報價" ]
+                , p [] [ text "從平台上獲得Japan Insider的報價以及提案，在平台上作比較。" ]
+                ]
+            , div [ class "flow-node", style "z-index" "2" ]
+                [ h2 [] [ text "3. 線上溝通" ]
+                , p [] [ text "專任人員了解您的需求，在平台上發佈任務，並協助尋找合適的Japan Insider。" ]
+                ]
+            , div [ class "flow-node", style "z-index" "1" ]
+                [ h2 [] [ text "4. 安全付款" ]
+                , p [] [ text "在您確認交付的任務完成之後，才會將款項撥予Japan Insider (在日海外工作者)。" ]
+                ]
             ]
         ]
 
@@ -1092,9 +1378,31 @@ viewJpFooter =
         ]
 
 
+viewMailChimpSignupForm : Html Msg
+viewMailChimpSignupForm =
+    div [ id "mc_embed_signup" ]
+        [ form [ action "https://japaninsider.us14.list-manage.com/subscribe/post?u=70f47caaa71d96fe967dfa602&id=a8225094be", method "post", id "mc-embedded-subscribe-form", name "mc-embedded-subscribe-form", class "validate", target "_blank", novalidate True ]
+            [ div [ id "mc_embed_signup_scroll" ]
+                [ h2 [ class "mc_embed_signup--title" ] [ text "預先登錄，搶先接收平台上線通知" ]
+                , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "稱呼 (必填)" ]
+                , input [ class "mc_embed_signup--input-name", type_ "text", name "b_70f47caaa71d96fe967dfa602_a8225094be", placeholder "Jack Wang", value "" ]
+                    []
+                , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "Email" ]
+                , div [ class "mc_embed_signup--input-container" ]
+                    [ input [ type_ "email", value "", name "EMAIL", class "mc_embed_signup--input-email", id "mce-EMAIL", placeholder "abc@gmail.com", required True ]
+                        []
+                    , input [ type_ "submit", value "登錄", name "subscribe", id "mc-embedded-subscribe", class "mc_embed_signup--submit" ]
+                        []
+                    ]
+                ]
+            ]
+        ]
+
+
 type Route
     = Home
     | JpHome
+    | CrossBorder
     | NotFound
 
 
@@ -1103,6 +1411,7 @@ route =
     oneOf
         [ map Home top
         , map JpHome (s "jp")
+        , map CrossBorder (s "cross-border-sourcing")
         ]
 
 
@@ -1144,6 +1453,18 @@ view model =
                 , viewJpSectionSpirit
                 , viewJpSectionSummary
                 , viewJpFooter
+                ]
+
+            CrossBorder ->
+                [ viewHeader model
+                , viewCrossBorderTop
+                , viewCrossBorderRegister
+                , viewCrossBorderBenefit model
+                , viewCrossBorderServiceType model
+                , viewCrossBorderServiceCategory model
+                , viewCrossBorderProcess
+                , viewMailChimpSignupForm
+                , viewFooter
                 ]
 
             _ ->

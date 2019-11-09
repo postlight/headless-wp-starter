@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "imgSrc": "jiayun.jpg",
+      "field": "行銷",
+      "fieldEng": "MARKETING",
+      "services": [
+        "日本線上社群 Facebook, Twitter, Instagram 小編",
+        "日本線上廣告 Google, Yahoo 操作"
+      ],
+      "name": "Jiayun",
+      "intro": "Jiayun 日本數位社群(FB, Twitter)帳號的經營、廣告 在日 4 年，日本大手數位廣告代理商 3 年"
+    },
+    {
+      "id": 2,
+      "imgSrc": "rika.jpg",
+      "field": "設計",
+      "fieldEng": "DESIGN",
+      "services": [
+        "日本UI/UX優化、日式設計",
+        "日本現地攝影",
+        "日文廣告Banner設計、LP頁面設計"
+      ],
+      "name": "終電女孩 Rika",
+      "intro": "提供日本設計諮詢，符合日本消費者的在地化設計 在日時間: 11年，日本設計事務所6年經驗"
+    },
+    {
+      "id": 3,
+      "imgSrc": "victor.jpg",
+      "field": "營運",
+      "fieldEng": "OPERATION",
+      "services": ["日本現地活動舉辦企劃", "日本展示會支援", "日本現地翻譯"],
+      "name": "Victor",
+      "intro": "協助在日本參加Slush、TechCrunch或是GiftShow等展覽及各種在地活動企劃在日10年，3年以上的展覽參與企劃經驗"
+    }
+  ]
+}

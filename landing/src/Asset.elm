@@ -1,4 +1,4 @@
-module Asset exposing (Image, crowdSourcePartner, enterpriseRegisterImage, fb, flightMap, hamburger, jpEnterpriseRegisterImage, logo, mail, src, topImage, whiteLogo)
+module Asset exposing (Image, crowdSourcePartner, enterpriseRegisterImage, fb, flightMap, hamburger, jpEnterpriseRegisterImage, logo, mail, src, talentMatch, topImage, whiteLogo)
 
 {-| Assets, such as images, videos, and audio. (We only have images for now.)
 
@@ -52,6 +52,11 @@ jpEnterpriseRegisterImage =
 flightMap : Image
 flightMap =
     image "flight-map.svg"
+
+
+talentMatch : Image
+talentMatch =
+    image "talent-match.svg"
 
 
 crowdSourcePartner : Image
