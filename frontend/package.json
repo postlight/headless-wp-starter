@@ -19,6 +19,7 @@
     "next": "9.0.5",
     "postcss-easy-import": "^3.0.0",
     "react": "^16.7.0",
+    "tachyons": "^4.11.1",
     "wpapi": "^1.2.1"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "prettier": ">= 1.13.0",
     "raw-loader": "^3.1.0",
     "react-dom": "^16.7.0",
+    "react-svg-loader": "^3.0.3",
     "sass-loader": "^7.1.0",
     "webpack": "^4.29.0"
   }

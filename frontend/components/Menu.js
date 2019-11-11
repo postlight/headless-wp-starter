@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import Config from '../config';
-
-const linkStyle = {
-  marginRight: 15,
-};
+import Logo from '../static/images/starter-kit-logo.svg';
 
 const getSlug = url => {
   const parts = url.split('/');
@@ -31,47 +28,44 @@ class Menu extends Component {
     const menuItems = menu.items.map(item => {
       if (item.object === 'custom') {
         return (
-          <Link href={item.url} key={item.ID}>
-            <a style={linkStyle}>{item.title}</a>
-          </Link>
+          <option
+            value={item.url}
+            key={item.ID}
+          >
+            {item.title}
+          </option>
         );
       }
       const slug = getSlug(item.url);
       const actualPage = item.object === 'category' ? 'category' : 'post';
       return (
-        <Link
-          as={`/${item.object}/${slug}`}
-          href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+        <option
+          value={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
           key={item.ID}
         >
-          <a style={linkStyle}>{item.title}</a>
-        </Link>
+          {item.title}
+        </option>
       );
     });
 
     return (
-      <div>
-        <Link href="/">
-          <a style={linkStyle}>Home</a>
-        </Link>
-        {menuItems}
-
-        {token ? (
-          <button
-            type="button"
-            className="pointer black"
-            onClick={() => {
-              localStorage.removeItem(Config.AUTH_TOKEN);
-              Router.push('/login');
-            }}
-          >
-            Logout {username}
-          </button>
-        ) : (
-          <Link href="/login">
-            <a style={linkStyle}>Login</a>
+      <div className="menu">
+        <div className="brand">
+          <Link href="/">
+            <a className="starter-kit-logo">
+              <Logo width={48} height={32}/>
+              <div className="pl2">
+                WordPress + React<br/>
+                Starter Kit
+              </div>
+            </a>
           </Link>
-        )}
+        </div>
+        <div className="dropdown">
+          <select>
+            {menuItems}
+          </select>
+        </div>
       </div>
     );
   }
