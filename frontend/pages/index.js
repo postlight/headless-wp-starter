@@ -118,7 +118,7 @@ class Index extends Component {
             </div>
           </div>
         </div>
-        <div className="recent flex mv4 w-two-thirds-l center-l">
+        <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
           <div className="w-50 pr3">
             <h2>Posts</h2>
             {fposts}
@@ -128,7 +128,7 @@ class Index extends Component {
             {fpages}
           </div>
         </div>
-        <div className="content mv4 w-two-thirds-l center-l"
+        <div className="content mh4 mv4 w-two-thirds-l center-l"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: page.content.rendered,

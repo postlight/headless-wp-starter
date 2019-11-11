@@ -18,19 +18,23 @@ h2 {
 }
 
 .brand {
-	border-bottom: 1px solid black;
 	height: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+}
+
+.links {
+	a {
+		font-weight: bold;
+		color: black;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 .dropdown {
-	border-bottom: 1px solid black;
 	height: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
 	select {
 		width: 90%;
@@ -76,6 +80,7 @@ svg {
 
 	svg path {
 		fill: #5A3BEB;
+		//fill: #EE185D; // pink
 	}
 }
 

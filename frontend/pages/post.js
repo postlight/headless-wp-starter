@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Error from 'next/error';
+import Menu from '../components/Menu';
 import WPAPI from 'wpapi';
 import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
@@ -42,13 +43,16 @@ class Post extends Component {
 
     return (
       <Layout>
-        <h1>{post.title.rendered}</h1>
-        <div
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: post.content.rendered,
-          }}
-        />
+        <Menu menu={headerMenu} />
+        <div className="content mh4 mv4 w-two-thirds-l center-l">
+          <h1>{post.title.rendered}</h1>
+          <div
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: post.content.rendered,
+            }}
+          />
+        </div>
       </Layout>
     );
   }
