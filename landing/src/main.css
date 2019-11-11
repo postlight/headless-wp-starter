@@ -285,17 +285,6 @@ section {
   margin-bottom: 24px;
 }
 
-.cross-border-benefit-intro p {
-  display: none;
-  margin: auto;
-  text-align: left;
-  margin-bottom: 20px;
-  width: 70%;
-  font-size: 16px;
-  line-height: 28px;
-  color: #636363;
-}
-
 .cross-border-benefit-list {
   display: flex;
 }
@@ -1982,6 +1971,7 @@ li > img {
 
   .cross-border-hero-description h1.top-title {
     display: block;
+    font-size: 28px;
   }
 
   .cross-border-hero-description p {
@@ -2000,10 +1990,6 @@ li > img {
     text-align: center;
   }
 
-  .cross-border-benefit-intro p {
-    display: block;
-  }
-
   .cross-border-benefit-list {
     flex-direction: column;
     align-items: center;
@@ -2012,7 +1998,8 @@ li > img {
   .benefit-item {
     width: 85%;
     margin-bottom: 24px;
-    padding: 24px;
+    padding: 48px;
+    height: auto;
   }
 
   .talent-container {
@@ -2065,7 +2052,8 @@ li > img {
   }
 
   .flow-node {
-    width: 342px;
+    max-width: 342px;
+    width: 100%;
     padding-top: 50px;
   }
 
@@ -2074,7 +2062,7 @@ li > img {
     bottom: -40px;
     top: 180px;
     right: 0;
-    clip-path: polygon(0 0, 171px 20px, 342px 0);
+    clip-path: polygon(0 0, 50% 20px, 100% 0);
   }
 
   .mc_embed_signup--input-container {
@@ -2193,6 +2181,15 @@ li > img {
 
   .service-content-item > figure {
     margin-bottom: 10px;
+  }
+
+  .talent-description h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  .talent-description p {
+    font-size: 18px;
   }
 
   .faq-answer {

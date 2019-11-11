@@ -745,7 +745,6 @@ viewCrossBorderBenefit { benefitList } =
     section [ class "cross-border-benefit-section" ]
         [ div [ class "cross-border-benefit-content" ]
             [ h2 [] [ text "採用「跨境外包」進入日本市場的好處" ]
-            , div [ class "cross-border-benefit-intro" ] [ p [] [ text "群眾募資在日本越來越普及，過去幾年的募資金額都有大幅成長，也漸漸成為海外新創進日本市場的前哨站。" ], p [] [ text "日本群眾募資的特色之一是平台眾多，每個平台有各自的特性及優點。每個團隊目標皆不同，必須要有相應策略指南，才能在市場的開拓旅程中勝出！" ] ]
             , div [ class "cross-border-benefit-list" ] (List.map viewBenefitItem (List.take 3 benefitList))
             ]
         ]
@@ -767,9 +766,9 @@ viewBenefitItem { title, imgSrc, description } =
 viewCrossBorderServiceType : Model -> Html Msg
 viewCrossBorderServiceType { talentList, selectedTalentCategory } =
     section [ class "cross-border-service-type" ]
-        [ h2 [ class "cross-border-promo-title" ] [ text "日本6萬名的台灣海漂族，協助你快速進入拓展日本市場" ]
+        [ h2 [ class "cross-border-promo-title" ] [ text "日本6萬名的台灣海漂族，協助你快速進入日本市場" ]
         , p [ class "cross-border-promo-description" ] [ text "在日本已經超過6萬名的台灣人才，我們都具有多重語言、多重商業文化的背景; 希望透過自己的跨境背景，參與協助海外團隊進入日本市場。" ]
-        , h2 [] [ text "服務種類" ]
+        , h2 [] [ text "尋找人才" ]
         , viewTalent (List.head (List.filter (\talent -> talent.id == selectedTalentCategory) talentList))
         ]
 
@@ -860,7 +859,7 @@ viewServiceCategory { imgSrc, title, titleEng } =
 viewCrossBorderProcess : Html Msg
 viewCrossBorderProcess =
     section [ class "cross-border-process-section" ]
-        [ h2 [] [ text "服務流程" ]
+        [ h2 [] [ text "使用流程" ]
         , div [ class "flow-chart" ]
             [ div [ class "flow-node", style "z-index" "4" ]
                 [ h2 [] [ text "1. 發佈任務" ]
