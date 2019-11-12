@@ -494,6 +494,15 @@ section {
   margin-bottom: 60px;
 }
 
+.cross-border-service-section h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 40px;
+  color: #011f26;
+  margin-bottom: 32px;
+}
+
 .cross-border-service-category {
   display: flex;
   flex-wrap: wrap;

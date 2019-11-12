@@ -839,8 +839,11 @@ viewTalent maybeTalent =
 
 viewCrossBorderServiceCategory : Model -> Html Msg
 viewCrossBorderServiceCategory { serviceCategoryList } =
-    section [ class "cross-border-service-category" ]
-        (List.map viewServiceCategory (List.take 8 serviceCategoryList))
+    section [class "cross-border-service-section"]
+        [ h2 [] [ text "人才分類" ]
+        , div [ class "cross-border-service-category" ]
+            (List.map viewServiceCategory (List.take 8 serviceCategoryList))
+        ]
 
 
 viewServiceCategory : ServiceCategory -> Html Msg
