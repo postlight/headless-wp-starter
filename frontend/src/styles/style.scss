@@ -3,8 +3,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
-}
+	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif; }
 
 p,
 ul,
@@ -17,18 +16,54 @@ h2 {
 	padding-top: 12px;
 }
 
+a {
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+ul {
+	list-style: none;
+	padding-left: 1.5rem;
+}
+
+li:before {
+	content: "\25C6";
+	padding-right: 0.5rem;
+	float: left;
+	margin-left: -1.5rem;
+}
+
+li {
+	padding: 1rem 0;
+}
+
+svg {
+	max-width: 100%;
+}
+
 .brand {
 	height: 4rem;
 }
 
 .links {
 	a {
-		font-weight: bold;
-		color: black;
-		text-decoration: none;
+		white-space: nowrap;
+		margin-left: 24px;
+	}
+
+	.login {
+		border-radius: 6px;
 
 		&:hover {
-			text-decoration: underline;
+			border-color: black;
+			background-color: black;
+			color: white;
+			text-decoration: none;
 		}
 	}
 }
@@ -39,10 +74,6 @@ h2 {
 	select {
 		width: 90%;
 	}
-}
-
-svg {
-	max-width: 100%;
 }
 
 .starter-kit-logo {
@@ -99,16 +130,11 @@ svg {
 		margin: 0;
 		padding: 0;
 	}
+}
 
-	a {
-		font-weight: bold;
-		color: black;
-		text-decoration: none;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+.manage {
+	font-size: 18px;
+	line-height: 27px;
 }
 
 .labs-footer {
@@ -117,20 +143,4 @@ svg {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-ul {
-	list-style: none;
-	padding-left: 1.5rem;
-}
-
-li:before {
-	content: "\25C6";
-	padding-right: 0.5rem;
-	float: left;
-	margin-left: -1.5rem;
-}
-
-li {
-	padding: 1rem 0;
 }

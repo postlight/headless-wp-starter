@@ -28,8 +28,8 @@ class Menu extends Component {
 
     return (
       <div className="menu">
-        <div class="flex">
-          <div className="brand bb flex justify-center items-center w-100 w-25-l bn-l">
+        <div class="flex justify-between w-90-l center-l">
+          <div className="brand bb flex justify-center items-center w-100 justify-between-l bn-l">
             <Link href="/">
               <a className="starter-kit-logo">
                 <Logo width={48} height={32}/>
@@ -40,7 +40,7 @@ class Menu extends Component {
               </a>
             </Link>
           </div>
-          <div className="links dn flex-l justify-around items-center w-75">
+          <div className="links dn flex-l justify-between items-center">
             {menu.items.map(item => {
               if (item.object === 'custom') {
                 return (
@@ -61,6 +61,23 @@ class Menu extends Component {
                 </Link>
               );
             })}
+
+            {token ? (
+              <button
+                type="button"
+                className="pointer ba b--black"
+                onClick={() => {
+                  localStorage.removeItem(Config.AUTH_TOKEN);
+                  Router.push('/login');
+                }}
+              >
+                Logout {username}
+              </button>
+            ) : (
+              <Link href="/login">
+                <a className="login ba bw1 pv2 ph3">Login</a>
+              </Link>
+            )}
           </div>
         </div>
         <div className="dropdown bb flex justify-center items-center dn-l">

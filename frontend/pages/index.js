@@ -118,6 +118,9 @@ class Index extends Component {
             </div>
           </div>
         </div>
+        <div className="manage mh4 mv4 w-two-thirds-l center-l">
+          <p>Manage your content in WordPress and serve it using React. Too good to be true? <a href="http://localhost:8080/wp-admin/post.php?post=9&action=edit">Edit this page</a> and see for yourself!</p>
+        </div>
         <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
           <div className="w-50 pr3">
             <h2>Posts</h2>
