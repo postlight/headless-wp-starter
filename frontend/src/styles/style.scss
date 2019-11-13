@@ -94,14 +94,33 @@ svg {
 	h1 {
 		line-height: 36px;
 	}
+}
 
-	.dek {
-		font-size: 24px;
-		line-height: 30px;
+.dek {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.api-info {
+	line-height: 24px;
+}
+
+.api-toggle {
+	display: block;
+	margin-top: 1.5rem;
+
+	a {
+		padding: 0.65rem 1.25rem;
 	}
 
-	.api-info {
-		line-height: 24px;
+	.rest {
+		border-radius: 6px 0 0 6px;
+		background-color: #A6A6A6;
+	}
+
+	.graphql {
+		border-radius: 0 6px 6px 0;
+		background-color: white;
 	}
 }
 
