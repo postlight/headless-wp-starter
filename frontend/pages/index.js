@@ -101,6 +101,16 @@ class Index extends Component {
         </ul>
       );
     });
+
+    const removeGraphQL = (e) => {
+      e.preventDefault();
+      document.body.classList.remove('graphql');
+    }
+    const addGraphQL = (e) => {
+      e.preventDefault();
+      document.body.classList.add('graphql');
+    }
+
     return (
       <Layout>
         <Menu menu={headerMenu} />
@@ -116,8 +126,8 @@ class Index extends Component {
             <div className="api-info b mt4">
               Starter Kit supports both REST API and GraphQL
               <div class="api-toggle">
-                <a className="rest" href="http://localhost:3000/">REST API</a>
-                <a className="graphql" href="http://localhost:3001/">GraphQL</a>
+                <a className="rest" href="http://localhost:3000/" onClick={removeGraphQL}>REST API</a>
+                <a className="graphql" href="http://localhost:3001/" onClick={addGraphQL}>GraphQL</a>
               </div>
             </div>
           </div>

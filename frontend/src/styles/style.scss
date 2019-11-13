@@ -130,7 +130,6 @@ svg {
 
 	svg path {
 		fill: #5A3BEB;
-		//fill: #EE185D; // pink
 	}
 }
 
@@ -162,4 +161,22 @@ svg {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.graphql {
+	.color-logo {
+		svg path {
+			fill: #EE185D;
+		}
+	}
+
+	.api-toggle {
+		.rest {
+			background-color: white;
+		}
+
+		.graphql {
+			background-color: #A6A6A6;
+		}
+	}
 }
