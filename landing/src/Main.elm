@@ -737,7 +737,7 @@ viewCrossBorderTop =
 
 viewCrossBorderRegister : Html Msg
 viewCrossBorderRegister =
-    div [ class "cross-border-register" ] [ p [] [ text "預先登錄，搶先接收平台上線通知" ], a [ class "consult-btn", href "/cross-border-sourcing#mc_embed_signup" ] [ text "登錄" ] ]
+    div [ class "cross-border-register" ] [ p [] [ text "預先登錄，搶先接收平台上線通知" ], a [ class "consult-btn", href "https://japaninsider.typeform.com/to/F9ZOSP" ] [ text "登錄" ] ]
 
 
 viewCrossBorderBenefit : Model -> Html Msg
@@ -1386,16 +1386,17 @@ viewMailChimpSignupForm =
         [ form [ action "https://japaninsider.us14.list-manage.com/subscribe/post?u=70f47caaa71d96fe967dfa602&id=a8225094be", method "post", id "mc-embedded-subscribe-form", name "mc-embedded-subscribe-form", class "validate", target "_blank", novalidate True ]
             [ div [ id "mc_embed_signup_scroll" ]
                 [ h2 [ class "mc_embed_signup--title" ] [ text "預先登錄，搶先接收平台上線通知" ]
-                , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "稱呼 (必填)" ]
-                , input [ class "mc_embed_signup--input-name", type_ "text", name "b_70f47caaa71d96fe967dfa602_a8225094be", placeholder "Jack Wang", value "" ]
-                    []
-                , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "Email" ]
-                , div [ class "mc_embed_signup--input-container" ]
-                    [ input [ type_ "email", value "", name "EMAIL", class "mc_embed_signup--input-email", id "mce-EMAIL", placeholder "abc@gmail.com", required True ]
-                        []
-                    , input [ type_ "submit", value "登錄", name "subscribe", id "mc-embedded-subscribe", class "mc_embed_signup--submit" ]
-                        []
-                    ]
+                -- , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "稱呼 (必填)" ]
+                -- , input [ class "mc_embed_signup--input-name", type_ "text", name "b_70f47caaa71d96fe967dfa602_a8225094be", placeholder "Jack Wang", value "" ]
+                --     []
+                -- , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "Email" ]
+                -- , div [ class "mc_embed_signup--input-container" ]
+                --     [ input [ type_ "email", value "", name "EMAIL", class "mc_embed_signup--input-email", id "mce-EMAIL", placeholder "abc@gmail.com", required True ]
+                --         []
+                --     , input [ type_ "submit", value "登錄", name "subscribe", id "mc-embedded-subscribe", class "mc_embed_signup--submit" ]
+                --         []
+                --     ]
+                , a [class "mc_embed_signup--submit", href "https://japaninsider.typeform.com/to/F9ZOSP"][text "登錄"]
                 ]
             ]
         ]
