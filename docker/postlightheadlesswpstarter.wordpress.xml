@@ -35,11 +35,13 @@
 
 		<item>
 			<title>Congratulations!</title>
-			<content:encoded><![CDATA[You've successfully set up <a href="https://github.com/postlight/headless-wp-starter" target="_new">Postlight's WordPress + React Starter Kit</a> on your computer.
+			<content:encoded><![CDATA[<!-- wp:heading -->
+<h2>What’s under the hood:</h2>
+<!-- /wp:heading -->
 
-You are now running a <a href="http://localhost:8080/wp-admin/">WordPress backend</a> and you're looking at the React frontend.
-
-All the content you see here is created in WordPress -- posts, pages, categories, and menus. <a href="http://localhost:8080/wp-admin/post.php?post=9&action=edit" target="_new">Edit this page</a> to update it.]]></content:encoded>
+<!-- wp:list -->
+<ul><li>An automated installer which bootstraps a core WordPress installation that provides an established, stable REST API.</li><li>A plugin which exposes a newer, in-progress GraphQL API for WordPress.</li><li>The WordPress plugins you need to set up custom post types and custom fields (Advanced Custom Fields and Custom Post Type UI).</li><li>Plugins which expose those custom fields and WordPress menus in the WP REST API (ACF to WP API and WP-REST-API V2 Menus).</li><li>JWT authentication plugins: JWT WP REST and JWT WP GraphQL.</li><li>All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS Allow-Origin headers, and useful logging functions for easy debugging.</li><li>A mechanism for easily importing data from an existing WordPress installation anywhere on the web using WP Migrate DB Pro and its accompanying plugins (license required).</li><li>A sample, starter frontend React app powered by GraphQL.</li><li>Another sample, starter frontend React app, server-side rendered via Next.js, powered by the WP REST API.</li><li>Docker containers and scripts to manage them, for easily running the frontend React apps and backend locally or deploying it to any hosting provider with Docker support.</li></ul>
+<!-- /wp:list -->]]></content:encoded>
 			<wp:post_name><![CDATA[welcome]]></wp:post_name>
 			<wp:status><![CDATA[publish]]></wp:status>
 			<wp:post_type><![CDATA[page]]></wp:post_type>
