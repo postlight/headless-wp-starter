@@ -1,182 +1,218 @@
-@import '../../node_modules/tachyons/css/tachyons.min.css';
-
 body {
-	margin: 0;
-	padding: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif; }
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+}
 
 p,
 ul,
 ol {
-	line-height: 1.5rem;
+  line-height: 1.5rem;
 }
 
 h2 {
-	border-top: 4px solid black;
-	padding-top: 12px;
+  border-top: 4px solid black;
+  padding-top: 12px;
 }
 
 a {
-	font-weight: bold;
-	color: black;
-	text-decoration: none;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
 
-	&:hover {
-		text-decoration: underline;
-	}
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ul {
-	list-style: none;
-	padding-left: 1.5rem;
+  list-style: none;
+  padding-left: 1.5rem;
 }
 
 li:before {
-	content: "\25C6";
-	padding-right: 0.5rem;
-	float: left;
-	margin-left: -1.5rem;
+  content: "\25C6";
+  padding-right: 0.5rem;
+  float: left;
+  margin-left: -1.5rem;
 }
 
 li {
-	padding: 1rem 0;
+  padding: 1rem 0;
 }
 
 svg {
-	max-width: 100%;
+  max-width: 100%;
+}
+
+.br6 {
+  border-radius: 6px;
 }
 
 .brand {
-	height: 4rem;
+  height: 4rem;
 }
 
 .links {
-	a {
-		white-space: nowrap;
-		margin-left: 24px;
-	}
+  a {
+    white-space: nowrap;
+    margin-left: 24px;
+  }
+}
 
-	.login {
-		border-radius: 6px;
+.round-btn {
+  border-radius: 6px;
 
-		&:hover {
-			border-color: black;
-			background-color: black;
-			color: white;
-			text-decoration: none;
-		}
-	}
+  &:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+
+  &.invert {
+    color: white;
+    background-color: black;
+    border-color: black;
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
 }
 
 .dropdown {
-	height: 4rem;
+  height: 4rem;
 
-	select {
-		width: 90%;
-	}
+  select {
+    width: 90%;
+  }
 }
 
 .starter-kit-logo {
-	display: flex;
-	justify-content: center;
-	font-weight: bold;
-	font-size: 0.75rem;
-	line-height: 1rem;
-	text-decoration: none;
-	color: black;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-decoration: none;
+  color: black;
 
-	img {
-		margin-right: 0.5rem;
-	}
+  img {
+    margin-right: 0.5rem;
+  }
 }
 
 .intro {
-	h1 {
-		line-height: 36px;
-	}
+  h1 {
+    line-height: 36px;
+  }
 }
 
 .dek {
-	font-size: 24px;
-	line-height: 30px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .api-info {
-	line-height: 24px;
+  line-height: 24px;
 }
 
 .api-toggle {
-	display: block;
-	margin-top: 1.5rem;
+  display: block;
+  margin-top: 1.5rem;
 
-	a {
-		padding: 0.65rem 1.25rem;
-	}
+  a {
+    padding: 0.65rem 1.25rem;
+  }
 
-	.rest {
-		border-radius: 6px 0 0 6px;
-		background-color: #A6A6A6;
-	}
+  .rest {
+    border-radius: 6px 0 0 6px;
+    background-color: white;
+  }
 
-	.graphql {
-		border-radius: 0 6px 6px 0;
-		background-color: white;
-	}
+  .graphql {
+    border-radius: 0 6px 6px 0;
+    background-color: #A6A6A6;
+  }
 }
 
 .color-logo {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	svg path {
-		fill: #5A3BEB;
-	}
+  svg path {
+    fill: #5A3BEB;
+  }
 }
 
 .recent {
-	ul {
-		margin: 0;
-		padding: 0;
-	}
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
-	li {
-		padding: 0.5rem 0;
-	}
+  li {
+    padding: 0.5rem 0;
+  }
 
-	li:before {
-		content: unset;
-		margin: 0;
-		padding: 0;
-	}
+  li:before {
+    content: unset;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .manage {
-	font-size: 18px;
-	line-height: 27px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.hero {
+  max-height: 340px;
+  overflow: hidden;
+}
+
+.message {
+  color: #EB0000;
+}
+
+.post-29 {
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+
+    > figure {
+      margin: 1rem;
+      width: calc(33% - 2rem);
+    }
+  }
 }
 
 .labs-footer {
-	height: 16.25rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  height: 16.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .graphql {
-	.color-logo {
-		svg path {
-			fill: #EE185D;
-		}
-	}
+  .color-logo {
+    svg path {
+      fill: #EE185D;
+    }
+  }
 
-	.api-toggle {
-		.rest {
-			background-color: white;
-		}
+  .api-toggle {
+    .rest {
+      background-color: #A6A6A6;
+    }
 
-		.graphql {
-			background-color: #A6A6A6;
-		}
-	}
+    .graphql {
+      background-color: white;
+    }
+  }
 }

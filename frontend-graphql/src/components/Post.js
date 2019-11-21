@@ -53,17 +53,14 @@ class Post extends Component {
   render() {
     const { post } = this.state;
     return (
-      <div>
-        <div className="pa2">
-          <h1>{post.title}</h1>
-        </div>
+      <div className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id} post-type-post`}>
+        <h1>{post.title}</h1>
         <div
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: post.content,
           }}
         />
-        <div>Written by {post.author.nickname}</div>
       </div>
     );
   }

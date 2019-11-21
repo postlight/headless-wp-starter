@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+import 'tachyons/css/tachyons.min.css';
+import './styles/style.scss';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-boost';
 import { InMemoryCache } from 'apollo-cache-inmemory';

@@ -50,18 +50,14 @@ class Page extends Component {
   render() {
     const { page } = this.state;
     return (
-      <Layout>
-        <Menu menu={headerMenu} />
-        <div className="content mh4 mv4 w-two-thirds-l center-l">
-          <h1>{page.title}</h1>
-          <div
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: page.content,
-            }}
-          />
-        </div>
-      </Layout>
+      <div className={`content mh4 mv4 w-two-thirds-l center-l post-${page.id}`}>
+        <div
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: page.content,
+          }}
+        />
+      </div>
     );
   }
 }

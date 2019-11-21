@@ -12,7 +12,7 @@ import Category from './Category';
 export default () => (
   <div className="center">
     <Header />
-    <div className="pa1 padding table">
+    <div className="">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />

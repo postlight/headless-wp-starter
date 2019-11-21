@@ -14,6 +14,7 @@ const CATEGORY_QUERY = gql`
         node {
           title
           slug
+          excerpt
         }
       }
     }
@@ -72,25 +73,39 @@ class Category extends Component {
   render() {
     const { category } = this.state;
     return (
-      <div className="pa2">
-        <h1>{category.name}</h1>
+      <div className="content mh4 mt4 mb6 w-two-thirds-l center-l">
+        <span className="gray f3 b">Category Archives:</span>
+        <h1 className="f1 mt3">{category.name}</h1>
         <div className="flex mt2 items-start">
           <div className="flex items-center" />
           <div className="ml1">
             {category.posts.map((post, index) => (
               <div key={post.node.slug}>
-                <span className="gray">{index + 1}.</span>
-                <Link to={post.node.link} className="ml1 black">
-                  {post.node.title}
+                <h2 className="mt5">
+                  <Link to={post.node.link}>
+                    {post.node.title}
+                  </Link>
+                </h2>
+                <div
+                  className="mv4"
+                  // eslint-disable-next-line react/no-danger
+                  dangerouslySetInnerHTML={{
+                    __html: post.node.excerpt,
+                  }}
+                />
+                <Link
+                  to={post.node.link}
+                  className="round-btn invert ba bw1 pv2 ph3"
+                >
+                  Read more
                 </Link>
               </div>
             ))}
-            <div className="f6 lh-copy gray" />
           </div>
         </div>
       </div>
     );
   }
-}
+  }
 
-export default withApollo(Category);
+  export default withApollo(Category);

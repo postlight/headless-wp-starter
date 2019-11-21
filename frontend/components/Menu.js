@@ -26,9 +26,13 @@ class Menu extends Component {
     const { menu } = this.props;
     const { token, username } = this.state;
 
+    const handleSelectChange = (e) => {
+      location.href = e.target.value;
+    }
+
     return (
-      <div className="menu">
-        <div class="flex justify-between w-90-l center-l">
+      <div className="menu bb">
+        <div className="flex justify-between w-90-l center-l">
           <div className="brand bb flex justify-center items-center w-100 justify-between-l bn-l">
             <Link href="/">
               <a className="starter-kit-logo">
@@ -44,9 +48,7 @@ class Menu extends Component {
             {menu.items.map(item => {
               if (item.object === 'custom') {
                 return (
-                  <Link href={item.url} key={item.ID}>
-                    <a>{item.title}</a>
-                  </Link>
+                  <a href={item.url} key={item.ID}>{item.title}</a>
                 );
               }
               const slug = getSlug(item.url);
@@ -63,25 +65,27 @@ class Menu extends Component {
             })}
 
             {token ? (
-              <button
-                type="button"
-                className="pointer ba b--black"
+              <a
+                className="pointer round-btn ba bw1 pv2 ph3"
                 onClick={() => {
                   localStorage.removeItem(Config.AUTH_TOKEN);
                   Router.push('/login');
                 }}
               >
-                Logout {username}
-              </button>
+                Log out {username}
+              </a>
             ) : (
               <Link href="/login">
-                <a className="login ba bw1 pv2 ph3">Login</a>
+                <a className="round-btn ba bw1 pv2 ph3">Log in</a>
               </Link>
             )}
           </div>
         </div>
         <div className="dropdown bb flex justify-center items-center dn-l">
-          <select>
+          <select
+            onChange={handleSelectChange}
+          >
+            <option value={false}>Menu</option>
             {menu.items.map(item => {
               if (item.object === 'custom') {
                 return (

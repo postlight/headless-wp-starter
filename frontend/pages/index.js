@@ -102,15 +102,6 @@ class Index extends Component {
       );
     });
 
-    const removeGraphQL = (e) => {
-      e.preventDefault();
-      document.body.classList.remove('graphql');
-    }
-    const addGraphQL = (e) => {
-      e.preventDefault();
-      document.body.classList.add('graphql');
-    }
-
     return (
       <Layout>
         <Menu menu={headerMenu} />
@@ -125,15 +116,12 @@ class Index extends Component {
             </div>
             <div className="api-info b mt4">
               Starter Kit supports both REST API and GraphQL
-              <div class="api-toggle">
-                <a className="rest" href="http://localhost:3000/" onClick={removeGraphQL}>REST API</a>
-                <a className="graphql" href="http://localhost:3001/" onClick={addGraphQL}>GraphQL</a>
+              <div className="api-toggle">
+                <a className="rest" href="http://localhost:3000">REST API</a>
+                <a className="graphql" href="http://localhost:3001">GraphQL</a>
               </div>
             </div>
           </div>
-        </div>
-        <div className="manage mh4 mv4 w-two-thirds-l center-l">
-          <p>Manage your content in WordPress and serve it using React. Too good to be true? <a href="http://localhost:8080/wp-admin/post.php?post=9&action=edit">Edit this page</a> and see for yourself!</p>
         </div>
         <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
           <div className="w-50 pr3">
