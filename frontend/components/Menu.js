@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import Config from '../config';
 import Logo from '../static/images/starter-kit-logo.svg';
+import SearchIcon from '../static/images/search.svg';
 
 const getSlug = url => {
   const parts = url.split('/');
@@ -63,6 +64,12 @@ class Menu extends Component {
                 </Link>
               );
             })}
+
+            <Link href="/search">
+              <a>
+                <SearchIcon width={25} height={25} />
+              </a>
+            </Link>
 
             {token ? (
               <a

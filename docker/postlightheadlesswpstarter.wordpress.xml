@@ -621,11 +621,11 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		<guid isPermaLink="false">http://localhost:8080/?p=14</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>We talk a lot about <a href="\&quot;https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed#.p7mhgk5v4\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">content management systems</a> at Postlight, often in the context of a specific client’s needs, and sometimes, as a question about our general philosophy around publishing. And we also build a lot of custom tools for solving very tricky publishing problems—a good example is <a href="\&quot;https://postlight.com/work/instant\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">Instant.me</a>, which benefited from a custom CMS, fully oriented around a specific workflow.</p>
+<p>We talk a lot about <a href="https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed#.p7mhgk5v4" target="_blank" rel="noopener noopener noreferrer">content management systems</a> at Postlight, often in the context of a specific client’s needs, and sometimes, as a question about our general philosophy around publishing. And we also build a lot of custom tools for solving very tricky publishing problems—a good example is <a href="https://postlight.com/work/instant" target="_blank" rel="noopener noopener noreferrer">Instant.me</a>, which benefited from a custom CMS, fully oriented around a specific workflow.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>But not every nail needs a fully-custom hammer. During our CMS conversations, inevitably I am the person in the room who brings up <a href="\&quot;http://wordpress.org\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">WordPress</a>. Then, my teammates put on their most patient facial expressions and listen to me make the argument.</p>
+<p>But not every nail needs a fully-custom hammer. During our CMS conversations, inevitably I am the person in the room who brings up <a href="http://wordpress.org" target="_blank" rel="noopener noopener noreferrer">WordPress</a>. Then, my teammates put on their most patient facial expressions and listen to me make the argument.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -641,11 +641,11 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Last week, we helped launch a brand new, reimagined web site for <a href="\&quot;https://news.vice.com\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">VICE News</a> (in parallel with the premier of <a href="\&quot;http://www.hbo.com/vice\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">VICE News Tonight on HBO</a>). The web site mirrors the philosophy and aesthetic of the TV show, featuring a stream of splashy graphics, bold headlines, videos, GIFs, and interactives, with customizable animations that trigger as the user browses the stream.</p>
+<p>Last week, we helped launch a brand new, reimagined web site for <a href="https://news.vice.com" target="_blank" rel="noopener noopener noreferrer">VICE News</a> (in parallel with the premier of <a href="http://www.hbo.com/vice" target="_blank" rel="noopener noopener noreferrer">VICE News Tonight on HBO</a>). The web site mirrors the philosophy and aesthetic of the TV show, featuring a stream of splashy graphics, bold headlines, videos, GIFs, and interactives, with customizable animations that trigger as the user browses the stream.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>The key thing about <a href="\&quot;https://postlight.com/work/vice-news\&quot;">our work on VICE News</a> is that we were on a <em>very </em>accelerated schedule to build and launch this ambitious content quickly. We needed a running start. A newsroom filled with reporters publishes new content on the site on an hourly basis—so using a robust piece of software with roots in blogging isn’t a surprising choice.</p>
+<p>The key thing about <a href="https://postlight.com/work/vice-news">our work on VICE News</a> is that we were on a <em>very </em>accelerated schedule to build and launch this ambitious content quickly. We needed a running start. A newsroom filled with reporters publishes new content on the site on an hourly basis—so using a robust piece of software with roots in blogging isn’t a surprising choice.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -685,7 +685,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>But it’s not all good. When you use WordPress, you also get a lot of baggage. My teammate <a href="\&quot;https://medium.com/u/71d6cc6b0b1f\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">Dusty Matthews</a> — who was responsible for the previous WordPress incarnation of <a href="\&quot;http://theawl.com\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">The Awl</a> network of sites — has a canned response whenever someone has a WordPress WTF moment. “It’s a WordPress thing,” he sighs, a knowing look in his eye. Here are the four killer WordPress issues.</p>
+<p>But it’s not all good. When you use WordPress, you also get a lot of baggage. My teammate <a href="https://medium.com/u/71d6cc6b0b1f" target="_blank" rel="noopener noopener noreferrer">Dusty Matthews</a> — who was responsible for the previous WordPress incarnation of <a href="http://theawl.com" target="_blank" rel="noopener noopener noreferrer">The Awl</a> network of sites — has a canned response whenever someone has a WordPress WTF moment. “It’s a WordPress thing,” he sighs, a knowing look in his eye. Here are the four killer WordPress issues.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
@@ -693,7 +693,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:list -->
 
 <!-- wp:list -->
-<ul><li><a href="\&quot;https://codex.wordpress.org/The_Loop\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer"><strong>The Loop</strong></a><strong> bites you in the ass at least a half dozen times per project. </strong>Adding blocks of raw PHP in WordPress templates can drive someone who believes in a clean separation of view and logic absolutely batty.</li></ul>
+<ul><li><a href="https://codex.wordpress.org/The_Loop" target="_blank" rel="noopener noopener noreferrer"><strong>The Loop</strong></a><strong> bites you in the ass at least a half dozen times per project. </strong>Adding blocks of raw PHP in WordPress templates can drive someone who believes in a clean separation of view and logic absolutely batty.</li></ul>
 <!-- /wp:list -->
 
 <!-- wp:list -->
@@ -709,11 +709,11 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>WordPress is improving, quickly in small ways, but slowly—very, very, slowly — in big ways. Matt Mullenweg gave the WordPress community a telling homework assignment for 2016: <a href="\&quot;http://wesbos.com/learn-javascript/\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">“Learn JavaScript, deeply.”</a> Automattic’s <a href="\&quot;https://developer.wordpress.com/2015/11/23/the-story-behind-the-new-wordpress-com/\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">React-based Calypso rewrite</a> of the WordPress admin is a clear sign that at least the leaders of the community are trying to reimagine what a WordPress born in 2016 would look like. Eventually? Soon? The <a href="\&quot;http://v2.wp-api.org/\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">WP REST API</a> will be part of core so that <a href="\&quot;https://pantheon.io/decoupled-cms\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">headless WordPress</a> implementations, which decouple the backend and frontend, will become less cutting-edge and much more commonplace.</p>
+<p>WordPress is improving, quickly in small ways, but slowly—very, very, slowly — in big ways. Matt Mullenweg gave the WordPress community a telling homework assignment for 2016: <a href="http://wesbos.com/learn-javascript/" target="_blank" rel="noopener noopener noreferrer">“Learn JavaScript, deeply.”</a> Automattic’s <a href="https://developer.wordpress.com/2015/11/23/the-story-behind-the-new-wordpress-com/" target="_blank" rel="noopener noopener noreferrer">React-based Calypso rewrite</a> of the WordPress admin is a clear sign that at least the leaders of the community are trying to reimagine what a WordPress born in 2016 would look like. Eventually? Soon? The <a href="http://v2.wp-api.org/" target="_blank" rel="noopener noopener noreferrer">WP REST API</a> will be part of core so that <a href="https://pantheon.io/decoupled-cms" target="_blank" rel="noopener noopener noreferrer">headless WordPress</a> implementations, which decouple the backend and frontend, will become less cutting-edge and much more commonplace.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>The <a href="\&quot;https://github.com/postlight/awesome-cms\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">universe of content management systems</a> continues to expand, and yes, using WordPress often feels like a throwback to 2006. It’s also often the right tool for the job, and it’s incredibly fast to get it up and running—plus editors and writers often know it well and like using it.</p>
+<p>The <a href="https://github.com/postlight/awesome-cms" target="_blank" rel="noopener noopener noreferrer">universe of content management systems</a> continues to expand, and yes, using WordPress often feels like a throwback to 2006. It’s also often the right tool for the job, and it’s incredibly fast to get it up and running—plus editors and writers often know it well and like using it.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
