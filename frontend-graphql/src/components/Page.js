@@ -44,9 +44,7 @@ class Page extends Component {
       query: PAGE_QUERY,
       variables: { uri },
     });
-    console.debug(result);
     const page = result.data.pageBy;
-    console.debug(page);
     this.setState({ page });
   };
 

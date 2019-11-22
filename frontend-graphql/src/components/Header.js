@@ -46,51 +46,6 @@ class Header extends Component {
     this.setState({ menus });
   };
 
-/*
-      <div className="flex pa1 justify-between nowrap padding bottomborder">
-        <div className="flex flex-fixed black">
-          <Link to="/" className="ml1 no-underline black">
-            Home
-          </Link>
-        </div>
-        <div className="flex flex-fixed">
-          <Link to="/search" className="ml1 no-underline black">
-            Search
-          </Link>
-          <div className="ml1">|</div>
-        </div>
-      </div>
-
-        <div className="dropdown bb flex justify-center items-center dn-l">
-          <select
-            onChange={handleSelectChange}
-          >
-            <option value={false}>Menu</option>
-            {menu.items.map(item => {
-              if (item.object === 'custom') {
-                return (
-                  <option
-                    value={item.url}
-                    key={item.ID}
-                  >
-                    {item.title}
-                  </option>
-                );
-              }
-              const slug = getSlug(item.url);
-              const actualPage = item.object === 'category' ? 'category' : 'post';
-              return (
-                <option
-                  value={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-                  key={item.ID}
-                >
-                  {item.title}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-*/
   render() {
     const authToken = localStorage.getItem(AUTH_TOKEN);
     const { menus } = this.state;
