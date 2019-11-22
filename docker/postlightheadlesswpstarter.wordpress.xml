@@ -16,35 +16,1327 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<rss version="2.0" 
-	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" 
-	xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-	xmlns:wfw="http://wellformedweb.org/CommentAPI/" 
-	xmlns:dc="http://purl.org/dc/elements/1.1/" 
-	xmlns:wp="http://wordpress.org/export/1.2/">
+	<!-- generator="WordPress/5.3" created="2019-11-22 16:34" -->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
 
-	<channel>
-		<wp:wxr_version>1.2</wp:wxr_version>
-		<wp:base_site_url>http://localhost:8080</wp:base_site_url>
-		<wp:base_blog_url>http://localhost:8080</wp:base_blog_url>
+<channel>
+	<title>Postlight Headless WP Starter</title>
+	<link>http://localhost:8080</link>
+	<description>Just another (headless) WordPress site</description>
+	<pubDate>Fri, 22 Nov 2019 16:34:31 +0000</pubDate>
+	<language>en-US</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>http://localhost:8080</wp:base_site_url>
+	<wp:base_blog_url>http://localhost:8080</wp:base_blog_url>
 
-		<wp:author>
-			<wp:author_login><![CDATA[nedstark]]></wp:author_login>
-			<wp:author_display_name><![CDATA[nedstark]]></wp:author_display_name>
-		</wp:author>
+		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[nedstark]]></wp:author_login><wp:author_email><![CDATA[nedstark@headlesswpstarter.dev]]></wp:author_email><wp:author_display_name><![CDATA[nedstark]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+
+		<wp:category>
+		<wp:term_id>1</wp:term_id>
+		<wp:category_nicename><![CDATA[uncategorized]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Sample Category]]></wp:cat_name>
+	</wp:category>
+				<wp:term>
+		<wp:term_id><![CDATA[2]]></wp:term_id>
+		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[header-menu]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Header Menu]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id><![CDATA[1]]></wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[uncategorized]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Sample Category]]></wp:term_name>
+	</wp:term>
+			<wp:term><wp:term_id>2</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[header-menu]]></wp:term_slug><wp:term_name><![CDATA[Header Menu]]></wp:term_name>
+</wp:term>
+
+	<generator>https://wordpress.org/?v=5.3</generator>
 
 		<item>
-			<title>Congratulations!</title>
-			<content:encoded><![CDATA[<!-- wp:heading -->
+		<title>Hello world!</title>
+		<link>http://localhost:8080/2019/11/22/hello-world__trashed/</link>
+		<pubDate>Fri, 22 Nov 2019 15:58:35 +0000</pubDate>
+		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?p=1</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:58:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:58:35]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[hello-world__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="uncategorized"><![CDATA[Sample Category]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1574438367]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[hello-world]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_comments_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:1;s:1:"1";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:comment>
+			<wp:comment_id>1</wp:comment_id>
+			<wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[wapuu@wordpress.example]]></wp:comment_author_email>
+			<wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-11-22 15:58:35]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-11-22 15:58:35]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Hi, this is a comment.
+To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
+Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[post-trashed]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					</item>
+					<item>
+		<title>Sample Page</title>
+		<link>http://localhost:8080/sample-page__trashed/</link>
+		<pubDate>Fri, 22 Nov 2019 15:58:35 +0000</pubDate>
+		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=2</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>...or something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As a new WordPress user, you should go to <a href="http://localhost:8080/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>2</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:58:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:58:35]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[sample-page__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1574438367]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[sample-page]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Privacy Policy</title>
+		<link>http://localhost:8080/?page_id=3</link>
+		<pubDate>Fri, 22 Nov 2019 15:58:35 +0000</pubDate>
+		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=3</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: http://localhost:8080.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:58:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:58:35]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[privacy-policy]]></wp:post_name>
+		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Sample Page</title>
+		<link>http://localhost:8080/sample-page__trashed-2/</link>
+		<pubDate>Wed, 13 Nov 2019 15:20:38 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=2</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>...or something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As a new WordPress user, you should go to <a href="http://localhost:8080/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>6</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-13 15:20:38]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-13 15:20:38]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[sample-page__trashed-2]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1574287488]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[sample-page]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Privacy Policy</title>
+		<link>http://localhost:8080/privacy-policy__trashed/</link>
+		<pubDate>Wed, 13 Nov 2019 15:20:38 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=3</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: http://localhost:8080.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>7</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-13 15:20:38]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-13 15:20:38]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[privacy-policy__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[draft]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1574287490]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[privacy-policy]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title></title>
+		<link>http://localhost:8080/2019/11/22/8/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:29 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/2019/11/22/</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>8</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:29]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:29]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[8]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title></title>
+		<link>http://localhost:8080/2019/11/22/9/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:29 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/2019/11/22/</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>9</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:29]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:29]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[9]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[category]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>About the Starter Kit</title>
+		<link>https://postlight.com/labs/wordpress-react-starter-kit</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:29 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">https://postlight.com/labs/wordpress-react-starter-kit</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:29]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:29]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[read-about-the-starter-kit]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[10]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://postlight.com/trackchanges/introducing-postlights-wordpress-react-starter-kit]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Congratulations!</title>
+		<link>http://localhost:8080/welcome/</link>
+		<pubDate>Wed, 13 Nov 2019 15:22:02 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/welcome/</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:heading -->
 <h2>What’s under the hood:</h2>
 <!-- /wp:heading -->
 
 <!-- wp:list -->
-<ul><li>An automated installer which bootstraps a core WordPress installation that provides an established, stable REST API.</li><li>A plugin which exposes a newer, in-progress GraphQL API for WordPress.</li><li>The WordPress plugins you need to set up custom post types and custom fields (Advanced Custom Fields and Custom Post Type UI).</li><li>Plugins which expose those custom fields and WordPress menus in the WP REST API (ACF to WP API and WP-REST-API V2 Menus).</li><li>JWT authentication plugins: JWT WP REST and JWT WP GraphQL.</li><li>All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS Allow-Origin headers, and useful logging functions for easy debugging.</li><li>A mechanism for easily importing data from an existing WordPress installation anywhere on the web using WP Migrate DB Pro and its accompanying plugins (license required).</li><li>A sample, starter frontend React app powered by GraphQL.</li><li>Another sample, starter frontend React app, server-side rendered via Next.js, powered by the WP REST API.</li><li>Docker containers and scripts to manage them, for easily running the frontend React apps and backend locally or deploying it to any hosting provider with Docker support.</li></ul>
-<!-- /wp:list -->]]></content:encoded>
-			<wp:post_name><![CDATA[welcome]]></wp:post_name>
-			<wp:status><![CDATA[publish]]></wp:status>
-			<wp:post_type><![CDATA[page]]></wp:post_type>
-		</item>
-	</channel>
+<ul><li>A automated installer which bootstraps a core WordPress installation that provides an established, stable REST API.</li><li>A plugin which exposes a newer, in-progress GraphQL API for WordPress.</li><li>The WordPress plugins you need to set up custom post types and custom fields (Advanced Custom Fields and Custom Post Type UI).</li><li>Plugins which expose those custom fields and WordPress menus in the WP REST API (ACF to WP API and WP-REST-API V2 Menus).</li><li>JWT authentication plugins: JWT WP REST and JWT WP GraphQL.</li><li>All the starter WordPress theme code and settings headless requires, including pretty permalinks, CORS Allow-Origin headers, and useful logging functions for easy debugging.</li><li>A mechanism for easily importing data from an existing WordPress installation anywhere on the web using WP Migrate DB Pro and its accompanying plugins (license required).</li><li>A sample, starter frontend React app powered by GraphQL.</li><li>Another sample, starter frontend React app, server-side rendered via Next.js, powered by the WP REST API.</li><li>Docker containers and scripts to manage them, for easily running the frontend React apps and backend locally or deploying it to any hosting provider with Docker support.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Manage your content in WordPress and serve it using React. Too good to be true? <a href="http://localhost:8080/wp-admin/post.php?post=9&amp;action=edit">Edit this page</a> and see for yourself!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>11</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-13 15:22:02]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-13 15:22:02]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[welcome]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title>What Do You Need to Know About GraphQL?</title>
+		<link>http://localhost:8080/2019/11/20/what-do-you-need-to-know-about-graphql/</link>
+		<pubDate>Wed, 20 Nov 2019 18:19:48 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?p=12</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>If you interact with teams building software, or you sit within earshot of software engineers, you’ve probably heard them talking about <a href="https://graphql.org/">GraphQL</a>. Developers get pretty hyped up about new technologies, especially ones that help them build software faster and with fewer bugs. But what is GraphQL, and should you care? In <a href="https://postlight.com/work">our work</a> building software for our clients, more and more frequently we’ve been recommending and adopting GraphQL. Here’s why.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>The Origins of GraphQL</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Back in 2011, the smartphone revolution was in full swing. With the introduction of the iPhone and subsequent Android ecosystem, Facebook shifted significant focus into optimizing their mobile experience. That’s when Facebook’s engineering team faced a problem: Mobile phone data connections had high latency and low bandwidth, and that resulted in a slow user experience.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To render the Facebook News Feed, for example, a mobile device would need to make several requests for different kinds of data to the servers, like: “Get me all the latest stories for this user’s feed. Okay now for each of those, get the comments associated with them. Now for each comment, get me all the replies and the name and photo of the person who posted them.”</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All these different requests resulted to several seconds of load time, which meant impatient users spent less time on Facebook. To solve this problem, Facebook engineers set out to define a way to request <em>all</em> the data needed to render a screen in one shot. The result was a new query language and specification called <a href="https://graphql.org/">GraphQL</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>What Is GraphQL?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>At its core, GraphQL is a query language (QL) for APIs. It lets apps like the ones on your phone or your web browser to ask for exactly the data they need from the server–no more, and no less–and receive it all in a single request, so things like your news feed show up fast.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In GraphQL, everything revolves around a <a href="https://graphql.org/learn/schema/">schema</a>, which represents all the data in your system and what type of information it is. For example, a news story headline is a string of characters, but total number of likes is an integer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In GraphQL, data is represented as a graph, which means each piece of data is related to the others in a meaningful way. For example, the total number of likes is related to a post. Another total number of likes is related to a comment on that post. Using this graph, data engineers can model complex relationships in a declarative way, which ensures no one will mistake the total likes on a comment for the total likes on a post. This reduces errors, and makes it easy for engineers to quickly understand what data is available from a GraphQL API and build against it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>After they used it in production for several years, Facebook open-sourced GraphQL in 2015, and it was met with a tide of enthusiasm. It turns out GraphQL solves a lot of problems beyond fetching data on low latency mobile connections.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The GraphQL ecosystem has exploded in innovation and found many uses throughout the industry. Companies large and small have adopted GraphQL, including companies like Yelp, Intuit, and GitHub.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3><strong>If Facebook and GitHub Use GraphQL, Should My Team?</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When adopting any new technology, it’s important to consider the benefits and drawbacks of it, and what they mean for your team. At Postlight, we work with our clients to design backend services that best serve their needs.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Over the last few years, we’ve used GraphQL to power all sorts of apps, from an email client to CRMs to content management systems. As we build and ship GraphQL backends to production, our confidence in the long term viability of GraphQL continues to increase. GraphQL is also appearing in more of our open source projects. <a href="https://postlight.com/labs/glide-salesforce-graphql">Glide</a> helps developers rapidly prototype Salesforce integrations using GraphQL, and our <a href="https://postlight.com/labs/wordpress-react-starter-kit">WordPress + React Starter Kit</a> now offers GraphQL out of the box.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When we compare GraphQL to other API designs, one of the most noticeable differences we see is that GraphQL tooling increases engineering productivity and time-to-market. Tools like <a href="https://www.graphile.org/postgraphile/">PostGraphile</a> help engineers leverage hard-won SQL knowledge to produce a consistent and powerful GraphQL API based on their relational data model. For a more traditional application server environment, <a href="https://apollographql.com/docs/apollo-server/">Apollo Server</a> is great for applications that talk to multiple data sources or internal services.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>At Postlight we build many frontend projects with <a href="https://postlight.com/trackchanges/choosing-react-first">React</a>. Once our backend teams have established part of the data model, tools like <a href="https://www.apollographql.com/">Apollo</a>’s excellent React client have the frontend engineers executing queries within minutes. They may also fire up <a href="https://github.com/graphql/graphiql">GraphiQL</a> to explore the schema and execute queries. We’ve also adopted the concept of <a href="https://www.formidable.com/blog/2019/strong-typing/">end-to-end types</a> using TypeScript. End-to-end types expose statically-typed GraphQL interfaces directly in a frontend codebase so that incorrect queries and type errors are a thing of the past.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Along with engineering productivity advances, GraphQL has also increased the consistency of backend services. Because GraphQL represents data as a statically-typed graph, resources are consistent and always return what the client asked for. GraphQL has also helped solidify best practices around complex API design problems like <a href="https://facebook.github.io/relay/graphql/connections.htm">pagination</a>. Frontend and mobile developers are spending less time creating or learning bespoke pagination interfaces or fighting with inconsistent API endpoints.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3><strong>So Is GraphQL a Silver Bullet?</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Not so fast. I’ve painted a pretty picture of GraphQL so far, but it’s not without challenges. If we take a look back at history, it’s interesting to see how GraphQL differs from other API designs. For sake of time, let’s focus on the most ubiquitous network API design–<a href="https://restfulapi.net/">HTTP REST APIs</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>REST became extremely popular due to its resource-oriented design and simplicity. REST heavily leverages HTTP’s semantics for how it works, while SOAP and other designs before it were transport-agnostic. Relying on HTTP has some drawbacks but also a lot of benefits. For example, a well designed REST API can be cached using powerful HTTP caching strategies that can lead to low-latency cached content close to the end user. GraphQL uses the POST HTTP method by default, which is not typically cached in the same way. In order to utilize some of these advanced HTTP caching strategies the community has come up with techniques like <a href="https://www.apollographql.com/docs/apollo-server/performance/apq/">Automatic Persisted Queries</a> and a larger reliance on client-side caching.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>GraphQL also introduces some complexity into your system when resolving data from an API request. GraphQL requires code to parse and execute a query and logic to map that query to underline data stores or services. REST API endpoints, on the other hand, can be lean and small. For some projects, that maybe the right choice. Companies like Airbnb are <a href="https://medium.com/airbnb-engineering/reconciling-graphql-and-thrift-at-airbnb-a97e8d290712">facing (and helping solve) problems</a> in this area and sharing the results with the community.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>All in all, we’ve been pretty happy with the increased productivity and benefits of the GraphQL ecosystem. Want to discuss the pros and cons of API design? Drop us a line <a href="mailto:hello@postlight.com">hello@postlight.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em><a href="https://postlight.com/about/aaron-ortbals">Aaron Ortbals</a> is a Partner and Director of Engineering at Postlight.</em></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>12</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-20 18:19:48]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-20 18:19:48]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[what-do-you-need-to-know-about-graphql]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="uncategorized"><![CDATA[Sample Category]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[40]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>WordPress Without Shame</title>
+		<link>http://localhost:8080/2019/11/20/wordpress-without-shame/</link>
+		<pubDate>Wed, 20 Nov 2019 18:22:14 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?p=14</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>We talk a lot about <a href="\&quot;https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed#.p7mhgk5v4\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">content management systems</a> at Postlight, often in the context of a specific client’s needs, and sometimes, as a question about our general philosophy around publishing. And we also build a lot of custom tools for solving very tricky publishing problems—a good example is <a href="\&quot;https://postlight.com/work/instant\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">Instant.me</a>, which benefited from a custom CMS, fully oriented around a specific workflow.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But not every nail needs a fully-custom hammer. During our CMS conversations, inevitably I am the person in the room who brings up <a href="\&quot;http://wordpress.org\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">WordPress</a>. Then, my teammates put on their most patient facial expressions and listen to me make the argument.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Ultimately, as a director, I am obligated to consider all the technologies that can help our client achieve our goals—including the old, boring ones. Enter WordPress.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>WordPress is not particularly exciting, intrinsically modern, or lightweight. It’s a 13-year-old monolithic web application that powers 25% of the web and probably 30% of web spam. But, a whole lot of the time, WordPress is the right framework.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Since I started here about six months ago, I’ve helped ship two major WordPress projects.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Last week, we helped launch a brand new, reimagined web site for <a href="\&quot;https://news.vice.com\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">VICE News</a> (in parallel with the premier of <a href="\&quot;http://www.hbo.com/vice\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">VICE News Tonight on HBO</a>). The web site mirrors the philosophy and aesthetic of the TV show, featuring a stream of splashy graphics, bold headlines, videos, GIFs, and interactives, with customizable animations that trigger as the user browses the stream.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The key thing about <a href="\&quot;https://postlight.com/work/vice-news\&quot;">our work on VICE News</a> is that we were on a <em>very </em>accelerated schedule to build and launch this ambitious content quickly. We needed a running start. A newsroom filled with reporters publishes new content on the site on an hourly basis—so using a robust piece of software with roots in blogging isn’t a surprising choice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is a lot of ambition long-term for VICE News, and it’s possible—even likely!—it will outgrow WordPress. Which is fine. If you design a WordPress platform carefully, it’s possible to migrate the posts and artwork to another platform later. But given schedule and constraints—it was an obvious choice for now.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It’s pretty remarkable that in 2016 we’re still building fancy web sites for modern media companies and startups using WordPress. And yet.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Four Good WordPress Things</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I have a few things I really like about WordPress:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Thirteen years of features and development.</strong> WordPress core gives you so much out of the box: post and page creation, user permissions and role management, categories, tags, content revision history, drafting, publishing, previewing, content-scheduling, media management with image cropping and rotation, post locking when another editor is working on a piece, multiple sites, and WYSIWYG theming, to name a few.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list -->
+<ul><li><strong>Deep community support and documentation.</strong> You never want to be the first person trying to solve a problem with a piece of software, and you never are with WordPress. The community is so established and mature — and most of its users are writers — that at least 300 people have tried to do the thing you’re trying to do and wrote about the solution they found online.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list -->
+<ul><li><strong>A site that’s easy to hire for (whether engineering or editorial) and easy to host.</strong> WordPress’ market share means that anyone who has published anything online feels right at home looking at the familiar and comforting grays and blues of the WordPress publishing interface. Likewise, a mature market of WP developers, service providers, premium themes, and plugins has grown up around WordPress, as well as plentiful plug-and-play managed hosting options.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list -->
+<ul><li><strong>New features are a plugin away.</strong> When WordPress core is lacking, plugins fill the gap. If you need to integrate with Slack, add multiple authors to a byline, publish AMP versions of your content, auto-generate a sitemap, expose post data in a REST API, customize your site experience based on your users’s location, control in-article ad placement, or create custom objects or fields, there’s a plugin for that. Plus, building your own plugin from scratch is straightforward.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Four Bad WordPress Things</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>But it’s not all good. When you use WordPress, you also get a lot of baggage. My teammate <a href="\&quot;https://medium.com/u/71d6cc6b0b1f\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">Dusty Matthews</a> — who was responsible for the previous WordPress incarnation of <a href="\&quot;http://theawl.com\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">The Awl</a> network of sites — has a canned response whenever someone has a WordPress WTF moment. “It’s a WordPress thing,” he sighs, a knowing look in his eye. Here are the four killer WordPress issues.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>WP’s “everything is a post” approach feels like hammering a round peg into a square hole</strong> and then trying to retrieve it again undamaged.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list -->
+<ul><li><a href="\&quot;https://codex.wordpress.org/The_Loop\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer"><strong>The Loop</strong></a><strong> bites you in the ass at least a half dozen times per project. </strong>Adding blocks of raw PHP in WordPress templates can drive someone who believes in a clean separation of view and logic absolutely batty.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list -->
+<ul><li><strong>It’s slow. </strong>It takes a while to load a page and do all the things WordPress does, sometimes seconds per page—which won’t scale. So you have to build in layers of caching—and that means that…</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:list -->
+<ul><li><strong>It’s really, really hard to get consistent caching logic. </strong>This one can really bite you. You end up juggling caching logic in your head and figuring out strategies for breaking the cache when news breaks and a big new story goes up right now. You’d think this could be a solved problem—but when you factor in all the different systems and hosting solutions required to ship WordPress at scale, caching remains a tricky consideration to navigate.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Modernizing, Slowly</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>WordPress is improving, quickly in small ways, but slowly—very, very, slowly — in big ways. Matt Mullenweg gave the WordPress community a telling homework assignment for 2016: <a href="\&quot;http://wesbos.com/learn-javascript/\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">“Learn JavaScript, deeply.”</a> Automattic’s <a href="\&quot;https://developer.wordpress.com/2015/11/23/the-story-behind-the-new-wordpress-com/\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">React-based Calypso rewrite</a> of the WordPress admin is a clear sign that at least the leaders of the community are trying to reimagine what a WordPress born in 2016 would look like. Eventually? Soon? The <a href="\&quot;http://v2.wp-api.org/\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">WP REST API</a> will be part of core so that <a href="\&quot;https://pantheon.io/decoupled-cms\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">headless WordPress</a> implementations, which decouple the backend and frontend, will become less cutting-edge and much more commonplace.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The <a href="\&quot;https://github.com/postlight/awesome-cms\&quot;" target="\&quot;_blank\&quot;" rel="\&quot;noopener\&quot; noopener noreferrer">universe of content management systems</a> continues to expand, and yes, using WordPress often feels like a throwback to 2006. It’s also often the right tool for the job, and it’s incredibly fast to get it up and running—plus editors and writers often know it well and like using it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We love doing custom work that solves really difficult, thorny problems, and the way we see WordPress is that it solves a lot of boring, well-known problems so that we can focus on creating great experiences and facing new challenges.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>Gina Trapani is a director of engineering at Postlight. </em></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>14</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-20 18:22:14]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-20 18:22:14]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[wordpress-without-shame]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="uncategorized"><![CDATA[Sample Category]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[41]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Why Bother with a Headless CMS?</title>
+		<link>http://localhost:8080/2019/11/20/why-bother-with-a-headless-cms/</link>
+		<pubDate>Wed, 20 Nov 2019 18:24:13 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?p=16</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Whenever a team proposes the programming language, architecture or framework of choice to tackle a problem, my first instinct is to respond with: <em>Why bother?</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I’m not trying to be contrarian. I’m also not trying to hold onto the past while the engineers pitch the latest and greatest tech to solve a problem. I’m just trying to inject some pragmatism into the conversation. <em>Those early decisions are always the most impactful and therefore potentially the most costly. </em>The decisions made in those early meetings will establish the path and trajectory for the rest of the project.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The old thing (in this case, a monolithic CMS <a href="https://postlight.com/trackchanges/wordpress-without-shame">like WordPress</a> that produced regular HTML web pages) might be boring but it works. Provably works. And so when it came time to rebuild and redesign <a href="https://postlight.com/">postlight.com</a>, I had to say it: <em>Why bother with headless WordPress?</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3><strong>What is a headless CMS?</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Put simply, a headless CMS doesn’t bother with the templates. Or with making pages. There’s an entire world of templates out there. Templates are essentially web page “containers” that are wired up so that when you hit publish, WordPress “pours” its content into the right places of the page and serves it up to the world.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>“Headless” means it serves up the content as raw data via an API. WordPress is perfectly suited to serve content this way because it has an <a href="https://developer.wordpress.org/rest-api/">API ready to go</a> out of the box. The work then shifts to building a front-end that takes that raw content and puts it into various assets for consumption. This often occurs via some flavor of JavaScript framework. <a href="https://postlight.com/trackchanges/choosing-react-first">React</a> is the framework of choice for many these days.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Yeah, but why bother?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Well, there are many good reasons to use a headless CMS:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Going beyond the web page. </strong>The CMS is no longer just for publishing anymore. Content is doing <em>all sorts of things </em>today. The article has given way to many flavors of content packaging. By decoupling it from any single template, all sorts of possibilities open up. For example, if you’re looking to deliver your content via an <a href="https://www.amazon.com/alexa-skills/b?ie=UTF8&amp;node=13727921011">Alexa skill</a> or integrated into a mobile app, a headless CMS makes a whole lot of sense.</li><li><strong>Speed. </strong>By leveraging frameworks like React, you can be much more targeted about which bits of the page have to come over the wire instead of delivering the entire page each time.</li><li><strong>New and improved experiences. </strong>Did you ever land on one of those news sites that just keeps giving articles forever as you scroll? That’s a chore with static templates. By allowing content to progressively come in over the wire as you scroll, you can pull off a pretty slick experience.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3>But I’m building a marketing website. Do I really need a headless CMS?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Ah, now we’re getting down to it. The answer is: Maybe not. The constant temptation with new technology (headless WordPress isn’t even that new anymore, but it’s certainly not as well-defined as traditional WordPress) is to use it. While I could list out the disadvantages of a headless CMS here, that isn’t fair either.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The best way to make this call is to ask a few questions and let that drive your decision:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Will your content make its way out into world in various shapes and forms (e.g. IoT, social, web, mobile app)? If so, then you should be leaning towards headless.</li><li>Do you have the skill sets at your disposal to build a headless CMS platform? This usually requires people that are versed in more modern frameworks and technologies (e.g. React).</li><li>Will your platform need to shift and change a whole lot? If your CMS is set to position you to do all sorts of things with your content then you’re going to want the flexibility of deploying teams to leverage that API for all sorts of purposes (microsites, etc.).</li><li>Is your CMS big? In other words, can more than one team take advantage of that API and run parallel with other teams?</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>But all of these roll up to one big, giant, mega-question: <em>Can you explain why this is a good idea in terms of growth?</em> Because with headless, you’re giving up simplicity, and you need to get something in return. A faster development cycle, a better experience on mobile out of the box, and an increased likelihood that more people will see and engage with the content we produce.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Sites and platforms are funny in that it can be sort of dumb to see them in terms of ROI. Websites are about getting a return on other investments: Investments in content, in design, in building a team.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you can’t make that case, and not just argue it but really prove it out, you should use what’s familiar. Ultimately this is a business decision.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3><strong>But am I good for five years? Ten years?</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Good technology decisions look ahead. There is no doubt that a headless CMS best positions you for those unknown demands down the road. Unless you’re just standing up a basic <em>Home/About Us/Contact Us-</em>style marketing site, you should seriously consider a headless CMS path. So while the hard questions are worth asking, it’s hard to argue against the strategic flexibility of looking ahead.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>If you’re interested in diving in and exploring the world of headless WordPress, our popular <a href="https://postlight.com/labs/wordpress-react-starter-kit">Headless WordPress Starter Kit</a> is a great place to start. </em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em><a href="https://postlight.com/about/rich-ziade">Rich Ziade</a> is president of Postlight, a full-service digital product studio in New York City. Email him at <a href="mailto:hello@postlight.com">rich.ziade@postlight.com</a>.</em></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>16</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-20 18:24:13]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-20 18:24:13]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[why-bother-with-a-headless-cms]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="uncategorized"><![CDATA[Sample Category]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[42]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Labs by Postlight</title>
+		<link>http://localhost:8080/labs-by-postlight/</link>
+		<pubDate>Wed, 20 Nov 2019 20:14:32 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=29</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/dash-for-slack"><br>Dash for Slack<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Gather your team in a temporary Slack channel to accelerate decisions through deadlines.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/tinysheet"><br>Tinysheet<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Mobile-first mini spreadsheet that's lightweight, private, and powerful.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/rfp-builder"><br>RFP Builder<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Write a Request for Proposal for your next digital product in minutes.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/liftoff-airtable-cms"><br>Liftoff: Airtable CMS<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Easily create a static website powered by Airtable.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/glide-salesforce-graphql"><br>Glide: Salesforce GraphQL<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Modernize Salesforce API access with GraphQL.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/fyre-ipsum"><br>Fyre Ipsum<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Lorem ipsum based on the Fyre Festival pitch deck—or any content on the web.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/cloudflare-worker-app-kit"><br>Cloudflare Worker App Kit<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Get dynamic content at static speeds in your app with Cloudflare Workers.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/react-google-sheet-to-chart"><br>React Google Sheet to Chart<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Easily embed custom charts based on a Google Sheet in your React app.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/mercury"><br>Mercury<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Extract meaningful content from the chaos of web pages.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/wordpress-react-starter-kit"><br>WordPress + React Starter Kit<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Spin up a WordPress-powered React app in one step.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/node-js-typescript-starter-kit"><br>Node.js + TypeScript Starter Kit<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Skip JavaScript tooling setup and get right to coding.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/modern-serverless-starter-kit"><br>Modern Serverless Starter Kit<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Get your next serverless JavaScript function deployed in seconds.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/lux"><br>Lux<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Build scalable, Node.js-powered REST APIs with almost no code.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/knight-foundation"><br>Knight Foundation<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Turn raw data into socially relevant insights.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/awesome-cms"><br>Awesome CMS<br></a></h2>
+<p class="pl-block-lab-previews__abstract">A constantly-updated directory of content management systems.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/gif-battle"><br>GIF Battle<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Challenge your friends to a battle of GIFs.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<figure class="pl-block-lab-previews__post">
+<figcaption class="pl-block-lab-previews__card-content">
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/sotu-for-slack"><br>SOTU for Slack<br></a></h2>
+<p class="pl-block-lab-previews__abstract">Get a snapshot of every project in your company—without all the digging.</p>
+</figcaption>
+</figure>
+<!-- /wp:html -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>29</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-20 20:14:32]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-20 20:14:32]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[labs-by-postlight]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title>Postlight Careers</title>
+		<link>http://localhost:8080/postlight-careers/</link>
+		<pubDate>Wed, 20 Nov 2019 21:31:10 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=38</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:heading {"level":3} -->
+<h3>Yes, we’re hiring</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When you partner with Postlight we assemble an experienced interdisciplinary team to make your vision real.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p> Postlight is the sum of its people. From day one, we committed to building a place where people who love their craft want to come and grow. We hire incredible talent and we do everything we can to foster a collaborative, supportive environment where everyone can do their best work.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="mt5 mb6">
+<a href="https://postlight.com/careers" class="round-btn invert ba bw1 pv2 ph3">View Open Positions</a>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>38</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-20 21:31:10]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-20 21:31:10]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[postlight-careers]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[43]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Home</title>
+		<link>http://localhost:8080/2019/11/22/home/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:31 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/2019/11/22/home/</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>39</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:31]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:31]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="header-menu"><![CDATA[Header Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[39]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[/]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Graphql2</title>
+		<link>http://localhost:8080/2019/11/20/what-do-you-need-to-know-about-graphql/graphql2/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:35 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2019/11/Graphql2-11.png</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>40</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:35]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[graphql2]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[http://localhost:8080/wp-content/uploads/2019/11/Graphql2-11.png]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2019/11/Graphql2-11.png]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:675;s:4:"file";s:23:"2019/11/Graphql2-11.png";s:5:"sizes";a:4:{s:6:"medium";a:4:{s:4:"file";s:23:"Graphql2-11-300x169.png";s:5:"width";i:300;s:6:"height";i:169;s:9:"mime-type";s:9:"image/png";}s:5:"large";a:4:{s:4:"file";s:24:"Graphql2-11-1024x576.png";s:5:"width";i:1024;s:6:"height";i:576;s:9:"mime-type";s:9:"image/png";}s:9:"thumbnail";a:4:{s:4:"file";s:23:"Graphql2-11-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:12:"medium_large";a:4:{s:4:"file";s:23:"Graphql2-11-768x432.png";s:5:"width";i:768;s:6:"height";i:432;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>19-word-press-without-shame-0</title>
+		<link>http://localhost:8080/2019/11/20/wordpress-without-shame/19-word-press-without-shame-0/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:40 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2019/11/19-word-press-without-shame-0-11.png</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>41</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:40]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[19-word-press-without-shame-0]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>14</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[http://localhost:8080/wp-content/uploads/2019/11/19-word-press-without-shame-0-11.png]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2019/11/19-word-press-without-shame-0-11.png]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1024;s:6:"height";i:617;s:4:"file";s:44:"2019/11/19-word-press-without-shame-0-11.png";s:5:"sizes";a:3:{s:6:"medium";a:4:{s:4:"file";s:44:"19-word-press-without-shame-0-11-300x181.png";s:5:"width";i:300;s:6:"height";i:181;s:9:"mime-type";s:9:"image/png";}s:9:"thumbnail";a:4:{s:4:"file";s:44:"19-word-press-without-shame-0-11-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:12:"medium_large";a:4:{s:4:"file";s:44:"19-word-press-without-shame-0-11-768x463.png";s:5:"width";i:768;s:6:"height";i:463;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>cropped-hal-gatewood-tZc3vjPCk-Q-unsplash</title>
+		<link>http://localhost:8080/2019/11/20/why-bother-with-a-headless-cms/cropped-hal-gatewood-tzc3vjpck-q-unsplash/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:45 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2019/11/cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>42</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:45]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:45]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[cropped-hal-gatewood-tzc3vjpck-q-unsplash]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>16</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[http://localhost:8080/wp-content/uploads/2019/11/cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2019/11/cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1280;s:6:"height";i:721;s:4:"file";s:56:"2019/11/cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11.jpg";s:5:"sizes";a:4:{s:6:"medium";a:4:{s:4:"file";s:56:"cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11-300x169.jpg";s:5:"width";i:300;s:6:"height";i:169;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:57:"cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11-1024x577.jpg";s:5:"width";i:1024;s:6:"height";i:577;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:56:"cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:56:"cropped-hal-gatewood-tZc3vjPCk-Q-unsplash-11-768x433.jpg";s:5:"width";i:768;s:6:"height";i:433;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>careers-photo-opt</title>
+		<link>http://localhost:8080/postlight-careers/careers-photo-opt/</link>
+		<pubDate>Fri, 22 Nov 2019 15:59:49 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2019/11/careers-photo-opt-11.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>43</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 15:59:49]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 15:59:49]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[careers-photo-opt]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>38</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[http://localhost:8080/wp-content/uploads/2019/11/careers-photo-opt-11-scaled.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2019/11/careers-photo-opt-11-scaled.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:2560;s:6:"height";i:1225;s:4:"file";s:39:"2019/11/careers-photo-opt-11-scaled.jpg";s:5:"sizes";a:6:{s:6:"medium";a:4:{s:4:"file";s:32:"careers-photo-opt-11-300x144.jpg";s:5:"width";i:300;s:6:"height";i:144;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:33:"careers-photo-opt-11-1024x490.jpg";s:5:"width";i:1024;s:6:"height";i:490;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:32:"careers-photo-opt-11-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:32:"careers-photo-opt-11-768x367.jpg";s:5:"width";i:768;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";}s:9:"1536x1536";a:4:{s:4:"file";s:33:"careers-photo-opt-11-1536x735.jpg";s:5:"width";i:1536;s:6:"height";i:735;s:9:"mime-type";s:10:"image/jpeg";}s:9:"2048x2048";a:4:{s:4:"file";s:33:"careers-photo-opt-11-2048x980.jpg";s:5:"width";i:2048;s:6:"height";i:980;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}s:14:"original_image";s:24:"careers-photo-opt-11.jpg";}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Postlight Services</title>
+		<link>http://localhost:8080/postlight-services/</link>
+		<pubDate>Fri, 22 Nov 2019 16:07:12 +0000</pubDate>
+		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=44</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:group -->
+<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading -->
+<h2>Platform Architecture</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li>
+                                        API Design                                    </li><li>
+                                        Application Infrastructure                                    </li><li>
+                                        Server Architecture                                    </li><li>
+                                        Data Science                                    </li></ul>
+<!-- /wp:list -->
+
+<!-- wp:button {"className":"round-btn pointer invert dib white ba bw1 pv2 ph3"} -->
+<div class="wp-block-button round-btn pointer invert dib white ba bw1 pv2 ph3"><a class="wp-block-button__link" href="https://postlight.com/work">Learn More</a></div>
+<!-- /wp:button --></div></div>
+<!-- /wp:group -->
+
+<!-- wp:group -->
+<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading -->
+<h2>Product Strategy</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li>
+                                        Competitive and User Research                                    </li><li>
+                                        Requirements Analysis                                    </li><li>
+                                        Product Management                                    </li><li>
+                                        Content Management                                    </li></ul>
+<!-- /wp:list -->
+
+<!-- wp:button {"className":"round-btn pointer invert dib white ba bw1 pv2 ph3"} -->
+<div class="wp-block-button round-btn pointer invert dib white ba bw1 pv2 ph3"><a class="wp-block-button__link" href="https://postlight.com/work">Learn More</a></div>
+<!-- /wp:button --></div></div>
+<!-- /wp:group -->
+
+<!-- wp:group -->
+<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading -->
+<h2>Product Design</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li>
+                                        User Experience Design                                    </li><li>
+                                        Information Architecture                                    </li><li>
+                                        Web Design                                    </li><li>
+                                        Mobile App Design                                    </li></ul>
+<!-- /wp:list -->
+
+<!-- wp:button {"className":"round-btn pointer invert dib white ba bw1 pv2 ph3"} -->
+<div class="wp-block-button round-btn pointer invert dib white ba bw1 pv2 ph3"><a class="wp-block-button__link" href="https://postlight.com/work">Learn More</a></div>
+<!-- /wp:button --></div></div>
+<!-- /wp:group -->
+
+<!-- wp:group -->
+<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading -->
+<h2>Software Engineering</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li>
+                                        API Development                                    </li><li>
+                                        React and React Native                                    </li><li>
+                                        Web Development                                    </li><li>
+                                        Mobile App Development                                    </li></ul>
+<!-- /wp:list -->
+
+<!-- wp:button {"className":"round-btn pointer invert dib white ba bw1 pv2 ph3"} -->
+<div class="wp-block-button round-btn pointer invert dib white ba bw1 pv2 ph3"><a class="wp-block-button__link" href="https://postlight.com/work">Learn More</a></div>
+<!-- /wp:button --></div></div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>44</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-22 16:07:12]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-22 16:07:12]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[postlight-services]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+				</channel>
 </rss>
+	

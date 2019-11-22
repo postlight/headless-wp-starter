@@ -6,6 +6,7 @@ import { compose } from 'recompose';
 import gql from 'graphql-tag';
 import { AUTH_TOKEN, USERNAME } from '../constants';
 import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
+import { ReactComponent as SearchIcon } from '../static/images/search.svg';
 
 /**
  * GraphQL menu query
@@ -132,6 +133,10 @@ class Header extends Component {
                 </a>
               );
             })}
+
+            <Link to="/search">
+              <SearchIcon width={25} height={25} />
+            </Link>
 
             {authToken ? (
               <a

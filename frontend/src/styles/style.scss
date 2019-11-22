@@ -41,10 +41,6 @@ li {
   padding: 1rem 0;
 }
 
-svg {
-  max-width: 100%;
-}
-
 .br6 {
   border-radius: 6px;
 }
@@ -79,6 +75,17 @@ svg {
       color: black;
       background-color: white;
     }
+  }
+}
+
+.wp-block-button,
+.wp-block-button__link {
+  color: white;
+
+  &:hover,
+  &:hover a {
+    color: black;
+    text-decoration: none;
   }
 }
 
@@ -169,7 +176,7 @@ svg {
   line-height: 27px;
 }
 
-.hero {
+.hero:not(.post-type-page) {
   max-height: 340px;
   overflow: hidden;
 }
@@ -188,6 +195,19 @@ svg {
       margin: 1rem;
       width: calc(33% - 2rem);
     }
+  }
+}
+
+.post-44 {
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+  }
+
+  .wp-block-group {
+    margin: 1rem;
+    width: calc(50% - 2rem);
   }
 }
 

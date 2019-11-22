@@ -88,18 +88,20 @@ class Index extends Component {
       );
     });
     const fpages = pages.map(ipage => {
-      return (
-        <ul key={ipage.slug}>
-          <li>
-            <Link
-              as={`/page/${ipage.slug}`}
-              href={`/post?slug=${ipage.slug}&apiRoute=page`}
-            >
-              <a>{ipage.title.rendered}</a>
-            </Link>
-          </li>
-        </ul>
-      );
+      if (ipage.slug !== 'welcome') {
+        return (
+          <ul key={ipage.slug}>
+            <li>
+              <Link
+                as={`/page/${ipage.slug}`}
+                href={`/post?slug=${ipage.slug}&apiRoute=page`}
+              >
+                <a>{ipage.title.rendered}</a>
+              </Link>
+            </li>
+          </ul>
+        );
+      }
     });
 
     return (

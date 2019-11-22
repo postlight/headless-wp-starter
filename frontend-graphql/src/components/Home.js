@@ -199,13 +199,19 @@ class Home extends Component {
           <div className="w-50 pl3">
             <h2>Pages</h2>
             <ul>
-              {pages.map(post => (
-                <li key={post.node.slug}>
-                  <Link to={post.node.link}>
-                    {post.node.title}
-                  </Link>
-                </li>
-              ))}
+              {pages.map(post => {
+                if (post.node.slug !== 'welcome') {
+                  return (
+                    <li key={post.node.slug}>
+                      <Link to={post.node.link}>
+                        {post.node.title}
+                      </Link>
+                    </li>
+                  )
+                } else {
+                  return false;
+                }
+              })}
             </ul>
           </div>
         </div>

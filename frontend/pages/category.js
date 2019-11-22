@@ -55,9 +55,10 @@ class Category extends Component {
           <Link
             as={`/post/${post.slug}`}
             href={`/post?slug=${post.slug}&apiRoute=post`}
-            className="round-btn invert ba bw1 pv2 ph3"
           >
-            Read more
+            <span className="round-btn pointer invert ba bw1 pv2 ph3">
+              Read more
+            </span>
           </Link>
         </div>
       );

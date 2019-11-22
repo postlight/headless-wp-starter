@@ -52,14 +52,14 @@ class Post extends Component {
       <Layout className="test">
         <Menu menu={headerMenu} />
         {heroUrl ? (
-          <div className="hero flex items-center">
+          <div className={`hero flex items-center post-type-${post.type}`}>
             <img
               className="w-100"
               src={heroUrl}
             />
           </div>
         ) : ''}
-        <div className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id} post-type-${post.type}`}>
+        <div className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id}`}>
           <h1>{post.title.rendered}</h1>
           <div
             // eslint-disable-next-line react/no-danger
