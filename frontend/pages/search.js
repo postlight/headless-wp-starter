@@ -35,7 +35,7 @@ class Search extends Component {
     return (
       <Layout>
         <Menu menu={headerMenu} />
-        <div className="content login mh4 mv7 w-two-thirds-l center-l">
+        <div className="content login mh4 mv4 w-two-thirds-l center-l">
           <div>
             <h1>Search</h1>
             <input
@@ -58,7 +58,7 @@ class Search extends Component {
               <div className="mv4" key={post.slug}>
                 <span className="gray">{index + 1}.</span>
                 <Link href={`/post/${post.slug}`}>
-                  <a className="ml1">{post.title.rendered}</a>
+                  <h3 className="ml1 dib pointer">{post.title.rendered}</h3>
                 </Link>
               </div>
             )) : ''}

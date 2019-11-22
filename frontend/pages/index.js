@@ -109,7 +109,7 @@ class Index extends Component {
         <Menu menu={headerMenu} />
         <div className="intro bg-black white ph3 pv4 ph5-m pv5-l flex flex-column flex-row-l">
           <div className="color-logo w-50-l mr3-l">
-            <Logo width={327} height={220} />
+            <Logo width={440} height={280} />
           </div>
           <div className="subhed pr6-l">
             <h1>{page.title.rendered}</h1>
@@ -135,7 +135,7 @@ class Index extends Component {
             {fpages}
           </div>
         </div>
-        <div className="content mh4 mv4 w-two-thirds-l center-l"
+        <div className="content mh4 mv4 w-two-thirds-l center-l home"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: page.content.rendered,

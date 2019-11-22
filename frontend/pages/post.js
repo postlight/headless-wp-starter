@@ -59,7 +59,7 @@ class Post extends Component {
             />
           </div>
         ) : ''}
-        <div className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id}`}>
+        <div className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id} post-type-${post.type}`}>
           <h1>{post.title.rendered}</h1>
           <div
             // eslint-disable-next-line react/no-danger

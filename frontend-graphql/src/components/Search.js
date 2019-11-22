@@ -66,7 +66,7 @@ class Search extends Component {
   render() {
     const { posts } = this.state;
     return (
-      <div className="content login mh4 mv7 w-two-thirds-l center-l">
+      <div className="content login mh4 mv4 w-two-thirds-l center-l">
         <div>
           <h1>Search</h1>
           <input
@@ -89,7 +89,7 @@ class Search extends Component {
             <div className="mv4" key={post.node.slug}>
               <span className="gray">{index + 1}.</span>
               <Link to={post.node.link} className="ml1 black">
-                {post.node.title}
+                <h3>{post.node.title}</h3>
               </Link>
             </div>
           ))}

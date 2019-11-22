@@ -60,36 +60,38 @@ class Login extends Component {
         .substring(2) + new Date().getTime().toString(36);
     return (
       <div className="content login mh4 mv4 w-two-thirds-l center-l">
-        <h1>Log in</h1>
-        <p>Starter Kit allows you to log in via the JavaScript frontend, meaning you can interact with the backend without gaining admin access.</p>
-        <p><strong>Log in to view hidden posts only available to authenticated users.</strong></p>
-        <p className="message mb3"><strong>{message}</strong></p>
-        <input
-          className="db w-100 pa3 mv3 br6 ba b--black"
-          value={username}
-          onChange={e => this.setState({ username: e.target.value })}
-          type="text"
-          placeholder="Username"
-        />
-        <input
-          className="db w-100 pa3 mv3 br6 ba b--black"
-          value={password}
-          onChange={e => this.setState({ password: e.target.value })}
-          type="password"
-          placeholder="Password"
-        />
-        <Mutation
-          mutation={LOGIN_MUTATION}
-          variables={{ username, password, clientMutationId }}
-          onCompleted={data => this.confirm(data)}
-          onError={() => this.handleError()}
-        >
-          {mutation => (
-            <button className="round-btn invert ba bw1 pv2 ph3" type="button" onClick={mutation}>
-              {'Log in'}
-            </button>
-          )}
-        </Mutation>
+        <div>
+          <h1>Log in</h1>
+          <p>Starter Kit allows you to log in via the JavaScript frontend, meaning you can interact with the backend without gaining admin access.</p>
+          <p><strong>Log in to view hidden posts only available to authenticated users.</strong></p>
+          <p className="message mb3"><strong>{message}</strong></p>
+          <input
+            className="db w-100 pa3 mv3 br6 ba b--black"
+            value={username}
+            onChange={e => this.setState({ username: e.target.value })}
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            className="db w-100 pa3 mv3 br6 ba b--black"
+            value={password}
+            onChange={e => this.setState({ password: e.target.value })}
+            type="password"
+            placeholder="Password"
+          />
+          <Mutation
+            mutation={LOGIN_MUTATION}
+            variables={{ username, password, clientMutationId }}
+            onCompleted={data => this.confirm(data)}
+            onError={() => this.handleError()}
+          >
+            {mutation => (
+              <button className="round-btn invert ba bw1 pv2 ph3" type="button" onClick={mutation}>
+                {'Log in'}
+              </button>
+            )}
+          </Mutation>
+        </div>
       </div>
     );
   }

@@ -35,7 +35,7 @@
 	<wp:base_site_url>http://localhost:8080</wp:base_site_url>
 	<wp:base_blog_url>http://localhost:8080</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[nedstark]]></wp:author_login><wp:author_email><![CDATA[nedstark@headlesswpstarter.dev]]></wp:author_email><wp:author_display_name><![CDATA[nedstark]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[postlight]]></wp:author_login><wp:author_email><![CDATA[postlight@headlesswpstarter.dev]]></wp:author_email><wp:author_display_name><![CDATA[postlight]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
 		<wp:category>
 		<wp:term_id>1</wp:term_id>
@@ -66,7 +66,7 @@
 		<title>Hello world!</title>
 		<link>http://localhost:8080/2019/11/22/hello-world__trashed/</link>
 		<pubDate>Fri, 22 Nov 2019 15:58:35 +0000</pubDate>
-		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<dc:creator><![CDATA[postlight]]></dc:creator>
 		<guid isPermaLink="false">http://localhost:8080/?p=1</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -123,7 +123,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		<title>Sample Page</title>
 		<link>http://localhost:8080/sample-page__trashed/</link>
 		<pubDate>Fri, 22 Nov 2019 15:58:35 +0000</pubDate>
-		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<dc:creator><![CDATA[postlight]]></dc:creator>
 		<guid isPermaLink="false">http://localhost:8080/?page_id=2</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -179,7 +179,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		<title>Privacy Policy</title>
 		<link>http://localhost:8080/?page_id=3</link>
 		<pubDate>Fri, 22 Nov 2019 15:58:35 +0000</pubDate>
-		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<dc:creator><![CDATA[postlight]]></dc:creator>
 		<guid isPermaLink="false">http://localhost:8080/?page_id=3</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: http://localhost:8080.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
@@ -476,7 +476,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
-<p>Manage your content in WordPress and serve it using React. Too good to be true? <a href="http://localhost:8080/wp-admin/post.php?post=9&amp;action=edit">Edit this page</a> and see for yourself!</p>
+<p>Manage your content in WordPress and serve it using React. Too good to be true? <a href="http://localhost:8080/wp-admin/post.php?post=14&amp;action=edit">Edit this page</a> and see for yourself!</p>
 <!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>11</wp:post_id>
@@ -665,19 +665,12 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><li><strong>Thirteen years of features and development.</strong> WordPress core gives you so much out of the box: post and page creation, user permissions and role management, categories, tags, content revision history, drafting, publishing, previewing, content-scheduling, media management with image cropping and rotation, post locking when another editor is working on a piece, multiple sites, and WYSIWYG theming, to name a few.</li></ul>
-<!-- /wp:list -->
-
-<!-- wp:list -->
-<ul><li><strong>Deep community support and documentation.</strong> You never want to be the first person trying to solve a problem with a piece of software, and you never are with WordPress. The community is so established and mature — and most of its users are writers — that at least 300 people have tried to do the thing you’re trying to do and wrote about the solution they found online.</li></ul>
-<!-- /wp:list -->
-
-<!-- wp:list -->
-<ul><li><strong>A site that’s easy to hire for (whether engineering or editorial) and easy to host.</strong> WordPress’ market share means that anyone who has published anything online feels right at home looking at the familiar and comforting grays and blues of the WordPress publishing interface. Likewise, a mature market of WP developers, service providers, premium themes, and plugins has grown up around WordPress, as well as plentiful plug-and-play managed hosting options.</li></ul>
-<!-- /wp:list -->
-
-<!-- wp:list -->
-<ul><li><strong>New features are a plugin away.</strong> When WordPress core is lacking, plugins fill the gap. If you need to integrate with Slack, add multiple authors to a byline, publish AMP versions of your content, auto-generate a sitemap, expose post data in a REST API, customize your site experience based on your users’s location, control in-article ad placement, or create custom objects or fields, there’s a plugin for that. Plus, building your own plugin from scratch is straightforward.</li></ul>
+<ul>
+<li><strong>Thirteen years of features and development.</strong> WordPress core gives you so much out of the box: post and page creation, user permissions and role management, categories, tags, content revision history, drafting, publishing, previewing, content-scheduling, media management with image cropping and rotation, post locking when another editor is working on a piece, multiple sites, and WYSIWYG theming, to name a few.</li>
+<li><strong>Deep community support and documentation.</strong> You never want to be the first person trying to solve a problem with a piece of software, and you never are with WordPress. The community is so established and mature — and most of its users are writers — that at least 300 people have tried to do the thing you’re trying to do and wrote about the solution they found online.</li>
+<li><strong>A site that’s easy to hire for (whether engineering or editorial) and easy to host.</strong> WordPress’ market share means that anyone who has published anything online feels right at home looking at the familiar and comforting grays and blues of the WordPress publishing interface. Likewise, a mature market of WP developers, service providers, premium themes, and plugins has grown up around WordPress, as well as plentiful plug-and-play managed hosting options.</li>
+<li><strong>New features are a plugin away.</strong> When WordPress core is lacking, plugins fill the gap. If you need to integrate with Slack, add multiple authors to a byline, publish AMP versions of your content, auto-generate a sitemap, expose post data in a REST API, customize your site experience based on your users’s location, control in-article ad placement, or create custom objects or fields, there’s a plugin for that. Plus, building your own plugin from scratch is straightforward.</li>
+</ul>
 <!-- /wp:list -->
 
 <!-- wp:heading {"level":3} -->
@@ -689,19 +682,12 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><li><strong>WP’s “everything is a post” approach feels like hammering a round peg into a square hole</strong> and then trying to retrieve it again undamaged.</li></ul>
-<!-- /wp:list -->
-
-<!-- wp:list -->
-<ul><li><a href="https://codex.wordpress.org/The_Loop" target="_blank" rel="noopener noopener noreferrer"><strong>The Loop</strong></a><strong> bites you in the ass at least a half dozen times per project. </strong>Adding blocks of raw PHP in WordPress templates can drive someone who believes in a clean separation of view and logic absolutely batty.</li></ul>
-<!-- /wp:list -->
-
-<!-- wp:list -->
-<ul><li><strong>It’s slow. </strong>It takes a while to load a page and do all the things WordPress does, sometimes seconds per page—which won’t scale. So you have to build in layers of caching—and that means that…</li></ul>
-<!-- /wp:list -->
-
-<!-- wp:list -->
-<ul><li><strong>It’s really, really hard to get consistent caching logic. </strong>This one can really bite you. You end up juggling caching logic in your head and figuring out strategies for breaking the cache when news breaks and a big new story goes up right now. You’d think this could be a solved problem—but when you factor in all the different systems and hosting solutions required to ship WordPress at scale, caching remains a tricky consideration to navigate.</li></ul>
+<ul>
+<li><strong>WP’s “everything is a post” approach feels like hammering a round peg into a square hole</strong> and then trying to retrieve it again undamaged.</li>
+<li><a href="https://codex.wordpress.org/The_Loop" target="_blank" rel="noopener noopener noreferrer"><strong>The Loop</strong></a><strong> bites you in the ass at least a half dozen times per project. </strong>Adding blocks of raw PHP in WordPress templates can drive someone who believes in a clean separation of view and logic absolutely batty.</li>
+<li><strong>It’s slow. </strong>It takes a while to load a page and do all the things WordPress does, sometimes seconds per page—which won’t scale. So you have to build in layers of caching—and that means that…</li>
+<li><strong>It’s really, really hard to get consistent caching logic. </strong>This one can really bite you. You end up juggling caching logic in your head and figuring out strategies for breaking the cache when news breaks and a big new story goes up right now. You’d think this could be a solved problem—but when you factor in all the different systems and hosting solutions required to ship WordPress at scale, caching remains a tricky consideration to navigate.</li>
+</ul>
 <!-- /wp:list -->
 
 <!-- wp:heading {"level":3} -->
@@ -857,7 +843,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		<content:encoded><![CDATA[<!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/dash-for-slack"><br>Dash for Slack<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/dash-for-slack">Dash for Slack</a></h2>
 <p class="pl-block-lab-previews__abstract">Gather your team in a temporary Slack channel to accelerate decisions through deadlines.</p>
 </figcaption>
 </figure>
@@ -866,7 +852,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/tinysheet"><br>Tinysheet<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/tinysheet">Tinysheet</a></h2>
 <p class="pl-block-lab-previews__abstract">Mobile-first mini spreadsheet that's lightweight, private, and powerful.</p>
 </figcaption>
 </figure>
@@ -875,7 +861,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/rfp-builder"><br>RFP Builder<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/rfp-builder">RFP Builder</a></h2>
 <p class="pl-block-lab-previews__abstract">Write a Request for Proposal for your next digital product in minutes.</p>
 </figcaption>
 </figure>
@@ -884,7 +870,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/liftoff-airtable-cms"><br>Liftoff: Airtable CMS<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/liftoff-airtable-cms">Liftoff: Airtable CMS</a></h2>
 <p class="pl-block-lab-previews__abstract">Easily create a static website powered by Airtable.</p>
 </figcaption>
 </figure>
@@ -893,7 +879,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/glide-salesforce-graphql"><br>Glide: Salesforce GraphQL<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/glide-salesforce-graphql">Glide: Salesforce GraphQL</a></h2>
 <p class="pl-block-lab-previews__abstract">Modernize Salesforce API access with GraphQL.</p>
 </figcaption>
 </figure>
@@ -902,7 +888,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/fyre-ipsum"><br>Fyre Ipsum<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/fyre-ipsum">Fyre Ipsum</a></h2>
 <p class="pl-block-lab-previews__abstract">Lorem ipsum based on the Fyre Festival pitch deck—or any content on the web.</p>
 </figcaption>
 </figure>
@@ -911,7 +897,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/cloudflare-worker-app-kit"><br>Cloudflare Worker App Kit<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/cloudflare-worker-app-kit">Cloudflare Worker App Kit</a></h2>
 <p class="pl-block-lab-previews__abstract">Get dynamic content at static speeds in your app with Cloudflare Workers.</p>
 </figcaption>
 </figure>
@@ -920,7 +906,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/react-google-sheet-to-chart"><br>React Google Sheet to Chart<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/react-google-sheet-to-chart">React Google Sheet to Chart</a></h2>
 <p class="pl-block-lab-previews__abstract">Easily embed custom charts based on a Google Sheet in your React app.</p>
 </figcaption>
 </figure>
@@ -929,7 +915,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/mercury"><br>Mercury<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/mercury">Mercury</a></h2>
 <p class="pl-block-lab-previews__abstract">Extract meaningful content from the chaos of web pages.</p>
 </figcaption>
 </figure>
@@ -938,7 +924,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/wordpress-react-starter-kit"><br>WordPress + React Starter Kit<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/wordpress-react-starter-kit">WordPress + React Starter Kit</a></h2>
 <p class="pl-block-lab-previews__abstract">Spin up a WordPress-powered React app in one step.</p>
 </figcaption>
 </figure>
@@ -947,7 +933,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/node-js-typescript-starter-kit"><br>Node.js + TypeScript Starter Kit<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/node-js-typescript-starter-kit">Node.js + TypeScript Starter Kit</a></h2>
 <p class="pl-block-lab-previews__abstract">Skip JavaScript tooling setup and get right to coding.</p>
 </figcaption>
 </figure>
@@ -956,7 +942,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/modern-serverless-starter-kit"><br>Modern Serverless Starter Kit<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/modern-serverless-starter-kit">Modern Serverless Starter Kit</a></h2>
 <p class="pl-block-lab-previews__abstract">Get your next serverless JavaScript function deployed in seconds.</p>
 </figcaption>
 </figure>
@@ -965,7 +951,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/lux"><br>Lux<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/lux">Lux</a></h2>
 <p class="pl-block-lab-previews__abstract">Build scalable, Node.js-powered REST APIs with almost no code.</p>
 </figcaption>
 </figure>
@@ -974,7 +960,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/knight-foundation"><br>Knight Foundation<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/knight-foundation">Knight Foundation</a></h2>
 <p class="pl-block-lab-previews__abstract">Turn raw data into socially relevant insights.</p>
 </figcaption>
 </figure>
@@ -983,7 +969,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/awesome-cms"><br>Awesome CMS<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/awesome-cms">Awesome CMS</a></h2>
 <p class="pl-block-lab-previews__abstract">A constantly-updated directory of content management systems.</p>
 </figcaption>
 </figure>
@@ -992,7 +978,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/gif-battle"><br>GIF Battle<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/gif-battle">GIF Battle</a></h2>
 <p class="pl-block-lab-previews__abstract">Challenge your friends to a battle of GIFs.</p>
 </figcaption>
 </figure>
@@ -1001,7 +987,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 <!-- wp:html -->
 <figure class="pl-block-lab-previews__post">
 <figcaption class="pl-block-lab-previews__card-content">
-<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/sotu-for-slack"><br>SOTU for Slack<br></a></h2>
+<h2><a class="pl-block-lab-previews__link" href="https://postlight.com/labs/sotu-for-slack">SOTU for Slack</a></h2>
 <p class="pl-block-lab-previews__abstract">Get a snapshot of every project in your company—without all the digging.</p>
 </figcaption>
 </figure>
@@ -1249,7 +1235,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		<title>Postlight Services</title>
 		<link>http://localhost:8080/postlight-services/</link>
 		<pubDate>Fri, 22 Nov 2019 16:07:12 +0000</pubDate>
-		<dc:creator><![CDATA[nedstark]]></dc:creator>
+		<dc:creator><![CDATA[postlight]]></dc:creator>
 		<guid isPermaLink="false">http://localhost:8080/?page_id=44</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:group -->
