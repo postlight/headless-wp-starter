@@ -36,8 +36,8 @@ function log_console( $name, $data = null, $js_eval = false ) {
 
     // sanitize.
     $data          = $data ? $data : '';
-    $search_array  = array( "#'#", '#""#', "#''#", "#\n#", "#\r\n#" );
-    $replace_array = array( '"', '', '', '\\n', '\\n' );
+    $search_array  = [ "#'#", '#""#', "#''#", "#\n#", "#\r\n#" ];
+    $replace_array = [ '"', '', '', '\\n', '\\n' ];
     $data          = preg_replace( $search_array, $replace_array, $data );
     $data          = ltrim( rtrim( $data, '"' ), '"' );
     $data          = $is_evaled ? $data : ( "'" === $data[0] ) ? $data : "'" . $data . "'";

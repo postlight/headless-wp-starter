@@ -23,11 +23,11 @@ class HeaderMenuType extends WPObjectType {
      * Constructor
      */
     public function __construct() {
-        $config = array(
+        $config = [
             'name'        => 'HeaderMenuType',
             'fields'      => self::fields(),
             'description' => __( 'Header Menu', 'postlight-headless-wp' ),
-        );
+        ];
         parent::__construct( $config );
     }
 
@@ -37,20 +37,20 @@ class HeaderMenuType extends WPObjectType {
     protected static function fields() {
         if ( null === self::$fields ) {
             self::$fields = function () {
-                $fields = array(
-                    'label' => array(
+                $fields = [
+                    'label' => [
                         'type'        => Types::string(),
                         'description' => __( 'The URL label', 'postlight-headless-wp' ),
-                    ),
-                    'url'   => array(
+                    ],
+                    'url'   => [
                         'type'        => Types::string(),
                         'description' => __( 'The URL', 'postlight-headless-wp' ),
-                    ),
-                    'type'  => array(
+                    ],
+                    'type'  => [
                         'type'        => Types::string(),
                         'description' => __( 'internal or external', 'postlight-headless-wp' ),
-                    ),
-                );
+                    ],
+                ];
                 return self::prepare_fields( $fields, 'HeaderMenuType' );
             };
         }
