@@ -1007,7 +1007,7 @@ viewArticle { imgSrc, date, title, link } =
         imgSrcPath =
             append assetPath imgSrc
     in
-    a [ href link, class "link-container" ]
+    a [ href link, target "_blank", class "link-container" ]
         [ article [ class "article-item" ]
             [ figure [] [ img [ src imgSrcPath, alt title ] [] ]
 
@@ -1471,7 +1471,8 @@ view model =
                 ]
 
             _ ->
-                [ text "Something WRong" ]
+            -- Make error page
+                [ text "Something Wrong" ]
     }
 
 
