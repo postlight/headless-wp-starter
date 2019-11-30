@@ -6,17 +6,20 @@ const dotenv = require('dotenv');
 // dotenv will read .env file and return an object with a 'parsed' key
 const env = dotenv.config().parsed;
 
-const isWordpressUrlDefined = env && Boolean(env.WORDPRESS_URL);
+const isWordpressUrlDefined =
+  (env && Boolean(env.WORDPRESS_URL)) || process.env.WORDPRESS_URL;
 if (!isWordpressUrlDefined) {
   console.log(
     'Required WORDPRESS_URL is not defined.\nYou should define it in .env file',
   );
   process.exit(1);
 }
-const envKeys = Object.keys(env).reduce((acc, current) => {
-  acc[`process.env.${current}`] = JSON.stringify(env[current]);
-  return acc;
-}, {});
+const envKeys = env
+  ? Object.keys(env).reduce((acc, current) => {
+      acc[`process.env.${current}`] = JSON.stringify(env[current]);
+      return acc;
+    }, {})
+  : {};
 
 module.exports = {
   webpack: config => {

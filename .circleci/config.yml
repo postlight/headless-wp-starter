@@ -12,6 +12,11 @@ executors:
       - image: circleci/node:10.16
     working_directory: ~/repo/landing
 
+  frontend-executor:
+    docker:
+      - image: circleci/node:10.16
+    working_directory: ~/repo/frontend
+
 jobs:
   build-landing:
     executor: landing-page-executor
@@ -55,14 +60,46 @@ jobs:
           name: Extract archived build folder on ec2 using ssh
           command: ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@52.198.50.117 "tar -xvzf /home/ubuntu/app/landing/landing_page.tar.gz -C /home/ubuntu/app/landing && cd /home/ubuntu/app/landing && docker-compose restart nginx"
 
+  build-frontend:
+    executor: frontend-executor
+    steps:
+      - checkout:
+          path: ~/repo
+
+      - run:
+          name: Install dependencies
+          command: sudo yarn install
+
+      - run:
+          name: Build application
+          command: sudo WORDPRESS_URL=https://dummy-wordpress.com yarn build
+
+  deploy-frontend:
+    executor: frontend-executor
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 'a5:7a:8f:d8:2e:2f:09:40:89:b8:89:ce:58:f4:98:f7'
+
+      - run:
+          name: Pull latest code and restart frontend
+          command: ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@52.198.50.117 "cd /home/ubuntu/app && git fetch origin && git reset --hard origin/master && docker-compose restart frontend"
+
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build-landing
+      - build-frontend
       - deploy-landing:
           requires:
             - build-landing
+          filters:
+            branches:
+              only: master
+      - deploy-frontend:
+          requires:
+            - build-frontend
           filters:
             branches:
               only: master
