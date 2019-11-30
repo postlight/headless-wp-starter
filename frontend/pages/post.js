@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import WPAPI from 'wpapi';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import Menu from '../components/Menu';
 import NavBar from '../components/NavBar';
-import RecentPosts from '../components/RecentPosts';
 import PageWrapper from '../components/PageWrapper';
 import Config from '../config';
 
@@ -37,12 +35,14 @@ class Post extends Component {
 
     return { post };
   }
+
   constructor(props) {
     super(props);
     this.state = {
       recentPosts: [],
     };
   }
+
   componentDidMount() {
     wp.posts()
       .embed()
@@ -50,15 +50,16 @@ class Post extends Component {
         this.setState({ recentPosts: posts.slice(0, 9) });
       });
   }
+
   render() {
-    const { post, headerMenu } = this.props;
+    const { post } = this.props;
+    const { recentPosts } = this.state;
     if (!post.title) return <Error statusCode={404} />;
 
     return (
       <Layout>
-        {/* <Menu menu={headerMenu} /> */}
         <NavBar />
-        <Article post={post} recentPosts={this.state.recentPosts} />
+        <Article post={post} recentPosts={recentPosts} />
       </Layout>
     );
   }
