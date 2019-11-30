@@ -25,7 +25,7 @@ const Header = () => (
       <meta property="og:locale" content="zh_TW" />
       <meta
         property="og:image"
-        content="https://drive.google.com/uc?id=1y58KeULOSI2XPuIMWJjieXfqMk4NRMKn"
+        content="https://drive.google.com/uc?id=1_NDNP6OlTG_XX9dr5c-vyShd3HaBYt15"
       />
       {/* For SEO */}
 
