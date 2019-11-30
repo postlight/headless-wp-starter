@@ -1430,7 +1430,7 @@ toRoute string =
 
 view : Model -> Browser.Document Msg
 view model =
-    { title = "日本インサイド"
+    { title = "Japan Insider"
     , body =
         case toRoute (Url.toString model.url) of
             Home ->
