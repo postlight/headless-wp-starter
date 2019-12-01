@@ -41,7 +41,7 @@ wp option update blogdescription "$WORDPRESS_DESCRIPTION"
 wp rewrite structure "$WORDPRESS_PERMALINK_STRUCTURE"
 
 wp theme activate postlight-headless-wp
-wp theme delete twentysixteen twentyseventeen twentynineteen
+wp theme delete twentysixteen twentyseventeen twentynineteen twentytwenty
 
 wp plugin delete akismet hello
 wp plugin install --activate --force \
