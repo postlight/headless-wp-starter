@@ -106,6 +106,6 @@ class Category extends Component {
       </div>
     );
   }
-  }
+}
 
-  export default withApollo(Category);
+export default withApollo(Category);
