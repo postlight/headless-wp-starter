@@ -9,6 +9,7 @@ import gql from 'graphql-tag';
 const PAGE_QUERY = gql`
   query PageQuery($uri: String!) {
     pageBy(uri: $uri) {
+      pageId
       title
       content
     }
@@ -50,10 +51,7 @@ class Page extends Component {
   render() {
     const { page } = this.state;
     return (
-      <div>
-        <div className="pa2">
-          <h1>{page.title}</h1>
-        </div>
+      <div className={`content mh4 mv4 w-two-thirds-l center-l post-${page.pageId}`}>
         <div
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{

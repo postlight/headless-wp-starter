@@ -66,37 +66,33 @@ class Search extends Component {
   render() {
     const { posts } = this.state;
     return (
-      <div className="pa2">
+      <div className="content login mh4 mv4 w-two-thirds-l center-l">
         <div>
-          Search
+          <h1>Search</h1>
           <input
-            className="search"
+            className="db w-100 pa3 mv3 br6 ba b--black"
             type="text"
+            placeholder="Search by name and content"
             onChange={e => this.setState({ filter: e.target.value })}
             onKeyDown={this.handleKeyDown}
           />
           <button
-            className="search"
+            className="round-btn invert ba bw1 pv2 ph3"
             type="button"
             onClick={() => this.executeSearch()}
           >
-            OK
+            Submit
           </button>
         </div>
-        <div className="flex mt2 items-start">
-          <div className="flex items-center" />
-          <div className="ml1">
-            {posts.map((post, index) => (
-              <div key={post.node.slug}>
-                <span className="gray">{index + 1}.</span>
-                <Link to={post.node.link} className="ml1 black">
-                  {post.node.title}
-                </Link>
-                <span className="gray"> by {post.node.author.nickname}</span>
-              </div>
-            ))}
-            <div className="f6 lh-copy gray" />
-          </div>
+        <div className="mv4">
+          {posts.map((post, index) => (
+            <div className="mv4" key={post.node.slug}>
+              <span className="gray">{index + 1}.</span>
+              <Link to={post.node.link} className="ml1 black">
+                <h3>{post.node.title}</h3>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     );
