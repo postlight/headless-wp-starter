@@ -59,25 +59,26 @@ class Login extends Component {
         .toString(36)
         .substring(2) + new Date().getTime().toString(36);
     return (
-      <div>
-        <h4>Login {message}</h4>
-        <div className="flex flex-column login">
+      <div className="content login mh4 mv4 w-two-thirds-l center-l">
+        <div>
+          <h1>Log in</h1>
+          <p>Starter Kit allows you to log in via the JavaScript frontend, meaning you can interact with the backend without gaining admin access.</p>
+          <p><strong>Log in to view hidden posts only available to authenticated users.</strong></p>
+          <p className="message mb3"><strong>{message}</strong></p>
           <input
-            className="input-padding"
+            className="db w-100 pa3 mv3 br6 ba b--black"
             value={username}
             onChange={e => this.setState({ username: e.target.value })}
             type="text"
-            placeholder="Your username"
+            placeholder="Username"
           />
           <input
-            className="input-padding"
+            className="db w-100 pa3 mv3 br6 ba b--black"
             value={password}
             onChange={e => this.setState({ password: e.target.value })}
             type="password"
-            placeholder="Your password"
+            placeholder="Password"
           />
-        </div>
-        <div className=" mt3">
           <Mutation
             mutation={LOGIN_MUTATION}
             variables={{ username, password, clientMutationId }}
@@ -85,8 +86,8 @@ class Login extends Component {
             onError={() => this.handleError()}
           >
             {mutation => (
-              <button className="pointer" type="button" onClick={mutation}>
-                {'login'}
+              <button className="round-btn invert ba bw1 pv2 ph3" type="button" onClick={mutation}>
+                {'Log in'}
               </button>
             )}
           </Mutation>

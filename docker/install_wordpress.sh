@@ -41,7 +41,7 @@ wp option update blogdescription "$WORDPRESS_DESCRIPTION"
 wp rewrite structure "$WORDPRESS_PERMALINK_STRUCTURE"
 
 wp theme activate postlight-headless-wp
-wp theme delete twentysixteen twentyseventeen twentynineteen
+wp theme delete twentysixteen twentyseventeen twentynineteen twentytwenty
 
 wp plugin delete akismet hello
 wp plugin install --activate --force \
@@ -56,13 +56,17 @@ wp plugin install --activate --force \
     /var/www/plugins/*.zip
 
 wp term update category 1 --name="Sample Category"
-wp menu create "Header Menu"
-wp menu item add-post header-menu 1
-wp menu item add-post header-menu 2
-wp menu item add-term header-menu category 1
-wp menu item add-custom header-menu "Read about the Starter Kit" https://postlight.com/trackchanges/introducing-postlights-wordpress-react-starter-kit
-wp menu location assign header-menu header-menu
-wp post update 1 --post_title="Sample Post" --post_name=sample-post
-wp import /var/www/postlightheadlesswpstarter.wordpress.xml --authors=skip
+wp post delete 1 2
+
+wp import /var/www/postlightheadlesswpstarter.wordpress.xml --authors=skip --skip=attachment
+
+wp media import /var/www/images/Graphql2.png --featured_image \
+  --post_id=$(wp post list --field=ID --name=what-do-you-need-to-know-about-graphql)
+wp media import /var/www/images/19-word-press-without-shame-0.png --featured_image \
+  --post_id=$(wp post list --field=ID --name=wordpress-without-shame)
+wp media import /var/www/images/cropped-hal-gatewood-tZc3vjPCk-Q-unsplash.jpg --featured_image \
+  --post_id=$(wp post list --field=ID --name=why-bother-with-a-headless-cms)
+wp media import /var/www/images/careers-photo-opt.jpg --featured_image \
+  --post_id=$(wp post list --field=ID --post_type=page --name=postlight-careers)
 
 echo "Great. You can now log into WordPress at: $WORDPRESS_URL/wp-admin ($WORDPRESS_ADMIN_USER/$WORDPRESS_ADMIN_PASSWORD)"

@@ -26,6 +26,7 @@ services:
             - ./docker/install_wordpress.sh:/usr/local/bin/install_wordpress
             - ./docker/migratedb_import.sh:/usr/local/bin/migratedb_import
             - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
+            - ./docker/images:/var/www/images
             - ./docker/plugins:/var/www/plugins
     frontend:
         command: bash -c 'yarn && yarn start'

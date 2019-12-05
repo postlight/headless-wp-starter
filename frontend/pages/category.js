@@ -36,23 +36,41 @@ class Category extends Component {
 
     const fposts = posts.map(post => {
       return (
-        <ul key={post.slug}>
-          <li>
+        <div key={post.id}>
+          <h2 className="mt5">
             <Link
               as={`/post/${post.slug}`}
               href={`/post?slug=${post.slug}&apiRoute=post`}
             >
               <a>{post.title.rendered}</a>
             </Link>
-          </li>
-        </ul>
+          </h2>
+          <div
+            className="mv4"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: post.excerpt.rendered,
+            }}
+          />
+          <Link
+            as={`/post/${post.slug}`}
+            href={`/post?slug=${post.slug}&apiRoute=post`}
+          >
+            <span className="round-btn pointer invert ba bw1 pv2 ph3">
+              Read more
+            </span>
+          </Link>
+        </div>
       );
     });
     return (
       <Layout>
         <Menu menu={headerMenu} />
-        <h1>{categories[0].name} Posts</h1>
-        {fposts}
+        <div className="content mh4 mt4 mb6 w-two-thirds-l center-l">
+          <span className="gray f3 b">Category Archives:</span>
+          <h1 className="f1 mt3">{categories[0].name}</h1>
+          {fposts}
+        </div>
       </Layout>
     );
   }

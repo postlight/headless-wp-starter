@@ -73,7 +73,7 @@ If you need to restart that process, restart the container:
 
 The `wp-headless` container exposes Apache on host port `8080`:
 
-- Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `nedstark`/`winteriscoming`)
+- Dashboard: [http://localhost:8080/wp-admin](http://localhost:8080/wp-admin) (default credentials `postlight`/`postlight`)
 - REST API: [http://localhost:8080/wp-json](http://localhost:8080/wp-json)
 - GraphQL API: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 

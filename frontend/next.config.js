@@ -32,6 +32,21 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'react-svg-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  { removeViewBox: false }
+                ],
+              }
+            }
+          },
+        ]
+      },
     );
     return config;
   },
