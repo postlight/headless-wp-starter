@@ -152,11 +152,11 @@ Remember to lint your code as you go.
 
 To lint WordPress theme modifications, you can use [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) like this:
 
-    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs
+    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcs -v .
 
 You may also attempt to autofix PHPCS errors:
 
-    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcbf
+    docker exec -w /var/www/html/wp-content/themes/postlight-headless-wp wp-headless phpcbf -v .
 
 To lint and format the JavaScript apps, both [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) configuration files are included.
 
