@@ -25,40 +25,25 @@ jobs:
           path: ~/repo
 
       - run:
-          name: Install create-elm-app
+          name: Install dependencies
           # Set unsafe-perm to true to suppress the UID/GID switching when running package scripts. If set explicitly to false, then installing as a non-root user will fail.
-          command: sudo npm install -g create-elm-app@4.0.0 --unsafe-perm=true
+          command: sudo yarn install
 
-      - run: elm-app build
-
-      # Persist build folder to the worksapce for deploy job
-      - persist_to_workspace:
-          root: ./
-          paths:
-            - build
+      - run: 
+          name: Build production application
+          command: sudo yarn build:prod
 
   deploy-landing:
     executor: landing-page-executor
     steps:
-      # Get the build result from previous job
-      - attach_workspace:
-          at: ~/repo/landing
 
       - add_ssh_keys:
           fingerprints:
             - 'a5:7a:8f:d8:2e:2f:09:40:89:b8:89:ce:58:f4:98:f7'
 
       - run:
-          name: Archive build folder
-          command: tar -zcvf landing_page.tar.gz build/
-
-      - run:
-          name: Send the archived build folder to ec2 instance
-          command: scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null landing_page.tar.gz ubuntu@52.198.50.117:/home/ubuntu/app/landing
-
-      - run:
-          name: Extract archived build folder on ec2 using ssh
-          command: ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@52.198.50.117 "tar -xvzf /home/ubuntu/app/landing/landing_page.tar.gz -C /home/ubuntu/app/landing && cd /home/ubuntu/app/landing && docker-compose restart nginx"
+          name: Pull latest code and restart landing
+          command: ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@52.198.50.117 "cd /home/ubuntu/app && git fetch origin && git reset --hard origin/master && docker-compose restart landing"
 
   build-frontend:
     executor: frontend-executor

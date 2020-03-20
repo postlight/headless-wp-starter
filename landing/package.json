@@ -1,0 +1,19 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "elm-app build",
+    "start:prod": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "create-elm-app": "^4.0.0"
+  }
+}
