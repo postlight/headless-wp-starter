@@ -3,7 +3,7 @@
 ## To run on local environment
 1. Need self sign keys and cert to use https locally
 2. Write a script to automate 
-   1. create localhost.key and localhost.crt (https://letsencrypt.org/docs/certificates-for-localhost/)
+   1. create localhost.key and localhost.crt 
    ```
    openssl req -x509 -out localhost.crt -keyout localhost.key -trustout\
   -newkey rsa:2048 -nodes -sha256 \
