@@ -67,15 +67,3 @@ services:
         volumes:
             - ./frontend:/home/node/app
         working_dir: /home/node/app
-    landing:
-        command: sh -c 'yarn && yarn build:prod && yarn start:prod'
-        container_name: landing
-        expose:
-            - '3001'
-        image: node:10.16.0
-        ports:
-            - '3001:3001'
-        user: node
-        volumes:
-            - ./landing:/home/node/app
-        working_dir: /home/node/app
