@@ -60,6 +60,7 @@ services:
         expose:
             - '3000'
         image: node:10.16.0
+        env_file: ./.env
         ports:
             - '3000:3000'
         user: node
