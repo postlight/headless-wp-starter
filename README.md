@@ -1,11 +1,11 @@
-# Japan Insider New Website
+# Official Website of Japan Insider
 
 ## Tech Stack
 
 - Landing page: [Elm](https://elm-lang.org/)
 - Article page: [Next.js](https://github.com/zeit/next.js/)
 - Docker
-- Wordpress Headless image by [headless-wp-starter](https://github.com/postlight/headless-wp-starter)
+- Wordpress Headless docker image by [headless-wp-starter](https://github.com/postlight/headless-wp-starter)
 - nginx
 - mariaDB
 
@@ -28,3 +28,7 @@ elm-app build
 ```
 
 Bundle and optimize the app and put it inside `build` folder.
+
+### Deploy
+
+Whenever pull requests are merged into `master` branch, it'll trigger deployment pipeline to release onto production.
