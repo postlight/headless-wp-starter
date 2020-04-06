@@ -715,7 +715,7 @@ viewJpTop =
     section [ id "top", class "jp-top" ]
         [ div [ class "jp-top-description" ]
             [ h2 [] [ text "Bridge Cross-Border Connection" ]
-            , h1 [] [ text "台湾企業の日本進出する新モデルを創出" ]
+            , h1 [] [ text "海外企業の日本進出する新モデルを創出" ]
             ]
         ]
 
