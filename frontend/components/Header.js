@@ -23,10 +23,6 @@ const Header = () => (
       />
       <meta property="og:site_name" content="JapanInsider" />
       <meta property="og:locale" content="zh_TW" />
-      <meta
-        property="og:image"
-        content="https://drive.google.com/uc?id=1_NDNP6OlTG_XX9dr5c-vyShd3HaBYt15"
-      />
       {/* For SEO */}
 
       <title>Japan Insider</title>
