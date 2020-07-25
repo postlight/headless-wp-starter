@@ -997,7 +997,7 @@ viewSectionArticle { articleList } =
     section [ id "article", class "article" ]
         [ h2 [ class "section-title" ] [ text "精選文章" ]
         , div [ class "article-container" ] (List.map viewArticle articleList)
-        , a [ class "know-more-btn", href "https://www.japaninsider.co/post/post-list/" ] [ text "瀏覽更多" ]
+        , a [ class "know-more-btn", href "https://www.japaninsider.co/post/post-list/", target "_self" ] [ text "瀏覽更多" ]
         ]
 
 
