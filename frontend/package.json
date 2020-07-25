@@ -45,5 +45,7 @@
     "sass-loader": "^7.1.0",
     "webpack": "^4.29.0"
   },
-  "engines" : { "node" : "~10.16.0" }
+  "engines": {
+    "node": "~10.16.0"
+  }
 }
