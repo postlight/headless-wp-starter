@@ -32,3 +32,14 @@ Bundle and optimize the app and put it inside `build` folder.
 ### Deploy
 
 Whenever pull requests are merged into `master` branch, it'll trigger deployment pipeline to release onto production.
+
+## Development
+
+### Launch all services
+
+```
+ docker-compose -f docker-compose-local.yml up
+```
+
+Landing Page: Open http://localhost
+Article Page: Open http://localhost:3000

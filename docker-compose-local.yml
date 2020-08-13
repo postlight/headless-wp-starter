@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  db-headless:
+    container_name: db-headless
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=${WORDPRESS_DB_NAME}
+      - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
+      - MYSQL_USER=${WORDPRESS_DB_USER}
+    image: mariadb
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
+  wp-headless:
+    build: .
+    command: bash -c 'install_wordpress && apache2-foreground'
+    container_name: wp-headless
+    depends_on:
+      - db-headless
+    env_file: ./.env
+    ports:
+      - "8080:8080"
+    user: www-data
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./docker/install_wordpress.sh:/usr/local/bin/install_wordpress
+      - ./docker/migratedb_import.sh:/usr/local/bin/migratedb_import
+      - ./docker/postlightheadlesswpstarter.wordpress.xml:/var/www/postlightheadlesswpstarter.wordpress.xml
+      - ./docker/plugins:/var/www/plugins
+  nginx:
+    image: nginx:1.17.1-alpine
+    volumes:
+      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
+      - ./landing/build:/var/www
+
+    ports:
+      - "80:80"
+    depends_on:
+      - wp-headless
+
+  frontend:
+    command: sh -c 'yarn && yarn start'
+    container_name: frontend
+    expose:
+      - "3000"
+    image: node:10.16.0
+    env_file: ./.env
+    ports:
+      - "3000:3000"
+    user: node
+    volumes:
+      - ./frontend:/home/node/app
+    working_dir: /home/node/app
