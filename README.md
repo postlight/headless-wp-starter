@@ -62,6 +62,12 @@ scp -i $PRIVATE_KEY -r ubuntu@$MACHINE_IP:/home/ubuntu/$BACKUP_SQL_NAME.sql ~/De
 
 After this, you can see all articles as production website has.
 
+4. Recover the database from the backup sql
+
+```
+cat $BACKUP_SQL_NAME.sql | docker exec -i $CONTAINER_NAME  /usr/bin/mysql -u $WORDPRESS_DB_USER --password=$WORDPRESS_DB_PASSWORD wp_headless
+```
+
 ### Landing Page
 
 Under `landing` folder, the whole application is built with [create-elm-app](https://github.com/halfzebra/create-elm-app).
