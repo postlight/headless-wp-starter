@@ -47,6 +47,7 @@ class Post extends Component {
     wp.posts()
       .embed()
       .then(posts => {
+        console.log(posts);
         this.setState({ recentPosts: posts.slice(0, 9) });
       });
   }
@@ -54,7 +55,7 @@ class Post extends Component {
   render() {
     const { post } = this.props;
     const { recentPosts } = this.state;
-    if (!post.title) return <Error statusCode={404} />;
+    if (!post || !post.title) return <Error statusCode={404} />;
 
     return (
       <Layout>
