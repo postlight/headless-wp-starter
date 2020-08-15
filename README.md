@@ -11,6 +11,16 @@
 
 ## Development
 
+1. Provide `.env` file
+
+There is no good enough tool to check all required environment variables in this project yet, but you can copy all variables from `.env.example`, put them inside the `.env` file and provide corresponding values depending on different environments.
+
+2. Install npm dependencies
+
+```
+npm install
+```
+
 ### Article Page
 
 Under `frontend` folder, the whole application is built with [next.js](https://github.com/zeit/next.js/).
