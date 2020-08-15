@@ -24,23 +24,25 @@ const Article = ({
           dangerouslySetInnerHTML={{ __html: stylesheet }}
         />
       </Head>
-      <div className="currentPost">
-        <div className="articleInfo">
-          <h1 className="title">{title.rendered}</h1>
-          <span className="date">
-            Posted on {new Date(date).toLocaleDateString()}
-          </span>
-          <span className="author">
-            Posted by{' '}
-            {_embedded.author &&
-              _embedded.author[0] &&
-              _embedded.author[0].name}
-          </span>
+      <div className="content">
+        <div className="currentPost">
+          <div className="articleInfo">
+            <h1 className="title">{title.rendered}</h1>
+            <span className="date">
+              Posted on {new Date(date).toLocaleDateString()}
+            </span>
+            <span className="author">
+              Posted by{' '}
+              {_embedded.author &&
+                _embedded.author[0] &&
+                _embedded.author[0].name}
+            </span>
+          </div>
+          <article dangerouslySetInnerHTML={{ __html: content.rendered }} />
         </div>
-        <article dangerouslySetInnerHTML={{ __html: content.rendered }} />
-      </div>
-      <div className="recentPost">
-        {recentPosts.length > 0 ? <RecentPosts posts={recentPosts} /> : null}
+        <div className="recentPost">
+          {recentPosts.length > 0 ? <RecentPosts posts={recentPosts} /> : null}
+        </div>
       </div>
       <style jsx>
         {`
@@ -50,6 +52,26 @@ const Article = ({
             justify-content: space-between;
             margin-top: 50px;
           }
+          .content {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+          }
+
+          @media (max-width: 768px) {
+            .content {
+              flex-direction: column;
+              align-items: center;
+              margin-left: 20px;
+              margin-right: 20px;
+            }
+            .currentPost {
+              margin-left: auto;
+              margin-right: auto;
+              margin-bottom: 80px;
+            }
+          }
+
           .currentPost {
             width: 100%;
             max-width: 633px;
@@ -81,6 +103,7 @@ const Article = ({
             padding-top: 32px;
             padding-left: 20px;
             padding-right: 20px;
+            margin-bottom: 80px;
           }
         `}
       </style>
