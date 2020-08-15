@@ -38,7 +38,7 @@ Under `frontend` folder, the whole application is built with [next.js](https://g
 ```
 
 Landing Page: Open http://localhost
-Article Page: Open http://localhost:3000
+Article Page: Open http://localhost:3000/post/post-list/
 
 #### Feed database with production data (for showing articles)
 
