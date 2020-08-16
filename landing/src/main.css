@@ -5,7 +5,7 @@
   More context in the issue:
     https://github.com/halfzebra/create-elm-app/issues/320
 */
-[data-elm-hot='true'] {
+[data-elm-hot="true"] {
   height: inherit;
 }
 
@@ -20,7 +20,7 @@ html {
 
 body {
   color: #293c4b;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   margin: 0 auto;
   overflow-x: hidden;
   text-align: center;
@@ -46,6 +46,18 @@ nav {
   justify-content: space-between;
   max-width: 960px;
   width: 100%;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-red {
+  color: #d94a3d;
+}
+
+.margin-b-24 {
+  margin-bottom: 24px;
 }
 
 .logo {
@@ -360,7 +372,7 @@ section {
 }
 
 .talent-description:after {
-  content: '';
+  content: "";
   background-color: #d94a3d;
   position: absolute;
   width: 147px;
@@ -574,7 +586,7 @@ section {
 }
 
 .flow-node:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 180px;
@@ -623,7 +635,7 @@ section {
   font-size: 3.6rem;
   font-weight: bold;
   line-height: 48px;
-  margin-bottom: 16px;
+  margin-bottom: 42px;
 }
 
 .top-mobile-title {
@@ -670,7 +682,7 @@ section {
   height: 40px;
   justify-content: center;
   text-decoration: none;
-  width: 100px;
+  width: 164px;
 }
 
 .know-more-btn:hover {
@@ -685,13 +697,14 @@ section {
   position: relative;
   width: 421px;
   z-index: 0;
+  top: -40px;
 }
 
 .jp-top {
   width: 100%;
   max-width: 100%;
   height: 623px;
-  background-image: url('/assets/images/jp-top.jpg');
+  background-image: url("/assets/images/jp-top.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -699,7 +712,7 @@ section {
 }
 
 .jp-top:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -758,7 +771,7 @@ section {
 .crd-introduction {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 115px;
+  margin-bottom: 100px;
 }
 
 .crd-introduction-description {
@@ -770,6 +783,11 @@ section {
 
 .crd-introduction-description > p:first-child {
   margin-bottom: 40px;
+}
+
+.crd-introduction-figure {
+  position: relative;
+  top: -60px;
 }
 
 .success-crd {
@@ -837,6 +855,12 @@ section {
   color: #011f26;
   font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.service-subtitle {
+  font-size: 1.6rem;
+  line-height: 26px;
   margin-bottom: 24px;
 }
 
@@ -894,8 +918,11 @@ section {
 
 .faq-question {
   color: #011f26;
-  font-weight: bold;
   margin-bottom: 10px;
+}
+
+.faq-q {
+  font-weight: bold;
 }
 
 .faq-answer {
@@ -961,6 +988,10 @@ section {
   text-align: left;
 }
 
+.enterprise-register-description {
+  max-width: 509px;
+}
+
 .enterprise-register-description > h2 {
   color: #011f26;
   font-size: 3rem;
@@ -991,7 +1022,7 @@ section {
 }
 
 .team {
-  background-image: url('/assets/images/team-background.jpg');
+  background-image: url("/assets/images/team-background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1075,7 +1106,7 @@ section {
 }
 
 .fund-raise-description:before {
-  content: '“';
+  content: "“";
   color: #c4c4c4;
   font-family: Helvetica;
   font-size: 4rem;
@@ -1095,7 +1126,7 @@ section {
 }
 
 .fund-raise-description:after {
-  content: '”';
+  content: "”";
   color: #c4c4c4;
   font-family: Helvetica;
   font-size: 4rem;
@@ -1114,7 +1145,7 @@ section {
 #team-introduction {
   width: 100%;
   height: 912px;
-  background-image: url('/assets/images/team-background.jpg');
+  background-image: url("/assets/images/team-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1126,7 +1157,7 @@ section {
   align-content: center;
 }
 #team-introduction:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.66);
@@ -1209,7 +1240,7 @@ section {
 #market-development-description {
   width: 100%;
   height: 912px;
-  background-image: url('/assets/images/market-development.jpg');
+  background-image: url("/assets/images/market-development.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1224,7 +1255,7 @@ section {
   align-content: center;
 }
 #market-development-description:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.7);
@@ -1267,7 +1298,7 @@ section {
   width: 100%;
   max-width: 100%;
   height: 650px;
-  background-image: url('/assets/images/jp-spirit.jpg');
+  background-image: url("/assets/images/jp-spirit.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1315,7 +1346,7 @@ section {
   width: 100%;
   max-width: 100%;
   height: 650px;
-  background-image: url('/assets/images/jp-summary.jpg');
+  background-image: url("/assets/images/jp-summary.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1331,7 +1362,7 @@ section {
 }
 
 .jp-summary:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1529,7 +1560,7 @@ aside {
 }
 
 .list-view-container:after {
-  content: '';
+  content: "";
   -webkit-box-flex: 1;
   -ms-flex: auto;
   flex: auto;
@@ -2156,7 +2187,7 @@ li > img {
   }
 
   .crd-introduction-description {
-    margin-bottom: 19px;
+    margin-bottom: 40px;
     width: 100%;
   }
 
