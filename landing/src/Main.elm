@@ -689,20 +689,14 @@ viewSectionTop : Model -> Html Msg
 viewSectionTop { topIndex } =
     section [ id "top", class "top" ]
         [ div [ class "hero-description" ]
-            [ h2 [] [ text "Japan Insider 是提供日本群眾募資、線上電商營運、線下通路開發顧問的專業團隊" ]
-            , h1 [ class "top-title" ] [ text "以群眾募資為起跑點，", br [] [], text "一起開始日本市場的開拓之旅！" ]
-            , h1 [ class "top-mobile-title" ] [ text "以群眾募資為起跑點，一起開始日本市場的開拓之旅！" ]
-            , p []
-                [ span [] [ text "已協助" ]
-                , em [] [ text "8" ]
-                , span [] [ text "個團隊在日本募資" ]
-                , em [] [ text "JPY 53,000,000" ]
-                ]
+            [ h2 [] [ text "Japan Insider 是提供日本群眾募資、跨境電商操作、現地網站營運的顧問團隊" ]
+            , h1 [ class "top-title" ] [ text "以群眾募資出發，開始日本市場開", br [] [], text "拓之旅!" ]
+            , h1 [ class "top-mobile-title" ] [ text "以群眾募資出發，開始日本市場開拓之旅！" ]
             , div [ class "top-section-action-container" ]
                 [ a
                     [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ]
                     [ text "免費諮詢" ]
-                , a [ class "know-more-btn", href "#service" ] [ text "了解更多" ]
+                , a [ class "know-more-btn", href "#service" ] [ text "了解更多服務細節" ]
                 ]
             ]
         , figure []
@@ -839,7 +833,7 @@ viewTalent maybeTalent =
 
 viewCrossBorderServiceCategory : Model -> Html Msg
 viewCrossBorderServiceCategory { serviceCategoryList } =
-    section [class "cross-border-service-section"]
+    section [ class "cross-border-service-section" ]
         [ h2 [] [ text "人才分類" ]
         , div [ class "cross-border-service-category" ]
             (List.map viewServiceCategory (List.take 8 serviceCategoryList))
@@ -889,14 +883,13 @@ viewSectionIntroduction { successStoryList } =
     div [ class "introduction-background-wrapper" ]
         [ section [ id "introduction", class "introduction" ]
             [ h2 []
-                [ text "日本群眾募資市場"
+                [ text "連結後續銷售的群眾募資操作模式"
                 ]
             , div [ class "crd-introduction" ]
                 [ div [ class "crd-introduction-description" ]
-                    [ p [] [ text "群眾募資在日本越來越普及，過去幾年的募資金額都有大幅成長，也漸漸成為海外新創進日本市場的前哨站。" ]
-                    , p [] [ text "日本群眾募資的特色之一是平台眾多，每個平台有各自的特性及優點。每個團隊目標皆不同，必須要有相應策略指南，才能在市場的開拓旅程中勝出！" ]
+                    [ p [] [ text "群眾募資在日本越來越普及，漸漸成為海外新創進日本市場的前哨站。但群眾募資後的銷售能否持續才是團隊經營的重點，而這跟在群眾募資過程的佈局有很大的關係。Japan Insider著重於連結後續銷售的群眾募資操作模式。" ]
                     ]
-                , figure []
+                , figure [ class "crd-introduction-figure" ]
                     [ img [ Asset.src Asset.crowdSourcePartner, alt "crowd sourcing partner" ] []
                     ]
                 ]
@@ -911,7 +904,8 @@ viewSectionIntroduction { successStoryList } =
 viewSectionService : Model -> Html Msg
 viewSectionService { serviceContentList } =
     section [ id "service", class "service" ]
-        [ h2 [ class "section-title" ] [ text "服務內容" ]
+        [ h2 [ class "section-title" ] [ text "顧問服務內容" ]
+        , p [ class "service-subtitle" ] [ text "代理商之外，你有更多的日本進入策略與開拓模式" ]
         , div [ class "service-content-container" ] (List.map viewServiceContent serviceContentList)
         ]
 
@@ -985,7 +979,9 @@ viewSectionFaq { faqList } =
 viewFaq { question, answer } =
     article []
         [ p [ class "faq-question" ]
-            [ text ("Q: " ++ question) ]
+            [ span [ class "faq-q" ] [ text "Q: " ]
+            , span [] [ text question ]
+            ]
         , p
             [ class "faq-answer" ]
             [ text ("A: " ++ answer) ]
@@ -1021,12 +1017,22 @@ viewSectionEnterpriseRegister : Html Msg
 viewSectionEnterpriseRegister =
     section [ id "enterprise-register", class "enterprise-register" ]
         [ div [ class "enterprise-register-description" ]
-            [ h2 [] [ text "加入 Japan Insider 新創團隊社群" ]
-            , p [] [ text "想認識更多在日本的人脈嗎?  " ]
-            , p [] [ text "想在未來建立自己在日本的團隊嗎?" ]
-            , p [] [ text "想了解更多日本的商業環境嗎?" ]
-            , p [ class "last-line" ] [ text "立即登錄您的企業資訊，讓更多在日本的跨境人才看到您們的團隊！" ]
-            , a [ class "consult-btn", href "https://www.surveycake.com/s/Xvn8m", target "_blank" ] [ text "登錄社群" ]
+            [ h2 [] [ text "跨境外包 - 進入日本市場新選擇" ]
+            , p [ class "margin-b-24" ]
+                [ span [] [ text "想要有在地小編幫你管理" ]
+                , span [ class "font-bold" ] [ text "日本社群" ]
+                , span [] [ text "嗎? 想找能投放" ]
+                , span [ class "font-bold" ] [ text "日本廣告" ]
+                , span [] [ text "，或能協助" ]
+                , span [ class "font-bold" ] [ text "日文客服" ]
+                , span [] [ text "的中日雙語人才嗎?" ]
+                ]
+            , p [ class "margin-b-24" ]
+                [ span [] [ text "如果沒有足夠的預算聘請全職人員，可以透過跨境外包，尋找日本當地的Freelancer或副業族，讓你" ]
+                , span [ class "font-red" ] [ text "在有限資源下，也能立即拓展日本市場!" ]
+                ]
+            , p [ class "margin-b-24" ] [ text "想了解更多日本市場的跨境外包嗎? 歡迎登錄需求，我們將為您配對合適的現地人才!" ]
+            , a [ class "consult-btn", href "https://www.surveycake.com/s/Xvn8m", target "_blank" ] [ text "立即諮詢" ]
             ]
         , figure []
             [ img [ Asset.src Asset.enterpriseRegisterImage, alt "register as enterprise" ] [] ]
@@ -1047,16 +1053,17 @@ viewJpSectionEnterpriseRegister =
         ]
 
 
-viewSectionTeam : Html Msg
-viewSectionTeam =
-    div [ id "team", class "team" ]
-        [ h2 [ class "section-title" ] [ text "團隊成員" ]
-        , div [ class "team-description" ]
-            [ h2 []
-                [ text "JAPAN INSIDER 成員皆位於日本，精通中、日、英文，背景包括數位行銷、產品設計、軟體開發、工程、供應鏈等。讓熟悉日本市場的專業團隊，成為您專案的一份子，協助您進入日本市場。"
-                ]
-            ]
-        ]
+
+-- viewSectionTeam : Html Msg
+-- viewSectionTeam =
+--     div [ id "team", class "team" ]
+--         [ h2 [ class "section-title" ] [ text "團隊成員" ]
+--         , div [ class "team-description" ]
+--             [ h2 []
+--                 [ text "JAPAN INSIDER 成員皆位於日本，精通中、日、英文，背景包括數位行銷、產品設計、軟體開發、工程、供應鏈等。讓熟悉日本市場的專業團隊，成為您專案的一份子，協助您進入日本市場。"
+--                 ]
+--             ]
+--         ]
 
 
 viewMobileServiceContent : ServiceContent -> Html Msg
@@ -1386,6 +1393,7 @@ viewMailChimpSignupForm =
         [ form [ action "https://japaninsider.us14.list-manage.com/subscribe/post?u=70f47caaa71d96fe967dfa602&id=a8225094be", method "post", id "mc-embedded-subscribe-form", name "mc-embedded-subscribe-form", class "validate", target "_blank", novalidate True ]
             [ div [ id "mc_embed_signup_scroll" ]
                 [ h2 [ class "mc_embed_signup--title" ] [ text "預先登錄，搶先接收平台上線通知" ]
+
                 -- , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "稱呼 (必填)" ]
                 -- , input [ class "mc_embed_signup--input-name", type_ "text", name "b_70f47caaa71d96fe967dfa602_a8225094be", placeholder "Jack Wang", value "" ]
                 --     []
@@ -1396,7 +1404,7 @@ viewMailChimpSignupForm =
                 --     , input [ type_ "submit", value "登錄", name "subscribe", id "mc-embedded-subscribe", class "mc_embed_signup--submit" ]
                 --         []
                 --     ]
-                , a [class "mc_embed_signup--submit", href "https://japaninsider.typeform.com/to/F9ZOSP"][text "登錄"]
+                , a [ class "mc_embed_signup--submit", href "https://japaninsider.typeform.com/to/F9ZOSP" ] [ text "登錄" ]
                 ]
             ]
         ]
@@ -1443,7 +1451,8 @@ view model =
                 , viewSectionFaq model
                 , viewSectionArticle model
                 , viewSectionEnterpriseRegister
-                , viewSectionTeam
+
+                -- , viewSectionTeam
                 , viewFooter
                 ]
 
@@ -1471,7 +1480,7 @@ view model =
                 ]
 
             _ ->
-            -- Make error page
+                -- Make error page
                 [ text "Something Wrong" ]
     }
 

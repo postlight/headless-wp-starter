@@ -1,18 +1,22 @@
 {
-  "data": [{
-    "imgSrc":"service-crdsourcing.svg",
-    "imgAlt":"crowd sourcing service",
-    "title":"群眾募資操作",
-    "description":"JI 與各大平台皆有合作與操作經驗，根據團隊產品屬性，提供最適群眾募資操作平台策略。"
-  }, {
-    "imgSrc":"service-ec.svg",
-    "imgAlt":"crowd sourcing e-commerce",
-    "title":"跨境電商操作",
-    "description":"根據群眾募資或市場測試的數據，協助團隊執行後續的電商操作，包含日本亞馬遜、樂天市場等電商平台。"
-  }, {
-    "imgSrc":"service-exhibition.svg",
-    "imgAlt":"offline exhibition",
-    "title":"實體參展曝光",
-    "description":"協助團隊在日本現地參展，並透過JI建立的獨立網絡，連結當地的通路與專業代理。"
-  }]
+  "data": [
+    {
+      "imgSrc": "service-crdsourcing.svg",
+      "imgAlt": "crowd sourcing service",
+      "title": "群眾募資執行",
+      "description": "與各大平台皆有合作，專注於連結後續銷售的群眾募資策略"
+    },
+    {
+      "imgSrc": "service-ec.svg",
+      "imgAlt": "crowd sourcing e-commerce",
+      "title": "跨境電商操作",
+      "description": "操作日本亞馬遜等電商平台，無縫接軌群眾募資後的線上銷售。"
+    },
+    {
+      "imgSrc": "service-exhibition.svg",
+      "imgAlt": "offline exhibition",
+      "title": "自有品牌網站營運",
+      "description": "建立團隊自有品牌網站，維持法規、金流、物流等現地營運。"
+    }
+  ]
 }
