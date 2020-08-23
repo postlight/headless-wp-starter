@@ -5,6 +5,10 @@ module Main exposing (init, view)
 import Asset
 import Browser
 import Browser.Navigation as Nav
+import Element as E
+import Element.Background as Background
+import Element.Border as Border
+import Element.Font as Font
 import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, footer, form, h1, h2, h3, h4, header, img, input, label, li, nav, p, section, span, text, ul)
 import Html.Attributes exposing (action, alt, class, for, height, href, id, method, name, novalidate, placeholder, required, src, style, tabindex, target, type_, value, width)
 import Html.Events exposing (onClick)
@@ -624,7 +628,7 @@ viewHeader model =
                 [ div [ class "lang-toggle" ] [ a [ class "selected", href "/" ] [ text "TW" ], a [ href "/jp" ] [ text "JP" ] ]
                 , div [ class "nav-link" ]
                     [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
-                    , a [ href "/#service" ] [ text "服務內容" ]
+                    , a [ href "/service" ] [ text "服務內容" ]
                     , a [ href "/cross-border-sourcing" ] [ text "跨境外包" ]
                     , a [ href "/#faq" ] [ text "常見問題" ]
                     , a [ href "/#article" ] [ text "精選文章" ]
@@ -1410,10 +1414,81 @@ viewMailChimpSignupForm =
         ]
 
 
+viewServicePageBody : Html Msg
+viewServicePageBody =
+    E.layout [] <|
+        E.column [ E.width <| E.px 960, E.centerX, E.paddingXY 0 180, E.spacingXY 0 100 ]
+            [ E.row [ E.width E.fill, E.spaceEvenly ]
+                [ E.column []
+                    [ E.el [] <| E.text "1. 日本群眾募資執行"
+                    , E.image []
+                        { src = "%PUBLIC_URL%/assets/images/japan-crd-service.svg"
+                        , description = "crowd sourcing partners"
+                        }
+                    ]
+                , E.column
+                    []
+                    [ E.image []
+                        { src = "%PUBLIC_URL%/assets/images/service-crdsourcing.svg"
+                        , description = "crowd sourcing partners"
+                        }
+                    ]
+                ]
+            , E.row [ E.width E.fill, E.spaceEvenly ]
+                [ E.column
+                    []
+                    [ E.image []
+                        { src = "%PUBLIC_URL%/assets/images/service-crdsourcing.svg"
+                        , description = "crowd sourcing partners"
+                        }
+                    ]
+                , E.column []
+                    [ E.paragraph [ Font.size 36, E.paddingXY 0 16 ]
+                        [ E.text "2. 日本亞馬遜等"
+                        , E.el [ Font.color <| E.rgb255 217 74 61 ] <| E.text "電商操作"
+                        ]
+                    , E.el
+                        [ E.width <| E.px 455
+                        , E.paddingEach { top = 0, left = 0, right = 0, bottom = 64 }
+                        , Font.size 18
+                        , Font.color <| E.rgb255 99 99 99
+                        ]
+                      <|
+                        E.text "操作日本亞馬遜等電商平台，無縫接軌群眾募資後的線上銷售。"
+                    , E.row [ E.centerY, E.spacing 18 ]
+                        [ E.image []
+                            { src = "%PUBLIC_URL%/assets/images/logo-amazon.svg"
+                            , description = "amazon"
+                            }
+                        , E.image []
+                            { src = "%PUBLIC_URL%/assets/images/logo-rakuten.svg"
+                            , description = "rakuten"
+                            }
+                        ]
+                    ]
+                ]
+            , E.row [ E.width E.fill, E.spaceEvenly ]
+                [ E.column []
+                    [ E.el [] <| E.text "3. 日本自有品牌網站經營"
+                    , E.el [] <| E.text "建立團隊自有品牌網站，維持法規、金流、物流等現地營運。"
+                    ]
+                , E.column
+                    []
+                    [ E.image []
+                        { src = "%PUBLIC_URL%/assets/images/service-exhibition.svg"
+                        , description = "exhibition service"
+                        }
+                    ]
+                ]
+            , E.row [] [ E.text "不只銷售，更讓您的團隊了解日本市場操作、消費者習性!" ]
+            ]
+
+
 type Route
     = Home
     | JpHome
     | CrossBorder
+    | ServicePage
     | NotFound
 
 
@@ -1423,6 +1498,7 @@ route =
         [ map Home top
         , map JpHome (s "jp")
         , map CrossBorder (s "cross-border-sourcing")
+        , map ServicePage (s "service")
         ]
 
 
@@ -1476,6 +1552,12 @@ view model =
                 , viewCrossBorderServiceCategory model
                 , viewCrossBorderProcess
                 , viewMailChimpSignupForm
+                , viewFooter
+                ]
+
+            ServicePage ->
+                [ viewHeader model
+                , viewServicePageBody
                 , viewFooter
                 ]
 
