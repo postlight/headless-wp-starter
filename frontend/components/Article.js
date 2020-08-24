@@ -19,6 +19,7 @@ const Article = ({
     <section className="block">
       <Head>
         <meta property="og:image" content={featuredImageUrl} />
+        <meta property="og:title" content={title.rendered} />
         <style
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: stylesheet }}
