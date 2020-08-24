@@ -64,6 +64,21 @@ crowdSourcePartner =
     image "japan-crd-service.svg"
 
 
+serviceCrowdSourcing : Image
+serviceCrowdSourcing =
+    image "service-crdsourcing.svg"
+
+
+serviceEc : Image
+serviceEc =
+    image "service-ec.svg"
+
+
+serviceExhibition : Image
+serviceExhibition =
+    image "service-exhibition.svg"
+
+
 mail : Image
 mail =
     image "mail.svg"
