@@ -1417,10 +1417,25 @@ viewMailChimpSignupForm =
 viewServicePageBody : Html Msg
 viewServicePageBody =
     E.layout [] <|
-        E.column [ E.width <| E.px 960, E.centerX, E.paddingXY 0 180, E.spacingXY 0 100 ]
-            [ E.row [ E.width E.fill, E.spaceEvenly ]
+        E.column [ E.width E.fill, E.paddingXY 0 180, E.spacingXY 0 100 ]
+            [ E.row [ E.width <| E.px 960, E.spaceEvenly, E.centerX ]
                 [ E.column []
-                    [ E.el [] <| E.text "1. 日本群眾募資執行"
+                    [ E.paragraph [ Font.size 36, Font.bold, E.paddingXY 0 16 ]
+                        [ E.el [ E.alignLeft ] <| E.text "1. 日本"
+                        , E.el [ E.alignLeft, Font.color <| E.rgb255 217 74 61 ] <| E.text "群眾募資"
+                        , E.el [ E.alignLeft ] <| E.text "執行"
+                        ]
+                    , E.paragraph
+                        [ E.width <| E.px 414
+                        , E.paddingEach { top = 0, left = 0, right = 0, bottom = 24 }
+                        , E.alignLeft
+                        , E.spacing 10
+                        , Font.size 18
+                        , Font.color <| E.rgb255 99 99 99
+                        , Font.alignLeft
+                        ]
+                        [ E.text "Japan Insider 與各大平台皆有合作，專注於連結後續銷售的群眾募資執行策略。"
+                        ]
                     , E.image []
                         { src = "%PUBLIC_URL%/assets/images/japan-crd-service.svg"
                         , description = "crowd sourcing partners"
@@ -1428,33 +1443,35 @@ viewServicePageBody =
                     ]
                 , E.column
                     []
-                    [ E.image []
+                    [ E.image [ E.width <| E.px 312, E.height <| E.px 246 ]
                         { src = "%PUBLIC_URL%/assets/images/service-crdsourcing.svg"
                         , description = "crowd sourcing partners"
                         }
                     ]
                 ]
-            , E.row [ E.width E.fill, E.spaceEvenly ]
+            , E.row [ E.width <| E.px 960, E.spaceEvenly, E.centerX ]
                 [ E.column
                     []
-                    [ E.image []
-                        { src = "%PUBLIC_URL%/assets/images/service-crdsourcing.svg"
+                    [ E.image [ E.width <| E.px 370, E.height <| E.px 195 ]
+                        { src = "%PUBLIC_URL%/assets/images/service-ec.svg"
                         , description = "crowd sourcing partners"
                         }
                     ]
                 , E.column []
-                    [ E.paragraph [ Font.size 36, E.paddingXY 0 16 ]
-                        [ E.text "2. 日本亞馬遜等"
-                        , E.el [ Font.color <| E.rgb255 217 74 61 ] <| E.text "電商操作"
+                    [ E.paragraph [ Font.size 36, Font.bold, E.paddingXY 0 16 ]
+                        [ E.el [ E.alignLeft ] <| E.text "2. 日本亞馬遜等"
+                        , E.el [ E.alignLeft, Font.color <| E.rgb255 217 74 61 ] <| E.text "電商操作"
                         ]
-                    , E.el
+                    , E.paragraph
                         [ E.width <| E.px 455
                         , E.paddingEach { top = 0, left = 0, right = 0, bottom = 64 }
+                        , E.spacing 10
                         , Font.size 18
                         , Font.color <| E.rgb255 99 99 99
+                        , Font.alignLeft
                         ]
-                      <|
-                        E.text "操作日本亞馬遜等電商平台，無縫接軌群眾募資後的線上銷售。"
+                        [ E.text "操作日本亞馬遜等電商平台，無縫接軌群眾募資後的線上銷售。"
+                        ]
                     , E.row [ E.centerY, E.spacing 18 ]
                         [ E.image []
                             { src = "%PUBLIC_URL%/assets/images/logo-amazon.svg"
@@ -1467,20 +1484,100 @@ viewServicePageBody =
                         ]
                     ]
                 ]
-            , E.row [ E.width E.fill, E.spaceEvenly ]
-                [ E.column []
-                    [ E.el [] <| E.text "3. 日本自有品牌網站經營"
-                    , E.el [] <| E.text "建立團隊自有品牌網站，維持法規、金流、物流等現地營運。"
+            , E.row [ E.width <| E.px 960, E.spaceEvenly, E.centerX, E.paddingEach { top = 0, left = 0, right = 0, bottom = 100 } ]
+                [ E.column [ E.width <| E.px 450 ]
+                    [ E.paragraph [ Font.size 36, Font.bold, E.paddingXY 0 16 ]
+                        [ E.el [ E.alignLeft ] <| E.text "3. 日本"
+                        , E.el [ E.alignLeft, Font.color <| E.rgb255 217 74 61 ] <| E.text "自有品牌"
+                        , E.el [ E.alignLeft ] <| E.text "網站經營"
+                        ]
+                    , E.paragraph
+                        [ E.width <| E.px 387
+                        , E.spacing 10
+                        , Font.size 18
+                        , Font.color <| E.rgb255 99 99 99
+                        , Font.alignLeft
+                        ]
+                        [ E.text "建立團隊自有品牌網站，維持法規、金流、物流等現地營運。"
+                        ]
                     ]
                 , E.column
                     []
-                    [ E.image []
+                    [ E.image [ E.width <| E.px 263, E.height <| E.px 211 ]
                         { src = "%PUBLIC_URL%/assets/images/service-exhibition.svg"
                         , description = "exhibition service"
                         }
                     ]
                 ]
-            , E.row [] [ E.text "不只銷售，更讓您的團隊了解日本市場操作、消費者習性!" ]
+            , E.row [ E.width E.fill, E.centerX, Background.color <| E.rgb255 255 246 244 ]
+                [ E.column [ E.centerX, E.spacing 24, E.padding 40 ]
+                    [ E.el [ Font.bold, Font.size 20, E.centerX, E.paddingXY 0 20 ] <| E.text "不只銷售，更讓您的團隊了解日本市場操作、消費者習性!"
+                    , E.row [ E.spacing 24 ]
+                        [ E.column [ Background.color <| E.rgb255 255 255 255, E.width <| E.px 469, E.height <| E.px 173 ]
+                            [ E.paragraph [ E.paddingEach { top = 34, right = 24, bottom = 24, left = 24 }, Font.alignLeft ]
+                                [ E.el [ Font.bold ] <| E.text "市場定位"
+                                , E.text "測試"
+                                ]
+                            , E.paragraph [ Font.color <| E.rgb255 99 99 99, E.paddingEach { top = 0, right = 24, bottom = 0, left = 24 }, Font.alignLeft, Font.size 16 ] [ E.text "協助團隊由群眾募資測試市場，由測試結果發展市場定位。" ]
+                            ]
+                        , E.column [ Background.color <| E.rgb255 255 255 255, E.width <| E.px 469, E.height <| E.px 173 ]
+                            [ E.paragraph [ E.paddingEach { top = 34, right = 24, bottom = 24, left = 24 }, Font.alignLeft ]
+                                [ E.el [ Font.bold ] <| E.text "行銷計畫"
+                                , E.text "執行"
+                                ]
+                            , E.paragraph [ Font.color <| E.rgb255 99 99 99, E.paddingEach { top = 0, right = 24, bottom = 0, left = 24 }, Font.alignLeft, Font.size 16 ] [ E.text "線上數位廣告、SNS行銷操作、Influencer、PR新聞稿宣傳至少300位媒體等行銷策劃。" ]
+                            ]
+                        ]
+                    , E.row [ E.spacing 24 ]
+                        [ E.column [ Background.color <| E.rgb255 255 255 255, E.width <| E.px 469, E.height <| E.px 173 ]
+                            [ E.paragraph [ E.paddingEach { top = 34, right = 24, bottom = 24, left = 24 }, Font.alignLeft ]
+                                [ E.el [ Font.bold ] <| E.text "在地內容"
+                                , E.text "制作"
+                                ]
+                            , E.paragraph [ Font.color <| E.rgb255 99 99 99, E.paddingEach { top = 0, right = 24, bottom = 0, left = 24 }, Font.alignLeft, Font.size 16 ] [ E.text "針對日本市場消費者特性，在地化行銷文案內容、設計、素材。" ]
+                            ]
+                        , E.column [ Background.color <| E.rgb255 255 255 255, E.width <| E.px 469, E.height <| E.px 173 ]
+                            [ E.paragraph [ E.paddingEach { top = 34, right = 24, bottom = 24, left = 24 }, Font.alignLeft ]
+                                [ E.el [ Font.bold ] <| E.text "物流客服"
+                                , E.text "策略"
+                                ]
+                            , E.paragraph [ Font.color <| E.rgb255 99 99 99, E.paddingEach { top = 0, right = 24, bottom = 0, left = 24 }, Font.alignLeft, Font.size 16 ] [ E.text "第一線協助團隊與日本消費者的互動、售後服務以及物流、退換貨的處理。" ]
+                            ]
+                        ]
+                    ]
+                ]
+            , E.row [ E.width <| E.px 960, E.centerX, E.spaceEvenly ]
+                [ E.column [ E.spacing 18 ]
+                    [ E.el [ Font.size 36, Font.bold, E.centerX, Font.color <| E.rgb255 1 31 38 ] <| E.text <| "以群眾募資出發，"
+                    , E.el
+                        [ Font.size 36
+                        , Font.bold
+                        , Font.center
+                        , Font.color <| E.rgb255 1 31 38
+                        , E.paddingEach { top = 0, bottom = 32, right = 0, left = 0 }
+                        ]
+                      <|
+                        E.text <|
+                            "開始日本市場開拓之旅！"
+                    , E.link
+                        [ E.width <| E.px 96
+                        , E.height <| E.px 48
+                        , Background.color <| E.rgb255 217 74 61
+                        , Border.rounded 54
+                        , Font.color <| E.rgb255 255 255 255
+                        , E.centerX
+                        ]
+                        { url = "https://japaninsider.typeform.com/to/yvsVAD"
+                        , label = E.el [ E.centerX ] <| E.text "免費諮詢"
+                        }
+                    ]
+                , E.column []
+                    [ E.image [ E.width <| E.px 300, E.height <| E.px 235, Font.size 16 ]
+                        { src = "%PUBLIC_URL%/assets/images/earth.svg"
+                        , description = "consulting service"
+                        }
+                    ]
+                ]
             ]
 
 
