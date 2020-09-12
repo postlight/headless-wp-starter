@@ -13,6 +13,15 @@ import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, f
 import Html.Attributes exposing (action, alt, class, for, height, href, id, method, name, novalidate, placeholder, required, src, style, tabindex, target, type_, value, width)
 import Html.Events exposing (onClick)
 import Http
+import I18Next
+    exposing
+        ( Delims(..)
+        , Translations
+        , initialTranslations
+        , t
+        , tr
+        , translationsDecoder
+        )
 import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, map7, map8, string)
 import String exposing (append)
 import Time
@@ -25,7 +34,8 @@ import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
 
 
 type alias Model =
-    { navBarClassNames : List String
+    { translations : Translations
+    , navBarClassNames : List String
     , serviceContentList : List ServiceContent
     , serviceCategoryList : List ServiceCategory
     , jpServiceContentList : List ServiceContent
@@ -172,9 +182,21 @@ type Msg
     | SwitchCategory TalentCategory
 
 
-init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
+type alias Flags =
+    { translations : String
+    }
+
+
+init : Flags -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( { navBarClassNames = []
+    ( { translations =
+            case Json.Decode.decodeString translationsDecoder flags.translations of
+                Ok translations ->
+                    translations
+
+                Err err ->
+                    initialTranslations
+      , navBarClassNames = []
       , serviceContentList = []
       , serviceCategoryList = []
       , jpServiceContentList = []
@@ -643,6 +665,7 @@ viewHeader model =
                         ]
                     ]
                 ]
+            , E.layout [] (E.el [] <| E.text (t model.translations "hello"))
             ]
         , a [ class "hamburger", onClick TOGGLE ]
             [ img [ Asset.src Asset.hamburger, width 25, height 25, alt "Menu" ] [] ]
@@ -1668,7 +1691,7 @@ view model =
 -- PROGRAM
 
 
-main : Program () Model Msg
+main : Program Flags Model Msg
 main =
     Browser.application
         { init = init
