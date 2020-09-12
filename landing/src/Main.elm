@@ -1611,7 +1611,7 @@ toRoute string =
 
 view : Model -> Browser.Document Msg
 view model =
-    { title = "Japan Insider"
+    { title = "Japan Insider-日本跨境電商顧問 | 群眾募資、亞馬遜、自有品牌網站經營"
     , body =
         case toRoute (Url.toString model.url) of
             Home ->
