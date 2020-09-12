@@ -26,7 +26,7 @@ import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, 
 import String exposing (append)
 import Time
 import Url
-import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
+import Url.Parser exposing ((</>), Parser, map, oneOf, parse, s, top)
 
 
 
@@ -632,11 +632,11 @@ subscriptions model =
 -- VIEW
 
 
-viewHeader : Model -> Html Msg
-viewHeader model =
+viewHeader : Model -> Locale -> Html Msg
+viewHeader model currentLocale =
     header []
         [ nav [ class (String.join " " model.navBarClassNames) ]
-            [ a [ id "logo-link", href "/#top" ]
+            [ a [ id "logo-link", href ("/" ++ currentLocale) ]
                 [ figure []
                     [ img
                         [ Asset.src Asset.logo
@@ -647,13 +647,47 @@ viewHeader model =
                     ]
                 ]
             , div [ class "nav-link-wrapper" ]
-                [ div [ class "lang-toggle" ] [ a [ class "selected", href "/" ] [ text "TW" ], a [ href "/jp" ] [ text "JP" ] ]
+                [ div [ class "lang-toggle" ]
+                    [ a
+                        [ class
+                            (if currentLocale == "zh" then
+                                "selected"
+
+                             else
+                                ""
+                            )
+                        , href "/zh"
+                        ]
+                        [ text "TW" ]
+                    , a
+                        [ class
+                            (if currentLocale == "jp" then
+                                "selected"
+
+                             else
+                                ""
+                            )
+                        , href "/jp"
+                        ]
+                        [ text "JP" ]
+                    , a
+                        [ class
+                            (if currentLocale == "en" then
+                                "selected"
+
+                             else
+                                ""
+                            )
+                        , href "/en"
+                        ]
+                        [ text "EN" ]
+                    ]
                 , div [ class "nav-link" ]
                     [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
-                    , a [ href "/service" ] [ text "服務內容" ]
-                    , a [ href "/cross-border-sourcing" ] [ text "跨境外包" ]
-                    , a [ href "/#faq" ] [ text "常見問題" ]
-                    , a [ href "/#article" ] [ text "精選文章" ]
+                    , a [ href ("/" ++ currentLocale ++ "/service") ] [ text "服務內容" ]
+                    , a [ href ("/" ++ currentLocale ++ "/cross-border-sourcing") ] [ text "跨境外包" ]
+                    , a [ href "#faq" ] [ text "常見問題" ]
+                    , a [ href "#article" ] [ text "精選文章" ]
                     , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
                         [ figure []
                             [ img
@@ -665,18 +699,19 @@ viewHeader model =
                         ]
                     ]
                 ]
-            , E.layout [] (E.el [] <| E.text (t model.translations "hello"))
+
+            -- , E.layout [] (E.el [] <| E.text (t model.translations "hello"))
             ]
         , a [ class "hamburger", onClick TOGGLE ]
             [ img [ Asset.src Asset.hamburger, width 25, height 25, alt "Menu" ] [] ]
         ]
 
 
-viewJpHeader : Model -> Html Msg
-viewJpHeader model =
+viewJpHeader : Model -> Locale -> Html Msg
+viewJpHeader model currentLocale =
     header []
         [ nav [ class (String.join " " model.navBarClassNames) ]
-            [ a [ id "logo-link", href "#top" ]
+            [ a [ id "logo-link", href ("/" ++ currentLocale) ]
                 [ figure []
                     [ img
                         [ Asset.src Asset.logo
@@ -687,7 +722,41 @@ viewJpHeader model =
                     ]
                 ]
             , div [ class "nav-link-wrapper" ]
-                [ div [ class "lang-toggle" ] [ a [ href "/" ] [ text "TW" ], a [ class "selected", href "/jp" ] [ text "JP" ] ]
+                [ div [ class "lang-toggle" ]
+                    [ a
+                        [ class
+                            (if currentLocale == "zh" then
+                                "selected"
+
+                             else
+                                ""
+                            )
+                        , href "/zh"
+                        ]
+                        [ text "TW" ]
+                    , a
+                        [ class
+                            (if currentLocale == "jp" then
+                                "selected"
+
+                             else
+                                ""
+                            )
+                        , href "/jp"
+                        ]
+                        [ text "JP" ]
+                    , a
+                        [ class
+                            (if currentLocale == "en" then
+                                "selected"
+
+                             else
+                                ""
+                            )
+                        , href "/en"
+                        ]
+                        [ text "EN" ]
+                    ]
                 , div [ class "nav-link" ]
                     [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/dtAK3J", target "_blank" ] [ text "お問い合わせ" ]
                     , a [ href "#service" ] [ text "事業內容" ]
@@ -1604,21 +1673,26 @@ viewServicePageBody =
             ]
 
 
+type alias Locale =
+    String
+
+
 type Route
-    = Home
+    = Home Locale
     | JpHome
-    | CrossBorder
-    | ServicePage
+    | CrossBorder Locale
+    | ServicePage Locale
     | NotFound
 
 
 route : Parser (Route -> a) a
 route =
     oneOf
-        [ map Home top
+        [ map (Home "zh") top
+        , map Home Url.Parser.string
         , map JpHome (s "jp")
-        , map CrossBorder (s "cross-border-sourcing")
-        , map ServicePage (s "service")
+        , map CrossBorder (Url.Parser.string </> s "cross-border-sourcing")
+        , map ServicePage (Url.Parser.string </> s "service")
         ]
 
 
@@ -1637,34 +1711,32 @@ view model =
     { title = "Japan Insider-日本跨境電商顧問 | 群眾募資、亞馬遜、自有品牌網站經營"
     , body =
         case toRoute (Url.toString model.url) of
-            Home ->
-                [ viewHeader model
+            Home locale ->
+                case locale of
+                    "jp" ->
+                        [ viewJpHeader model locale
+                        , viewJpTop
+                        , viewJpSectionService model
+                        , viewJpSectionSuccessCase model
+                        , viewJpSectionEnterpriseRegister
+                        , viewJpSectionSpirit
+                        , viewJpSectionSummary
+                        , viewJpFooter
+                        ]
 
-                -- , viewMailBtn
-                , viewSectionTop model
-                , viewSectionIntroduction model
-                , viewSectionService model
-                , viewSectionFaq model
-                , viewSectionArticle model
-                , viewSectionEnterpriseRegister
+                    _ ->
+                        [ viewHeader model locale
+                        , viewSectionTop model
+                        , viewSectionIntroduction model
+                        , viewSectionService model
+                        , viewSectionFaq model
+                        , viewSectionArticle model
+                        , viewSectionEnterpriseRegister
+                        , viewFooter
+                        ]
 
-                -- , viewSectionTeam
-                , viewFooter
-                ]
-
-            JpHome ->
-                [ viewJpHeader model
-                , viewJpTop
-                , viewJpSectionService model
-                , viewJpSectionSuccessCase model
-                , viewJpSectionEnterpriseRegister
-                , viewJpSectionSpirit
-                , viewJpSectionSummary
-                , viewJpFooter
-                ]
-
-            CrossBorder ->
-                [ viewHeader model
+            CrossBorder locale ->
+                [ viewHeader model locale
                 , viewCrossBorderTop
                 , viewCrossBorderRegister
                 , viewCrossBorderBenefit model
@@ -1675,8 +1747,8 @@ view model =
                 , viewFooter
                 ]
 
-            ServicePage ->
-                [ viewHeader model
+            ServicePage locale ->
+                [ viewHeader model locale
                 , viewServicePageBody
                 , viewFooter
                 ]
