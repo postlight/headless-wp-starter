@@ -72,7 +72,7 @@ nav {
 
 .lang-toggle {
   position: fixed;
-  width: 83px;
+  width: 113px;
   height: 24px;
   top: 0;
   right: 239px;
@@ -81,7 +81,9 @@ nav {
   border-bottom-right-radius: 7px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .lang-toggle a {
@@ -91,12 +93,6 @@ nav {
   color: #c4c4c4;
 }
 
-.lang-toggle a:nth-child(1) {
-  margin-right: 0.6rem;
-}
-.lang-toggle a:nth-child(2) {
-  margin-left: 0.6rem;
-}
 .lang-toggle a:hover,
 .lang-toggle a:focus,
 .lang-toggle a.selected {
