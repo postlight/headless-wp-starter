@@ -15,6 +15,7 @@ import Http
 import I18Next
     exposing
         ( Delims(..)
+        , Translations
         , initialTranslations
         , t
         , translationsDecoder
@@ -615,23 +616,9 @@ subscriptions _ =
 -- VIEW
 
 
-viewHeader : Model -> Html Msg
-viewHeader model =
+viewHeader : Model -> Translations -> Html Msg
+viewHeader model translations =
     let
-        translationJsonStr =
-            case model.locale of
-                ZH ->
-                    ZH.translations
-
-                JA ->
-                    JA.translations
-
-                _ ->
-                    EN.translations
-
-        translations =
-            Result.withDefault initialTranslations (Json.Decode.decodeString translationsDecoder translationJsonStr)
-
         currentLocale =
             localeToPath model.locale
     in
@@ -769,11 +756,11 @@ viewJpHeader model =
         ]
 
 
-viewSectionTop : Html Msg
-viewSectionTop =
+viewSectionTop : Translations -> Html Msg
+viewSectionTop translations =
     section [ id "top", class "top" ]
         [ div [ class "hero-description" ]
-            [ h2 [] [ text "Japan Insider 是提供日本群眾募資、跨境電商操作、現地網站營運的顧問團隊" ]
+            [ h2 [] [ text (t translations "top.heading") ]
             , h1 [ class "top-title" ] [ text "以群眾募資出發，開始日本市場開", br [] [], text "拓之旅!" ]
             , h1 [ class "top-mobile-title" ] [ text "以群眾募資出發，開始日本市場開拓之旅！" ]
             , div [ class "top-section-action-container" ]
@@ -1419,6 +1406,21 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Japan Insider-日本跨境電商顧問 | 群眾募資、亞馬遜、自有品牌網站經營"
     , body =
+        let
+            translationJsonStr =
+                case model.locale of
+                    ZH ->
+                        ZH.translations
+
+                    JA ->
+                        JA.translations
+
+                    _ ->
+                        EN.translations
+
+            translations =
+                Result.withDefault initialTranslations (Json.Decode.decodeString translationsDecoder translationJsonStr)
+        in
         case toRoute (Url.toString model.url) of
             Home locale ->
                 case locale of
@@ -1434,8 +1436,8 @@ view model =
                         ]
 
                     _ ->
-                        [ viewHeader model
-                        , viewSectionTop
+                        [ viewHeader model translations
+                        , viewSectionTop translations
                         , viewSectionIntroduction model
                         , viewSectionService model
                         , viewSectionFaq model
@@ -1445,7 +1447,7 @@ view model =
                         ]
 
             CrossBorder locale ->
-                [ viewHeader model
+                [ viewHeader model translations
                 , viewCrossBorderTop
                 , viewCrossBorderRegister
                 , viewCrossBorderBenefit model
@@ -1457,7 +1459,7 @@ view model =
                 ]
 
             ServicePage locale ->
-                [ viewHeader model
+                [ viewHeader model translations
                 , viewServicePageBody
                 , viewFooter
                 ]
