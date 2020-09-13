@@ -1,32 +1,45 @@
 module Main exposing (init, view)
 
--- import Browser exposing (Document)
-
 import Asset
 import Browser
 import Browser.Navigation as Nav
+import EN
 import Element as E
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
-import Html exposing (Html, a, article, aside, b, br, button, div, em, figure, footer, form, h1, h2, h3, h4, header, img, input, label, li, nav, p, section, span, text, ul)
-import Html.Attributes exposing (action, alt, class, for, height, href, id, method, name, novalidate, placeholder, required, src, style, tabindex, target, type_, value, width)
+import Html exposing (Html, a, article, b, br, button, div, em, figure, footer, form, h1, h2, h3, header, img, li, nav, p, section, span, text)
+import Html.Attributes exposing (action, alt, class, height, href, id, method, name, novalidate, src, style, target, width)
 import Html.Events exposing (onClick)
 import Http
 import I18Next
     exposing
         ( Delims(..)
-        , Translations
         , initialTranslations
         , t
-        , tr
         , translationsDecoder
         )
-import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map5, map6, map7, map8, string)
+import JA
+import Json.Decode exposing (Decoder, field, int, list, map2, map3, map4, map7, map8, string)
+import List.Extra
 import String exposing (append)
-import Time
 import Url
-import Url.Parser exposing ((</>), Parser, map, oneOf, parse, s, top)
+import Url.Parser exposing ((</>), Parser, custom, map, oneOf, parse, s, top)
+import ZH
+
+
+
+-- TYPE
+
+
+type alias UrlPath =
+    String
+
+
+type Locale
+    = EN
+    | JA
+    | ZH
 
 
 
@@ -34,7 +47,7 @@ import Url.Parser exposing ((</>), Parser, map, oneOf, parse, s, top)
 
 
 type alias Model =
-    { translations : Translations
+    { locale : Locale
     , navBarClassNames : List String
     , serviceContentList : List ServiceContent
     , serviceCategoryList : List ServiceCategory
@@ -89,13 +102,6 @@ type alias TeamMember =
     }
 
 
-type alias Date =
-    { year : String
-    , month : String
-    , day : String
-    }
-
-
 type alias Article =
     { imgSrc : String
     , date : String
@@ -113,12 +119,15 @@ type alias FundRaiseStats =
 
 
 type alias Story =
-    { link : String, imgSrc : String, title : String, description : String, subtitle : String, testimony : String, fundRaiseAmount : String, funders : Int }
-
-
-type CarouselUseCase
-    = Service
-    | SuccessCase
+    { link : String
+    , imgSrc : String
+    , title : String
+    , description : String
+    , subtitle : String
+    , testimony : String
+    , fundRaiseAmount : String
+    , funders : Int
+    }
 
 
 type alias Faq =
@@ -164,7 +173,6 @@ type Msg
     | GotJpServiceContentList (Result Http.Error (List ServiceContent))
     | GotServiceCategoryList (Result Http.Error (List ServiceCategory))
     | GotServiceDetailList (Result Http.Error (List ServiceDetail))
-    | Carousel CarouselUseCase CarouselBehaviour
     | GotMediaList (Result Http.Error (List String))
     | GotPartnerList (Result Http.Error (List String))
     | GotTeamMemberList (Result Http.Error (List TeamMember))
@@ -174,28 +182,14 @@ type Msg
     | GotFundRaiseStats (Result Http.Error FundRaiseStats)
     | GotBenefitList (Result Http.Error (List Benefit))
     | GotTalentList (Result Http.Error (List Talent))
-    | SelectTeamMember Int
-    | DotClick Int
-    | SwitchTopImage Time.Posix
     | LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
     | SwitchCategory TalentCategory
 
 
-type alias Flags =
-    { translations : String
-    }
-
-
-init : Flags -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
-init flags url key =
-    ( { translations =
-            case Json.Decode.decodeString translationsDecoder flags.translations of
-                Ok translations ->
-                    translations
-
-                Err err ->
-                    initialTranslations
+init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
+init _ url key =
+    ( { locale = getCurrentLocale url.path
       , navBarClassNames = []
       , serviceContentList = []
       , serviceCategoryList = []
@@ -274,6 +268,41 @@ init flags url key =
             }
         ]
     )
+
+
+
+-- UTIL
+
+
+localeToPath : Locale -> String
+localeToPath locale =
+    case locale of
+        ZH ->
+            "zh"
+
+        JA ->
+            "jp"
+
+        _ ->
+            "en"
+
+
+getCurrentLocale : UrlPath -> Locale
+getCurrentLocale urlPath =
+    let
+        locale =
+            String.split "/" urlPath
+                |> List.Extra.getAt 1
+    in
+    case locale of
+        Just "jp" ->
+            JA
+
+        Just "zh" ->
+            ZH
+
+        _ ->
+            EN
 
 
 
@@ -441,7 +470,11 @@ update msg model =
                     ( model, Nav.load href )
 
         UrlChanged url ->
-            ( { model | url = url }, Cmd.none )
+            let
+                locale =
+                    getCurrentLocale url.path
+            in
+            ( { model | url = url, locale = locale }, Cmd.none )
 
         TOGGLE ->
             case List.length model.navBarClassNames of
@@ -495,24 +528,6 @@ update msg model =
 
                 Err _ ->
                     ( model, Cmd.none )
-
-        Carousel useCase behaviour ->
-            case useCase of
-                Service ->
-                    case behaviour of
-                        Next ->
-                            ( { model | serviceIndex = nextIndex model.serviceIndex serviceCarouselLength }, Cmd.none )
-
-                        Prev ->
-                            ( { model | serviceIndex = prevIndex model.serviceIndex serviceCarouselLength }, Cmd.none )
-
-                SuccessCase ->
-                    case behaviour of
-                        Next ->
-                            ( { model | successCaseIndex = nextIndex model.successCaseIndex successCaseCarouselLength }, Cmd.none )
-
-                        Prev ->
-                            ( { model | successCaseIndex = prevIndex model.successCaseIndex successCaseCarouselLength }, Cmd.none )
 
         GotMediaList result ->
             case result of
@@ -586,54 +601,40 @@ update msg model =
                 Err err ->
                     ( { model | errorMsg = Just err }, Cmd.none )
 
-        SelectTeamMember index ->
-            ( { model | selectedTeamMemberIndex = index }, Cmd.none )
-
-        DotClick index ->
-            ( { model | topIndex = index }, Cmd.none )
-
-        SwitchTopImage _ ->
-            case model.topIndex of
-                3 ->
-                    ( { model | topIndex = 1 }, Cmd.none )
-
-                _ ->
-                    ( { model | topIndex = model.topIndex + 1 }, Cmd.none )
-
-
-nextIndex : Int -> Int -> Int
-nextIndex currentIndex maxIndex =
-    if currentIndex + 1 == maxIndex then
-        0
-
-    else
-        currentIndex + 1
-
-
-prevIndex : Int -> Int -> Int
-prevIndex currentIndex maxIndex =
-    if currentIndex - 1 < 0 then
-        maxIndex - 1
-
-    else
-        currentIndex - 1
-
 
 
 -- SUBSCRIPTIONS
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
-    Time.every 3000 SwitchTopImage
+subscriptions _ =
+    Sub.none
 
 
 
 -- VIEW
 
 
-viewHeader : Model -> Locale -> Html Msg
-viewHeader model currentLocale =
+viewHeader : Model -> Html Msg
+viewHeader model =
+    let
+        translationJsonStr =
+            case model.locale of
+                ZH ->
+                    ZH.translations
+
+                JA ->
+                    JA.translations
+
+                _ ->
+                    EN.translations
+
+        translations =
+            Result.withDefault initialTranslations (Json.Decode.decodeString translationsDecoder translationJsonStr)
+
+        currentLocale =
+            localeToPath model.locale
+    in
     header []
         [ nav [ class (String.join " " model.navBarClassNames) ]
             [ a [ id "logo-link", href ("/" ++ currentLocale) ]
@@ -684,10 +685,10 @@ viewHeader model currentLocale =
                     ]
                 , div [ class "nav-link" ]
                     [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
-                    , a [ href ("/" ++ currentLocale ++ "/service") ] [ text "服務內容" ]
-                    , a [ href ("/" ++ currentLocale ++ "/cross-border-sourcing") ] [ text "跨境外包" ]
-                    , a [ href "#faq" ] [ text "常見問題" ]
-                    , a [ href "#article" ] [ text "精選文章" ]
+                    , a [ href ("/" ++ currentLocale ++ "/service") ] [ text (t translations "nav.service") ]
+                    , a [ href ("/" ++ currentLocale ++ "/cross-border-sourcing") ] [ text (t translations "nav.outsource") ]
+                    , a [ href "#faq" ] [ text (t translations "nav.faq") ]
+                    , a [ href "#article" ] [ text (t translations "nav.article") ]
                     , a [ href "https://www.facebook.com/japaninsiders/", class "fb-logo" ]
                         [ figure []
                             [ img
@@ -699,19 +700,17 @@ viewHeader model currentLocale =
                         ]
                     ]
                 ]
-
-            -- , E.layout [] (E.el [] <| E.text (t model.translations "hello"))
             ]
         , a [ class "hamburger", onClick TOGGLE ]
             [ img [ Asset.src Asset.hamburger, width 25, height 25, alt "Menu" ] [] ]
         ]
 
 
-viewJpHeader : Model -> Locale -> Html Msg
-viewJpHeader model currentLocale =
+viewJpHeader : Model -> Html Msg
+viewJpHeader model =
     header []
         [ nav [ class (String.join " " model.navBarClassNames) ]
-            [ a [ id "logo-link", href ("/" ++ currentLocale) ]
+            [ a [ id "logo-link", href ("/" ++ localeToPath model.locale) ]
                 [ figure []
                     [ img
                         [ Asset.src Asset.logo
@@ -725,7 +724,7 @@ viewJpHeader model currentLocale =
                 [ div [ class "lang-toggle" ]
                     [ a
                         [ class
-                            (if currentLocale == "zh" then
+                            (if model.locale == ZH then
                                 "selected"
 
                              else
@@ -736,7 +735,7 @@ viewJpHeader model currentLocale =
                         [ text "TW" ]
                     , a
                         [ class
-                            (if currentLocale == "jp" then
+                            (if model.locale == JA then
                                 "selected"
 
                              else
@@ -747,7 +746,7 @@ viewJpHeader model currentLocale =
                         [ text "JP" ]
                     , a
                         [ class
-                            (if currentLocale == "en" then
+                            (if model.locale == EN then
                                 "selected"
 
                              else
@@ -770,19 +769,8 @@ viewJpHeader model currentLocale =
         ]
 
 
-viewMailBtn : Html Msg
-viewMailBtn =
-    div [ class "mailBtn" ]
-        [ a [ href "https://japaninsider.typeform.com/to/yvsVAD" ]
-            [ figure []
-                [ img [ Asset.src Asset.mail, alt "mail button" ] []
-                ]
-            ]
-        ]
-
-
-viewSectionTop : Model -> Html Msg
-viewSectionTop { topIndex } =
+viewSectionTop : Html Msg
+viewSectionTop =
     section [ id "top", class "top" ]
         [ div [ class "hero-description" ]
             [ h2 [] [ text "Japan Insider 是提供日本群眾募資、跨境電商操作、現地網站營運的顧問團隊" ]
@@ -841,14 +829,9 @@ viewCrossBorderBenefit { benefitList } =
 
 
 viewBenefitItem : Benefit -> Html Msg
-viewBenefitItem { title, imgSrc, description } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
+viewBenefitItem { title, description } =
     article [ class "benefit-item" ]
-        [ -- img [ class "benefit-item-image", src imgSrcPath, alt title ] []
-          h2 [ class "benefit-item-title" ] [ text title ]
+        [ h2 [ class "benefit-item-title" ] [ text title ]
         , p [ class "benefit-item-description" ] [ text description ]
         ]
 
@@ -1006,6 +989,7 @@ viewSectionService { serviceContentList } =
         ]
 
 
+viewJpSectionService : Model -> Html Msg
 viewJpSectionService { jpServiceContentList } =
     section [ id "service", class "service" ]
         [ h2 [ class "section-title" ] [ text "事業內容" ]
@@ -1024,44 +1008,6 @@ viewServiceContent { imgSrc, imgAlt, title, description } =
         , figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ]
         , p [] [ text description ]
         ]
-
-
-
--- viewSectionService : Model -> Html Msg
--- viewSectionService { serviceContentList, serviceDetailList, serviceIndex } =
---     section [ id "service" ]
---         [ h3 [ class "section-title" ] [ text "服務內容" ]
---         , div [ class "carousel" ]
---             [ div [ class "prev" ] [ div [ class "arrow-left", onClick (Carousel Service Prev) ] [] ]
---             , ul [ class "slider" ]
---                 [ li
---                     [ class
---                         (if serviceIndex == 0 then
---                             "visible"
---                          else
---                             ""
---                         )
---                     ]
---                     [ div [ class "three-grid-view-container" ]
---                         (List.map viewServiceContent serviceContentList)
---                     ]
---                 , li
---                     [ class
---                         (if serviceIndex == 1 then
---                             "visible"
---                          else
---                             ""
---                         )
---                     ]
---                     [ div [ class "four-grid-view-container" ]
---                         (List.map viewServiceDetail serviceDetailList)
---                     ]
---                 ]
---             , div [ class "next" ] [ div [ class "arrow-right", onClick (Carousel Service Next) ] [] ]
---             ]
---         , div [ class "mobile-list-container" ]
---             (List.map viewMobileServiceContent serviceContentList)
---         ]
 
 
 viewSectionFaq : Model -> Html Msg
@@ -1094,7 +1040,7 @@ viewSectionArticle { articleList } =
 
 
 viewArticle : Article -> Html Msg
-viewArticle { imgSrc, date, title, link } =
+viewArticle { imgSrc, title, link } =
     let
         imgSrcPath =
             append assetPath imgSrc
@@ -1102,8 +1048,6 @@ viewArticle { imgSrc, date, title, link } =
     a [ href link, target "_blank", class "link-container" ]
         [ article [ class "article-item" ]
             [ figure [] [ img [ src imgSrcPath, alt title ] [] ]
-
-            -- , p [ class "article-item-date" ] [ text date ]
             , p [ class "article-item-title" ] [ text title ]
             ]
         ]
@@ -1149,183 +1093,8 @@ viewJpSectionEnterpriseRegister =
         ]
 
 
-
--- viewSectionTeam : Html Msg
--- viewSectionTeam =
---     div [ id "team", class "team" ]
---         [ h2 [ class "section-title" ] [ text "團隊成員" ]
---         , div [ class "team-description" ]
---             [ h2 []
---                 [ text "JAPAN INSIDER 成員皆位於日本，精通中、日、英文，背景包括數位行銷、產品設計、軟體開發、工程、供應鏈等。讓熟悉日本市場的專業團隊，成為您專案的一份子，協助您進入日本市場。"
---                 ]
---             ]
---         ]
-
-
-viewMobileServiceContent : ServiceContent -> Html Msg
-viewMobileServiceContent { imgSrc, imgAlt, title, description } =
-    let
-        imgSrcPath =
-            append assetPath imgSrc
-    in
-    article [ class "list-item no-bottom-border" ]
-        [ div [ class "circle-container" ] [ figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ] ]
-        , h3 [ class "custom-list-item-title" ] [ text title ]
-        , p [] [ text description ]
-        ]
-
-
-viewServiceDetail : ServiceDetail -> Html Msg
-viewServiceDetail { title, description } =
-    article [ class "circle-container list-item circle-item-content no-bottom-border big-circle yellow-border" ]
-        [ h3 [ class "circle-item-title" ] [ text title ]
-        , p [ class "circle-item-description" ] [ text description ]
-        ]
-
-
-viewSectionPromotion : Html Msg
-viewSectionPromotion =
-    section [ id "promotion", class "intro-description" ]
-        [ h2 [ class "text" ] [ text "JAPAN INSIDER" ]
-        , h2 [ class "text" ] [ text "協助團隊成功募資的金額" ]
-        , h2 [] [ em [] [ text "超過 4000萬日幣" ] ]
-        ]
-
-
-viewSectionSuccessCase : Model -> Html Msg
-viewSectionSuccessCase { fundRaiseStats, successStoryList, successCaseIndex } =
-    section [ id "success-case" ]
-        [ h3 [ class "section-title" ] [ text "過去實績" ]
-        , div [ class "carousel" ]
-            [ div [ class "prev" ] [ div [ class "arrow-left", onClick (Carousel SuccessCase Prev) ] [] ]
-            , ul [ class "slider" ]
-                ([ li
-                    [ class
-                        (if successCaseIndex == 0 then
-                            "visible"
-
-                         else
-                            ""
-                        )
-                    ]
-                    [ viewSuccessResult fundRaiseStats ]
-                 ]
-                    ++ dynamicallyInsertSuccessStoryCarouselItem
-                        successStoryList
-                        successCaseIndex
-                        1
-                )
-            , div [ class "next" ] [ div [ class "arrow-right", onClick (Carousel SuccessCase Next) ] [] ]
-            ]
-        , viewMobileSuccessResult fundRaiseStats
-        ]
-
-
-dynamicallyInsertSuccessStoryCarouselItem : List Story -> Int -> Int -> List (Html Msg)
-dynamicallyInsertSuccessStoryCarouselItem storyList currentCarouselIndex currentStoryListIndex =
-    let
-        firstThreeStoryList =
-            List.take 3 storyList
-
-        restStoryList =
-            List.drop 3 storyList
-    in
-    case List.length firstThreeStoryList of
-        0 ->
-            []
-
-        _ ->
-            [ li
-                [ class
-                    (if currentCarouselIndex == currentStoryListIndex then
-                        "visible"
-
-                     else
-                        ""
-                    )
-                ]
-                [ div [ class "three-grid-view-container" ]
-                    (List.map viewStory firstThreeStoryList)
-                ]
-            ]
-                ++ dynamicallyInsertSuccessStoryCarouselItem restStoryList currentCarouselIndex (currentStoryListIndex + 1)
-
-
-viewSuccessResult : FundRaiseStats -> Html Msg
-viewSuccessResult fundRaiseStats =
-    div [ class "four-grid-view-container" ]
-        [ article [ class "four-grid-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "執行募資案" ]
-            , p [ class "success-number success-circle-container" ] [ text (String.fromInt fundRaiseStats.successCaseNum) ]
-            ]
-        , article [ class "four-grid-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "募資成功率" ]
-            , p [ class "success-number success-circle-container" ] [ text (String.fromInt fundRaiseStats.successRate ++ "%") ]
-            ]
-        , article [ class "four-grid-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "募資總金額" ]
-            , p [ class "success-number success-circle-container red-background" ]
-                [ text ("¥" ++ fundRaiseStats.totalFund)
-                , span [ class "small-font-size" ] [ text "Million" ]
-                ]
-            ]
-        , article [ class "four-grid-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "募資支持者" ]
-            , p [ class "success-number success-circle-container" ]
-                [ text (String.fromInt fundRaiseStats.funders) ]
-            ]
-        ]
-
-
-viewMobileSuccessResult : FundRaiseStats -> Html Msg
-viewMobileSuccessResult fundRaiseStats =
-    div [ class "mobile-flex-container" ]
-        [ article [ class "list-item no-bottom-border small-list-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "執行募資案" ]
-            , p [ class "success-number success-circle-container" ] [ text (String.fromInt fundRaiseStats.successCaseNum) ]
-            ]
-        , article [ class "list-item no-bottom-border small-list-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "募資成功率" ]
-            , p [ class "success-number success-circle-container" ] [ text (String.fromInt fundRaiseStats.successRate ++ "%") ]
-            ]
-        , article [ class "list-item no-bottom-border small-list-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "募資總金額" ]
-            , p [ class "success-number success-circle-container red-background" ]
-                [ text ("¥" ++ fundRaiseStats.totalFund)
-                , span [ class "small-font-size" ] [ text "Million" ]
-                ]
-            ]
-        , article [ class "list-item no-bottom-border small-list-item" ]
-            [ h2 [ class "success-title" ]
-                [ text "募資支持者" ]
-            , p [ class "success-number success-circle-container" ]
-                [ text (String.fromInt fundRaiseStats.funders) ]
-            ]
-        ]
-
-
-viewSectionTeamIntroduction : Html Msg
-viewSectionTeamIntroduction =
-    section [ id "team-introduction" ]
-        [ div [ class "float-title" ]
-            [ h2 []
-                [ text "JAPAN INSIDER 成員背景包括"
-                , em [] [ text "工程、供應鍊、數位行銷、產品設計," ]
-                , text "並且皆任職於其專業領域位於日本的公司。透過對日本市場熟悉的專業團隊, 成為你專案的一份子, 協助你進入日本市場。"
-                ]
-            ]
-        ]
-
-
 viewStory : Story -> Html Msg
-viewStory { link, imgSrc, title, description, testimony, fundRaiseAmount, funders, subtitle } =
+viewStory { link, imgSrc, title, description, testimony, fundRaiseAmount, subtitle } =
     let
         imgSrcPath =
             append assetPath imgSrc
@@ -1353,65 +1122,6 @@ viewJpStory { link, imgSrc, title, subtitle } =
         , img [ class "jp-fund-raise-image", src imgSrcPath, alt title ] []
         , a [ class "know-more-btn", href link, target "_blank" ] [ text "商品ページ" ]
         ]
-
-
-viewSectionMarketDev : Html Msg
-viewSectionMarketDev =
-    section [ id "market-development-description" ]
-        [ div [ class "float-title" ]
-            [ h3 [ class "section-title" ] [ text "後續市場開發" ]
-            , h2 [ class "promoting-title" ]
-                [ text "JAPAN INSIDER 除了協助團隊規劃群眾募資外, 並協助團隊後續的市場開發。已經成功協助團隊以各種方式開拓日本市場, 包括與"
-                , em [] [ text "當地知名品牌談定合作, 導入當地通路商、進入日本電商平台販賣" ]
-                , text "等。"
-                , a [ id "amazon-link", href "https://japaninsider.typeform.com/to/PXWmex", target "_blank" ]
-                    [ text "日本電商代營運" ]
-                ]
-            ]
-        ]
-
-
-viewSectionPartner : Model -> Html Msg
-viewSectionPartner { partnerList } =
-    section [ class "intro-description white-background" ]
-        [ h3 [ class "section-title" ] [ text "合作夥伴" ]
-        , h2 [ class "partner-title" ] [ text "Japan Insider 與日本各大群眾募資平台皆有合作關係, 根據團隊的產品屬性及目標, 協助你連結最適合的平台, 執行募資策略。" ]
-        , div [ class "media-container" ]
-            (List.map viewPartner partnerList)
-        ]
-
-
-viewPartner : String -> Html Msg
-viewPartner imgName =
-    let
-        imgSrc =
-            append assetPath imgName
-
-        imgAlt =
-            imgName
-    in
-    figure [] [ img [ class "media-image big-image", src imgSrc, alt imgAlt ] [] ]
-
-
-viewSectionMedia : Model -> Html Msg
-viewSectionMedia { mediaList } =
-    section [ id "media" ]
-        [ h3 [ class "section-title" ] [ text "媒體報導" ]
-        , div [ class "media-container" ]
-            (List.map viewMedia mediaList)
-        ]
-
-
-viewMedia : String -> Html Msg
-viewMedia imgName =
-    let
-        imgSrc =
-            append assetPath imgName
-
-        imgAlt =
-            imgName
-    in
-    figure [] [ img [ class "media-image", src imgSrc, alt imgAlt ] [] ]
 
 
 viewJpSectionSpirit : Html Msg
@@ -1489,17 +1199,6 @@ viewMailChimpSignupForm =
         [ form [ action "https://japaninsider.us14.list-manage.com/subscribe/post?u=70f47caaa71d96fe967dfa602&id=a8225094be", method "post", id "mc-embedded-subscribe-form", name "mc-embedded-subscribe-form", class "validate", target "_blank", novalidate True ]
             [ div [ id "mc_embed_signup_scroll" ]
                 [ h2 [ class "mc_embed_signup--title" ] [ text "預先登錄，搶先接收平台上線通知" ]
-
-                -- , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "稱呼 (必填)" ]
-                -- , input [ class "mc_embed_signup--input-name", type_ "text", name "b_70f47caaa71d96fe967dfa602_a8225094be", placeholder "Jack Wang", value "" ]
-                --     []
-                -- , label [ for "mce-EMAIL", class "mc_embed_signup--label" ] [ text "Email" ]
-                -- , div [ class "mc_embed_signup--input-container" ]
-                --     [ input [ type_ "email", value "", name "EMAIL", class "mc_embed_signup--input-email", id "mce-EMAIL", placeholder "abc@gmail.com", required True ]
-                --         []
-                --     , input [ type_ "submit", value "登錄", name "subscribe", id "mc-embedded-subscribe", class "mc_embed_signup--submit" ]
-                --         []
-                --     ]
                 , a [ class "mc_embed_signup--submit", href "https://japaninsider.typeform.com/to/F9ZOSP" ] [ text "登錄" ]
                 ]
             ]
@@ -1673,10 +1372,6 @@ viewServicePageBody =
             ]
 
 
-type alias Locale =
-    String
-
-
 type Route
     = Home Locale
     | JpHome
@@ -1685,14 +1380,28 @@ type Route
     | NotFound
 
 
+toLocale =
+    custom "LOCALE" <|
+        \segment ->
+            case segment of
+                "zh" ->
+                    Just ZH
+
+                "jp" ->
+                    Just JA
+
+                _ ->
+                    Just EN
+
+
 route : Parser (Route -> a) a
 route =
     oneOf
-        [ map (Home "zh") top
-        , map Home Url.Parser.string
+        [ map (Home EN) top
+        , map Home toLocale
         , map JpHome (s "jp")
-        , map CrossBorder (Url.Parser.string </> s "cross-border-sourcing")
-        , map ServicePage (Url.Parser.string </> s "service")
+        , map CrossBorder (toLocale </> s "cross-border-sourcing")
+        , map ServicePage (toLocale </> s "service")
         ]
 
 
@@ -1713,8 +1422,8 @@ view model =
         case toRoute (Url.toString model.url) of
             Home locale ->
                 case locale of
-                    "jp" ->
-                        [ viewJpHeader model locale
+                    JA ->
+                        [ viewJpHeader model
                         , viewJpTop
                         , viewJpSectionService model
                         , viewJpSectionSuccessCase model
@@ -1725,8 +1434,8 @@ view model =
                         ]
 
                     _ ->
-                        [ viewHeader model locale
-                        , viewSectionTop model
+                        [ viewHeader model
+                        , viewSectionTop
                         , viewSectionIntroduction model
                         , viewSectionService model
                         , viewSectionFaq model
@@ -1736,7 +1445,7 @@ view model =
                         ]
 
             CrossBorder locale ->
-                [ viewHeader model locale
+                [ viewHeader model
                 , viewCrossBorderTop
                 , viewCrossBorderRegister
                 , viewCrossBorderBenefit model
@@ -1748,7 +1457,7 @@ view model =
                 ]
 
             ServicePage locale ->
-                [ viewHeader model locale
+                [ viewHeader model
                 , viewServicePageBody
                 , viewFooter
                 ]
@@ -1763,7 +1472,7 @@ view model =
 -- PROGRAM
 
 
-main : Program Flags Model Msg
+main : Program () Model Msg
 main =
     Browser.application
         { init = init
