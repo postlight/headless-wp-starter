@@ -634,15 +634,6 @@ section {
   margin-bottom: 42px;
 }
 
-.top-mobile-title {
-  color: #011f26;
-  display: none;
-  font-size: 3.6rem;
-  font-weight: bold;
-  line-height: 48px;
-  margin-bottom: 16px;
-}
-
 .hero-description > p {
   color: #636363;
   font-size: 1.6rem;
@@ -802,6 +793,7 @@ section {
   position: relative;
   text-decoration: none;
   width: 300px;
+  height: 700px;
 }
 
 .jp-success-case {
@@ -1115,7 +1107,8 @@ section {
 .fund-raise-description {
   color: #333333;
   font-size: 1.4rem;
-  height: 140px;
+  margin-bottom: 5%;
+  max-height: 300px;
   line-height: 1.8;
   padding: 20px 20px 0 20px;
   position: relative;
@@ -1129,6 +1122,15 @@ section {
   height: 36px;
   position: absolute;
   right: -5px;
+}
+
+.fund-raise-bottom-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 5%;
 }
 
 .fund-raise-testimony {
@@ -2150,14 +2152,6 @@ li > img {
 
   .hero-description > p {
     line-height: 24px;
-  }
-
-  .top-title {
-    display: none;
-  }
-
-  .top-mobile-title {
-    display: block;
   }
 
   .hero-img {
