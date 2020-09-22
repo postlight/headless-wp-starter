@@ -3,20 +3,20 @@
     {
       "imgSrc": "service-crdsourcing.svg",
       "imgAlt": "crowd sourcing service",
-      "title": "群眾募資執行",
-      "description": "與各大平台皆有合作，專注於連結後續銷售的群眾募資策略"
+      "title": "services.1.title",
+      "description": "services.1.description"
     },
     {
       "imgSrc": "service-ec.svg",
       "imgAlt": "crowd sourcing e-commerce",
-      "title": "跨境電商操作",
-      "description": "操作日本亞馬遜等電商平台，無縫接軌群眾募資後的線上銷售。"
+      "title": "services.2.title",
+      "description": "services.2.description"
     },
     {
       "imgSrc": "service-exhibition.svg",
       "imgAlt": "offline exhibition",
-      "title": "自有品牌網站營運",
-      "description": "建立團隊自有品牌網站，維持法規、金流、物流等現地營運。"
+      "title": "services.3.title",
+      "description": "services.3.description"
     }
   ]
 }

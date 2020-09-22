@@ -671,7 +671,7 @@ viewHeader model translations =
                         [ text "EN" ]
                     ]
                 , div [ class "nav-link" ]
-                    [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text "免費諮詢" ]
+                    [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text (t translations "top.freeConsult") ]
                     , a [ href ("/" ++ currentLocale ++ "/service") ] [ text (t translations "nav.service") ]
                     , a [ href ("/" ++ currentLocale ++ "/cross-border-sourcing") ] [ text (t translations "nav.outsource") ]
                     , a [ href "#faq" ] [ text (t translations "nav.faq") ]
@@ -766,8 +766,8 @@ viewSectionTop translations =
             , div [ class "top-section-action-container" ]
                 [ a
                     [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ]
-                    [ text "免費諮詢" ]
-                , a [ class "know-more-btn", href "#service" ] [ text "了解更多服務細節" ]
+                    [ text (t translations "top.freeConsult") ]
+                , a [ class "know-more-btn", href "#service" ] [ text (t translations "top.knowMoreDetails") ]
                 ]
             ]
         , figure []
@@ -944,35 +944,46 @@ viewCrossBorderProcess =
         ]
 
 
-viewSectionIntroduction : Model -> Html Msg
-viewSectionIntroduction { successStoryList } =
+viewSectionIntroduction : Model -> Translations -> Html Msg
+viewSectionIntroduction { successStoryList } translations =
+    let
+        viewTranslationStory =
+            viewStory translations
+    in
     div [ class "introduction-background-wrapper" ]
         [ section [ id "introduction", class "introduction" ]
             [ h2 []
-                [ text "連結後續銷售的群眾募資操作模式"
+                [ text (t translations "introduction.title")
                 ]
             , div [ class "crd-introduction" ]
                 [ div [ class "crd-introduction-description" ]
-                    [ p [] [ text "群眾募資在日本越來越普及，漸漸成為海外新創進日本市場的前哨站。但群眾募資後的銷售能否持續才是團隊經營的重點，而這跟在群眾募資過程的佈局有很大的關係。Japan Insider著重於連結後續銷售的群眾募資操作模式。" ]
+                    [ p [] [ text (t translations "introduction.description") ]
                     ]
                 , figure [ class "crd-introduction-figure" ]
                     [ img [ Asset.src Asset.crowdSourcePartner, alt "crowd sourcing partner" ] []
                     ]
                 ]
-            , h2 [] [ text "那些年與我們一起開拓的團隊" ]
+            , h2 [] [ text (t translations "successStories.title") ]
             , div [ class "success-crd" ]
-                -- TODO @paipo: make carousel and take more items
-                (List.map viewStory (List.take 3 successStoryList))
+              -- TODO @paipo: make carousel and take more items
+              <|
+                List.map
+                    viewTranslationStory
+                    (List.take 3 successStoryList)
             ]
         ]
 
 
-viewSectionService : Model -> Html Msg
-viewSectionService { serviceContentList } =
+viewSectionService : Model -> Translations -> Html Msg
+viewSectionService { serviceContentList } translations =
+    let
+        viewTranslationServiceContent =
+            viewServiceContent translations
+    in
     section [ id "service", class "service" ]
-        [ h2 [ class "section-title" ] [ text "顧問服務內容" ]
-        , p [ class "service-subtitle" ] [ text "代理商之外，你有更多的日本進入策略與開拓模式" ]
-        , div [ class "service-content-container" ] (List.map viewServiceContent serviceContentList)
+        [ h2 [ class "section-title" ] [ text (t translations "services.title") ]
+        , p [ class "service-subtitle" ] [ text (t translations "services.subtitle") ]
+        , div [ class "service-content-container" ] (List.map viewTranslationServiceContent serviceContentList)
         ]
 
 
@@ -980,12 +991,12 @@ viewJpSectionService : Model -> Html Msg
 viewJpSectionService { jpServiceContentList } =
     section [ id "service", class "service" ]
         [ h2 [ class "section-title" ] [ text "事業內容" ]
-        , div [ class "jp-service-content-container" ] (List.map viewServiceContent jpServiceContentList)
+        , div [ class "jp-service-content-container" ] (List.map viewJpServiceContent jpServiceContentList)
         ]
 
 
-viewServiceContent : ServiceContent -> Html Msg
-viewServiceContent { imgSrc, imgAlt, title, description } =
+viewJpServiceContent : ServiceContent -> Html Msg
+viewJpServiceContent { imgSrc, imgAlt, title, description } =
     let
         imgSrcPath =
             append assetPath imgSrc
@@ -994,6 +1005,19 @@ viewServiceContent { imgSrc, imgAlt, title, description } =
         [ h2 [] [ text title ]
         , figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ]
         , p [] [ text description ]
+        ]
+
+
+viewServiceContent : Translations -> ServiceContent -> Html Msg
+viewServiceContent translations { imgSrc, imgAlt, title, description } =
+    let
+        imgSrcPath =
+            append assetPath imgSrc
+    in
+    article [ class "service-content-item" ]
+        [ h2 [] [ text (t translations title) ]
+        , figure [] [ img [ src imgSrcPath, alt imgAlt ] [] ]
+        , p [] [ text (t translations description) ]
         ]
 
 
@@ -1080,8 +1104,8 @@ viewJpSectionEnterpriseRegister =
         ]
 
 
-viewStory : Story -> Html Msg
-viewStory { link, imgSrc, title, description, testimony, fundRaiseAmount, subtitle } =
+viewStory : Translations -> Story -> Html Msg
+viewStory translations { link, imgSrc, title, description, testimony, fundRaiseAmount, subtitle } =
     let
         imgSrcPath =
             append assetPath imgSrc
@@ -1089,12 +1113,12 @@ viewStory { link, imgSrc, title, description, testimony, fundRaiseAmount, subtit
     article [ class "story-item" ]
         [ h2 [ class "fund-raise-title" ] [ text (title ++ " 成功募資 " ++ fundRaiseAmount ++ " 萬日幣") ]
         , div [ class "fund-raise-content" ]
-            [ p [ class "fund-raise-description" ] [ text description ]
+            [ p [ class "fund-raise-description" ] [ text (t translations description) ]
             , p [ class "fund-raise-testimony" ] [ text testimony ]
             ]
         , img [ class "fund-raise-image", src imgSrcPath, alt title ] []
         , p [ class "fund-raise-subtitle" ] [ text subtitle ]
-        , a [ class "know-more-btn", href link, target "_blank" ] [ text "募資頁面" ]
+        , a [ class "know-more-btn", href link, target "_blank" ] [ text (t translations "successStories.actionBtn") ]
         ]
 
 
@@ -1192,8 +1216,8 @@ viewMailChimpSignupForm =
         ]
 
 
-viewServicePageBody : Html Msg
-viewServicePageBody =
+viewServicePageBody : Translations -> Html Msg
+viewServicePageBody translations =
     E.layout [] <|
         E.column [ E.width E.fill, E.paddingXY 0 180, E.spacingXY 0 100 ]
             [ E.row [ E.width <| E.px 960, E.spaceEvenly, E.centerX ]
@@ -1346,7 +1370,7 @@ viewServicePageBody =
                         , E.centerX
                         ]
                         { url = "https://japaninsider.typeform.com/to/yvsVAD"
-                        , label = E.el [ E.centerX ] <| E.text "免費諮詢"
+                        , label = E.el [ E.centerX ] <| E.text (t translations "top.freeConsult")
                         }
                     ]
                 , E.column []
@@ -1438,8 +1462,8 @@ view model =
                     _ ->
                         [ viewHeader model translations
                         , viewSectionTop translations
-                        , viewSectionIntroduction model
-                        , viewSectionService model
+                        , viewSectionIntroduction model translations
+                        , viewSectionService model translations
                         , viewSectionFaq model
                         , viewSectionArticle model
                         , viewSectionEnterpriseRegister
@@ -1460,7 +1484,7 @@ view model =
 
             ServicePage locale ->
                 [ viewHeader model translations
-                , viewServicePageBody
+                , viewServicePageBody translations
                 , viewFooter
                 ]
 
