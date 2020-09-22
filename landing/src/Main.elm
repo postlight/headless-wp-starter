@@ -761,8 +761,7 @@ viewSectionTop translations =
     section [ id "top", class "top" ]
         [ div [ class "hero-description" ]
             [ h2 [] [ text (t translations "top.heading") ]
-            , h1 [ class "top-title" ] [ text "以群眾募資出發，開始日本市場開", br [] [], text "拓之旅!" ]
-            , h1 [ class "top-mobile-title" ] [ text "以群眾募資出發，開始日本市場開拓之旅！" ]
+            , h1 [ class "top-title" ] [ text (t translations "top.slogan") ]
             , div [ class "top-section-action-container" ]
                 [ a
                     [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ]
@@ -1021,23 +1020,27 @@ viewServiceContent translations { imgSrc, imgAlt, title, description } =
         ]
 
 
-viewSectionFaq : Model -> Html Msg
-viewSectionFaq { faqList } =
+viewSectionFaq : Model -> Translations -> Html Msg
+viewSectionFaq { faqList } translations =
+    let
+        viewTranslationFaq =
+            viewFaq translations
+    in
     section [ id "faq", class "faq" ]
-        [ h2 [ class "section-title" ] [ text "常見問題" ]
-        , div [ class "faq-container" ] (List.map viewFaq faqList)
+        [ h2 [ class "section-title" ] [ text (t translations "faq.title") ]
+        , div [ class "faq-container" ] (List.map viewTranslationFaq faqList)
         ]
 
 
-viewFaq { question, answer } =
+viewFaq translations { question, answer } =
     article []
         [ p [ class "faq-question" ]
             [ span [ class "faq-q" ] [ text "Q: " ]
-            , span [] [ text question ]
+            , span [] [ text (t translations question) ]
             ]
         , p
             [ class "faq-answer" ]
-            [ text ("A: " ++ answer) ]
+            [ text ("A: " ++ t translations answer) ]
         ]
 
 
@@ -1459,12 +1462,21 @@ view model =
                         , viewJpFooter
                         ]
 
+                    EN ->
+                        [ viewHeader model translations
+                        , viewSectionTop translations
+                        , viewSectionIntroduction model translations
+                        , viewSectionService model translations
+                        , viewSectionFaq model translations
+                        , viewFooter
+                        ]
+
                     _ ->
                         [ viewHeader model translations
                         , viewSectionTop translations
                         , viewSectionIntroduction model translations
                         , viewSectionService model translations
-                        , viewSectionFaq model
+                        , viewSectionFaq model translations
                         , viewSectionArticle model
                         , viewSectionEnterpriseRegister
                         , viewFooter

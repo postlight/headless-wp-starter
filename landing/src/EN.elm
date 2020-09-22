@@ -12,7 +12,8 @@ translations =
     "article": "Articles"
   },
   "top": {
-    "heading": "With crowdfunding as the starting point to grow your brand and business in Japan!",
+    "heading": "Japan Insider - The #1 Crowdfunding & Cross-border e-commerce Agency in Japan",
+    "slogan": "With crowdfunding as the starting point to grow your brand and business in Japan!",
     "freeConsult": "Contact Us",
     "knowMoreDetails": "Learn More"
   },
@@ -47,6 +48,29 @@ translations =
     "3": {
       "title": "Launch D2C (Direct to Customer) site",
       "description": "We help you operate and build the product D2C site by integrating the logistics, payment flow and native customer service support"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "1": {
+      "question": "Is Japan Insider a Japanese company?",
+      "answer": "Yes, Japan Insider is a registered company in Japan. All the members can speak at least speak three languages fluently. They assist you to sale and promote your brand or business in Japan, and can instantly grasp the trends of the Japanese market."
+    },
+    "2": {
+      "question": "How is the service charged?",
+      "answer": "Based on your requirement and need, we can customize the charge. For details, please contact Japan Insider to consult your needs."
+    },
+    "3": {
+      "question": "What is the difference with Japanese agents?",
+      "answer": "Japan Insider focuses on cooperation with you, members can communicate in English, let your team participate in the campaign, learn the Japanese model, and accumulate the team's own long-term Japanese market strategy."
+    },
+    "4": {
+      "question": "Can you assist with the trial meeting for pop up store?",
+      "answer": "Yes, Japan Insider has a wealth of experience in fundraising trial meetings, based on the best promotion strategy and sales campaign."
+    },
+    "5": {
+      "question": "Can you assist with logistics processing?",
+      "answer": "Yes, We can assist you based on your requirement to reduce your resource burden."
     }
   }
 }

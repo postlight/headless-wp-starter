@@ -634,15 +634,6 @@ section {
   margin-bottom: 42px;
 }
 
-.top-mobile-title {
-  color: #011f26;
-  display: none;
-  font-size: 3.6rem;
-  font-weight: bold;
-  line-height: 48px;
-  margin-bottom: 16px;
-}
-
 .hero-description > p {
   color: #636363;
   font-size: 1.6rem;
@@ -2150,14 +2141,6 @@ li > img {
 
   .hero-description > p {
     line-height: 24px;
-  }
-
-  .top-title {
-    display: none;
-  }
-
-  .top-mobile-title {
-    display: block;
   }
 
   .hero-img {
