@@ -1119,9 +1119,11 @@ viewStory translations { link, imgSrc, title, description, testimony, fundRaiseA
             [ p [ class "fund-raise-description" ] [ text (t translations description) ]
             , p [ class "fund-raise-testimony" ] [ text testimony ]
             ]
-        , img [ class "fund-raise-image", src imgSrcPath, alt title ] []
-        , p [ class "fund-raise-subtitle" ] [ text subtitle ]
-        , a [ class "know-more-btn", href link, target "_blank" ] [ text (t translations "successStories.actionBtn") ]
+        , div [ class "fund-raise-bottom-wrapper" ]
+            [ img [ class "fund-raise-image", src imgSrcPath, alt title ] []
+            , p [ class "fund-raise-subtitle" ] [ text subtitle ]
+            , a [ class "know-more-btn", href link, target "_blank" ] [ text (t translations "successStories.actionBtn") ]
+            ]
         ]
 
 
