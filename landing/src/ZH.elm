@@ -24,6 +24,8 @@ translations =
   "successStories": {
     "title": "那些年與我們一起開拓的團隊",
     "actionBtn": "募資頁面",
+    "successfullyCrowdFunding": "成功募資",
+    "unit": "萬日幣",
     "1": {
       "description": "Japan Insider可以提供客製化的服務，協助在日本當地舉辦試用會等，在廣告上也有非常熟悉日本當地操作的成員，對我們在日本的專案很有幫助。"
     },
@@ -71,6 +73,62 @@ translations =
     "5": {
       "question": "可以協助物流處理嗎?",
       "answer": "可以，物流處理有特別優惠的策略合作物流公司，減輕資源有限團隊的負擔。"
+    }
+  },
+  "servicePage": {
+    "content": {
+      "1": {
+        "title": {
+          "japan": "日本",
+          "crowdSource": "群眾募資",
+          "execute": "執行"
+        },
+        "description": "Japan Insider 與各大平台皆有合作，專注於連結後續銷售的群眾募資執行策略。"
+      },
+      "2": {
+        "title": {
+          "amazon": "日本亞馬遜等",
+          "eCommerce": "電商操作"
+        },
+        "description": "操作日本亞馬遜等電商平台，無縫接軌群眾募資後的線上銷售。"
+      },
+      "3": {
+        "title": {
+          "japan": "日本",
+          "brand": "自有品牌",
+          "manage": "網站經營"
+        },
+        "description": "建立團隊自有品牌網站，維持法規、金流、物流等現地營運。"
+      }
+    },
+    "detail": {
+      "title": "不只銷售，更讓您的團隊了解日本市場操作、消費者習性!",
+      "content": {
+        "1": {
+          "stressTitle": "市場定位",
+          "title": "測試",
+          "description": "協助團隊由群眾募資測試市場，由測試結果發展市場定位。"
+        },
+        "2": {
+          "stressTitle": "行銷計畫",
+          "title": "執行",
+          "description": "線上數位廣告、SNS行銷操作、Influencer、PR新聞稿宣傳至少300位媒體等行銷策劃。"
+        },
+        "3": {
+          "stressTitle": "在地內容",
+          "title": "制作",
+          "description": "針對日本市場消費者特性，在地化行銷文案內容、設計、素材。"
+        },
+        "4": {
+          "stressTitle": "物流客服",
+          "title": "策略",
+          "description": "第一線協助團隊與日本消費者的互動、售後服務以及物流、退換貨的處理。"
+        }
+      }
+    },
+    "consult": {
+      "fromCrowdSource": "以群眾募資出發，",
+      "openJapanMarket": "開始日本市場開拓之旅！"
     }
   }
 }

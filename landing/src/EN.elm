@@ -24,6 +24,8 @@ translations =
   "successStories": {
     "title": "Recent crowdfunding success stories",
     "actionBtn": "Funding Page",
+    "successfullyCrowdFunding": "funded",
+    "unit": "Million JPY",
     "1": {
       "description": "Japan Insider can provide customized services, assist in holding trial meetings in Japan, and a lot of sales promotion. They are also very expertise at the digital marketing in Japan for the advertising in different platforms, which is very helpful for our projects in Japan."
     },
@@ -71,6 +73,62 @@ translations =
     "5": {
       "question": "Can you assist with logistics processing?",
       "answer": "Yes, We can assist you based on your requirement to reduce your resource burden."
+    }
+  },
+  "servicePage": {
+    "content": {
+      "1": {
+        "title": {
+          "japan": "Execute",
+          "crowdSource": "Crowdfunding",
+          "execute": "Campaign"
+        },
+        "description": "We worked with all the major platforms and focused at supporting the new product launching in Japan Market"
+      },
+      "2": {
+        "title": {
+          "amazon": "Sell in",
+          "eCommerce": "Amazon Japan or Rakuten"
+        },
+        "description": "Once the crowdfunding campaign is done, we help the product launch the top EC site in Japan for seamless sales promotion"
+      },
+      "3": {
+        "title": {
+          "japan": "Launch",
+          "brand": "D2C",
+          "manage": "(Direct to Customer) site"
+        },
+        "description": "We help you operate and build the product D2C site by integrating the logistics, payment flow and native customer service support"
+      }
+    },
+    "detail": {
+      "title": "A solution to fit most campaigns with data driven strategies.",
+      "content": {
+        "1": {
+          "stressTitle": "Evaluation",
+          "title": "",
+          "description": "Product manager will help you do market research and define the best fit product segments. "
+        },
+        "2": {
+          "stressTitle": "Marketing Strategy",
+          "title": "",
+          "description": "Define the best platform to do digital marketing and work with influencer to get traffic. Publish the press release for the product and promote to more than 300 medias."
+        },
+        "3": {
+          "stressTitle": "Localization Contents",
+          "title": "",
+          "description": "Localize the copy-writing content, design, and materials according to customer feedback."
+        },
+        "4": {
+          "stressTitle": "Logistics and customer support",
+          "title": "",
+          "description": "Assist the team to handle first-line customer interaction, after service, logistics processing and exchange services"
+        }
+      }
+    },
+    "consult": {
+      "fromCrowdSource": "With crowdfunding as the starting point,",
+      "openJapanMarket": "we work with you to grow your brand and business in Japan!"
     }
   }
 }
