@@ -20,6 +20,7 @@ const Article = ({
       <Head>
         <meta property="og:image" content={featuredImageUrl} />
         <meta property="og:title" content={title.rendered} />
+        <meta property="og:description" content={content.rendered} />
         <style
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: stylesheet }}
