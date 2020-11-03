@@ -5,7 +5,7 @@ const RecentPosts = ({ posts }) => (
     <h3>最新文章</h3>
     <ul>
       {posts.map(post => (
-        <li className="title">
+        <li key={post.slug} className="title">
           <a className="link" href={`/post/${post.slug}`}>
             {post.title.rendered}
           </a>

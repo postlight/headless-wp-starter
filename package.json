@@ -7,6 +7,6 @@
   "private": true,
   "scripts": {
     "postinstall": "docker-compose run --rm wp-headless install_wordpress",
-    "start": "docker-compose up"
+    "start": "docker-compose -f docker-compose-local.yml up"
   }
 }
