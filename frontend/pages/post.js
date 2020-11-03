@@ -47,7 +47,6 @@ class Post extends Component {
     wp.posts()
       .embed()
       .then(posts => {
-        console.log(posts);
         this.setState({ recentPosts: posts.slice(0, 9) });
       });
   }
