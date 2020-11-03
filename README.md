@@ -21,6 +21,12 @@ There is no good enough tool to check all required environment variables in this
 npm install
 ```
 
+3. Launch all services
+
+```
+npm start
+```
+
 ### Article Page
 
 Under `frontend` folder, the whole application is built with [next.js](https://github.com/zeit/next.js/).
