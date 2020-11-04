@@ -5,8 +5,6 @@ import Head from 'next/head';
 import stylesheet from '../src/styles/article.scss';
 import RecentPosts from './RecentPosts';
 
-const parser = new DOMParser();
-
 // TODO: Add type for Post
 const Article = ({
   post: { title, content, date, _embedded, excerpt },
@@ -19,7 +17,7 @@ const Article = ({
     matchedImgSrcUrlList && matchedImgSrcUrlList.length
       ? matchedImgSrcUrlList[0]
       : 'https://www.japaninsider.co/assets/images/logo.svg';
-
+  const parser = new DOMParser();
   const excerptDOM = parser.parseFromString(excerpt.rendered);
   return (
     <section className="block">
