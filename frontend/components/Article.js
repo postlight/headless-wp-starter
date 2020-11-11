@@ -17,14 +17,14 @@ const Article = ({
     matchedImgSrcUrlList && matchedImgSrcUrlList.length
       ? matchedImgSrcUrlList[0]
       : 'https://www.japaninsider.co/assets/images/logo.svg';
-  const parser = new DOMParser();
-  const excerptDOM = parser.parseFromString(excerpt.rendered);
+  // const parser = new DOMParser();
+  // const excerptDOM = parser.parseFromString(excerpt.rendered);
   return (
     <section className="block">
       <Head>
         <meta property="og:image" content={featuredImageUrl} />
         <meta property="og:title" content={title.rendered} />
-        <meta property="og:description" content={excerptDOM.body.textContent} />
+        <meta property="og:description" content={excerpt.rendered} />
         <style
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: stylesheet }}
