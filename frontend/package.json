@@ -14,6 +14,7 @@
   "dependencies": {
     "autoprefixer": "9.4.7",
     "axios": "^0.18.0",
+    "disqus-react": "^1.0.10",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "glob": "^7.1.3",
