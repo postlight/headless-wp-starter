@@ -25,6 +25,7 @@ class MyDocument extends Document {
 
           `}</style>
           <script
+            id="mcjs"
             async
             src="https://chimpstatic.com/mcjs-connected/js/users/70f47caaa71d96fe967dfa602/86396a96faf111129774cb674.js"
           />
