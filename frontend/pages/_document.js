@@ -3,6 +3,7 @@
 
 // ./pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import React from 'react';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -23,6 +24,10 @@ class MyDocument extends Document {
             }
 
           `}</style>
+          <script
+            async
+            src="https://chimpstatic.com/mcjs-connected/js/users/70f47caaa71d96fe967dfa602/86396a96faf111129774cb674.js"
+          />
         </Head>
         <body className="custom_class">
           <Main />

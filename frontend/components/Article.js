@@ -2,12 +2,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import Head from 'next/head';
+import { DiscussionEmbed } from 'disqus-react';
 import stylesheet from '../src/styles/article.scss';
 import RecentPosts from './RecentPosts';
+import Config from '../config';
 
 // TODO: Add type for Post
 const Article = ({
-  post: { title, content, date, _embedded, excerpt },
+  post: { id, title, link, content, date, _embedded, excerpt, slug },
   recentPosts,
 }) => {
   const matchedImgSrcUrlList = content.rendered.match(
@@ -51,6 +53,17 @@ const Article = ({
             </span>
           </div>
           <article dangerouslySetInnerHTML={{ __html: content.rendered }} />
+          <div className="disqus">
+            <DiscussionEmbed
+              shortname={Config.DISQUS_SHORT_NAME}
+              config={{
+                url: Config.DISQUS_URL,
+                identifier: id,
+                title: slug,
+                language: 'zh_TW', // e.g. for Traditional Chinese (Taiwan)
+              }}
+            />
+          </div>
         </div>
         <div className="">
           <div className="recentPost">
@@ -121,6 +134,9 @@ const Article = ({
             padding-left: 20px;
             padding-right: 20px;
             margin-bottom: 80px;
+          }
+          .disqus {
+            margin-bottom: 30px;
           }
         `}
       </style>
