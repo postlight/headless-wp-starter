@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { DiscussionEmbed } from 'disqus-react';
 import stylesheet from '../src/styles/article.scss';
@@ -12,6 +12,21 @@ const Article = ({
   post: { id, title, link, content, date, _embedded, excerpt, slug },
   recentPosts,
 }) => {
+  useEffect(() => {
+    // Add mailChamp popup form
+    const script = document.createElement('script');
+
+    script.src =
+      'https://chimpstatic.com/mcjs-connected/js/users/70f47caaa71d96fe967dfa602/86396a96faf111129774cb674.js';
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const matchedImgSrcUrlList = content.rendered.match(
     /(?<=<img src=").*?(?=")/gm,
   );
