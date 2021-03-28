@@ -668,7 +668,7 @@ viewHeader model translations =
                         [ text "EN" ]
                     ]
                 , div [ class "nav-link" ]
-                    [ a [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ] [ text (t translations "top.freeConsult") ]
+                    [ a [ class "consult-btn", href "https://gumo.works/bd", target "_blank" ] [ text (t translations "top.freeConsult") ]
                     , a [ href ("/" ++ currentLocale ++ "/service") ] [ text (t translations "nav.service") ]
                     , a [ href ("/" ++ currentLocale ++ "/cross-border-sourcing") ] [ text (t translations "nav.outsource") ]
                     , a [ href "#faq" ] [ text (t translations "nav.faq") ]
@@ -761,7 +761,7 @@ viewSectionTop translations =
             , h1 [ class "top-title" ] [ text (t translations "top.slogan") ]
             , div [ class "top-section-action-container" ]
                 [ a
-                    [ class "consult-btn", href "https://japaninsider.typeform.com/to/yvsVAD", target "_blank" ]
+                    [ class "consult-btn", href "https://gumo.works/bd", target "_blank" ]
                     [ text (t translations "top.freeConsult") ]
                 , a [ class "know-more-btn", href "#service" ] [ text (t translations "top.knowMoreDetails") ]
                 ]
