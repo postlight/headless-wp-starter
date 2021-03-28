@@ -124,7 +124,19 @@
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
     <!-- Mailchimp Signup Form for cross border sourcing-->
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/70f47caaa71d96fe967dfa602/86396a96faf111129774cb674.js");</script>
+    <script id="mcjs">
+      !(function (c, h, i, m, p) {
+        (m = c.createElement(h)),
+          (p = c.getElementsByTagName(h)[0]),
+          (m.async = 1),
+          (m.src = i),
+          p.parentNode.insertBefore(m, p);
+      })(
+        document,
+        'script',
+        'https://chimpstatic.com/mcjs-connected/js/users/70f47caaa71d96fe967dfa602/86396a96faf111129774cb674.js'
+      );
+    </script>
   </head>
 
   <body>
@@ -141,8 +153,8 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "UA-143548402-1");
+      gtag('js', new Date());
+      gtag('config', 'UA-143548402-1');
     </script>
   </body>
 </html>

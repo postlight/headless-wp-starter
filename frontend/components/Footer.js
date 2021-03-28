@@ -18,6 +18,15 @@ const Footer = () => (
           padding: 33px 0 32px 240px;
         }
 
+        @media screen and (max-width: 768px) {
+          footer {
+            display: flex;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
         .footerInfo {
           color: #ffffff;
           font-size: 1.4rem;

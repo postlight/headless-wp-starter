@@ -8,11 +8,7 @@ const NavBar = () => (
       </figure>
     </a>
     <nav>
-      <a
-        className="consultBtn"
-        href="https://japaninsider.typeform.com/to/yvsVAD"
-        target="_blank"
-      >
+      <a className="consultBtn" href="https://gumo.works/bd" target="_blank">
         免費諮詢
       </a>
       <a href="https://www.japaninsider.co/#service" target="_blank">
@@ -49,6 +45,16 @@ const NavBar = () => (
           top: 0;
           width: 100%;
           z-index: 99;
+        }
+
+        @media screen and (max-width: 768px) {
+          header {
+            flex-direction: column;
+            padding-bottom: 40px;
+          }
+          .logo {
+            margin-top: 20px;
+          }
         }
         .logo {
           height: 40px;
