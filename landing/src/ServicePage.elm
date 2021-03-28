@@ -164,7 +164,7 @@ view translations =
                         , Font.color <| rgb255 255 255 255
                         , centerX
                         ]
-                        { url = "https://japaninsider.typeform.com/to/yvsVAD"
+                        { url = "https://gumo.works/bd"
                         , label = el [ centerX ] <| text (t translations "top.freeConsult")
                         }
                     ]
