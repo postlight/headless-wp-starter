@@ -7,7 +7,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloClient } from 'apollo-boost';
 import { AUTH_TOKEN } from '../constants';
 import Config from '../config';
-import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
+// import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
 
 /**
  * GraphQL page query

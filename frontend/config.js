@@ -7,6 +7,9 @@ if (process.env.HOME === '/home/node') {
 const Config = {
   apiUrl: wpUrl,
   AUTH_TOKEN: 'auth-token',
+  SPORTS_DATA_URL: 'https://delivery.chalk247.com',
+  PROXIED_API_BASE: 'http://localhost:3000/',
+  API_TOKEN: '74db8efa2a6db279393b433d97c2bc843f8e32b0',
   USERNAME: 'username',
 };
 

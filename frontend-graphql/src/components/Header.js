@@ -5,8 +5,8 @@ import { withApollo } from 'react-apollo';
 import { compose } from 'recompose';
 import gql from 'graphql-tag';
 import { AUTH_TOKEN, USERNAME } from '../constants';
-import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
-import { ReactComponent as SearchIcon } from '../static/images/search.svg';
+// import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
+// import { ReactComponent as SearchIcon } from '../static/images/search.svg';
 
 /**
  * GraphQL menu query

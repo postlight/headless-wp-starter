@@ -1,5 +1,7 @@
+const proxy = require('express-http-proxy');
 const express = require('express');
 const next = require('next');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -9,6 +11,27 @@ app
   .prepare()
   .then(() => {
     const server = express();
+
+    const TEAMS_SERVICE_URL = "http://delivery.chalk247.com/team_list/NFL";
+    
+    server.use('/api', createProxyMiddleware({
+      target: TEAMS_SERVICE_URL,
+      changeOrigin: true,
+      pathRewrite: {
+          [`^/api`]: '',
+      },
+   }));
+
+   const RANK_SERVICE_URL = "http://delivery.chalk247.com/team_rankings/NFL";
+
+   server.use('/rankings', createProxyMiddleware({
+    target: RANK_SERVICE_URL,
+    changeOrigin: true,
+    pathRewrite: {
+        [`^/rankings`]: '',
+    },
+ }));
+   
 
     server.get('/post/:slug', (req, res) => {
       const actualPage = '/post';

@@ -1,22 +1,39 @@
-import React from 'react';
+import React from 'react';    
 import Head from 'next/head';
-import tachyons from 'tachyons/css/tachyons.min.css';
-import stylesheet from '../src/styles/style.scss';
+import tailwindcss from '../src/styles/styles.css'
+import parse from 'html-react-parser'
 
-const Header = () => (
-  <Head>
-    <style
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: tachyons }}
-    />
-    <style
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: stylesheet }}
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charSet="utf-8" />
-    <title>WordPress + React Starter Kit Frontend by Postlight</title>
-  </Head>
-);
+const Header = (props) => {
+
+  if ( props.single !== "true" ){
+    var yoastTitle = parse( props.seo_details.title.rendered );
+    var yoastHead = parse( props.seo_details.yoast_head );
+
+  } else {
+
+    var yoastTitle = 'Replace wtih Regex';
+    var yoastHead = '';
+
+  }
+  
+  return (
+  
+    <Head>
+
+      <style
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: tailwindcss }}
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta charSet="utf-8" />
+      <title>{yoastTitle}</title>
+      
+      {yoastHead}
+
+    </Head>
+
+  );
+
+};
 
 export default Header;

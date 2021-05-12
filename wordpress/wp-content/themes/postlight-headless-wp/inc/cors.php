@@ -26,3 +26,32 @@ add_action(
     },
     15
 );
+
+
+add_action(
+    'rest_api_init',
+    function () {
+        register_rest_route( 'api', '/api(?:/(?P<id>\d+))?', [
+            'methods' => WP_REST_Server::READABLE,
+            'args' => [
+                 'id'
+             ],
+         ] );
+    },
+    15
+);
+
+
+add_action(
+    'rest_api_init',
+    function () {
+        register_rest_route( 'rankings', '/rankings(?:/(?P<id>\d+))?', [
+            'methods' => WP_REST_Server::READABLE,
+            'args' => [
+                 'id'
+             ],
+         ] );
+    },
+    15
+);
+

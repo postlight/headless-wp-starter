@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import Config from '../config';
-import Logo from '../static/images/starter-kit-logo.svg';
-import SearchIcon from '../static/images/search.svg';
+// import Logo from '../static/images/starter-kit-logo.svg';
+// import SearchIcon from '../static/images/search.svg';
 
 const getSlug = url => {
   const parts = url.split('/');
@@ -32,92 +32,25 @@ class Menu extends Component {
     }
 
     return (
-      <div className="menu bb">
-        <div className="flex justify-between w-90-l center-l">
-          <div className="brand bb flex justify-center items-center w-100 justify-between-l bn-l">
-            <Link href="/">
-              <a className="starter-kit-logo">
-                <Logo width={48} height={32}/>
-                <div className="pl2">
-                  WordPress + React<br/>
-                  Starter Kit
-                </div>
-              </a>
-            </Link>
-          </div>
-          <div className="links dn flex-l justify-between items-center">
-            {menu.items.map(item => {
-              if (item.object === 'custom') {
-                return (
-                  <a href={item.url} key={item.ID}>{item.title}</a>
-                );
-              }
-              const slug = getSlug(item.url);
-              const actualPage = item.object === 'category' ? 'category' : 'post';
-              return (
-                <Link
-                  as={`/${item.object}/${slug}`}
-                  href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-                  key={item.ID}
-                >
-                  <a>{item.title}</a>
-                </Link>
-              );
-            })}
+      
+<div className="h-24 z-50 relative container mx-auto px-6 grid grid-cols-1">
+    
+    <div className="flex items-center justify-center"><a href="/"
+            className="text-white uppercase font-bold text-sm tracking-widest">ACME Sports - 2021 NFL Overview </a></div>
+    
+</div>
 
-            <Link href="/search">
-              <a>
-                <SearchIcon width={25} height={25} />
-              </a>
-            </Link>
 
-            {token ? (
-              <a
-                className="pointer round-btn ba bw1 pv2 ph3"
-                onClick={() => {
-                  localStorage.removeItem(Config.AUTH_TOKEN);
-                  Router.push('/login');
-                }}
-              >
-                Log out {username}
-              </a>
-            ) : (
-              <Link href="/login">
-                <a className="round-btn ba bw1 pv2 ph3">Log in</a>
-              </Link>
-            )}
-          </div>
-        </div>
-        <div className="dropdown bb flex justify-center items-center dn-l">
-          <select
-            onChange={handleSelectChange}
-          >
-            <option value={false}>Menu</option>
-            {menu.items.map(item => {
-              if (item.object === 'custom') {
-                return (
-                  <option
-                    value={item.url}
-                    key={item.ID}
-                  >
-                    {item.title}
-                  </option>
-                );
-              }
-              const slug = getSlug(item.url);
-              const actualPage = item.object === 'category' ? 'category' : 'post';
-              return (
-                <option
-                  value={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-                  key={item.ID}
-                >
-                  {item.title}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-      </div>
+
+
+
+
+
+
+
+
+      
+      
     );
   }
 }

@@ -6,14 +6,11 @@ import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import Menu from '../components/Menu';
 import Config from '../config';
-import Logo from '../static/images/starter-kit-logo.svg';
+import SportsData, { data } from '../components/SportsData';
+import fetch from 'isomorphic-unfetch';
+import useSWR from 'swr'
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
-
-const headerImageStyle = {
-  marginTop: 50,
-  marginBottom: 50,
-};
 
 const tokenExpired = () => {
   if (process.browser) {
@@ -23,26 +20,32 @@ const tokenExpired = () => {
   Router.push('/login');
 };
 
+
+
 class Index extends Component {
   state = {
     id: '',
   };
-
+  
   static async getInitialProps() {
     try {
-      const [page, posts, pages] = await Promise.all([
+      
+      const [posts, pages, home] = await Promise.all([
+        
+        wp.posts().embed(),
+        wp.pages().embed(),
         wp
           .pages()
-          .slug('welcome')
+          .slug('acme-sports-present-nfl-teams')
           .embed()
           .then(data => {
             return data[0];
-          }),
-        wp.posts().embed(),
-        wp.pages().embed(),
+          })
+          
+
       ]);
 
-      return { page, posts, pages };
+      return { posts, pages, home };
     } catch (err) {
       if (err.data.status === 403) {
         tokenExpired();
@@ -50,6 +53,7 @@ class Index extends Component {
     }
 
     return null;
+
   }
 
   componentDidMount() {
@@ -68,18 +72,20 @@ class Index extends Component {
           }
         });
     }
+    
   }
 
   render() {
     const { id } = this.state;
-    const { posts, pages, headerMenu, page } = this.props;
+    const { posts, pages, headerMenu, home } = this.props;
+
     const fposts = posts.map(post => {
       return (
         <ul key={post.slug}>
           <li>
             <Link
-              as={`/post/${post.slug}`}
-              href={`/post?slug=${post.slug}&apiRoute=post`}
+              as={`/jost/${post.slug}`}
+              href={`/jost?slug=${post.slug}&apiRoute=post`}
             >
               <a>{post.title.rendered}</a>
             </Link>
@@ -94,7 +100,7 @@ class Index extends Component {
             <li>
               <Link
                 as={`/page/${ipage.slug}`}
-                href={`/post?slug=${ipage.slug}&apiRoute=page`}
+                href={`/jost?slug=${ipage.slug}&apiRoute=page`}
               >
                 <a>{ipage.title.rendered}</a>
               </Link>
@@ -103,44 +109,35 @@ class Index extends Component {
         );
       }
     });
+    
+    
 
     return (
-      <Layout>
+      <Layout seo={home} single="false">
+
         <Menu menu={headerMenu} />
-        <div className="intro bg-black white ph3 pv4 ph5-m pv5-l flex flex-column flex-row-l">
-          <div className="color-logo w-50-l mr3-l">
-            <Logo width={440} height={280} />
-          </div>
-          <div className="subhed pr6-l">
-            <h1>{page.title.rendered}</h1>
-            <div className="dek">
-              You are now running a WordPress backend with a React frontend.
-            </div>
-            <div className="api-info b mt4">
-              Starter Kit supports both REST API and GraphQL
-              <div className="api-toggle">
-                <a className="rest" href="http://localhost:3000">REST API</a>
-                <a className="graphql" href="http://localhost:3001">GraphQL</a>
-              </div>
-            </div>
-          </div>
+        
+        
+        <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
+        
+   
+        
         </div>
         <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
-          <div className="w-50 pr3">
-            <h2>Posts</h2>
-            {fposts}
-          </div>
-          <div className="w-50 pl3">
-            <h2>Pages</h2>
-            {fpages}
-          </div>
+          
+          
         </div>
-        <div className="content mh4 mv4 w-two-thirds-l center-l home"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: page.content.rendered,
-          }}
-        />
+    
+        <div className="container container max-w-screen-xl m-auto flex flex-wrap flex-col items-center justify-start">
+                
+                 {/* <AnimatePresence initial={false} exitBeforeEnter>  */}
+                 
+                 <SportsData />
+                  
+                  {/* </AnimatePresence> */}
+
+             </div>
+          
       </Layout>
     );
   }

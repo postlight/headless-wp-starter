@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Flip the footbal helmet svg
+ */ 
+.acme-flip-horizontal{
+
+    transform: scale(-1, 1);
+    opacity: 1;
+
+}
+
+/**
+ * add class names for team primary colours since
+ * tailwindcss will purge inline styles as well as dynamic classes
+ */
+
+ ._default_bg{
+    background-color: #97233F;
+ }
+._97233F{
+background-color: #97233F;
+}
+._A71930{
+background-color: #A71930; 
+}
+._241773{
+background-color: #241773; 
+}
+._00338D{
+background-color: #00338D; 
+}
+._0085CA{
+background-color: #0085CA; 
+}
+._0B162A{
+background-color: #0B162A; 
+}
+._000000{
+background-color: #000000; 
+}
+._FB4F14{
+background-color: #FB4F14; 
+}
+._002244{
+background-color: #002244; 
+}
+._005A8B{
+background-color: #005A8B; 
+}
+._203731{
+background-color: #203731; 
+}
+._03202F{
+background-color: #03202F; 
+}
+._002C5F{
+background-color: #002C5F; 
+}
+._000000{
+background-color: #000000; 
+}
+._E31837{
+background-color: #E31837; 
+}
+._002244{
+background-color: #002244; 
+}
+._008E97{
+background-color: #008E97; 
+}
+._4F2683{
+background-color: #4F2683; 
+}
+._0B2265{
+background-color: #0B2265; 
+}
+._203731{
+background-color: #203731; 
+}
+._002244{
+background-color: #002244; 
+}
+._9F8958{
+background-color: #9F8958; 
+}
+._004953{
+background-color: #004953; 
+}
+._000000{
+background-color: #000000; 
+}
+._AA0000{
+background-color: #AA0000; 
+}
+._002244{
+background-color: #002244; 
+}
+._D50A0A{
+background-color: #D50A0A; 
+}
+._002{
+background-color: #002; 
+}
+

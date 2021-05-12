@@ -8,5 +8,8 @@
   "scripts": {
     "postinstall": "docker-compose run --rm wp-headless install_wordpress",
     "start": "docker-compose up"
+  },
+  "dependencies": {
+    "framer-motion": "^4.1.13"
   }
 }
