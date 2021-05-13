@@ -33,6 +33,11 @@ function SportsData(props) {
    * If a user visits a single team, style it like a featured post, grab the post data,
    * populate the head tags with configurable yoast meta via wordpress dashboard.
    * 
+   * Really would've liked to apply some nice filtering, here.
+   * 
+   * Like, sort by conference, division, rank. Left it an Alphabetical sort().
+   * 
+   * @todo reduce @all to single responsibility. 
    * 
    **/
 
@@ -62,7 +67,11 @@ function SportsData(props) {
 
       <TeamSingle key={team.nickname} team={team} content={props} />
 
-    ));
+    )).sort(function(a, b){
+        if(a.firstname < b.firstname) { return -1; }
+        if(a.firstname > b.firstname) { return 1; }
+        return 0;
+    });
 
     return (   
 

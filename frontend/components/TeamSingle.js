@@ -76,18 +76,30 @@ export const TeamSingle = ( props ) => {
    */
   return (
 <>
-  <div className="text-center grid grid-cols-1 text-4xl text-white p-10">{content}</div> 
-  <div className={"flex items-center m-auto lg:w-9/12 sm:w-11/12 h-auto " + primaryTeamColorClass }>
-    <div className="ml-2 relative w-1/3 top-2 h-24 w-24">
+<div class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+  
+  <div class="h-64 w-auto md:w-1/2">
+    
+    <div className={"relative w-1/3 h-full w-full " + primaryTeamColorClass }>
+
+    
       <img className="absolute w-5/12 top-2 left-2 z-10" src={logoPath} alt={teamName} title={teamName} />
-      <img className="acme-flip-horizontal absolute z-0" src="/static/images/helmet_colors.svg" alt="" />
+      <img className="acme-flip-horizontal absolute z-0" src="/static/images/helmet_colors.svg" alt="" />  
+    </div>
+    
+    </div> <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+      <h1 className="text-8xl font-medium text-gray-900">#{teamRankValue}</h1>
+      <h2 className="text-6xl font-medium text-gray-900" title={teamName}>{teamName}</h2>
       
-    </div>
-    <div className="ml-4 relative w-2/3 h-full bg-white p-5">
-    <div className="text-4xl font-medium text-gray-900">#{teamRankValue}</div>
-      <div className="text-sm font-medium text-gray-900" title={teamName}>{teamName}</div>
-    </div>
-  </div>
+      <p class="mt-2">
+      {content}
+      </p>
+      
+      </div>
+          
+          </div>
+  
+  
   </>
   )
 

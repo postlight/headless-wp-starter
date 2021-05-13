@@ -8,7 +8,7 @@ const Layout = props => {
   const { children } = props;
 
   return (
-    <body className="font-sans text-gray-900 antialiased bg-yellow-500">
+    <body className="font-sans text-gray-900 antialiased bg-black">
       <Header yoast={props}/>
       <main>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
