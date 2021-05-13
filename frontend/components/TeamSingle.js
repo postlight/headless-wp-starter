@@ -1,19 +1,12 @@
 import React from 'react';
-// import { StyleSheet, Text, View } from "react-native";
-import nameToLogoImage from "../utils/utils.js";
+import { nameToLogoImage, filterItems, getSafe, splitSlug } from "../utils/utils.js";
 import Config from '../config';
 import teamColors from '../static/teams/team-colors.json'
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import Router from 'next/router';
 import useSWR from 'swr'
 
-function getSafe(fn, defaultVal) {
-  try {
-      return fn();
-  } catch (e) {
-      return defaultVal;
-  }
-  }
 
 export const TeamSingle = ( props ) => {
 
@@ -21,7 +14,7 @@ export const TeamSingle = ( props ) => {
   const logoName                = nameToLogoImage( props.team.display_name + ' ' + props.team.nickname );
   const teamUrl                 = props.team.display_name.toLowerCase() + '-' + props.team.nickname.toLowerCase();
   const logoPath                  = '/static/images/nfl/' + logoName + '.svg';
-  
+  // console.log( props );
   /**
    * 
    * JBE 
@@ -81,13 +74,13 @@ export const TeamSingle = ( props ) => {
    */
   return (
               
-<Link as={`/teams/team/${teamUrl}`}
-      href={`/teams/team/?slug=${teamUrl}&apiRoute=post`}
+<Link as={`/team/${teamUrl}`}
+      href={`/pages/team/${teamUrl}&apiRoute=page`}
  >
-  <div className={"flex items-center m-3 w-full h-full drop-shadow " + primaryTeamColorClass }>
+  <div className={"flex items-center m-auto lg:w-9/12 sm:w-11/12 h-auto drop-shadow " + primaryTeamColorClass }>
     <div className="ml-2 relative w-1/3 top-2 h-24 w-24 drop-shadow">
-      <img className="absolute w-5/12 top-2 left-2 z-10 rounded-full" src={logoPath} alt={teamName} title={teamName} />
-      <img className="drop-shadow-lg acme-flip-horizontal absolute z-0 rounded-full" src="/static/images/helmet_colors.svg" alt="" />
+      <img className="absolute w-5/12 top-2 left-2 z-10" src={logoPath} alt={teamName} title={teamName} />
+      <img className="drop-shadow-lg acme-flip-horizontal absolute z-0" src="/static/images/helmet_colors.svg" alt="" />
       
     </div>
     <div className="ml-4 relative w-2/3 h-full bg-white p-5">

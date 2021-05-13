@@ -5,11 +5,12 @@ import TeamCard from '../components/TeamCard';
 import TeamSingle from '../components/TeamSingle';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
+import { nameToLogoImage, filterItems, getSafe, searchBySlug } from "../utils/utils.js";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function SportsData() {
   
+  const fetcher = (...args) => fetch(...args).then((res) => res.json())
   const { data, error } = useSWR( Config.PROXIED_API_BASE +'api?api_key=' + Config.API_TOKEN, fetcher );
   
   //lets wait until we get something from the spi give us something here
@@ -36,45 +37,51 @@ function SportsData() {
    **/
 
   const teams = data.results.data.team;
+  // console.log( teams );
 
   if ( location.pathname == '/' ){ 
   
-  var singleTeam = false;
-  var teamCards = teams.map((team) => (
-        
-    <TeamCard key={team.nickname} team={team} singleTeam={singleTeam}  />
-    
-  ))
-
-  } else { 
-  
-  var singleTeam = true;
-  var slugSplit = location.pathname.split("/");
-  var urlSlug = slugSplit[3];
-  var teamName = urlSlug.split("-");
-  var teamSearch = teamName[0];
-  
-  
-  var teamCards = teams.filter(team => team.name.toLowerCase() == teamSearch  ).map(team => (
-      
-      <TeamSingle key={team.nickname} team={team} singleTeam={singleTeam} />
+    var singleTeam = false;
+    var teamCards = teams.map((team) => (
+          
+      <TeamCard key={team.nickname} team={team} />
       
     ));
 
-  }
+    return (   
 
-  return (   
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
+          {teamCards}
+      </div>
 
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
+    );
 
-      <AnimatePresence initial={false} exitBeforeEnter> 
+  } else { 
+  
+    let singleTeam = true;
+    let teamSearch = searchBySlug( location.pathname );
+    let teamCards = teams.filter(team => team.nickname.toLowerCase() == teamSearch  ).map(team => (
+
+      <TeamSingle key={team.nickname} team={team} />
+
+    ));
+
+    return (   
+
+    <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
+
         {teamCards}
-      </AnimatePresence>
 
     </div>
           
 
-  );
+    );
+
+  }
+
+
+
+  
 }
 
 export default SportsData

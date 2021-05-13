@@ -2,16 +2,19 @@ import React from 'react';
 import Head from 'next/head';
 import tailwindcss from '../src/styles/styles.css'
 import parse from 'html-react-parser'
+import useRouter from 'next/router';
+import { reverseSlugName, getSafe } from "../utils/utils.js";
 
 const Header = (props) => {
 
-  if ( props.single !== "true" ){
-    var yoastTitle = parse( props.seo_details.title.rendered );
-    var yoastHead = parse( props.seo_details.yoast_head );
+  if ( typeof props.yoast.post !== "undefined" ) {
+
+    var yoastTitle = parse( props.yoast.post.title.rendered );
+    var yoastHead = parse( props.yoast.post.yoast_head );
 
   } else {
 
-    var yoastTitle = 'Replace wtih Regex';
+    var yoastTitle = reverseSlugName( props.yoast.slug );
     var yoastHead = '';
 
   }

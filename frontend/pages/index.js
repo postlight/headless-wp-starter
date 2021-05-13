@@ -76,7 +76,7 @@ class Index extends Component {
   }
 
   render() {
-    const { id } = this.state;
+    const { id } = this.state; 
     const { posts, pages, headerMenu, home } = this.props;
 
     const fposts = posts.map(post => {
@@ -111,9 +111,9 @@ class Index extends Component {
     });
     
     
-
+    // console.log( home );
     return (
-      <Layout seo={home} single="false">
+      <Layout post={home}>
 
         <Menu menu={headerMenu} />
         

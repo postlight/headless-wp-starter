@@ -8,23 +8,70 @@
  * @param {string} name
  * @returns {string} id
  */
-export default function nameToLogoImage(name) {
+export function nameToLogoImage(name) {
     return name.replace(/\s+/g, '-').toLowerCase()
 }
 
 /**
  * Filter array items based on search criteria (query)
  */
-function filterItems(arr, query) {
+export function filterItems(arr, query) {
     return arr.filter(function(el) {
         return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
     })
   }
 
-function getSafe(fn, defaultVal) {
-try {
-    return fn();
-} catch (e) {
-    return defaultVal;
+/**
+ * 
+ * @author JBE
+ * 
+ * make sure undefined, goes away. for now.
+ * 
+ */
+export function getSafe(fn, defaultVal) {
+    try {
+        return fn();
+    } catch (e) {
+        return defaultVal;
+    }
 }
+
+export function setSlugFromTeam( displayNickName ){
+
+    // console.log( displayNickName.replace( /%20/g, '-') );
+    return displayNickName.replace( ' ', '-').toLowerCase();
+
 }
+
+export function searchBySlug( path ){
+
+    var slugs = path.split("/");
+    //get the last item from the slug
+    var teamSlug = setSlugFromTeam( slugs[2] );
+    var teamName = teamSlug.split("-");
+    
+    return teamName[ teamName.length - 1 ];
+
+
+} 
+
+export function reverseTeamName(path){
+
+    let seoSplitter = path.split('/');
+    var teamSlug = setSlugFromTeam( seoSplitter[2] ).replace( "-", " " ).replace(/(^|\s)\S/g, l => l.toUpperCase());
+    return teamSlug;
+
+
+}
+
+export function reverseSlugName(slug){
+
+    var teamSlug = setSlugFromTeam( slug ).replace( "-", " " ).replace(/(^|\s)\S/g, l => l.toUpperCase());
+    return teamSlug;
+
+
+}
+
+
+
+export default { nameToLogoImage, filterItems, getSafe, searchBySlug, reverseTeamName, reverseSlugName }
