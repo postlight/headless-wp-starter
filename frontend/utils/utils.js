@@ -38,7 +38,6 @@ export function getSafe(fn, defaultVal) {
 
 export function setSlugFromTeam( displayNickName ){
 
-    // console.log( displayNickName.replace( /%20/g, '-') );
     return displayNickName.replace( ' ', '-').toLowerCase();
 
 }
@@ -72,6 +71,4 @@ export function reverseSlugName(slug){
 
 }
 
-
-
-export default { nameToLogoImage, filterItems, getSafe, searchBySlug, reverseTeamName, reverseSlugName }
+export default { nameToLogoImage, filterItems, getSafe, searchBySlug, reverseTeamName, reverseSlugName}

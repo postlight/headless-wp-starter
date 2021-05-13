@@ -6,11 +6,7 @@ import Link from 'next/link';
 
 const Layout = props => {
   const { children } = props;
-  // let seo_home = props;
-  console.log( 'all my children');
-  console.log( props )
 
-  
   return (
     <body className="font-sans text-gray-900 antialiased bg-yellow-500">
       <Header yoast={props}/>

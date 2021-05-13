@@ -110,8 +110,6 @@ class Index extends Component {
       }
     });
     
-    
-    // console.log( home );
     return (
       <Layout post={home}>
 

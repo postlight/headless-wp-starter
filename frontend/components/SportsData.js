@@ -8,12 +8,12 @@ import { AnimatePresence } from 'framer-motion';
 import { nameToLogoImage, filterItems, getSafe, searchBySlug } from "../utils/utils.js";
 import Link from 'next/link';
 
-function SportsData() {
+function SportsData(props) {
   
   const fetcher = (...args) => fetch(...args).then((res) => res.json())
   const { data, error } = useSWR( Config.PROXIED_API_BASE +'api?api_key=' + Config.API_TOKEN, fetcher );
-  
-  //lets wait until we get something from the spi give us something here
+
+  //lets wait until we get something from the api gives us something here
   if (error) return ''
   if (!data) return ''
 
@@ -37,7 +37,6 @@ function SportsData() {
    **/
 
   const teams = data.results.data.team;
-  // console.log( teams );
 
   if ( location.pathname == '/' ){ 
   
@@ -61,7 +60,7 @@ function SportsData() {
     let teamSearch = searchBySlug( location.pathname );
     let teamCards = teams.filter(team => team.nickname.toLowerCase() == teamSearch  ).map(team => (
 
-      <TeamSingle key={team.nickname} team={team} />
+      <TeamSingle key={team.nickname} team={team} content={props} />
 
     ));
 

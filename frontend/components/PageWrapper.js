@@ -25,12 +25,7 @@ const PageWrapper = Comp =>
       };
     }
 
-    render() {
-
-      // var slugSplit = location.pathname.split("/");
-      // var urlSlug = slugSplit[3];
-      // console.log( urlSlug );
-      
+    render() {     
       return <Comp {...this.props} />;
     }
   };

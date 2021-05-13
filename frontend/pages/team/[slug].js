@@ -55,14 +55,14 @@ class singlePost extends Component {
   render() {
     
     const { singlePost, headerMenu, slugNew } = this.props;
-    
+
     return (
 
       <Layout post={singlePost} slug={slugNew}>
         
         <Menu menu={headerMenu} />
-    
-          <SportsData single="true" />
+      
+          <SportsData single="true" post={singlePost}/>
       
         </Layout>
     );
