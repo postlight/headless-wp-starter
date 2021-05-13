@@ -6,7 +6,7 @@ import TeamSingle from '../components/TeamSingle';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { nameToLogoImage, filterItems, getSafe, searchBySlug } from "../utils/utils.js";
-
+import Link from 'next/link';
 
 function SportsData() {
   
@@ -49,7 +49,6 @@ function SportsData() {
     ));
 
     return (   
-
       <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
           {teamCards}
       </div>
@@ -69,7 +68,9 @@ function SportsData() {
     return (   
 
     <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
-
+    <div className="text-center grid grid-cols-1 text-4xl text-white p-10">
+    <Link href={`/`} >Back to Teams</Link>  
+    </div>
         {teamCards}
 
     </div>

@@ -6,6 +6,7 @@ import WPAPI from 'wpapi';
 import Config from '../../config';
 import Router from 'next/router';
 import Error from 'next/error';
+import Link from 'next/link';
 /**
  * PageWrapper, Menu if needed, inital SportsData, Layout
  */
@@ -58,7 +59,7 @@ class singlePost extends Component {
     return (
 
       <Layout post={singlePost} slug={slugNew}>
-
+        
         <Menu menu={headerMenu} />
     
           <SportsData single="true" />

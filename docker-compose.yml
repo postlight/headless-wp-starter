@@ -40,15 +40,3 @@ services:
         volumes:
             - ./frontend:/home/node/app
         working_dir: /home/node/app
-    frontend-graphql:
-        command: bash -c 'yarn && yarn start'
-        container_name: frontend-graphql
-        expose:
-            - '3001'
-        image: node
-        ports:
-            - '3001:3001'
-        user: node
-        volumes:
-            - ./frontend-graphql:/home/node/app
-        working_dir: /home/node/app
