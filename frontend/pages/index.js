@@ -77,64 +77,22 @@ class Index extends Component {
 
   render() {
     const { id } = this.state; 
-    const { posts, pages, headerMenu, home } = this.props;
-
-    const fposts = posts.map(post => {
-      return (
-        <ul key={post.slug}>
-          <li>
-            <Link
-              as={`/jost/${post.slug}`}
-              href={`/jost?slug=${post.slug}&apiRoute=post`}
-            >
-              <a>{post.title.rendered}</a>
-            </Link>
-          </li>
-        </ul>
-      );
-    });
-    const fpages = pages.map(ipage => {
-      if (ipage.slug !== 'welcome') {
-        return (
-          <ul key={ipage.slug}>
-            <li>
-              <Link
-                as={`/page/${ipage.slug}`}
-                href={`/jost?slug=${ipage.slug}&apiRoute=page`}
-              >
-                <a>{ipage.title.rendered}</a>
-              </Link>
-            </li>
-          </ul>
-        );
-      }
-    });
+    const { headerMenu, home } = this.props;
     
     return (
       <Layout post={home}>
 
         <Menu menu={headerMenu} />
-        
-        
-        <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
-        
-   
-        
-        </div>
-        <div className="recent flex mh4 mv4 w-two-thirds-l center-l">
-          
-          
-        </div>
     
         <div className="container container max-w-screen-xl m-auto flex flex-wrap flex-col items-center justify-start">
                 
-                 {/* <AnimatePresence initial={false} exitBeforeEnter>  */}
-                 
-                 <SportsData />
-                  
-                  {/* </AnimatePresence> */}
+          {/* <AnimatePresence initial={false} exitBeforeEnter>  */}
+          
+          <SportsData />
+          
+          {/* </AnimatePresence> */}
 
-             </div>
+        </div>
           
       </Layout>
     );
