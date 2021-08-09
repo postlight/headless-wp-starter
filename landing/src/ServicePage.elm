@@ -35,7 +35,7 @@ view translations =
                         [ text (t translations "servicePagcontent.1.description")
                         ]
                     , image []
-                        { src = "%PUBLIC_URL%/assets/images/japan-crd-servicsvg"
+                        { src = "%PUBLIC_URL%/assets/images/japan-crd-service.svg"
                         , description = "crowd sourcing partners"
                         }
                     ]
