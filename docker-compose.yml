@@ -33,7 +33,7 @@ services:
         container_name: frontend
         expose:
             - '3000'
-        image: node
+        image: node:14
         ports:
             - '3000:3000'
         user: node
@@ -45,7 +45,7 @@ services:
         container_name: frontend-graphql
         expose:
             - '3001'
-        image: node
+        image: node:14
         ports:
             - '3001:3001'
         user: node
