@@ -48,6 +48,8 @@ _Optional:_ you can run the frontend locally while WordPress still runs on Docke
 
 Once the containers are running, you can visit the React frontends and backend WordPress admin in your browser.
 
+Run without installation [![TeamCode try-it-now](https://static01.teamcode.com/badge/demo.svg)](https://www.teamcode.com/tin/clone?applicationId=273434815208255488)
+
 ## Frontend
 
 This starter kit provides two frontend containers:
