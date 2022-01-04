@@ -21,7 +21,7 @@ then
     exit
 fi
 
-wp core download --force
+wp core download --skip-content --force
 
 [ -f wp-config.php ] || wp config create \
     --dbhost="$WORDPRESS_DB_HOST" \
@@ -41,9 +41,7 @@ wp option update blogdescription "$WORDPRESS_DESCRIPTION"
 wp rewrite structure "$WORDPRESS_PERMALINK_STRUCTURE"
 
 wp theme activate postlight-headless-wp
-wp theme delete twentysixteen twentyseventeen twentynineteen twentytwenty
 
-wp plugin delete akismet hello
 wp plugin install --activate --force \
     acf-to-wp-api \
     advanced-custom-fields \
