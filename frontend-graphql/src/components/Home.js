@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { withApollo } from 'react-apollo';
-import gql from 'graphql-tag';
+import { withApollo } from '@apollo/client/react/hoc';
 import { Link } from 'react-router-dom';
-import { createHttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { ApolloClient } from 'apollo-boost';
+import {
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+  gql,
+} from '@apollo/client';
 import { AUTH_TOKEN } from '../constants';
 import Config from '../config';
 import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
@@ -14,8 +16,8 @@ import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
  * Gets page's title and content using slug as uri
  */
 const PAGE_QUERY = gql`
-  query PageQuery($uri: String!) {
-    pageBy(uri: $uri) {
+  query PageQuery($uri: ID!) {
+    page(id: $uri, idType: URI) {
       title
       content
     }
@@ -62,18 +64,20 @@ const PROTECTED_QUERY = gql`
 `;
 
 class Home extends Component {
-  state = {
-    userId: null,
-    page: {
-      title: '',
-      content: '',
-    },
-    pages: [],
-    posts: [],
-  };
-
   // used as a authenticated GraphQL client
   authClient = null;
+
+  constructor() {
+    super();
+    this.state = {
+      page: {
+        title: '',
+        content: '',
+      },
+      pages: [],
+      posts: [],
+    };
+  }
 
   componentDidMount() {
     this.executePageQuery();
@@ -101,17 +105,14 @@ class Home extends Component {
    */
   executeProtectedQuery = async () => {
     let error = null;
-    const result = await this.authClient
+    await this.authClient
       .query({
         query: PROTECTED_QUERY,
       })
-      .catch(err => {
+      .catch((err) => {
         error = err;
       });
-    if (!error) {
-      const { userId } = result.data.viewer;
-      this.setState({ userId });
-    } else {
+    if (error) {
       const { history } = this.props;
       localStorage.removeItem(AUTH_TOKEN);
       history.push(`/login`);
@@ -131,7 +132,7 @@ class Home extends Component {
       query: PAGE_QUERY,
       variables: { uri },
     });
-    const page = result.data.pageBy;
+    const { page } = result.data;
     this.setState({ page });
   };
 
@@ -144,17 +145,15 @@ class Home extends Component {
       query: PAGES_AND_CATEGORIES_QUERY,
     });
     let posts = result.data.posts.edges;
-    posts = posts.map(post => {
+    posts = posts.map((post) => {
       const finalLink = `/post/${post.node.slug}`;
-      const modifiedPost = { ...post };
-      modifiedPost.node.link = finalLink;
+      const modifiedPost = { ...post, node: { ...post.node, link: finalLink } };
       return modifiedPost;
     });
     let pages = result.data.pages.edges;
-    pages = pages.map(page => {
+    pages = pages.map((page) => {
       const finalLink = `/page/${page.node.slug}`;
-      const modifiedPage = { ...page };
-      modifiedPage.node.link = finalLink;
+      const modifiedPage = { ...page, node: { ...page.node, link: finalLink } };
       return modifiedPage;
     });
 
@@ -177,8 +176,12 @@ class Home extends Component {
             <div className="api-info b mt4">
               Starter Kit supports both REST API and GraphQL
               <div className="api-toggle">
-                <a className="rest" href="http://localhost:3000">REST API</a>
-                <a className="graphql" href="http://localhost:3001">GraphQL</a>
+                <a className="rest" href="http://localhost:3000">
+                  REST API
+                </a>
+                <a className="graphql" href="http://localhost:3001">
+                  GraphQL
+                </a>
               </div>
             </div>
           </div>
@@ -187,11 +190,9 @@ class Home extends Component {
           <div className="w-50 pr3">
             <h2>Posts</h2>
             <ul>
-              {posts.map(post => (
+              {posts.map((post) => (
                 <li key={post.node.slug}>
-                  <Link to={post.node.link}>
-                    {post.node.title}
-                  </Link>
+                  <Link to={post.node.link}>{post.node.title}</Link>
                 </li>
               ))}
             </ul>
@@ -199,23 +200,21 @@ class Home extends Component {
           <div className="w-50 pl3">
             <h2>Pages</h2>
             <ul>
-              {pages.map(post => {
+              {pages.map((post) => {
                 if (post.node.slug !== 'welcome') {
                   return (
                     <li key={post.node.slug}>
-                      <Link to={post.node.link}>
-                        {post.node.title}
-                      </Link>
+                      <Link to={post.node.link}>{post.node.title}</Link>
                     </li>
-                  )
-                } else {
-                  return false;
+                  );
                 }
+                return false;
               })}
             </ul>
           </div>
         </div>
-        <div className="content mh4 mv4 w-two-thirds-l center-l home"
+        <div
+          className="content mh4 mv4 w-two-thirds-l center-l home"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: page.content,

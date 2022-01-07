@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { withApollo } from 'react-apollo';
-import gql from 'graphql-tag';
+import { withApollo } from '@apollo/client/react/hoc';
+import { gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
 /**
@@ -33,12 +33,15 @@ const CATEGORY_QUERY = gql`
  * Fetch and display a Category
  */
 class Category extends Component {
-  state = {
-    category: {
-      name: '',
-      posts: [],
-    },
-  };
+  constructor() {
+    super();
+    this.state = {
+      category: {
+        name: '',
+        posts: [],
+      },
+    };
+  }
 
   componentDidMount() {
     this.executeCategoryQuery();
@@ -58,8 +61,7 @@ class Category extends Component {
     let posts = result.data.posts.edges;
     posts = posts.map(post => {
       const finalLink = `/post/${post.node.slug}`;
-      const modifiedPost = { ...post };
-      modifiedPost.node.link = finalLink;
+      const modifiedPost = { ...post, node: { ...post.node, link: finalLink } };
       return modifiedPost;
     });
 
@@ -79,12 +81,10 @@ class Category extends Component {
         <div className="flex mt2 items-start">
           <div className="flex items-center" />
           <div className="ml1">
-            {category.posts.map((post, index) => (
+            {category.posts.map(post => (
               <div key={post.node.slug}>
                 <h2 className="mt5">
-                  <Link to={post.node.link}>
-                    {post.node.title}
-                  </Link>
+                  <Link to={post.node.link}>{post.node.title}</Link>
                 </h2>
                 <div
                   className="mv4"

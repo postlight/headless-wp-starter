@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import { withApollo } from 'react-apollo';
-import gql from 'graphql-tag';
+import { withApollo } from '@apollo/client/react/hoc';
+import { gql } from '@apollo/client';
 
 /**
  * GraphQL post query that takes a post slug as a filter
  * Returns the title, content and author of the post
  */
 const POST_QUERY = gql`
-  query PostQuery($filter: String!) {
-    postBy(slug: $filter) {
+  query PostQuery($filter: ID!) {
+    post(id: $filter, idType: SLUG) {
       title
       content
       author {
-        nickname
+        node {
+          name
+        }
       }
     }
   }
@@ -22,15 +24,20 @@ const POST_QUERY = gql`
  * Fetch and display a Post
  */
 class Post extends Component {
-  state = {
-    post: {
-      title: '',
-      content: '',
-      author: {
-        nickname: '',
+  constructor() {
+    super();
+    this.state = {
+      post: {
+        title: '',
+        content: '',
+        author: {
+          node: {
+            name: '',
+          },
+        },
       },
-    },
-  };
+    };
+  }
 
   componentDidMount() {
     this.executePostQuery();
@@ -46,14 +53,16 @@ class Post extends Component {
       query: POST_QUERY,
       variables: { filter },
     });
-    const post = result.data.postBy;
+    const { post } = result.data;
     this.setState({ post });
   };
 
   render() {
     const { post } = this.state;
     return (
-      <div className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id} post-type-post`}>
+      <div
+        className={`content mh4 mv4 w-two-thirds-l center-l post-${post.id} post-type-post`}
+      >
         <h1>{post.title}</h1>
         <div
           // eslint-disable-next-line react/no-danger

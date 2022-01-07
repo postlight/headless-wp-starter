@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import { withApollo } from 'react-apollo';
+import { withApollo } from '@apollo/client/react/hoc';
 import { compose } from 'recompose';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { AUTH_TOKEN, USERNAME } from '../constants';
 import { ReactComponent as Logo } from '../static/images/starter-kit-logo.svg';
 import { ReactComponent as SearchIcon } from '../static/images/search.svg';
@@ -26,9 +26,12 @@ const MENU_QUERY = gql`
 const isInternal = urltype => urltype.includes('internal');
 
 class Header extends Component {
-  state = {
-    menus: [],
-  };
+  constructor() {
+    super();
+    this.state = {
+      menus: [],
+    };
+  }
 
   componentDidMount() {
     this.executeMenu();
@@ -54,13 +57,11 @@ class Header extends Component {
       <div className="menu bb">
         <div className="flex justify-between w-90-l center-l">
           <div className="brand bb flex justify-center items-center w-100 justify-between-l bn-l">
-            <Link
-              to="/"
-              className="starter-kit-logo"
-            >
-              <Logo width={48} height={32}/>
+            <Link to="/" className="starter-kit-logo">
+              <Logo width={48} height={32} />
               <div className="pl2">
-                WordPress + React<br/>
+                WordPress + React
+                <br />
                 Starter Kit
               </div>
             </Link>
@@ -105,22 +106,15 @@ class Header extends Component {
                 Log out {localStorage.getItem(USERNAME)}
               </a>
             ) : (
-              <Link
-                to="/login"
-                className="round-btn ba bw1 pv2 ph3"
-              >
+              <Link to="/login" className="round-btn ba bw1 pv2 ph3">
                 Log in
               </Link>
             )}
           </div>
         </div>
       </div>
-
     );
   }
 }
 
-export default compose(
-  withRouter,
-  withApollo,
-)(Header);
+export default compose(withRouter, withApollo)(Header);

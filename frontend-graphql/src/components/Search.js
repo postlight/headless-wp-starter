@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { withApollo } from 'react-apollo';
-import gql from 'graphql-tag';
+import { withApollo } from '@apollo/client/react/hoc';
+import { gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
 /**
  * GraphQL post search query that takes a filter
@@ -14,7 +14,9 @@ const POST_SEARCH_QUERY = gql`
           title
           slug
           author {
-            nickname
+            node {
+              name
+            }
           }
         }
       }
@@ -26,12 +28,15 @@ const POST_SEARCH_QUERY = gql`
  * Search component that fetches results by filter
  */
 class Search extends Component {
-  state = {
-    posts: [],
-    filter: '',
-  };
+  constructor() {
+    super();
+    this.state = {
+      posts: [],
+      filter: '',
+    };
+  }
 
-  handleKeyDown = e => {
+  handleKeyDown = (e) => {
     if (e.keyCode === 13) {
       this.executeSearch();
     }
@@ -53,10 +58,12 @@ class Search extends Component {
         variables: { filter },
       });
       posts = result.data.posts.edges;
-      posts = posts.map(post => {
+      posts = posts.map((post) => {
         const finalLink = `/post/${post.node.slug}`;
-        const modifiedPost = { ...post };
-        modifiedPost.node.link = finalLink;
+        const modifiedPost = {
+          ...post,
+          node: { ...post.node, link: finalLink },
+        };
         return modifiedPost;
       });
       this.setState({ posts });
@@ -73,7 +80,7 @@ class Search extends Component {
             className="db w-100 pa3 mv3 br6 ba b--black"
             type="text"
             placeholder="Search by name and content"
-            onChange={e => this.setState({ filter: e.target.value })}
+            onChange={(e) => this.setState({ filter: e.target.value })}
             onKeyDown={this.handleKeyDown}
           />
           <button
