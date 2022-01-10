@@ -21,7 +21,7 @@
     "postcss-easy-import": "^3.0.0",
     "react": "^16.7.0",
     "tachyons": "^4.11.1",
-    "wpapi": "^1.2.1"
+    "wpapi": "^1.2.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
