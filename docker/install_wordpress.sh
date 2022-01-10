@@ -29,6 +29,9 @@ wp core download --force
     --dbuser="$WORDPRESS_DB_USER" \
     --dbpass="$WORDPRESS_DB_PASSWORD"
 
+wp config set JWT_AUTH_SECRET_KEY 'your-secret-here'
+wp config set GRAPHQL_JWT_AUTH_SECRET_KEY 'your-secret-here'
+
 wp core install \
     --url="$WORDPRESS_URL" \
     --title="$WORDPRESS_TITLE" \
