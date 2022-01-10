@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Mutation } from 'react-apollo';
-import gql from 'graphql-tag';
+import { Mutation } from '@apollo/client/react/components';
+import { gql } from '@apollo/client';
 import { AUTH_TOKEN, USERNAME } from '../constants';
 
 /**
@@ -32,11 +32,14 @@ const LOGIN_MUTATION = gql`
  * Login component that uses a graphql mutation
  */
 class Login extends Component {
-  state = {
-    username: '',
-    password: '',
-    message: '',
-  };
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      message: '',
+    };
+  }
 
   confirm = async data => {
     const { history } = this.props;
@@ -62,9 +65,19 @@ class Login extends Component {
       <div className="content login mh4 mv4 w-two-thirds-l center-l">
         <div>
           <h1>Log in</h1>
-          <p>Starter Kit allows you to log in via the JavaScript frontend, meaning you can interact with the backend without gaining admin access.</p>
-          <p><strong>Log in to view hidden posts only available to authenticated users.</strong></p>
-          <p className="message mb3"><strong>{message}</strong></p>
+          <p>
+            Starter Kit allows you to log in via the JavaScript frontend,
+            meaning you can interact with the backend without gaining admin
+            access.
+          </p>
+          <p>
+            <strong>
+              Log in to view hidden posts only available to authenticated users.
+            </strong>
+          </p>
+          <p className="message mb3">
+            <strong>{message}</strong>
+          </p>
           <input
             className="db w-100 pa3 mv3 br6 ba b--black"
             value={username}
@@ -86,8 +99,12 @@ class Login extends Component {
             onError={() => this.handleError()}
           >
             {mutation => (
-              <button className="round-btn invert ba bw1 pv2 ph3" type="button" onClick={mutation}>
-                {'Log in'}
+              <button
+                className="round-btn invert ba bw1 pv2 ph3"
+                type="button"
+                onClick={mutation}
+              >
+                Log in
               </button>
             )}
           </Mutation>

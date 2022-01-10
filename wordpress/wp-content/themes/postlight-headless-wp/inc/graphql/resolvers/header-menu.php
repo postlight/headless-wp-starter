@@ -1,40 +1,37 @@
 <?php
+
 /**
  * Header Menu GraphQL resolver.
  *
  * @package Postlight_Headless_WP
  */
 
-use \WPGraphQL\Types;
-use \WPGraphQL\Type\WPObjectType;
-
-require_once __DIR__ . '/../types/class-headermenutype.php';
-
 /**
  * Get header menu items
  */
-function get_items() {
+function get_items()
+{
     $counter    = 0;
-    $menu_items = wp_get_nav_menu_items( 'Header Menu' );
-    foreach ( $menu_items as $item ) {
-        $url_arr = explode( '/', $item->url );
-        $slug    = $url_arr[ count( $url_arr ) - 2 ];
+    $menu_items = wp_get_nav_menu_items('Header Menu');
+    foreach ($menu_items as $item) {
+        $url_arr = explode('/', $item->url);
+        $slug    = $url_arr[count($url_arr) - 2];
 
-        $resolve[ $counter ]['label'] = $item->title;
-        $resolve[ $counter ]['type']  = 'internal';
-        switch ( $item->object ) {
+        $resolve[$counter]['label'] = $item->title;
+        $resolve[$counter]['type']  = 'internal';
+        switch ($item->object) {
             case 'post':
-                $resolve[ $counter ]['url'] = '/post/' . $slug;
+                $resolve[$counter]['url'] = '/post/' . $slug;
                 break;
             case 'category':
-                $resolve[ $counter ]['url'] = '/category/' . $slug;
+                $resolve[$counter]['url'] = '/category/' . $slug;
                 break;
             case 'page':
-                $resolve[ $counter ]['url'] = '/page/' . $slug;
+                $resolve[$counter]['url'] = '/page/' . $slug;
                 break;
             case 'custom':
-                $resolve[ $counter ]['url']  = $item->url;
-                $resolve[ $counter ]['type'] = 'external';
+                $resolve[$counter]['url']  = $item->url;
+                $resolve[$counter]['type'] = 'external';
                 break;
             default:
                 break;
@@ -52,12 +49,25 @@ add_action(
             'RootQuery',
             'headerMenu',
             array(
-                'type'        => Types::list_of( new HeaderMenuType() ),
-                'description' => __( 'Returns the header menu items', 'postlight-headless-wp' ),
+                'type'        =>  ['list_of' => 'HeaderMenuType'],
+                'description' => __('Returns the header menu items', 'postlight-headless-wp'),
                 'resolve'     => function () {
                     return get_items();
                 },
             )
         );
+        register_graphql_object_type('HeaderMenuType', [
+            'fields' => [
+                'label' => [
+                    'type' => 'String'
+                ],
+                'type' => [
+                    'type' => 'String'
+                ],
+                'url' => [
+                    'type' => 'String'
+                ],
+            ],
+        ]);
     }
 );

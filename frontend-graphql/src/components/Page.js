@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { withApollo } from 'react-apollo';
-import gql from 'graphql-tag';
+import { withApollo } from '@apollo/client/react/hoc';
+import { gql } from '@apollo/client';
 
 /**
  * GraphQL page query that takes a page slug as a uri
  * Returns the title and content of the page
  */
 const PAGE_QUERY = gql`
-  query PageQuery($uri: String!) {
-    pageBy(uri: $uri) {
-      pageId
+  query PageQuery($uri: ID!) {
+    page(id: $uri, idType: URI) {
+      databaseId
       title
       content
     }
@@ -20,12 +20,15 @@ const PAGE_QUERY = gql`
  * Fetch and display a Page
  */
 class Page extends Component {
-  state = {
-    page: {
-      title: '',
-      content: '',
-    },
-  };
+  constructor() {
+    super();
+    this.state = {
+      page: {
+        title: '',
+        content: '',
+      },
+    };
+  }
 
   componentDidMount() {
     this.executePageQuery();
@@ -44,14 +47,16 @@ class Page extends Component {
       query: PAGE_QUERY,
       variables: { uri },
     });
-    const page = result.data.pageBy;
+    const { page } = result.data;
     this.setState({ page });
   };
 
   render() {
     const { page } = this.state;
     return (
-      <div className={`content mh4 mv4 w-two-thirds-l center-l post-${page.pageId}`}>
+      <div
+        className={`content mh4 mv4 w-two-thirds-l center-l post-${page.databaseId}`}
+      >
         <div
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
