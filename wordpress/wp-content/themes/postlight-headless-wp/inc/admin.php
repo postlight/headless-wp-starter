@@ -46,6 +46,9 @@ function set_headless_preview_link( $link ) {
 
 add_filter( 'preview_post_link', 'set_headless_preview_link' );
 
+add_filter( 'post_link', 'set_headless_preview_link' );
+add_filter( 'page_link', 'set_headless_preview_link' );
+
 /**
  * Includes preview link in post data for a response.
  *
