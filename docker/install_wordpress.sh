@@ -44,7 +44,7 @@ wp option update blogdescription "$WORDPRESS_DESCRIPTION"
 wp rewrite structure "$WORDPRESS_PERMALINK_STRUCTURE"
 
 wp theme activate postlight-headless-wp
-wp theme delete twentynineteen twentytwenty twentytwentyone
+wp theme delete twentytwenty twentytwentyone twentytwentytwo
 
 wp plugin delete akismet hello
 wp plugin install --activate --force \
@@ -56,6 +56,7 @@ wp plugin install --activate --force \
     jwt-authentication-for-wp-rest-api \
     wp-graphql \
     https://github.com/wp-graphql/wp-graphql-jwt-authentication/archive/refs/tags/v0.4.1.zip \
+    https://github.com/wp-graphql/wp-graphql-acf/archive/master.zip \
     /var/www/plugins/*.zip
 
 wp term update category 1 --name="Sample Category"
