@@ -34,8 +34,8 @@ class Preview extends Component {
       postUrl,
       { credentials: 'include' }, // required for cookie nonce auth
     )
-      .then((res) => res.json())
-      .then((res) => {
+      .then(res => res.json())
+      .then(res => {
         this.setState({
           post: res,
         });
