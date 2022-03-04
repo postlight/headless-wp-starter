@@ -7,10 +7,8 @@ import Menu from '../components/Menu';
 import Config from '../config';
 
 class Preview extends Component {
-  static async getInitialProps(context) {
-    const { id, rev, type, status, wpnonce } = context.query;
-    const url = { query: { id, rev, type, status, wpnonce } };
-    return { url };
+  static async getInitialProps({ query }) {
+    return { url: { query } };
   }
 
   constructor() {
@@ -28,7 +26,7 @@ class Preview extends Component {
 
     // checking if the post/page is a draft or a revision.
     let postUrl = `${Config.apiUrl}/wp/v2/${type}s/${id}/revisions/${rev}?_wpnonce=${wpnonce}`;
-    if( status === 'draft' ) {
+    if (status === 'draft') {
       postUrl = `${Config.apiUrl}/wp/v2/${type}s/${rev}?_wpnonce=${wpnonce}`;
     }
 
@@ -36,8 +34,8 @@ class Preview extends Component {
       postUrl,
       { credentials: 'include' }, // required for cookie nonce auth
     )
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         this.setState({
           post: res,
         });
