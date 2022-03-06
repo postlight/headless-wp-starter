@@ -1,5 +1,6 @@
 module Main exposing (init, view)
 
+import AboutPage
 import Asset
 import Browser
 import Browser.Navigation as Nav
@@ -632,44 +633,44 @@ viewHeader model translations =
                     ]
                 ]
             , div [ class "nav-link-wrapper" ]
-                [ div [ class "lang-toggle" ]
-                    [ a
-                        [ class
-                            (if currentLocale == "zh" then
-                                "selected"
-
-                             else
-                                ""
-                            )
-                        , href "/zh"
-                        ]
-                        [ text "TW" ]
-                    , a
-                        [ class
-                            (if currentLocale == "jp" then
-                                "selected"
-
-                             else
-                                ""
-                            )
-                        , href "/jp"
-                        ]
-                        [ text "JP" ]
-                    , a
-                        [ class
-                            (if currentLocale == "en" then
-                                "selected"
-
-                             else
-                                ""
-                            )
-                        , href "/en"
-                        ]
-                        [ text "EN" ]
-                    ]
-                , div [ class "nav-link" ]
+                [ -- Temporarily commented out language toggle
+                  --     div [ class "lang-toggle" ]
+                  --     [ a
+                  --         [ class
+                  --             (if currentLocale == "zh" then
+                  --                 "selected"
+                  --              else
+                  --                 ""
+                  --             )
+                  --         , href "/zh"
+                  --         ]
+                  --         [ text "TW" ]
+                  --     , a
+                  --         [ class
+                  --             (if currentLocale == "jp" then
+                  --                 "selected"
+                  --              else
+                  --                 ""
+                  --             )
+                  --         , href "/jp"
+                  --         ]
+                  --         [ text "JP" ]
+                  --     , a
+                  --         [ class
+                  --             (if currentLocale == "en" then
+                  --                 "selected"
+                  --              else
+                  --                 ""
+                  --             )
+                  --         , href "/en"
+                  --         ]
+                  --         [ text "EN" ]
+                  --     ]
+                  -- ,
+                  div [ class "nav-link" ]
                     [ a [ class "consult-btn", href "https://gumo.works/bd", target "_blank" ] [ text (t translations "top.freeConsult") ]
                     , a [ href ("/" ++ currentLocale ++ "/service") ] [ text (t translations "nav.service") ]
+                    , a [ href ("/" ++ currentLocale ++ "/about") ] [ text (t translations "nav.about") ]
                     , a [ href ("/" ++ currentLocale ++ "/cross-border-sourcing") ] [ text (t translations "nav.outsource") ]
                     , a [ href "#faq" ] [ text (t translations "nav.faq") ]
                     , a [ href "#article" ] [ text (t translations "nav.article") ]
@@ -1224,6 +1225,7 @@ type Route
     | CrossBorder Locale
     | ServicePage Locale
     | NotFound
+    | About Locale
 
 
 toLocale =
@@ -1248,6 +1250,7 @@ route =
         , map JpHome (s "jp")
         , map CrossBorder (toLocale </> s "cross-border-sourcing")
         , map ServicePage (toLocale </> s "service")
+        , map About (toLocale </> s "about")
         ]
 
 
@@ -1329,6 +1332,12 @@ view model =
             ServicePage locale ->
                 [ viewHeader model translations
                 , ServicePage.view translations
+                , viewFooter
+                ]
+
+            About locale ->
+                [ viewHeader model translations
+                , AboutPage.view translations
                 , viewFooter
                 ]
 
