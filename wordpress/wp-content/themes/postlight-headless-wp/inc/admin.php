@@ -29,6 +29,8 @@ add_filter( 'wp_terms_checklist_args', 'taxonomy_checklist_checked_ontop_filter'
  */
 function set_headless_preview_link( $link ) {
     $post = get_post();
+    $post_status = get_post_status( $post );
+
     if ( ! $post ) {
         return $link;
     }
@@ -41,10 +43,19 @@ function set_headless_preview_link( $link ) {
     if ( 0 === $parent_id ) {
         $status = 'draft';
     }
+
+    if ( 'publish' === $post_status ) {
+        $post_slug = $post->post_name;
+        return "$frontend/$type/$post_slug";
+    }
+
     return "$frontend/_preview/$parent_id/$revision_id/$type/$status/$nonce";
 }
 
 add_filter( 'preview_post_link', 'set_headless_preview_link' );
+
+add_filter( 'post_link', 'set_headless_preview_link' );
+add_filter( 'page_link', 'set_headless_preview_link' );
 
 /**
  * Includes preview link in post data for a response.

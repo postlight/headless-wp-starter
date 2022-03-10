@@ -7,6 +7,10 @@ import Menu from '../components/Menu';
 import Config from '../config';
 
 class Preview extends Component {
+  static async getInitialProps({ query }) {
+    return { url: { query } };
+  }
+
   constructor() {
     super();
     this.state = {
@@ -22,7 +26,7 @@ class Preview extends Component {
 
     // checking if the post/page is a draft or a revision.
     let postUrl = `${Config.apiUrl}/wp/v2/${type}s/${id}/revisions/${rev}?_wpnonce=${wpnonce}`;
-    if( status === 'draft' ) {
+    if (status === 'draft') {
       postUrl = `${Config.apiUrl}/wp/v2/${type}s/${rev}?_wpnonce=${wpnonce}`;
     }
 
