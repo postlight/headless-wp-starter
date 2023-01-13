@@ -40,7 +40,7 @@ function log_console( $name, $data = null, $js_eval = false ) {
     $replace_array = array( '"', '', '', '\\n', '\\n' );
     $data          = preg_replace( $search_array, $replace_array, $data );
     $data          = ltrim( rtrim( $data, '"' ), '"' );
-    $data          = $is_evaled ? $data : ( "'" === $data[0] ) ? $data : "'" . $data . "'";
+    $data          = $is_evaled ? $data : (( "'" === $data[0] ) ? $data : "'" . $data . "'");
 
     $js = <<<JSCODE
 \n<script>
