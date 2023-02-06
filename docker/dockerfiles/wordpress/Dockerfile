@@ -1,0 +1,34 @@
+FROM wordpress:5.2.3-php7.2-fpm
+
+RUN mv "$PHP_INI_DIR"/php.ini-development "$PHP_INI_DIR"/php.ini
+
+# install_wordpress.sh & misc. dependencies
+RUN apt-get update; \
+	apt-get install -yq mariadb-client netcat sudo less git unzip
+
+# wp-cli
+RUN curl -sL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o wp; \
+	chmod +x wp; \
+	mv wp /usr/local/bin/; \
+	mkdir /var/www/.wp-cli; \
+	chown www-data:www-data /var/www/.wp-cli
+
+# composer
+RUN curl -sL https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer | php; \
+	mv composer.phar /usr/local/bin/composer; \
+	mkdir /var/www/.composer; \
+	chown www-data:www-data /var/www/.composer
+
+# phpunit, phpcs, wpcs
+RUN sudo -u www-data composer global require \
+	phpunit/phpunit \
+	dealerdirect/phpcodesniffer-composer-installer \
+	phpcompatibility/phpcompatibility-wp \
+	automattic/vipwpcs
+
+# include composer-installed executables in $PATH
+ENV PATH="/var/www/.composer/vendor/bin:${PATH}"
+
+WORKDIR /var/www/html
+
+EXPOSE 9000

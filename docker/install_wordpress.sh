@@ -2,6 +2,8 @@
 
 set -e
 
+alias wp='wp --allow-root'
+
 mysql_ready='nc -z db-headless 3306'
 
 if ! $mysql_ready
