@@ -55,7 +55,7 @@ const Menu: FC<Props> = ({ menu }) => {
               item.object === 'category' ? 'category' : 'post';
             return (
               <Link
-                href={`/${actualPage}}/${slug}`}
+                href={`/${actualPage}/${slug}`}
                 key={item.ID}
               >
                 {item.title}
