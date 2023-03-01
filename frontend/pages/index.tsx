@@ -89,8 +89,7 @@ const Index: NextPage<PageProps> = ({ page, posts, pages, menu }) => {
         <ul key={ipage.slug}>
           <li>
             <Link
-              as={`/page/${ipage.slug}`}
-              href={`/post?slug=${ipage.slug}&apiRoute=page`}
+              href={`/page/${ipage.slug}`}
             >
               {ipage.title.rendered}
             </Link>
