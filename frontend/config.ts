@@ -4,6 +4,8 @@ let wpUrl = 'http://localhost:8080/wp-json';
 if (process.env.HOME === '/home/node') {
   wpUrl = 'http://wp-headless:8080/wp-json';
 }
+
+// TODO: These should be env vars...
 const Config = {
   apiUrl: wpUrl,
   AUTH_TOKEN: 'auth-token',
