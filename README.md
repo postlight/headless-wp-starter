@@ -89,11 +89,11 @@ Apache/PHP logs are available via `docker-compose logs -f wp-headless`.
 
 ## Database
 
-The `db-headless` container exposes MySQL on host port `3307`:
+The `db-headless` service runs [MariaDB](https://mariadb.org/) (`image: mariadb` in `docker-compose.yml`) and exposes the MySQL protocol on host port `3307`:
 
     mysql -uwp_headless -pwp_headless -h127.0.0.1 -P3307 wp_headless
 
-You can also run a mysql shell on the container:
+You can also run a mysql client shell on the container:
 
     docker exec db-headless mysql -hdb-headless -uwp_headless -pwp_headless wp_headless
 
@@ -171,7 +171,7 @@ That's why we've packaged the frontend app in a Docker container, which can be d
 **Breaking Change Alert - Docker**
 
 If you had the project already setup and then updated to a commit newer than `99b4d7b`, you will need to go through the installation process again because the project was migrated to Docker.
-You will need to also migrate MySQL data to the new MySQL db container.
+You will need to also migrate database data to the new MariaDB (`db-headless`) container.
 
 **Docker Caching**
 
